@@ -111,7 +111,7 @@ class ClassParser(object):
 
 class Info(object):
 
-    name = "class"
+    name = "java"
     descr = "search in the java class names"
 
     model = PlainDatabaseModel
