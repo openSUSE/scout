@@ -3,8 +3,6 @@
 import os
 import sys
 
-# this is a comment
-
 class CommandLineParser(object):
     """
     This is a command-line parser for core. Just prints help for available
