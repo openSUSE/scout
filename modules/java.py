@@ -116,7 +116,11 @@ class ScoutModule(object):
     model = PlainDatabaseModel
 
     @classmethod
-    def main(cls, argv):
+    def print_help(cls):
+        print "java help"
+
+    @classmethod
+    def main(cls):
         """ a main method """
 
         p = ClassParser()

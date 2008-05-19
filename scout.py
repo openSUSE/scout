@@ -67,16 +67,14 @@ class CommandLineParser(object):
     @classmethod
     def parse(cls):
 
-        if len(sys.argv) == 1 or (len(sys.argv) == 2 and cls._is_help(sys.argv[0])):
+        if len(sys.argv) == 1 or (len(sys.argv) == 2 and cls._is_help(sys.argv[1])):
             cls.print_usage()
 
         mname = sys.argv[1]
         if not mname in cls.modules:
             cls.module_not_found(mname)
-
-        del sys.argv[1]         # delete a module name for argument list
+        del sys.argv[1]
         return cls.modules[mname]
-
 
 class ModuleLoader(object):
     """
@@ -86,48 +84,36 @@ class ModuleLoader(object):
     modules = list()
 
     @classmethod
-    def import_modules(cls, dirs):
-        ret = list()
+    def import_from(cls, dirs):
         _dirs = dirs
-
         # make an non-iter item as iter
         if not hasattr(dirs, "__iter__"):
             _dirs = (dirs, )
-
         for dir in _dirs:
-            ret.extend(cls._import(dir))
-
-        return ret
+            cls._import(dir)
 
     @classmethod
     def _import(cls, dir):
-
-        adir = os.path.abspath(dir)
-
-        if not os.path.isdir(adir):
+        if not os.path.isdir(dir):
             raise AttributeError("%s is not a directory" % dir)
-
-        sys.path.append(adir)
-
-        for file in os.listdir(adir):
+        sys.path.append(dir)
+        for file in os.listdir(dir):
             module_name, ext = os.path.splitext(file)
             if ext == '.py':
                 module = __import__(module_name)
                 cls.modules.append(module)
 
-        return cls.modules
-
 class ScoutCore(object):
 
     @classmethod
-    def run(cls, argv):
+    def run(cls):
 
-        modules = ModuleLoader.import_modules(sys.path[0] + "/modules")
-        parser = CommandLineParser(modules)
+        ml = ModuleLoader
+        ml.import_from(sys.path[0] + "/modules")
 
-        module = parser.parse()
-
-        module.ScoutModule.main(argv)
+        clp = CommandLineParser(ml.modules)
+        module = clp.parse()
+        module.ScoutModule.main()
 
 if __name__ == "__main__":
-    ScoutCore.run(sys.argv)
+    ScoutCore.run()

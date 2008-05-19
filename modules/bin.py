@@ -1,3 +1,4 @@
+import sys
 # import zypp
 
 # class ZyppParser(object):
@@ -31,5 +32,5 @@ class ScoutModule(object):
     desc = "Search for the binaries contained in the packages."
 
     @classmethod
-    def main(cls, args):
-        print "searching for term '%s'" % (args[1])
+    def main(cls):
+        print "searching for term '%s'" % (sys.argv[1])

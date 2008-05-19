@@ -4,5 +4,6 @@ class ScoutModule(object):
     desc = "- template module -"
 
     @classmethod
-    def main(cls, argv):
-        print "not implemented"
+    def main(cls):
+        print "foo.main() not implemented"
+
