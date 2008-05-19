@@ -1,4 +1,3 @@
-
 from optparse import OptionParser
 import re
 
@@ -9,7 +8,7 @@ class DBItem(object):
         self.rpm        = rpm
         self.jar        = jar
         self.class_name = class_name
-    
+
     def __getattr__(self, name):
         return self.__dict__[name]
 
@@ -66,11 +65,11 @@ class PlainDatabaseModel(object):
 
 
     def query(self, query):
-        
+
         ret = list()
 
         for term in query.terms:
-            
+
             pattern = re.compile(".*" + term + ".*")
 
             for row in (row for row in self.db if row[0] == query.distro):
@@ -96,23 +95,23 @@ class ClassParser(object):
 
     def __init__(self):
 
-        self.parser = OptionParser(usage="Usage: %prog " + Info.name + " [options] className")
+        self.parser = OptionParser(usage="Usage: %prog " + ScoutModule.name + " [options] class_name")
         # FIXME! this is an default Option for all parsers (some subtyping, or something else)
-        self.parser.add_option("-d", "--distro", type="choice", help="informations only from this distribution.", default="openSUSE:10.3", choices=["openSUSE:10.3", "Java:jpackage-1.7"])
+        self.parser.add_option("-d", "--distro", type="choice", help="information only from this distribution.", default="openSUSE:10.3", choices=["openSUSE:10.3", "Java:jpackage-1.7"])
 
     def parse_args(self):
 
         (options, args) = self.parser.parse_args()
-        
+
         if len(args) == 0:
-            self.parser.error("You must type any search term")
+            self.parser.error("You must type a search term")
 
         return QueryOptions(options, args)
 
-class Info(object):
+class ScoutModule(object):
 
     name = "java"
-    descr = "search in the java class names"
+    desc = "Search for the java classes inside the packaged JAR files."
 
     model = PlainDatabaseModel
 
@@ -124,4 +123,4 @@ class Info(object):
         query_opts = p.parse_args()
 
         m = cls.model()
-        return m.query(query_opts)
+        print m.query(query_opts)

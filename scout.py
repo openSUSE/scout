@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import os
 import sys
 
@@ -16,12 +18,12 @@ class CommandLineParser(object):
 
         module.foo()
     """
-
-    def __init__(self, modules = None):
+    @classmethod
+    def __init__(cls, modules = None):
         """
         A constructor for CommandLineParser, argument modules should be inicialized
         """
-        self.modules = dict()
+        cls.modules = dict()
 
         if modules != None:
             _modules = modules
@@ -29,42 +31,51 @@ class CommandLineParser(object):
                 _modules = (modules, )
 
             for m in _modules:
-                self.add_module(m)
+                cls.add_module(m)
 
-        self.prog = sys.argv[0]
+        cls.prog = os.path.basename(sys.argv[0])
 
-    def add_module(self, module):
-        self.modules[module.Info.name] = module
+    @classmethod
+    def add_module(cls, module):
+        cls.modules[module.ScoutModule.name] = module
 
-    def _is_help(self, arg):
-        for help in ("help", "-h", "-help", "--help"):
-            if arg == help:
-                return True
+    @classmethod
+    def _is_help(cls, arg):
+        if arg in ("help", "-h", "-help", "--help"):
+            return True
         return False
 
-    def print_usage(self):
-        print("Usage: %s module searchTerm" % (self.prog))
-        print("       %s help module or %s module help for help" % (self.prog, self.prog))
+    @classmethod
+    def print_usage(cls):
+        print("")
+        print("Usage: %s <module> <search_term> [module-options]" % (cls.prog))
+        print("       - or -")
+        print("       %s help <module> for module help" % (cls.prog))
         print("")
         print("available modules:")
-        for module in self.modules.values():
-            print("\t%s\t%s" % (module.Info.name, module.Info.descr))
-
+        for module in cls.modules.values():
+            print("\t%s\t%s" % (module.ScoutModule.name, module.ScoutModule.desc))
+        print("")
         sys.exit(1)
 
 
-    def parse(self):
+    @classmethod
+    def module_not_found(cls, name):
+        print "Module '%s' not found" % (name)
+        sys.exit(1)
 
-        if len(sys.argv) == 1 or (len(sys.argv) == 2 and self._is_help(sys.argv[0])):
-            self.print_usage()
+    @classmethod
+    def parse(cls):
+
+        if len(sys.argv) == 1 or (len(sys.argv) == 2 and cls._is_help(sys.argv[0])):
+            cls.print_usage()
 
         mname = sys.argv[1]
-        if not mname in self.modules:
-            # fixme - and exception?
-            self.print_module_error(mname)
+        if not mname in cls.modules:
+            cls.module_not_found(mname)
 
         del sys.argv[1]         # delete a module name for argument list
-        return self.modules[mname]
+        return cls.modules[mname]
 
 
 class ModuleLoader(object):
@@ -82,10 +93,10 @@ class ModuleLoader(object):
         # make an non-iter item as iter
         if not hasattr(dirs, "__iter__"):
             _dirs = (dirs, )
-            
+
         for dir in _dirs:
             ret.extend(cls._import(dir))
-        
+
         return ret
 
     @classmethod
@@ -101,17 +112,22 @@ class ModuleLoader(object):
         for file in os.listdir(adir):
             module_name, ext = os.path.splitext(file)
             if ext == '.py':
-                #log.info('import %s' % module_name)
                 module = __import__(module_name)
                 cls.modules.append(module)
 
         return cls.modules
 
-modules = ModuleLoader.import_modules("modules")
-parser = CommandLineParser(modules)
+class ScoutCore(object):
 
-module = parser.parse()
+    @classmethod
+    def run(cls, argv):
 
-ret = module.Info.main(sys.argv)
+        modules = ModuleLoader.import_modules(sys.path[0] + "/modules")
+        parser = CommandLineParser(modules)
 
-print ret
+        module = parser.parse()
+
+        module.ScoutModule.main(argv)
+
+if __name__ == "__main__":
+    ScoutCore.run(sys.argv)

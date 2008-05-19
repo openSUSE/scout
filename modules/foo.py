@@ -1,10 +1,8 @@
-class Info(object):
+class ScoutModule(object):
 
     name = "foo"
-    descr = "template module"
+    desc = "- template module -"
 
     @classmethod
     def main(cls, argv):
-        """ a main method """
-
-        return "TODO: not implemented yet, just for test of plugin loader :)"
+        print "not implemented"
