@@ -219,3 +219,7 @@ class ScoutCore(object):
 
 if __name__ == "__main__":
     ScoutCore.run()
+
+# d = Database()
+# for row in d.distros():
+#     print d.get_distro_id(row), row
