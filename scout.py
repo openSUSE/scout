@@ -2,6 +2,7 @@
 
 import os
 import sys
+import sqlite3
 
 class CommandLineParser(object):
     """
@@ -18,6 +19,7 @@ class CommandLineParser(object):
 
         module.foo()
     """
+
     @classmethod
     def __init__(cls, modules = None):
         """
@@ -57,7 +59,6 @@ class CommandLineParser(object):
             print("\t%s\t%s" % (module.ScoutModule.name, module.ScoutModule.desc))
         print("")
         sys.exit(1)
-
 
     @classmethod
     def module_not_found(cls, name):
@@ -102,6 +103,107 @@ class ModuleLoader(object):
             if ext == '.py':
                 module = __import__(module_name)
                 cls.modules.append(module)
+
+class Database(object):
+
+    db = "db.sqlite"
+
+    def __init__(self):
+        if not os.path.exists(self.__class__.db):
+            self.init()
+
+        self.conn = sqlite3.connect(self.__class__.db)
+
+    def init(self):
+        self.conn = sqlite3.connect(self.__class__.db)
+        self.conn.execute("""
+CREATE TABLE distro (
+    id          INT AUTO_INCREMENT,
+    name        VARCHAR(50) NOT NULL UNIQUE,
+    PRIMARY KEY (id)
+);
+        """)
+        self.conn.execute("""
+CREATE TABLE rpm (
+    id          INT AUTO_INCREMENT,
+    name        VARCHAR(50) NOT NULL UNIQUE,
+    PRIMARY KEY(id)
+);        
+        """)
+        # FIXME: an imports
+        self.conn.execute("""insert into distro VALUES(0, 'openSUSE:10.3')""")
+        self.conn.execute("""insert into distro VALUES(1, 'Java:jpackage-1.7')""")
+        self.conn.commit()
+        self.conn.close()
+
+    def __del__(self):
+        self.conn.close()
+
+    def _clever_query_result(self, c):
+        ret = list()
+        for row in c:
+            if len(row) == 1:           #(2)
+                ret.append(row[0])
+            else:                       #(3)
+                ret.append(row)
+        if len(ret) == 1:                #(1)
+            return ret[0]
+        return ret
+
+    def execute(self, query, *args, **kwargs):
+        """
+        an abstract database query - but more clever
+
+        query - a query to proceed
+
+        there're two kinds of placeholders (like as original DB/API execute, but in more Pythonic way)
+        - question marks (qmark style):
+          execute("SELECT ham, spam FORM foo WHERE bar=? and baz=?", bar, baz)
+        - named placeholders (named style)
+          execute("SELECT ham, spam FORM foo WHERE bar=:bar and baz=:baz", bar='42', baz='42')
+
+        Note: its not possible to combine this two types of placeholders in one call!
+
+        return
+        (1) if the length of result is one, return one value
+        (2) if the collumn in result is only one, return a list of values
+        (3) else returns a list of tuples
+        
+        """
+
+        # ther's not possible to use both a args and a keyword args
+        assert(args!=None or kwargs!=None)
+
+        c = self.conn.cursor()
+        if args==None and kwargs==None:
+            c.execute(query)
+        elif args!=None:
+            c.execute(query, args)
+        else:
+            c.execute(query, kwargs)
+        ret = self._clever_query_result(c)
+        c.close()
+        return ret
+
+    def distros(self):
+        """ return a list of distributions available in a database """
+        return self.execute(""" SELECT name from distro;""")
+    
+    def has_distro(self, name):
+        """ returns if the database contains specific distribution """
+        return name in self.distros()
+
+    def get_distro_id(self, name):
+        """ return an ID of distribution """
+        ret = -1
+        ret = self.execute("""SELECT id from distro WHERE name=? """, name)
+#        c = self.conn.cursor()
+        # fixme - a filtering !!!
+#        c.execute("""SELECT id from distro WHERE name='%s' """ % (name))
+#        for row in c:
+#            ret = row[0]
+#        c.close()
+        return ret
 
 class ScoutCore(object):
 
