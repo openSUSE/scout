@@ -55,7 +55,8 @@ class CommandLineParser(object):
         print("       %s help <module> for module help" % (cls.prog))
         print("")
         print("available modules:")
-        for module in cls.modules.values():
+        for k in sorted(cls.modules.keys()):
+            module = cls.modules[k]
             print("\t%s\t%s" % (module.ScoutModule.name, module.ScoutModule.desc))
         print("")
         sys.exit(1)
@@ -100,7 +101,7 @@ class ModuleLoader(object):
         sys.path.append(dir)
         for file in os.listdir(dir):
             module_name, ext = os.path.splitext(file)
-            if ext == '.py':
+            if ext == '.py' and module_name != 'foo':
                 module = __import__(module_name)
                 cls.modules.append(module)
 
@@ -168,7 +169,7 @@ CREATE TABLE rpm (
         (1) if the length of result is one, return one value
         (2) if the collumn in result is only one, return a list of values
         (3) else returns a list of tuples
-        
+
         """
 
         # ther's not possible to use both a args and a keyword args
@@ -188,7 +189,7 @@ CREATE TABLE rpm (
     def distros(self):
         """ return a list of distributions available in a database """
         return self.execute(""" SELECT name from distro;""")
-    
+   
     def has_distro(self, name):
         """ returns if the database contains specific distribution """
         return name in self.distros()
