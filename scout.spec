@@ -38,7 +38,7 @@ cp -a modules/*.py $RPM_BUILD_ROOT%{py_sitedir}/%{name}/modules
 # install data files
 mkdir -p $RPM_BUILD_ROOT%{datadir}/%{name}
 # create symlink
-ln -s %{py_sitedir}/%{scout}/scout.py %{_bindir}/%{name}
+ln -s %{py_sitedir}/%{name}/scout.py %{_bindir}/%{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT

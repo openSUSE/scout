@@ -58,9 +58,10 @@ class CommandLineParser(object):
         print("       %s help <module> for module help" % (cls.prog))
         print("")
         print("available modules:")
+        maxlen = len(max(cls.modules.keys(), key=len))
         for k in sorted(cls.modules.keys()):
             module = cls.modules[k]
-            print("\t%s\t%s" % (module.ScoutModule.name, module.ScoutModule.desc))
+            print("\t%s : %s" % (module.ScoutModule.name.ljust(maxlen), module.ScoutModule.desc))
         print("")
         sys.exit(1)
 
@@ -110,13 +111,11 @@ class ModuleLoader(object):
 
 class Database(object):
 
-    def __init__(self):
-        # self.conn = sqlite3.connect(self.__class__.db)
-        return
+    def __init__(self, dbname):
+        self.conn = sqlite3.connect(Config.data_path + '/' + dbname + '.db')
 
     def __del__(self):
-        # self.conn.close()
-        return
+        self.conn.close()
 
     def _clever_query_result(self, c):
         ret = list()
@@ -163,6 +162,55 @@ class Database(object):
         c.close()
         return ret
 
+class Result(object):
+
+    @classmethod
+    def __init__(cls, cols1, cols2 = None):
+        cls.cols1 = cols1
+        if cols2 != None:
+            cls.cols2 = cols2
+        else:
+            cls.cols2 = cols1
+        cls.rows = list()
+
+    @classmethod
+    def addrow(cls, row):
+        if len(row) == len(cls.cols1):
+            cls.rows.append(row)
+
+    @classmethod
+    def gentable(cls):
+        col_width = map(len, map(str, cls.cols2))
+        for i in range(0,len(cls.cols2)):
+          for row in cls.rows:
+            if len(str(row[i])) > col_width[i]:
+                col_width[i] = len(str(row[i]))
+        print ' ' + ' | '.join(map(str.ljust, cls.cols2, col_width))
+        print '-' + '-+-'.join(map(lambda c: '-' * c, col_width)) + '-'
+        for row in cls.rows:
+            print ' ' + ' | '.join(map(str.ljust, map(str, row), col_width))
+
+    @classmethod
+    def gencsv(cls):
+        print '"' + '";"'.join(map(lambda s: s.replace('"', '""'), cls.cols1)) + '"'
+        print '"' + '";"'.join(map(lambda s: s.replace('"', '""'), cls.cols2)) + '"'
+        for row in cls.rows:
+            print '"' + '";"'.join(map(lambda s: s.replace('"', '""'), row)) + '"'
+
+    @classmethod
+    def genxml(cls):
+        print '<result>'
+        print '  <head>'
+        for i in range(0, len(cls.cols1)):
+            print '    <%s>%s</%s>' % (cls.cols1[i], cls.cols2[i], cls.cols1[i])
+        print '  </head>'
+        for row in cls.rows:
+          print '  <row>'
+          for i in range(0,len(cls.cols1)):
+              print '    <%s>%s</%s>' % (cls.cols1[i], row[i], cls.cols1[i])
+          print '  </row>'
+        print '</result>'
+
 class ScoutCore(object):
 
     @classmethod
@@ -173,7 +221,12 @@ class ScoutCore(object):
 
         clp = CommandLineParser(ml.modules)
         module = clp.parse()
-        module.ScoutModule.main()
+        result = module.ScoutModule.main()
+
+        if result != None:
+            result.gentable()
+            result.genxml()
+            result.gencsv()
 
 if __name__ == "__main__":
     ScoutCore.run()

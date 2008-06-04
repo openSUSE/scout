@@ -1,3 +1,6 @@
+import scout
+import sys
+
 class ScoutModule(object):
 
     name = "autoconf"

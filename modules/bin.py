@@ -1,3 +1,4 @@
+import scout
 import sys
 # import zypp
 
@@ -25,6 +26,10 @@ import sys
 #                                         item.resolvable().edition(),
 #                                         item.resolvable().arch(),
 #                                         item.resolvable().repository().info().alias() )
+
+install_cmd = "sudo zypper install";
+
+paths = [ "/bin", "/sbin", "/usr/bin", "/usr/sbin", "/usr/games", "/opt/kde3/bin", "/opt/kde3/sbin", "/opt/gnome/bin", "/opt/gnome/sbin" ];
 
 class ScoutModule(object):
 

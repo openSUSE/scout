@@ -1,3 +1,4 @@
+import scout
 from optparse import OptionParser
 import re
 
