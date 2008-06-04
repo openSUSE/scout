@@ -4,6 +4,9 @@ import os
 import sys
 import sqlite3
 
+class Config(object):
+    data_path = '/usr/share/scout'
+
 class CommandLineParser(object):
     """
     This is a command-line parser for core. Just prints help for available
@@ -107,38 +110,13 @@ class ModuleLoader(object):
 
 class Database(object):
 
-    db = "db.sqlite"
-
     def __init__(self):
-        if not os.path.exists(self.__class__.db):
-            self.init()
-
-        self.conn = sqlite3.connect(self.__class__.db)
-
-    def init(self):
-        self.conn = sqlite3.connect(self.__class__.db)
-        self.conn.execute("""
-CREATE TABLE distro (
-    id          INT AUTO_INCREMENT,
-    name        VARCHAR(50) NOT NULL UNIQUE,
-    PRIMARY KEY (id)
-);
-        """)
-        self.conn.execute("""
-CREATE TABLE rpm (
-    id          INT AUTO_INCREMENT,
-    name        VARCHAR(50) NOT NULL UNIQUE,
-    PRIMARY KEY(id)
-);        
-        """)
-        # FIXME: an imports
-        self.conn.execute("""insert into distro VALUES(0, 'openSUSE:10.3')""")
-        self.conn.execute("""insert into distro VALUES(1, 'Java:jpackage-1.7')""")
-        self.conn.commit()
-        self.conn.close()
+        # self.conn = sqlite3.connect(self.__class__.db)
+        return
 
     def __del__(self):
-        self.conn.close()
+        # self.conn.close()
+        return
 
     def _clever_query_result(self, c):
         ret = list()
@@ -147,7 +125,7 @@ CREATE TABLE rpm (
                 ret.append(row[0])
             else:                       #(3)
                 ret.append(row)
-        if len(ret) == 1:                #(1)
+        if len(ret) == 1:               #(1)
             return ret[0]
         return ret
 
@@ -159,20 +137,19 @@ CREATE TABLE rpm (
 
         there're two kinds of placeholders (like as original DB/API execute, but in more Pythonic way)
         - question marks (qmark style):
-          execute("SELECT ham, spam FORM foo WHERE bar=? and baz=?", bar, baz)
+          execute("SELECT ham, spam FROM foo WHERE bar=? and baz=?", bar, baz)
         - named placeholders (named style)
-          execute("SELECT ham, spam FORM foo WHERE bar=:bar and baz=:baz", bar='42', baz='42')
+          execute("SELECT ham, spam FROM foo WHERE bar=:bar and baz=:baz", bar='42', baz='42')
 
         Note: its not possible to combine this two types of placeholders in one call!
 
         return
-        (1) if the length of result is one, return one value
-        (2) if the collumn in result is only one, return a list of values
+        (1) if the length of the result is one, returns one value
+        (2) if the column in the result is the only one, returns a list of values
         (3) else returns a list of tuples
-
         """
 
-        # ther's not possible to use both a args and a keyword args
+        # it is not possible to use both a args and a keyword args
         assert(args!=None or kwargs!=None)
 
         c = self.conn.cursor()
@@ -184,26 +161,6 @@ CREATE TABLE rpm (
             c.execute(query, kwargs)
         ret = self._clever_query_result(c)
         c.close()
-        return ret
-
-    def distros(self):
-        """ return a list of distributions available in a database """
-        return self.execute(""" SELECT name from distro;""")
-   
-    def has_distro(self, name):
-        """ returns if the database contains specific distribution """
-        return name in self.distros()
-
-    def get_distro_id(self, name):
-        """ return an ID of distribution """
-        ret = -1
-        ret = self.execute("""SELECT id from distro WHERE name=? """, name)
-#        c = self.conn.cursor()
-        # fixme - a filtering !!!
-#        c.execute("""SELECT id from distro WHERE name='%s' """ % (name))
-#        for row in c:
-#            ret = row[0]
-#        c.close()
         return ret
 
 class ScoutCore(object):
@@ -220,7 +177,3 @@ class ScoutCore(object):
 
 if __name__ == "__main__":
     ScoutCore.run()
-
-# d = Database()
-# for row in d.distros():
-#     print d.get_distro_id(row), row
