@@ -3,7 +3,9 @@
 for i in bin*.txt; do
     f=`basename $i .txt`
     TMP=`mktemp`
-    ./genjoin.py $f.txt bin path pkg > $TMP
+    echo -n "Processing $f ... "
+    ./gensimple.py $f.txt binary bin path pkg > $TMP
     sqlite3 -batch $f.db < $TMP
+    echo 'done'
     rm $TMP
 done

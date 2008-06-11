@@ -2,8 +2,8 @@
 import sys
 
 file = sys.argv[1]
-table = 'tab'
-cols = sys.argv[2:]
+table = sys.argv[2]
+cols = sys.argv[3:]
 
 lines=list()
 f = open(file)
@@ -21,8 +21,8 @@ for line in lines:
     print 'INSERT INTO %s(' %table, ', '.join(cols), ") VALUES(", ", ".join(map(lambda x: "'%s'"%x, line)), ");"
 print
 
-for c in cols:
-    print 'CREATE INDEX %s_idx ON %s(%s);' % (c, table, c)
+c = cols[0]
+print 'CREATE INDEX %s_%s_idx ON %s(%s);' % (table, c, table, c)
 print
 
 print 'COMMIT;'

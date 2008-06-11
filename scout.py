@@ -55,22 +55,20 @@ class CommandLineParser(object):
 
     @classmethod
     def print_usage(cls):
-        print("")
-        print("Usage: %s <module> <search_term> [module-options]" % (cls.prog))
-        print("       - or -")
-        print("       %s help <module> for module help" % (cls.prog))
-        print("")
-        print("available modules:")
+        print
+        print "Usage: %s <module> <search_term> [module-options]" % (cls.prog)
+        print
+        print "available modules:"
         maxlen = len(max(cls.modules.keys(), key=len))
         for k in sorted(cls.modules.keys()):
             module = cls.modules[k]
-            print("\t%s : %s" % (module.ScoutModule.name.ljust(maxlen), module.ScoutModule.desc))
-        print("")
+            print "    %s : %s" % (module.ScoutModule.name.ljust(maxlen), module.ScoutModule.desc)
+        print
         sys.exit(1)
 
     @classmethod
     def module_not_found(cls, name):
-        print "Module '%s' not found" % (name)
+        print "Module '%s' not found" % name
         sys.exit(1)
 
     @classmethod

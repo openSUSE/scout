@@ -39,14 +39,13 @@ class ScoutModule(object):
     @classmethod
     def query_system(cls, term):
         # TODO: implement
-        print "querying system repository is not yet implemented"
+        print "Querying system repositories is not yet implemented"
         return None
 
     @classmethod
     def query_repo(cls, repo, term):
         db = scout.Database(cls.name + '-' + repo)
-#        r = db.execute('SELECT * FROM tab WHERE bin=?', term)
-        r = db.execute('SELECT bin.str,path.str,pkg.str FROM jtab LEFT JOIN bin ON jtab.id_bin=bin.id LEFT JOIN path ON jtab.id_path=path.id LEFT JOIN pkg ON jtab.id_pkg=pkg.id WHERE jtab.id_bin IN (SELECT id FROM bin WHERE str=?)', term)
+        r = db.execute('SELECT bin, path, pkg FROM binary WHERE bin=?', term)
         result = scout.Result( ['bin', 'path', 'pkg'], ['binary', 'path', 'package']);
 
         if isinstance(r, list):
