@@ -9,20 +9,20 @@ class ScoutModule(object):
     name = "webpin"
     desc = "Search in the packages using the webpin webservice."
     distros = {
-        '10.3'    : 'openSUSE_103',
-        '10.2'    : 'openSUSE_102',
-        '10.1'    : 'SUSE_Linux_101',
-        'Factory' : 'SUSE_Factory',
-        'default' : 'SUSE_Factory'
+        'suse110' : 'openSUSE_110',
+        'suse103' : 'openSUSE_103',
+        'suse102' : 'openSUSE_102',
+        'suse101' : 'SUSE_Linux_101',
+        'factory' : 'SUSE_Factory',
     }
     service_host = 'api.opensuse-community.org'
     service_baseurl = '/searchservice/Search/Simple/'
 
 
     @classmethod
-    def query(cls, term):
+    def query(cls, term, distro):
         try:
-            url = cls.service_baseurl + cls.distros['default'] + '/' + urllib.quote(term)
+            url = cls.service_baseurl + cls.distros[distro] + '/' + urllib.quote(term)
             c = httplib.HTTPConnection(cls.service_host)
             c.connect()
             c.putrequest('GET', 'http://%s%s' % (cls.service_host, url))
@@ -38,16 +38,7 @@ class ScoutModule(object):
             return None
 
     @classmethod
-    def main(cls):
-        if len(sys.argv) < 2:
-            print 'Enter the term to look for ...'
-            return None
-
-        term = sys.argv[1]
-
-        dom = cls.query(term)
-        root = dom.getElementsByTagNameNS('http://datastructures.pkgsearch.benjiweber.co.uk', 'packages').item(0)
-
+    def fill_result(cls, root):
         result = scout.Result( ['pkg', 'ver', 'arch', 'repo', 'files'], ['package', 'version', 'arch', 'repository URL', 'matched files']);
 
         for node in root.getElementsByTagName("package"):
@@ -69,3 +60,18 @@ class ScoutModule(object):
             result.addrow([name, version, archs, repoURL, fileMatches]);
 
         return result
+
+    @classmethod
+    def main(cls):
+
+        p = scout.Parser(cls.name)
+        p.set_repos(['factory', 'suse110', 'suse103', 'suse102', 'suse101'])
+        if not p.parse():
+            return None
+
+        term = p.args[0]
+        repo = p.options.repo
+
+        dom = cls.query(term, repo)
+        root = dom.getElementsByTagNameNS('http://datastructures.pkgsearch.benjiweber.co.uk', 'packages').item(0)
+        return cls.fill_result(root)

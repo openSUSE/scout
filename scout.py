@@ -1,11 +1,14 @@
 #!/usr/bin/python
 
+import fnmatch
 import os
 import sys
 import sqlite3
+from optparse import OptionParser
 
 class Config(object):
     data_path = '/usr/share/scout'
+    data_suffix = '.db'
 
 class CommandLineParser(object):
     """
@@ -210,6 +213,56 @@ class Result(object):
               print '    <%s>%s</%s>' % (cls.cols1[i], row[i], cls.cols1[i])
           print '  </row>'
         print '</result>'
+
+
+class Parser(object):
+
+    def __init__(self, modulename):
+        self.parser = OptionParser(usage="Usage: %prog " + modulename + " [options] <search_term>")
+        self.parser.add_option('-l', '--listrepos', action="store_true", help="list available repositories", dest="listrepo")
+        # set repositories according to data files /usr/share/scout/<modulename>-*.db
+        repos = []
+        for file in os.listdir(Config.data_path):
+            if fnmatch.fnmatch(file, modulename + '-*' + Config.data_suffix):
+                repos.append( file[len(modulename)+1:-len(Config.data_suffix)] )
+        # TODO: choose default
+        if len(repos) > 0:
+            self.parser.add_option('-r', '--repo', type="choice", help="select repository to search", default=repos[0], choices=repos)
+
+    def set_repos(self, choices, default = None):
+        if self.parser.has_option('-r'):
+            self.parser.remove_option('-r')
+        if default == None:
+            default = choices[0]
+        self.parser.add_option('-r', '--repo', type='choice', help='select repository to search', default=default, choices=choices)
+
+    def parse(self):
+        (self.options, self.args) = self.parser.parse_args()
+        if self.options.listrepo:
+            print 'Available repositories:'
+            reposconf = open(Config.data_path + '/repos.conf')
+            repos={}
+            for line in reposconf:
+                (k,v) = line.split('=')
+                repos[k.strip()] = v.strip()
+            reposconf.close()
+            if not self.parser.has_option('-r'):
+                print '- none -'
+                return False
+            for opt in self.parser.get_option('-r').choices:
+                if opt == self.parser.get_option('-r').default:
+                    print '*',
+                else:
+                    print ' ',
+                if repos.has_key(opt):
+                  print opt, ':', repos[opt]
+                else:
+                  print opt
+            return False
+        if len(self.args) == 0:
+            self.parser.print_help()
+            return False
+        return True
 
 class ScoutCore(object):
 
