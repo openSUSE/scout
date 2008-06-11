@@ -45,14 +45,15 @@ class ScoutModule(object):
     @classmethod
     def query_repo(cls, repo, term):
         db = scout.Database(cls.name + '-' + repo)
-        r = db.execute('SELECT * FROM binary WHERE command=?', term)
+#        r = db.execute('SELECT * FROM tab WHERE bin=?', term)
+        r = db.execute('SELECT bin.str,path.str,pkg.str FROM jtab LEFT JOIN bin ON jtab.id_bin=bin.id LEFT JOIN path ON jtab.id_path=path.id LEFT JOIN pkg ON jtab.id_pkg=pkg.id WHERE jtab.id_bin IN (SELECT id FROM bin WHERE str=?)', term)
         result = scout.Result( ['bin', 'path', 'pkg'], ['binary', 'path', 'package']);
 
-        if isinstance(r, tuple):
-            result.addrow(r)
-        else:
+        if isinstance(r, list):
             for rr in r:
                 result.addrow(rr)
+        else:
+           result.addrow(r)
         return result
 
     @classmethod
