@@ -218,23 +218,39 @@ class Result(object):
 class Parser(object):
 
     def __init__(self, modulename):
+        self.modulename = modulename
         self.parser = OptionParser(usage="Usage: %prog " + modulename + " [options] <search_term>")
         self.parser.add_option('-l', '--listrepos', action="store_true", help="list available repositories", dest="listrepo")
-        # set repositories according to data files /usr/share/scout/<modulename>-*.db
+
+    def add_repo(self, repo):
+        opt = self.parser.get_option('-r')
+        if opt == None:
+            self.parser.add_option('-r', '--repo', type='choice', help='select repository to search', default=repo, choices=[repo])
+        else:
+            opt.choices.append(repo)
+
+    def add_repos(self, repos):
+        opt = self.parser.get_option('-r')
+        if opt == None: 
+            self.parser.add_option('-r', '--repo', type='choice', help='select repository to search', default=repos[0], choices=repos)
+        else:
+            for repo in choices:
+                opt.choices.append(repo)
+
+    # set repositories according to data files /usr/share/scout/<modulename>-*.db
+    def add_repos_from_datadir(self):
         repos = []
         for file in os.listdir(Config.data_path):
-            if fnmatch.fnmatch(file, modulename + '-*' + Config.data_suffix):
-                repos.append( file[len(modulename)+1:-len(Config.data_suffix)] )
-        # TODO: choose default
+            if fnmatch.fnmatch(file, self.modulename + '-*' + Config.data_suffix):
+                repos.append( file[len(self.modulename)+1:-len(Config.data_suffix)] )
+        # TODO: choose default wisely
         if len(repos) > 0:
-            self.parser.add_option('-r', '--repo', type="choice", help="select repository to search", default=repos[0], choices=repos)
-
-    def set_repos(self, choices, default = None):
-        if self.parser.has_option('-r'):
-            self.parser.remove_option('-r')
-        if default == None:
-            default = choices[0]
-        self.parser.add_option('-r', '--repo', type='choice', help='select repository to search', default=default, choices=choices)
+            opt = self.parser.get_option('-r')
+            if opt == None:
+                self.parser.add_option('-r', '--repo', type="choice", help="select repository to search", default=repos[0], choices=repos)
+            else:
+                for repo in repos:
+                    opt.choices.append(repo)
 
     def parse(self):
         (self.options, self.args) = self.parser.parse_args()
@@ -249,6 +265,7 @@ class Parser(object):
             if not self.parser.has_option('-r'):
                 print '- none -'
                 return False
+            maxlen = len(max(self.parser.get_option('-r').choices, key=len))
             for opt in self.parser.get_option('-r').choices:
                 if opt == self.parser.get_option('-r').default:
                     print '*',

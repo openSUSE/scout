@@ -1,5 +1,4 @@
 import scout
-import sys
 
 class ScoutModule(object):
 
@@ -8,5 +7,13 @@ class ScoutModule(object):
 
     @classmethod
     def main(cls):
-        print "searching for term '%s'" % (sys.argv[1])
+        """ a main method """
 
+        p = scout.Parser(cls.name)
+        p.add_repos_from_datadir()
+        if not p.parse():
+            return None
+
+        print p.options
+        print p.args
+        return None

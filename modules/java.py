@@ -11,6 +11,7 @@ class ScoutModule(object):
         """ a main method """
 
         p = scout.Parser(cls.name)
+        p.add_repos_from_datadir()
         if not p.parse():
             return None
 

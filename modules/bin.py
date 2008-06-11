@@ -37,5 +37,37 @@ class ScoutModule(object):
     desc = "Search for the binaries contained in the packages."
 
     @classmethod
+    def query_system(cls, term):
+        # TODO: implement
+        print "querying system repository is not yet implemented"
+        return None
+
+    @classmethod
+    def query_repo(cls, repo, term):
+        db = scout.Database(cls.name + '-' + repo)
+        r = db.execute('SELECT * FROM binary WHERE command=?', term)
+        result = scout.Result( ['bin', 'path', 'pkg'], ['binary', 'path', 'package']);
+
+        if isinstance(r, tuple):
+            result.addrow(r)
+        else:
+            for rr in r:
+                result.addrow(rr)
+        return result
+
+    @classmethod
     def main(cls):
-        print "searching for term '%s'" % (sys.argv[1])
+
+        p = scout.Parser(cls.name)
+        p.add_repo('system')
+        p.add_repos_from_datadir()
+        if not p.parse():
+            return None
+        repo = p.options.repo
+
+        term = p.args[0]
+
+        if repo == 'system':
+            return cls.query_system(term)
+        else:
+            return cls.query_repo(repo, term)
