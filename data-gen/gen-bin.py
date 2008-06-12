@@ -7,7 +7,7 @@ def process(s):
     print 'Processing %s ...' % s,
     paths = dict()
     pkgs = dict()
-    f = open(s + '.txt')
+    f = os.popen('lzma -c -d %s.txt.lzma' % s)
     g = open(s + '.sql', 'w')
     g.write('BEGIN;\n')
     g.write('CREATE TABLE binary(binary VARCHAR(64) NOT NULL, id_path INT NOT NULL, id_pkg INT NOT NULL);\n')
@@ -34,5 +34,5 @@ def process(s):
     print 'done'
 
 for file in os.listdir('.'):
-    if fnmatch.fnmatch(file, 'bin-*.txt'):
-        process(file[:-4])
+    if fnmatch.fnmatch(file, 'bin-*.txt.lzma'):
+        process(file[:-9])
