@@ -4,19 +4,17 @@
 
 # norootforbuild
 
-%define gitrev replace_this_with_the_real_git_revision!
-%define pkgver 0.0.1
-
-%py_requires
 Name:           scout
-Version:        %{pkgver}
+Version:        0.0.1
 Release:        1
 Url:            http://repo.or.cz/w/scout.git
 License:        GPL v2 or later
 Group:          System/Packages
 Summary:        Package Scout
-Source:         %{name}-%{gitrev}.tar.bz2
+Source:         %{name}.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
+BuildRequires:  python
+Requires:       python
 
 %description
 
@@ -36,12 +34,13 @@ mkdir -p $RPM_BUILD_ROOT%{py_sitedir}/%{name}/modules
 cp -a *.py $RPM_BUILD_ROOT%{py_sitedir}/%{name}
 cp -a modules/*.py $RPM_BUILD_ROOT%{py_sitedir}/%{name}/modules
 # install data files
-mkdir -p $RPM_BUILD_ROOT%{datadir}/%{name}
-cp -a repos.conf $RPM_BUILD_ROOT%{datadir}/%{name}
+mkdir -p $RPM_BUILD_ROOT%{_datadir}/%{name}
+cp -a repos.conf $RPM_BUILD_ROOT%{_datadir}/%{name}
 # create symlinks
+mkdir -p $RPM_BUILD_ROOT%{_bindir}
 ln -s %{py_sitedir}/%{name}/scout.py $RPM_BUILD_ROOT%{_bindir}/%{name}
-ln -s %{_bindir}/%{name} $RPM_BUILD_ROOT%{_bindir}/%{name}csv
-ln -s %{_bindir}/%{name} $RPM_BUILD_ROOT%{_bindir}/%{name}xml
+ln -s %{name} $RPM_BUILD_ROOT%{_bindir}/%{name}csv
+ln -s %{name} $RPM_BUILD_ROOT%{_bindir}/%{name}xml
 
 %clean
 rm -rf $RPM_BUILD_ROOT
