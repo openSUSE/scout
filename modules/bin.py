@@ -37,15 +37,15 @@ class ScoutModule(object):
     desc = "Search for the binaries contained in the packages."
 
     @classmethod
-    def query_system(cls, term):
+    def query_zypp(cls, term):
         # TODO: implement
-        print "Querying system repositories is not yet implemented"
+        print "Querying zypp repositories is not yet implemented"
         return None
 
     @classmethod
     def query_repo(cls, repo, term):
         db = scout.Database(cls.name + '-' + repo)
-        r = db.execute('SELECT bin, path, pkg FROM binary WHERE bin=?', term)
+        r = db.execute('SELECT binary, path, package FROM binary LEFT JOIN path ON binary.id_path=path.id_path LEFT JOIN package ON binary.id_pkg=package.id_pkg WHERE binary=?', term)
         result = scout.Result( ['bin', 'path', 'pkg'], ['binary', 'path', 'package']);
 
         if isinstance(r, list):
@@ -59,7 +59,7 @@ class ScoutModule(object):
     def main(cls):
 
         p = scout.Parser(cls.name)
-        p.add_repo('system')
+        p.add_repo('zypp')
         p.add_repos_from_datadir()
         if not p.parse():
             return None
@@ -67,7 +67,7 @@ class ScoutModule(object):
 
         term = p.args[0]
 
-        if repo == 'system':
-            return cls.query_system(term)
+        if repo == 'zypp':
+            return cls.query_zypp(term)
         else:
             return cls.query_repo(repo, term)

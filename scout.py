@@ -270,7 +270,7 @@ class Parser(object):
                 else:
                     print ' ',
                 if repos.has_key(opt):
-                  print opt, ':', repos[opt]
+                  print opt.ljust(maxlen), ':', repos[opt]
                 else:
                   print opt
             return False
@@ -291,10 +291,15 @@ class ScoutCore(object):
         module = clp.parse()
         result = module.ScoutModule.main()
 
+        prog = os.path.basename(sys.argv[0])
+
         if result != None:
-            result.gentable()
-            result.genxml()
-            result.gencsv()
+            if prog == 'scoutcsv':
+                result.gencsv()
+            elif prog == 'scoutxml':
+                result.genxml()
+            else:
+                result.gentable()
 
 if __name__ == "__main__":
     ScoutCore.run()

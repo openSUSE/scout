@@ -1,11 +1,7 @@
 #!/bin/sh
-
-for i in bin*.txt; do
-    f=`basename $i .txt`
-    TMP=`mktemp`
+for i in *.sql; do
+    f=`basename $i .sql`
     echo -n "Processing $f ... "
-    ./gensimple.py $f.txt binary bin path pkg > $TMP
-    sqlite3 -batch $f.db < $TMP
+    sqlite3 -batch $f.db < $f.sql
     echo 'done'
-    rm $TMP
 done

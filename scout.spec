@@ -38,8 +38,10 @@ cp -a modules/*.py $RPM_BUILD_ROOT%{py_sitedir}/%{name}/modules
 # install data files
 mkdir -p $RPM_BUILD_ROOT%{datadir}/%{name}
 cp -a repos.conf $RPM_BUILD_ROOT%{datadir}/%{name}
-# create symlink
-ln -s %{py_sitedir}/%{name}/scout.py %{_bindir}/%{name}
+# create symlinks
+ln -s %{py_sitedir}/%{name}/scout.py $RPM_BUILD_ROOT%{_bindir}/%{name}
+ln -s %{_bindir}/%{name} $RPM_BUILD_ROOT%{_bindir}/%{name}csv
+ln -s %{_bindir}/%{name} $RPM_BUILD_ROOT%{_bindir}/%{name}xml
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -47,7 +49,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(-,root,root)
 %doc AUTHORS
-%{_bindir}/%{name}
+%{_bindir}/%{name}*
 %dir %{py_sitedir}/%{name}
 %{py_sitedir}/%{name}/*
 %dir %{_datadir}/%{name}
