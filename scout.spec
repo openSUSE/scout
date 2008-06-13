@@ -13,7 +13,7 @@ Group:          System/Packages
 Summary:        Package Scout
 Source:         %{name}.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
-BuildRequires:  python
+BuildRequires:  python python-xml
 Requires:       python
 
 %description
@@ -27,12 +27,13 @@ Scout for indexing various properties of packages:
 %setup -q -n %{name}
 
 %build
+python scout.py || true > /dev/null
 
 %install
 # install python scripts
 mkdir -p $RPM_BUILD_ROOT%{py_sitedir}/%{name}/modules
-cp -a *.py $RPM_BUILD_ROOT%{py_sitedir}/%{name}
-cp -a modules/*.py $RPM_BUILD_ROOT%{py_sitedir}/%{name}/modules
+cp -a *.py{,c} $RPM_BUILD_ROOT%{py_sitedir}/%{name}
+cp -a modules/*.py{,c} $RPM_BUILD_ROOT%{py_sitedir}/%{name}/modules
 # install data files
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/%{name}
 cp -a repos.conf $RPM_BUILD_ROOT%{_datadir}/%{name}
