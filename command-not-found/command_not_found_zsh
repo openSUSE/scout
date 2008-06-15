@@ -1,0 +1,17 @@
+# (c) Zygmunt Krynicki 2007,
+# Licensed under GPL, see COPYING for the whole text
+#
+# This script will look-up command in the database and suggest
+# installation of packages available from the repository
+
+function preexec() {
+    command="${1%% *}"
+}
+
+function precmd() {
+    (($?)) && [ -n "$command" ] && {
+        whence -- "$command" >& /dev/null ||
+            command-not-found "$command"
+        unset command
+    }
+}
