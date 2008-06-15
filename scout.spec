@@ -27,19 +27,18 @@ Scout for indexing various properties of packages:
 %setup -q -n %{name}
 
 %build
-python scout.py || true > /dev/null
+python -mcompileall .
+python -O -mcompileall .
 
 %install
 # install python scripts
 mkdir -p $RPM_BUILD_ROOT%{py_sitedir}/%{name}/modules
-cp -a *.py{,c} $RPM_BUILD_ROOT%{py_sitedir}/%{name}
-cp -a modules/*.py{,c} $RPM_BUILD_ROOT%{py_sitedir}/%{name}/modules
+cp -a __init__.py{,c,o} $RPM_BUILD_ROOT%{py_sitedir}/%{name}
+cp -a modules/*.py{,c,o} $RPM_BUILD_ROOT%{py_sitedir}/%{name}/modules
 # install data files
-mkdir -p $RPM_BUILD_ROOT%{_datadir}/%{name}
-cp -a repos.conf $RPM_BUILD_ROOT%{_datadir}/%{name}
+install -D -m 0644 repos.conf $RPM_BUILD_ROOT%{_datadir}/%{name}/repos.conf
 # create symlinks
-mkdir -p $RPM_BUILD_ROOT%{_bindir}
-ln -s %{py_sitedir}/%{name}/scout.py $RPM_BUILD_ROOT%{_bindir}/%{name}
+install -D -m 0755 scout.py $RPM_BUILD_ROOT%{_bindir}/%{name}
 ln -s %{name} $RPM_BUILD_ROOT%{_bindir}/%{name}csv
 ln -s %{name} $RPM_BUILD_ROOT%{_bindir}/%{name}xml
 
@@ -50,9 +49,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %doc AUTHORS
 %{_bindir}/%{name}*
-%dir %{py_sitedir}/%{name}
-%{py_sitedir}/%{name}/*
-%dir %{_datadir}/%{name}
-%{_datadir}/%{name}/*
+%{py_sitedir}/%{name}
+%{_datadir}/%{name}
 
 %changelog

@@ -1,0 +1,12 @@
+#!/bin/sh
+rm -f scout.tar.bz2 scout-gen.tar.bz2
+
+cd ..
+tar cf scout/scout.tar scout/AUTHORS scout/*.conf scout/*.py scout/modules/*.py
+cd scout
+bzip2 --best scout.tar
+
+cd data-gen
+tar cf ../scout-gen.tar gen*
+cd ..
+bzip2 --best scout-gen.tar
