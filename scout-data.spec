@@ -5,7 +5,7 @@
 # norootforbuild
 
 Name:           scout-data
-Version:        2008.06.14
+Version:        0
 Release:        1
 Url:            http://repo.or.cz/w/scout.git
 License:        GPL v2 or later
@@ -16,7 +16,6 @@ Group:          System/Packages
 Summary:        Index Data for Package Scout
 BuildArch:      noarch
 
-# scout-gen.tar.bz2 contains data-gen/gen* scripts
 Source:         scout-gen.tar.bz2
 
 Source10:       bin-suse101.txt.lzma
@@ -37,6 +36,7 @@ Index Data for Package Scout
 %package -n scout-bin-suse101
 Group:          System/Packages
 Summary:        Index Data for Package Scout
+Version:        2008.06.14
 Requires:       scout
 
 %description -n scout-bin-suse101
@@ -45,6 +45,7 @@ Package Scout Index Data - Binaries from SUSE Linux 10.1
 %package -n scout-bin-suse102
 Group:          System/Packages
 Summary:        Index Data for Package Scout
+Version:        2008.06.14
 Requires:       scout
 
 %description -n scout-bin-suse102
@@ -53,6 +54,7 @@ Package Scout Index Data - Binaries from openSUSE 10.2
 %package -n scout-bin-suse103
 Group:          System/Packages
 Summary:        Index Data for Package Scout
+Version:        2008.06.14
 Requires:       scout
 
 %description -n scout-bin-suse103
@@ -61,6 +63,7 @@ Package Scout Index Data - Binaries from openSUSE 10.3
 %package -n scout-bin-suse110
 Group:          System/Packages
 Summary:        Index Data for Package Scout
+Version:        2008.06.14
 Requires:       scout
 
 %description -n scout-bin-suse110
@@ -70,6 +73,7 @@ Package Scout Index Data - Binaries from openSUSE 11.0
 %package -n scout-java-jpackage17
 Group:          System/Packages
 Summary:        Index Data for Package Scout
+Version:        2008.06.14
 Requires:       scout
 
 %description -n scout-java-jpackage17
@@ -78,6 +82,7 @@ Package Scout Index Data - Java classes from Jpackage 1.7
 %package -n scout-java-sle10
 Group:          System/Packages
 Summary:        Index Data for Package Scout
+Version:        2008.06.14
 Requires:       scout
 
 %description -n scout-java-sle10
@@ -86,6 +91,7 @@ Package Scout Index Data - Java classes from SUSE Linux Enterprise 10
 %package -n scout-java-suse101
 Group:          System/Packages
 Summary:        Index Data for Package Scout
+Version:        2008.06.14
 Requires:       scout
 
 %description -n scout-java-suse101
@@ -94,6 +100,7 @@ Package Scout Index Data - Java classes from SUSE Linux 10.1
 %package -n scout-java-suse102
 Group:          System/Packages
 Summary:        Index Data for Package Scout
+Version:        2008.06.14
 Requires:       scout
 
 %description -n scout-java-suse102
@@ -102,6 +109,7 @@ Package Scout Index Data - Java classes from openSUSE 10.2
 %package -n scout-java-suse103
 Group:          System/Packages
 Summary:        Index Data for Package Scout
+Version:        2008.06.14
 Requires:       scout
 
 %description -n scout-java-suse103
@@ -110,6 +118,7 @@ Package Scout Index Data - Java classes from openSUSE 10.3
 %package -n scout-java-suse110
 Group:          System/Packages
 Summary:        Index Data for Package Scout
+Version:        2008.06.14
 Requires:       scout
 
 %description -n scout-java-suse110

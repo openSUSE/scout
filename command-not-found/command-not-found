@@ -9,7 +9,7 @@ install_cmd = "sudo zypper install";
 
 import scout
 sitedir = max(sys.path, key=lambda x: x.endswith('site-packages'))
-sys.path.append(sitedir + "/scout/modules")
+sys.path.append(sitedir + "/scout")
 import bin
 
 term = sys.argv[1]

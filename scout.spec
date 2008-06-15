@@ -18,7 +18,7 @@ Requires:       python
 
 %description
 
-Scout for indexing various properties of packages:
+Package Scout for indexing various properties of packages, like:
 * autoconf macros
 * binaries
 * Java classes
@@ -28,13 +28,13 @@ Scout for indexing various properties of packages:
 
 %build
 python -mcompileall .
-python -O -mcompileall .
 
 %install
 # install python scripts
-mkdir -p $RPM_BUILD_ROOT%{py_sitedir}/%{name}/modules
-cp -a __init__.py{,c,o} $RPM_BUILD_ROOT%{py_sitedir}/%{name}
-cp -a modules/*.py{,c,o} $RPM_BUILD_ROOT%{py_sitedir}/%{name}/modules
+mkdir -p $RPM_BUILD_ROOT%{py_sitedir}/%{name}
+cp -a __init__.py{,c} $RPM_BUILD_ROOT%{py_sitedir}/%{name}
+shopt -s extglob
+cp -a modules/!(foo).py{,c} $RPM_BUILD_ROOT%{py_sitedir}/%{name}
 # install data files
 install -D -m 0644 repos.conf $RPM_BUILD_ROOT%{_datadir}/%{name}/repos.conf
 # create symlinks

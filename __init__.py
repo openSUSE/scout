@@ -1,5 +1,3 @@
-#!/usr/bin/python
-
 import fnmatch
 import os
 import sys
@@ -106,7 +104,7 @@ class ModuleLoader(object):
         sys.path.append(dir)
         for file in os.listdir(dir):
             module_name, ext = os.path.splitext(file)
-            if ext == '.py' and module_name != 'foo':
+            if ext == '.py' and module_name != '__init__':
                 module = __import__(module_name)
                 cls.modules.append(module)
 
@@ -286,7 +284,7 @@ class ScoutCore(object):
 
         ml = ModuleLoader
         sitedir = max(sys.path, key=lambda x: x.endswith('site-packages'))
-        ml.import_from(sitedir + "/scout/modules")
+        ml.import_from(sitedir + "/scout")
 
         clp = CommandLineParser(ml.modules)
         module = clp.parse()
