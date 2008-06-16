@@ -13,6 +13,6 @@ class ScoutModule(object):
         if not p.parse():
             return None
 
-        print p.options
+        print p.get_repos()
         print p.args
         return None

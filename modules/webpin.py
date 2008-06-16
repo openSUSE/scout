@@ -57,7 +57,7 @@ class ScoutModule(object):
                 fileMatches.append(matchedFileNameNode.childNodes.item(0).nodeValue.strip())
             fileMatches = ' '.join(fileMatches)
 
-            result.addrow([name, version, archs, repoURL, fileMatches]);
+            result.add_row([name, version, archs, repoURL, fileMatches]);
 
         return result
 
@@ -70,8 +70,7 @@ class ScoutModule(object):
             return None
 
         term = p.args[0]
-        repo = p.options.repo
-
-        dom = cls.query(term, repo)
-        root = dom.getElementsByTagNameNS('http://datastructures.pkgsearch.benjiweber.co.uk', 'packages').item(0)
-        return cls.fill_result(root)
+        for repo in p.get_repos():
+            dom = cls.query(term, repo)
+            root = dom.getElementsByTagNameNS('http://datastructures.pkgsearch.benjiweber.co.uk', 'packages').item(0)
+            return cls.fill_result(root)

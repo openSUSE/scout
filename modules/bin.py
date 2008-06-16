@@ -44,28 +44,29 @@ class ScoutModule(object):
     def query_repo(cls, repo, term):
         db = scout.Database(cls.name + '-' + repo)
         r = db.execute('SELECT binary, path, package FROM binary LEFT JOIN path ON binary.id_path=path.id_path LEFT JOIN package ON binary.id_pkg=package.id_pkg WHERE binary=?', term)
-        result = scout.Result( ['bin', 'path', 'pkg'], ['binary', 'path', 'package']);
-
         if isinstance(r, list):
-            for rr in r:
-                result.addrow(rr)
+            return map( lambda x: [repo] + list(x), r)
         else:
-           result.addrow(r)
-        return result
+            return [ [repo] + list(r) ]
+        return r
 
     @classmethod
     def main(cls):
 
         p = scout.Parser(cls.name)
-        p.add_repo('zypp')
+        # TODO: do not add zypp repo for now (not implemented)
+        # p.add_repo('zypp')
         p.add_repos_from_datadir()
         if not p.parse():
             return None
-        repo = p.options.repo
-
         term = p.args[0]
 
-        if repo == 'zypp':
-            return cls.query_zypp(term)
-        else:
-            return cls.query_repo(repo, term)
+        result = scout.Result( ['repo', 'bin', 'path', 'pkg'], ['repository', 'binary', 'path', 'package']);
+
+        for repo in p.get_repos():
+            if repo == 'zypp':
+                result.add_rows( cls.query_zypp(term) )
+            else:
+                result.add_rows( cls.query_repo(repo, term) )
+
+        return result
