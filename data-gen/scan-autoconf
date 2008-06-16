@@ -1,0 +1,27 @@
+#!/bin/sh
+
+RPMS_ROOT='/work/CDs/all/full-11.0-x86_64/suse'
+INDEX_FILE='scan-autoconf.out'
+M4_ROOT='m4'
+
+touch $INDEX_FILE
+
+cat $RPMS_ROOT/find-name-rpm | while read RPM; do
+	rm -rf $M4_ROOT
+	mkdir -p $M4_ROOT
+	echo $RPM
+	RPM_BASE_NAME=`basename $RPM .rpm`
+	if [ -z "`rpm2cpio $RPMS_ROOT/$RPM | cpio -t '*.m4'`" ]; then
+		echo No m4 in $RPM_BASE_NAME
+	 	continue
+	fi
+    cd $M4_ROOT
+	rpm2cpio $RPMS_ROOT/$RPM | cpio -i --verbose --make-directories '*.m4'
+    cd ..
+	for M4 in `find $M4_ROOT -name '*.m4' -type f`; do
+		M4_BASE_NAME=`basename $M4 .m4`
+		cat $M4 | grep -v '^#' | grep 'AC_DEFUN' | sed -e 's:^AC_DEFUN\(_ONCE\)*[ ]*([\[]*::' -e 's:[],].*$::' -e "s:^:$RPM_BASE_NAME $M4_BASE_NAME :" >> $INDEX_FILE
+	done
+done
+
+echo Done

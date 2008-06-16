@@ -7,7 +7,6 @@ class ScoutModule(object):
 
     @classmethod
     def main(cls):
-        """ a main method """
 
         p = scout.Parser(cls.name)
         p.add_repos_from_datadir()

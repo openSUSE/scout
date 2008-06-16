@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# set accept path to:
+# /bin /sbin
+# /usr/bin /usr/sbin /usr/games
+# /usr/lib/<name>/bin /usr/lib/<name>/sbin
+# /opt/kde3/bin /opt/kde3/sbin
+# /opt/gnome/bin /opt/gnome/sbin
+ACCEPT_PATH='^\(\|/usr\|/opt/gnome\|/opt/kde3\|/usr/lib/[^/]*\)/s\?bin\|/usr/games'
+
+RPMS_ROOT='/work/CDs/all/full-11.0-x86_64/suse'
+INDEX_FILE='scan-bin.out'
+
+touch $INDEX_FILE
+
+echo "Processing $RPMS_ROOT:"
+
+internalpkgs=`pdb query $relpdb --filter status:internal | tr -d ' ' | tr '\n' ' '`
+
+cat $RPMS_ROOT/find-name-rpm | while read package; do
+    pkg=`basename $package .rpm`
+    echo -n "$pkg ... "
+    if echo "$pkg" | grep -e '-debuginfo$' > /dev/null; then
+        echo 'skipping (debuginfo)'
+        continue;
+    fi
+    if echo "$internalpkgs" | grep "$pkg" > /dev/null; then
+        echo 'skipping (internal)'
+        continue;
+    fi
+    rpm -qlp $RPMS_ROOT/$package | grep $ACCEPT_PATH | while read line; do
+        command=`basename $line`
+        cmdpath=`dirname $line`
+        echo "$command|$cmdpath|$pkg" >> $INDEX_FILE
+    done
+    echo 'OK'
+done
+
+echo 'Done'
