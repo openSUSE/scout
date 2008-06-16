@@ -18,20 +18,61 @@ BuildArch:      noarch
 
 Source:         scout-gen.tar.bz2
 
-Source10:       bin-suse101.txt.lzma
-Source11:       bin-suse102.txt.lzma
-Source12:       bin-suse103.txt.lzma
-Source13:       bin-suse110.txt.lzma
+Source10:       autoconf-suse101.txt.lzma
+Source11:       autoconf-suse102.txt.lzma
+Source12:       autoconf-suse103.txt.lzma
+Source13:       autoconf-suse110.txt.lzma
 
-Source20:       java-jpackage17.txt.lzma
-Source21:       java-sle10.txt.lzma
-Source22:       java-suse101.txt.lzma
-Source23:       java-suse102.txt.lzma
-Source24:       java-suse103.txt.lzma
-Source25:       java-suse110.txt.lzma
+Source20:       bin-suse101.txt.lzma
+Source21:       bin-suse102.txt.lzma
+Source22:       bin-suse103.txt.lzma
+Source23:       bin-suse110.txt.lzma
+
+Source30:       java-jpackage17.txt.lzma
+Source31:       java-sle10.txt.lzma
+Source32:       java-suse101.txt.lzma
+Source33:       java-suse102.txt.lzma
+Source34:       java-suse103.txt.lzma
+Source35:       java-suse110.txt.lzma
 
 %description
 Index Data for Package Scout
+
+%package -n scout-autoconf-suse101
+Group:          System/Packages
+Summary:        Index Data for Package Scout
+Version:        2008.06.16
+Requires:       scout
+
+%description -n scout-autoconf-suse101
+Package Scout Index Data - Autoconf macros from SUSE Linux 10.1
+
+%package -n scout-autoconf-suse102
+Group:          System/Packages
+Summary:        Index Data for Package Scout
+Version:        2008.06.16
+Requires:       scout
+
+%description -n scout-autoconf-suse102
+Package Scout Index Data - Autoconf macros from openSUSE 10.2
+
+%package -n scout-autoconf-suse103
+Group:          System/Packages
+Summary:        Index Data for Package Scout
+Version:        2008.06.16
+Requires:       scout
+
+%description -n scout-autoconf-suse103
+Package Scout Index Data - Autoconf macros from openSUSE 10.3
+
+%package -n scout-autoconf-suse110
+Group:          System/Packages
+Summary:        Index Data for Package Scout
+Version:        2008.06.16
+Requires:       scout
+
+%description -n scout-autoconf-suse110
+Package Scout Index Data - Autoconf macros from openSUSE 11.0
 
 %package -n scout-bin-suse101
 Group:          System/Packages
@@ -68,7 +109,6 @@ Requires:       scout
 
 %description -n scout-bin-suse110
 Package Scout Index Data - Binaries from openSUSE 11.0
-
 
 %package -n scout-java-jpackage17
 Group:          System/Packages
@@ -127,9 +167,11 @@ Package Scout Index Data - Java classes from openSUSE 11.0
 %prep
 %setup -q -c -n data-gen
 cp -a %{SOURCE10} %{SOURCE11} %{SOURCE12} %{SOURCE13} .
-cp -a %{SOURCE20} %{SOURCE21} %{SOURCE22} %{SOURCE23} %{SOURCE24} %{SOURCE25} .
+cp -a %{SOURCE20} %{SOURCE21} %{SOURCE22} %{SOURCE23} .
+cp -a %{SOURCE30} %{SOURCE31} %{SOURCE32} %{SOURCE33} %{SOURCE34} %{SOURCE35} .
 
 %build
+python gen-autoconf.py
 python gen-bin.py
 python gen-java.py
 sh gen
@@ -140,6 +182,22 @@ cp -a *.db $RPM_BUILD_ROOT%{_datadir}/scout
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%files -n scout-autoconf-suse101
+%defattr(-,root,root)
+%{_datadir}/scout/autoconf-suse101*
+
+%files -n scout-autoconf-suse102
+%defattr(-,root,root)
+%{_datadir}/scout/autoconf-suse102*
+
+%files -n scout-autoconf-suse103
+%defattr(-,root,root)
+%{_datadir}/scout/autoconf-suse103*
+
+%files -n scout-autoconf-suse110
+%defattr(-,root,root)
+%{_datadir}/scout/autoconf-suse110*
 
 %files -n scout-bin-suse101
 %defattr(-,root,root)
