@@ -12,7 +12,6 @@ class ScoutModule(object):
         'suse110' : 'openSUSE_110',
         'suse103' : 'openSUSE_103',
         'suse102' : 'openSUSE_102',
-        'suse101' : 'SUSE_Linux_101',
         'factory' : 'SUSE_Factory',
     }
     service_host = 'api.opensuse-community.org'
@@ -65,7 +64,7 @@ class ScoutModule(object):
     def main(cls):
 
         p = scout.Parser(cls.name)
-        p.add_repos(['factory', 'suse110', 'suse103', 'suse102', 'suse101'])
+        p.add_repos(['factory', 'suse110', 'suse103', 'suse102'])
         if not p.parse():
             return None
 
