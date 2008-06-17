@@ -18,15 +18,17 @@ BuildArch:      noarch
 
 Source:         scout-gen.tar.bz2
 
-Source10:       autoconf-suse101.txt.lzma
-Source11:       autoconf-suse102.txt.lzma
-Source12:       autoconf-suse103.txt.lzma
-Source13:       autoconf-suse110.txt.lzma
+Source10:       autoconf-sle10.txt.lzma
+Source11:       autoconf-suse101.txt.lzma
+Source12:       autoconf-suse102.txt.lzma
+Source13:       autoconf-suse103.txt.lzma
+Source14:       autoconf-suse110.txt.lzma
 
-Source20:       bin-suse101.txt.lzma
-Source21:       bin-suse102.txt.lzma
-Source22:       bin-suse103.txt.lzma
-Source23:       bin-suse110.txt.lzma
+Source20:       bin-sle10.txt.lzma
+Source21:       bin-suse101.txt.lzma
+Source22:       bin-suse102.txt.lzma
+Source23:       bin-suse103.txt.lzma
+Source24:       bin-suse110.txt.lzma
 
 Source30:       java-jpackage17.txt.lzma
 Source31:       java-sle10.txt.lzma
@@ -37,6 +39,15 @@ Source35:       java-suse110.txt.lzma
 
 %description
 Index Data for Package Scout
+
+%package -n scout-autoconf-sle10
+Group:          System/Packages
+Summary:        Index Data for Package Scout
+Version:        2008.06.17
+Requires:       scout
+
+%description -n scout-autoconf-sle10
+Package Scout Index Data - Autoconf macros from SUSE Linux Enterprise 10
 
 %package -n scout-autoconf-suse101
 Group:          System/Packages
@@ -73,6 +84,15 @@ Requires:       scout
 
 %description -n scout-autoconf-suse110
 Package Scout Index Data - Autoconf macros from openSUSE 11.0
+
+%package -n scout-bin-sle10
+Group:          System/Packages
+Summary:        Index Data for Package Scout
+Version:        2008.06.17
+Requires:       scout
+
+%description -n scout-bin-suse101
+Package Scout Index Data - Binaries from SUSE Linux Enterprise 10
 
 %package -n scout-bin-suse101
 Group:          System/Packages
@@ -166,8 +186,8 @@ Package Scout Index Data - Java classes from openSUSE 11.0
 
 %prep
 %setup -q -c -n data-gen
-cp -a %{SOURCE10} %{SOURCE11} %{SOURCE12} %{SOURCE13} .
-cp -a %{SOURCE20} %{SOURCE21} %{SOURCE22} %{SOURCE23} .
+cp -a %{SOURCE10} %{SOURCE11} %{SOURCE12} %{SOURCE13} %{SOURCE14} .
+cp -a %{SOURCE20} %{SOURCE21} %{SOURCE22} %{SOURCE23} %{SOURCE14} .
 cp -a %{SOURCE30} %{SOURCE31} %{SOURCE32} %{SOURCE33} %{SOURCE34} %{SOURCE35} .
 
 %build
@@ -182,6 +202,10 @@ cp -a *.db $RPM_BUILD_ROOT%{_datadir}/scout
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%files -n scout-autoconf-sle10
+%defattr(-,root,root)
+%{_datadir}/scout/autoconf-suse101*
 
 %files -n scout-autoconf-suse101
 %defattr(-,root,root)
@@ -198,6 +222,10 @@ rm -rf $RPM_BUILD_ROOT
 %files -n scout-autoconf-suse110
 %defattr(-,root,root)
 %{_datadir}/scout/autoconf-suse110*
+
+%files -n scout-bin-sle10
+%defattr(-,root,root)
+%{_datadir}/scout/bin-suse101*
 
 %files -n scout-bin-suse101
 %defattr(-,root,root)
