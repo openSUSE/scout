@@ -8,7 +8,7 @@ class ScoutModule(object):
     @classmethod
     def query(cls, repo, term):
         db = scout.Database(cls.name + '-' + repo)
-        r = db.execute('SELECT package, m4, macro FROM macros LEFT JOIN m4s ON macros.id_m4=m4s.id_m4 LEFT JOIN packages ON m4s.id_pkg=packages.id_pkg WHERE macro LIKE ?', term)
+        r = db.execute('SELECT package, m4, macro FROM macros LEFT JOIN m4s ON macros.id_m4=m4s.id_m4 LEFT JOIN packages ON m4s.id_pkg=packages.id_pkg WHERE macro LIKE ?', '%%%s%%' % term)
         if isinstance(r, list):
             return map( lambda x: [repo] + list(x), r)
         else:

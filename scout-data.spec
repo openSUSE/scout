@@ -91,7 +91,7 @@ Summary:        Index Data for Package Scout
 Version:        2008.06.17
 Requires:       scout
 
-%description -n scout-bin-suse101
+%description -n scout-bin-sle10
 Package Scout Index Data - Binaries from SUSE Linux Enterprise 10
 
 %package -n scout-bin-suse101
@@ -205,7 +205,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n scout-autoconf-sle10
 %defattr(-,root,root)
-%{_datadir}/scout/autoconf-suse101*
+%{_datadir}/scout/autoconf-sle10*
 
 %files -n scout-autoconf-suse101
 %defattr(-,root,root)
@@ -225,7 +225,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n scout-bin-sle10
 %defattr(-,root,root)
-%{_datadir}/scout/bin-suse101*
+%{_datadir}/scout/bin-sle10*
 
 %files -n scout-bin-suse101
 %defattr(-,root,root)
