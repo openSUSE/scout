@@ -5,7 +5,7 @@
 # norootforbuild
 
 Name:           scout
-Version:        0.0.1
+Version:        0.0.2
 Release:        1
 Url:            http://repo.or.cz/w/scout.git
 License:        GPL v2 or later
@@ -13,8 +13,16 @@ Group:          System/Packages
 Summary:        Package Scout
 Source:         %{name}.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
-BuildRequires:  python python-xml
+BuildRequires:  python
 Requires:       python
+
+%if 0%{?suse_version}
+BuildRequires:  python-xml
+%endif
+
+%if 0%{?fedora_version} || 0%{?rhel_version} || 0%{?centos_version}
+%define py_sitedir %(python -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")
+%endif
 
 %description
 
@@ -41,6 +49,8 @@ install -D -m 0644 repos.conf $RPM_BUILD_ROOT%{_datadir}/%{name}/repos.conf
 install -D -m 0755 scout.py $RPM_BUILD_ROOT%{_bindir}/%{name}
 ln -s %{name} $RPM_BUILD_ROOT%{_bindir}/%{name}csv
 ln -s %{name} $RPM_BUILD_ROOT%{_bindir}/%{name}xml
+# install bash completion
+install -D -m 0644 scout.sh $RPM_BUILD_ROOT%{_sysconfdir}/bash_completion.d/scout
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -51,5 +61,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/%{name}*
 %{py_sitedir}/%{name}
 %{_datadir}/%{name}
+%{_sysconfdir}/bash_completion.d/*
 
 %changelog

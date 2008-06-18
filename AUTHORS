@@ -2,8 +2,11 @@ Developers:
 Pavol Rusnak <stick@gk2.sk>
 Michal Vyskocil <mvyskocil@suse.cz>
 
-Index data for Java by:
+Index data for Java:
 Ales Nosek <anosek@suse.cz>
 
 Webpin code inspired by:
 Pascal Bleser <guru@unixtech.be>
+
+Bash completion:
+Marek Stopka <mstopka@opensuse.org>
