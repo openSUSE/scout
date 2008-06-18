@@ -101,7 +101,7 @@ class ModuleLoader(object):
     def _import(cls, dir):
         if not os.path.isdir(dir):
             raise AttributeError("%s is not a directory" % dir)
-        sys.path.append(dir)
+        sys.path.insert(0, dir)
         for file in os.listdir(dir):
             module_name, ext = os.path.splitext(file)
             if ext == '.py' and module_name != '__init__':
