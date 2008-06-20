@@ -24,6 +24,11 @@ BuildRequires:  python-xml
 %define py_sitedir %(python -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")
 %endif
 
+# workaround conflicting readline packages
+%if 0%{?suse_version} <= 1020
+BuildRequires:  readline
+%endif
+
 %description
 
 Package Scout for indexing various properties of packages, like:
