@@ -44,6 +44,8 @@ class ScoutModule(object):
     def query_repo(cls, repo, term):
         db = scout.Database(cls.name + '-' + repo)
         r = db.execute('SELECT binary, path, package FROM binary LEFT JOIN path ON binary.id_path=path.id_path LEFT JOIN package ON binary.id_pkg=package.id_pkg WHERE binary=?', term)
+        if r == None:
+            return None
         if isinstance(r, list):
             return map( lambda x: [repo] + list(x), r)
         else:

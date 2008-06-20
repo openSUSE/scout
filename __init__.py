@@ -111,10 +111,16 @@ class ModuleLoader(object):
 class Database(object):
 
     def __init__(self, dbname):
-        self.conn = sqlite3.connect(Config.data_path + '/' + dbname + '.db')
+        dbfile = Config.data_path + '/' + dbname + Config.data_suffix
+        try:
+            self.conn = sqlite3.connect(dbfile)
+        except:
+            print "Could not open database file '%s'" % dbfile
+            self.conn = None
 
     def __del__(self):
-        self.conn.close()
+        if self.conn != None:
+            self.conn.close()
 
     def _clever_query_result(self, c):
         ret = list()
@@ -147,6 +153,9 @@ class Database(object):
         (3) else returns a list of tuples
         """
 
+        if self.conn == None:
+            return None
+
         # it is not possible to use both a args and a keyword args
         assert(args!=None or kwargs!=None)
 
@@ -174,12 +183,14 @@ class Result(object):
 
     @classmethod
     def add_row(cls, row):
-        cls.rows.append(list(row))
+        if row != None:
+            cls.rows.append(list(row))
 
     @classmethod
     def add_rows(cls, rows):
-        for row in rows:
-            cls.rows.append(list(row))
+        if rows != None and isinstance(rows, list):
+            for row in rows:
+                cls.rows.append(list(row))
 
     @classmethod
     def gentable(cls):

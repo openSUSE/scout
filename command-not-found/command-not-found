@@ -1,9 +1,11 @@
 #!/usr/bin/python
 import sys
 
+EX_NOTFOUND = 127
+
 if len(sys.argv) < 2:
     print 'Do not run this handler directly ...'
-    sys.exit(127)
+    sys.exit(EX_NOTFOUND)
 
 install_cmd = "sudo zypper install";
 
@@ -13,6 +15,20 @@ sys.path.append(sitedir + "/scout")
 import bin
 
 term = sys.argv[1]
+if len(sys.argv) > 2:
+    repo = sys.argv[2]
+    rows = bin.ScoutModule.query_repo(repo, term)
+else:
+    rows = bin.ScoutModule.query_zypp(term)
 
-result = bin.ScoutModule.query_zypp(term)
+if rows == None or len(rows) == 0:
+    sys.exit(EX_NOTFOUND)
 
+print
+print "The program '%s' can be found in the following package(s):" % term
+for row in rows:
+    print "  * %s (%s/%s)" % (row[3], row[2], row[1])
+print
+print 'Try:', install_cmd
+print
+sys.exit(EX_NOTFOUND)

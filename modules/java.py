@@ -9,6 +9,8 @@ class ScoutModule(object):
     def query(cls, repo, term):
         db = scout.Database(cls.name + '-' + repo)
         r = db.execute('SELECT package, jar, class FROM classes LEFT JOIN jars ON classes.id_jar=jars.id_jar LEFT JOIN packages ON jars.id_pkg=packages.id_pkg WHERE class LIKE ?', '%%%s%%' % term)
+        if r == None:
+            return None
         if isinstance(r, list):
             return map( lambda x: [repo] + list(x), r)
         else:
