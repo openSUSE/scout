@@ -24,11 +24,13 @@ Source12:       autoconf-suse102.txt.lzma
 Source13:       autoconf-suse103.txt.lzma
 Source14:       autoconf-suse110.txt.lzma
 
-Source20:       bin-sle10.txt.lzma
-Source21:       bin-suse101.txt.lzma
-Source22:       bin-suse102.txt.lzma
-Source23:       bin-suse103.txt.lzma
-Source24:       bin-suse110.txt.lzma
+Source20:       bin-packman103.txt.lzma
+Source21:       bin-packman110.txt.lzma
+Source22:       bin-sle10.txt.lzma
+Source23:       bin-suse101.txt.lzma
+Source24:       bin-suse102.txt.lzma
+Source25:       bin-suse103.txt.lzma
+Source26:       bin-suse110.txt.lzma
 
 Source30:       java-jpackage17.txt.lzma
 Source31:       java-sle10.txt.lzma
@@ -84,6 +86,24 @@ Requires:       scout
 
 %description -n scout-autoconf-suse110
 Package Scout Index Data - Autoconf macros from openSUSE 11.0
+
+%package -n scout-bin-packman103
+Group:          System/Packages
+Summary:        Index Data for Package Scout
+Version:        2008.06.20
+Requires:       scout
+
+%description -n scout-bin-packman103
+Package Scout Index Data - Binaries from Packman for openSUSE 10.3
+
+%package -n scout-bin-packman110
+Group:          System/Packages
+Summary:        Index Data for Package Scout
+Version:        2008.06.20
+Requires:       scout
+
+%description -n scout-bin-packman110
+Package Scout Index Data - Binaries from Packman for openSUSE 11.0
 
 %package -n scout-bin-sle10
 Group:          System/Packages
@@ -187,7 +207,7 @@ Package Scout Index Data - Java classes from openSUSE 11.0
 %prep
 %setup -q -c -n data-gen
 cp -a %{SOURCE10} %{SOURCE11} %{SOURCE12} %{SOURCE13} %{SOURCE14} .
-cp -a %{SOURCE20} %{SOURCE21} %{SOURCE22} %{SOURCE23} %{SOURCE14} .
+cp -a %{SOURCE20} %{SOURCE21} %{SOURCE22} %{SOURCE23} %{SOURCE24} %{SOURCE25} %{SOURCE26} .
 cp -a %{SOURCE30} %{SOURCE31} %{SOURCE32} %{SOURCE33} %{SOURCE34} %{SOURCE35} .
 
 %build
@@ -222,6 +242,14 @@ rm -rf $RPM_BUILD_ROOT
 %files -n scout-autoconf-suse110
 %defattr(-,root,root)
 %{_datadir}/scout/autoconf-suse110*
+
+%files -n scout-bin-packman103
+%defattr(-,root,root)
+%{_datadir}/scout/bin-packman103*
+
+%files -n scout-bin-packman110
+%defattr(-,root,root)
+%{_datadir}/scout/bin-packman110*
 
 %files -n scout-bin-sle10
 %defattr(-,root,root)
