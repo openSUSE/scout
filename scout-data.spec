@@ -39,6 +39,11 @@ Source33:       java-suse102.txt.lzma
 Source34:       java-suse103.txt.lzma
 Source35:       java-suse110.txt.lzma
 
+Source40:       python-sle10.txt.lzma
+Source41:       python-suse102.txt.lzma
+Source42:       python-suse103.txt.lzma
+Source43:       python-suse110.txt.lzma
+
 %description
 Index Data for Package Scout
 
@@ -204,16 +209,63 @@ Requires:       scout
 %description -n scout-java-suse110
 Package Scout Index Data - Java classes from openSUSE 11.0
 
+%package -n scout-python-sle10
+Group:          System/Packages
+Summary:        Index Data for Package Scout
+Version:        2008.06.22
+Requires:       scout
+
+%description -n scout-java-sle10
+Package Scout Index Data - Python modules from SUSE Linux Enterprise 10
+
+%package -n scout-python-suse101
+Group:          System/Packages
+Summary:        Index Data for Package Scout
+Version:        2008.06.22
+Requires:       scout
+
+%description -n scout-java-suse101
+Package Scout Index Data - Python modules from SUSE Linux 10.1
+
+%package -n scout-python-suse102
+Group:          System/Packages
+Summary:        Index Data for Package Scout
+Version:        2008.06.22
+Requires:       scout
+
+%description -n scout-java-suse102
+Package Scout Index Data - Python modules from openSUSE 10.2
+
+%package -n scout-python-suse103
+Group:          System/Packages
+Summary:        Index Data for Package Scout
+Version:        2008.06.22
+Requires:       scout
+
+%description -n scout-java-suse103
+Package Scout Index Data - Python modules from openSUSE 10.3
+
+%package -n scout-python-suse110
+Group:          System/Packages
+Summary:        Index Data for Package Scout
+Version:        2008.06.22
+Requires:       scout
+
+%description -n scout-java-suse110
+Package Scout Index Data - Python modules from openSUSE 11.0
+
 %prep
 %setup -q -c -n data-gen
 cp -a %{SOURCE10} %{SOURCE11} %{SOURCE12} %{SOURCE13} %{SOURCE14} .
 cp -a %{SOURCE20} %{SOURCE21} %{SOURCE22} %{SOURCE23} %{SOURCE24} %{SOURCE25} %{SOURCE26} .
 cp -a %{SOURCE30} %{SOURCE31} %{SOURCE32} %{SOURCE33} %{SOURCE34} %{SOURCE35} .
+cp -a %{SOURCE40} %{SOURCE41} %{SOURCE42} %{SOURCE43} .
 
 %build
 python gen-autoconf.py
 python gen-bin.py
 python gen-java.py
+python gen-python.py
 sh gen
 
 %install
@@ -294,5 +346,25 @@ rm -rf $RPM_BUILD_ROOT
 %files -n scout-java-suse110
 %defattr(-,root,root)
 %{_datadir}/scout/java-suse110*
+
+%files -n scout-python-sle10
+%defattr(-,root,root)
+%{_datadir}/scout/python-sle10*
+
+%files -n scout-python-suse101
+%defattr(-,root,root)
+%{_datadir}/scout/python-suse101*
+
+%files -n scout-python-suse102
+%defattr(-,root,root)
+%{_datadir}/scout/python-suse102*
+
+%files -n scout-python-suse103
+%defattr(-,root,root)
+%{_datadir}/scout/python-suse103*
+
+%files -n scout-python-suse110
+%defattr(-,root,root)
+%{_datadir}/scout/python-suse110*
 
 %changelog
