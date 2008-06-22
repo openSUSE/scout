@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# 
+# Usage: write_row RPM_FILE ANALYZED_FILE INDEX_FILE STANDARD_DIRS_PATTERN
+# $1 - name of rpm file
+# $2 - name of analyzed file
+# $3 - name of output file
+# $4 - standard dirs_pattern
+#
+# This function analyze the file and write a row to the index file
+function write_row() {
+
+    local rpm_file perl_file index_file perl_module
+
+    rpm_file=${1}
+    perl_file=${2}
+    index_file=${3}
+    standard_dirs_pattern=${4}
+
+    # extract the name of the module
+    perl_module=$(echo ${perl_file##*/} | sed "s#/#::#g;s/\.pm$//")
+
+    echo "${rpm_file} ${perl_module}" >> ${index_file}
+}
+
+source scan_lib
+
+function scan_perl() {
+
+   local rpms_root index_file
+
+   rpms_root=${1}
+   index_file=${2}
+
+   scan ${rpms_root} ${index_file} "*.pm" ""
+    
+}
+
+
+scan_perl /work/CDs/all/full-11.0-x86_64/suse $(pwd)/perl-suse110.txt
+scan_perl /work/CDs/all/full-10.3-x86_64/suse $(pwd)/perl-suse103.txt
+scan_perl /work/CDs/all/full-10.2-x86_64/suse $(pwd)/perl-suse102.txt
+scan_perl /work/CDs/all/full-11.2-x86_64/suse $(pwd)/perl-suse101.txt
+scan_perl /work/CDs/all/full-sles10-x86_64/suse $(pwd)/perl-sle10.txt
