@@ -111,7 +111,11 @@ class ModuleLoader(object):
 class Database(object):
 
     def __init__(self, dbname):
-        dbfile = Config.data_path + '/' + dbname + Config.data_suffix
+        if dbname == ':memory:':
+            dbfile = dbname
+        else:
+            dbfile = Config.data_path + '/' + dbname + Config.data_suffix
+
         try:
             self.conn = sqlite3.connect(dbfile)
         except:
