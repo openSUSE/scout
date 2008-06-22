@@ -1,0 +1,71 @@
+#!/bin/bash
+
+# A functions for scanning
+# (c) 2008 Michal Vyskocil
+#
+
+# ${1} - temp dir
+function clean() {
+    if [[ -d ${1} ]]; then
+        rm -rf ${1}
+    fi
+}
+
+# A common function for scanning of modules
+# Usage: scan RPMS_ROOT INDEX_FILE FILE_PATTERN STANDARD_DIRS_PATTERN
+# $1 - directory with rpms
+# $2 - name of index file
+# $3 - file pattern to find
+# $4 - standard dirs_pattern
+function scan() {
+
+    local rpms_root index_file tmp rpm_base_name standard_dirs_pattern
+
+    rpms_root=${1}
+    index_file=${2}
+    file_pattern=${3}
+    standard_dirs_pattern=${4}
+
+    rpm -rf ${index_file}
+    touch ${index_file}
+
+    if [[ -f ${index_file} ]]; then rm ${index_file}; fi
+
+    cat ${rpms_root}/find-name-rpm | while read RPM; do
+
+        tmp=$(mktemp --directory -t scout_scan.XXXXXXX)
+        trap "clean ${tmp}" INT
+        
+        rpm_base_name=$(basename ${RPM})
+        if [[ -z "$(rpm2cpio ${rpms_root}/${RPM} | cpio -t "${file_pattern}")" ]]; then
+            continue
+        fi
+
+        pushd ${tmp}
+
+        rpm2cpio ${rpms_root}/${RPM} | cpio -i --verbose --make-directories "${file_pattern}"
+
+        for file in $(find . -iname "${file_pattern}" -type 'f'); do
+
+            if [[ ! -z "${standard_dirs_pattern}" ]]; then
+                if [[ ! $(echo ${file} | grep ${standard_dirs_pattern}) ]]; then
+                    echo The ${file} is not in some of standard modules dir ... skipping
+                    continue
+                fi
+            fi
+
+            RPM=${RPM##*/}  # delete a path before
+            RPM=${RPM%%.*}  # delete an extension
+            write_row ${RPM} ${file} ${index_file} ${standard_dirs_pattern}
+
+        done
+
+        popd
+
+        clean ${tmp}
+
+    done
+
+    rm ${index_file}.lzma
+    lzma ${index_file}
+}
