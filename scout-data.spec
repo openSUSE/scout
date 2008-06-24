@@ -40,9 +40,10 @@ Source34:       java-suse103.txt.lzma
 Source35:       java-suse110.txt.lzma
 
 Source40:       python-sle10.txt.lzma
-Source41:       python-suse102.txt.lzma
-Source42:       python-suse103.txt.lzma
-Source43:       python-suse110.txt.lzma
+Source41:       python-suse101.txt.lzma
+Source42:       python-suse102.txt.lzma
+Source43:       python-suse103.txt.lzma
+Source44:       python-suse110.txt.lzma
 
 %description
 Index Data for Package Scout
@@ -259,7 +260,7 @@ Package Scout Index Data - Python modules from openSUSE 11.0
 cp -a %{SOURCE10} %{SOURCE11} %{SOURCE12} %{SOURCE13} %{SOURCE14} .
 cp -a %{SOURCE20} %{SOURCE21} %{SOURCE22} %{SOURCE23} %{SOURCE24} %{SOURCE25} %{SOURCE26} .
 cp -a %{SOURCE30} %{SOURCE31} %{SOURCE32} %{SOURCE33} %{SOURCE34} %{SOURCE35} .
-cp -a %{SOURCE40} %{SOURCE41} %{SOURCE42} %{SOURCE43} .
+cp -a %{SOURCE40} %{SOURCE41} %{SOURCE42} %{SOURCE43} %{SOURCE44} .
 
 %build
 python gen-autoconf.py
