@@ -62,7 +62,23 @@ CREATE INDEX modules_module_idx ON modules(module);"""
         self.assertEqual(self.term.split('-')[0], res[0])
         self.assertEqual(self.term, res[1])
 
+    def testExecutePlaceholders1(self):
+        sql = self.sql_begin + " WHERE module LIKE ?"
 
+        res = self.database.execute(sql, '%'+self.term+'%')
+        self._check_simple_results_row(res)
+
+        self.assertEqual(self.term.split('-')[0], res[0])
+        self.assertEqual(self.term, res[1])
+        
+    def testExecutePlaceholders2(self):
+        sql = self.sql_begin + " WHERE module LIKE :module"
+
+        res = self.database.execute(sql, module='%' + self.term + '%')
+        self._check_simple_results_row(res)
+
+        self.assertEqual(self.term.split('-')[0], res[0])
+        self.assertEqual(self.term, res[1])
 
 
 suiteDatabase = unittest.makeSuite(SimpleDatabaseTestCase, 'test')
