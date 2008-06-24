@@ -65,7 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
-%doc AUTHORS README doc/scout.html
+%doc AUTHORS README doc/scout.html doc/scout.pdf
 %{_bindir}/%{name}*
 %{py_sitedir}/%{name}
 %{_datadir}/%{name}
