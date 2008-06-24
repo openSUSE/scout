@@ -1,4 +1,4 @@
 #!/usr/bin/python
 import scout
 
-scout.ScoutCore.run()
+print scout.ScoutCore.run()

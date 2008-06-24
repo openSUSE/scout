@@ -198,36 +198,41 @@ class Result(object):
 
     @classmethod
     def gentable(cls):
+        ret = ""
         col_width = map(len, map(str, cls.cols2))
         for i in range(0,len(cls.cols2)):
           for row in cls.rows:
             if len(str(row[i])) > col_width[i]:
                 col_width[i] = len(str(row[i]))
-        print ' ' + ' | '.join(map(str.ljust, cls.cols2, col_width))
-        print '-' + '-+-'.join(map(lambda c: '-' * c, col_width)) + '-'
+        ret += ' ' + ' | '.join(map(str.ljust, cls.cols2, col_width)) + '\n'
+        ret += '-' + '-+-'.join(map(lambda c: '-' * c, col_width)) + '-' + '\n'
         for row in cls.rows:
-            print ' ' + ' | '.join(map(str.ljust, map(str, row), col_width))
+            ret += ' ' + ' | '.join(map(str.ljust, map(str, row), col_width)) + '\n'
+        return ret
 
     @classmethod
     def gencsv(cls):
-        print '"' + '";"'.join(map(lambda s: s.replace('"', '""'), cls.cols1)) + '"'
-        print '"' + '";"'.join(map(lambda s: s.replace('"', '""'), cls.cols2)) + '"'
+        ret = ""
+        ret += '"' + '";"'.join(map(lambda s: s.replace('"', '""'), cls.cols1)) + '"' + '\n'
+        ret += '"' + '";"'.join(map(lambda s: s.replace('"', '""'), cls.cols2)) + '"' + '\n'
         for row in cls.rows:
-            print '"' + '";"'.join(map(lambda s: s.replace('"', '""'), row)) + '"'
+            ret += '"' + '";"'.join(map(lambda s: s.replace('"', '""'), row)) + '"' + '\n'
+        return ret
 
     @classmethod
     def genxml(cls):
-        print '<result>'
-        print '  <head>'
+        ret  = '<result>' + '\n'
+        ret += '  <head>' + '\n'
         for i in range(0, len(cls.cols1)):
-            print '    <%s>%s</%s>' % (cls.cols1[i], cls.cols2[i], cls.cols1[i])
-        print '  </head>'
+            ret += '    <%s>%s</%s>' % (cls.cols1[i], cls.cols2[i], cls.cols1[i]) + '\n'
+        ret += '  </head>' + '\n'
         for row in cls.rows:
-          print '  <row>'
+          ret += '  <row>' + '\n'
           for i in range(0,len(cls.cols1)):
-              print '    <%s>%s</%s>' % (cls.cols1[i], row[i], cls.cols1[i])
-          print '  </row>'
-        print '</result>'
+              ret += '    <%s>%s</%s>' % (cls.cols1[i], row[i], cls.cols1[i]) + '\n'
+          ret += '  </row>' + '\n'
+        ret += '</result>' + '\n'
+        return ret
 
 
 class Parser(object):
@@ -307,8 +312,8 @@ class ScoutCore(object):
 
         if result != None:
             if prog == 'scoutcsv':
-                result.gencsv()
+                return result.gencsv()
             elif prog == 'scoutxml':
-                result.genxml()
+                return result.genxml()
             else:
-                result.gentable()
+                return result.gentable()
