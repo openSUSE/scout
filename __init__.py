@@ -161,12 +161,12 @@ class Database(object):
             return None
 
         # it is not possible to use both a args and a keyword args
-        assert(args!=None or kwargs!=None)
+        assert(len(args) == 0 or len(kwargs) == 0)
 
         c = self.conn.cursor()
-        if args==None and kwargs==None:
+        if len(args) == 0 and len(kwargs) == 0:
             c.execute(query)
-        elif args!=None:
+        elif len(args) != 0:
             c.execute(query, args)
         else:
             c.execute(query, kwargs)
