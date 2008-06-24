@@ -215,7 +215,7 @@ Summary:        Index Data for Package Scout
 Version:        2008.06.22
 Requires:       scout
 
-%description -n scout-java-sle10
+%description -n scout-python-sle10
 Package Scout Index Data - Python modules from SUSE Linux Enterprise 10
 
 %package -n scout-python-suse101
@@ -224,7 +224,7 @@ Summary:        Index Data for Package Scout
 Version:        2008.06.22
 Requires:       scout
 
-%description -n scout-java-suse101
+%description -n scout-python-suse101
 Package Scout Index Data - Python modules from SUSE Linux 10.1
 
 %package -n scout-python-suse102
@@ -233,7 +233,7 @@ Summary:        Index Data for Package Scout
 Version:        2008.06.22
 Requires:       scout
 
-%description -n scout-java-suse102
+%description -n scout-python-suse102
 Package Scout Index Data - Python modules from openSUSE 10.2
 
 %package -n scout-python-suse103
@@ -242,7 +242,7 @@ Summary:        Index Data for Package Scout
 Version:        2008.06.22
 Requires:       scout
 
-%description -n scout-java-suse103
+%description -n scout-python-suse103
 Package Scout Index Data - Python modules from openSUSE 10.3
 
 %package -n scout-python-suse110
@@ -251,7 +251,7 @@ Summary:        Index Data for Package Scout
 Version:        2008.06.22
 Requires:       scout
 
-%description -n scout-java-suse110
+%description -n scout-python-suse110
 Package Scout Index Data - Python modules from openSUSE 11.0
 
 %prep

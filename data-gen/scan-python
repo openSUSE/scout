@@ -41,5 +41,5 @@ function scan_python () {
 scan_python /work/CDs/all/full-11.0-x86_64/suse $(pwd)/python-suse110.txt
 scan_python /work/CDs/all/full-10.3-x86_64/suse $(pwd)/python-suse103.txt
 scan_python /work/CDs/all/full-10.2-x86_64/suse $(pwd)/python-suse102.txt
-scan_python /work/CDs/all/full-11.2-x86_64/suse $(pwd)/python-suse101.txt
+scan_python /work/CDs/all/full-10.1-x86_64/suse $(pwd)/python-suse101.txt
 scan_python /work/CDs/all/full-sles10-x86_64/suse $(pwd)/python-sle10.txt
