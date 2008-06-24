@@ -1,0 +1,208 @@
+.\"     Title: scout
+.\"    Author: Pavol Rusnak <stick@gk2.sk>
+.\" Generator: DocBook XSL Stylesheets v1.73.1 <http://docbook.sf.net/>
+.\"      Date: 06/24/2008
+.\"    Manual: http://en.opensuse.org/Scout
+.\"    Source: http://repo.or.cz/w/scout.git 0.0.2
+.\"
+.TH "SCOUT" "1" "06/24/2008" "http://repo\.or\.cz/w/scout\.g" "http://en\.opensuse\.org/Scout"
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.SH "NAME"
+scout - A Package Scout
+.SH "SYNOPSIS"
+.HP 6
+\fBscout\fR {module} {search_term} [module_options]
+.SH "OPTIONS"
+.PP
+The following options are available:
+.PP
+\fBmodule\fR
+.RS 4
+The respective module to search for\. The following modules are available:
+.PP
+autoconf
+.RS 4
+Search for autoconf macros inside m4 files\.
+.RE
+.PP
+bin
+.RS 4
+Search for binaries contained in packages\.
+.RE
+.PP
+java
+.RS 4
+Search for Java classes inside packaged JAR files\.
+.RE
+.PP
+webpin
+.RS 4
+Search in packages using the Webpin webservice\.
+.RE
+.RE
+.PP
+\fBsearch_term\fR
+.RS 4
+The term you are looking for\.
+.RE
+.PP
+\fBmodule_options\fR
+.RS 4
+Additional module options\. At the moment these are:
+.PP
+\fB\-\-listrepos\fR
+.RS 4
+list all available repositories
+.RE
+.PP
+\fB\-\-repos\fR
+.RS 4
+select a repository to search (use a name from the
+\fB\-\-listrepos\fR
+output)
+.RE
+.RE
+.SH "DESCRIPTION"
+.PP
+Scout is a tool to look for uninstalled packages\. For example, which binary does a package provide, which Java classes are available and which autoconf macros does a package contain\.
+.PP
+To search for your requested term, you need index data files which are a preconfigured SQLite\ 3 database\. You have to install these in order to get your search request done\. Use the
+\fIScout OBS data repository\fR\&[1]
+to get additional index files\. See the
+\fIWiki page about Scout\fR\&[2]
+for more information\.
+.SH "EXAMPLE 1: SEARCH FOR EXECUTABLES"
+.PP
+For example, to search for a
+\fIsdl\-config\fR
+executable, you need the
+bin
+module:
+.sp
+.RS 4
+.nf
+$ \fBscout\fR bin sdl\-config
+.fi
+.RE
+.PP
+You get the following output:
+.sp
+.RS 4
+.nf
+ repository | binary     | path                        | package
+\-\-\-\-\-\-\-\-\-\-\-\-+\-\-\-\-\-\-\-\-\-\-\-\-+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+ suse110    | sdl\-config | /usr/bin                    | SDL\-devel
+ suse110    | sdl\-config | /usr/lib/baselibs\-32bit/bin | SDL\-devel\-32bit
+.fi
+.RE
+.SH "EXAMPLE 2: SEARCH FOR JAVA PACKAGES"
+.PP
+If you want to search for a Java package, use the following code:
+.sp
+.RS 4
+.nf
+$ \fBscout\fR java org\.apache\.xml\.serialize\.Serializer
+.fi
+.RE
+.PP
+You get:
+.sp
+.RS 4
+.nf
+ repository | package          | jar                 | class
+\-\-\-\-\-\-\-\-\-\-\-\-+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+ jpackage17 | jboss4\-testsuite | xerces\.jar          | org\.apache\.xml\.serialize\.Serializer
+ jpackage17 | jboss4\-testsuite | xerces\.jar          | org\.apache\.xml\.serialize\.SerializerFactory
+ jpackage17 | jboss4\-testsuite | xerces\.jar          | org\.apache\.xml\.serialize\.SerializerFactoryImpl
+ jpackage17 | xerces\-j2        | xerces\-j2\-2\.9\.0\.jar | org\.apache\.xml\.serialize\.Serializer
+ jpackage17 | xerces\-j2        | xerces\-j2\-2\.9\.0\.jar | org\.apache\.xml\.serialize\.SerializerFactory
+ jpackage17 | xerces\-j2        | xerces\-j2\-2\.9\.0\.jar | org\.apache\.xml\.serialize\.SerializerFactoryImpl
+.fi
+.RE
+.SH "EXAMPLE 3: SEARCH THROUGH WEBPIN"
+.PP
+If you want to use the
+\fIopenSUSE Search Webservice\fR\&[3]\(emalso known as
+\(lqWebpin\(rq\(emuse the following line:
+.sp
+.RS 4
+.nf
+$ \fBscout\fR webpin docbook_5\.xml
+.fi
+.RE
+.PP
+You get:
+.sp
+.RS 4
+.nf
+ package   | version | arch   | repository URL                                                                    | matched files
+\-\-\-\-\-\-\-\-\-\-\-+\-\-\-\-\-\-\-\-\-+\-\-\-\-\-\-\-\-+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-+\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-\-
+ docbook_5 | 5\.0     | noarch | http://download\.opensuse\.org/distribution/SL\-OSS\-factory/inst\-source/suse         | /etc/xml/docbook_5\.xml
+ docbook_5 | 5\.0CR7  | noarch | http://download\.opensuse\.org/repositories/home:/thomas\-schraitle/openSUSE_Factory | /etc/xml/docbook_5\.xml
+ docbook_5 | 5\.0     | noarch | http://download\.opensuse\.org/repositories/XML/xml\-factory                         | /etc/xml/docbook_5\.xml
+.fi
+.RE
+.SH "BASH COMPLETION"
+.PP
+If you like to complete your options automatically through Bash, insert the following lines into your
+\fI~/\.bashrc\fR
+or
+\fI/etc/bash\.bashrc\fR:
+.sp
+.RS 4
+.nf
+if [ \-f /etc/bash_completion\.d/scout ]; then
+  \. /etc/bash_completion\.d/scout
+fi
+.fi
+.RE
+.SH "AUTHORS"
+.PP
+\fBPavol Rusnak\fR <\&stick@gk2\.sk\&>
+.sp -1n
+.IP "" 4
+Developer
+.PP
+\fBMichal Vyskocil\fR <\&mvyskocil@suse\.cz\&>
+.sp -1n
+.IP "" 4
+Developer
+.PP
+\fBAles Nosek\fR <\&anosek@suse\.cz\&>
+.sp -1n
+.IP "" 4
+Index data for Java
+.PP
+\fBPascal Bleser\fR <\&guru@unixtech\.be\&>
+.sp -1n
+.IP "" 4
+Webpin code
+.PP
+\fBMarek Stopka\fR <\&mstopka@opensuse\.org\&>
+.sp -1n
+.IP "" 4
+Bash completion
+.PP
+\fBThomas Schraitle\fR <\&toms@suse\.de\&>
+.sp -1n
+.IP "" 4
+Docbook documentation
+.SH "NOTES"
+.IP " 1." 4
+Scout OBS data repository
+.RS 4
+\%http://download.opensuse.org/repositories/home:/prusnak:/scout/data
+.RE
+.IP " 2." 4
+Wiki page about Scout
+.RS 4
+\%http://en.opensuse.org/Scout
+.RE
+.IP " 3." 4
+openSUSE Search Webservice
+.RS 4
+\%http://software.opensuse.org/search
+.RE

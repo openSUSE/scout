@@ -40,6 +40,7 @@ Package Scout for indexing various properties of packages, like:
 %setup -q -n %{name}
 
 %build
+# compile scripts
 python -mcompileall .
 
 %install
@@ -56,16 +57,19 @@ ln -s %{name} $RPM_BUILD_ROOT%{_bindir}/%{name}csv
 ln -s %{name} $RPM_BUILD_ROOT%{_bindir}/%{name}xml
 # install bash completion
 install -D -m 0644 scout.sh $RPM_BUILD_ROOT%{_sysconfdir}/bash_completion.d/scout
+# install manpage
+install -D -m 0644 doc/scout.1 $RPM_BUILD_ROOT%{_mandir}/man1/scout.1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
-%doc AUTHORS README
+%doc AUTHORS README doc/scout.html
 %{_bindir}/%{name}*
 %{py_sitedir}/%{name}
 %{_datadir}/%{name}
 %{_sysconfdir}/bash_completion.d/*
+%{_mandir}/man1/*
 
 %changelog

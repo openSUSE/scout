@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refentry PUBLIC 
+   "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.docbook.org/xml/4.5/docbookx.dtd"
+[
+  <!ENTITY product "scout">
+]>
+
+<refentry lang="en" id="scout">
+   <refentryinfo>
+      <productname>&product;</productname>
+      <authorgroup>
+         <author>
+            <contrib>Developer</contrib>
+            <firstname>Pavol</firstname>
+            <surname>Rusnak</surname>
+            <email>stick@gk2.sk</email>
+         </author>
+         <author>
+            <contrib>Developer</contrib>
+            <firstname>Michal</firstname>
+            <surname>Vyskocil</surname>
+            <email>mvyskocil@suse.cz</email>
+         </author>
+         <othercredit>
+            <contrib>Index data for Java</contrib>
+            <firstname>Ales</firstname>
+            <surname>Nosek</surname>
+            <email>anosek@suse.cz</email>            
+         </othercredit>
+         <othercredit>
+            <contrib>Webpin code</contrib>
+            <firstname>Pascal</firstname>
+            <surname>Bleser</surname>
+            <email>guru@unixtech.be</email>
+         </othercredit>
+         <othercredit>
+            <contrib>Bash completion</contrib>
+            <firstname>Marek</firstname>
+            <surname>Stopka</surname>
+			<email>mstopka@opensuse.org</email>
+         </othercredit>
+         <othercredit>
+            <contrib>Docbook documentation</contrib>
+            <firstname>Thomas</firstname>
+            <surname>Schraitle</surname>
+			<email>toms@suse.de</email>
+         </othercredit>
+      </authorgroup>
+   </refentryinfo>
+   <refmeta>
+      <refentrytitle>&product;</refentrytitle>
+      <manvolnum>1</manvolnum>
+      <refmiscinfo class="version">@VERSION@</refmiscinfo>
+      <refmiscinfo class="source">http://repo.or.cz/w/scout.git</refmiscinfo>
+      <refmiscinfo class="manual">http://en.opensuse.org/Scout</refmiscinfo>
+   </refmeta>
+   
+   <refnamediv>
+      <refname>&product;</refname>
+      <refpurpose>A Package Scout</refpurpose>
+   </refnamediv>
+   
+   <refsynopsisdiv id="scout.synopsis">
+      <title>Synopsis</title>
+      <cmdsynopsis><command>scout</command>
+         <arg choice="req">module</arg>
+         <arg choice="req">search_term</arg>
+         <arg choice="opt">module_options</arg>
+      </cmdsynopsis>
+   </refsynopsisdiv>
+
+   <refsect1 id="scout.options">
+      <title>Options</title>
+      <para>The following options are available:</para>
+      <variablelist>
+         <varlistentry>
+            <term><option>module</option></term>
+            <listitem>
+               <para>The respective module to search for. The following
+               modules are available:</para>
+               <variablelist>
+                  <varlistentry>
+                     <term>autoconf</term>
+                     <listitem>
+                        <para>Search for autoconf macros inside m4 files.</para>
+                     </listitem>
+                  </varlistentry>
+                  <varlistentry>
+                     <term>bin</term>
+                     <listitem>
+                        <para>Search for binaries contained in packages.</para>
+                     </listitem>
+                  </varlistentry>
+                  <varlistentry>
+                     <term>java</term>
+                     <listitem>
+                        <para>Search for Java classes inside packaged JAR files.</para>
+                     </listitem>
+                  </varlistentry>
+                  <varlistentry>
+                     <term>webpin</term>
+                     <listitem>
+                        <para>Search in packages using the Webpin webservice.</para>
+                     </listitem>
+                  </varlistentry>
+               </variablelist>
+            </listitem>
+         </varlistentry>
+         <varlistentry>
+            <term><option>search_term</option></term>
+            <listitem>
+               <para>The term you are looking for.</para>
+            </listitem>
+         </varlistentry>
+         <varlistentry>
+            <term><option>module_options</option></term>
+            <listitem>
+               <para>Additional module options. At the moment these are:</para>
+               <variablelist>
+                  <varlistentry>
+                     <term><option>--listrepos</option></term>
+                     <listitem>
+                        <para>list all available repositories</para>
+                     </listitem>
+                  </varlistentry>
+                  <varlistentry>
+                     <term><option>--repos</option></term>
+                     <listitem>
+                        <para>select a repository to search (use a name
+                           from the <option>--listrepos</option> output)</para>
+                     </listitem>
+                  </varlistentry>
+               </variablelist>
+               
+            </listitem>
+         </varlistentry>  
+      </variablelist>
+   </refsect1>
+   
+   <refsect1 id="scout.description">
+      <title>Description</title>
+      <para>Scout is a tool to look for uninstalled packages. For
+         example, which binary does a package provide, which Java
+         classes are available and which autoconf macros does a package
+         contain. </para>
+      <para>To search for your requested term, you need index data files
+         which are a preconfigured SQLite&nbsp;3 database. You have
+         to install these in order to get your search request done. Use
+         the <ulink
+            url="http://download.opensuse.org/repositories/home:/prusnak:/scout/data"
+            >Scout OBS data repository</ulink> to get additional index
+         files. See the <ulink url="http://en.opensuse.org/Scout">Wiki
+            page about Scout</ulink> for more information.</para>
+   </refsect1>
+   
+   <refsect1 id="scout.search.bin">
+      <title>Example 1: Search For Executables</title>
+      <para>For example, to search for a <filename>sdl-config</filename>
+         executable, you need the <package>bin</package> module:</para>
+      <screen><prompt>$ </prompt><command>scout</command> bin sdl-config</screen>
+      <para>You get the following output:</para>
+      <screen> repository | binary     | path                        | package
+------------+------------+-----------------------------+-----------------
+ suse110    | sdl-config | /usr/bin                    | SDL-devel
+ suse110    | sdl-config | /usr/lib/baselibs-32bit/bin | SDL-devel-32bit</screen>
+
+   </refsect1>
+      
+   <refsect1 id="scout.search.java">
+      <title>Example 2: Search For Java Packages</title>
+      <para>If you want to search for a Java package, use the following
+         code:</para>
+      <screen><prompt>$ </prompt><command>scout</command> java org.apache.xml.serialize.Serializer</screen>
+      <para>You get:</para>
+      <screen> repository | package          | jar                 | class
+------------+------------------+---------------------+------------------------------------------------
+ jpackage17 | jboss4-testsuite | xerces.jar          | org.apache.xml.serialize.Serializer
+ jpackage17 | jboss4-testsuite | xerces.jar          | org.apache.xml.serialize.SerializerFactory
+ jpackage17 | jboss4-testsuite | xerces.jar          | org.apache.xml.serialize.SerializerFactoryImpl
+ jpackage17 | xerces-j2        | xerces-j2-2.9.0.jar | org.apache.xml.serialize.Serializer
+ jpackage17 | xerces-j2        | xerces-j2-2.9.0.jar | org.apache.xml.serialize.SerializerFactory
+ jpackage17 | xerces-j2        | xerces-j2-2.9.0.jar | org.apache.xml.serialize.SerializerFactoryImpl</screen>
+
+   </refsect1>
+      
+   <refsect1 id="scout.search.webpin">
+      <title>Example 3: Search through Webpin</title>
+      <para>If you want to use the <ulink
+            url="http://software.opensuse.org/search">openSUSE Search
+            Webservice</ulink>&mdash;also known as
+         <quote>Webpin</quote>&mdash;use the following line:</para>
+      <screen><prompt>$ </prompt><command>scout</command> webpin docbook_5.xml</screen>
+      <para>You get:</para>
+      <screen> package   | version | arch   | repository URL                                                                    | matched files
+-----------+---------+--------+-----------------------------------------------------------------------------------+------------------------
+ docbook_5 | 5.0     | noarch | http://download.opensuse.org/distribution/SL-OSS-factory/inst-source/suse         | /etc/xml/docbook_5.xml
+ docbook_5 | 5.0CR7  | noarch | http://download.opensuse.org/repositories/home:/thomas-schraitle/openSUSE_Factory | /etc/xml/docbook_5.xml
+ docbook_5 | 5.0     | noarch | http://download.opensuse.org/repositories/XML/xml-factory                         | /etc/xml/docbook_5.xml</screen>
+   </refsect1>
+   
+   <refsect1 id="scout.bashcompletion">
+      <title>Bash Completion</title>
+      <para>If you like to complete your options automatically through
+         Bash, insert the following lines into your
+         <filename>~/.bashrc</filename> or
+            <filename>/etc/bash.bashrc</filename>:</para>
+      <screen>if [ -f /etc/bash_completion.d/scout ]; then
+  . /etc/bash_completion.d/scout
+fi</screen>
+   </refsect1>
+
+</refentry>
