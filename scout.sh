@@ -31,19 +31,35 @@ _scout() {
             COMPREPLY=($(compgen -W "${opts}" -- ${cur}))
         ;;
         autoconf)
-            opts=`$SCOUT autoconf 2>&1 | sed -e "1,/Options:/d" | awk -F ', ' '{print $2}' | sed -e 's/ .*//' -e 's/--repo=REPO/--repo/'`
+            opts=`$SCOUT autoconf  2>&1 | sed -e "1,/Options:/d" | awk -F ', ' '{print $2}' | sed -e 's/ .*//' -e 's/--repo=REPO/--repo/'`
             COMPREPLY=($(compgen -W "${opts}" -- ${cur}))
         ;;
         bin)
-            opts=`$SCOUT bin      2>&1 | sed -e "1,/Options:/d" | awk -F ', ' '{print $2}' | sed -e 's/ .*//' -e 's/--repo=REPO/--repo/'`
+            opts=`$SCOUT bin       2>&1 | sed -e "1,/Options:/d" | awk -F ', ' '{print $2}' | sed -e 's/ .*//' -e 's/--repo=REPO/--repo/'`
             COMPREPLY=($(compgen -W "${opts}" -- ${cur}))
         ;;
         java)
-            opts=`$SCOUT java     2>&1 | sed -e "1,/Options:/d" | awk -F ', ' '{print $2}' | sed -e 's/ .*//' -e 's/--repo=REPO/--repo/'`
+            opts=`$SCOUT java      2>&1 | sed -e "1,/Options:/d" | awk -F ', ' '{print $2}' | sed -e 's/ .*//' -e 's/--repo=REPO/--repo/'`
+            COMPREPLY=($(compgen -W "${opts}" -- ${cur}))
+        ;;
+        perl)
+            opts=`$SCOUT perl      2>&1 | sed -e "1,/Options:/d" | awk -F ', ' '{print $2}' | sed -e 's/ .*//' -e 's/--repo=REPO/--repo/'`
+            COMPREPLY=($(compgen -W "${opts}" -- ${cur}))
+        ;;
+        pkgconfig)
+            opts=`$SCOUT pkgconfig 2>&1 | sed -e "1,/Options:/d" | awk -F ', ' '{print $2}' | sed -e 's/ .*//' -e 's/--repo=REPO/--repo/'`
+            COMPREPLY=($(compgen -W "${opts}" -- ${cur}))
+        ;;
+        python)
+            opts=`$SCOUT python    2>&1 | sed -e "1,/Options:/d" | awk -F ', ' '{print $2}' | sed -e 's/ .*//' -e 's/--repo=REPO/--repo/'`
+            COMPREPLY=($(compgen -W "${opts}" -- ${cur}))
+        ;;
+        ruby)
+            opts=`$SCOUT ruby      2>&1 | sed -e "1,/Options:/d" | awk -F ', ' '{print $2}' | sed -e 's/ .*//' -e 's/--repo=REPO/--repo/'`
             COMPREPLY=($(compgen -W "${opts}" -- ${cur}))
         ;;
         webpin)
-            opts=`$SCOUT webpin   2>&1 | sed -e "1,/Options:/d" | awk -F ', ' '{print $2}' | sed -e 's/ .*//' -e 's/--repo=REPO/--repo/'`
+            opts=`$SCOUT webpin    2>&1 | sed -e "1,/Options:/d" | awk -F ', ' '{print $2}' | sed -e 's/ .*//' -e 's/--repo=REPO/--repo/'`
             COMPREPLY=($(compgen -W "${opts}" -- ${cur}))
         ;;
         --repo)
