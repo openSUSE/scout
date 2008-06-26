@@ -372,8 +372,8 @@ class ScoutCore(object):
     def run(cls):
 
         ml = ModuleLoader
-        sitedir = max(sys.path, key=lambda x: x.endswith('site-packages'))
-        ml.import_from(sitedir + "/scout")
+        moduledir = os.path.dirname(__file__)
+        ml.import_from(moduledir)
 
         clp = CommandLineParser(ml.modules)
         module = clp.parse()
