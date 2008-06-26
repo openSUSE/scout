@@ -176,60 +176,54 @@ class Database(object):
 
 class Result(object):
 
-    @classmethod
-    def __init__(cls, cols1, cols2 = None):
-        cls.cols1 = cols1
+    def __init__(self, cols1, cols2 = None):
+        self.cols1 = cols1
         if cols2 != None:
-            cls.cols2 = cols2
+            self.cols2 = cols2
         else:
-            cls.cols2 = cols1
-        cls.rows = list()
+            self.cols2 = cols1
+        self.rows = list()
 
-    @classmethod
-    def add_row(cls, row):
+    def add_row(self, row):
         if row != None:
-            cls.rows.append(list(row))
+            self.rows.append(list(row))
 
-    @classmethod
-    def add_rows(cls, rows):
+    def add_rows(self, rows):
         if rows != None and isinstance(rows, list):
             for row in rows:
-                cls.rows.append(list(row))
+                self.rows.append(list(row))
 
-    @classmethod
-    def gentable(cls):
+    def gentable(self):
         ret = ""
-        col_width = map(len, map(str, cls.cols2))
-        for i in range(0,len(cls.cols2)):
-          for row in cls.rows:
+        col_width = map(len, map(str, self.cols2))
+        for i in range(0,len(self.cols2)):
+          for row in self.rows:
             if len(str(row[i])) > col_width[i]:
                 col_width[i] = len(str(row[i]))
-        ret += ' ' + ' | '.join(map(str.ljust, cls.cols2, col_width)) + '\n'
+        ret += ' ' + ' | '.join(map(str.ljust, self.cols2, col_width)) + '\n'
         ret += '-' + '-+-'.join(map(lambda c: '-' * c, col_width)) + '-' + '\n'
-        for row in cls.rows:
+        for row in self.rows:
             ret += ' ' + ' | '.join(map(str.ljust, map(str, row), col_width)) + '\n'
         return ret
 
-    @classmethod
-    def gencsv(cls):
+    def gencsv(self):
         ret = ""
-        ret += '"' + '";"'.join(map(lambda s: s.replace('"', '""'), cls.cols1)) + '"' + '\n'
-        ret += '"' + '";"'.join(map(lambda s: s.replace('"', '""'), cls.cols2)) + '"' + '\n'
-        for row in cls.rows:
+        ret += '"' + '";"'.join(map(lambda s: s.replace('"', '""'), self.cols1)) + '"' + '\n'
+        ret += '"' + '";"'.join(map(lambda s: s.replace('"', '""'), self.cols2)) + '"' + '\n'
+        for row in self.rows:
             ret += '"' + '";"'.join(map(lambda s: s.replace('"', '""'), row)) + '"' + '\n'
         return ret
 
-    @classmethod
-    def genxml(cls):
+    def genxml(self):
         ret  = '<result>' + '\n'
         ret += '  <head>' + '\n'
-        for i in range(0, len(cls.cols1)):
-            ret += '    <%s>%s</%s>' % (cls.cols1[i], cls.cols2[i], cls.cols1[i]) + '\n'
+        for i in range(0, len(self.cols1)):
+            ret += '    <%s>%s</%s>' % (self.cols1[i], self.cols2[i], self.cols1[i]) + '\n'
         ret += '  </head>' + '\n'
-        for row in cls.rows:
+        for row in self.rows:
           ret += '  <row>' + '\n'
-          for i in range(0,len(cls.cols1)):
-              ret += '    <%s>%s</%s>' % (cls.cols1[i], row[i], cls.cols1[i]) + '\n'
+          for i in range(0,len(self.cols1)):
+              ret += '    <%s>%s</%s>' % (self.cols1[i], row[i], self.cols1[i]) + '\n'
           ret += '  </row>' + '\n'
         ret += '</result>' + '\n'
         return ret
