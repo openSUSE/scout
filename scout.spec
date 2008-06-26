@@ -54,7 +54,7 @@ cp -a modules/!(foo).py{,c} $RPM_BUILD_ROOT%{py_sitedir}/%{name}
 # install data files
 install -D -m 0644 repos.conf $RPM_BUILD_ROOT%{_datadir}/%{name}/repos.conf
 # create symlinks
-install -D -m 0755 scout-cms.py $RPM_BUILD_ROOT%{_bindir}/%{name}
+install -D -m 0755 scout-cmd.py $RPM_BUILD_ROOT%{_bindir}/%{name}
 ln -s %{name} $RPM_BUILD_ROOT%{_bindir}/%{name}csv
 ln -s %{name} $RPM_BUILD_ROOT%{_bindir}/%{name}xml
 # install bash completion
