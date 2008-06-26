@@ -174,6 +174,102 @@ class Database(object):
         c.close()
         return ret
 
+class TableFormatter(object):
+
+    @classmethod
+    def format(cls, result, vertical_delimiter=' | ', node_delimiter='-+-', horizontal_delimiter='-'):
+        """
+        This method produces an output as a table. It's a base style of output and is recomended for a commandline use.
+
+        The TableFormatter.format method has three optional arguments to improve the output:
+        vertical_delimiter   - the delimiter between rows of the table, default  ' | '
+        node_delimiter       - the delimiter between nodes of the table, default '-+-'
+        horizontal_delimiter - the delimiter between head of the table and a body, default '-'
+
+        The defult output is
+         repository | package                   | jar           | class
+        ------------+---------------------------+---------------+--------------------------------
+         suse110    | geronimo                  | log4j-1.2.8   | org.apache.log4j.xml.XMLLayout
+        """
+        #FIXME: this code probably doesn't work with a variable length of the delimiters!
+        ret = ""
+        col_width = map(len, map(str, result.get_long_names()))
+        for i in range(0,len(result.get_long_names())):
+          for row in result.get_rows():
+            if len(str(row[i])) > col_width[i]:
+                col_width[i] = len(str(row[i]))
+        ret += ' ' + vertical_delimiter.join(map(str.ljust, result.get_long_names(), col_width)) + '\n'
+        ret += horizontal_delimiter + node_delimiter.join(map(lambda c: horizontal_delimiter * c, col_width)) + horizontal_delimiter + '\n'
+        for row in result.get_rows():
+            ret += ' ' + vertical_delimiter.join(map(str.ljust, map(str, row), col_width)) + '\n'
+        return ret
+
+class CSVFormatter(object):
+
+    @classmethod
+    def format(cls, result, record_delimiter=';', quote_mark='"'):
+        """
+        This method produces an output in a CSV format. This style is recomended for the scripting use.
+
+        The CSVFormatter.format method has two optional arguments to improve the output:
+        record_delimiter       - the delimiter between records, default ';'
+        quote_mark             - the quote used for the records, if the quote mark is in the records, is duplicated, default '"'
+
+        The defult output is
+        "repo";"pkg";"jar";"class"
+        "repository";"package";"jar";"class"
+        "suse110";"geronimo";"log4j-1.2.8";"org.apache.log4j.xml.XMLLayout"
+        """
+        record_delimiter = quote_mark + record_delimiter + quote_mark
+        ret = ""
+        ret += quote_mark + record_delimiter.join(map(lambda s: s.replace(quote_mark, 2*quote_mark), result.get_short_names())) + quote_mark + '\n'
+        ret += quote_mark + record_delimiter.join(map(lambda s: s.replace(quote_mark, 2*quote_mark), result.get_long_names())) + quote_mark + '\n'
+        for row in result.rows:
+            ret += quote_mark + record_delimiter.join(map(lambda s: s.replace(quote_mark, 2*quote_mark), row)) + quote_mark + '\n'
+        return ret
+
+class XMLFormatter(object):
+
+    @classmethod
+    def format(cls, result, result_tag='result', head_tag='head', row_tag='row'):
+        """
+        This method produces an output in a XML format. This style is recomended for the communication between scout and a external systems.
+
+        The XMLFormatter.format method has three optional arguments to improve the output:
+        result_tag      - the name of the tag result, default 'result'
+        head_tag        - the name of the tag head, default 'head'
+        row_tag         - the name of the tag row, default 'row'
+
+        The defult output is
+        <result>
+            <head>
+                <repo>repository</repo>
+                <pkg>package</pkg>
+                <jar>jar</jar>
+                <class>class</class>
+            </head>
+            <row>
+                <repo>suse110</repo>
+                <pkg>geronimo</pkg>
+                <jar>log4j-1.2.8</jar>
+                <class>org.apache.log4j.xml.XMLLayout</class>
+            </row>
+        </result>
+        """
+        ret  = '<%s>' % result_tag + '\n'
+        ret += '  <%s>' % head_tag + '\n'
+        for i in range(0, len(result.get_short_names())):
+            ret += '    <%s>%s</%s>' % (result.get_short_names()[i], result.get_long_names()[i], result.get_short_names()[i]) + '\n'
+        ret += '  </%s>' % head_tag + '\n'
+        for row in result.rows:
+          ret += '  <%s>' % row_tag + '\n'
+          for i in range(0,len(result.get_short_names())):
+              ret += '    <%s>%s</%s>' % (result.get_short_names()[i], row[i], result.get_short_names()[i]) + '\n'
+          ret += '  </%s>' % row_tag + '\n'
+        ret += '</%s>' % result_tag + '\n'
+        return ret
+
+
 class Result(object):
 
     def __init__(self, cols1, cols2 = None):
@@ -193,41 +289,22 @@ class Result(object):
             for row in rows:
                 self.rows.append(list(row))
 
-    def gentable(self):
-        ret = ""
-        col_width = map(len, map(str, self.cols2))
-        for i in range(0,len(self.cols2)):
-          for row in self.rows:
-            if len(str(row[i])) > col_width[i]:
-                col_width[i] = len(str(row[i]))
-        ret += ' ' + ' | '.join(map(str.ljust, self.cols2, col_width)) + '\n'
-        ret += '-' + '-+-'.join(map(lambda c: '-' * c, col_width)) + '-' + '\n'
-        for row in self.rows:
-            ret += ' ' + ' | '.join(map(str.ljust, map(str, row), col_width)) + '\n'
+    def get_short_names(self):
+        return self.cols1
+
+    def get_long_names(self):
+        return self.cols2
+
+    def get_table(self):
+        ret = [self.cols1, self.cols2]
+        ret.extend(self.rows)           # I hate the methods, which returns None!!!
         return ret
 
-    def gencsv(self):
-        ret = ""
-        ret += '"' + '";"'.join(map(lambda s: s.replace('"', '""'), self.cols1)) + '"' + '\n'
-        ret += '"' + '";"'.join(map(lambda s: s.replace('"', '""'), self.cols2)) + '"' + '\n'
-        for row in self.rows:
-            ret += '"' + '";"'.join(map(lambda s: s.replace('"', '""'), row)) + '"' + '\n'
-        return ret
+    def get_rows(self):
+        return self.rows
 
-    def genxml(self):
-        ret  = '<result>' + '\n'
-        ret += '  <head>' + '\n'
-        for i in range(0, len(self.cols1)):
-            ret += '    <%s>%s</%s>' % (self.cols1[i], self.cols2[i], self.cols1[i]) + '\n'
-        ret += '  </head>' + '\n'
-        for row in self.rows:
-          ret += '  <row>' + '\n'
-          for i in range(0,len(self.cols1)):
-              ret += '    <%s>%s</%s>' % (self.cols1[i], row[i], self.cols1[i]) + '\n'
-          ret += '  </row>' + '\n'
-        ret += '</result>' + '\n'
-        return ret
-
+    def format(self, formatter=TableFormatter, **kwargs):
+        return formatter.format(self, **kwargs)
 
 class Parser(object):
 
@@ -305,9 +382,12 @@ class ScoutCore(object):
         prog = os.path.basename(sys.argv[0])
 
         if result != None:
-            if prog == 'scoutcsv':
-                return result.gencsv()
-            elif prog == 'scoutxml':
-                return result.genxml()
-            else:
-                return result.gentable()
+            output_formatters = {
+                    'scoutcsv' : CSVFormatter,
+                    'scoutxml' : XMLFormatter,
+                    'scout'    : TableFormatter,
+                    }
+            try:
+                return result.format(formatter=output_formatters[prog])
+            except KeyError, kerr:
+                raise SystemExit('Cannot found a formatter for a %s' % prog)
