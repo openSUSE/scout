@@ -24,12 +24,11 @@ class CommandLineParser(object):
         module.foo()
     """
 
-    @classmethod
-    def __init__(cls, modules = None):
+    def __init__(self, modules = None):
         """
         A constructor for CommandLineParser, argument modules should be inicialized
         """
-        cls.modules = dict()
+        self.modules = dict()
 
         if modules != None:
             _modules = modules
@@ -37,49 +36,73 @@ class CommandLineParser(object):
                 _modules = (modules, )
 
             for m in _modules:
-                cls.add_module(m)
+                self.add_module(m)
 
-        cls.prog = os.path.basename(sys.argv[0])
+        self.__format = 'table'
+        
+        self.prog = os.path.basename(sys.argv[0])
 
-    @classmethod
-    def add_module(cls, module):
-        cls.modules[module.ScoutModule.name] = module
+    def add_module(self, module):
+        self.modules[module.ScoutModule.name] = module
 
-    @classmethod
-    def _is_help(cls, arg):
+    def _is_help(self, arg):
         if arg in ("help", "-h", "-help", "--help"):
             return True
         return False
 
-    @classmethod
-    def print_usage(cls):
+    def print_usage(self):
         print
-        print "Usage: %s <module> <search_term> [module-options]" % (cls.prog)
+        print "Usage: %s <module> <search_term> [module-options]" % (self.prog)
+        print
+        print "Options:"
+        print "  -f FORMAT, --format=FORMAT\tselect the output format (default table)"
         print
         print "available modules:"
-        maxlen = len(max(cls.modules.keys(), key=len))
-        for k in sorted(cls.modules.keys()):
-            module = cls.modules[k]
+        maxlen = len(max(self.modules.keys(), key=len))
+        for k in sorted(self.modules.keys()):
+            module = self.modules[k]
             print "    %s : %s" % (module.ScoutModule.name.ljust(maxlen), module.ScoutModule.desc)
         print
         sys.exit(1)
 
-    @classmethod
-    def module_not_found(cls, name):
+    def module_not_found(self, name):
         print "Module '%s' not found" % name
         sys.exit(1)
 
-    @classmethod
-    def parse(cls):
+    def parse_option(self, short_opt, long_opt, default=None):
+        opt = default
+        if short_opt in sys.argv or long_opt in sys.argv:
+            opt_index = sys.argv.index(long_opt) if long_opt in sys.argv else sys.argv.index(short_opt)
 
-        if len(sys.argv) == 1 or (len(sys.argv) == 2 and cls._is_help(sys.argv[1])):
-            cls.print_usage()
+            opt = sys.argv[opt_index]
+            if opt[:2] == '--' and '=' in opt:
+                _opt = s.split('=')[1]
+                sys.argv.remove(opt)
+                opt = _opt
+            else:
+                _opt = sys.argv[opt_index + 1]
+                sys.argv.remove(opt)
+                sys.argv.remove(_opt)
+                opt = _opt
+        return opt
+
+    def parse(self):
+
+        if len(sys.argv) == 1 or (len(sys.argv) == 2 and self._is_help(sys.argv[1])):
+            self.print_usage()
+
+        self.__format = self.parse_option('-f', '--format', 'table')
 
         mname = sys.argv[1]
-        if not mname in cls.modules:
-            cls.module_not_found(mname)
+        if not mname in self.modules:
+            self.module_not_found(mname)
         del sys.argv[1]
-        return cls.modules[mname]
+        return self.modules[mname]
+
+    def _get_format(self):
+        return self.__format
+
+    format = property(_get_format)
 
 class ModuleLoader(object):
     """
@@ -370,9 +393,9 @@ class ScoutCore(object):
 
 
     out_formatters = {
-            'scoutcsv' : CSVFormatter,
-            'scoutxml' : XMLFormatter,
-            'scout'    : TableFormatter,
+            'csv' :     CSVFormatter,
+            'xml' :     XMLFormatter,
+            'table' :   TableFormatter,
             }
 
     @classmethod
@@ -390,6 +413,6 @@ class ScoutCore(object):
 
         if result != None:
             try:
-                return result.format(formatter=cls.out_formatters[prog])
+                return result.format(formatter=cls.out_formatters[clp.format])
             except KeyError, kerr:
-                raise SystemExit('Cannot found a formatter for a %s' % prog)
+                raise SystemExit('Cannot found a formatter for a %s' % clp.format)
