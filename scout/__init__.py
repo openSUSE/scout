@@ -368,6 +368,13 @@ class Parser(object):
 
 class ScoutCore(object):
 
+
+    out_formatters = {
+            'scoutcsv' : CSVFormatter,
+            'scoutxml' : XMLFormatter,
+            'scout'    : TableFormatter,
+            }
+
     @classmethod
     def run(cls):
 
@@ -382,12 +389,7 @@ class ScoutCore(object):
         prog = os.path.basename(sys.argv[0])
 
         if result != None:
-            output_formatters = {
-                    'scoutcsv' : CSVFormatter,
-                    'scoutxml' : XMLFormatter,
-                    'scout'    : TableFormatter,
-                    }
             try:
-                return result.format(formatter=output_formatters[prog])
+                return result.format(formatter=cls.out_formatters[prog])
             except KeyError, kerr:
                 raise SystemExit('Cannot found a formatter for a %s' % prog)
