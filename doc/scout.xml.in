@@ -75,6 +75,24 @@
       <para>The following options are available:</para>
       <variablelist>
          <varlistentry>
+            <term><option>global options</option></term>
+            <listitem>
+               <para>The global options are handled by scout itself.</para>
+               <variablelist>
+                  <varlistentry>
+                     <term><option>--format</option></term>
+                     <listitem>
+                        <para>Specify the default output format. Choices are table (default), xml, csv. It's a replacement of the older scoutcsv, scoutxml links.</para>
+                     </listitem>
+                  </varlistentry>
+                  <varlistentry>
+                     <term><option>--help</option></term>
+                     <listitem>
+                        <para>Print a brief help.</para>
+                     </listitem>
+                  </varlistentry>
+               </variablelist>
+            </listitem>   
             <term><option>module</option></term>
             <listitem>
                <para>The respective module to search for. The following
