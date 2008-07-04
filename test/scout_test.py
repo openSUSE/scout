@@ -4,7 +4,7 @@
 #
 
 import sys
-sys.path.insert(0, '..')
+sys.path.insert(0, '../scout/')
 import __init__ as scout
 if not hasattr(scout, 'ScoutCore'):
     raise ImportError('No main scout module found')
