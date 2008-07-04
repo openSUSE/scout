@@ -10,6 +10,7 @@ if not hasattr(scout, 'ScoutCore'):
     raise ImportError('No main scout module found')
 
 import unittest
+import sqlite3
 
 
 class SimpleDatabaseTestCase(unittest.TestCase):
@@ -79,6 +80,78 @@ CREATE INDEX modules_module_idx ON modules(module);"""
 
         self.assertEqual(self.term.split('-')[0], res[0])
         self.assertEqual(self.term, res[1])
+        
+    def testCleverResults(self):
+        # return of a [[, ], [, ], [, ]]
+        sql = self.sql_begin
+
+        res = self.database.execute(sql)
+
+        self.assertEqual(type(res), type(list()))
+        self.assertTrue(len(res) >= 0)
+        self.assertTrue(type(res[0]), type(tuple()))
+        self.assertEqual(len(res[0]), 2)
+        for i in xrange(len(res)):
+            self.assertEqual(type(res[i][0]), type(unicode()))
+            self.assertEqual(type(res[i][1]), type(unicode()))
+
+        sql = "SELECT module FROM modules"
+
+        res = self.database.execute(sql)
+
+        self.assertEqual(type(res), type(list()))
+        self.assertTrue(len(res) >= 0)
+        for i in xrange(len(res)):
+            self.assertEqual(type(res[i]), type(unicode()))
+        
+
+        sql = "SELECT module FROM modules WHERE module='package1-module1'"
+        
+        res = self.database.execute(sql)
+        self.assertEqual(type(res), type(unicode()))
+        self.assertEqual(res, 'package1-module1')
+
+    def testUsageOfBothPlaceholders(self):
+
+        sql = self.sql_begin + " WHERE module LIKE ? OR module LIKE :module"
+
+        try:
+            res = self.database.execute(sql, 'module', module='module')
+        except AssertionError, aserr:
+            pass
+        else:
+            self.fail("The execute module disallows usage of both placeholders!!")
+
+
+    def testIncorrectSQLCommand(self):
+
+        sql = "NOT_SQL_COMMAND"
+
+        try:
+            res = self.database.execute(sql)
+        except sqlite3.OperationalError, operr:
+            pass
+        else:
+            self.fail("The %s is not an SQL command" % sql)
+ 
+        sql = self.sql_begin + " WHERE module LIKE ? "
+        try:
+            res = self.database.execute(sql, module='module1')
+        except sqlite3.ProgrammingError, prgerr:
+            pass
+        else:
+            self.fail("The ? is not working with keyword args")
+        
+        sql = self.sql_begin + " WHERE module LIKE :module "
+        # FIXME!!! The sqlite3 doesn't return an error
+        #try:
+        #    res = self.database.execute(sql, 'module1')
+        #except sqlite3.ProgrammingError, prgerr:
+        #    pass
+        #else:
+        #    self.fail("The ? is not working with keyword args")
+
+ 
 
 
 suiteDatabase = unittest.makeSuite(SimpleDatabaseTestCase, 'test')

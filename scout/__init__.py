@@ -179,6 +179,7 @@ class Database(object):
         (2) if the column in the result is the only one, returns a list of values
         (3) else returns a list of tuples
         """
+        # TODO: do not return an sqlite3 Errors
 
         if self.conn == None:
             return None
