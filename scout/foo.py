@@ -9,7 +9,6 @@ class ScoutModule(object):
     def main(cls):
 
         p = scout.Parser(cls.name)
-        p.add_repos_from_datadir()
         if not p.parse():
             return None
 

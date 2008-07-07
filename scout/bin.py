@@ -58,7 +58,6 @@ class ScoutModule(object):
         p = scout.Parser(cls.name)
         # TODO: do not add zypp repo for now (not implemented)
         # p.add_repo('zypp')
-        p.add_repos_from_datadir()
         if not p.parse():
             return None
         term = p.args[0]

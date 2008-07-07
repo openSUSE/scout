@@ -340,7 +340,7 @@ class Parser(object):
         self.modulename = modulename
         self.parser = OptionParser(usage="Usage: %prog " + modulename + " [options] <search_term>")
         self.parser.add_option('-l', '--listrepos', action="store_true", help="list available repositories", dest="listrepo")
-        self.parser.add_option('-r', '--repo', type='choice', help='select repository to search', default=None, choices=[None])
+        self.parser.add_option('-r', '--repo', type='choice', help='select repository to search', default=None, choices=self.get_available_repos())
 
     def add_repo(self, repo):
         opt = self.parser.get_option('-r')
@@ -352,12 +352,12 @@ class Parser(object):
             opt.choices.append(repo)
 
     # set repositories according to data files /usr/share/scout/<modulename>-*.db
-    def add_repos_from_datadir(self):
-        opt = self.parser.get_option('-r')
+    def get_available_repos(self):
+        ret = list()
         for file in os.listdir(Config.data_path):
             if fnmatch.fnmatch(file, self.modulename + '-*' + Config.data_suffix):
-                repo = file[len(self.modulename)+1:-len(Config.data_suffix)]
-                opt.choices.append(repo)
+                ret.append(file[len(self.modulename)+1:-len(Config.data_suffix)])
+        return ret
 
     def parse(self):
         (self.options, self.args) = self.parser.parse_args()
@@ -369,7 +369,7 @@ class Parser(object):
                 (k,v) = line.split('=')
                 repos[k.strip()] = v.strip()
             reposconf.close()
-            if len(self.parser.get_option('-r').choices) < 2:
+            if len(self.parser.get_option('-r').choices) == 0:
                 print '- none -'
                 return False
             maxlen = len(max(self.parser.get_option('-r').choices, key=lambda x: x!=None and len(x) or 0))
