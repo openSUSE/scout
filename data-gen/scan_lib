@@ -11,6 +11,28 @@ function clean() {
     fi
 }
 
+# #{1} - root
+# ${@} - the iname patterns for find
+function multiple_find() {
+
+    local root patterns find_args
+    root=${1}
+    shift 1
+    patterns=${@}
+
+    if [[ $(echo ${patterns} | wc -w) -eq 1 ]]; then
+        find_args="-iname ${patterns}"
+    else
+        find_args="-iname ${1}"
+        shift 1
+        patterns=${@}
+        for pattern in ${patterns}; do
+            find_args=${find_args}" -or -iname ${pattern}"
+        done
+    fi
+    find ${root} ${find_args}
+}
+
 # A common function for scanning of modules
 # Usage: scan RPMS_ROOT INDEX_FILE FILE_PATTERN STANDARD_DIRS_PATTERN
 # $1 - directory with rpms
@@ -27,10 +49,8 @@ function scan() {
     shift 3
     file_pattern=${@}
 
-    rpm -rf ${index_file}
+    rm -rf ${index_file}
     touch ${index_file}
-
-    if [[ -f ${index_file} ]]; then rm ${index_file}; fi
 
     cat ${rpms_root}/find-name-rpm | while read RPM; do
 
@@ -44,9 +64,9 @@ function scan() {
 
         pushd ${tmp}
 
-        rpm2cpio ${rpms_root}/${RPM} | cpio -i --verbose --make-directories "${file_pattern}"
+        rpm2cpio ${rpms_root}/${RPM} | cpio -i --verbose --make-directories ${file_pattern}
 
-        for file in $(find . -iname "${file_pattern}" -type 'f'); do
+        for file in $(multiple_find . ${file_pattern}); do
 
             if [[ ! -z "${standard_dirs_pattern}" ]]; then
                 if [[ ! $(echo ${file} | grep ${standard_dirs_pattern}) ]]; then
@@ -67,6 +87,6 @@ function scan() {
 
     done
 
-    rm ${index_file}.lzma
+    rm -f ${index_file}.lzma
     lzma ${index_file}
 }
