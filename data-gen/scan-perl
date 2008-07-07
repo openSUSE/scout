@@ -32,7 +32,7 @@ function scan_perl() {
    rpms_root=${1}
    index_file=${2}
 
-   scan ${rpms_root} ${index_file} "*.pm" ""
+   scan ${rpms_root} ${index_file} "" "*.pm" 
     
 }
 

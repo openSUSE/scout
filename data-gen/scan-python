@@ -34,7 +34,7 @@ function scan_python () {
    rpms_root=${1}
    index_file=${2}
 
-   scan ${rpms_root} ${index_file} "*.py" "/usr/\(local/\)\?lib\(64\)\?/python2\.[0-9]/\(site-packages/\)\?"
+   scan ${rpms_root} ${index_file} "/usr/\(local/\)\?lib\(64\)\?/python2\.[0-9]/\(site-packages/\)\?" "*.py" 
 
 }
 

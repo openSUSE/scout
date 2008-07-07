@@ -23,8 +23,9 @@ function scan() {
 
     rpms_root=${1}
     index_file=${2}
-    file_pattern=${3}
-    standard_dirs_pattern=${4}
+    standard_dirs_pattern=${3}
+    shift 3
+    file_pattern=${@}
 
     rpm -rf ${index_file}
     touch ${index_file}
@@ -37,7 +38,7 @@ function scan() {
         trap "clean ${tmp}" INT
         
         rpm_base_name=$(basename ${RPM})
-        if [[ -z "$(rpm2cpio ${rpms_root}/${RPM} | cpio -t "${file_pattern}")" ]]; then
+        if [[ -z "$(rpm2cpio ${rpms_root}/${RPM} | cpio -t ${file_pattern})" ]]; then
             continue
         fi
 
