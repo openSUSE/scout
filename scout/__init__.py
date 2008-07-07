@@ -131,7 +131,7 @@ class ModuleLoader(object):
         sys.path.insert(0, dir)
         for file in os.listdir(dir):
             module_name, ext = os.path.splitext(file)
-            if ext == '.py' and module_name != '__init__':
+            if ext == '.py' and not (module_name == '__init__' or module_name == 'foo'):
                 module = __import__(module_name)
                 if not hasattr(module, 'ScoutModule'):
                     del module
