@@ -432,6 +432,39 @@ class Parser(object):
         else:
             return []
 
+class BasicScoutModule(object):
+
+    name = "name"
+    desc = "desc"
+    sql = "SQL"
+    result_list = ['repo', 'pkg', 'module']
+    result_list2= ['repository', 'package', 'module']
+
+    @classmethod
+    def query(cls, repo, term):
+        db = Database(cls.name + '-' + repo)
+        r = db.execute(cls.sql, '%%%s%%' % term)
+        if isinstance(r, list):
+            return map( lambda x: [repo] + list(x), r)
+        else:
+            return [ [repo] + list(r) ]
+        return r
+
+    @classmethod
+    def main(cls):
+        p = Parser(cls.name)
+        if not p.parse():
+            return None
+        term = p.args[0]
+
+        result = Result( cls.result_list, cls.result_list2)
+
+        for repo in p.get_repos():
+            result.add_rows( cls.query(repo, term) )
+
+        return result
+
+
 class ScoutCore(object):
 
 
