@@ -50,19 +50,23 @@ class CommandLineParser(object):
             return True
         return False
 
-    def print_usage(self):
-        print
-        print "Usage: %s <module> <search_term> [module-options]" % (self.prog)
-        print
-        print "Options:"
-        print "  -f FORMAT, --format=FORMAT\tselect the output format (default table)"
-        print
-        print "available modules:"
+    def get_usage(self):
+        ret = """
+Usage: %s <module> <search_term> [module-options]
+
+Options:
+  -f FORMAT, --format=FORMAT\tselect the output format (default table)
+
+available modules:
+""" % (self.prog, )
         maxlen = len(max(self.modules.keys(), key=len))
         for k in sorted(self.modules.keys()):
             module = self.modules[k]
-            print "    %s : %s" % (module.ScoutModule.name.ljust(maxlen), module.ScoutModule.desc)
-        print
+            ret += "    %s : %s\n" % (module.ScoutModule.name.ljust(maxlen), module.ScoutModule.desc)
+        return ret
+
+    def print_usage(self):
+        print self.get_usage()
         sys.exit(1)
 
     def module_not_found(self, name):
