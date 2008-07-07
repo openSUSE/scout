@@ -399,25 +399,25 @@ class Parser(object):
                 ret.append(file[len(self.modulename)+1:-len(Config.data_suffix)])
         return ret
 
-    def print_available_repos(self):
-        print 'Available repositories:'
+    def format_available_repos(self):
+        ret = "Available repositories:\n"
         if len(self.parser.get_option('-r').choices) == 0:
-            print '- none -'
-            return self
+            ret += '- none -\n'
+            return ret
         maxlen = len(max(self.parser.get_option('-r').choices, key=lambda x: x!=None and len(x) or 0))
         for opt in self.parser.get_option('-r').choices:
             if opt == None:
                 continue
             if self.repos_conf.has_repo(opt):
-                print opt.ljust(maxlen), '-', self.repos_conf.name(opt)
+                ret += opt.ljust(maxlen), '-', self.repos_conf.name(opt) + '\n'
             else:
-                print opt
+                ret += opt + '\n'
+        return ret
         
-
     def parse(self):
         (self.options, self.args) = self.parser.parse_args()
-        if self.options.listrepo:
-            self.print_available_repos()
+        if self.do_list()
+            print self.format_available_repos()
             return False
         if len(self.args) == 0:
             self.parser.print_help()
@@ -431,6 +431,9 @@ class Parser(object):
             return [x for x in self.parser.get_option('-r').choices if x!=None]
         else:
             return []
+
+    def do_list(self):
+        return self.options.listrepo
 
 class BasicScoutModule(object):
 
