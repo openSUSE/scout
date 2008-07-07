@@ -133,7 +133,10 @@ class ModuleLoader(object):
             module_name, ext = os.path.splitext(file)
             if ext == '.py' and module_name != '__init__':
                 module = __import__(module_name)
-                cls.modules.append(module)
+                if not hasattr(module, 'ScoutModule'):
+                    del module
+                else:
+                    cls.modules.append(module)
 
 class Database(object):
 
