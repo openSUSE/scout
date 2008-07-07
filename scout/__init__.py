@@ -3,10 +3,12 @@ import os
 import sys
 import sqlite3
 from optparse import OptionParser
+from ConfigParser import SafeConfigParser
 
 class Config(object):
     data_path = '/usr/share/scout'
     data_suffix = '.db'
+    config_file = 'repos.conf'
 
 class CommandLineParser(object):
     """
@@ -337,6 +339,39 @@ class Result(object):
     def format(self, formatter=TableFormatter, **kwargs):
         return formatter.format(self, **kwargs)
 
+class RepoConfigReader(object):
+    """Class to read of an configuration of the repositories. This class
+    internally uses SafeConfigParser for ConfigParser, but don't provide the
+    same API"""
+    
+    def __init__(self):
+        self.parser = SafeConfigParser()
+
+    def read(self, file_name=None):
+        """Read the config files and parse them. The files is loaded from
+        directory ${Config.data_path}.  This should be suppressed by file_names
+        argument.
+
+        - file_name: is optional argument with a file name. The main purpose is
+          for debugging.  """
+        if file_name != None:
+            self.parser.read([file_name, ])
+        else:
+            self.parser.read([os.path.join(Config.data_path, Config.config_file), ])
+        return self
+    
+    def repos(self):
+        return self.parser.sections()
+    
+    def has_repo(self, repo):
+        return repo in self.parser.sections()
+
+    def name(self, repo):
+        return self.parser.get(repo, 'name')
+
+    def baseurl(self, repo):
+        return self.parser.get(repo, 'baseurl')
+
 class Parser(object):
 
     def __init__(self, modulename):
@@ -344,6 +379,8 @@ class Parser(object):
         self.parser = OptionParser(usage="Usage: %prog " + modulename + " [options] <search_term>")
         self.parser.add_option('-l', '--listrepos', action="store_true", help="list available repositories", dest="listrepo")
         self.parser.add_option('-r', '--repo', type='choice', help='select repository to search', default=None, choices=self.get_available_repos())
+
+        self.repos_conf = RepoConfigReader().read()
 
     def add_repo(self, repo):
         opt = self.parser.get_option('-r')
@@ -362,27 +399,25 @@ class Parser(object):
                 ret.append(file[len(self.modulename)+1:-len(Config.data_suffix)])
         return ret
 
+    def print_available_repos(self):
+        print 'Available repositories:'
+        if len(self.parser.get_option('-r').choices) == 0:
+            print '- none -'
+            return self
+        maxlen = len(max(self.parser.get_option('-r').choices, key=lambda x: x!=None and len(x) or 0))
+        for opt in self.parser.get_option('-r').choices:
+            if opt == None:
+                continue
+            if self.repos_conf.has_repo(opt):
+                print opt.ljust(maxlen), '-', self.repos_conf.name(opt)
+            else:
+                print opt
+        
+
     def parse(self):
         (self.options, self.args) = self.parser.parse_args()
         if self.options.listrepo:
-            print 'Available repositories:'
-            reposconf = open(Config.data_path + '/repos.conf')
-            repos={}
-            for line in reposconf:
-                (k,v) = line.split('=')
-                repos[k.strip()] = v.strip()
-            reposconf.close()
-            if len(self.parser.get_option('-r').choices) == 0:
-                print '- none -'
-                return False
-            maxlen = len(max(self.parser.get_option('-r').choices, key=lambda x: x!=None and len(x) or 0))
-            for opt in self.parser.get_option('-r').choices:
-                if opt == None:
-                    continue
-                if repos.has_key(opt):
-                  print opt.ljust(maxlen), '-', repos[opt]
-                else:
-                  print opt
+            self.print_available_repos()
             return False
         if len(self.args) == 0:
             self.parser.print_help()
