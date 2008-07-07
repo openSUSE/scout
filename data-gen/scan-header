@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# 
+# Usage: write_row RPM_FILE ANALYZED_FILE INDEX_FILE STANDARD_DIRS_PATTERN
+# $1 - name of rpm file
+# $2 - name of analyzed file
+# $3 - name of output file
+# $4 - standard_dirs_pattern
+#
+# This function analyze the file and write a row to the index file
+function write_row() {
+
+    local rpm_file header_file index_file python_module
+
+    rpm_file=${1}
+    header_file=${2}
+    index_file=${3}
+    standard_dirs_pattern=${4}
+
+    # extract the name of the module
+    header_name=$(echo ${header_file} | sed "s#\.\?${standard_dirs_pattern}##")
+
+    echo "${rpm_file} ${header_name}" >> ${index_file}
+}
+
+source scan_lib
+
+# Usage
+# $1 - RPMS_ROOT
+# $2 - INDEX_FILE
+function scan_header () {
+   local rpms_root index_file
+
+   rpms_root=${1}
+   index_file=${2}
+
+  # the list of some obscure extensions comes from manpage of gcc
+  # the *.h is for C/C++/Obj-C/Obj-C++, the rest are for C++
+   scan ${rpms_root} ${index_file} "/usr/\(local/\)\?include/" '*.h' '*.hh' '*.H' '*.hp' '*.hxx' '*.hpp' '*.HPP' '*.h++' '*.tcc'
+
+}
+
+scan_header /work/CDs/all/full-11.0-x86_64/suse $(pwd)/header-suse110.txt
+#scan_header /work/CDs/all/full-10.3-x86_64/suse $(pwd)/header-suse103.txt
+#scan_header /work/CDs/all/full-10.2-x86_64/suse $(pwd)/header-suse102.txt
+#scan_header /work/CDs/all/full-10.1-x86_64/suse $(pwd)/header-suse101.txt
+#scan_header /work/CDs/all/full-sles10-x86_64/suse $(pwd)/header-sle10.txt
