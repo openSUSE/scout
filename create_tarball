@@ -2,7 +2,7 @@
 rm -f scout.tar.bz2 scout-gen.tar.bz2
 
 cd ..
-tar cf scout/scout.tar scout/AUTHORS scout/README scout/*.conf scout/*.sh scout/*.py scout/modules/*.py scout/command-not-found/* scout/doc/*
+tar cf scout/scout.tar scout/AUTHORS scout/README scout/*.conf scout/*.sh scout/*.py scout/modules/*.py scout/command-not-found/* scout/doc/* scout/TODO
 cd scout
 bzip2 --best scout.tar
 
