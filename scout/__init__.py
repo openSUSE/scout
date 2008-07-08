@@ -421,7 +421,7 @@ class Parser(object):
         
     def parse(self):
         (self.options, self.args) = self.parser.parse_args()
-        if self.do_list()
+        if self.do_list():
             print self.format_available_repos()
             return False
         if len(self.args) == 0:
