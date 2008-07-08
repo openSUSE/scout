@@ -1,5 +1,8 @@
+# Copyright (c) 2008 Marek Stopka <mstopka@opensuse.org>
+# This file is distributed under the terms of MIT license
+# see LICENSE or http://opensource.org/licenses/mit-license.php
+
 # scout completion :-)
-# A gift from Marek Stopka <mstopka@opensuse.org>
 
 _scout() {
     SCOUT_CMDLIST=()

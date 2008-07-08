@@ -1,3 +1,6 @@
+# Copyright (c) 2008 Pavol Rusnak
+# see __init__.py for license details
+
 import scout
 
 class ScoutModule(object):
