@@ -45,6 +45,12 @@ Source42:       python-suse102.txt.lzma
 Source43:       python-suse103.txt.lzma
 Source44:       python-suse110.txt.lzma
 
+Source50:       header-sle10.txt.lzma
+Source51:       header-suse101.txt.lzma
+Source52:       header-suse102.txt.lzma
+Source53:       header-suse103.txt.lzma
+Source54:       header-suse110.txt.lzma
+
 %description
 Index Data for Package Scout
 
@@ -255,18 +261,65 @@ Requires:       scout
 %description -n scout-python-suse110
 Package Scout Index Data - Python modules from openSUSE 11.0
 
+%package -n scout-header-sle10
+Group:          System/Packages
+Summary:        Index Data for Package Scout
+Version:        2008.07.08
+Requires:       scout
+
+%description -n scout-header-sle10
+Package Scout Index Data - Headers from SUSE Linux Enterprise 10
+
+%package -n scout-header-suse101
+Group:          System/Packages
+Summary:        Index Data for Package Scout
+Version:        2008.07.08
+Requires:       scout
+
+%description -n scout-header-suse101
+Package Scout Index Data - Headers from SUSE Linux 10.1
+
+%package -n scout-header-suse102
+Group:          System/Packages
+Summary:        Index Data for Package Scout
+Version:        2008.07.08
+Requires:       scout
+
+%description -n scout-header-suse102
+Package Scout Index Data - Headers from openSUSE 10.2
+
+%package -n scout-header-suse103
+Group:          System/Packages
+Summary:        Index Data for Package Scout
+Version:        2008.07.08
+Requires:       scout
+
+%description -n scout-header-suse103
+Package Scout Index Data - Headers from openSUSE 10.3
+
+%package -n scout-header-suse110
+Group:          System/Packages
+Summary:        Index Data for Package Scout
+Version:        2008.07.08
+Requires:       scout
+
+%description -n scout-header-suse110
+Package Scout Index Data - Headers from openSUSE 11.0
+
 %prep
 %setup -q -c -n data-gen
 cp -a %{SOURCE10} %{SOURCE11} %{SOURCE12} %{SOURCE13} %{SOURCE14} .
 cp -a %{SOURCE20} %{SOURCE21} %{SOURCE22} %{SOURCE23} %{SOURCE24} %{SOURCE25} %{SOURCE26} .
 cp -a %{SOURCE30} %{SOURCE31} %{SOURCE32} %{SOURCE33} %{SOURCE34} %{SOURCE35} .
 cp -a %{SOURCE40} %{SOURCE41} %{SOURCE42} %{SOURCE43} %{SOURCE44} .
+cp -a %{SOURCE50} %{SOURCE51} %{SOURCE52} %{SOURCE53} %{SOURCE54} .
 
 %build
 python gen-autoconf.py
 python gen-bin.py
 python gen-java.py
 python gen-python.py
+python gen-header.py
 sh gen
 
 %install
@@ -367,5 +420,25 @@ rm -rf $RPM_BUILD_ROOT
 %files -n scout-python-suse110
 %defattr(-,root,root)
 %{_datadir}/scout/python-suse110*
+
+%files -n scout-header-sle10
+%defattr(-,root,root)
+%{_datadir}/scout/header-sle10*
+
+%files -n scout-header-suse101
+%defattr(-,root,root)
+%{_datadir}/scout/header-suse101
+
+%files -n scout-header-suse102
+%defattr(-,root,root)
+%{_datadir}/scout/header-suse102
+
+%files -n scout-header-suse103
+%defattr(-,root,root)
+%{_datadir}/scout/header-suse103
+
+%files -n scout-header-suse110
+%defattr(-,root,root)
+%{_datadir}/scout/header-suse110
 
 %changelog
