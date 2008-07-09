@@ -427,18 +427,18 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n scout-header-suse101
 %defattr(-,root,root)
-%{_datadir}/scout/header-suse101
+%{_datadir}/scout/header-suse101*
 
 %files -n scout-header-suse102
 %defattr(-,root,root)
-%{_datadir}/scout/header-suse102
+%{_datadir}/scout/header-suse102*
 
 %files -n scout-header-suse103
 %defattr(-,root,root)
-%{_datadir}/scout/header-suse103
+%{_datadir}/scout/header-suse103*
 
 %files -n scout-header-suse110
 %defattr(-,root,root)
-%{_datadir}/scout/header-suse110
+%{_datadir}/scout/header-suse110*
 
 %changelog
