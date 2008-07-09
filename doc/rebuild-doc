@@ -6,8 +6,8 @@ VERSION='0.0.2'
 DB='http://docbook.sourceforge.net/release/xsl/current/'
 
 sed "s:@VERSION@:$VERSION:" scout.xml.in > scout.xml
-#xsltproc --nonet $DB/manpages/docbook.xsl scout.xml
-#xsltproc --nonet --output scout.html  $DB/html/docbook.xsl scout.xml
+xsltproc --nonet $DB/manpages/docbook.xsl scout.xml
+xsltproc --nonet --output scout.html  $DB/html/docbook.xsl scout.xml
 xsltproc --nonet --output scout.fo \
     --stringparam paper.type A4 \
     --stringparam body.start.indent 0pt \

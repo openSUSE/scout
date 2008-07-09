@@ -26,7 +26,7 @@
             <contrib>Index data for Java</contrib>
             <firstname>Ales</firstname>
             <surname>Nosek</surname>
-            <email>anosek@suse.cz</email>            
+            <email>anosek@suse.cz</email>
          </othercredit>
          <othercredit>
             <contrib>Webpin code</contrib>
@@ -38,13 +38,13 @@
             <contrib>Bash completion</contrib>
             <firstname>Marek</firstname>
             <surname>Stopka</surname>
-			<email>mstopka@opensuse.org</email>
+            <email>mstopka@opensuse.org</email>
          </othercredit>
          <othercredit>
             <contrib>Docbook documentation</contrib>
             <firstname>Thomas</firstname>
             <surname>Schraitle</surname>
-			<email>toms@suse.de</email>
+            <email>toms@suse.de</email>
          </othercredit>
       </authorgroup>
    </refentryinfo>
@@ -55,15 +55,16 @@
       <refmiscinfo class="source">http://repo.or.cz/w/scout.git</refmiscinfo>
       <refmiscinfo class="manual">http://en.opensuse.org/Scout</refmiscinfo>
    </refmeta>
-   
+
    <refnamediv>
       <refname>&product;</refname>
       <refpurpose>A Package Scout</refpurpose>
    </refnamediv>
-   
+
    <refsynopsisdiv id="scout.synopsis">
       <title>Synopsis</title>
       <cmdsynopsis><command>scout</command>
+         <arg choice="opt">global_options</arg>
          <arg choice="req">module</arg>
          <arg choice="req">search_term</arg>
          <arg choice="opt">module_options</arg>
@@ -75,7 +76,7 @@
       <para>The following options are available:</para>
       <variablelist>
          <varlistentry>
-            <term><option>global options</option></term>
+            <term><option>global_options</option></term>
             <listitem>
                <para>The global options are handled by scout itself.</para>
                <variablelist>
@@ -92,7 +93,7 @@
                      </listitem>
                   </varlistentry>
                </variablelist>
-            </listitem>   
+            </listitem>
             <term><option>module</option></term>
             <listitem>
                <para>The respective module to search for. The following
@@ -111,9 +112,21 @@
                      </listitem>
                   </varlistentry>
                   <varlistentry>
+                     <term>header</term>
+                     <listitem>
+                        <para>Search for C/C++/Obj-C/Obj-C++ headers</para>
+                     </listitem>
+                  </varlistentry>
+                  <varlistentry>
                      <term>java</term>
                      <listitem>
                         <para>Search for Java classes inside packaged JAR files.</para>
+                     </listitem>
+                  </varlistentry>
+                  <varlistentry>
+                     <term>python</term>
+                     <listitem>
+                        <para>Search for Python modules.</para>
                      </listitem>
                   </varlistentry>
                   <varlistentry>
@@ -143,19 +156,21 @@
                      </listitem>
                   </varlistentry>
                   <varlistentry>
-                     <term><option>--repos</option></term>
+                     <term><option>--repos=<replaceable>REPO</replaceable></option>,
+                        <option>-r <replaceable>REPO</replaceable></option>
+                     </term>
                      <listitem>
                         <para>select a repository to search (use a name
                            from the <option>--listrepos</option> output)</para>
                      </listitem>
                   </varlistentry>
                </variablelist>
-               
+
             </listitem>
-         </varlistentry>  
+         </varlistentry>
       </variablelist>
    </refsect1>
-   
+
    <refsect1 id="scout.description">
       <title>Description</title>
       <para>Scout is a tool to look for uninstalled packages. For
@@ -171,9 +186,10 @@
          files. See the <ulink url="http://en.opensuse.org/Scout">Wiki
             page about Scout</ulink> for more information.</para>
    </refsect1>
-   
+
    <refsect1 id="scout.search.bin">
-      <title>Example 1: Search For Executables</title>
+      <title>Example 1: 
+  Search For Executables</title>
       <para>For example, to search for a <filename>sdl-config</filename>
          executable, you need the <package>bin</package> module:</para>
       <screen><prompt>$ </prompt><command>scout</command> bin sdl-config</screen>
@@ -184,7 +200,7 @@
  suse110    | sdl-config | /usr/lib/baselibs-32bit/bin | SDL-devel-32bit</screen>
 
    </refsect1>
-      
+
    <refsect1 id="scout.search.java">
       <title>Example 2: Search For Java Packages</title>
       <para>If you want to search for a Java package, use the following
@@ -201,7 +217,7 @@
  jpackage17 | xerces-j2        | xerces-j2-2.9.0.jar | org.apache.xml.serialize.SerializerFactoryImpl</screen>
 
    </refsect1>
-      
+
    <refsect1 id="scout.search.webpin">
       <title>Example 3: Search through Webpin</title>
       <para>If you want to use the <ulink
@@ -216,7 +232,7 @@
  docbook_5 | 5.0CR7  | noarch | http://download.opensuse.org/repositories/home:/thomas-schraitle/openSUSE_Factory | /etc/xml/docbook_5.xml
  docbook_5 | 5.0     | noarch | http://download.opensuse.org/repositories/XML/xml-factory                         | /etc/xml/docbook_5.xml</screen>
    </refsect1>
-   
+
    <refsect1 id="scout.bashcompletion">
       <title>Bash Completion</title>
       <para>If you like to complete your options automatically through

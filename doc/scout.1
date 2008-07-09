@@ -1,11 +1,11 @@
 .\"     Title: scout
 .\"    Author: Pavol Rusnak <stick@gk2.sk>
-.\" Generator: DocBook XSL Stylesheets v1.73.1 <http://docbook.sf.net/>
-.\"      Date: 06/24/2008
+.\" Generator: DocBook XSL Stylesheets v1.73.2 <http://docbook.sf.net/>
+.\"      Date: 07/09/2008
 .\"    Manual: http://en.opensuse.org/Scout
 .\"    Source: http://repo.or.cz/w/scout.git 0.0.2
 .\"
-.TH "SCOUT" "1" "06/24/2008" "http://repo\.or\.cz/w/scout\.g" "http://en\.opensuse\.org/Scout"
+.TH "SCOUT" "1" "07/09/2008" "http://repo\.or\.cz/w/scout\.g" "http://en\.opensuse\.org/Scout"
 .\" disable hyphenation
 .nh
 .\" disable justification (adjust text to left margin only)
@@ -14,13 +14,24 @@
 scout - A Package Scout
 .SH "SYNOPSIS"
 .HP 6
-\fBscout\fR {module} {search_term} [module_options]
+\fBscout\fR [global_options] {module} {search_term} [module_options]
 .SH "OPTIONS"
 .PP
 The following options are available:
 .PP
-\fBmodule\fR
+\fBglobal_options\fR, \fBmodule\fR
 .RS 4
+The global options are handled by scout itself\.
+.PP
+\fB\-\-format\fR
+.RS 4
+Specify the default output format\. Choices are table (default), xml, csv\. It\'s a replacement of the older scoutcsv, scoutxml links\.
+.RE
+.PP
+\fB\-\-help\fR
+.RS 4
+Print a brief help\.
+.RE
 The respective module to search for\. The following modules are available:
 .PP
 autoconf
@@ -33,9 +44,19 @@ bin
 Search for binaries contained in packages\.
 .RE
 .PP
+header
+.RS 4
+Search for C/C++/Obj\-C/Obj\-C++ headers
+.RE
+.PP
 java
 .RS 4
 Search for Java classes inside packaged JAR files\.
+.RE
+.PP
+python
+.RS 4
+Search for Python modules\.
 .RE
 .PP
 webpin
@@ -58,7 +79,7 @@ Additional module options\. At the moment these are:
 list all available repositories
 .RE
 .PP
-\fB\-\-repos\fR
+\fB\-\-repos=\fR\fB\fIREPO\fR\fR, \fB\-r \fR\fB\fIREPO\fR\fR
 .RS 4
 select a repository to search (use a name from the
 \fB\-\-listrepos\fR

@@ -10,7 +10,7 @@ from xml.dom import minidom
 class ScoutModule(object):
 
     name = "webpin"
-    desc = "Search in the packages using the webpin webservice."
+    desc = "Search in packages using the webpin webservice."
     distros = {
         'suse110' : 'openSUSE_110',
         'suse103' : 'openSUSE_103',

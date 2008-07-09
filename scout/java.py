@@ -6,7 +6,7 @@ import scout
 class ScoutModule(object):
 
     name = "java"
-    desc = "Search for the java classes inside the packaged JAR files."
+    desc = "Search for java classes inside the packaged JAR files."
 
     @classmethod
     def query(cls, repo, term):

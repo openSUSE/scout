@@ -35,7 +35,7 @@ paths = [ "/bin", "/sbin", "/usr/bin", "/usr/sbin", "/usr/games", "/opt/kde3/bin
 class ScoutModule(object):
 
     name = "bin"
-    desc = "Search for the binaries contained in the packages."
+    desc = "Search for binaries contained in the packages."
 
     @classmethod
     def query_zypp(cls, term):

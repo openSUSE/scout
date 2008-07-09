@@ -1,7 +1,7 @@
 # The scout project
 # Copyright (c) 2008 Pavol Rusnak, Michal Vyskocil
 # This file is distributed under the terms of the MIT License
-# see the comment in the end of this file
+# see the comment at the end of this file
 
 import fnmatch
 import os
@@ -46,7 +46,7 @@ class CommandLineParser(object):
                 self.add_module(m)
 
         self.__format = 'table'
-        
+
         self.prog = os.path.basename(sys.argv[0])
 
     def add_module(self, module):
@@ -59,10 +59,12 @@ class CommandLineParser(object):
 
     def get_usage(self):
         ret = """
-Usage: %s <module> <search_term> [module-options]
+Usage: %s [global_options] <module> <search_term> [module_options]
 
-Options:
-  -f FORMAT, --format=FORMAT\tselect the output format (default table)
+Global options:
+\t-f FORMAT, --format=FORMAT    select the output format (default table)
+\t-h, --help                    print help
+\t-v, --version                 print version
 
 available modules:
 """ % (self.prog, )
@@ -80,7 +82,7 @@ available modules:
         print "Module '%s' not found" % name
         sys.exit(1)
 
-    def parse_option(self, short_opt, long_opt, default=None):
+    def parse_option(self, short_opt, long_opt, default = None):
         opt = default
         if short_opt in sys.argv or long_opt in sys.argv:
             opt_index = sys.argv.index(long_opt) if long_opt in sys.argv else sys.argv.index(short_opt)
@@ -99,10 +101,10 @@ available modules:
 
     def parse(self):
 
+        self.__format = self.parse_option('-f', '--format', 'table')
+
         if len(sys.argv) == 1 or (len(sys.argv) == 2 and self._is_help(sys.argv[1])):
             self.print_usage()
-
-        self.__format = self.parse_option('-f', '--format', 'table')
 
         mname = sys.argv[1]
         if not mname in self.modules:
@@ -335,7 +337,7 @@ class Result(object):
 
     def get_table(self):
         ret = [self.cols1, self.cols2]
-        ret.extend(self.rows)           # I hate the methods, which returns None!!!
+        ret.extend(self.rows)
         return ret
 
     def get_rows(self):
@@ -346,9 +348,9 @@ class Result(object):
 
 class RepoConfigReader(object):
     """Class to read of an configuration of the repositories. This class
-    internally uses SafeConfigParser for ConfigParser, but don't provide the
+    internally uses SafeConfigParser for ConfigParser, but doesn't provide the
     same API"""
-    
+
     def __init__(self):
         self.parser = SafeConfigParser()
 
@@ -364,10 +366,10 @@ class RepoConfigReader(object):
         else:
             self.parser.read([os.path.join(Config.data_path, Config.config_file), ])
         return self
-    
+
     def repos(self):
         return self.parser.sections()
-    
+
     def has_repo(self, repo):
         return repo in self.parser.sections()
 
@@ -414,11 +416,13 @@ class Parser(object):
             if opt == None:
                 continue
             if self.repos_conf.has_repo(opt):
-                ret += opt.ljust(maxlen), '-', self.repos_conf.name(opt) + '\n'
+                ret += opt.ljust(maxlen) + ' - ' + self.repos_conf.name(opt) + '\n'
+                if self.repos_conf.baseurl(opt) != '':
+                    ret += ' '*maxlen + '   * ' + self.repos_conf.baseurl(opt) + '\n'
             else:
                 ret += opt + '\n'
         return ret
-        
+
     def parse(self):
         (self.options, self.args) = self.parser.parse_args()
         if self.do_list():
@@ -475,7 +479,6 @@ class BasicScoutModule(object):
 
 class ScoutCore(object):
 
-
     out_formatters = {
             'csv' :     CSVFormatter,
             'xml' :     XMLFormatter,
@@ -499,11 +502,11 @@ class ScoutCore(object):
             try:
                 return result.format(formatter=cls.out_formatters[clp.format])
             except KeyError, kerr:
-                raise SystemExit('Cannot found a formatter for a %s' % clp.format)
+                raise SystemExit('Cannot find a formatter for a %s' % clp.format)
 
 
 # Copyright (c) 2008 Pavol Rusnak, Michal Vyskocil
-# 
+#
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
@@ -513,7 +516,7 @@ class ScoutCore(object):
 # 
 # The above copyright notice and this permission notice shall be included in
 # all copies or substantial portions of the Software.
-# 
+#
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 # FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
