@@ -69,5 +69,3 @@ _scout() {
 }
 
 complete -F _scout -X -o default scout
-complete -F _scout -X -o default scoutcsv
-complete -F _scout -X -o default scoutxml

@@ -1,5 +1,5 @@
 #
-# spec file for package scout
+# spec file for package scout data
 #
 
 # norootforbuild

@@ -64,7 +64,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
-%doc TODO LICENSE AUTHORS README doc/scout.html doc/scout.pdf
+%doc AUTHORS LICENSE README TODO doc/scout.html doc/scout.pdf
 %{_bindir}/%{name}*
 %{py_sitedir}/%{name}
 %{_datadir}/%{name}
