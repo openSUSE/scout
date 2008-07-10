@@ -93,9 +93,12 @@ available modules:
                 sys.argv.remove(opt)
                 opt = _opt
             else:
+                if len(sys.argv) == opt_index +1:
+                    self.parse_error("You must specify a format. See scout --help")
+                _opt = None
                 _opt = sys.argv[opt_index + 1]
-                sys.argv.remove(opt)
                 sys.argv.remove(_opt)
+                sys.argv.remove(opt)
                 opt = _opt
         return opt
 
@@ -106,11 +109,19 @@ available modules:
         if len(sys.argv) == 1 or (len(sys.argv) == 2 and self._is_help(sys.argv[1])):
             self.print_usage()
 
+        self.__format = self.parse_option('-f', '--format', 'table')
+
+        if len(sys.argv) <= 1:
+            self.parse_error("You must specify a module name. See scout --help")
         mname = sys.argv[1]
         if not mname in self.modules:
             self.module_not_found(mname)
         del sys.argv[1]
         return self.modules[mname]
+
+    def parse_error(self, msg, err_code=1):
+        print msg
+        sys.exit(err_code)
 
     def _get_format(self):
         return self.__format
