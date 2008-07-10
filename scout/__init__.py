@@ -78,10 +78,6 @@ available modules:
         print self.get_usage()
         sys.exit(1)
 
-    def module_not_found(self, name):
-        print "Module '%s' not found" % name
-        sys.exit(1)
-
     def parse_option(self, short_opt, long_opt, default = None):
         opt = default
         if short_opt in sys.argv or long_opt in sys.argv:
@@ -115,7 +111,7 @@ available modules:
             self.parse_error("You must specify a module name. See scout --help")
         mname = sys.argv[1]
         if not mname in self.modules:
-            self.module_not_found(mname)
+            self.parse_error("Module '%s' was not found" % mname)
         del sys.argv[1]
         return self.modules[mname]
 
