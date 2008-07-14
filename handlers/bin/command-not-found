@@ -1,12 +1,38 @@
 #!/usr/bin/python
-import sys
 
 EX_NOTFOUND = 127
+INSTALL_CMD = "sudo zypper install"
+
+import sys
+import rpm
+
+def print_found(rows):
+    print
+    print "The program '%s' can be found in the following package(s):" % term
+    for row in rows:
+        print "  * %s (%s/%s)" % (row[3], row[2], row[1])
+    print
+    print 'Try:', INSTALL_CMD
+    print
+    sys.exit(EX_NOTFOUND)
+
+def print_installed(term, pkg, path):
+    print
+    print "Program '%s' is present in package '%s', which is installed on your system." % ( term, pkg )
+    print
+    print "Full path leading to '%s' is '%s/%s'." % ( term , path , term )
+    print
+    print "Please check your $PATH or maybe program '%s' is intended to be run only by root" % term
+    print
+    sys.exit(EX_NOTFOUND)
+
+def check_installed(term):
+    ts = rpm.TransactionSet()
+    mi = ts.dbMatch('name', term)
+    return mi.count() > 0
 
 if len(sys.argv) < 2:
     sys.exit(EX_NOTFOUND)
-
-install_cmd = "sudo zypper install";
 
 import scout
 sys.path.append(scout.Config.module_path)
@@ -22,11 +48,8 @@ else:
 if rows == None or len(rows) == 0:
     sys.exit(EX_NOTFOUND)
 
-print
-print "The program '%s' can be found in the following package(s):" % term
 for row in rows:
-    print "  * %s (%s/%s)" % (row[3], row[2], row[1])
-print
-print 'Try:', install_cmd
-print
-sys.exit(EX_NOTFOUND)
+    if check_installed(row[3]):
+        print_installed(term, row[3], row[2])
+
+print_found(rows)

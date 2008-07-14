@@ -5,7 +5,7 @@ function preexec() {
 function precmd() {
     (($?)) && [ -n "$command" ] && {
         whence -- "$command" >& /dev/null ||
-            command-not-found "$command"
+            command-not-found "$command" __DISTRO__
         unset command
     }
 }

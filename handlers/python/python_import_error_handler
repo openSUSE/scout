@@ -1,0 +1,30 @@
+#!/bin/bash
+
+INSTALL_CMD='sudo zypper install'
+
+if [[ ${1} == "" ]]; then
+    exit 1
+fi
+
+module_name=$(echo ${1} | sed 's/No module named //')
+
+modules=$(/usr/bin/scout -f csv python ${module_name} | grep -v '^"repo' | cut -d ';' -f 2 | tr -d '"' | sort -u)
+
+modules_cnt=$(echo ${modules} | wc -w)
+
+echo
+echo
+case ${modules_cnt} in
+    0)
+        echo "No package was found by scout"
+    ;;
+    1)
+        echo "Module '${module_name}' was found in the package ${modules}. You can install it by:"
+        echo "$INSTALL_CMD zypper install ${modules}"
+    ;;
+    *)
+        echo "The selected module was found in one of several packages:"
+        echo "${modules}"
+        echo "$installcmd <selected_package>"
+    ;;
+esac

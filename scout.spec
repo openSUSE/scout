@@ -7,8 +7,8 @@
 Name:           scout
 Version:        0.0.2
 Release:        1
-Url:            http://repo.or.cz/w/scout.git
-License:        GPL v2 or later
+Url:            http://en.opensuse.org/Scout
+License:        MIT License
 Group:          System/Packages
 Summary:        Package Scout
 Source:         %{name}.tar.bz2
@@ -31,12 +31,7 @@ BuildRequires:  readline
 
 %description
 
-Package Scout for indexing various properties of packages, like:
-* autoconf macros
-* binaries
-* Java classes
-* Python modules
-* webpin web search (http://packages.opensuse-community.org/)
+Package Scout for indexing various properties of packages.
 
 %prep
 %setup -q -n %{name}
@@ -52,7 +47,7 @@ shopt -s extglob
 cp -a scout/!(foo).py{,c} $RPM_BUILD_ROOT%{py_sitedir}/%{name}
 # install data files
 install -D -m 0644 repos.conf $RPM_BUILD_ROOT%{_datadir}/%{name}/repos.conf
-# create symlinks
+# install scout binary
 install -D -m 0755 scout-cmd.py $RPM_BUILD_ROOT%{_bindir}/%{name}
 # install bash completion
 install -D -m 0644 scout-bash-completion $RPM_BUILD_ROOT%{_sysconfdir}/bash_completion.d/scout
