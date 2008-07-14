@@ -1,0 +1,22 @@
+Installation:
+
+== BASH ==
+
+To use this feature you must have bash compiled with command-not-found patch
+and add the following 3 lines into your .bashrc file:
+
+if [ -f /etc/bash_command_not_found ]; then
+    . /etc/bash_command_not_found
+fi
+
+You can add these 3 lines to /etc/bash.bashrc to install for all users.
+
+== ZSH ==
+
+To use this feature you, please add the following lines to your .zshrc file:
+
+if [ -f /etc/zsh_command_not_found ]; then
+    . /etc/zsh_command_not_found
+fi
+
+You can add these 3 lines to /etc/zshrc to install for all users.

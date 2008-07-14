@@ -15,4 +15,4 @@ xsltproc --nonet --output scout.fo \
     --stringparam variablelist.as.blocks 1 \
     $DB/fo/docbook.xsl scout.xml
 fop scout.fo scout.pdf
-rm scout.fo scout.xml
+rm -f scout.fo scout.xml

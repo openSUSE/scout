@@ -92,6 +92,12 @@
                         <para>Print a brief help.</para>
                      </listitem>
                   </varlistentry>
+                  <varlistentry>
+                     <term><option>--version</option></term>
+                     <listitem>
+                        <para>Print version.</para>
+                     </listitem>
+                  </varlistentry>
                </variablelist>
             </listitem>
             <term><option>module</option></term>
