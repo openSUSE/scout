@@ -4,14 +4,12 @@ import sys
 EX_NOTFOUND = 127
 
 if len(sys.argv) < 2:
-    print 'Do not run this handler directly ...'
     sys.exit(EX_NOTFOUND)
 
 install_cmd = "sudo zypper install";
 
 import scout
-sitedir = max(sys.path, key=lambda x: x.endswith('site-packages'))
-sys.path.append(sitedir + "/scout")
+sys.path.append(scout.Config.module_path)
 import bin
 
 term = sys.argv[1]

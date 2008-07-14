@@ -14,6 +14,7 @@ class Config(object):
     data_path = '/usr/share/scout'
     data_suffix = '.db'
     config_file = 'repos.conf'
+    module_path = os.path.dirname(__file__)
 
 class CommandLineParser(object):
     """
@@ -496,8 +497,7 @@ class ScoutCore(object):
     def run(cls):
 
         ml = ModuleLoader
-        moduledir = os.path.dirname(__file__)
-        ml.import_from(moduledir)
+        ml.import_from(Config.module_path)
 
         clp = CommandLineParser(ml.modules)
         module = clp.parse()
