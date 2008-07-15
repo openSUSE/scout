@@ -12,23 +12,23 @@ fi
 
 module_name=$(echo ${1} | sed 's/No module named //')
 
-modules=$(/usr/bin/scout -f csv python ${module_name} | grep -v '^"repo' | cut -d ';' -f 2 | tr -d '"' | sort -u)
+package=$(/usr/bin/scout -f csv python ${module_name} | grep -v '^"repo' | cut -d ';' -f 2 | tr -d '"' | sort -u)
 
-modules_cnt=$(echo ${modules} | wc -w)
+package_cnt=$(echo ${package} | wc -w)
 
 echo
 echo
-case ${modules_cnt} in
+case ${package_cnt} in
     0)
-        echo "No package was found by scout"
+        echo "No package containing module '${module_name}' was found by scout"
     ;;
     1)
-        echo "Module '${module_name}' was found in the package ${modules}. You can install it by:"
-        echo "$INSTALL_CMD zypper install ${modules}"
+        echo "Module '${module_name}' was found in the package ${package}. You can install it by:"
+        echo "$INSTALL_CMD zypper install ${package}"
     ;;
     *)
         echo "The selected module was found in one of several packages:"
-        echo "${modules}"
+        echo "${package}"
         echo "$INSTALL_CMD <selected_package>"
     ;;
 esac
