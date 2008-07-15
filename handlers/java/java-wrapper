@@ -1,0 +1,20 @@
+#!/bin/bash
+
+unset CLASSPATH
+
+MISSING_CLASS=$(java $* 2>&1 | grep java.lang.ClassNotFoundException | cut -d ' ' -f 4)
+echo "The class file ${MISSING_CLASS} is not installed on your system."
+echo "Searching: scout java ${MISSING_CLASS} ..."
+
+PACKAGES=$(scout -f csv java ${MISSING_CLASS} | grep -v '^"repo' | cut -d ';' -f 2 | tr -d '"')
+echo "The class file ${MISSING_CLASS} was found in one of these packages. Which one would you like to install?"
+
+select PKG in ${PACKAGES}; do
+break
+done
+
+echo "Installing package '${PKG}'"
+echo "zypper install ${PKG}"
+sudo zypper install ${PKG}
+
+java $*

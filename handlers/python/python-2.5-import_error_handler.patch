@@ -1,0 +1,66 @@
+--- Python/pythonrun.c
++++ Python/pythonrun.c
+@@ -41,6 +41,14 @@
+ 				   _Py_GetRefTotal())
+ #endif
+ 
++#include <unistd.h>
++#include <sys/wait.h>
++#include <sys/stat.h>
++#include <sys/types.h>
++
++#define IS_EXEC_FILE(mode) \
++    ((mode) & (S_IXUSR | S_IXGRP | S_IXOTH) & S_IFREG)
++
+ #ifdef __cplusplus
+ extern "C" {
+ #endif
+@@ -1124,6 +1132,7 @@
+ PyErr_Display(PyObject *exception, PyObject *value, PyObject *tb)
+ {
+ 	int err = 0;
++	int import_err = 0;
+ 	PyObject *f = PySys_GetObject("stderr");
+ 	Py_INCREF(value);
+ 	if (f == NULL)
+@@ -1193,6 +1202,8 @@
+ 				      err = PyFile_WriteString("<unknown>", f);
+-				else
++				else {
+ 				      err = PyFile_WriteString(className, f);
++				      import_err = ! strcmp(className, "ImportError");
++				}
+ 			}
+ 		}
+ 		else
+@@ -1209,6 +1220,30 @@
+ 				err = PyFile_WriteString(": ", f);
+ 			if (err == 0)
+ 			  err = PyFile_WriteObject(s, f, Py_PRINT_RAW);
++                        if (import_err && isatty(STDOUT_FILENO)) {
++                            // (gdb) print (char*)((PyStringObject*)s)->ob_sval
++                            // $31 = 0x7fb70c10e894 "No module named foo"
++                            pid_t pid;
++                            int status, died;
++                            //FIXME a PATH!!
++                            char* handler_path = "/usr/lib64/python2.5/python_import_error_handler";
++                            struct stat handler_stat;
++
++                            if ( ! stat(handler_path, &handler_stat)) {
++                                if (IS_EXEC_FILE(handler_stat.st_mode)) {
++
++                                    switch(pid=fork()){
++                                        //case -1: this should not happens
++                                        case 0:
++                                            execl (handler_path, "python_import_error_handler", (char*)((PyStringObject*)s)->ob_sval, (char *)0);
++                                            exit(3); 
++                                        default: died= wait(&status);
++                                                 // nothing to do here
++                                    }
++                                }
++                            }
++
++                        }
+ 			Py_XDECREF(s);
+ 		}
+ 		if (err == 0)
