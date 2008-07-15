@@ -82,7 +82,10 @@ available modules:
     def parse_option(self, short_opt, long_opt, default = None):
         opt = default
         if short_opt in sys.argv or long_opt in sys.argv:
-            opt_index = sys.argv.index(long_opt) if long_opt in sys.argv else sys.argv.index(short_opt)
+            if long_opt in sys.argv:
+                opt_index = sys.argv.index(long_opt)
+            else:
+                opt_index = sys.argv.index(short_opt)
 
             opt = sys.argv[opt_index]
             if opt[:2] == '--' and '=' in opt:
