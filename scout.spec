@@ -18,6 +18,7 @@ Requires:       python
 
 %if 0%{?suse_version}
 BuildRequires:  python-xml
+Requires:       python-xml
 %endif
 
 %if 0%{?fedora_version} || 0%{?rhel_version} || 0%{?centos_version}
