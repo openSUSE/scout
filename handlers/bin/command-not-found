@@ -31,7 +31,7 @@ def check_installed(term):
     mi = ts.dbMatch('name', term)
     return mi.count() > 0
 
-if len(sys.argv) < 2:
+if len(sys.argv) < 3:
     sys.exit(EX_NOTFOUND)
 
 import scout
@@ -39,11 +39,11 @@ sys.path.append(scout.Config.module_path)
 import bin
 
 term = sys.argv[1]
-if len(sys.argv) > 2:
-    repo = sys.argv[2]
-    rows = bin.ScoutModule.query_repo(repo, term)
-else:
+repo = sys.argv[2]
+if repo == 'zypp':
     rows = bin.ScoutModule.query_zypp(term)
+else:
+    rows = bin.ScoutModule.query_repo(repo, term)
 
 if rows == None or len(rows) == 0:
     sys.exit(EX_NOTFOUND)
