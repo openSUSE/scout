@@ -7,8 +7,8 @@
 Name:           scout-data
 Version:        0
 Release:        1
-Url:            http://repo.or.cz/w/scout.git
-License:        GPL v2 or later
+Url:            http://en.opensuse.org/Scout
+License:        MIT License
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildRequires:  python lzma sqlite
 Requires:       scout
