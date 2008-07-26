@@ -50,6 +50,9 @@ Package Scout for indexing various properties of packages.
 %if 0%{?suse_version} <= 1010 && 0%{?suse_version} > 1000
 %define cnfrepo suse101
 %endif
+%if 0%{?sles_version} == 10
+%define cnfrepo sle10
+%endif
 
 %if %{cnfrepo} != none
 
