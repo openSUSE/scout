@@ -5,7 +5,7 @@ import scout
 import sys
 
 try:
-    zypp = __import__(zypp)
+    zypp = __import__('zypp')
 except:
     zypp = None
 
@@ -25,7 +25,7 @@ class ZyppParser(object):
                 continue
             if cls.rebuild_cache and not repoManager.isCached(repo):
                 repoManager.buildCache(repo)
-            z.addResolvables(repoManager.createFromCache(repo).resolvables())
+            repoManager.loadFromCache(repo)
 
         print "Available items: %d" % ( z.pool().size() )
         for item in z.pool():
