@@ -46,6 +46,12 @@
             <surname>Schraitle</surname>
             <email>toms@suse.de</email>
          </othercredit>
+         <othercredit>
+            <contrib>Help with python-satsolver</contrib>
+            <firstname>Klaus</firstname>
+            <surname>Kaempf</surname>
+            <email>kkaempf@suse.de</email>
+         </othercredit>
       </authorgroup>
    </refentryinfo>
    <refmeta>
