@@ -11,11 +11,14 @@ try:
 except:
     satsolver = None
 
+def ins(obj):
+    for i in inspect.getmembers(obj): print i
+
 class SolvParser(object):
 
     etcpath = '/etc/zypp/repos.d'
     solvfile = '/var/cache/zypp/solv/%s/solv'
-    paths = ( '/bin', '/sbin', '/usr/bin', '/usr/sbin', '/usr/games', '/opt/kde3/bin', '/opt/kde3/sbin', '/opt/gnome/bin', '/opt/gnome/sbin' )
+    binpaths = ( '/bin/', '/sbin/', '/usr/bin/', '/usr/sbin/', '/usr/games/', '/opt/kde3/bin/', '/opt/kde3/sbin/', '/opt/gnome/bin/', '/opt/gnome/sbin/' )
 
     def __init__(self):
         self.pool = satsolver.Pool()
@@ -26,18 +29,38 @@ class SolvParser(object):
                 self.parser.read( '%s/%s' % (self.etcpath, repofile) )
                 if self.parser.get(name, 'enabled') == '1':
                     self.pool.add_solv( self.solvfile % name )
+                print name, '... added'
             except:
                 pass
 
     def search(self, term): # returns fullpath, package
-        for i in range(self.pool.size()):
-            print self.pool.get(i).set_vendor('filelist')
-            for xxx in inspect.getmembers(self.pool.get(i)): print xxx
-            sys.exit(2)
-            prov = self.pool.get(i).provides()
-            for j in range(prov.size()):
-                rel = prov.get(j+1).to_s()
-                print rel
+#         pool = satsolver.Pool()
+#         pool.add_solv('/home/prusnak/work/scm/zypp/sat-solver/bindings/python/tests/os11-biarch.solv')
+         pool = self.pool
+         filematch = map(lambda x: x + term, self.binpaths)
+         pkgmatch = []
+
+#         for solv in pool:
+#             print solv
+#             if solv.attr_exists('solvable:filelist'):
+#                 print solv.attr('solvable:filelist')
+#             else:
+#                 print '-'
+
+         for solv in pool:
+             filelist = None
+             if solv.attr_exists('solvable:filelist'):
+                 filelist = solv.attr('solvable:filelist')
+             if not isinstance(filelist, list):
+                 filelist = [ filelist ]
+             for file in filelist:
+                 if file in filematch:
+                     pkgmatch.append( ( 'zypp', term, file , solv.name() ) )
+                     return pkgmatch
+
+         return pkgmatch
 
 r = SolvParser()
+# print r.search('acroread')
+print r.search('foobillard')
 print r.search('wireshark')
