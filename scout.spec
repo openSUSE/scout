@@ -17,8 +17,8 @@ BuildRequires:  python rpm-python
 Requires:       python
 
 %if 0%{?suse_version}
-BuildRequires:  python-xml
-Requires:       python-xml
+BuildRequires:  python-xml python-satsolver
+Requires:       python-xml python-satsolver
 %endif
 
 %if 0%{?fedora_version} || 0%{?rhel_version} || 0%{?centos_version}
@@ -62,10 +62,10 @@ Release:        1
 License:        MIT License
 Group:          System/Shells
 Summary:        Command Not Found extension for shell
-Requires:       python rpm-python
+Requires:       python rpm-python scout
 # Requires:       bash(CommandNotFound)
 %if %{cnfrepo} != zypp
-Requires:       scout scout-bin-%{cnfrepo}
+Requires:       scout-bin-%{cnfrepo}
 %endif
 
 %description -n command-not-found
