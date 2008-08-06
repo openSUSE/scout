@@ -5,7 +5,7 @@
 # norootforbuild
 
 Name:           scout
-Version:        0.0.2
+Version:        0.1.0
 Release:        1
 Url:            http://en.opensuse.org/Scout
 License:        MIT License
@@ -35,11 +35,8 @@ BuildRequires:  readline
 Package Scout for indexing various properties of packages.
 
 %define cnfrepo none
-%if 0%{?suse_version} > 1100
+%if 0%{?suse_version} > 1030
 %define cnfrepo zypp
-%endif
-%if 0%{?suse_version} <= 1100 && 0%{?suse_version} > 1030
-%define cnfrepo suse110
 %endif
 %if 0%{?suse_version} <= 1030 && 0%{?suse_version} > 1020
 %define cnfrepo suse103
