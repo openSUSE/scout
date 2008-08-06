@@ -5,35 +5,48 @@ import scout
 import sys
 
 try:
-    zypp = __import__('zypp')
+    satsolver = __import__('satsolver')
+    import os
+    from fnmatch import fnmatch
+    from ConfigParser import SafeConfigParser
 except:
-    zypp = None
+    satsolver = None
 
-class ZyppParser(object):
+class SolvParser(object):
 
-    rebuild_cache = False
-    paths = ( '/bin', '/sbin', '/usr/bin', '/usr/sbin', '/usr/games', '/opt/kde3/bin', '/opt/kde3/sbin', '/opt/gnome/bin', '/opt/gnome/sbin' )
+    etcpath = '/etc/zypp/repos.d'
+    solvfile = '/var/cache/zypp/solv/%s/solv'
+    binpaths = ( '/bin/', '/sbin/', '/usr/bin/', '/usr/sbin/', '/usr/games/', '/opt/kde3/bin/', '/opt/kde3/sbin/', '/opt/gnome/bin/', '/opt/gnome/sbin/' )
 
-    @classmethod
-    def list(cls):
-        z = zypp.ZYppFactory_instance().getZYpp()
-        repoManager = zypp.RepoManager()
-        repos = repoManager.knownRepositories()
+    def __init__(self):
+        self.pool = satsolver.Pool()
+        self.parser = SafeConfigParser()
+        for repofile in filter(lambda x: fnmatch(x, '*.repo'), os.listdir(self.etcpath)):
+            try:
+                name = os.path.splitext(repofile)[0]
+                self.parser.read( '%s/%s' % (self.etcpath, repofile) )
+                if self.parser.get(name, 'enabled') == '1':
+                    repo = self.pool.add_solv( self.solvfile % name )
+                    repo.set_name(name)
+#                print 'repo', name, '... added'
+            except:
+                pass
 
-        for repo in repos:
-            if not repo.enabled():
-                continue
-            if cls.rebuild_cache and not repoManager.isCached(repo):
-                repoManager.buildCache(repo)
-            repoManager.loadFromCache(repo)
-
-        print "Available items: %d" % ( z.pool().size() )
-        for item in z.pool():
-            print "* %s:%s-%s.%s\t(%s)" % ( item.resolvable().kind(),
-                                            item.resolvable().name(),
-                                            item.resolvable().edition(),
-                                            item.resolvable().arch(),
-                                            item.resolvable().repository().info().alias() )
+    def search(self, term):
+         filematch = map(lambda x: x + term, self.binpaths)
+         pkgmatch = []
+         for solv in self.pool:
+             filelist = None
+             if solv.attr_exists('solvable:filelist'):
+                 filelist = solv.attr('solvable:filelist')
+             if not filelist:
+                 continue
+             for file in filelist:
+                 if file in filematch:
+                     row = ( 'zypp (%s)' % solv.repo().name(), term, file[:-len(term)-1] , solv.name() )
+                     if not row in pkgmatch:
+                         pkgmatch.append( row )
+         return pkgmatch
 
 class ScoutModule(object):
 
@@ -42,10 +55,10 @@ class ScoutModule(object):
 
     @classmethod
     def query_zypp(cls, term):
-        if zypp == None:
+        if satsolver == None:
             return None
-        # TODO: implement
-        return None
+        s = SolvParser()
+        return s.search(term)
 
     @classmethod
     def query_repo(cls, repo, term):
