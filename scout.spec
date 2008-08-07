@@ -21,8 +21,8 @@ BuildRequires:  python-xml
 Requires:       python-xml
 %endif
 %if 0%{?suse_version} > 1100
-BuildRequires:  python-satsolver
-Requires:       python-satsolver
+BuildRequires:  python-satsolver > 0.10.2
+Requires:       python-satsolver > 0.10.2
 %endif
 
 %if 0%{?fedora_version} || 0%{?rhel_version} || 0%{?centos_version}
@@ -39,11 +39,8 @@ BuildRequires:  readline
 Package Scout for indexing various properties of packages.
 
 %define cnfrepo none
-%if 0%{?suse_version} > 1100
+%if 0%{?suse_version} > 1030
 %define cnfrepo zypp
-%endif
-%if 0%{?suse_version} <= 1100 && 0%{?suse_version} > 1030
-%define cnfrepo suse110
 %endif
 %if 0%{?suse_version} <= 1030 && 0%{?suse_version} > 1020
 %define cnfrepo suse103

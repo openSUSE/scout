@@ -10,7 +10,7 @@ def print_found(rows):
     print
     print "The program '%s' can be found in the following package(s):" % term
     for row in rows:
-        print "  * %s (%s/%s)" % (row[3], row[2], row[1])
+        print "  * %s [ path: %s/%s, repository: %s ]" % (row[3], row[2], row[1], row[0])
     print
     print 'Try:', INSTALL_CMD,
     if len(rows) > 1:
