@@ -28,7 +28,6 @@ class SolvParser(object):
                 if self.parser.get(name, 'enabled') == '1':
                     repo = self.pool.add_solv( self.solvfile % name )
                     repo.set_name(name)
-#                print 'repo', name, '... added'
             except:
                 pass
 
@@ -36,12 +35,9 @@ class SolvParser(object):
          filematch = map(lambda x: x + term, self.binpaths)
          pkgmatch = []
          for solv in self.pool:
-             filelist = None
-             if solv.attr_exists('solvable:filelist'):
-                 filelist = solv.attr('solvable:filelist')
-             if not filelist:
+             if not solv.attr_exists('solvable:filelist'):
                  continue
-             for file in filelist:
+             for file in solv.attr('solvable:filelist'):
                  if file in filematch:
                      row = ( 'zypp (%s)' % solv.repo().name(), term, file[:-len(term)-1] , solv.name() )
                      if not row in pkgmatch:
