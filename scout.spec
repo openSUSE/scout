@@ -20,7 +20,7 @@ Requires:       python
 BuildRequires:  python-xml
 Requires:       python-xml
 %endif
-%if 0%{?suse_version} > 1100
+%if 0%{?suse_version} > 1030
 BuildRequires:  python-satsolver > 0.10.2
 Requires:       python-satsolver > 0.10.2
 %endif
