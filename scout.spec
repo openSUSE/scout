@@ -1,14 +1,21 @@
 #
-# spec file for package scout
+# spec file for package scout (Version 0.0.2)
+#
+# Copyright (c) 2008 SUSE LINUX Products GmbH, Nuernberg, Germany.
+# This file and all modifications and additions to the pristine
+# package are under the same license as the package itself.
+#
+# Please submit bugfixes or comments via http://bugs.opensuse.org/
 #
 
 # norootforbuild
+
 
 Name:           scout
 Version:        0.1.0
 Release:        1
 Url:            http://en.opensuse.org/Scout
-License:        MIT License
+License:        X11/MIT
 Group:          System/Packages
 Summary:        Package Scout
 Source:         %{name}.tar.bz2
@@ -35,7 +42,6 @@ BuildRequires:  readline
 %endif
 
 %description
-
 Package Scout for indexing various properties of packages.
 
 %define cnfrepo none
@@ -59,9 +65,9 @@ Package Scout for indexing various properties of packages.
 
 %package -n command-not-found
 Version:        0.1.0
-Release:        1
-License:        MIT License
-Group:          System/Shells
+Release:        2
+License:        X11/MIT
+Group:          System/Packages
 Summary:        Command Not Found extension for shell
 Requires:       python rpm-python scout
 # Requires:       bash(CommandNotFound)
@@ -70,10 +76,10 @@ Requires:       scout-bin-%{cnfrepo}
 %endif
 
 %description -n command-not-found
-The "command not found" message is not very helpful. If e.g. the unzip command
-is not found but it's available in a package, it would be very interesting
-if the system could tell that the command is currently not available,
-but installing a package would provide it.
+The "command not found" message is not very helpful. If e.g. the unzip
+command is not found but it's available in a package, it would be very
+interesting if the system could tell that the command is currently not
+available, but installing a package would provide it.
 
 %endif
 
