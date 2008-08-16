@@ -37,11 +37,9 @@ class SolvParser(object):
             return [r]
 
     def refresh_cache(self):
-        pool = satsolver.Pool()
         parser = SafeConfigParser()
         repos = dict()
         max_mtime = 0
-
         # find repositories in etcpath
         for repofile in filter(lambda x: fnmatch(x, '*.repo'), os.listdir(self.etcpath)):
             try:
@@ -56,17 +54,25 @@ class SolvParser(object):
             except:
                 pass
 
-        stat = os.stat( self.cache_file )
+        try:
+            stat = os.stat( self.cache_file )
+        except:
+            stat = None
 
         # if cache is not empty (filesize is zero) and newer than the newest repo
-        if stat[6] > 0 and stat[8] > max_mtime:
+        if stat != None and stat[6] > 0 and stat[8] > max_mtime:
             return
 
         # create cache from satsolver files
+        pool = satsolver.Pool()
 
         f = open( self.cache_file, 'w' )
         f.truncate()
         f.close()
+        try:
+            os.chmod( self.cache_file, 0666)
+        except:
+            pass
 
         db = scout.Database( self.cache_file )
         db.begin()
