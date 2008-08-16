@@ -113,8 +113,11 @@ for shell in bash zsh; do
     sed -i 's:__REPO__:%{cnfrepo}:' $RPM_BUILD_ROOT%{_sysconfdir}/${shell}_command_not_found
 done
 
+# create cache directory
+install -d -m 0777 $RPM_BUILD_ROOT%{_localstatedir}/cache/scout
+
 %if %{cnfrepo} == zypp
-# install cache for zypp
+# create cache for zypp
 echo > zypp.db
 install -D -m 0666 zypp.db $RPM_BUILD_ROOT%{_localstatedir}/cache/scout/zypp.db
 %endif
