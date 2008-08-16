@@ -22,11 +22,11 @@ def process(s):
 
     g.write('CREATE TABLE path(id_path INT PRIMARY KEY NOT NULL, path VARCHAR(64) NOT NULL);\n')
     for k in paths.keys():
-        g.write("INSERT INTO path(id_path,path) VALUES(%s, '%s');\n" % (paths[k], k))
+        g.write("INSERT INTO path(id_path, path) VALUES(%s, '%s');\n" % (paths[k], k))
 
     g.write('CREATE TABLE package(id_pkg INT PRIMARY KEY NOT NULL, package VARCHAR(64) NOT NULL);\n')
     for k in pkgs.keys():
-        g.write("INSERT INTO package(id_pkg,package) VALUES(%s, '%s');\n" % (pkgs[k], k))
+        g.write("INSERT INTO package(id_pkg, package) VALUES(%s, '%s');\n" % (pkgs[k], k))
 
     g.write('COMMIT;\n')
     f.close()

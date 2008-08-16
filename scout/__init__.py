@@ -160,11 +160,18 @@ class ModuleLoader(object):
 
 class Database(object):
 
+    cursor = None
+
     def __init__(self, dbname):
         if dbname == ':memory:':
             dbfile = dbname
         else:
-            dbfile = Config.data_path + '/' + dbname + Config.data_suffix
+            if dbname.startswith('/'):
+                # absolute path
+                dbfile = dbname
+            else:
+                # only db name
+                dbfile = Config.data_path + '/' + dbname + Config.data_suffix
 
         try:
             self.conn = sqlite3.connect(dbfile)
@@ -173,21 +180,34 @@ class Database(object):
             self.conn = None
 
     def __del__(self):
+        self.end()
         if self.conn != None:
             self.conn.close()
 
-    def _clever_query_result(self, c):
-        ret = list()
-        for row in c:
-            if len(row) == 1:           #(2)
-                ret.append(row[0])
-            else:                       #(3)
-                ret.append(row)
-        if len(ret) == 1:               #(1)
-            return ret[0]
-        return ret
+    def begin(self):
+        if self.conn == None:
+            return False
+        self.cursor = self.conn.cursor()
+        return True
 
     def execute(self, query, *args, **kwargs):
+        # it is not possible to use both a args and a keyword args
+        # self.cursor should also not be None at this point
+        assert(len(args) == 0 or len(kwargs) == 0 or self.cursor == None)
+
+        if len(args) == 0 and len(kwargs) == 0:
+            self.cursor.execute(query)
+        elif len(args) != 0:
+            self.cursor.execute(query, args)
+        else:
+            self.cursor.execute(query, kwargs)
+
+    def end(self):
+       if self.cursor != None:
+           self.cursor.close()
+           self.cursor = None
+
+    def query(self, query, *args, **kwargs):
         """
         an abstract database query - but more clever
 
@@ -195,9 +215,9 @@ class Database(object):
 
         there're two kinds of placeholders (like as original DB/API execute, but in more Pythonic way)
         - question marks (qmark style):
-          execute("SELECT ham, spam FROM foo WHERE bar=? and baz=?", bar, baz)
+          query("SELECT ham, spam FROM foo WHERE bar=? and baz=?", bar, baz)
         - named placeholders (named style)
-          execute("SELECT ham, spam FROM foo WHERE bar=:bar and baz=:baz", bar='42', baz='42')
+          query("SELECT ham, spam FROM foo WHERE bar=:bar and baz=:baz", bar='42', baz='42')
 
         Note: its not possible to combine this two types of placeholders in one call!
 
@@ -208,21 +228,23 @@ class Database(object):
         """
         # TODO: do not return an sqlite3 Errors
 
-        if self.conn == None:
+        if not self.begin():
             return None
 
-        # it is not possible to use both a args and a keyword args
-        assert(len(args) == 0 or len(kwargs) == 0)
+        self.execute(query, *args, **kwargs)
 
-        c = self.conn.cursor()
-        if len(args) == 0 and len(kwargs) == 0:
-            c.execute(query)
-        elif len(args) != 0:
-            c.execute(query, args)
-        else:
-            c.execute(query, kwargs)
-        ret = self._clever_query_result(c)
-        c.close()
+        # create clever result
+        ret = list()
+        for row in self.cursor:
+            if len(row) == 1:           #(2)
+                ret.append(row[0])
+            else:                       #(3)
+                ret.append(row)
+        if len(ret) == 1:               #(1)
+            ret = ret[0]
+
+        self.end()
+
         return ret
 
 class TableFormatter(object):
@@ -466,7 +488,7 @@ class BasicScoutModule(object):
     @classmethod
     def query(cls, repo, term):
         db = Database(cls.name + '-' + repo)
-        r = db.execute(cls.sql, '%%%s%%' % term)
+        r = db.query(cls.sql, '%%%s%%' % term)
         if isinstance(r, list):
             return map( lambda x: [repo] + list(x), r)
         else:

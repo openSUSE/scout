@@ -107,11 +107,18 @@ install -D -m 0644 doc/scout.1 $RPM_BUILD_ROOT%{_mandir}/man1/scout.1
 
 %if %{cnfrepo} != none
 # --- command-not-found ---
-install -D -m 755 handlers/bin/command-not-found $RPM_BUILD_ROOT%{_bindir}/command-not-found
+install -D -m 0755 handlers/bin/command-not-found $RPM_BUILD_ROOT%{_bindir}/command-not-found
 for shell in bash zsh; do
     install -D -m 644 handlers/bin/command_not_found_${shell} $RPM_BUILD_ROOT%{_sysconfdir}/${shell}_command_not_found
     sed -i 's:__REPO__:%{cnfrepo}:' $RPM_BUILD_ROOT%{_sysconfdir}/${shell}_command_not_found
 done
+
+%if %{cnfrepo} == zypp
+# install cache for zypp
+echo > zypp.db
+install -D -m 0666 zypp.db $RPM_BUILD_ROOT%{_localstatedir}/cache/scout/zypp.db
+%endif
+
 %endif
 
 %clean
@@ -125,6 +132,10 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}
 %{_sysconfdir}/bash_completion.d/*
 %{_mandir}/man1/*
+%attr(0777,root,root) %dir %{_localstatedir}/cache/scout
+%if %{cnfrepo} == zypp
+%attr(0666,root,root) %{_localstatedir}/cache/scout/zypp.db
+%endif
 
 %if %{cnfrepo} != none
 
