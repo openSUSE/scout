@@ -1,0 +1,16 @@
+-------------------------------------------------------------------
+Mon Aug 18 11:49:30 CEST 2008 - schwab@suse.de
+
+- Fix name of completions file.
+
+-------------------------------------------------------------------
+Wed Aug  6 20:48:45 CEST 2008 - prusnak@suse.cz
+
+- updated to 0.1.0
+  * enabled search in zypp repositories
+
+-------------------------------------------------------------------
+Thu Jun 12 19:14:39 CEST 2008 - prusnak@suse.cz
+
+- created package
+

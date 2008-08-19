@@ -8,7 +8,7 @@ Name:           scout-data
 Version:        0
 Release:        1
 Url:            http://en.opensuse.org/Scout
-License:        MIT License
+License:        X11/MIT
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildRequires:  python lzma sqlite
 Requires:       scout

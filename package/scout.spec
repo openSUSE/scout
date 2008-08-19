@@ -2,9 +2,16 @@
 # spec file for package scout (Version 0.1.0)
 #
 # Copyright (c) 2008 SUSE LINUX Products GmbH, Nuernberg, Germany.
-# This file and all modifications and additions to the pristine
-# package are under the same license as the package itself.
 #
+# All modifications and additions to the file contributed by third parties
+# remain the property of their copyright owners, unless otherwise agreed
+# upon. The license for this file, and modifications and additions to the
+# file, is the same license as for the pristine package itself (unless the
+# license for the pristine package is not an Open Source License, in which
+# case the license is the MIT License). An "Open Source License" is a
+# license that conforms to the Open Source Definition (Version 1.9)
+# published by the Open Source Initiative.
+
 # Please submit bugfixes or comments via http://bugs.opensuse.org/
 #
 
@@ -44,6 +51,8 @@ BuildRequires:  readline
 %description
 Package Scout for indexing various properties of packages.
 
+
+
 %define cnfrepo none
 %if 0%{?suse_version} > 1030
 %define cnfrepo zypp
@@ -81,6 +90,8 @@ command is not found but it's available in a package, it would be very
 interesting if the system could tell that the command is currently not
 available, but installing a package would provide it.
 
+
+
 %endif
 
 %prep
@@ -102,7 +113,7 @@ install -D -m 0644 repos.conf $RPM_BUILD_ROOT%{_datadir}/%{name}/repos.conf
 install -D -m 0755 scout-cmd.py $RPM_BUILD_ROOT%{_bindir}/%{name}
 install -D -m 0755 scout-refresh-cache.py $RPM_BUILD_ROOT%{_bindir}/%{name}-refresh-cache
 # install bash completion
-install -D -m 0644 scout-bash-completion $RPM_BUILD_ROOT%{_sysconfdir}/bash_completion.d/scout
+install -D -m 0644 scout-bash-completion $RPM_BUILD_ROOT%{_sysconfdir}/bash_completion.d/scout.sh
 # install manpage
 install -D -m 0644 doc/scout.1 $RPM_BUILD_ROOT%{_mandir}/man1/scout.1
 # create cache directory

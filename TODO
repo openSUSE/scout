@@ -1,7 +1,6 @@
 mvyskocil:
 - finish with rewriting of all remaining modules to BasicScoutModule subclass and extend it
-- remove the direct printing to allow usage of the different access methods for the scout (B-BUS, Python scripts, ...)
+- remove the direct printing to allow usage of the different access methods for the scout (D-BUS, Python scripts, ...)
   - work on D-BUS support
-- remove the None print in some cases
 - more more more tests
 - provide some examples (python_import_not_found, ...)
