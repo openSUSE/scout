@@ -30,7 +30,10 @@ class ScoutModule(object):
 
         result = scout.Result( ['repo', 'pkg', 'jar', 'class'], ['repository', 'package', 'jar', 'class']);
 
-        for repo in p.get_repos():
+        repos = p.get_repos()
+        if repos == None:
+            return None
+        for repo in repos:
             result.add_rows( cls.query(repo, term) )
 
         return result

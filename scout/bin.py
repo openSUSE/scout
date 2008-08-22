@@ -78,7 +78,10 @@ class ScoutModule(object):
 
         result = scout.Result( ['repo', 'bin', 'path', 'pkg'], ['repository', 'binary', 'path', 'package']);
 
-        for repo in p.get_repos():
+        repos = p.get_repos()
+        if repos == None:
+            return None
+        for repo in repos:
             if repo == 'zypp':
                 result.add_rows( cls.query_zypp(term) )
             else:

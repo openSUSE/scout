@@ -72,7 +72,13 @@ class ScoutModule(object):
             return None
 
         term = p.args[0]
+
+        repos = p.get_repos()
+        if repos == None:
+            return None
         for repo in p.get_repos():
             dom = cls.query(term, repo)
             root = dom.getElementsByTagNameNS('http://datastructures.pkgsearch.benjiweber.co.uk', 'packages').item(0)
             return cls.fill_result(root)
+
+        return None

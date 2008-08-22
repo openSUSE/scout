@@ -468,11 +468,15 @@ class Parser(object):
 
     def get_repos(self):
         if self.options.repo:
-            return [self.options.repo]
+            repos = [self.options.repo]
         elif self.parser.get_option('-r'):
-            return [x for x in self.parser.get_option('-r').choices if x!=None]
+            repos = [x for x in self.parser.get_option('-r').choices if x != None]
         else:
-            return []
+            repos = []
+        if len(repos) == 0:
+            print 'No repositories found ...'
+            return None
+        return repos
 
     def do_list(self):
         return self.options.listrepo
@@ -504,7 +508,10 @@ class BasicScoutModule(object):
 
         result = Result( cls.result_list, cls.result_list2)
 
-        for repo in p.get_repos():
+        repos = p.get_repos()
+        if repos == None:
+            return None
+        for repo in repos:
             result.add_rows( cls.query(repo, term) )
 
         return result
