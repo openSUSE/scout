@@ -111,13 +111,10 @@ cp -a scout/!(foo).py{,c} $RPM_BUILD_ROOT%{py_sitedir}/%{name}
 install -D -m 0644 repos.conf $RPM_BUILD_ROOT%{_datadir}/%{name}/repos.conf
 # install scout binary
 install -D -m 0755 scout-cmd.py $RPM_BUILD_ROOT%{_bindir}/%{name}
-install -D -m 0755 scout-refresh-cache.py $RPM_BUILD_ROOT%{_bindir}/%{name}-refresh-cache
 # install bash completion
 install -D -m 0644 scout-bash-completion $RPM_BUILD_ROOT%{_sysconfdir}/bash_completion.d/scout.sh
 # install manpage
 install -D -m 0644 doc/scout.1 $RPM_BUILD_ROOT%{_mandir}/man1/scout.1
-# create cache directory
-install -d -m 0777 $RPM_BUILD_ROOT%{_localstatedir}/cache/scout
 
 %if %{cnfrepo} != none
 # --- command-not-found ---
@@ -126,12 +123,6 @@ for shell in bash zsh; do
     install -D -m 644 handlers/bin/command_not_found_${shell} $RPM_BUILD_ROOT%{_sysconfdir}/${shell}_command_not_found
     sed -i 's:__REPO__:%{cnfrepo}:' $RPM_BUILD_ROOT%{_sysconfdir}/${shell}_command_not_found
 done
-
-%if %{cnfrepo} == zypp
-# create empty cache for zypp
-echo -n > zypp.db
-install -D -m 0666 zypp.db $RPM_BUILD_ROOT%{_localstatedir}/cache/scout/zypp.db
-%endif
 
 %endif
 
@@ -146,10 +137,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%{name}
 %{_sysconfdir}/bash_completion.d/*
 %{_mandir}/man1/*
-%attr(0777,root,root) %dir %{_localstatedir}/cache/scout
-%if %{cnfrepo} == zypp
-%attr(0666,root,root) %{_localstatedir}/cache/scout/zypp.db
-%endif
 
 %if %{cnfrepo} != none
 
