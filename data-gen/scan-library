@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# 
+# Usage: write_row RPM_FILE ANALYZED_FILE INDEX_FILE STANDARD_DIRS_PATTERN
+# $1 - name of rpm file
+# $2 - name of analyzed file
+# $3 - name of output file
+# $4 - standard_dirs_pattern
+#
+# This function analyze the file and write a row to the index file
+function write_row() {
+
+    local rpm_file library_file index_file python_module
+
+    rpm_file=${1}
+    library_file=${2}
+    index_file=${3}
+    standard_dirs_pattern=${4}
+
+    # extract the name of the module
+    library_name=$(echo ${header_file} | sed "s#\.\?${standard_dirs_pattern}##")
+
+    echo "${rpm_file} ${library_name}" >> ${index_file}
+}
+
+source scan_lib
+
+# Usage
+# $1 - RPMS_ROOT
+# $2 - INDEX_FILE
+function scan_library () {
+   local rpms_root index_file
+
+   rpms_root=${1}
+   index_file=${2}
+
+   scan ${rpms_root} ${index_file} "\(/usr\)/lib/" '*.so*' '*.a'
+
+}
+
+scan_library /work/CDs/all/full-11.0-i386/suse $(pwd)/library-suse110.txt
+scan_library /work/CDs/all/full-10.3-i586/suse $(pwd)/library-suse103.txt
+scan_library /work/CDs/all/full-10.2-i586/suse $(pwd)/library-suse102.txt
+scan_library /work/CDs/all/full-10.1-i586/suse $(pwd)/library-suse101.txt
+scan_library /work/CDs/all/full-sles10-i586/suse $(pwd)/library-sle10.txt
