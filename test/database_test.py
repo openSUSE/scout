@@ -151,8 +151,6 @@ CREATE INDEX modules_module_idx ON modules(module);"""
         #else:
         #    self.fail("The ? is not working with keyword args")
 
- 
-
 
 suiteDatabase = unittest.makeSuite(SimpleDatabaseTestCase, 'test')
 
