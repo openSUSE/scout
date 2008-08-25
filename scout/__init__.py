@@ -264,6 +264,7 @@ class TableFormatter(object):
         """
         #FIXME: this code probably doesn't work with a variable length of the delimiters!
         ret = ""
+        if result.is_empty() : return ret
         col_width = map(len, map(str, result.get_long_names()))
         for i in range(0,len(result.get_long_names())):
           for row in result.get_rows():
@@ -293,6 +294,7 @@ class CSVFormatter(object):
         """
         record_delimiter = quote_mark + record_delimiter + quote_mark
         ret = ""
+        if result.is_empty() : return ret
         ret += quote_mark + record_delimiter.join(map(lambda s: s.replace(quote_mark, 2*quote_mark), result.get_short_names())) + quote_mark + '\n'
         ret += quote_mark + record_delimiter.join(map(lambda s: s.replace(quote_mark, 2*quote_mark), result.get_long_names())) + quote_mark + '\n'
         for row in result.rows:
@@ -327,7 +329,9 @@ class XMLFormatter(object):
             </row>
         </result>
         """
-        ret  = '<%s>' % result_tag + '\n'
+
+        ret = '<?xml version="1.0" encoding="UTF-8"?>\n'
+        ret += '<%s>' % result_tag + '\n'
         ret += '  <%s>' % head_tag + '\n'
         for i in range(0, len(result.get_short_names())):
             ret += '    <%s>%s</%s>' % (result.get_short_names()[i], result.get_long_names()[i], result.get_short_names()[i]) + '\n'
@@ -373,6 +377,9 @@ class Result(object):
 
     def get_rows(self):
         return self.rows
+
+    def is_empty(self):
+        return len(self.rows) == 0
 
     def format(self, formatter=TableFormatter, **kwargs):
         return formatter.format(self, **kwargs)
