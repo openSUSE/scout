@@ -150,6 +150,8 @@ class CoreOptionParser(object):
         """
         # this line is necessary, the args=sys.argv[1:] in function definition seems doesn't works
         if not args:    args = sys.argv[1:]
+        # fix the usage of the command python scout-cmd.py ...
+        if len(args) == 1 and args[0].find("scout") != -1: args = args[1:]
 
         if len(args) == 0:      raise HelpOptionFound() # if none of the argument was defined, show help
 
@@ -174,8 +176,12 @@ class CoreOptionParser(object):
         self._format = ret[0].format
         return ret
 
-    def print_help(self, file=None):
+    def print_help(self, file=sys.stderr):
         self._parser.print_help(file)
+        return self
+
+    def error(self, msg):
+        self._parser.error(msg)
         return self
 
     # ------------------------------ read-only properties ------------------------------
@@ -649,6 +655,11 @@ class ScoutCore(object):
         except HelpOptionFound:
             clp.print_help()
             sys.exit(1)
+        except OptionValueError, ove:
+            clp.error(ove.msg)
+            
+            print ove.msg
+            sys.exit(2)
 
         if clp.listing:
             return "\n".join(ml.module_names)
