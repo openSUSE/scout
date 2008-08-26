@@ -108,12 +108,14 @@ class CoreOptionParser(object):
                 modules = (modules, )
             for m in modules:
                 self._modules.append(m)
+            self._modules.sort()
         return self
     
     def _help_modules(self):
         ret = "Available modules:\n"
-        for m_name in self._modules:
-            ret += "  %s:\t%s\n" % (m_name, m_name)
+        maxlen = len(max((m[0] for m in self._modules), key=len))
+        for m in self._modules:
+            ret += "    %s : %s\n" % (m[0].ljust(maxlen), m[1])
         return ret
 
     def _split_argument_line(self, args):
@@ -162,7 +164,7 @@ class CoreOptionParser(object):
         return ret
 
     def print_help(self, file=None):
-        self._help_parser.print_help(file)
+        self._parser.print_help(file)
         return self
 
     # ------------------------------ read-only properties ------------------------------
@@ -706,8 +708,15 @@ class ScoutCore(object):
         ml = ModuleLoader
         ml.import_from(Config.module_path)
 
-        clp = CommandLineParser(ml.modules)
-        module = clp.parse()
+        modules = ((m.ScoutModule.name, m.ScoutModule.desc) for m in ml.modules)
+        clp = CoreOptionParser(cls.out_formatters.keys(), modules)
+        try:
+            args, values = clp.parse_args()
+        except HelpOptionFound:
+            clp.print_help()
+            sys.exit(1)
+
+        module_name = clp.module
         result = module.ScoutModule.main()
 
         prog = os.path.basename(sys.argv[0])
