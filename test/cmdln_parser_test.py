@@ -22,9 +22,8 @@ class CoreOptionParserTestCase(unittest.TestCase):
         self.argv_bak = copy(sys.argv)
         sys.argv=['scout']
 
-        #modules = (("python" , "Search for python modules"), ("java", "Search for java classes"))
+        self.modules = (("python" , "Search for python modules"), ("java", "Search for java classes"))
         self.formats = ('table', 'xml', 'csv')
-        self.modules = ("python", "java")
         self.parser = scout.CoreOptionParser(self.formats, self.modules)
 
     def tearDown(self):
@@ -63,7 +62,7 @@ class CoreOptionParserTestCase(unittest.TestCase):
         self.assertTrue(help.find("python") > 1)
     
     def testModule(self):
-        for m in self.modules:
+        for m in [m[0] for m in self.modules]:
             sys.argv = ['scout', m, 'foo']
 
             ret = self.parser.parse_args()
