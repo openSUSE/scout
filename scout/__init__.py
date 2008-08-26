@@ -100,6 +100,13 @@ class CoreOptionParser(object):
                     action="help2",
                     help="show this help message and exit"
                 ))
+        group.add_option(
+                "-l", "--list",
+                help="list of available modules",
+                action="store_true",
+                dest="listing",
+                default=False
+                )
         self._parser.add_option_group(group)
 
     def add_module(self, modules):
@@ -154,8 +161,12 @@ class CoreOptionParser(object):
 
         ret = self._parser.parse_args(core_args)
 
+        # global switches
+        self._listing = ret[0].listing
+
         # no HelpOptionFound raised, the module name is mandatory
-        if len(self._module_args) == 0:
+        # FIXME: this would be rewritted
+        if not self._listing and len(self._module_args) == 0:
             msg = 'The name of module is mandatory. Use %s --help' % (self._prog)
             raise OptionValueError(msg)
 
@@ -191,6 +202,11 @@ class CoreOptionParser(object):
     def __get_help(self):
         return self._parser.format_help()
     help = property(__get_help)
+
+    def __get_listing(self):
+        return self._listing
+    listing = property(__get_listing)
+
 
 class ModuleLoader(object):
     """
@@ -232,6 +248,10 @@ class ModuleLoader(object):
     def __get_modules(self):
         return self._modules.values()
     modules = property(__get_modules)
+
+    def __get_module_names(self):
+        return [m.ScoutModule.name for m in self.modules]
+    module_names = property(__get_module_names)
 
 
 class Database(object):
@@ -629,6 +649,9 @@ class ScoutCore(object):
         except HelpOptionFound:
             clp.print_help()
             sys.exit(1)
+
+        if clp.listing:
+            return "\n".join(ml.module_names)
 
         module = ml[clp.module]
         result = module.ScoutModule.main(clp.module_args)
