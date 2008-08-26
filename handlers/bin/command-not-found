@@ -42,18 +42,23 @@ import scout
 sys.path.append(scout.Config.module_path)
 import bin
 
-term = sys.argv[1]
-repo = sys.argv[2]
-if repo == 'zypp':
-    rows = bin.ScoutModule.query_zypp(term)
-else:
-    rows = bin.ScoutModule.query_repo(repo, term)
+try:
+    term = sys.argv[1]
+    repo = sys.argv[2]
+    if repo == 'zypp':
+        rows = bin.ScoutModule.query_zypp(term)
+    else:
+        rows = bin.ScoutModule.query_repo(repo, term)
 
-if rows == None or len(rows) == 0:
-    sys.exit(EX_NOTFOUND)
+    if rows == None or len(rows) == 0:
+        sys.exit(EX_NOTFOUND)
 
-for row in rows:
-    if check_installed(row[3]):
-        print_installed(term, row[3], row[2])
+    for row in rows:
+        if check_installed(row[3]):
+            print_installed(term, row[3], row[2])
 
-print_found(rows)
+    print_found(rows)
+except:
+    print
+
+sys.exit(EX_NOTFOUND)
