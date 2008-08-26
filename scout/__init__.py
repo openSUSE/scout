@@ -675,6 +675,15 @@ class Parser(object):
         return self.options.listrepo
 
 class BasicScoutModule(object):
+    """
+    The basic implementation of the scout module. The most of other modules
+    should use this class and redefine some of the class variables:
+
+     - name:    a name of the module (this is an identifier)
+     - desc:    a short description (will be printed on --help)
+     - sql:     the sql command (not yet parametrized)
+     - result_list(2): the result lists for the Result object
+    """
 
     name = "name"
     desc = "desc"
