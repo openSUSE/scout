@@ -75,7 +75,7 @@ class CoreOptionParser(object):
         self.add_module(modules)
 
         #defaults
-        self._format = formats[0]
+        self._format = "table"
 
         #parser
         self._parser = OptionParser(
@@ -124,7 +124,7 @@ class CoreOptionParser(object):
         # if none of the module name is defined, the module_args was empty
         module_i = -1
         for i, arg in enumerate(args):
-            if arg in self._modules:
+            if arg in self.module_names:
                 module_i = i
                 break
         if module_i == -1:
@@ -179,6 +179,10 @@ class CoreOptionParser(object):
     def __get_module_args(self):
         return self._module_args[1:]
     module_args = property(__get_module_args)
+
+    def __get_module_names(self):
+        return [m[0] for m in self._modules]
+    module_names = property(__get_module_names)
 
     def __get_format(self):
         return self._format
@@ -303,19 +307,18 @@ class ModuleLoader(object):
     The basic module loader - it allows to load a module from specified directory(ies)
     """
 
-    modules = list()
+    def __init__(self, dirs=None):
+        self._modules = dict()
+        if dirs != None: self.import_from(dirs)
 
-    @classmethod
-    def import_from(cls, dirs):
-        _dirs = dirs
+    def import_from(self, dirs):
         # make an non-iter item as iter
         if not hasattr(dirs, "__iter__"):
-            _dirs = (dirs, )
-        for dir in _dirs:
-            cls._import(dir)
+            dirs = (dirs, )
+        for dir in dirs:
+            self._import(dir)
 
-    @classmethod
-    def _import(cls, dir):
+    def _import(self, dir):
         if not os.path.isdir(dir):
             raise AttributeError("%s is not a directory" % dir)
         sys.path.insert(0, dir)
@@ -326,7 +329,20 @@ class ModuleLoader(object):
                 if not hasattr(module, 'ScoutModule'):
                     del module
                 else:
-                    cls.modules.append(module)
+                    self._modules[module.ScoutModule.name] = module
+
+    def __getitem__(self, name):
+        """ x.__getitem__(y) <==> x[y] """
+        return self._modules[name]
+
+    def __contains__(self, name):
+        """ D.__contains__(k) -> True if D has a key k, else False """
+        return name in self._modules
+
+    def __get_modules(self):
+        return self._modules.values()
+    modules = property(__get_modules)
+
 
 class Database(object):
 
@@ -633,8 +649,8 @@ class Parser(object):
                 ret += opt + '\n'
         return ret
 
-    def parse(self):
-        (self.options, self.args) = self.parser.parse_args()
+    def parse(self, args=None):
+        (self.options, self.args) = self.parser.parse_args(args)
         if self.do_list():
             print self.format_available_repos()
             return False
@@ -677,9 +693,9 @@ class BasicScoutModule(object):
         return r
 
     @classmethod
-    def main(cls):
+    def main(cls, args=None):
         p = Parser(cls.name)
-        if not p.parse():
+        if not p.parse(args):
             return None
         term = p.args[0]
 
@@ -705,8 +721,7 @@ class ScoutCore(object):
     @classmethod
     def run(cls):
 
-        ml = ModuleLoader
-        ml.import_from(Config.module_path)
+        ml = ModuleLoader(Config.module_path)
 
         modules = ((m.ScoutModule.name, m.ScoutModule.desc) for m in ml.modules)
         clp = CoreOptionParser(cls.out_formatters.keys(), modules)
@@ -716,10 +731,8 @@ class ScoutCore(object):
             clp.print_help()
             sys.exit(1)
 
-        module_name = clp.module
-        result = module.ScoutModule.main()
-
-        prog = os.path.basename(sys.argv[0])
+        module = ml[clp.module]
+        result = module.ScoutModule.main(clp.module_args)
 
         if result != None:
             try:
