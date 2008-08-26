@@ -68,11 +68,11 @@ class ScoutModule(object):
             return [ [repo] + list(r) ]
 
     @classmethod
-    def main(cls):
+    def main(cls, args=None):
 
         p = scout.Parser(cls.name)
         p.add_repo('zypp')
-        if not p.parse():
+        if not p.parse(args):
             return None
         term = p.args[0]
 
