@@ -7,7 +7,7 @@ import fnmatch
 import os
 import sys
 import sqlite3
-from optparse import OptionParser
+from optparse import OptionParser, Option, OptionGroup, IndentedHelpFormatter, OptionValueError
 from ConfigParser import SafeConfigParser
 
 class Config(object):
@@ -15,6 +15,176 @@ class Config(object):
     data_suffix = '.db'
     config_file = 'repos.conf'
     module_path = os.path.dirname(__file__)
+
+# the auxiliary classes, which extend the optparse classes to be usefull for scout command line parsing
+class HelpOptionFound(Exception):
+    pass
+
+class ExceptionHelpOption(Option):
+
+    ACTIONS = Option.ACTIONS + ("help2", )
+
+    def take_action(self, action, dest, opt, value, values, parser):
+        if action == "help2":
+            raise HelpOptionFound()
+        else:
+            Option.take_action(action, dest, opt, value, values, parser)
+
+class ModuleListFormatter(IndentedHelpFormatter):
+    """ Same as IndentedHelpFormatter, but the epilog is not a string, but the reference to a function"""
+
+    def format_epilog(self, epilog):
+        if epilog:
+            return "\n" + epilog() + "\n"
+        else:
+            return ""
+
+
+class CoreOptionParser(object):
+    """
+    This is a command-line parser for core. Just prints help for available
+    modules and should return one a name of one of them.
+    
+    This is an accestor of older CommandLineParser with better design - usage
+    of the optparse module, instead of the own parsing - and better support for
+    unittesting.
+
+    Instance (read-only) attributes:
+        - prog:         a program name
+        - module:       a name of selected module
+        - module_args:  an arguments for modules
+        - format:       an global option - output format
+        - help:         a formatted help string
+
+    Example:
+        parser = CoreOptionParser(list_of_available_formats, list_of_available_modules)
+        try:
+            parser.parse_args()
+        except HelpOptionFound help:
+            parser.print_help()
+
+        print "Selected module: %s" % (parser.module)
+        print "Arguments for module: %s" % (parser.module_args)
+    """
+
+    def __init__(self, formats, modules=None):
+        
+        self._prog = os.path.basename(sys.argv[0])
+
+        self._modules = list()
+        self.add_module(modules)
+
+        #defaults
+        self._format = formats[0]
+
+        #parser
+        self._parser = OptionParser(
+                prog = self._prog,
+                usage = "usage: %prog [global_opts] module [local_opts] query",
+                add_help_option = False,
+                epilog = self._help_modules,
+                formatter = ModuleListFormatter()
+                )
+
+        group = OptionGroup(self._parser, 'Global options')
+        group.add_option(
+                "-f", "--format",
+                help="select the output format (default %s)" % (self._format),
+                default=self._format,
+                type="choice",
+                choices=formats
+                )
+        group.add_option(
+                ExceptionHelpOption(
+                    "-h", "--help",
+                    action="help2",
+                    help="show this help message and exit"
+                ))
+        self._parser.add_option_group(group)
+
+    def add_module(self, modules):
+        if modules != None:
+            if not hasattr(modules, "__iter__"):
+                modules = (modules, )
+            for m in modules:
+                self._modules.append(m)
+        return self
+    
+    def _help_modules(self):
+        ret = "Available modules:\n"
+        for m_name in self._modules:
+            ret += "  %s:\t%s\n" % (m_name, m_name)
+        return ret
+
+    def _split_argument_line(self, args):
+        # Splits the argument line to the tupe - (core_args, module_args)
+        # ['scout',  '-f',  'xml',  'python',  'optparse'] -> (['scout'], ['-f'], ['xml']), (['python'], ['optparse'])
+        # if none of the module name is defined, the module_args was empty
+        module_i = -1
+        for i, arg in enumerate(args):
+            if arg in self._modules:
+                module_i = i
+                break
+        if module_i == -1:
+            return (args, [])
+        return (args[:module_i], args[module_i:])
+
+    def parse_args(self, args=None):
+        """
+        parse the arguments from sys.argv, or user defined ones!
+
+        return - (args, values) as a standard OptionParser.parse_args method
+        but it may raise:
+            - HelpOptionFound: when the help string was found
+            - OptionValueError: when the name of module was not found in command line
+        for bad format argument it still use an optparse's sys.exit() method
+        """
+        # this line is necessary, the args=sys.argv[1:] in function definition seems doesn't works
+        if not args:    args = sys.argv[1:]
+
+        if len(args) == 0:      raise HelpOptionFound() # if none of the argument was defined, show help
+
+        core_args, self._module_args = self._split_argument_line(args)
+        
+        # try to load the module name
+        if len(self._module_args) != 0:
+            self._module = self._module_args[0]
+
+        ret = self._parser.parse_args(core_args)
+
+        # no HelpOptionFound raised, the module name is mandatory
+        if len(self._module_args) == 0:
+            msg = 'The name of module is mandatory. Use %s --help' % (self._prog)
+            raise OptionValueError(msg)
+
+        # global options
+        self._format = ret[0].format
+        return ret
+
+    def print_help(self, file=None):
+        self._help_parser.print_help(file)
+        return self
+
+    # ------------------------------ read-only properties ------------------------------
+    def __get_prog(self):
+        return self._parser.prog
+    prog = property(__get_prog)
+
+    def __get_module(self):
+        return self._module
+    module = property(__get_module)
+
+    def __get_module_args(self):
+        return self._module_args[1:]
+    module_args = property(__get_module_args)
+
+    def __get_format(self):
+        return self._format
+    format = property(__get_format)
+
+    def __get_help(self):
+        return self._parser.format_help()
+    help = property(__get_help)
 
 class CommandLineParser(object):
     """
