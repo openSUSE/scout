@@ -64,11 +64,11 @@ class ScoutModule(object):
         return result
 
     @classmethod
-    def main(cls):
+    def main(cls, args=None):
 
         p = scout.Parser(cls.name)
         p.add_repos(['factory', 'suse110', 'suse103', 'suse102'])
-        if not p.parse():
+        if not p.parse(args):
             return None
 
         term = p.args[0]
