@@ -51,6 +51,12 @@ Source52:       header-suse102.txt.lzma
 Source53:       header-suse103.txt.lzma
 Source54:       header-suse110.txt.lzma
 
+Source60:       header-sle10.txt.lzma
+Source61:       header-suse101.txt.lzma
+Source62:       header-suse102.txt.lzma
+Source63:       header-suse103.txt.lzma
+Source64:       header-suse110.txt.lzma
+
 %description
 Index Data for Package Scout
 
@@ -306,6 +312,51 @@ Requires:       scout
 %description -n scout-header-suse110
 Package Scout Index Data - Headers from openSUSE 11.0
 
+%package -n scout-library-sle10
+Group:          System/Packages
+Summary:        Index Data for Package Scout
+Version:        2008.07.08
+Requires:       scout
+
+%description -n scout-library-sle10
+Package Scout Index Data - Libraries from SUSE Linux Enterprise 10
+
+%package -n scout-library-suse101
+Group:          System/Packages
+Summary:        Index Data for Package Scout
+Version:        2008.07.08
+Requires:       scout
+
+%description -n scout-library-suse101
+Package Scout Index Data - Libraries from SUSE Linux 10.1
+
+%package -n scout-library-suse102
+Group:          System/Packages
+Summary:        Index Data for Package Scout
+Version:        2008.07.08
+Requires:       scout
+
+%description -n scout-library-suse102
+Package Scout Index Data - Libraries from openSUSE 10.2
+
+%package -n scout-library-suse103
+Group:          System/Packages
+Summary:        Index Data for Package Scout
+Version:        2008.07.08
+Requires:       scout
+
+%description -n scout-library-suse103
+Package Scout Index Data - Libraries from openSUSE 10.3
+
+%package -n scout-library-suse110
+Group:          System/Packages
+Summary:        Index Data for Package Scout
+Version:        2008.07.08
+Requires:       scout
+
+%description -n scout-library-suse110
+Package Scout Index Data - Libraries from openSUSE 11.0
+
 %prep
 %setup -q -c -n data-gen
 cp -a %{SOURCE10} %{SOURCE11} %{SOURCE12} %{SOURCE13} %{SOURCE14} .
@@ -313,6 +364,7 @@ cp -a %{SOURCE20} %{SOURCE21} %{SOURCE22} %{SOURCE23} %{SOURCE24} %{SOURCE25} %{
 cp -a %{SOURCE30} %{SOURCE31} %{SOURCE32} %{SOURCE33} %{SOURCE34} %{SOURCE35} .
 cp -a %{SOURCE40} %{SOURCE41} %{SOURCE42} %{SOURCE43} %{SOURCE44} .
 cp -a %{SOURCE50} %{SOURCE51} %{SOURCE52} %{SOURCE53} %{SOURCE54} .
+cp -a %{SOURCE60} %{SOURCE61} %{SOURCE62} %{SOURCE63} %{SOURCE64} .
 
 %build
 python gen-autoconf.py
@@ -320,6 +372,7 @@ python gen-bin.py
 python gen-java.py
 python gen-python.py
 python gen-header.py
+python gen-library.py
 sh gen
 
 %install
@@ -440,5 +493,25 @@ rm -rf $RPM_BUILD_ROOT
 %files -n scout-header-suse110
 %defattr(-,root,root)
 %{_datadir}/scout/header-suse110*
+
+%files -n scout-library-sle10
+%defattr(-,root,root)
+%{_datadir}/scout/library-sle10*
+
+%files -n scout-library-suse101
+%defattr(-,root,root)
+%{_datadir}/scout/library-suse101*
+
+%files -n scout-library-suse102
+%defattr(-,root,root)
+%{_datadir}/scout/library-suse102*
+
+%files -n scout-library-suse103
+%defattr(-,root,root)
+%{_datadir}/scout/library-suse103*
+
+%files -n scout-library-suse110
+%defattr(-,root,root)
+%{_datadir}/scout/library-suse110*
 
 %changelog

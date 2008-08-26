@@ -104,8 +104,6 @@ available modules:
 
     def parse(self):
 
-        self.__format = self.parse_option('-f', '--format', 'table')
-
         if len(sys.argv) == 1 or (len(sys.argv) == 2 and self._is_help(sys.argv[1])):
             self.print_usage()
 
