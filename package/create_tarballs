@@ -2,7 +2,17 @@
 rm -f scout.tar.bz2 scout-gen.tar.bz2
 
 cd ../..
-tar cf scout/package/scout.tar scout/AUTHORS scout/LICENSE scout/README scout/TODO scout/*.conf scout/scout-bash-completion scout/scout/*.py scout/*.py scout/doc/* scout/handlers/*
+tar cf scout/package/scout.tar \
+        scout/{AUTHORS,LICENSE,README,TODO} \
+        scout/*.conf \
+        scout/scout-bash-completion \
+        scout/scout/*.py \
+        scout/*.py \
+        scout/doc/* \
+        scout/handlers/* \
+        scout/i18n/scout.{po,pot} \
+        scout/i18n/*/LC_MESSAGES/*
+
 cd scout/package
 bzip2 --best scout.tar
 
