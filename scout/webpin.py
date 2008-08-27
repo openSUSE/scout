@@ -10,7 +10,7 @@ from xml.dom import minidom
 class ScoutModule(object):
 
     name = "webpin"
-    desc = "Search in packages using the webpin webservice."
+    desc = _("Search in packages using the webpin webservice.")
     distros = {
         'suse110' : 'openSUSE_110',
         'suse103' : 'openSUSE_103',
@@ -36,7 +36,7 @@ class ScoutModule(object):
             r.close()
             return minidom.parseString(data)
         except Exception, e:
-            print 'Cannot retreive query results ... %s' % e
+            print _("Cannot retreive query results ... %s") % e
             return None
 
     @classmethod

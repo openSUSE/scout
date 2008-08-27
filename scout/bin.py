@@ -47,7 +47,7 @@ class SolvParser(object):
 class ScoutModule(object):
 
     name = "bin"
-    desc = "Search for binaries contained in the packages."
+    desc = _("Search for binaries contained in the packages.")
 
     @classmethod
     def query_zypp(cls, term):
