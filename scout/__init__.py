@@ -7,7 +7,7 @@ import fnmatch
 import os
 import sys
 import sqlite3
-from optparse import OptionParser, Option, OptionGroup, IndentedHelpFormatter, OptionValueError
+from optparse import OptionParser, Option, IndentedHelpFormatter, OptionValueError
 from ConfigParser import SafeConfigParser
 
 __path__ = os.path.dirname(__file__)
@@ -129,28 +129,20 @@ class CoreOptionParser(object):
                 formatter = ModuleListFormatter()
                 )
 
-        group = OptionGroup(self._parser, 'Global options')
-        group.add_option(
+        self._parser.add_option(
                 "-f", "--format",
                 help=_("select the output format (default %s)") % (self._format),
                 default=self._format,
                 type="choice",
                 choices=formats
                 )
-        #group.add_option(
-        #        ExceptionHelpOption(
-        #            "-h", "--help",
-        #            action="help2",
-        #            help=_("show this help message and exit")
-        #        ))
-        group.add_option(
+        self._parser.add_option(
                 "-l", "--list",
                 help=_("list of available modules"),
                 action="store_true",
                 dest="listing",
                 default=False
                 )
-        self._parser.add_option_group(group)
 
     def add_module(self, modules):
         if modules != None:
