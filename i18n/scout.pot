@@ -1,6 +1,6 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# translation of scout.po to LANGUAGE
+# Copyright (C) 2008
+# This file is distributed under the same license as the "scout" package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
@@ -29,7 +29,7 @@ msgid "- template module -"
 msgstr ""
 
 #: scout/header.py:9
-msgid "Search for C/C++/Obj-C/Obj-C++ headers"
+msgid "Search for C/C++/Obj-C/Obj-C++ headers."
 msgstr ""
 
 #: scout/__init__.py:71
@@ -103,7 +103,7 @@ msgid "Search for java classes inside the JAR files."
 msgstr ""
 
 #: scout/library.py:9
-msgid "Search for shared libraries"
+msgid "Search for shared libraries."
 msgstr ""
 
 #: scout/python.py:9

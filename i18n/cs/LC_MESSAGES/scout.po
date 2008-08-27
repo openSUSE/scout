@@ -1,8 +1,8 @@
 # translation of scout.po to Čeština
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-#
+# Copyright (C) 2008
+# This file is distributed under the same license as the "scout" package.
 # Michal Vyskocil <mvyskocil@suse.cz>, 2008.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: scout\n"
@@ -30,8 +30,8 @@ msgid "- template module -"
 msgstr "- vzorový modul -"
 
 #: scout/header.py:9
-msgid "Search for C/C++/Obj-C/Obj-C++ headers"
-msgstr "Hledá hlavičkové soubory jazyků C/C++/Obj-C/Obj-C++"
+msgid "Search for C/C++/Obj-C/Obj-C++ headers."
+msgstr "Hledá hlavičkové soubory jazyků C/C++/Obj-C/Obj-C++."
 
 #: scout/__init__.py:71
 msgid "show this help message and exit"
@@ -104,8 +104,8 @@ msgid "Search for java classes inside the JAR files."
 msgstr "Hledá třídy jazyka Java v JAR souborech."
 
 #: scout/library.py:9
-msgid "Search for shared libraries"
-msgstr "Hledá sdílené knihovny"
+msgid "Search for shared libraries."
+msgstr "Hledá sdílené knihovny."
 
 #: scout/python.py:9
 msgid "Search for python modules."
