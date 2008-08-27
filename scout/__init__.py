@@ -90,7 +90,7 @@ class CoreOptionParser(object):
         #parser
         self._parser = OptionParser(
                 prog = self._prog,
-                usage = "usage: %prog [global_opts] module [local_opts] query",
+                usage = _("usage: %prog [global_opts] module [local_opts] query"),
                 add_help_option = False,
                 epilog = self._help_modules,
                 formatter = ModuleListFormatter()
@@ -99,7 +99,7 @@ class CoreOptionParser(object):
         group = OptionGroup(self._parser, 'Global options')
         group.add_option(
                 "-f", "--format",
-                help="select the output format (default %s)" % (self._format),
+                help=_("select the output format (default %s)") % (self._format),
                 default=self._format,
                 type="choice",
                 choices=formats
@@ -108,11 +108,11 @@ class CoreOptionParser(object):
                 ExceptionHelpOption(
                     "-h", "--help",
                     action="help2",
-                    help="show this help message and exit"
+                    help=_("show this help message and exit")
                 ))
         group.add_option(
                 "-l", "--list",
-                help="list of available modules",
+                help=_("list of available modules"),
                 action="store_true",
                 dest="listing",
                 default=False
@@ -129,7 +129,7 @@ class CoreOptionParser(object):
         return self
     
     def _help_modules(self):
-        ret = "Available modules:\n"
+        ret = _("Available modules:\n")
         maxlen = len(max((m[0] for m in self._modules), key=len))
         for m in self._modules:
             ret += "    %s : %s\n" % (m[0].ljust(maxlen), m[1])
@@ -179,7 +179,7 @@ class CoreOptionParser(object):
         # no HelpOptionFound raised, the module name is mandatory
         # FIXME: this would be rewritted
         if not self._listing and len(self._module_args) == 0:
-            msg = 'The name of module is mandatory. Use %s --help' % (self._prog)
+            msg = _("The name of module is mandatory. Use %s --help") % (self._prog)
             raise OptionValueError(msg)
 
         # global options
@@ -242,7 +242,7 @@ class ModuleLoader(object):
 
     def _import(self, dir):
         if not os.path.isdir(dir):
-            raise AttributeError("%s is not a directory" % dir)
+            raise AttributeError(_("%s is not a directory") % dir)
         sys.path.insert(0, dir)
         for file in os.listdir(dir):
             module_name, ext = os.path.splitext(file)
@@ -288,7 +288,7 @@ class Database(object):
         try:
             self.conn = sqlite3.connect(dbfile)
         except:
-            print "Could not open database file '%s'" % dbfile
+            print _("Cannot not open database file '%s'") % dbfile
             self.conn = None
 
     def __del__(self):
@@ -535,9 +535,10 @@ class Parser(object):
 
     def __init__(self, modulename):
         self.modulename = modulename
-        self.parser = OptionParser(usage="Usage: %prog " + modulename + " [options] <search_term>")
-        self.parser.add_option('-l', '--listrepos', action="store_true", help="list available repositories", dest="listrepo")
-        self.parser.add_option('-r', '--repo', type='choice', help='select repository to search', default=None, choices=self.get_available_repos())
+        usage = _("Usage: %%prog %s [options] <search_term>") % modulename
+        self.parser = OptionParser(usage=usage.replace("%%", "%"))
+        self.parser.add_option('-l', '--listrepos', action="store_true", help=_("list available repositories"), dest="listrepo")
+        self.parser.add_option('-r', '--repo', type='choice', help=_("select repository to search"), default=None, choices=self.get_available_repos())
 
         self.repos_conf = RepoConfigReader().read()
 
@@ -559,7 +560,7 @@ class Parser(object):
         return ret
 
     def format_available_repos(self):
-        ret = "Available repositories:\n"
+        ret = _("Available repositories:\n")
         if len(self.parser.get_option('-r').choices) == 0:
             ret += '- none -\n'
             return ret
@@ -593,7 +594,7 @@ class Parser(object):
         else:
             repos = []
         if len(repos) == 0:
-            print 'No repositories found ...'
+            print _("No repositories found ...")
             return None
         return repos
 
@@ -681,7 +682,7 @@ class ScoutCore(object):
             try:
                 return result.format(formatter=cls.out_formatters[clp.format])
             except KeyError, kerr:
-                raise SystemExit('Cannot find a formatter for a %s' % clp.format)
+                raise SystemExit(_("Cannot find a formatter for a %s") % clp.format)
 
 
 # Copyright (c) 2008 Pavol Rusnak, Michal Vyskocil
