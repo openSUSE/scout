@@ -19,6 +19,13 @@ class Config(object):
     module_path = __path__
     i18n_path   = os.path.join(__path__, '../i18n')
 
+import gettext, locale
+
+lc, encoding = locale.getdefaultlocale()
+if not lc: lc = 'C'     # fallback to the default locale
+tran = gettext.translation('scout', Config.i18_path, languages = [lc, 'C'], fallback=True)
+tran.install()          #install the _
+
 # the auxiliary classes, which extend the optparse classes to be usefull for scout command line parsing
 class HelpOptionFound(Exception):
     pass
