@@ -23,7 +23,7 @@ import gettext, locale
 
 lc, encoding = locale.getdefaultlocale()
 if not lc: lc = 'C'     # fallback to the default locale
-tran = gettext.translation('scout', Config.i18_path, languages = [lc, 'C'], fallback=True)
+tran = gettext.translation('scout', Config.i18n_path, languages = [lc, 'C'], fallback=True)
 tran.install()          #install the _
 
 # the auxiliary classes, which extend the optparse classes to be usefull for scout command line parsing
@@ -49,6 +49,40 @@ class ModuleListFormatter(IndentedHelpFormatter):
         else:
             return ""
 
+class ScoutOptionParser(OptionParser):
+    """
+    The modified option parser for scout. The three main differences are:
+        
+        - redefined _add_help_option - this adds an ExceptionHelpOption, so the
+          help option will raise an HelpOptionFound exception
+
+        - redefined print_help method - do not encode the output, because it
+          causes some errors
+
+        - redefined _add_version_option
+
+    """
+
+    def _add_help_option(self):
+        self.add_option(
+                ExceptionHelpOption(
+                    "-h", "--help",
+                    action="help2",
+                    help=_("show this help message and exit")
+                    ))
+    
+    def _add_version_option(self):
+        self.add_option(
+                "--version",
+                action="version",
+                help=_("show program's version number and exit")
+                )
+
+    def _print_help(self, file=None):
+        if not file:
+            file = sys.stderr
+        help_msg = self.format_help()
+        file.write(help_msg)
 
 class CoreOptionParser(object):
     """
@@ -88,10 +122,9 @@ class CoreOptionParser(object):
         self._format = "table"
 
         #parser
-        self._parser = OptionParser(
+        self._parser = ScoutOptionParser(
                 prog = self._prog,
                 usage = _("usage: %prog [global_opts] module [local_opts] query"),
-                add_help_option = False,
                 epilog = self._help_modules,
                 formatter = ModuleListFormatter()
                 )
@@ -104,12 +137,12 @@ class CoreOptionParser(object):
                 type="choice",
                 choices=formats
                 )
-        group.add_option(
-                ExceptionHelpOption(
-                    "-h", "--help",
-                    action="help2",
-                    help=_("show this help message and exit")
-                ))
+        #group.add_option(
+        #        ExceptionHelpOption(
+        #            "-h", "--help",
+        #            action="help2",
+        #            help=_("show this help message and exit")
+        #        ))
         group.add_option(
                 "-l", "--list",
                 help=_("list of available modules"),
@@ -536,7 +569,7 @@ class Parser(object):
     def __init__(self, modulename):
         self.modulename = modulename
         usage = _("Usage: %%prog %s [options] <search_term>") % modulename
-        self.parser = OptionParser(usage=usage.replace("%%", "%"))
+        self.parser = ScoutOptionParser(usage=usage.replace("%%", "%"))
         self.parser.add_option('-l', '--listrepos', action="store_true", help=_("list available repositories"), dest="listrepo")
         self.parser.add_option('-r', '--repo', type='choice', help=_("select repository to search"), default=None, choices=self.get_available_repos())
 
