@@ -78,7 +78,7 @@ class ScoutOptionParser(OptionParser):
                 help=_("show program's version number and exit")
                 )
 
-    def _print_help(self, file=None):
+    def print_help(self, file=None):
         if not file:
             file = sys.stderr
         help_msg = self.format_help()
