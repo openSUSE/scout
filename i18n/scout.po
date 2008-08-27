@@ -1,0 +1,120 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-08-27 15:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: scout/autoconf.py:9
+msgid "Search for autoconf macros inside the m4 files."
+msgstr "Search for autoconf macros inside the m4 files."
+
+#: scout/bin.py:50
+msgid "Search for binaries contained in the packages."
+msgstr "Search for binaries contained in the packages."
+
+#: scout/foo.py:9
+msgid "- template module -"
+msgstr "- template module -"
+
+#: scout/header.py:9
+msgid "Search for C/C++/Obj-C/Obj-C++ headers"
+msgstr "Search for C/C++/Obj-C/Obj-C++ headers"
+
+#: scout/__init__.py:71
+msgid "show this help message and exit"
+msgstr "show this help message and exit"
+
+#: scout/__init__.py:78
+msgid "show program's version number and exit"
+msgstr "show program's version number and exit"
+
+#: scout/__init__.py:127
+msgid "usage: %prog [global_opts] module [local_opts] query"
+msgstr "usage: %prog [global_opts] module [local_opts] query"
+
+#: scout/__init__.py:134
+#, python-format
+msgid "select the output format (default %s)"
+msgstr "select the output format (default %s)"
+
+#: scout/__init__.py:141
+msgid "list of available modules"
+msgstr "list of available modules"
+
+#: scout/__init__.py:157
+msgid "Available modules:\n"
+msgstr "Available modules:\n"
+
+#: scout/__init__.py:207
+#, python-format
+msgid "The name of module is mandatory. Use %s --help"
+msgstr "The name of module is mandatory. Use %s --help"
+
+#: scout/__init__.py:270
+#, python-format
+msgid "%s is not a directory"
+msgstr "%s is not a directory"
+
+#: scout/__init__.py:316
+#, python-format
+msgid "Cannot not open database file '%s'"
+msgstr "Cannot not open database file '%s'"
+
+#: scout/__init__.py:563
+#, python-format
+msgid "Usage: %%prog %s [options] <search_term>"
+msgstr "Usage: %%prog %s [options] <search_term>"
+
+#: scout/__init__.py:565
+msgid "list available repositories"
+msgstr "list available repositories"
+
+#: scout/__init__.py:566
+msgid "select repository to search"
+msgstr "select repository to search"
+
+#: scout/__init__.py:588
+msgid "Available repositories:\n"
+msgstr "Available repositories:\n"
+
+#: scout/__init__.py:622
+msgid "No repositories found ..."
+msgstr "No repositories found ..."
+
+#: scout/__init__.py:715
+#, python-format
+msgid "Cannot find a formatter for a %s"
+msgstr "Cannot find a formatter for a %s"
+
+#: scout/java.py:9
+msgid "Search for java classes inside the JAR files."
+msgstr "Search for java classes inside the JAR files."
+
+#: scout/library.py:9
+msgid "Search for shared libraries"
+msgstr "Search for shared libraries"
+
+#: scout/python.py:9
+msgid "Search for python modules."
+msgstr "Search for python modules."
+
+#: scout/webpin.py:13
+msgid "Search in packages using the webpin webservice."
+msgstr "Search in packages using the webpin webservice."
+
+#: scout/webpin.py:39
+#, python-format
+msgid "Cannot retreive query results ... %s"
+msgstr "Cannot retreive query results ... %s"
