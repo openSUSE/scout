@@ -1,0 +1,122 @@
+# translation of scout.po to Čeština
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Michal Vyskocil <mvyskocil@suse.cz>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: scout\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-08-27 15:15+0200\n"
+"PO-Revision-Date: 2008-08-27 15:26+0200\n"
+"Last-Translator: Michal Vyskocil <mvyskocil@suse.cz>\n"
+"Language-Team: Čeština\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: scout/autoconf.py:9
+msgid "Search for autoconf macros inside the m4 files."
+msgstr "Hledá autoconf makra uvnitř souborů m4."
+
+#: scout/bin.py:50
+msgid "Search for binaries contained in the packages."
+msgstr "Hledá binárky obsažené v balíčcích."
+
+#: scout/foo.py:9
+msgid "- template module -"
+msgstr "- vzorový modul -"
+
+#: scout/header.py:9
+msgid "Search for C/C++/Obj-C/Obj-C++ headers"
+msgstr "Hledá hlavičkové soubory jazyků C/C++/Obj-C/Obj-C++"
+
+#: scout/__init__.py:71
+msgid "show this help message and exit"
+msgstr "ukáže tuto nápovědu a skončí"
+
+#: scout/__init__.py:78
+msgid "show program's version number and exit"
+msgstr "ukáže číslo verze programu a skončí"
+
+#: scout/__init__.py:127
+msgid "usage: %prog [global_opts] module [local_opts] query"
+msgstr "použití: %prog [globální_volby] modul [volby_modulu] dotaz"
+
+#: scout/__init__.py:134
+#, python-format
+msgid "select the output format (default %s)"
+msgstr "zvolí formát výstupu (výchozí je %s)"
+
+#: scout/__init__.py:141
+msgid "list of available modules"
+msgstr "seznam dostupných modulů"
+
+#: scout/__init__.py:157
+msgid "Available modules:\n"
+msgstr "Dostupné moduly:\n"
+
+#: scout/__init__.py:207
+#, python-format
+msgid "The name of module is mandatory. Use %s --help"
+msgstr "Jméno modulu je povinné. Viz %s --help"
+
+#: scout/__init__.py:270
+#, python-format
+msgid "%s is not a directory"
+msgstr "%s není adresářem"
+
+#: scout/__init__.py:316
+#, python-format
+msgid "Cannot not open database file '%s'"
+msgstr "Nemohu otevřít soubor s databází: '%s'"
+
+#: scout/__init__.py:563
+#, python-format
+msgid "Usage: %%prog %s [options] <search_term>"
+msgstr "Použití: %%prog %s [volby_modulu] dotaz"
+
+#: scout/__init__.py:565
+msgid "list available repositories"
+msgstr "seznam dostupných repozitářů"
+
+#: scout/__init__.py:566
+msgid "select repository to search"
+msgstr "zvolí repozitář k prohledávání"
+
+#: scout/__init__.py:588
+msgid "Available repositories:\n"
+msgstr "Dostupné repozitáře:\n"
+
+#: scout/__init__.py:622
+msgid "No repositories found ..."
+msgstr "Žádné repozitáře nebyly nalezeny ..."
+
+#: scout/__init__.py:715
+#, python-format
+msgid "Cannot find a formatter for a %s"
+msgstr "Nemohu najít formátovač pro %s"
+
+#: scout/java.py:9
+msgid "Search for java classes inside the JAR files."
+msgstr "Hledá třídy jazyka Java v JAR souborech."
+
+#: scout/library.py:9
+msgid "Search for shared libraries"
+msgstr "Hledá sdílené knihovny"
+
+#: scout/python.py:9
+msgid "Search for python modules."
+msgstr "Hledá moduly jazyka Python."
+
+#: scout/webpin.py:13
+msgid "Search in packages using the webpin webservice."
+msgstr "Hledá v balíčcích pomocí webové služby webpin."
+
+#: scout/webpin.py:39
+#, python-format
+msgid "Cannot retreive query results ... %s"
+msgstr "Nemohu získat výsledek dotazu ... %s"
+
