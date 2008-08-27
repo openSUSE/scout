@@ -10,11 +10,14 @@ import sqlite3
 from optparse import OptionParser, Option, OptionGroup, IndentedHelpFormatter, OptionValueError
 from ConfigParser import SafeConfigParser
 
+__path__ = os.path.dirname(__file__)
+
 class Config(object):
     data_path = '/usr/share/scout'
     data_suffix = '.db'
     config_file = 'repos.conf'
-    module_path = os.path.dirname(__file__)
+    module_path = __path__
+    i18n_path   = os.path.join(__path__, '../i18n')
 
 # the auxiliary classes, which extend the optparse classes to be usefull for scout command line parsing
 class HelpOptionFound(Exception):
