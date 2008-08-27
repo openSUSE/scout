@@ -72,8 +72,13 @@ class ScoutModule(object):
 
         p = scout.Parser(cls.name)
         p.add_repo('zypp')
-        if not p.parse(args):
-            return None
+        try:
+            if not p.parse(args):
+                return None
+        except HelpOptionFound:
+            p.print_help()
+            sys.exit(1)
+
         term = p.args[0]
 
         result = scout.Result( ['repo', 'bin', 'path', 'pkg'], ['repository', 'binary', 'path', 'package']);

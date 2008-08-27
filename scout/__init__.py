@@ -656,8 +656,13 @@ class BasicScoutModule(object):
     @classmethod
     def main(cls, args=None):
         p = Parser(cls.name)
-        if not p.parse(args):
-            return None
+        try:
+            if not p.parse(args):
+                return None
+        except HelpOptionFound:
+            p.print_help()
+            sys.exit(1)
+
         term = p.args[0]
 
         result = Result( cls.result_list, cls.result_list2)

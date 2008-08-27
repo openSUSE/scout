@@ -68,8 +68,12 @@ class ScoutModule(object):
 
         p = scout.Parser(cls.name)
         p.add_repos(['factory', 'suse110', 'suse103', 'suse102'])
-        if not p.parse(args):
-            return None
+        try:
+            if not p.parse(args):
+                return None
+        except HelpOptionFound:
+            p.print_help()
+            sys.exit(1)
 
         term = p.args[0]
 
