@@ -56,10 +56,6 @@ class NullLang(DefaultLang):
 DefaultLang.setup()
 DefaultLang.install()
 
-# older code
-def default_lang(): return DefaultLang.install()
-def null_lang():    return NullLang.install()
-
 # the auxiliary classes, which extend the optparse classes to be usefull for scout command line parsing
 class HelpOptionFound(Exception):
     pass

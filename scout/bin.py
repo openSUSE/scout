@@ -81,9 +81,9 @@ class ScoutModule(object):
 
         term = p.args[0]
 
-        scout.null_lang()
+        scout.NullLang.install()
         result_list = [_("repo"), _("bin"), _("path"), _("pkg")]
-        scout.default_lang()
+        scout.DefaultLang.install()
 
         result = scout.Result( result_list, [_("repository"), _("binary"), _("path"), _("package")]);
 
