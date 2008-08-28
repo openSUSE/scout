@@ -539,9 +539,13 @@ class Result(object):
                 self.rows.append(list(row))
 
     def get_short_names(self, localised=True):
+        if localised:
+            return map(DefaultLang.gettext, self.cols1)
         return self.cols1
 
     def get_long_names(self, localised=True):
+        if localised:
+            return map(DefaultLang.gettext, self.cols2)
         return self.cols2
 
     def get_table(self):
