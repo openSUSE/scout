@@ -11,14 +11,50 @@ import sqlite3
 from optparse import OptionParser, Option, IndentedHelpFormatter, OptionValueError
 from ConfigParser import SafeConfigParser
 
-__path__ = os.path.dirname(__file__)
-
-class Config(object):
+class SysConfig(object):
     data_path = '/usr/share/scout'
     data_suffix = '.db'
     config_file = 'repos.conf'
-    module_path = __path__
-    i18n_path   = os.path.join(__path__, '../i18n')
+    module_path = None
+    i18n_path   = '/usr/share/locale/'
+
+    @classmethod
+    def setup(cls, path):
+        cls.module_path = path
+
+class DevConfig(SysConfig):
+    
+    @classmethod
+    def setup(cls, path):
+        cls.module_path = path
+        cls.i18n_path = os.path.join(path, '../i18n')
+
+class ConfigFactory(object):
+    """ """
+
+    __SYSCONFIG = SysConfig
+    __DEVCONFIG = DevConfig
+
+    @staticmethod
+    def get_scout_path():
+        return os.path.dirname(__file__)
+
+    @staticmethod
+    def is_installed():
+        import distutils.sysconfig
+        path = ConfigFactory.get_scout_path()
+        pl   = distutils.sysconfig.get_python_lib()
+
+        return path.find(pl) == 0
+
+    @staticmethod
+    def create_config_class():
+        ret = ConfigFactory.__SYSCONFIG
+        if not ConfigFactory.is_installed(): ret = ConfigFactory.__DEVCONFIG
+        ret.setup(ConfigFactory.get_scout_path())
+        return ret
+
+Config = ConfigFactory.create_config_class()
 
 import gettext, locale
 
