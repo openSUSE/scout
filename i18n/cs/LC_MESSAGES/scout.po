@@ -1,14 +1,14 @@
 # translation of scout.po to Čeština
 # Copyright (C) 2008
 # This file is distributed under the same license as the "scout" package.
-# Michal Vyskocil <mvyskocil@suse.cz>, 2008.
 #
+# Michal Vyskocil <mvyskocil@suse.cz>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: scout\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-27 15:15+0200\n"
-"PO-Revision-Date: 2008-08-27 15:26+0200\n"
+"POT-Creation-Date: 2008-08-28 10:27+0200\n"
+"PO-Revision-Date: 2008-08-28 10:37+0200\n"
 "Last-Translator: Michal Vyskocil <mvyskocil@suse.cz>\n"
 "Language-Team: Čeština\n"
 "MIME-Version: 1.0\n"
@@ -93,6 +93,18 @@ msgstr "Dostupné repozitáře:\n"
 #: scout/__init__.py:622
 msgid "No repositories found ..."
 msgstr "Žádné repozitáře nebyly nalezeny ..."
+
+#: scout/__init__.py:644
+msgid "repository"
+msgstr "repozitář"
+
+#: scout/__init__.py:644
+msgid "package"
+msgstr "balíček"
+
+#: scout/__init__.py:644
+msgid "module"
+msgstr "modul"
 
 #: scout/__init__.py:715
 #, python-format
