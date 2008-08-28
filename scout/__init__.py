@@ -22,19 +22,43 @@ class Config(object):
 
 import gettext, locale
 
-def default_lang():
-    lc, encoding = locale.getdefaultlocale()
-    if not lc: lc = 'C'     # fallback to the default locale
-    tran = gettext.translation('scout', Config.i18n_path, languages = [lc, 'C'], fallback=True)
-    tran.install(unicode=True)
-    return tran
+class DefaultLang(object):
 
-def null_lang():
-    tran = gettext.NullTranslations()
-    tran.install(unicode=True)
-    return tran
+    _trans = None
 
-default_lang()
+    @classmethod
+    def setup(cls):
+        if not cls._trans:
+            lc, encoding = locale.getdefaultlocale()
+            if not lc: lc = 'C'     # fallback to the default locale
+            cls._trans = gettext.translation('scout', Config.i18n_path, languages = [lc, 'C'], fallback=True)
+        return cls
+
+    @classmethod
+    def install(cls):
+        if not cls._trans:      cls.setup()
+        cls._trans.install(unicode = True)
+
+    @classmethod
+    def gettext(cls, msg):
+        if not cls._trans:      cls.setup()
+        return cls._trans.ugettext(msg)
+        
+
+class NullLang(DefaultLang):
+
+    _trans = gettext.NullTranslations()
+
+    @classmethod
+    def setup(cls):
+        return cls      # alias do nothing
+
+DefaultLang.setup()
+DefaultLang.install()
+
+# older code
+def default_lang(): return DefaultLang.install()
+def null_lang():    return NullLang.install()
 
 # the auxiliary classes, which extend the optparse classes to be usefull for scout command line parsing
 class HelpOptionFound(Exception):
@@ -654,9 +678,9 @@ class BasicScoutModule(object):
     name = "name"
     desc = "desc"
     sql = "SQL"
-    null_lang()
+    NullLang.install()
     result_list = [_("repo"), _("pkg"), _("module")]
-    default_lang()
+    DefaultLang.install()
     result_list2= [_("repository"), _("package"), _("module")]
 
     @classmethod
