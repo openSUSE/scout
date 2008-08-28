@@ -5,16 +5,20 @@ INSTALL_CMD = "sudo zypper install"
 
 import sys
 import rpm
+import scout
+
+default_lang = scout.DefaultLang(textdomain="command-not-found")
+default_lang.install()
 
 def print_found(rows):
     print
-    print "The program '%s' can be found in the following package(s):" % term
+    print _("The program '%s' can be found in the following package(s):") % term
     for row in rows:
-        print "  * %s [ path: %s/%s, repository: %s ]" % (row[3], row[2], row[1], row[0])
+        print _("  * %s [ path: %s/%s, repository: %s ]") % (row[3], row[2], row[1], row[0])
     print
-    print 'Try:', INSTALL_CMD,
+    print _('Try:'), INSTALL_CMD,
     if len(rows) > 1:
-        print '<selected_package>'
+        print _('<selected_package>')
     else:
         print rows[0][3]
     print
@@ -22,11 +26,11 @@ def print_found(rows):
 
 def print_installed(term, pkg, path):
     print
-    print "Program '%s' is present in package '%s', which is installed on your system." % ( term, pkg )
+    print _("Program '%s' is present in package '%s', which is installed on your system.") % ( term, pkg )
     print
-    print "Full path leading to '%s' is '%s/%s'." % ( term , path , term )
+    print _("Full path leading to '%s' is '%s/%s'.") % ( term , path , term )
     print
-    print "Please check your $PATH or maybe program '%s' is intended to be run only by root" % term
+    print _("Please check your $PATH or maybe program '%s' is intended to be run only by root") % term
     print
     sys.exit(EX_NOTFOUND)
 
@@ -38,7 +42,6 @@ def check_installed(term):
 if len(sys.argv) < 3:
     sys.exit(EX_NOTFOUND)
 
-import scout
 sys.path.append(scout.Config.module_path)
 import bin
 
