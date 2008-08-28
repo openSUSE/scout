@@ -10,6 +10,6 @@ class ScoutModule(object.BasicScoutModule):
     sql = 'SELECT package, @@FOO@@, @@BAR@@ FROM @@BAR@@s LEFT JOIN @@FOO@@s ON @@BAR@@s.id_@@FOO@@=@@FOO@@s.id_@@FOO@@ LEFT JOIN packages ON @@FOO@@s.id_pkg=packages.id_pkg WHERE @@BAR@@ LIKE ?', '%%%s%%'
     scout.NullLang.install()
     result_list = ['repo', 'pkg', '@@FOO@@', '@@BAR@@']
-    scout.DefaultLang.install()
     result_list2= ['repository', 'package', '@@FOO@@ file', '@@BAR@@']
+    scout.DefaultLang.install()
 

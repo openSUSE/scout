@@ -680,8 +680,8 @@ class BasicScoutModule(object):
     sql = "SQL"
     NullLang.install()
     result_list = [_("repo"), _("pkg"), _("module")]
-    DefaultLang.install()
     result_list2= [_("repository"), _("package"), _("module")]
+    DefaultLang.install()
 
     @classmethod
     def query(cls, repo, term):

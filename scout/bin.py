@@ -83,9 +83,10 @@ class ScoutModule(object):
 
         scout.NullLang.install()
         result_list = [_("repo"), _("bin"), _("path"), _("pkg")]
+        result_list2= [_("repository"), _("binary"), _("path"), _("package")]
         scout.DefaultLang.install()
 
-        result = scout.Result( result_list, [_("repository"), _("binary"), _("path"), _("package")]);
+        result = scout.Result( result_list, result_list2 );
 
         repos = p.get_repos()
         if repos == None:
