@@ -115,6 +115,8 @@ install -D -m 0755 scout-cmd.py $RPM_BUILD_ROOT%{_bindir}/%{name}
 install -D -m 0644 scout-bash-completion $RPM_BUILD_ROOT%{_sysconfdir}/bash_completion.d/scout.sh
 # install manpage
 install -D -m 0644 doc/scout.1 $RPM_BUILD_ROOT%{_mandir}/man1/scout.1
+# find languages
+%find_lang scout
 
 %if %{cnfrepo} != none
 # --- command-not-found ---
@@ -123,13 +125,15 @@ for shell in bash zsh; do
     install -D -m 644 handlers/bin/command_not_found_${shell} $RPM_BUILD_ROOT%{_sysconfdir}/${shell}_command_not_found
     sed -i 's:__REPO__:%{cnfrepo}:' $RPM_BUILD_ROOT%{_sysconfdir}/${shell}_command_not_found
 done
+# find languages
+%find_lang command-not-found
 
 %endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f scout.lang
 %defattr(-,root,root)
 %doc AUTHORS LICENSE README TODO doc/scout.html doc/scout.pdf
 %{_bindir}/%{name}*
@@ -140,7 +144,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %if %{cnfrepo} != none
 
-%files -n command-not-found
+%files -n command-not-found -f command-not-found.lang
 %defattr(-,root,root)
 %doc handlers/bin/README
 %{_bindir}/command-not-found

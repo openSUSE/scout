@@ -28,9 +28,10 @@ def print_installed(term, pkg, path):
     print
     print _("Program '%s' is present in package '%s', which is installed on your system.") % ( term, pkg )
     print
-    print _("Full path leading to '%s' is '%s/%s'.") % ( term , path , term )
-    print
-    print _("Please check your $PATH or maybe program '%s' is intended to be run only by root") % term
+    if '/sbin' in path:
+        print _("Absolute path to '%s' is '%s/%s', so it might be intended to be run only by user with superuser privileges (eg. root).") % ( term , path, term )
+    else:
+        print _("Absolute path to '%s' is '%s/%s'. Please check your $PATH variable to see whether it contains the mentioned path.") % ( term , path , term )
     print
     sys.exit(EX_NOTFOUND)
 

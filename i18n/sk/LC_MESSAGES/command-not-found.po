@@ -1,16 +1,16 @@
-# translation of command-not-found.po to Čeština
+# translation of command-not-found.po to Slovenčina
 # Copyright (C) 2008
 # This file is distributed under the same license as the "command-not-found" package.
 #
-# Michal Vyskocil <mvyskocil@suse.cz>, 2008.
+# Pavol Rusnak <stick@gk2.sk>, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: command-not-found\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-28 17:02+0200\n"
 "PO-Revision-Date: 2008-08-28 17:10+0200\n"
-"Last-Translator: Michal Vyskocil <mvyskocil@suse.cz>\n"
-"Language-Team: Čeština\n"
+"Last-Translator: Pavol Rusnak <stick@gk2.sk>\n"
+"Language-Team: Slovenčina\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,25 +20,25 @@ msgstr ""
 #: handlers/bin/command-not-found:19
 #, python-format
 msgid "The program '%s' can be found in the following package(s):"
-msgstr "Program '%s' je přítomen v následujících balíčcích:"
+msgstr "Program '%s' sa nachádza v následujúcich balíkoch:"
 
 #: handlers/bin/command-not-found:21
 #, python-format
 msgid "  * %s [ path: %s/%s, repository: %s ]"
-msgstr "  * %s [ cesta: %s/%s, repozitář: %s ]"
+msgstr "  * %s [ cesta: %s/%s, repozitár: %s ]"
 
 #: handlers/bin/command-not-found:23
 msgid "Try:"
-msgstr "Zkus:"
+msgstr "Skúste:"
 
 #: handlers/bin/command-not-found:25
 msgid "<selected_package>"
-msgstr "<vybrané_balíčky>"
+msgstr "<vybrané_balíky>"
 
 #: handlers/bin/command-not-found:33
 #, python-format
 msgid "Program '%s' is present in package '%s', which is installed on your system."
-msgstr "Program '%s' je přítomen v balíčku '%s', který je na vašem systému již nainstalován."
+msgstr "Program '%s' sa nachádza v balíku '%s', který už je v systéme nainštalovaný."
 
 #: handlers/bin/command-not-found:35
 #, python-format
