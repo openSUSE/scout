@@ -81,7 +81,11 @@ class ScoutModule(object):
 
         term = p.args[0]
 
-        result = scout.Result( [_("repo"), _("bin"), _("path"), _("pkg")], [_("repository"), _("binary"), _("path"), _("package")]);
+        scout.null_lang()
+        result_list = [_("repo"), _("bin"), _("path"), _("pkg")]
+        scout.default_lang()
+
+        result = scout.Result( result_list, [_("repository"), _("binary"), _("path"), _("package")]);
 
         repos = p.get_repos()
         if repos == None:

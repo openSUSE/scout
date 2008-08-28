@@ -22,10 +22,19 @@ class Config(object):
 
 import gettext, locale
 
-lc, encoding = locale.getdefaultlocale()
-if not lc: lc = 'C'     # fallback to the default locale
-tran = gettext.translation('scout', Config.i18n_path, languages = [lc, 'C'], fallback=True)
-tran.install(unicode=True)          #install the _ with unicode string support
+def default_lang():
+    lc, encoding = locale.getdefaultlocale()
+    if not lc: lc = 'C'     # fallback to the default locale
+    tran = gettext.translation('scout', Config.i18n_path, languages = [lc, 'C'], fallback=True)
+    tran.install(unicode=True)
+    return tran
+
+def null_lang():
+    tran = gettext.NullTranslations()
+    tran.install(unicode=True)
+    return tran
+
+default_lang()
 
 # the auxiliary classes, which extend the optparse classes to be usefull for scout command line parsing
 class HelpOptionFound(Exception):
@@ -473,13 +482,14 @@ class XMLFormatter(object):
         ret = '<?xml version="1.0" encoding="UTF-8"?>\n'
         ret += '<%s>' % result_tag + '\n'
         ret += '  <%s>' % head_tag + '\n'
-        for i in range(0, len(result.get_short_names())):
-            ret += '    <%s>%s</%s>' % (result.get_short_names()[i], result.get_long_names()[i], result.get_short_names()[i]) + '\n'
+        short_names = result.get_short_names(localised=False)
+        for i in range(0, len(short_names)):
+            ret += '    <%s>%s</%s>' % (short_names[i], result.get_long_names()[i], short_names[i]) + '\n'
         ret += '  </%s>' % head_tag + '\n'
         for row in result.rows:
           ret += '  <%s>' % row_tag + '\n'
-          for i in range(0,len(result.get_short_names())):
-              ret += '    <%s>%s</%s>' % (result.get_short_names()[i], row[i], result.get_short_names()[i]) + '\n'
+          for i in range(0,len(short_names)):
+              ret += '    <%s>%s</%s>' % (short_names[i], row[i], short_names[i]) + '\n'
           ret += '  </%s>' % row_tag + '\n'
         ret += '</%s>' % result_tag + '\n'
         return ret
@@ -504,10 +514,10 @@ class Result(object):
             for row in rows:
                 self.rows.append(list(row))
 
-    def get_short_names(self):
+    def get_short_names(self, localised=True):
         return self.cols1
 
-    def get_long_names(self):
+    def get_long_names(self, localised=True):
         return self.cols2
 
     def get_table(self):
@@ -644,7 +654,9 @@ class BasicScoutModule(object):
     name = "name"
     desc = "desc"
     sql = "SQL"
+    null_lang()
     result_list = [_("repo"), _("pkg"), _("module")]
+    default_lang()
     result_list2= [_("repository"), _("package"), _("module")]
 
     @classmethod
