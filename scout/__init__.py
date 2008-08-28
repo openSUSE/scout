@@ -1,4 +1,5 @@
 # The scout project
+# -*- coding: utf-8 -*-
 # Copyright (c) 2008 Pavol Rusnak, Michal Vyskocil
 # This file is distributed under the terms of the MIT License
 # see the comment at the end of this file
@@ -24,7 +25,7 @@ import gettext, locale
 lc, encoding = locale.getdefaultlocale()
 if not lc: lc = 'C'     # fallback to the default locale
 tran = gettext.translation('scout', Config.i18n_path, languages = [lc, 'C'], fallback=True)
-tran.install()          #install the _
+tran.install(unicode=True)          #install the _ with unicode string support
 
 # the auxiliary classes, which extend the optparse classes to be usefull for scout command line parsing
 class HelpOptionFound(Exception):
@@ -78,11 +79,11 @@ class ScoutOptionParser(OptionParser):
                 help=_("show program's version number and exit")
                 )
 
-    def print_help(self, file=None):
-        if not file:
-            file = sys.stderr
-        help_msg = self.format_help()
-        file.write(help_msg)
+#    def print_help(self, file=None):
+#        if not file:
+#            file = sys.stderr
+#        help_msg = self.format_help()
+#        file.write(help_msg)
 
 class CoreOptionParser(object):
     """
@@ -404,15 +405,15 @@ class TableFormatter(object):
         #FIXME: this code probably doesn't work with a variable length of the delimiters!
         ret = ""
         if result.is_empty() : return ret
-        col_width = map(len, map(str, result.get_long_names()))
+        col_width = map(len, map(unicode, result.get_long_names()))
         for i in range(0,len(result.get_long_names())):
           for row in result.get_rows():
-            if len(str(row[i])) > col_width[i]:
-                col_width[i] = len(str(row[i]))
-        ret += ' ' + vertical_delimiter.join(map(str.ljust, result.get_long_names(), col_width)) + '\n'
+            if len(unicode(row[i])) > col_width[i]:
+                col_width[i] = len(unicode(row[i]))
+        ret += ' ' + vertical_delimiter.join(map(unicode.ljust, result.get_long_names(), col_width)) + '\n'
         ret += horizontal_delimiter + node_delimiter.join(map(lambda c: horizontal_delimiter * c, col_width)) + horizontal_delimiter + '\n'
         for row in result.get_rows():
-            ret += ' ' + vertical_delimiter.join(map(str.ljust, map(str, row), col_width)) + '\n'
+            ret += ' ' + vertical_delimiter.join(map(unicode.ljust, map(unicode, row), col_width)) + '\n'
         return ret
 
 class CSVFormatter(object):
@@ -625,6 +626,9 @@ class Parser(object):
 
     def do_list(self):
         return self.options.listrepo
+    
+    def print_help(self, file=sys.stderr):
+        self.parser.print_help(file)
 
 class BasicScoutModule(object):
     """
@@ -674,7 +678,6 @@ class BasicScoutModule(object):
             result.add_rows( cls.query(repo, term) )
 
         return result
-
 
 class ScoutCore(object):
 
