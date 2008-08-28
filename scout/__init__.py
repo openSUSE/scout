@@ -60,37 +60,36 @@ import gettext, locale
 
 class DefaultLang(object):
 
-    _trans = None
+    def __init__(self, textdomain='scout', unicode=True):
+        self._textdomain = textdomain
+        self._unicode    = unicode
+        lc, encoding = locale.getdefaultlocale()
+        if not lc:
+            lc = 'C'
+        self._trans = gettext.translation(
+                self._textdomain,
+                Config.i18n_path,
+                languages = [lc, 'C'],
+                fallback = True
+                )
 
-    @classmethod
-    def setup(cls):
-        if not cls._trans:
-            lc, encoding = locale.getdefaultlocale()
-            if not lc: lc = 'C'     # fallback to the default locale
-            cls._trans = gettext.translation('scout', Config.i18n_path, languages = [lc, 'C'], fallback=True)
-        return cls
+    def install(self):
+        self._trans.install(unicode = self._unicode)
+        return self
 
-    @classmethod
-    def install(cls):
-        if not cls._trans:      cls.setup()
-        cls._trans.install(unicode = True)
-
-    @classmethod
-    def gettext(cls, msg):
-        if not cls._trans:      cls.setup()
-        return cls._trans.ugettext(msg)
+    def gettext(self, msg):
+        return self._trans.ugettext(msg)
         
 
 class NullLang(DefaultLang):
 
-    _trans = gettext.NullTranslations()
+    def __init__(self, textdomain='scout', unicode=True):
+        self._trans = gettext.NullTranslations()
+        self._unicode = unicode
 
-    @classmethod
-    def setup(cls):
-        return cls      # alias do nothing
-
-DefaultLang.setup()
-DefaultLang.install()
+default_lang = DefaultLang()
+null_lang    = NullLang()
+default_lang.install()
 
 # the auxiliary classes, which extend the optparse classes to be usefull for scout command line parsing
 class HelpOptionFound(Exception):
@@ -572,12 +571,12 @@ class Result(object):
 
     def get_short_names(self, localised=True):
         if localised:
-            return map(DefaultLang.gettext, self.cols1)
+            return map(default_lang.gettext, self.cols1)
         return self.cols1
 
     def get_long_names(self, localised=True):
         if localised:
-            return map(DefaultLang.gettext, self.cols2)
+            return map(default_lang.gettext, self.cols2)
         return self.cols2
 
     def get_table(self):
@@ -714,10 +713,10 @@ class BasicScoutModule(object):
     name = "name"
     desc = "desc"
     sql = "SQL"
-    NullLang.install()
+    null_lang.install()
     result_list = [_("repo"), _("pkg"), _("module")]
     result_list2= [_("repository"), _("package"), _("module")]
-    DefaultLang.install()
+    default_lang.install()
 
     @classmethod
     def query(cls, repo, term):

@@ -41,10 +41,10 @@ class ScoutModule(object):
 
     @classmethod
     def fill_result(cls, root):
-        scout.NullLang.install()
+        scout.null_lang.install()
         result_list = [_("pkg"), _("ver"), _("arch"), _("repo"), _("files")]
         result_list2=[_("package"), _("version"), _("arch"), _("repository URL"), _("matched files")]
-        scout.DefaultLang.install()
+        scout.default_lang.install()
         result = scout.Result( result_list, result_list2 );
 
         for node in root.getElementsByTagName("package"):
