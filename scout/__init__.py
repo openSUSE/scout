@@ -641,7 +641,7 @@ class BasicScoutModule(object):
     desc = "desc"
     sql = "SQL"
     result_list = ['repo', 'pkg', 'module']
-    result_list2= ['repository', 'package', 'module']
+    result_list2= [_("repository"), _("package"), _("module")]
 
     @classmethod
     def query(cls, repo, term):
