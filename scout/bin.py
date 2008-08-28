@@ -81,7 +81,7 @@ class ScoutModule(object):
 
         term = p.args[0]
 
-        result = scout.Result( ['repo', 'bin', 'path', 'pkg'], ['repository', 'binary', 'path', 'package']);
+        result = scout.Result( [_("repo"), _("bin"), _("path"), _("pkg")], [_("repository"), _("binary"), _("path"), _("package")]);
 
         repos = p.get_repos()
         if repos == None:

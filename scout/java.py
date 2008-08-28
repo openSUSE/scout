@@ -8,5 +8,5 @@ class ScoutModule(scout.BasicScoutModule):
     name = "java"
     desc = _("Search for java classes inside the JAR files.")
     sql = 'SELECT package, jar, class FROM classes LEFT JOIN jars ON classes.id_jar=jars.id_jar LEFT JOIN packages ON jars.id_pkg=packages.id_pkg WHERE class LIKE ?'
-    result_list = ['repo', 'pkg', 'jar', 'class']
-    result_list2= ['repository', 'package', 'jar', 'class']
+    result_list = [_("repo"), _("pkg"), _("jar"), _("class")]
+    result_list2= [_("repository"), _("package"), _("jar"), _("class")]

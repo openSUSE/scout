@@ -41,7 +41,7 @@ class ScoutModule(object):
 
     @classmethod
     def fill_result(cls, root):
-        result = scout.Result( ['pkg', 'ver', 'arch', 'repo', 'files'], ['package', 'version', 'arch', 'repository URL', 'matched files']);
+        result = scout.Result( [_("pkg"), _("ver"), _("arch"), _("repo"), _("files")], [_("package"), _("version"), _("arch"), _("repository URL"), _("matched files")]);
 
         for node in root.getElementsByTagName("package"):
             name = node.getElementsByTagName('name').item(0).childNodes.item(0).nodeValue

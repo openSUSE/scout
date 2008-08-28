@@ -644,7 +644,7 @@ class BasicScoutModule(object):
     name = "name"
     desc = "desc"
     sql = "SQL"
-    result_list = ['repo', 'pkg', 'module']
+    result_list = [_("repo"), _("pkg"), _("module")]
     result_list2= [_("repository"), _("package"), _("module")]
 
     @classmethod
