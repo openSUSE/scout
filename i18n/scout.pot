@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-28 10:27+0200\n"
+"POT-Creation-Date: 2008-08-28 12:05+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,8 +20,51 @@ msgstr ""
 msgid "Search for autoconf macros inside the m4 files."
 msgstr ""
 
+#: scout/autoconf.py:11 scout/bin.py:84 scout/__init__.py:647 scout/java.py:11
+#: scout/webpin.py:44
+msgid "repo"
+msgstr ""
+
+#: scout/autoconf.py:11 scout/bin.py:84 scout/__init__.py:647 scout/java.py:11
+#: scout/webpin.py:44
+msgid "pkg"
+msgstr ""
+
+#: scout/autoconf.py:11
+msgid "m4"
+msgstr ""
+
+#: scout/autoconf.py:11 scout/autoconf.py:12
+msgid "macro"
+msgstr ""
+
+#: scout/autoconf.py:12 scout/bin.py:84 scout/__init__.py:648 scout/java.py:12
+msgid "repository"
+msgstr ""
+
+#: scout/autoconf.py:12 scout/bin.py:84 scout/__init__.py:648 scout/java.py:12
+#: scout/webpin.py:44
+msgid "package"
+msgstr ""
+
+#: scout/autoconf.py:12
+msgid "m4 file"
+msgstr ""
+
 #: scout/bin.py:50
 msgid "Search for binaries contained in the packages."
+msgstr ""
+
+#: scout/bin.py:84
+msgid "bin"
+msgstr ""
+
+#: scout/bin.py:84
+msgid "path"
+msgstr ""
+
+#: scout/bin.py:84
+msgid "binary"
 msgstr ""
 
 #: scout/foo.py:9
@@ -32,86 +75,86 @@ msgstr ""
 msgid "Search for C/C++/Obj-C/Obj-C++ headers."
 msgstr ""
 
-#: scout/__init__.py:71
+#: scout/__init__.py:72
 msgid "show this help message and exit"
 msgstr ""
 
-#: scout/__init__.py:78
+#: scout/__init__.py:79
 msgid "show program's version number and exit"
 msgstr ""
 
-#: scout/__init__.py:127
+#: scout/__init__.py:128
 msgid "usage: %prog [global_opts] module [local_opts] query"
 msgstr ""
 
-#: scout/__init__.py:134
+#: scout/__init__.py:135
 #, python-format
 msgid "select the output format (default %s)"
 msgstr ""
 
-#: scout/__init__.py:141
+#: scout/__init__.py:142
 msgid "list of available modules"
 msgstr ""
 
-#: scout/__init__.py:157
+#: scout/__init__.py:158
 msgid "Available modules:\n"
 msgstr ""
 
-#: scout/__init__.py:207
+#: scout/__init__.py:208
 #, python-format
 msgid "The name of module is mandatory. Use %s --help"
 msgstr ""
 
-#: scout/__init__.py:270
+#: scout/__init__.py:271
 #, python-format
 msgid "%s is not a directory"
 msgstr ""
 
-#: scout/__init__.py:316
+#: scout/__init__.py:317
 #, python-format
 msgid "Cannot not open database file '%s'"
 msgstr ""
 
-#: scout/__init__.py:563
+#: scout/__init__.py:564
 #, python-format
 msgid "Usage: %%prog %s [options] <search_term>"
 msgstr ""
 
-#: scout/__init__.py:565
+#: scout/__init__.py:566
 msgid "list available repositories"
 msgstr ""
 
-#: scout/__init__.py:566
+#: scout/__init__.py:567
 msgid "select repository to search"
 msgstr ""
 
-#: scout/__init__.py:588
+#: scout/__init__.py:589
 msgid "Available repositories:\n"
 msgstr ""
 
-#: scout/__init__.py:622
+#: scout/__init__.py:623
 msgid "No repositories found ..."
 msgstr ""
 
-#: scout/__init__.py:644
-msgid "repository"
-msgstr ""
-
-#: scout/__init__.py:644
-msgid "package"
-msgstr ""
-
-#: scout/__init__.py:644
+#: scout/__init__.py:647 scout/__init__.py:648
 msgid "module"
 msgstr ""
 
-#: scout/__init__.py:715
+#: scout/__init__.py:718
 #, python-format
 msgid "Cannot find a formatter for a %s"
 msgstr ""
 
 #: scout/java.py:9
 msgid "Search for java classes inside the JAR files."
+msgstr ""
+
+#: scout/java.py:11 scout/java.py:12
+msgid "jar"
+msgstr ""
+
+#: scout/java.py:11 scout/java.py:12
+msgid "class"
 msgstr ""
 
 #: scout/library.py:9
@@ -129,4 +172,28 @@ msgstr ""
 #: scout/webpin.py:39
 #, python-format
 msgid "Cannot retreive query results ... %s"
+msgstr ""
+
+#: scout/webpin.py:44
+msgid "ver"
+msgstr ""
+
+#: scout/webpin.py:44
+msgid "arch"
+msgstr ""
+
+#: scout/webpin.py:44
+msgid "files"
+msgstr ""
+
+#: scout/webpin.py:44
+msgid "version"
+msgstr ""
+
+#: scout/webpin.py:44
+msgid "repository URL"
+msgstr ""
+
+#: scout/webpin.py:44
+msgid "matched files"
 msgstr ""
