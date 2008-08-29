@@ -116,8 +116,8 @@ install -D -m 0644 scout-bash-completion $RPM_BUILD_ROOT%{_sysconfdir}/bash_comp
 # install manpage
 install -D -m 0644 doc/scout.1 $RPM_BUILD_ROOT%{_mandir}/man1/scout.1
 # install and find languages
-for $lang in cs sk; do
-    msgfmt i18n/$lang/LC_MESSAGES/scout.po
+for lang in cs de sk; do
+    msgfmt i18n/$lang/LC_MESSAGES/scout.po -o i18n/$lang/LC_MESSAGES/scout.mo
     install -D -m 0644 i18n/$lang/LC_MESSAGES/scout.mo $RPM_BUILD_ROOT%{_datadir}/locale/$lang/LC_MESSAGES/scout.mo
 done
 %find_lang scout
@@ -130,8 +130,8 @@ for shell in bash zsh; do
     sed -i 's:__REPO__:%{cnfrepo}:' $RPM_BUILD_ROOT%{_sysconfdir}/${shell}_command_not_found
 done
 # install and find languages
-for $lang in cs sk; do
-    msgfmt i18n/$lang/LC_MESSAGES/command-not-found.po
+for lang in cs de sk; do
+    msgfmt i18n/$lang/LC_MESSAGES/command-not-found.po -o i18n/$lang/LC_MESSAGES/command-not-found.mo
     install -D -m 0644 i18n/$lang/LC_MESSAGES/command-not-found.mo $RPM_BUILD_ROOT%{_datadir}/locale/$lang/LC_MESSAGES/command-not-found.mo
 done
 %find_lang command-not-found

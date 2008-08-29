@@ -1,0 +1,199 @@
+# translation of scout.po to Deutsch
+# Copyright (C) 2008
+# This file is distributed under the same license as the "scout" package.
+# Thomas Schraitle <toms@suse.de>, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: scout\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-08-28 10:27+0200\n"
+"PO-Revision-Date: 2008-08-29 14:34+0200\n"
+"Last-Translator: Thomas Schraitle <toms@suse.de>\n"
+"Language-Team: Deutsch\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: scout/autoconf.py:9
+msgid "Search for autoconf macros inside the m4 files."
+msgstr "Suche nach autoconf Makros innerhalb von m4 Dateien."
+
+#: scout/autoconf.py:11 scout/bin.py:84 scout/__init__.py:647 scout/java.py:11
+#: scout/webpin.py:44
+msgid "repo"
+msgstr "repo"
+
+#: scout/autoconf.py:11 scout/bin.py:84 scout/__init__.py:647 scout/java.py:11
+#: scout/webpin.py:44
+msgid "pkg"
+msgstr "pkg"
+
+#: scout/autoconf.py:11
+msgid "m4"
+msgstr "m4"
+
+#: scout/autoconf.py:11 scout/autoconf.py:12
+msgid "macro"
+msgstr "Makro"
+
+#: scout/autoconf.py:12 scout/bin.py:84 scout/__init__.py:648 scout/java.py:12
+msgid "repository"
+msgstr "Repository"
+
+#: scout/autoconf.py:12 scout/bin.py:84 scout/__init__.py:648 scout/java.py:12
+#: scout/webpin.py:44
+msgid "package"
+msgstr "Paket"
+
+#: scout/autoconf.py:12
+msgid "m4 file"
+msgstr "m4-Datei"
+
+#: scout/bin.py:50
+msgid "Search for binaries contained in the packages."
+msgstr "Suche nach ausführbaren Dateien innerhalb von Paketen."
+
+#: scout/bin.py:84
+msgid "bin"
+msgstr "bin"
+
+#: scout/bin.py:84
+msgid "path"
+msgstr "Pfad"
+
+#: scout/bin.py:84
+msgid "binary"
+msgstr "Binärdatei"
+
+#: scout/foo.py:9
+msgid "- template module -"
+msgstr "- Template Modul -"
+
+#: scout/header.py:9
+msgid "Search for C/C++/Obj-C/Obj-C++ headers."
+msgstr "Suche nach C/C++/Obj-C/Obj-C++ Headern."
+
+#: scout/__init__.py:72
+msgid "show this help message and exit"
+msgstr "Zeige diese Hilfe und beende"
+
+#: scout/__init__.py:79
+msgid "show program's version number and exit"
+msgstr "Zeige die Versionsnummer des Programms und beende"
+
+#: scout/__init__.py:128
+msgid "usage: %prog [global_opts] module [local_opts] search_term"
+msgstr "Benutzung: %prog [Globale_Optionen] Module [lokale_Optionen] Abfrage"
+
+#: scout/__init__.py:135
+#, python-format
+msgid "select the output format (default %s)"
+msgstr "Auswählen des Ausgabeformats (Standard %s)"
+
+#: scout/__init__.py:142
+msgid "list of available modules"
+msgstr "Liste der verfügbaren Module"
+
+#: scout/__init__.py:158
+msgid "Available modules:\n"
+msgstr "Verfügbare Module:\n"
+
+#: scout/__init__.py:208
+#, python-format
+msgid "The name of module is mandatory. Use %s --help"
+msgstr "Der Name des Moduls muss angegeben werden. Verwenden Sie %s --help"
+
+#: scout/__init__.py:271
+#, python-format
+msgid "%s is not a directory"
+msgstr "%s ist kein Verzeichnis"
+
+#: scout/__init__.py:317
+#, python-format
+msgid "Cannot not open database file '%s'"
+msgstr "Kann die Datenbankdatei '%s' nicht öffnen"
+
+#: scout/__init__.py:564
+#, python-format
+msgid "Usage: %%prog %s [options] search_term"
+msgstr "Verwendung: %%prog %s [Optionen] Suchbegriff"
+
+#: scout/__init__.py:566
+msgid "list available repositories"
+msgstr "Liste der verfügbaren Repositories"
+
+#: scout/__init__.py:567
+msgid "select repository to search"
+msgstr "Auswahl des Repositories zum Suchen"
+
+#: scout/__init__.py:589
+msgid "Available repositories:\n"
+msgstr "Verfügbare Repositories:\n"
+
+#: scout/__init__.py:623
+msgid "No repositories found ..."
+msgstr "Keine Repositories gefunden..."
+
+#: scout/__init__.py:647 scout/__init__.py:648
+msgid "module"
+msgstr "Modul"
+
+#: scout/__init__.py:718
+#, python-format
+msgid "Cannot find a formatter for a %s"
+msgstr "Kann den Formatierer für %s nicht finden"
+
+#: scout/java.py:9
+msgid "Search for java classes inside the JAR files."
+msgstr "Suche nach Java-Klassen innerhalb von JAR-Dateien."
+
+#: scout/java.py:11 scout/java.py:12
+msgid "jar"
+msgstr "jar-Datei"
+
+#: scout/java.py:11 scout/java.py:12
+msgid "class"
+msgstr "Klasse"
+
+#: scout/library.py:9
+msgid "Search for shared libraries."
+msgstr "Suche nach einer Bibliothek."
+
+#: scout/python.py:9
+msgid "Search for python modules."
+msgstr "Suche nach Python-Modulen"
+
+#: scout/webpin.py:13
+msgid "Search in packages using the webpin webservice."
+msgstr "Suche in Paketen mit Hilfe des Webpin Webservice"
+
+#: scout/webpin.py:39
+#, python-format
+msgid "Cannot retreive query results ... %s"
+msgstr "Erhalte keine Ergebnisse der Abfrage %s..."
+
+#: scout/webpin.py:44
+msgid "ver"
+msgstr "ver"
+
+#: scout/webpin.py:44
+msgid "arch"
+msgstr "Arch"
+
+#: scout/webpin.py:44
+msgid "files"
+msgstr "Dateien"
+
+#: scout/webpin.py:44
+msgid "version"
+msgstr "Version"
+
+#: scout/webpin.py:44
+msgid "repository URL"
+msgstr "Repository URL"
+
+#: scout/webpin.py:44
+msgid "matched files"
+msgstr "gefundene Dateien"
