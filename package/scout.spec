@@ -27,7 +27,7 @@ Group:          System/Packages
 Summary:        Package Scout
 Source:         %{name}.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
-BuildRequires:  python rpm-python
+BuildRequires:  python rpm-python gettext
 Requires:       python
 
 %if 0%{?suse_version}
@@ -115,7 +115,11 @@ install -D -m 0755 scout-cmd.py $RPM_BUILD_ROOT%{_bindir}/%{name}
 install -D -m 0644 scout-bash-completion $RPM_BUILD_ROOT%{_sysconfdir}/bash_completion.d/scout.sh
 # install manpage
 install -D -m 0644 doc/scout.1 $RPM_BUILD_ROOT%{_mandir}/man1/scout.1
-# find languages
+# install and find languages
+for $lang in cs sk; do
+    msgfmt i18n/$lang/LC_MESSAGES/scout.po
+    install -D -m 0644 i18n/$lang/LC_MESSAGES/scout.mo $RPM_BUILD_ROOT%{_datadir}/locale/$lang/LC_MESSAGES/scout.mo
+done
 %find_lang scout
 
 %if %{cnfrepo} != none
@@ -125,7 +129,11 @@ for shell in bash zsh; do
     install -D -m 644 handlers/bin/command_not_found_${shell} $RPM_BUILD_ROOT%{_sysconfdir}/${shell}_command_not_found
     sed -i 's:__REPO__:%{cnfrepo}:' $RPM_BUILD_ROOT%{_sysconfdir}/${shell}_command_not_found
 done
-# find languages
+# install and find languages
+for $lang in cs sk; do
+    msgfmt i18n/$lang/LC_MESSAGES/command-not-found.po
+    install -D -m 0644 i18n/$lang/LC_MESSAGES/command-not-found.mo $RPM_BUILD_ROOT%{_datadir}/locale/$lang/LC_MESSAGES/command-not-found.mo
+done
 %find_lang command-not-found
 
 %endif

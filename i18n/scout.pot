@@ -1,14 +1,14 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# translation of scout.po to LANGUAGE
+# Copyright (C) 2008
+# This file is distributed under the same license as the "scout" package.
+# AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-28 12:05+0200\n"
+"POT-Creation-Date: 2008-08-28 10:27+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -84,7 +84,7 @@ msgid "show program's version number and exit"
 msgstr ""
 
 #: scout/__init__.py:128
-msgid "usage: %prog [global_opts] module [local_opts] query"
+msgid "Usage: %prog [global_opts] module [local_opts] search_term"
 msgstr ""
 
 #: scout/__init__.py:135
@@ -117,7 +117,7 @@ msgstr ""
 
 #: scout/__init__.py:564
 #, python-format
-msgid "Usage: %%prog %s [options] <search_term>"
+msgid "Usage: %%prog %s [options] search_term"
 msgstr ""
 
 #: scout/__init__.py:566

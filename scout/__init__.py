@@ -192,7 +192,7 @@ class CoreOptionParser(object):
         #parser
         self._parser = ScoutOptionParser(
                 prog = self._prog,
-                usage = _("usage: %prog [global_opts] module [local_opts] query"),
+                usage = _("Usage: %prog [global_opts] module [local_opts] search_term"),
                 epilog = self._help_modules,
                 formatter = ModuleListFormatter()
                 )
@@ -633,7 +633,7 @@ class Parser(object):
 
     def __init__(self, modulename):
         self.modulename = modulename
-        usage = _("Usage: %%prog %s [options] <search_term>") % modulename
+        usage = _("Usage: %%prog %s [options] search_term") % modulename
         self.parser = ScoutOptionParser(usage=usage.replace("%%", "%"))
         self.parser.add_option('-l', '--listrepos', action="store_true", help=_("list available repositories"), dest="listrepo")
         self.parser.add_option('-r', '--repo', type='choice', help=_("select repository to search"), default=None, choices=self.get_available_repos())

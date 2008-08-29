@@ -75,7 +75,7 @@ class ScoutModule(object):
         try:
             if not p.parse(args):
                 return None
-        except HelpOptionFound:
+        except scout.HelpOptionFound:
             p.print_help()
             sys.exit(1)
 
