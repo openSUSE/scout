@@ -10,6 +10,7 @@ import sys
 import sqlite3
 from optparse import OptionParser, Option, IndentedHelpFormatter, OptionValueError
 from ConfigParser import SafeConfigParser
+import gettext, locale
 
 class SysConfig(object):
     data_path = '/usr/share/scout'
@@ -55,8 +56,6 @@ class ConfigFactory(object):
         return ret
 
 Config = ConfigFactory.create_config_class()
-
-import gettext, locale
 
 class DefaultLang(object):
 
