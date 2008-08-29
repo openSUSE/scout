@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-28 17:02+0200\n"
+"POT-Creation-Date: 2008-08-29 09:58+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,41 +16,45 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: handlers/bin/command-not-found:19
+#: handlers/bin/command-not-found:15
 #, python-format
 msgid "The program '%s' can be found in the following package(s):"
 msgstr "The program '%s' can be found in the following package(s):"
 
-#: handlers/bin/command-not-found:21
+#: handlers/bin/command-not-found:17
 #, python-format
 msgid "  * %s [ path: %s/%s, repository: %s ]"
 msgstr "  * %s [ path: %s/%s, repository: %s ]"
 
-#: handlers/bin/command-not-found:23
+#: handlers/bin/command-not-found:19
 msgid "Try:"
 msgstr "Try:"
 
-#: handlers/bin/command-not-found:25
+#: handlers/bin/command-not-found:21
 msgid "<selected_package>"
 msgstr "<selected_package>"
 
-#: handlers/bin/command-not-found:33
+#: handlers/bin/command-not-found:29
 #, python-format
 msgid ""
 "Program '%s' is present in package '%s', which is installed on your system."
 msgstr ""
 "Program '%s' is present in package '%s', which is installed on your system."
 
-#: handlers/bin/command-not-found:35
-#, python-format
-msgid "Full path leading to '%s' is '%s/%s'."
-msgstr "Full path leading to '%s' is '%s/%s'."
-
-#: handlers/bin/command-not-found:37
+#: handlers/bin/command-not-found:32
 #, python-format
 msgid ""
-"Please check your $PATH or maybe program '%s' is intended to be run only by "
-"root"
+"Absolute path to '%s' is '%s/%s', so it might be intended to be run only by "
+"user with superuser privileges (eg. root)."
 msgstr ""
-"Please check your $PATH or maybe program '%s' is intended to be run only by "
-"root"
+"Absolute path to '%s' is '%s/%s', so it might be intended to be run only by "
+"user with superuser privileges (eg. root)."
+
+#: handlers/bin/command-not-found:34
+#, python-format
+msgid ""
+"Absolute path to '%s' is '%s/%s'. Please check your $PATH variable to see "
+"whether it contains the mentioned path."
+msgstr ""
+"Absolute path to '%s' is '%s/%s'. Please check your $PATH variable to see "
+"whether it contains the mentioned path."
