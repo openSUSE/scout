@@ -74,11 +74,14 @@ class DefaultLang(object):
                 )
 
     def install(self):
-        self._trans.install(unicode = self._unicode)
+        self._trans.install(unicode = self._unicode, names='ngettext')
         return self
 
     def gettext(self, msg):
         return self._trans.ugettext(msg)
+
+    def ngettext(self, singluar, plural, n):
+        return self._trans.ungettext(singluar, plural, n)
         
 
 class NullLang(DefaultLang):
