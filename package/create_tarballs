@@ -10,8 +10,7 @@ tar cf scout/package/scout.tar \
         scout/*.py \
         scout/doc/* \
         scout/handlers/* \
-        scout/i18n/scout.{po,pot} \
-        scout/i18n/*/LC_MESSAGES/*
+        scout/i18n/*
 
 cd scout/package
 bzip2 --best scout.tar

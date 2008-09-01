@@ -1,4 +1,4 @@
-# translation of scout.po to LANGUAGE
+# translation of scout.pot to LANGUAGE
 # Copyright (C) 2008
 # This file is distributed under the same license as the "scout" package.
 # AUTHOR <EMAIL@ADDRESS>, YEAR.
@@ -6,12 +6,12 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: scout\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-28 10:27+0200\n"
+"POT-Creation-Date: 2008-08-28 11:42+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language-Team: LANGUAGE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"

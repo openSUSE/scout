@@ -1,4 +1,4 @@
-# translation of command-not-found.po to Deutsch
+# translation of command-not-found.pot to Deutsch
 # Copyright (C) 2008
 # This file is distributed under the same license as the "command-not-found" package.
 # Thomas Schraitle <toms@suse.de>, 2008.
@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: command-not-found\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-29 10:33+0200\n"
+"POT-Creation-Date: 2008-08-28 11:42+0200\n"
 "PO-Revision-Date: 2008-08-29 14:47+0200\n"
 "Last-Translator: Thomas Schraitle <toms@suse.de>\n"
 "Language-Team: Deutsch\n"
