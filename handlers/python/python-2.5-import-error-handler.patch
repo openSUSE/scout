@@ -16,19 +16,10 @@
  #ifdef __cplusplus
  extern "C" {
  #endif
-@@ -1120,10 +1129,105 @@
+@@ -1120,10 +1129,88 @@
  	Py_XDECREF(tb);
  }
  
-+#define DBG(format, msg) \
-+{ \
-+    FILE* __log__ = fopen("/tmp/__log__", "a"); \
-+    fprintf(__log__, "pythonrun.c %d:", __LINE__); \
-+    fprintf(__log__, (format), msg); \
-+    fflush(__log__); \
-+    fclose(__log__); \
-+}
-+
 +/*
 + * def get_python_lib():
 + *   import distutils.sysconfig
@@ -81,27 +72,19 @@
 +    const char* path;
 +    struct stat handler_stat;
 +
-+    DBG("%s\n", "CallImportErrorHandler");
-+    DBG("handler_path = %s\n", handler_path);
-+
 +    if ((handler_path == NULL) && (! isatty(STDOUT_FILENO))) {
-+        DBG("return\n", "");
 +        return;
 +    }
 +
 +    path = malloc(strlen(handler)+strlen(handler_path)+2);
 +    sprintf(path, "%s/%s", handler_path, handler);
-+    DBG("path %s\n", path);
 +
 +    if (! stat(path, &handler_stat)) {
-+        DBG("! stat(path)\n", "");
 +        if (IS_EXEC_FILE(handler_stat.st_mode)) {
-+        DBG("IS_EXEC_FILE(handler_stat)\n", "");
 +
 +            switch(pid=fork()){
 +                //case -1: this should not happens
 +                case 0:
-+                    DBG("execl(%s)\n", path);
 +                    execl (path, handler, (char*)((PyStringObject*)s)->ob_sval, (char *)0);
 +                    exit(3); 
 +                default: died= wait(&status);
@@ -122,37 +105,33 @@
  	PyObject *f = PySys_GetObject("stderr");
  	Py_INCREF(value);
  	if (f == NULL)
-@@ -1191,8 +1295,12 @@
+@@ -1191,8 +1278,10 @@
  			if (err == 0) {
  				if (className == NULL)
  				      err = PyFile_WriteString("<unknown>", f);
 -				else
 +				else {
  				      err = PyFile_WriteString(className, f);
-+                                      DBG("%s\n", className);
 +                                      import_err = ! strcmp(className, "ImportError");
-+                                      DBG("import_err %d\n", import_err);
 +                                }
  			}
  		}
  		else
-@@ -1207,8 +1315,14 @@
+@@ -1207,8 +1296,12 @@
  			else if (!PyString_Check(s) ||
  				 PyString_GET_SIZE(s) != 0)
  				err = PyFile_WriteString(": ", f);
 -			if (err == 0)
 +			if (err == 0) {
-+                          DBG("err = %d\n", err);
  			  err = PyFile_WriteObject(s, f, Py_PRINT_RAW);
 +                          if (import_err) {
-+                              DBG("import_err\n", "");
 +                              CallImportErrorHandler(s);
 +                          }
 +                        }
  			Py_XDECREF(s);
  		}
  		if (err == 0)
-@@ -1221,6 +1335,7 @@
+@@ -1221,6 +1314,7 @@
  		PyErr_Clear();
  }
  
