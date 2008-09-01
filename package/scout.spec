@@ -94,6 +94,22 @@ available, but installing a package would provide it.
 
 %endif
 
+%package -n python-import-error
+Version:        0.1.0
+Release:        1
+License:        X11/MIT
+Group:          System/Packages
+Summary:        Import Error extension for python interpretter
+Requires:       scout
+Requires:       python(ImportError)
+Requires:       scout-python-suse110
+
+%description -n python-import-error
+The "Import Error exception" is not really helpfull (as a "command not found"
+in shell). This package contains an ImportError exception handler called by
+(patched) Python interpreter, which could tell to the user, where the missing
+Python module is.
+
 %prep
 %setup -q -n %{name}
 
@@ -131,6 +147,8 @@ for shell in bash zsh; do
     install -D -m 644 handlers/bin/command_not_found_${shell} $RPM_BUILD_ROOT%{_sysconfdir}/${shell}_command_not_found
     sed -i 's:__REPO__:%{cnfrepo}:' $RPM_BUILD_ROOT%{_sysconfdir}/${shell}_command_not_found
 done
+# --- import-error ---
+install -D -m 0755 handlers/python/python_import_error_handler $RPM_BUILD_ROOT/%{py_sitedir}
 # install and find languages
 for po in i18n/command-not-found/*.po; do
     pofile=${po##*/}
@@ -161,6 +179,10 @@ rm -rf $RPM_BUILD_ROOT
 %doc handlers/bin/README
 %{_bindir}/command-not-found
 %{_sysconfdir}/*_command_not_found
+
+%files -n python-import-error
+%defattr(-,root,root)
+%{py_sitedir}/python_import_error_handler
 
 %endif
 
