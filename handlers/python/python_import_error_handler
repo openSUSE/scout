@@ -1,9 +1,8 @@
 #!/bin/bash
 
-INSTALL_CMD='sudo zypper install'
-
 if [[ ${1} == "" ]]; then
-    exit 1
+	echo "Usage ${0} python_module"
+	exit 1
 fi
 
 if [[ "$(which scout)" == "" ]]; then
@@ -12,23 +11,22 @@ fi
 
 module_name=$(echo ${1} | sed 's/No module named //')
 
-package=$(/usr/bin/scout -f csv python ${module_name} | grep -v '^"repo' | cut -d ';' -f 2 | tr -d '"' | sort -u)
+modules=$(/usr/bin/scout -f csv python ${module_name} | grep -v '^"repo' | cut -d ';' -f 2 | tr -d '"' | uniq)
 
-package_cnt=$(echo ${package} | wc -w)
+modules_cnt=$(echo ${modules} | wc -w)
 
-echo
-echo
-case ${package_cnt} in
+echo -e "\n"
+case ${modules_cnt} in
     0)
-        echo "No package containing module '${module_name}' was found by scout"
+    echo "No package was found by scout"
     ;;
     1)
-        echo "Module '${module_name}' was found in the package ${package}. You can install it by:"
-        echo "$INSTALL_CMD zypper install ${package}"
+    echo "The ${module_name} is in the package ${modules}. You can install it by:"
+    echo "sudo zypper install ${modules}"
     ;;
     *)
-        echo "The selected module was found in one of several packages:"
-        echo "${package}"
-        echo "$INSTALL_CMD <selected_package>"
+    echo "The selected module was found in one of several packages:"
+    echo "${modules}"
+    echo "sudo zypper install <one_of_the_packages>"
     ;;
 esac
