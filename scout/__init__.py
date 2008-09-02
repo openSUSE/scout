@@ -762,12 +762,14 @@ class ScoutCore(object):
             }
 
     @classmethod
+    def load_modules(cls):
+        cls.ml = ModuleLoader(Config.module_path)
+        cls.modules = ((m.ScoutModule.name, m.ScoutModule.desc) for m in cls.ml.modules)
+
+    @classmethod
     def run(cls):
 
-        ml = ModuleLoader(Config.module_path)
-
-        modules = ((m.ScoutModule.name, m.ScoutModule.desc) for m in ml.modules)
-        clp = CoreOptionParser(cls.out_formatters.keys(), modules)
+        clp = CoreOptionParser(cls.out_formatters.keys(), cls.modules)
         try:
             args, values = clp.parse_args()
         except HelpOptionFound:
@@ -780,9 +782,9 @@ class ScoutCore(object):
             sys.exit(2)
 
         if clp.listing:
-            return "\n".join(ml.module_names)
+            return "\n".join(cls.ml.module_names)
 
-        module = ml[clp.module]
+        module = clp.ml[clp.module]
         result = module.ScoutModule.main(clp.module_args)
 
         if result != None:
@@ -791,6 +793,7 @@ class ScoutCore(object):
             except KeyError, kerr:
                 raise SystemExit(_("Cannot find a formatter for a %s") % clp.format)
 
+ScoutCore.load_modules()
 
 # Copyright (c) 2008 Pavol Rusnak, Michal Vyskocil
 #
