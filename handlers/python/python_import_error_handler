@@ -1,8 +1,8 @@
 #!/bin/bash
 
 if [[ ${1} == "" ]]; then
-	echo "Usage ${0} python_module"
-	exit 1
+    echo "Usage ${0} python_module"
+    exit 1
 fi
 
 if [[ "$(which scout)" == "" ]]; then
@@ -11,7 +11,7 @@ fi
 
 module_name=$(echo ${1} | sed 's/No module named //')
 
-modules=$(/usr/bin/scout -f csv python ${module_name} | grep -v '^"repo' | cut -d ';' -f 2 | tr -d '"' | uniq)
+modules=$(/usr/bin/scout -f csv python ${module_name} | sed '1,2d' | cut -d ';' -f 2 | tr -d '"' | uniq)
 
 modules_cnt=$(echo ${modules} | wc -w)
 

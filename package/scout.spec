@@ -51,22 +51,35 @@ BuildRequires:  readline
 %description
 Package Scout for indexing various properties of packages.
 
-
-
+%define scoutrepo none
 %define cnfrepo none
-%if 0%{?suse_version} > 1030
+
+%if 0%{?suse_version} > 1110
+%define scoutrepo suse112
+%define cnfrepo zypp
+%endif
+%if 0%{?suse_version} <= 1110 && 0%{?suse_version} > 1100
+%define scoutrepo suse111
+%define cnfrepo zypp
+%endif
+%if 0%{?suse_version} <= 1100 && 0%{?suse_version} > 1030
+%define scoutrepo suse110
 %define cnfrepo zypp
 %endif
 %if 0%{?suse_version} <= 1030 && 0%{?suse_version} > 1020
+%define scoutrepo suse103
 %define cnfrepo suse103
 %endif
 %if 0%{?suse_version} <= 1020 && 0%{?suse_version} > 1010
+%define scoutrepo suse102
 %define cnfrepo suse102
 %endif
 %if 0%{?suse_version} <= 1010 && 0%{?suse_version} > 1000
+%define scoutrepo suse101
 %define cnfrepo suse101
 %endif
 %if 0%{?sles_version} == 10
+%define scoutrepo sle10
 %define cnfrepo sle10
 %endif
 
@@ -90,9 +103,9 @@ command is not found but it's available in a package, it would be very
 interesting if the system could tell that the command is currently not
 available, but installing a package would provide it.
 
-
-
 %endif
+
+%if %{scoutrepo} != none
 
 %package -n python-import-error
 Version:        0.1.0
@@ -102,13 +115,15 @@ Group:          System/Packages
 Summary:        Import Error extension for python interpretter
 Requires:       scout
 Requires:       python(ImportError)
-Requires:       scout-python-suse110
+Requires:       scout-python-%{scoutrepo}
 
 %description -n python-import-error
 The "Import Error exception" is not really helpfull (as a "command not found"
 in shell). This package contains an ImportError exception handler called by
 (patched) Python interpreter, which could tell to the user, where the missing
 Python module is.
+
+%endif
 
 %prep
 %setup -q -n %{name}
@@ -147,8 +162,6 @@ for shell in bash zsh; do
     install -D -m 644 handlers/bin/command_not_found_${shell} $RPM_BUILD_ROOT%{_sysconfdir}/${shell}_command_not_found
     sed -i 's:__REPO__:%{cnfrepo}:' $RPM_BUILD_ROOT%{_sysconfdir}/${shell}_command_not_found
 done
-# --- import-error ---
-install -D -m 0755 handlers/python/python_import_error_handler $RPM_BUILD_ROOT/%{py_sitedir}
 # install and find languages
 for po in i18n/command-not-found/*.po; do
     pofile=${po##*/}
@@ -157,7 +170,11 @@ for po in i18n/command-not-found/*.po; do
     install -D -m 0644 i18n/command-not-found/$lang.mo $RPM_BUILD_ROOT%{_datadir}/locale/$lang/LC_MESSAGES/command-not-found.mo
 done
 %find_lang command-not-found
+%endif
 
+%if %{scoutrepo} != none
+# --- import-error ---
+install -D -m 0755 handlers/python/python_import_error_handler $RPM_BUILD_ROOT/%{py_sitedir}
 %endif
 
 %clean
@@ -179,6 +196,10 @@ rm -rf $RPM_BUILD_ROOT
 %doc handlers/bin/README
 %{_bindir}/command-not-found
 %{_sysconfdir}/*_command_not_found
+
+%endif
+
+%if %{scoutrepo} != none
 
 %files -n python-import-error
 %defattr(-,root,root)
