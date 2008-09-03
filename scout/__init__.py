@@ -245,7 +245,7 @@ class CoreOptionParser(object):
         """
         parse the arguments from sys.argv, or user defined ones!
 
-        return - (args, values) as a standard OptionParser.parse_args method
+        return - the Options class instance with options from command line and a name of module
         but it may raise:
             - HelpOptionFound: when the help string was found
             - OptionValueError: when the name of module was not found in command line
@@ -261,13 +261,14 @@ class CoreOptionParser(object):
         core_args, self._module_args = self._split_argument_line(args)
         
         # try to load the module name
+        module = None
         if len(self._module_args) != 0:
-            self._module = self._module_args[0]
+            module = self._module_args[0]
 
-        ret = self._parser.parse_args(core_args)
+        opts, args = self._parser.parse_args(core_args)
 
         # global switches
-        self._listing = ret[0].listing
+        self._listing = opts.listing
 
         # no HelpOptionFound raised, the module name is mandatory
         # FIXME: this would be rewritted
@@ -276,8 +277,8 @@ class CoreOptionParser(object):
             raise OptionValueError(msg)
 
         # global options
-        self._format = ret[0].format
-        return ret
+        self._format = opts.format
+        return Options(self.__opts2dict(opts), args={'module' : module})
 
     def print_help(self, file=sys.stderr):
         self._parser.print_help(file)
@@ -286,6 +287,12 @@ class CoreOptionParser(object):
     def error(self, msg):
         self._parser.error(msg)
         return self
+    
+    def __opts2dict(self, opts):
+        ret = {}
+        for opt in [opt for opt in self._parser.option_list if opt.dest != None]:
+            ret[opt.dest] = getattr(opts, opt.dest)
+        return ret
 
     # ------------------------------ read-only properties ------------------------------
     def __get_prog(self):
@@ -316,6 +323,31 @@ class CoreOptionParser(object):
         return self._listing
     listing = property(__get_listing)
 
+
+class Options(object):
+    """
+    This class contains the options for modules. The options are accessible as attributes, or as dictionary keys:
+
+    o = Options(...)
+    o.foo
+    o["foo"]
+    """
+
+    def __init__(self, opts, args = {}):
+        """
+        A constructor:
+          opts - options from parser - {opt : value, opt2 : value}
+          args - the dictionary {name : value, name : value}
+        """
+
+        self.__dict__.update(opts)
+        self.__dict__.update(args)
+
+    def __getattr__(self, name):
+        return self.__dict__[name]
+
+    def __getitem__(self, name):
+        return self.__getattr__(name)    
 
 class ModuleLoader(object):
     """
@@ -770,8 +802,9 @@ class ScoutCore(object):
     def run(cls):
 
         clp = CoreOptionParser(cls.out_formatters.keys(), cls.modules)
+        args = None
         try:
-            args, values = clp.parse_args()
+            args = clp.parse_args()
         except HelpOptionFound:
             clp.print_help()
             sys.exit(1)
@@ -781,10 +814,10 @@ class ScoutCore(object):
             print ove.msg
             sys.exit(2)
 
-        if clp.listing:
+        if args.listing:
             return "\n".join(cls.ml.module_names)
 
-        module = clp.ml[clp.module]
+        module = cls.ml[args.module]
         result = module.ScoutModule.main(clp.module_args)
 
         if result != None:
