@@ -267,17 +267,12 @@ class CoreOptionParser(object):
 
         opts, args = self._parser.parse_args(core_args)
 
-        # global switches
-        self._listing = opts.listing
-
         # no HelpOptionFound raised, the module name is mandatory
         # FIXME: this would be rewritted
-        if not self._listing and len(self._module_args) == 0:
+        if not opts.listing and len(self._module_args) == 0:
             msg = _("The name of module is mandatory. Use %s --help") % (self._prog)
             raise OptionValueError(msg)
 
-        # global options
-        self._format = opts.format
         return Options(self.__opts2dict(opts), args={'module' : module})
 
     def print_help(self, file=sys.stderr):
@@ -299,10 +294,6 @@ class CoreOptionParser(object):
         return self._parser.prog
     prog = property(__get_prog)
 
-    def __get_module(self):
-        return self._module
-    module = property(__get_module)
-
     def __get_module_args(self):
         return self._module_args[1:]
     module_args = property(__get_module_args)
@@ -311,18 +302,9 @@ class CoreOptionParser(object):
         return [m[0] for m in self._modules]
     module_names = property(__get_module_names)
 
-    def __get_format(self):
-        return self._format
-    format = property(__get_format)
-
     def __get_help(self):
         return self._parser.format_help()
     help = property(__get_help)
-
-    def __get_listing(self):
-        return self._listing
-    listing = property(__get_listing)
-
 
 class Options(object):
     """
