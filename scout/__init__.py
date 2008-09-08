@@ -348,6 +348,7 @@ class ModuleLoader(object):
 
     def __init__(self, dirs=None):
         self._modules = dict()
+        self._not_imported_modules = list()
         if dirs != None: self.import_from(dirs)
 
     def import_from(self, dirs):
@@ -364,11 +365,14 @@ class ModuleLoader(object):
         for file in os.listdir(dir):
             module_name, ext = os.path.splitext(file)
             if ext == '.py' and not (module_name == '__init__' or module_name == 'foo'):
-                module = __import__(module_name)
-                if not hasattr(module, 'ScoutModule'):
-                    del module
-                else:
-                    self._modules[module.ScoutModule.name] = module
+                try:
+                    module = __import__(module_name)
+                    if not hasattr(module, 'ScoutModule'):
+                        del module
+                    else:
+                        self._modules[module.ScoutModule.name] = module
+                except ImportError ierr:
+                    self._not_imported_modules.append((name, ierr.message))
 
     def __getitem__(self, name):
         """ x.__getitem__(y) <==> x[y] """
@@ -385,6 +389,10 @@ class ModuleLoader(object):
     def __get_module_names(self):
         return [m.ScoutModule.name for m in self.modules]
     module_names = property(__get_module_names)
+
+    def __get_not_imported_modules(self):
+        return self._not_imported_modules
+    not_imported_modules = property(__get_not_imported_modules)
 
     def __str__(self):
         return "ModuleLoader %s" % (self.module_names, )
