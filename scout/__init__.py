@@ -707,6 +707,7 @@ class Parser(object):
         for repo in repos:
             opt.choices.append(repo)
 
+    # deprecated!!!
     def parse(self, args=None):
         (self.options, self.args) = self.parser.parse_args(args)
         if self.do_list():
@@ -721,13 +722,14 @@ class Parser(object):
         opts, args = self.parser.parse_args(args)
         
         # FIXME: this would be rewritted
-        if not opts.listrepo and len(args) == 1:
+        if not opts.listrepo and len(args) == 0:
             raise HelpOptionFound()
 
         query = None
-        if len(args) > 1: query = args[1]
+        if len(args) > 0: query = args[0]
         return Options(self.__opts2dict(opts), args={'query' : query})
 
+    # FIXME: remove!!
     def get_repos(self):
         if self.options.repo:
             repos = [self.options.repo]
@@ -771,46 +773,52 @@ class BasicScoutModule(object):
     result_list2= [_("repository"), _("package"), _("module")]
     default_lang.install()
 
-    @classmethod
-    def query(cls, repo, term):
-        db = Database(cls.name + '-' + repo)
-        r = db.query(cls.sql, '%%%s%%' % term)
+    def __init__(self):
+        cls = self.__class__
+        self._cls = cls
+        for attr in ("name", "desc", "sql", "result_list", "result_list2"):
+            setattr(self, "_%s" % (attr), getattr(cls, attr))
+        
+        self._repo_list = RepoList(cls.name)
+        self._parser    = Parser(cls.name, self._repo_list.repos)
+
+    def getDatabase(self, repo):
+        return Database(self._name + '-' + repo)
+
+    def query(self, repo, term):
+        db_name = self._name + '-' + repo
+        db =self.getDatabase(repo)
+        r = db.query(self._sql, '%%%s%%' % term)
         if isinstance(r, list):
             return map( lambda x: [repo] + list(x), r)
         else:
             return [ [repo] + list(r) ]
         return r
 
-    @classmethod
-    def main(cls, args=None):
-        rl = cls.getRepoList()
-        p = Parser(cls.name, rl.repos)
+    def main(self, module_args=None):
         args = None
         try:
-            args = p.parse_args(args)
+            args = self._parser.parse_args(module_args)
         except HelpOptionFound:
-            p.print_help()
+            self._parser.print_help()
             sys.exit(1)
 
         if args.listrepo:
-            return StringResult(rl.format_available_repos())
+            return self.do_repo_list()
 
-        result = Result( cls.result_list, cls.result_list2)
+        result = Result( self._result_list, self._result_list2)
 
-        if rl.repos == None:
+        if self._repo_list.repos == None:
             return None
-        for repo in rl.repos:
-            result.add_rows( cls.query(repo, args.query) )
+        for repo in self._repo_list.repos:
+            result.add_rows( self.query(repo, args.query) )
 
         return result
+    
+    # ---------- commands ----------
 
-    @classmethod
-    def getRepoList(cls):
-        return RepoList(cls.name)
-
-    @classmethod
-    def getParser(cls):
-        return Parser(cls.name, cls.getRepoList())
+    def do_repo_list(self):
+        return StringResult(self._repo_list.format_available_repos())
 
 class ScoutCore(object):
 
@@ -845,7 +853,7 @@ class ScoutCore(object):
             return "\n".join(cls.ml.module_names)
 
         module = cls.ml[args.module]
-        result = module.ScoutModule.main(clp.module_args)
+        result = module.ScoutModule().main(clp.module_args)
 
         if result != None:
             try:
