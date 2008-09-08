@@ -643,16 +643,51 @@ class RepoConfigReader(object):
     def baseurl(self, repo):
         return self.parser.get(repo, 'baseurl')
 
-class Parser(object):
+class RepoList(object):
 
     def __init__(self, modulename):
+        self._modulename = modulename
+        self._repos = self._load_available_repos()
+        self._repos_conf = RepoConfigReader().read()
+
+    # set repositories according to data files /usr/share/scout/<modulename>-*.db
+    def _load_available_repos(self):
+        ret = list()
+        for file in os.listdir(Config.data_path):
+            if fnmatch.fnmatch(file, self._modulename + '-*' + Config.data_suffix):
+                ret.append(file[len(self._modulename)+1:-len(Config.data_suffix)])
+        return ret
+    
+    def format_available_repos(self):
+        ret = _("Available repositories:\n")
+        if len(self._repos) == 0:
+            ret += '- none -\n'
+            return ret
+        maxlen = len(max(self._repos, key=lambda x: x!=None and len(x) or 0))
+        for opt in self._repos:
+            if opt == None:
+                continue
+            if self._repos_conf.has_repo(opt):
+                ret += opt.ljust(maxlen) + ' - ' + self._repos_conf.name(opt) + '\n'
+                if self._repos_conf.baseurl(opt) != '':
+                    ret += ' '*maxlen + '   * ' + self._repos_conf.baseurl(opt) + '\n'
+            else:
+                ret += opt + '\n'
+        return ret
+
+    # -------------------- read-only properties
+    def __get_repos(self):
+        return self._repos
+    repos = property(__get_repos)
+
+class Parser(object):
+
+    def __init__(self, modulename, repos):
         self.modulename = modulename
         usage = _("Usage: %%prog %s [options] search_term") % modulename
         self.parser = ScoutOptionParser(usage=usage.replace("%%", "%"))
         self.parser.add_option('-l', '--listrepos', action="store_true", help=_("list available repositories"), dest="listrepo")
-        self.parser.add_option('-r', '--repo', type='choice', help=_("select repository to search"), default=None, choices=self.get_available_repos())
-
-        self.repos_conf = RepoConfigReader().read()
+        self.parser.add_option('-r', '--repo', type='choice', help=_("select repository to search"), default=None, choices=repos)
 
     def add_repo(self, repo):
         opt = self.parser.get_option('-r')
@@ -662,31 +697,6 @@ class Parser(object):
         opt = self.parser.get_option('-r')
         for repo in repos:
             opt.choices.append(repo)
-
-    # set repositories according to data files /usr/share/scout/<modulename>-*.db
-    def get_available_repos(self):
-        ret = list()
-        for file in os.listdir(Config.data_path):
-            if fnmatch.fnmatch(file, self.modulename + '-*' + Config.data_suffix):
-                ret.append(file[len(self.modulename)+1:-len(Config.data_suffix)])
-        return ret
-
-    def format_available_repos(self):
-        ret = _("Available repositories:\n")
-        if len(self.parser.get_option('-r').choices) == 0:
-            ret += '- none -\n'
-            return ret
-        maxlen = len(max(self.parser.get_option('-r').choices, key=lambda x: x!=None and len(x) or 0))
-        for opt in self.parser.get_option('-r').choices:
-            if opt == None:
-                continue
-            if self.repos_conf.has_repo(opt):
-                ret += opt.ljust(maxlen) + ' - ' + self.repos_conf.name(opt) + '\n'
-                if self.repos_conf.baseurl(opt) != '':
-                    ret += ' '*maxlen + '   * ' + self.repos_conf.baseurl(opt) + '\n'
-            else:
-                ret += opt + '\n'
-        return ret
 
     def parse(self, args=None):
         (self.options, self.args) = self.parser.parse_args(args)
@@ -757,7 +767,8 @@ class BasicScoutModule(object):
 
     @classmethod
     def main(cls, args=None):
-        p = cls.getParser()
+        rl = cls.getRepoList()
+        p = Parser(cls.name, rl.repos)
         try:
             if not p.parse(args):
                 return None
@@ -769,17 +780,20 @@ class BasicScoutModule(object):
 
         result = Result( cls.result_list, cls.result_list2)
 
-        repos = p.get_repos()
-        if repos == None:
+        if rl.repos == None:
             return None
-        for repo in repos:
+        for repo in rl.repos:
             result.add_rows( cls.query(repo, term) )
 
         return result
 
     @classmethod
+    def getRepoList(cls):
+        return RepoList(cls.name)
+
+    @classmethod
     def getParser(cls):
-        return Parser(cls.name)
+        return Parser(cls.name, cls.getRepoList())
 
 class ScoutCore(object):
 
@@ -818,9 +832,9 @@ class ScoutCore(object):
 
         if result != None:
             try:
-                return result.format(formatter=cls.out_formatters[clp.format])
+                return result.format(formatter=cls.out_formatters[args.format])
             except KeyError, kerr:
-                raise SystemExit(_("Cannot find a formatter for a %s") % clp.format)
+                raise SystemExit(_("Cannot find a formatter for a %s") % args.format)
 
 ScoutCore.load_modules()
 
