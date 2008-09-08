@@ -747,7 +747,7 @@ class BasicScoutModule(object):
 
     @classmethod
     def main(cls, args=None):
-        p = Parser(cls.name)
+        p = cls.getParser()
         try:
             if not p.parse(args):
                 return None
@@ -766,6 +766,10 @@ class BasicScoutModule(object):
             result.add_rows( cls.query(repo, term) )
 
         return result
+
+    @classmethod
+    def getParser(cls):
+        return Parser(cls.name)
 
 class ScoutCore(object):
 
