@@ -801,18 +801,28 @@ class BasicScoutModule(object):
     # ---------- commands ----------
 
     def do_repo_list(self):
+        """
+        Return an Result object with list of available repositories for this module
+        """
         return StringResult(self._repo_list.format_available_repos())
 
-    def do_query(self, query):
+    def do_query(self, query, repos=self._repo_list.repos):
+        """
+        Do a query. Arguments:
+        query - the searched term
+        repos - a list of repositories, which will be searched
+                (default all avaliable repositories)
+        """
         result = Result( self._result_list, self._result_list2)
-        if self._repo_list.repos == None:
+        if repos == None:
             return None
-        for repo in self._repo_list.repos:
+        if not haattr(repos, '__iter__'):
+            repos = (repos, )
+        for repo in repos:
             result.add_rows(self._query(repo, query))
         return result
     
     def _query(self, repo, term):
-        db_name = self._name + '-' + repo
         db =self.getDatabase(repo)
         r = db.query(self._sql, '%%%s%%' % term)
         if isinstance(r, list):
@@ -820,9 +830,6 @@ class BasicScoutModule(object):
         else:
             return [ [repo] + list(r) ]
         return r
-
-
-
 
 class ScoutCore(object):
 
