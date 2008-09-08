@@ -785,6 +785,16 @@ class BasicScoutModule(object):
     def getDatabase(self, repo):
         return Database(self._name + '-' + repo)
 
+    def query(self, repo, term):
+        db_name = self._name + '-' + repo
+        db =self.getDatabase(repo)
+        r = db.query(self._sql, '%%%s%%' % term)
+        if isinstance(r, list):
+            return map( lambda x: [repo] + list(x), r)
+        else:
+            return [ [repo] + list(r) ]
+        return r
+
     def main(self, module_args=None):
         args = None
         try:
@@ -796,33 +806,19 @@ class BasicScoutModule(object):
         if args.listrepo:
             return self.do_repo_list()
 
-        return self.do_query(args.query)
+        result = Result( self._result_list, self._result_list2)
+
+        if self._repo_list.repos == None:
+            return None
+        for repo in self._repo_list.repos:
+            result.add_rows( self.query(repo, args.query) )
+
+        return result
     
     # ---------- commands ----------
 
     def do_repo_list(self):
         return StringResult(self._repo_list.format_available_repos())
-
-    def do_query(self, query):
-        result = Result( self._result_list, self._result_list2)
-        if self._repo_list.repos == None:
-            return None
-        for repo in self._repo_list.repos:
-            result.add_rows(self._query(repo, query))
-        return result
-    
-    def _query(self, repo, term):
-        db_name = self._name + '-' + repo
-        db =self.getDatabase(repo)
-        r = db.query(self._sql, '%%%s%%' % term)
-        if isinstance(r, list):
-            return map( lambda x: [repo] + list(x), r)
-        else:
-            return [ [repo] + list(r) ]
-        return r
-
-
-
 
 class ScoutCore(object):
 
