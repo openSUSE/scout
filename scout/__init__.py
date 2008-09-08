@@ -769,19 +769,21 @@ class BasicScoutModule(object):
     def main(cls, args=None):
         rl = cls.getRepoList()
         p = Parser(cls.name, rl.repos)
-        args = None
         try:
-            args = p.parse(args):
+            if not p.parse(args):
+                return None
         except HelpOptionFound:
             p.print_help()
             sys.exit(1)
+
+        term = p.args[0]
 
         result = Result( cls.result_list, cls.result_list2)
 
         if rl.repos == None:
             return None
         for repo in rl.repos:
-            result.add_rows( cls.query(repo, args.query) )
+            result.add_rows( cls.query(repo, term) )
 
         return result
 
