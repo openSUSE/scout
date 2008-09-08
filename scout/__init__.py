@@ -796,7 +796,7 @@ class BasicScoutModule(object):
         if args.listrepo:
             return self.do_repo_list()
 
-        return self.do_query(args.query)
+        return self.do_query(args.query, self._repo_list.repos)
     
     # ---------- commands ----------
 
@@ -806,7 +806,7 @@ class BasicScoutModule(object):
         """
         return StringResult(self._repo_list.format_available_repos())
 
-    def do_query(self, query, repos=self._repo_list.repos):
+    def do_query(self, query, repos):
         """
         Do a query. Arguments:
         query - the searched term
@@ -816,7 +816,7 @@ class BasicScoutModule(object):
         result = Result( self._result_list, self._result_list2)
         if repos == None:
             return None
-        if not haattr(repos, '__iter__'):
+        if not hasattr(repos, '__iter__'):
             repos = (repos, )
         for repo in repos:
             result.add_rows(self._query(repo, query))
