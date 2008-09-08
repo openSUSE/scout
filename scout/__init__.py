@@ -610,6 +610,15 @@ class Result(object):
     def format(self, formatter=TableFormatter, **kwargs):
         return formatter.format(self, **kwargs)
 
+class StringResult(Result):
+
+    def __init__(self, string):
+        assert(isinstance(string, (str, unicode)))
+        self._string = string
+
+    def format(self, *args, **kwargs):
+        return self._string
+
 class RepoConfigReader(object):
     """Class to read of an configuration of the repositories. This class
     internally uses SafeConfigParser for ConfigParser, but doesn't provide the
@@ -710,7 +719,14 @@ class Parser(object):
 
     def parse_args(self, args):
         opts, args = self.parser.parse_args(args)
-        return Options(self.__opts2dict(opts), args={'query' : args[0]})
+        
+        # FIXME: this would be rewritted
+        if not opts.listrepo and len(args) == 1:
+            raise HelpOptionFound()
+
+        query = None
+        if len(args) > 1: query = args[1]
+        return Options(self.__opts2dict(opts), args={'query' : query})
 
     def get_repos(self):
         if self.options.repo:
@@ -769,21 +785,22 @@ class BasicScoutModule(object):
     def main(cls, args=None):
         rl = cls.getRepoList()
         p = Parser(cls.name, rl.repos)
+        args = None
         try:
-            if not p.parse(args):
-                return None
+            args = p.parse_args(args)
         except HelpOptionFound:
             p.print_help()
             sys.exit(1)
 
-        term = p.args[0]
+        if args.listrepo:
+            return StringResult(rl.format_available_repos())
 
         result = Result( cls.result_list, cls.result_list2)
 
         if rl.repos == None:
             return None
         for repo in rl.repos:
-            result.add_rows( cls.query(repo, term) )
+            result.add_rows( cls.query(repo, args.query) )
 
         return result
 
