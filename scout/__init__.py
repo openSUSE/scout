@@ -23,6 +23,13 @@ class SysConfig(object):
     def setup(cls, path):
         cls.module_path = path
 
+    def __str__(self):
+        ret = "%s {" % self.__class__
+        for attr in ("data_path", "data_suffix", "config_file", "module_path", "i18n_path"):
+            ret += "%s : %s" (attr, getattr(self, attr))
+        ret = ret +  "}"
+        return ret
+
 class DevConfig(SysConfig):
     
     @classmethod
@@ -81,8 +88,10 @@ class DefaultLang(object):
 
     def ngettext(self, singluar, plural, n):
         return self._trans.ungettext(singluar, plural, n)
-        
 
+    def __str__(self):
+        return "%s {textdomain: %s, unicode: %s} " % (self.__class__, self._textdomain, self.unicode)
+        
 class NullLang(DefaultLang):
 
     def __init__(self, textdomain='scout', unicode=True):
@@ -145,12 +154,6 @@ class ScoutOptionParser(OptionParser):
                 action="version",
                 help=_("show program's version number and exit")
                 )
-
-#    def print_help(self, file=None):
-#        if not file:
-#            file = sys.stderr
-#        help_msg = self.format_help()
-#        file.write(help_msg)
 
 class CoreOptionParser(object):
     """
@@ -329,7 +332,14 @@ class Options(object):
         return self.__dict__[name]
 
     def __getitem__(self, name):
-        return self.__getattr__(name)    
+        return self.__getattr__(name)
+
+    def __str__(self):
+        ret = "Options {"
+        for key in self.__dict__:
+            ret += "%s : %s, " % (key, self.__dict__[key])
+        ret = ret + "}"
+        return ret
 
 class ModuleLoader(object):
     """
@@ -375,6 +385,9 @@ class ModuleLoader(object):
     def __get_module_names(self):
         return [m.ScoutModule.name for m in self.modules]
     module_names = property(__get_module_names)
+
+    def __str__(self):
+        return "ModuleLoader %s" % (self.module_names, )
 
 
 class Database(object):
@@ -689,6 +702,9 @@ class RepoList(object):
         return self._repos
     repos = property(__get_repos)
 
+    def __str__(self):
+        return "RepoList %s" % self.repos
+
 class Parser(object):
 
     def __init__(self, modulename, repos):
@@ -830,6 +846,13 @@ class BasicScoutModule(object):
         else:
             return [ [repo] + list(r) ]
         return r
+    
+    def __str__(self):
+        ret = "%s {" % self.__class__
+        for attr in ("name", "desc", "sql", "result_list", "result_list2"):
+            ret += "%s : %s" (attr, getattr(self, attr))
+        ret = ret +  "}"
+        return ret
 
 class ScoutCore(object):
 
