@@ -722,7 +722,7 @@ class Parser(object):
     
     def __opts2dict(self, opts):
         ret = {}
-        for opt in [opt for opt in self._parser.option_list if opt.dest != None]:
+        for opt in [opt for opt in self.parser.option_list if opt.dest != None]:
             ret[opt.dest] = getattr(opts, opt.dest)
         return ret
 
