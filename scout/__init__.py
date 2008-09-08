@@ -698,6 +698,10 @@ class Parser(object):
             return False
         return True
 
+    def parse_args(self, args):
+        opts, args = self.parser.parse_args(args)
+        return Options(self.__opts2dict(opts), args={'query' : args[0]})
+
     def get_repos(self):
         if self.options.repo:
             repos = [self.options.repo]
@@ -715,6 +719,12 @@ class Parser(object):
     
     def print_help(self, file=sys.stderr):
         self.parser.print_help(file)
+    
+    def __opts2dict(self, opts):
+        ret = {}
+        for opt in [opt for opt in self._parser.option_list if opt.dest != None]:
+            ret[opt.dest] = getattr(opts, opt.dest)
+        return ret
 
 class BasicScoutModule(object):
     """
