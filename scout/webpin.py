@@ -7,7 +7,7 @@ import httplib
 import urllib
 from xml.dom import minidom
 
-class ScoutModule(object):
+class ScoutModule(scout.BaseScoutModule):
 
     name = "webpin"
     desc = _("Search in packages using the webpin webservice.")
@@ -20,9 +20,14 @@ class ScoutModule(object):
     service_host = 'api.opensuse-community.org'
     service_baseurl = '/searchservice/Search/Simple/'
 
+    def __init__(self):
+        super(self.__class__, self).__init__()
+        
+        self._repo_list = scout.RepoList(self._cls.name, self._cls.distros.keys())
+        self._parser    = scout.Parser(self._cls.name, self._repo_list.repos)
 
-    @classmethod
-    def query(cls, term, distro):
+    def query(self, term, distro):
+        cls = self.__class__
         try:
             url = cls.service_baseurl + cls.distros[distro] + '/' + urllib.quote(term)
             c = httplib.HTTPConnection(cls.service_host)
@@ -39,8 +44,7 @@ class ScoutModule(object):
             print _("Cannot retreive query results ... %s") % e
             return None
 
-    @classmethod
-    def fill_result(cls, root):
+    def fill_result(self, root):
         scout.null_lang.install()
         result_list = [_("pkg"), _("ver"), _("arch"), _("repo"), _("files")]
         result_list2=[_("package"), _("version"), _("arch"), _("repository URL"), _("matched files")]
@@ -67,26 +71,26 @@ class ScoutModule(object):
 
         return result
 
-    @classmethod
-    def main(cls, args=None):
+    def main(self, module_args=None):
 
-        p = scout.Parser(cls.name)
-        p.add_repos(['factory', 'suse110', 'suse103', 'suse102'])
+        #p = scout.Parser(self._name)
+        #p.add_repos(['factory', 'suse110', 'suse103', 'suse102'])
+        args = None
         try:
-            if not p.parse(args):
-                return None
+            args = self._parser.parse_args(module_args)
         except scout.HelpOptionFound:
             p.print_help()
             sys.exit(1)
 
-        term = p.args[0]
+        term = args.query
 
-        repos = p.get_repos()
+        #repos = p.get_repos()
+        repos = self._repo_list.repos
         if repos == None:
             return None
         for repo in repos:
-            dom = cls.query(term, repo)
+            dom = self.query(term, repo)
             root = dom.getElementsByTagNameNS('http://datastructures.pkgsearch.benjiweber.co.uk', 'packages').item(0)
-            return cls.fill_result(root)
+            return self.fill_result(root)
 
         return None
