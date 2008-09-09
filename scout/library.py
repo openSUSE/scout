@@ -3,7 +3,7 @@
 
 import scout
 
-class ScoutModule(scout.BasicScoutModule):
+class ScoutModule(scout.SimpleScoutModule):
 
     name = "library"
     desc = _("Search for shared libraries.")

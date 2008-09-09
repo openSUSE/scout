@@ -3,7 +3,7 @@
 
 import scout
 
-class ScoutModule(scout.BasicScoutModule):
+class ScoutModule(scout.SimpleScoutModule):
 
     name = "java"
     desc = _("Search for java classes inside the JAR files.")

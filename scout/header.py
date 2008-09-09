@@ -3,7 +3,7 @@
 
 import scout
 
-class ScoutModule(scout.BasicScoutModule):
+class ScoutModule(scout.SimpleScoutModule):
 
     name = "header"
     desc = _("Search for C/C++/Obj-C/Obj-C++ headers.")

@@ -3,7 +3,7 @@
 
 import scout
 
-class ScoutModule(scout.BasicScoutModule):
+class ScoutModule(scout.SimpleScoutModule):
 
     name = "autoconf"
     desc = _("Search for autoconf macros inside the m4 files.")

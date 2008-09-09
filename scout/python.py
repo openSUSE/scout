@@ -3,7 +3,7 @@
 
 import scout
 
-class ScoutModule(scout.BasicScoutModule):
+class ScoutModule(scout.SimpleScoutModule):
 
     name = "python"
     desc = _("Search for python modules.")

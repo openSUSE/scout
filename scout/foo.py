@@ -3,7 +3,7 @@
 
 import scout
 
-class ScoutModule(object.BasicScoutModule):
+class ScoutModule(scout.SimpleScoutModule):
 
     name = "foo"
     desc = _("- template module -")

@@ -778,15 +778,27 @@ class Parser(object):
             ret[opt.dest] = getattr(opts, opt.dest)
         return ret
 
-class BasicScoutModule(object):
+class BaseScoutModule(object):
     """
-    The basic implementation of the scout module. The most of other modules
-    should use this class and redefine some of the class variables:
+    The base for all other scout modules. All of modules must be a subclass of
+    this one. The base defined only an __init__ method, which binds the class
+    attributes to instance ones.
 
+    The class attributes:
      - name:    a name of the module (this is an identifier)
      - desc:    a short description (will be printed on --help)
      - sql:     the sql command (not yet parametrized)
      - result_list(2): the result lists for the Result object
+
+    An convient use
+    class MyOwnScoutModule(BaseScoutModule):
+
+        def __init__(self, *args, **kwargs):
+            super(self.__class__, self).__init__()
+            # my own initialization
+        
+        def main(self, module_args=None):
+            # my own implementation
     """
 
     name = "name"
@@ -796,7 +808,7 @@ class BasicScoutModule(object):
     result_list = [_("repo"), _("pkg"), _("module")]
     result_list2= [_("repository"), _("package"), _("module")]
     default_lang.install()
-
+    
     def __init__(self):
         cls = self.__class__
         self._cls = cls
@@ -806,6 +818,14 @@ class BasicScoutModule(object):
         self._repo_list = RepoList(cls.name)
         self._parser    = Parser(cls.name, self._repo_list.repos)
 
+    def main(self):
+        raise NotImplementedError("BaseScoutModule is not intended for usage, please reimplement the main method in your own subclass")
+
+class SimpleScoutModule(BaseScoutModule):
+
+    def __init__(self):
+        super(SimpleScoutModule, self).__init__()
+    
     def getDatabase(self, repo):
         return Database(self._name + '-' + repo)
 
