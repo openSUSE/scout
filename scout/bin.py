@@ -79,8 +79,11 @@ class ScoutModule(scout.BaseScoutModule):
         try:
             args = self._parser.parse_args(module_args)
         except scout.HelpOptionFound:
-            p.print_help()
+            self._parser.print_help()
             sys.exit(1)
+
+        if args.listrepo:
+            return self.do_repo_list()
 
         term = args.query
 
