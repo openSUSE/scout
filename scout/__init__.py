@@ -814,9 +814,6 @@ class BaseScoutModule(object):
         self._cls = cls
         for attr in ("name", "desc", "sql", "result_list", "result_list2"):
             setattr(self, "_%s" % (attr), getattr(cls, attr))
-        
-        self._repo_list = RepoList(cls.name)
-        self._parser    = Parser(cls.name, self._repo_list.repos)
 
     def main(self):
         raise NotImplementedError("BaseScoutModule is not intended for usage, please reimplement the main method in your own subclass")
@@ -825,6 +822,9 @@ class SimpleScoutModule(BaseScoutModule):
 
     def __init__(self):
         super(SimpleScoutModule, self).__init__()
+        
+        self._repo_list = RepoList(cls.name)
+        self._parser    = Parser(cls.name, self._repo_list.repos)
     
     def getDatabase(self, repo):
         return Database(self._name + '-' + repo)
