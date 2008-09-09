@@ -44,16 +44,16 @@ class SolvParser(object):
                          pkgmatch.append( row )
          return pkgmatch
 
-class ScoutModule(object):
+class ScoutModule(scout.BaseScoutModule):
 
     name = "bin"
     desc = _("Search for binaries contained in the packages.")
 
     def __init__(self):
         super(self.__class__, self).__init__()
-        self._repo_list = RepoList(cls.name)
-        self._parser    = Parser(cls.name, self._repo_list.repos)
-        self._parser.add_repo('zypp')
+
+        self._repo_list = scout.RepoList(self._cls.name, ('zypp', ))
+        self._parser    = scout.Parser(self._cls.name, self._repo_list.repos)
 
     def query_zypp(self, term):
         if satsolver == None:
@@ -91,7 +91,9 @@ class ScoutModule(object):
 
         result = scout.Result( result_list, result_list2 );
 
-        repos = p.get_repos()
+        #repos = self._parser.get_repos()
+        repos = self._repo_list.repos
+        print repos
         if repos == None:
             return None
         for repo in repos:
