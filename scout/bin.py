@@ -49,16 +49,20 @@ class ScoutModule(object):
     name = "bin"
     desc = _("Search for binaries contained in the packages.")
 
-    @classmethod
-    def query_zypp(cls, term):
+    def __init__(self):
+        super(self.__class__, self).__init__()
+        self._repo_list = RepoList(cls.name)
+        self._parser    = Parser(cls.name, self._repo_list.repos)
+        self._parser.add_repo('zypp')
+
+    def query_zypp(self, term):
         if satsolver == None:
             return None
         s = SolvParser()
         return s.search(term)
 
-    @classmethod
-    def query_repo(cls, repo, term):
-        db = scout.Database(cls.name + '-' + repo)
+    def query_repo(self, repo, term):
+        db = scout.Database(self._name + '-' + repo)
         r = db.query('SELECT binary, path, package FROM binary LEFT JOIN path ON binary.id_path=path.id_path LEFT JOIN package ON binary.id_pkg=package.id_pkg WHERE binary=?', term)
         if r == None:
             return None
@@ -67,19 +71,18 @@ class ScoutModule(object):
         else:
             return [ [repo] + list(r) ]
 
-    @classmethod
-    def main(cls, args=None):
+    def main(self, module_args=None):
 
-        p = scout.Parser(cls.name)
-        p.add_repo('zypp')
+        #p = scout.Parser(cls.name)
+        #p.add_repo('zypp')
+        args = None
         try:
-            if not p.parse(args):
-                return None
+            args = self._parser.parse_args(module_args)
         except scout.HelpOptionFound:
             p.print_help()
             sys.exit(1)
 
-        term = p.args[0]
+        term = args.query
 
         scout.null_lang.install()
         result_list = [_("repo"), _("bin"), _("path"), _("pkg")]
@@ -93,8 +96,8 @@ class ScoutModule(object):
             return None
         for repo in repos:
             if repo == 'zypp':
-                result.add_rows( cls.query_zypp(term) )
+                result.add_rows( self.query_zypp(term) )
             else:
-                result.add_rows( cls.query_repo(repo, term) )
+                result.add_rows( self.query_repo(repo, term) )
 
         return result

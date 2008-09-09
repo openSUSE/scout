@@ -823,8 +823,8 @@ class SimpleScoutModule(BaseScoutModule):
     def __init__(self):
         super(SimpleScoutModule, self).__init__()
         
-        self._repo_list = RepoList(cls.name)
-        self._parser    = Parser(cls.name, self._repo_list.repos)
+        self._repo_list = RepoList(self._cls.name)
+        self._parser    = Parser(self._cls.name, self._repo_list.repos)
     
     def getDatabase(self, repo):
         return Database(self._name + '-' + repo)
