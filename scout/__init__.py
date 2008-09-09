@@ -675,9 +675,10 @@ class RepoConfigReader(object):
 
 class RepoList(object):
 
-    def __init__(self, modulename):
+    def __init__(self, modulename, repo_list=()):
         self._modulename = modulename
         self._repos = self._load_available_repos()
+        self._repos.extend(repo_list)
         self._repos_conf = RepoConfigReader().read()
 
     # set repositories according to data files /usr/share/scout/<modulename>-*.db
@@ -704,6 +705,10 @@ class RepoList(object):
             else:
                 ret += opt + '\n'
         return ret
+    
+    def add_repo(self, repo):
+        self._repos.append(repo)
+        return self
 
     # -------------------- read-only properties
     def __get_repos(self):
@@ -722,10 +727,12 @@ class Parser(object):
         self.parser.add_option('-l', '--listrepos', action="store_true", help=_("list available repositories"), dest="listrepo")
         self.parser.add_option('-r', '--repo', type='choice', help=_("select repository to search"), default=None, choices=repos)
 
+    # deprecated!!!
     def add_repo(self, repo):
         opt = self.parser.get_option('-r')
         opt.choices.append(repo)
 
+    # deprecated!!!
     def add_repos(self, repos):
         opt = self.parser.get_option('-r')
         for repo in repos:
