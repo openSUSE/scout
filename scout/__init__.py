@@ -677,8 +677,10 @@ class RepoList(object):
 
     def __init__(self, modulename, repo_list=()):
         self._modulename = modulename
-        self._repos = self._load_available_repos()
-        self._repos.extend(repo_list)
+        if len(repo_list) == 0:
+            self._repos = self._load_available_repos()
+        else:
+            self._repos = repo_list
         self._repos_conf = RepoConfigReader().read()
 
     # set repositories according to data files /usr/share/scout/<modulename>-*.db
