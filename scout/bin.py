@@ -93,7 +93,6 @@ class ScoutModule(scout.BaseScoutModule):
 
         #repos = self._parser.get_repos()
         repos = self._repo_list.repos
-        print repos
         if repos == None:
             return None
         for repo in repos:
