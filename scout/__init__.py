@@ -826,6 +826,14 @@ class BaseScoutModule(object):
 
     def main(self):
         raise NotImplementedError("BaseScoutModule is not intended for usage, please reimplement the main method in your own subclass")
+    
+    # ----------- command available everywhere --------
+    def do_repo_list(self):
+        """
+        Return an Result object with list of available repositories for this module
+        """
+        return StringResult(self._repo_list.format_available_repos())
+
 
 class SimpleScoutModule(BaseScoutModule):
 
@@ -852,12 +860,6 @@ class SimpleScoutModule(BaseScoutModule):
         return self.do_query(args.query, self._repo_list.repos)
     
     # ---------- commands ----------
-
-    def do_repo_list(self):
-        """
-        Return an Result object with list of available repositories for this module
-        """
-        return StringResult(self._repo_list.format_available_repos())
 
     def do_query(self, query, repos):
         """
