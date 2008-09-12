@@ -35,8 +35,8 @@ BuildRequires:  python-xml
 Requires:       python-xml
 %endif
 %if 0%{?suse_version} > 1030
-BuildRequires:  python-satsolver > 0.10.10
-Requires:       python-satsolver > 0.10.10
+BuildRequires:  python-satsolver >= 0.10.10
+Requires:       python-satsolver >= 0.10.10
 %endif
 
 %if 0%{?fedora_version} || 0%{?rhel_version} || 0%{?centos_version}
