@@ -7,6 +7,7 @@ import sys
 try:
     satsolver = __import__('satsolver')
     import os
+    import re
     from fnmatch import fnmatch
     from ConfigParser import SafeConfigParser
 except:
@@ -14,9 +15,10 @@ except:
 
 class SolvParser(object):
 
-    etcpath = '/etc/zypp/repos.d'
+    etcpath  = '/etc/zypp/repos.d'
     solvfile = '/var/cache/zypp/solv/%s/solv'
-    binpaths = ( '/bin/', '/sbin/', '/usr/bin/', '/usr/sbin/', '/usr/games/', '/opt/kde3/bin/', '/opt/kde3/sbin/', '/opt/gnome/bin/', '/opt/gnome/sbin/' )
+    # path regular expression for { /bin, /sbin, /usr/bin, /usr/sbin, /usr/games, /opt/kde3/bin, /opt/kde3/sbin, /opt/gnome/bin, /opt/gnome/sbin }
+    pathre   = '^/(s?bin|usr/(s?bin|games)|opt/(kde3|gnome)/s?bin)/%s$'
 
     def __init__(self):
         self.pool = satsolver.Pool()
@@ -32,16 +34,22 @@ class SolvParser(object):
                 pass
 
     def search(self, term):
-         filematch = map(lambda x: x + term, self.binpaths)
          pkgmatch = []
-         for solv in self.pool:
-             if not solv.attr_exists('solvable:filelist'):
-                 continue
-             for file in solv.attr('solvable:filelist'):
-                 if file in filematch:
-                     row = ( 'zypp (%s)' % solv.repo().name(), term, file[:-len(term)-1] , solv.name() )
-                     if not row in pkgmatch:
-                         pkgmatch.append( row )
+         pat = re.compile(self.pathre % term)
+         for repo in self.pool.repos():
+             for d in repo.search(self.pathre % term, satsolver.SEARCH_REGEX | satsolver.SEARCH_FILES):
+                 if d.key() != 'solvable:filelist':
+                     continue
+#             workaround for not working d.value() - should use path = d.value() when it is working
+                 path = '/unknown/path/' + term
+                 for file in d.solvable().attr('solvable:filelist'):
+                     if pat.match(file):
+                         path = file
+                         break
+#             end of workaround
+                 row = ( 'zypp (%s)' % repo.name(), term, path[:-len(term)-1] , d.solvable().name() )
+                 if not row in pkgmatch:
+                     pkgmatch.append( row )
          return pkgmatch
 
 class ScoutModule(scout.BaseScoutModule):
@@ -73,8 +81,6 @@ class ScoutModule(scout.BaseScoutModule):
 
     def main(self, module_args=None):
 
-        #p = scout.Parser(cls.name)
-        #p.add_repo('zypp')
         args = None
         try:
             args = self._parser.parse_args(module_args)
@@ -94,7 +100,6 @@ class ScoutModule(scout.BaseScoutModule):
 
         result = scout.Result( result_list, result_list2 );
 
-        #repos = self._parser.get_repos()
         repos = self._repo_list.repos
         if repos == None:
             return None

@@ -1,4 +1,14 @@
 -------------------------------------------------------------------
+Fri Sep 12 12:00:26 CEST 2008 - prusnak@suse.cz
+
+- optimized zypp repository search
+
+-------------------------------------------------------------------
+Tue Sep  9 12:13:41 CEST 2008 - prusnak@suse.cz
+
+- added gettext support
+
+-------------------------------------------------------------------
 Mon Aug 18 11:49:30 CEST 2008 - schwab@suse.de
 
 - Fix name of completions file.

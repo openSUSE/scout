@@ -727,8 +727,7 @@ class Parser(object):
         usage = _("Usage: %%prog %s [options] search_term") % modulename
         self.parser = ScoutOptionParser(usage=usage.replace("%%", "%"))
         self.parser.add_option('-l', '--listrepos', action="store_true", help=_("list available repositories"), dest="listrepo")
-        # FIXME: this option is not implemented yet
-        #self.parser.add_option('-r', '--repo', type='choice', help=_("select repository to search"), default=None, choices=repos)
+        self.parser.add_option('-r', '--repo', type='choice', help=_("select repository to search"), default=None, choices=repos)
 
     # deprecated!!!
     def add_repo(self, repo):
@@ -755,7 +754,7 @@ class Parser(object):
     def parse_args(self, args):
         opts, args = self.parser.parse_args(args)
         
-        # FIXME: this would be rewritted
+        # FIXME: this would be rewritten
         if not opts.listrepo and len(args) == 0:
             raise HelpOptionFound()
 

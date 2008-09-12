@@ -20,14 +20,14 @@
 
 Name:           scout
 Version:        0.1.0
-Release:        1
+Release:        21
 Url:            http://en.opensuse.org/Scout
 License:        X11/MIT
 Group:          System/Packages
 Summary:        Package Scout
 Source:         %{name}.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
-BuildRequires:  python rpm-python gettext
+BuildRequires:  gettext python rpm-python
 Requires:       python
 
 %if 0%{?suse_version}
@@ -35,8 +35,8 @@ BuildRequires:  python-xml
 Requires:       python-xml
 %endif
 %if 0%{?suse_version} > 1030
-BuildRequires:  python-satsolver > 0.10.2
-Requires:       python-satsolver > 0.10.2
+BuildRequires:  python-satsolver > 0.10.10
+Requires:       python-satsolver > 0.10.10
 %endif
 
 %if 0%{?fedora_version} || 0%{?rhel_version} || 0%{?centos_version}
@@ -50,6 +50,8 @@ BuildRequires:  readline
 
 %description
 Package Scout for indexing various properties of packages.
+
+
 
 %define scoutrepo none
 %define cnfrepo none
@@ -87,12 +89,12 @@ Package Scout for indexing various properties of packages.
 
 %package -n command-not-found
 Version:        0.1.0
-Release:        2
+Release:        28
 License:        X11/MIT
 Group:          System/Packages
 Summary:        Command Not Found extension for shell
 Requires:       python rpm-python scout
-# Requires:       bash(CommandNotFound)
+Requires:       bash(CommandNotFound)
 %if %{cnfrepo} != zypp
 Requires:       scout-bin-%{cnfrepo}
 %endif
@@ -102,6 +104,8 @@ The "command not found" message is not very helpful. If e.g. the unzip
 command is not found but it's available in a package, it would be very
 interesting if the system could tell that the command is currently not
 available, but installing a package would provide it.
+
+
 
 %endif
 
@@ -173,7 +177,7 @@ done
 %endif
 
 %if %{scoutrepo} != none
-# --- import-error ---
+# --- python-import-error ---
 install -D -m 0755 handlers/python/python_import_error_handler $RPM_BUILD_ROOT/%{py_sitedir}
 %endif
 

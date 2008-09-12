@@ -22,7 +22,7 @@ class ScoutModule(scout.BaseScoutModule):
 
     def __init__(self):
         super(self.__class__, self).__init__()
-        
+
         self._repo_list = scout.RepoList(self._cls.name, self._cls.distros.keys())
         self._parser    = scout.Parser(self._cls.name, self._repo_list.repos)
 
@@ -81,7 +81,7 @@ class ScoutModule(scout.BaseScoutModule):
         except scout.HelpOptionFound:
             self._parser.print_help()
             sys.exit(1)
-        
+
         if args.listrepo:
             return self.do_repo_list()
 
