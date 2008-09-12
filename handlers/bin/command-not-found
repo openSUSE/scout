@@ -53,10 +53,11 @@ import bin
 try:
     term = sys.argv[1]
     repo = sys.argv[2]
+    module = bin.ScoutModule()
     if repo == 'zypp':
-        rows = bin.ScoutModule.query_zypp(term)
+        rows = module.query_zypp(term)
     else:
-        rows = bin.ScoutModule.query_repo(repo, term)
+        rows = module.query_repo(repo, term)
 
     if rows == None or len(rows) == 0:
         sys.exit(EX_NOTFOUND)

@@ -2,6 +2,7 @@
 Fri Sep 12 12:00:26 CEST 2008 - prusnak@suse.cz
 
 - optimized zypp repository search
+- fixed module instance creation in command-not-found
 
 -------------------------------------------------------------------
 Tue Sep  9 12:13:41 CEST 2008 - prusnak@suse.cz
