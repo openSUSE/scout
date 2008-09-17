@@ -26,7 +26,7 @@ class SysConfig(object):
     def __str__(self):
         ret = "%s {" % self.__class__
         for attr in ("data_path", "data_suffix", "config_file", "module_path", "i18n_path"):
-            ret += "%s : %s" (attr, getattr(self, attr))
+            ret += "%s : %s" % (attr, getattr(self, attr))
         ret = ret +  "}"
         return ret
 
@@ -90,7 +90,7 @@ class DefaultLang(object):
         return self._trans.ungettext(singluar, plural, n)
 
     def __str__(self):
-        return "%s {textdomain: %s, unicode: %s} " % (self.__class__, self._textdomain, self.unicode)
+        return "%s {textdomain: %s, unicode: %s} " % (self.__class__, self._textdomain, self._unicode)
         
 class NullLang(DefaultLang):
 
@@ -372,7 +372,7 @@ class ModuleLoader(object):
                     else:
                         self._modules[module.ScoutModule.name] = module
                 except ImportError, ierr:
-                    self._not_imported_modules.append((name, ierr.message))
+                    self._not_imported_modules.append((module_name, ierr.message))
 
     def __getitem__(self, name):
         """ x.__getitem__(y) <==> x[y] """
@@ -728,6 +728,7 @@ class Parser(object):
         self.parser = ScoutOptionParser(usage=usage.replace("%%", "%"))
         self.parser.add_option('-l', '--listrepos', action="store_true", help=_("list available repositories"), dest="listrepo")
         self.parser.add_option('-r', '--repo', type='choice', help=_("select repository to search"), default=None, choices=repos)
+        self._repos = repos
 
     # deprecated!!!
     def add_repo(self, repo):
@@ -744,7 +745,7 @@ class Parser(object):
     def parse(self, args=None):
         (self.options, self.args) = self.parser.parse_args(args)
         if self.do_list():
-            print self.format_available_repos()
+            print self._repos.format_available_repos()
             return False
         if len(self.args) == 0:
             self.parser.print_help()
@@ -823,6 +824,9 @@ class BaseScoutModule(object):
         self._cls = cls
         for attr in ("name", "desc", "sql", "result_list", "result_list2"):
             setattr(self, "_%s" % (attr), getattr(cls, attr))
+        
+        self._repo_list = None
+        self._parser    = None
 
     def main(self):
         raise NotImplementedError("BaseScoutModule is not intended for usage, please reimplement the main method in your own subclass")
@@ -893,7 +897,7 @@ class SimpleScoutModule(BaseScoutModule):
     def __str__(self):
         ret = "%s {" % self.__class__
         for attr in ("name", "desc", "sql", "result_list", "result_list2"):
-            ret += "%s : %s" (attr, getattr(self, attr))
+            ret += "%s : %s" % (attr, getattr(self, attr))
         ret = ret +  "}"
         return ret
 
