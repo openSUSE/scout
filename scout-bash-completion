@@ -9,7 +9,7 @@ _scout() {
     SCOUT=`which scout`
     local opts cur prev prevprev
     if test ${#SCOUT_CMDLIST[*]} = 0; then
-        for foo in $(LC_ALL=C $SCOUT 2>&1 | sed -e "1,/available modules:/d" | egrep [a-z] | awk -F ' ' '{print $1}'); do
+        for foo in $(LC_ALL=C $SCOUT 2>&1 | sed -e "1,/Available modules:/d" | egrep [a-z] | awk -F ' ' '{print $1}'); do
             SCOUT_CMDLIST="$SCOUT_CMDLIST $foo"
         done
         SCOUT_CMDLIST="$SCOUT_CMDLIST"
