@@ -31,7 +31,7 @@ class SysConfig(object):
         return ret
 
 class DevConfig(SysConfig):
-    
+
     @classmethod
     def setup(cls, path):
         cls.module_path = path
@@ -91,7 +91,7 @@ class DefaultLang(object):
 
     def __str__(self):
         return "%s {textdomain: %s, unicode: %s} " % (self.__class__, self._textdomain, self._unicode)
-        
+
 class NullLang(DefaultLang):
 
     def __init__(self, textdomain='scout', unicode=True):
@@ -129,7 +129,7 @@ class ModuleListFormatter(IndentedHelpFormatter):
 class ScoutOptionParser(OptionParser):
     """
     The modified option parser for scout. The three main differences are:
-        
+
         - redefined _add_help_option - this adds an ExceptionHelpOption, so the
           help option will raise an HelpOptionFound exception
 
@@ -147,7 +147,7 @@ class ScoutOptionParser(OptionParser):
                     action="help2",
                     help=_("show this help message and exit")
                     ))
-    
+
     def _add_version_option(self):
         self.add_option(
                 "--version",
@@ -159,7 +159,7 @@ class CoreOptionParser(object):
     """
     This is a command-line parser for core. Just prints help for available
     modules and should return one a name of one of them.
-    
+
     This is an accestor of older CommandLineParser with better design - usage
     of the optparse module, instead of the own parsing - and better support for
     unittesting.
@@ -183,7 +183,7 @@ class CoreOptionParser(object):
     """
 
     def __init__(self, formats, modules=None):
-        
+
         self._prog = os.path.basename(sys.argv[0])
 
         self._modules = list()
@@ -223,7 +223,7 @@ class CoreOptionParser(object):
                 self._modules.append(m)
             self._modules.sort()
         return self
-    
+
     def _help_modules(self):
         ret = _("Available modules:\n")
         maxlen = len(max((m[0] for m in self._modules), key=len))
@@ -262,7 +262,7 @@ class CoreOptionParser(object):
         if len(args) == 0:      raise HelpOptionFound() # if none of the argument was defined, show help
 
         core_args, self._module_args = self._split_argument_line(args)
-        
+
         # try to load the module name
         module = None
         if len(self._module_args) != 0:
@@ -285,7 +285,7 @@ class CoreOptionParser(object):
     def error(self, msg):
         self._parser.error(msg)
         return self
-    
+
     def __opts2dict(self, opts):
         ret = {}
         for opt in [opt for opt in self._parser.option_list if opt.dest != None]:
@@ -690,7 +690,7 @@ class RepoList(object):
             if fnmatch.fnmatch(file, self._modulename + '-*' + Config.data_suffix):
                 ret.append(file[len(self._modulename)+1:-len(Config.data_suffix)])
         return ret
-    
+
     def format_available_repos(self):
         ret = _("Available repositories:\n")
         if len(self._repos) == 0:
@@ -707,7 +707,7 @@ class RepoList(object):
             else:
                 ret += opt + '\n'
         return ret
-    
+
     def add_repo(self, repo):
         self._repos.append(repo)
         return self
@@ -754,7 +754,7 @@ class Parser(object):
 
     def parse_args(self, args):
         opts, args = self.parser.parse_args(args)
-        
+
         # FIXME: this would be rewritten
         if not opts.listrepo and len(args) == 0:
             raise HelpOptionFound()
@@ -778,10 +778,10 @@ class Parser(object):
 
     def do_list(self):
         return self.options.listrepo
-    
+
     def print_help(self, file=sys.stderr):
         self.parser.print_help(file)
-    
+
     def __opts2dict(self, opts):
         ret = {}
         for opt in [opt for opt in self.parser.option_list if opt.dest != None]:
@@ -806,7 +806,7 @@ class BaseScoutModule(object):
         def __init__(self, *args, **kwargs):
             super(self.__class__, self).__init__()
             # my own initialization
-        
+
         def main(self, module_args=None):
             # my own implementation
     """
@@ -818,19 +818,19 @@ class BaseScoutModule(object):
     result_list = [_("repo"), _("pkg"), _("module")]
     result_list2= [_("repository"), _("package"), _("module")]
     default_lang.install()
-    
+
     def __init__(self):
         cls = self.__class__
         self._cls = cls
         for attr in ("name", "desc", "sql", "result_list", "result_list2"):
             setattr(self, "_%s" % (attr), getattr(cls, attr))
-        
+
         self._repo_list = None
         self._parser    = None
 
     def main(self):
         raise NotImplementedError("BaseScoutModule is not intended for usage, please reimplement the main method in your own subclass")
-    
+
     # ----------- command available everywhere --------
     def do_repo_list(self):
         """
@@ -843,10 +843,10 @@ class SimpleScoutModule(BaseScoutModule):
 
     def __init__(self):
         super(SimpleScoutModule, self).__init__()
-        
+
         self._repo_list = RepoList(self._cls.name)
         self._parser    = Parser(self._cls.name, self._repo_list.repos)
-    
+
     def getDatabase(self, repo):
         return Database(self._name + '-' + repo)
 
@@ -866,7 +866,7 @@ class SimpleScoutModule(BaseScoutModule):
             repos = args.repo
 
         return self.do_query(args.query, self._repo_list.repos)
-    
+
     # ---------- commands ----------
 
     def do_query(self, query, repos):
@@ -884,16 +884,16 @@ class SimpleScoutModule(BaseScoutModule):
         for repo in repos:
             result.add_rows(self._query(repo, query))
         return result
-    
+
     def _query(self, repo, term):
-        db =self.getDatabase(repo)
+        db = self.getDatabase(repo)
         r = db.query(self._sql, '%%%s%%' % term)
         if isinstance(r, list):
             return map( lambda x: [repo] + list(x), r)
         else:
             return [ [repo] + list(r) ]
         return r
-    
+
     def __str__(self):
         ret = "%s {" % self.__class__
         for attr in ("name", "desc", "sql", "result_list", "result_list2"):
@@ -926,7 +926,7 @@ class ScoutCore(object):
             sys.exit(1)
         except OptionValueError, ove:
             clp.error(ove.msg)
-            
+
             print ove.msg
             sys.exit(2)
 
@@ -952,7 +952,7 @@ ScoutCore.load_modules()
 # to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 # copies of the Software, and to permit persons to whom the Software is
 # furnished to do so, subject to the following conditions:
-# 
+#
 # The above copyright notice and this permission notice shall be included in
 # all copies or substantial portions of the Software.
 #
