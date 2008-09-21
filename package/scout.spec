@@ -93,7 +93,8 @@ Release:        28
 License:        X11/MIT
 Group:          System/Packages
 Summary:        Command Not Found extension for shell
-Requires:       python rpm-python scout
+Requires:       python rpm-python
+Requires:       scout = %{version}
 Requires:       bash(CommandNotFound)
 %if %{cnfrepo} != zypp
 Requires:       scout-bin-%{cnfrepo}
@@ -117,7 +118,7 @@ Release:        1
 License:        X11/MIT
 Group:          System/Packages
 Summary:        Import Error extension for python interpretter
-Requires:       scout
+Requires:       scout = %{version}
 Requires:       python(ImportError)
 Requires:       scout-python-%{scoutrepo}
 
