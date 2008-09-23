@@ -1,4 +1,9 @@
 -------------------------------------------------------------------
+Fri Sep 19 17:18:27 CEST 2008 - prusnak@suse.cz
+
+- fixed bash completion and typo
+
+-------------------------------------------------------------------
 Fri Sep 12 12:00:26 CEST 2008 - prusnak@suse.cz
 
 - optimized zypp repository search
