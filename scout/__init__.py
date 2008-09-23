@@ -66,7 +66,7 @@ Config = ConfigFactory.create_config_class()
 
 class DefaultLang(object):
 
-    def __init__(self, textdomain='scout', unicode=True):
+    def __init__(self, textdomain = 'scout', unicode = True):
         self._textdomain = textdomain
         self._unicode    = unicode
         lc, encoding = locale.getdefaultlocale()
@@ -80,7 +80,7 @@ class DefaultLang(object):
                 )
 
     def install(self):
-        self._trans.install(unicode = self._unicode, names='ngettext')
+        self._trans.install(unicode = self._unicode, names = 'ngettext')
         return self
 
     def gettext(self, msg):
@@ -94,7 +94,7 @@ class DefaultLang(object):
 
 class NullLang(DefaultLang):
 
-    def __init__(self, textdomain='scout', unicode=True):
+    def __init__(self, textdomain = 'scout', unicode = True):
         self._trans = gettext.NullTranslations()
         self._unicode = unicode
 
@@ -144,15 +144,15 @@ class ScoutOptionParser(OptionParser):
         self.add_option(
                 ExceptionHelpOption(
                     "-h", "--help",
-                    action="help2",
-                    help=_("show this help message and exit")
+                    action = "help2",
+                    help = _("show this help message and exit")
                     ))
 
     def _add_version_option(self):
         self.add_option(
                 "--version",
-                action="version",
-                help=_("show program's version number and exit")
+                action = "version",
+                help = _("show program's version number and exit")
                 )
 
 class CoreOptionParser(object):
@@ -182,7 +182,7 @@ class CoreOptionParser(object):
         print "Arguments for module: %s" % (parser.module_args)
     """
 
-    def __init__(self, formats, modules=None):
+    def __init__(self, formats, modules = None):
 
         self._prog = os.path.basename(sys.argv[0])
 
@@ -202,17 +202,17 @@ class CoreOptionParser(object):
 
         self._parser.add_option(
                 "-f", "--format",
-                help=_("select the output format (default %s)") % (self._format),
-                default=self._format,
-                type="choice",
-                choices=formats
+                help = _("select the output format (default %s)") % (self._format),
+                default = self._format,
+                type = "choice",
+                choices = formats
                 )
         self._parser.add_option(
                 "-l", "--list",
-                help=_("list of available modules"),
-                action="store_true",
-                dest="listing",
-                default=False
+                help = _("list of available modules"),
+                action = "store_true",
+                dest = "listing",
+                default = False
                 )
 
     def add_module(self, modules):
@@ -226,7 +226,7 @@ class CoreOptionParser(object):
 
     def _help_modules(self):
         ret = _("Available modules:\n")
-        maxlen = len(max((m[0] for m in self._modules), key=len))
+        maxlen = len(max((m[0] for m in self._modules), key = len))
         for m in self._modules:
             ret += "    %s : %s\n" % (m[0].ljust(maxlen), m[1])
         return ret
@@ -244,7 +244,7 @@ class CoreOptionParser(object):
             return (args, [])
         return (args[:module_i], args[module_i:])
 
-    def parse_args(self, args=None):
+    def parse_args(self, args = None):
         """
         parse the arguments from sys.argv, or user defined ones!
 
@@ -254,12 +254,15 @@ class CoreOptionParser(object):
             - OptionValueError: when the name of module was not found in command line
         for bad format argument it still use an optparse's sys.exit() method
         """
-        # this line is necessary, the args=sys.argv[1:] in function definition seems doesn't works
-        if not args:    args = sys.argv[1:]
+        # this line is necessary, the args = sys.argv[1:] in function definition seems doesn't works
+        if not args:
+            args = sys.argv[1:]
         # fix the usage of the command python scout-cmd.py ...
-        if len(args) == 1 and args[0].find("scout") != -1: args = args[1:]
+        if len(args) == 1 and args[0].find("scout") != -1:
+            args = args[1:]
 
-        if len(args) == 0:      raise HelpOptionFound() # if none of the argument was defined, show help
+        if len(args) == 0:
+            raise HelpOptionFound() # if none of the argument was defined, show help
 
         core_args, self._module_args = self._split_argument_line(args)
 
@@ -271,14 +274,14 @@ class CoreOptionParser(object):
         opts, args = self._parser.parse_args(core_args)
 
         # no HelpOptionFound raised, the module name is mandatory
-        # FIXME: this would be rewritted
+        # FIXME: this would be rewritten
         if not opts.listing and len(self._module_args) == 0:
             msg = _("The name of module is mandatory. Use %s --help") % (self._prog)
             raise OptionValueError(msg)
 
-        return Options(self.__opts2dict(opts), args={'module' : module})
+        return Options(self.__opts2dict(opts), args = {'module' : module})
 
-    def print_help(self, file=sys.stderr):
+    def print_help(self, file = sys.stderr):
         self._parser.print_help(file)
         return self
 
@@ -346,7 +349,7 @@ class ModuleLoader(object):
     The basic module loader - it allows to load a module from specified directory(ies)
     """
 
-    def __init__(self, dirs=None):
+    def __init__(self, dirs = None):
         self._modules = dict()
         self._not_imported_modules = list()
         if dirs != None: self.import_from(dirs)
@@ -355,15 +358,15 @@ class ModuleLoader(object):
         # make an non-iter item as iter
         if not hasattr(dirs, "__iter__"):
             dirs = (dirs, )
-        for dir in dirs:
-            self._import(dir)
+        for directory in dirs:
+            self._import(directory)
 
-    def _import(self, dir):
-        if not os.path.isdir(dir):
-            raise AttributeError(_("%s is not a directory") % dir)
-        sys.path.insert(0, dir)
-        for file in os.listdir(dir):
-            module_name, ext = os.path.splitext(file)
+    def _import(self, directory):
+        if not os.path.isdir(directory):
+            raise AttributeError(_("%s is not a directory") % directory)
+        sys.path.insert(0, directory)
+        for module_file in os.listdir(directory):
+            module_name, ext = os.path.splitext(module_file)
             if ext == '.py' and not (module_name == '__init__' or module_name == 'foo'):
                 try:
                     module = __import__(module_name)
@@ -446,9 +449,9 @@ class Database(object):
             self.cursor.execute(query, kwargs)
 
     def end(self):
-       if self.cursor != None:
-           self.cursor.close()
-           self.cursor = None
+        if self.cursor != None:
+            self.cursor.close()
+            self.cursor = None
 
     def query(self, query, *args, **kwargs):
         """
@@ -458,9 +461,9 @@ class Database(object):
 
         there're two kinds of placeholders (like as original DB/API execute, but in more Pythonic way)
         - question marks (qmark style):
-          query("SELECT ham, spam FROM foo WHERE bar=? and baz=?", bar, baz)
+          query("SELECT ham, spam FROM foo WHERE bar = ? and baz = ?", bar, baz)
         - named placeholders (named style)
-          query("SELECT ham, spam FROM foo WHERE bar=:bar and baz=:baz", bar='42', baz='42')
+          query("SELECT ham, spam FROM foo WHERE bar = :bar and baz = :baz", bar = '42', baz = '42')
 
         Note: its not possible to combine this two types of placeholders in one call!
 
@@ -493,7 +496,7 @@ class Database(object):
 class TableFormatter(object):
 
     @classmethod
-    def format(cls, result, vertical_delimiter=' | ', node_delimiter='-+-', horizontal_delimiter='-'):
+    def format(cls, result, vertical_delimiter = ' | ', node_delimiter = '-+-', horizontal_delimiter = '-'):
         """
         This method produces an output as a table. It's a base style of output and is recomended for a commandline use.
 
@@ -509,22 +512,23 @@ class TableFormatter(object):
         """
         #FIXME: this code probably doesn't work with a variable length of the delimiters!
         ret = ""
-        if result.is_empty() : return ret
-        col_width = map(len, map(unicode, result.get_long_names()))
-        for i in range(0,len(result.get_long_names())):
-          for row in result.get_rows():
-            if len(unicode(row[i])) > col_width[i]:
-                col_width[i] = len(unicode(row[i]))
-        ret += ' ' + vertical_delimiter.join(map(unicode.ljust, result.get_long_names(), col_width)) + '\n'
-        ret += horizontal_delimiter + node_delimiter.join(map(lambda c: horizontal_delimiter * c, col_width)) + horizontal_delimiter + '\n'
+        if result.is_empty():
+            return ret
+        col_width = [ len(unicode(x)) for x in result.get_long_names() ]
+        for i in range(0, len(result.get_long_names())):
+            for row in result.get_rows():
+                if len(unicode(row[i])) > col_width[i]:
+                    col_width[i] = len(unicode(row[i]))
+        ret += ' ' + vertical_delimiter.join( map( unicode.ljust, result.get_long_names(), col_width) ) + '\n'
+        ret += horizontal_delimiter + node_delimiter.join( [ horizontal_delimiter * x for x in col_width ] ) + horizontal_delimiter + '\n'
         for row in result.get_rows():
-            ret += ' ' + vertical_delimiter.join(map(unicode.ljust, map(unicode, row), col_width)) + '\n'
+            ret += ' ' + vertical_delimiter.join( map( unicode.ljust, map(unicode, row), col_width ) ) + '\n'
         return ret
 
 class CSVFormatter(object):
 
     @classmethod
-    def format(cls, result, record_delimiter=';', quote_mark='"'):
+    def format(cls, result, record_delimiter = ';', quote_mark = '"'):
         """
         This method produces an output in a CSV format. This style is recomended for the scripting use.
 
@@ -539,17 +543,18 @@ class CSVFormatter(object):
         """
         record_delimiter = quote_mark + record_delimiter + quote_mark
         ret = ""
-        if result.is_empty() : return ret
-        ret += quote_mark + record_delimiter.join(map(lambda s: s.replace(quote_mark, 2*quote_mark), result.get_short_names())) + quote_mark + '\n'
-        ret += quote_mark + record_delimiter.join(map(lambda s: s.replace(quote_mark, 2*quote_mark), result.get_long_names())) + quote_mark + '\n'
+        if result.is_empty():
+            return ret
+        ret += quote_mark + record_delimiter.join( [ s.replace(quote_mark, 2*quote_mark) for s in result.get_short_names() ] ) + quote_mark + '\n'
+        ret += quote_mark + record_delimiter.join( [ s.replace(quote_mark, 2*quote_mark) for s in result.get_long_names() ] ) + quote_mark + '\n'
         for row in result.rows:
-            ret += quote_mark + record_delimiter.join(map(lambda s: s.replace(quote_mark, 2*quote_mark), row)) + quote_mark + '\n'
+            ret += quote_mark + record_delimiter.join([ s.replace(quote_mark, 2*quote_mark) for s in row ] ) + quote_mark + '\n'
         return ret
 
 class XMLFormatter(object):
 
     @classmethod
-    def format(cls, result, result_tag='result', head_tag='head', row_tag='row'):
+    def format(cls, result, result_tag = 'result', head_tag = 'head', row_tag = 'row'):
         """
         This method produces an output in a XML format. This style is recomended for the communication between scout and a external systems.
 
@@ -578,15 +583,15 @@ class XMLFormatter(object):
         ret = '<?xml version="1.0" encoding="UTF-8"?>\n'
         ret += '<%s>' % result_tag + '\n'
         ret += '  <%s>' % head_tag + '\n'
-        short_names = result.get_short_names(localised=False)
+        short_names = result.get_short_names(localised = False)
         for i in range(0, len(short_names)):
             ret += '    <%s>%s</%s>' % (short_names[i], result.get_long_names()[i], short_names[i]) + '\n'
         ret += '  </%s>' % head_tag + '\n'
         for row in result.rows:
-          ret += '  <%s>' % row_tag + '\n'
-          for i in range(0,len(short_names)):
-              ret += '    <%s>%s</%s>' % (short_names[i], row[i], short_names[i]) + '\n'
-          ret += '  </%s>' % row_tag + '\n'
+            ret += '  <%s>' % row_tag + '\n'
+            for i in range(0, len(short_names)):
+                ret += '    <%s>%s</%s>' % (short_names[i], row[i], short_names[i]) + '\n'
+            ret += '  </%s>' % row_tag + '\n'
         ret += '</%s>' % result_tag + '\n'
         return ret
 
@@ -610,14 +615,14 @@ class Result(object):
             for row in rows:
                 self.rows.append(list(row))
 
-    def get_short_names(self, localised=True):
+    def get_short_names(self, localised = True):
         if localised:
-            return map(default_lang.gettext, self.cols1)
+            return [ default_lang.gettext(x) for x in  self.cols1]
         return self.cols1
 
-    def get_long_names(self, localised=True):
+    def get_long_names(self, localised = True):
         if localised:
-            return map(default_lang.gettext, self.cols2)
+            return [ default_lang.gettext(x) for x in  self.cols2]
         return self.cols2
 
     def get_table(self):
@@ -631,7 +636,7 @@ class Result(object):
     def is_empty(self):
         return len(self.rows) == 0
 
-    def format(self, formatter=TableFormatter, **kwargs):
+    def format(self, formatter = TableFormatter, **kwargs):
         return formatter.format(self, **kwargs)
 
 class StringResult(Result):
@@ -651,7 +656,7 @@ class RepoConfigReader(object):
     def __init__(self):
         self.parser = SafeConfigParser()
 
-    def read(self, file_name=None):
+    def read(self, file_name = None):
         """Read the config files and parse them. The files is loaded from
         directory ${Config.data_path}.  This should be suppressed by file_names
         argument.
@@ -678,7 +683,7 @@ class RepoConfigReader(object):
 
 class RepoList(object):
 
-    def __init__(self, modulename, repo_list=()):
+    def __init__(self, modulename, repo_list = ()):
         self._modulename = modulename
         if len(repo_list) == 0:
             self._repos = self._load_available_repos()
@@ -689,9 +694,9 @@ class RepoList(object):
     # set repositories according to data files /usr/share/scout/<modulename>-*.db
     def _load_available_repos(self):
         ret = list()
-        for file in os.listdir(Config.data_path):
-            if fnmatch.fnmatch(file, self._modulename + '-*' + Config.data_suffix):
-                ret.append(file[len(self._modulename)+1:-len(Config.data_suffix)])
+        for filedb in os.listdir(Config.data_path):
+            if fnmatch.fnmatch(filedb, self._modulename + '-*' + Config.data_suffix):
+                ret.append(filedb[len(self._modulename)+1:-len(Config.data_suffix)])
         return ret
 
     def format_available_repos(self):
@@ -699,7 +704,7 @@ class RepoList(object):
         if len(self._repos) == 0:
             ret += '- none -\n'
             return ret
-        maxlen = len(max(self._repos, key=lambda x: x!=None and len(x) or 0))
+        maxlen = len(max(self._repos, key = lambda x: x != None and len(x) or 0))
         for opt in self._repos:
             if opt == None:
                 continue
@@ -728,9 +733,9 @@ class Parser(object):
     def __init__(self, modulename, repos):
         self.modulename = modulename
         usage = _("Usage: %%prog %s [options] search_term") % modulename
-        self.parser = ScoutOptionParser(usage=usage.replace("%%", "%"))
-        self.parser.add_option('-l', '--listrepos', action="store_true", help=_("list available repositories"), dest="listrepo")
-        self.parser.add_option('-r', '--repo', type='choice', help=_("select repository to search"), default=None, choices=repos)
+        self.parser = ScoutOptionParser(usage = usage.replace("%%", "%"))
+        self.parser.add_option('-l', '--listrepos', action = "store_true", help = _("list available repositories"), dest = "listrepo")
+        self.parser.add_option('-r', '--repo', type = 'choice', help = _("select repository to search"), default = None, choices = repos)
         self._repos = repos
 
     # deprecated!!!
@@ -745,7 +750,7 @@ class Parser(object):
             opt.choices.append(repo)
 
     # deprecated!!!
-    def parse(self, args=None):
+    def parse(self, args = None):
         (self.options, self.args) = self.parser.parse_args(args)
         if self.do_list():
             print self._repos.format_available_repos()
@@ -763,8 +768,9 @@ class Parser(object):
             raise HelpOptionFound()
 
         query = None
-        if len(args) > 0: query = args[0]
-        return Options(self.__opts2dict(opts), args={'query' : query})
+        if len(args) > 0:
+            query = args[0]
+        return Options(self.__opts2dict(opts), args = {'query' : query})
 
     # FIXME: remove!!
     def get_repos(self):
@@ -782,8 +788,8 @@ class Parser(object):
     def do_list(self):
         return self.options.listrepo
 
-    def print_help(self, file=sys.stderr):
-        self.parser.print_help(file)
+    def print_help(self, output = sys.stderr):
+        self.parser.print_help(output)
 
     def __opts2dict(self, opts):
         ret = {}
@@ -810,7 +816,7 @@ class BaseScoutModule(object):
             super(self.__class__, self).__init__()
             # my own initialization
 
-        def main(self, module_args=None):
+        def main(self, module_args = None):
             # my own implementation
     """
 
@@ -818,8 +824,8 @@ class BaseScoutModule(object):
     desc = "desc"
     sql = "SQL"
     null_lang.install()
-    result_list = [_("repo"), _("pkg"), _("module")]
-    result_list2= [_("repository"), _("package"), _("module")]
+    result_list  = [_("repo"), _("pkg"), _("module")]
+    result_list2 = [_("repository"), _("package"), _("module")]
     default_lang.install()
 
     def __init__(self):
@@ -853,7 +859,7 @@ class SimpleScoutModule(BaseScoutModule):
     def getDatabase(self, repo):
         return Database(self._name + '-' + repo)
 
-    def main(self, module_args=None):
+    def main(self, module_args = None):
         args = None
         try:
             args = self._parser.parse_args(module_args)
@@ -892,7 +898,7 @@ class SimpleScoutModule(BaseScoutModule):
         db = self.getDatabase(repo)
         r = db.query(self._sql, '%%%s%%' % term)
         if isinstance(r, list):
-            return map( lambda x: [repo] + list(x), r)
+            return [ [repo] + list(x) for x in r ]
         else:
             return [ [repo] + list(r) ]
         return r
@@ -941,7 +947,7 @@ class ScoutCore(object):
 
         if result != None:
             try:
-                return result.format(formatter=cls.out_formatters[args.format])
+                return result.format(formatter = cls.out_formatters[args.format])
             except KeyError, kerr:
                 raise SystemExit(_("Cannot find a formatter for a %s") % args.format)
 

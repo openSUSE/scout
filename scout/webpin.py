@@ -46,10 +46,10 @@ class ScoutModule(scout.BaseScoutModule):
 
     def fill_result(self, root):
         scout.null_lang.install()
-        result_list = [_("pkg"), _("ver"), _("arch"), _("repo"), _("files")]
-        result_list2=[_("package"), _("version"), _("arch"), _("repository URL"), _("matched files")]
+        result_list  = [_("pkg"), _("ver"), _("arch"), _("repo"), _("files")]
+        result_list2 = [_("package"), _("version"), _("arch"), _("repository URL"), _("matched files")]
         scout.default_lang.install()
-        result = scout.Result( result_list, result_list2 );
+        result = scout.Result( result_list, result_list2 )
 
         for node in root.getElementsByTagName("package"):
             name = node.getElementsByTagName('name').item(0).childNodes.item(0).nodeValue
@@ -67,7 +67,7 @@ class ScoutModule(scout.BaseScoutModule):
                 fileMatches.append(matchedFileNameNode.childNodes.item(0).nodeValue.strip())
             fileMatches = ' '.join(fileMatches)
 
-            result.add_row([name, version, archs, repoURL, fileMatches]);
+            result.add_row([name, version, archs, repoURL, fileMatches])
 
         return result
 

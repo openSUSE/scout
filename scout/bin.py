@@ -23,7 +23,8 @@ class SolvParser(object):
     def __init__(self):
         self.pool = satsolver.Pool()
         self.parser = SafeConfigParser()
-        for repofile in filter(lambda x: fnmatch(x, '*.repo'), os.listdir(self.etcpath)):
+
+        for repofile in [ f for f in os.listdir(self.etcpath) if fnmatch(f, '*.repo') ]:
             try:
                 name = os.path.splitext(repofile)[0]
                 self.parser.read( '%s/%s' % (self.etcpath, repofile) )
@@ -34,23 +35,23 @@ class SolvParser(object):
                 pass
 
     def search(self, term):
-         pkgmatch = []
-         pat = re.compile(self.pathre % term)
-         for repo in self.pool.repos():
-             for d in repo.search(self.pathre % term, satsolver.SEARCH_REGEX | satsolver.SEARCH_FILES):
-                 if d.key() != 'solvable:filelist':
-                     continue
-#             workaround for not working d.value() - should use path = d.value() when it is working
-                 path = '/unknown/path/' + term
-                 for file in d.solvable().attr('solvable:filelist'):
-                     if pat.match(file):
-                         path = file
-                         break
-#             end of workaround
-                 row = ( 'zypp (%s)' % repo.name(), term, path[:-len(term)-1] , d.solvable().name() )
-                 if not row in pkgmatch:
-                     pkgmatch.append( row )
-         return pkgmatch
+        pkgmatch = []
+        pat = re.compile(self.pathre % term)
+        for repo in self.pool.repos():
+            for d in repo.search(self.pathre % term, satsolver.SEARCH_REGEX | satsolver.SEARCH_FILES):
+                if d.key() != 'solvable:filelist':
+                    continue
+#           workaround for not working d.value() - should use path = d.value() when it is working
+                path = '/unknown/path/' + term
+                for pathfl in d.solvable().attr('solvable:filelist'):
+                    if pat.match(pathfl):
+                        path = pathfl
+                        break
+#           end of workaround
+                row = ( 'zypp (%s)' % repo.name(), term, path[:-len(term)-1] , d.solvable().name() )
+                if not row in pkgmatch:
+                    pkgmatch.append( row )
+        return pkgmatch
 
 class ScoutModule(scout.BaseScoutModule):
 
@@ -75,7 +76,7 @@ class ScoutModule(scout.BaseScoutModule):
         if r == None:
             return None
         if isinstance(r, list):
-            return map( lambda x: [repo] + list(x), r)
+            return [ [repo] + list(x) for x in r]
         else:
             return [ [repo] + list(r) ]
 
@@ -94,11 +95,11 @@ class ScoutModule(scout.BaseScoutModule):
         term = args.query
 
         scout.null_lang.install()
-        result_list = [_("repo"), _("bin"), _("path"), _("pkg")]
-        result_list2= [_("repository"), _("binary"), _("path"), _("package")]
+        result_list  = [_("repo"), _("bin"), _("path"), _("pkg")]
+        result_list2 = [_("repository"), _("binary"), _("path"), _("package")]
         scout.default_lang.install()
 
-        result = scout.Result( result_list, result_list2 );
+        result = scout.Result( result_list, result_list2 )
 
         repos = self._repo_list.repos
         if repos == None:
