@@ -372,7 +372,10 @@ class ModuleLoader(object):
                     else:
                         self._modules[module.ScoutModule.name] = module
                 except ImportError, ierr:
-                    self._not_imported_modules.append((module_name, ierr.message))
+                    err_msg = ""
+                    if len(ierr.args) > 0:
+                        err_msg = ierr.args[0]
+                    self._not_imported_modules.append((module_name, err_msg))
 
     def __getitem__(self, name):
         """ x.__getitem__(y) <==> x[y] """
