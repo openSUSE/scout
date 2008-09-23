@@ -251,8 +251,8 @@
          Bash, insert the following lines into your
          <filename>~/.bashrc</filename> or
             <filename>/etc/bash.bashrc</filename>:</para>
-      <screen>if [ -f /etc/bash_completion.d/scout ]; then
-  . /etc/bash_completion.d/scout
+      <screen>if [ -f /etc/bash_completion.d/scout.sh ]; then
+  . /etc/bash_completion.d/scout.sh
 fi</screen>
    </refsect1>
 
