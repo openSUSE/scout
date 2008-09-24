@@ -11,32 +11,32 @@ default_lang = scout.DefaultLang(textdomain="command-not-found")
 default_lang.install()
 
 def print_found(rows):
-    print
-    print ngettext("The program '%(prog)s' can be found in the following package:", "The program '%(prog)s' can be found in following packages:", len(rows)) % \
+    print >> sys.stderr
+    print >> sys.stderr, ngettext("The program '%(prog)s' can be found in the following package:", "The program '%(prog)s' can be found in following packages:", len(rows)) % \
             ({'prog' : term})
     for row in rows:
-        print _("  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]") % \
+        print >> sys.stderr, _("  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]") % \
                 ({'prog' : row[3], 'path' : row[2], 'binary' : row[1], 'repo' : row[0]})
-    print
-    print _('Try:'), INSTALL_CMD,
+    print >> sys.stderr
+    print >> sys.stderr, _('Try:'), INSTALL_CMD,
     if len(rows) > 1:
-        print _('<selected_package>')
+        print >> sys.stderr, _('<selected_package>')
     else:
-        print rows[0][3]
-    print
+        print >> sys.stderr, rows[0][3]
+    print >> sys.stderr
     sys.exit(EX_NOTFOUND)
 
 def print_installed(term, pkg, path):
-    print
-    print _("Program '%(prog)s' is present in package '%(pkg)s', which is installed on your system.") % ( {'prog' : term, 'pkg' : pkg } )
-    print
+    print >> sys.stderr
+    print >> sys.stderr, _("Program '%(prog)s' is present in package '%(pkg)s', which is installed on your system.") % ( {'prog' : term, 'pkg' : pkg } )
+    print >> sys.stderr
     if '/sbin' in path:
-        print _("Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so it might be intended to be run only by user with superuser privileges (eg. root).") % \
+        print >> sys.stderr, _("Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so it might be intended to be run only by user with superuser privileges (eg. root).") % \
                 ( {'prog' : term , 'path' : path} )
     else:
-        print _("Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH variable to see whether it contains the mentioned path.") % \
+        print >> sys.stderr, _("Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH variable to see whether it contains the mentioned path.") % \
                 ( {'prog' : term , 'path' : path} )
-    print
+    print >> sys.stderr
     sys.exit(EX_NOTFOUND)
 
 def check_installed(term):
@@ -68,6 +68,6 @@ try:
 
     print_found(rows)
 except:
-    print
+    print >> sys.stderr
 
 sys.exit(EX_NOTFOUND)
