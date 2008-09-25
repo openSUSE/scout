@@ -36,18 +36,11 @@ class SolvParser(object):
 
     def search(self, term):
         pkgmatch = []
-        pat = re.compile(self.pathre % term)
         for repo in self.pool.repos():
-            for d in repo.search(self.pathre % term, satsolver.SEARCH_REGEX | satsolver.SEARCH_FILES):
-                if d.key() != 'solvable:filelist':
+            for d in repo.search( '/usr/bin/' + term, satsolver.SEARCH_STRING | satsolver.SEARCH_FILES ):
+                if d.keyname() != 'solvable:filelist':
                     continue
-#           workaround for not working d.value() - should use path = d.value() when it is working
-                path = '/unknown/path/' + term
-                for pathfl in d.solvable().attr('solvable:filelist'):
-                    if pat.match(pathfl):
-                        path = pathfl
-                        break
-#           end of workaround
+                path = d.value()
                 row = ( 'zypp (%s)' % repo.name(), term, path[:-len(term)-1] , d.solvable().name() )
                 if not row in pkgmatch:
                     pkgmatch.append( row )
