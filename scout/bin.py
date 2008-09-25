@@ -7,7 +7,6 @@ import sys
 try:
     satsolver = __import__('satsolver')
     import os
-    import re
     from fnmatch import fnmatch
     from ConfigParser import SafeConfigParser
 except:
@@ -37,7 +36,7 @@ class SolvParser(object):
     def search(self, term):
         pkgmatch = []
         for repo in self.pool.repos():
-            for d in repo.search( '/usr/bin/' + term, satsolver.SEARCH_STRING | satsolver.SEARCH_FILES ):
+            for d in repo.search( self.pathre % term, satsolver.SEARCH_REGEX | satsolver.SEARCH_FILES ):
                 if d.keyname() != 'solvable:filelist':
                     continue
                 path = d.value()
