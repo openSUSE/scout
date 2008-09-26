@@ -36,9 +36,7 @@ class SolvParser(object):
     def search(self, term):
         pkgmatch = []
         for repo in self.pool.repos():
-            for d in repo.search( self.pathre % term, satsolver.SEARCH_REGEX | satsolver.SEARCH_FILES ):
-                if d.keyname() != 'solvable:filelist':
-                    continue
+            for d in repo.search( self.pathre % term, satsolver.SEARCH_REGEX | satsolver.SEARCH_FILES, None, 'solvable:filelist' ):
                 path = d.value()
                 row = ( 'zypp (%s)' % repo.name(), term, path[:-len(term)-1] , d.solvable().name() )
                 if not row in pkgmatch:
