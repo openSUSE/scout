@@ -12,7 +12,7 @@ def process(s):
 
     g.write('''
     BEGIN;
-    CREATE TABLE libraries (id_libraries INT PRIMARY KEY NOT NULL, library VARCHAR(64) NOT NULL, id_pkg INT NOT NULL);
+    CREATE TABLE libraries (id_lib INT PRIMARY KEY NOT NULL, library VARCHAR(64) NOT NULL, id_pkg INT NOT NULL);
     CREATE TABLE packages(id_pkg INT PRIMARY KEY NOT NULL, package VARCHAR(64) NOT NULL);
     ''')
 
@@ -23,8 +23,8 @@ def process(s):
             g.write("INSERT INTO packages(id_pkg, package) VALUES(%s, '%s');\n" % (pkgs[ line[0] ], line[0]))
         if not libs.has_key( line[0]+line[1] ):
             libs[ line[0]+line[1] ] = len(libs)
-            g.write("INSERT INTO libraries(id_lib, header, id_pkg) VALUES(%s, '%s', %s);\n" % ( libs[line[0]+line[1]], line[1], pkgs[ line[0] ]))
-    g.write('CREATE INDEX libraries_library_idx ON headers(library);\n')
+            g.write("INSERT INTO libraries(id_lib, library, id_pkg) VALUES(%s, '%s', %s);\n" % ( libs[line[0]+line[1]], line[1], pkgs[ line[0] ]))
+    g.write('CREATE INDEX libraries_library_idx ON libraries(library);\n')
 
     g.write('COMMIT;\n')
     f.close()

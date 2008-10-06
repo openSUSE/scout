@@ -51,11 +51,11 @@ Source52:       header-suse102.txt.lzma
 Source53:       header-suse103.txt.lzma
 Source54:       header-suse110.txt.lzma
 
-Source60:       header-sle10.txt.lzma
-Source61:       header-suse101.txt.lzma
-Source62:       header-suse102.txt.lzma
-Source63:       header-suse103.txt.lzma
-Source64:       header-suse110.txt.lzma
+Source60:       library-sle10.txt.lzma
+Source61:       library-suse101.txt.lzma
+Source62:       library-suse102.txt.lzma
+Source63:       library-suse103.txt.lzma
+Source64:       library-suse110.txt.lzma
 
 %description
 Index Data for Package Scout

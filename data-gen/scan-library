@@ -17,10 +17,7 @@ function write_row() {
     index_file=${3}
     standard_dirs_pattern=${4}
 
-    # extract the name of the module
-    library_name=$(echo ${header_file} | sed "s#\.\?${standard_dirs_pattern}##")
-
-    echo "${rpm_file} ${library_name}" >> ${index_file}
+    echo "${rpm_file} ${library_file}" >> ${index_file}
 }
 
 source scan_lib
@@ -34,12 +31,12 @@ function scan_library () {
    rpms_root=${1}
    index_file=${2}
 
-   scan ${rpms_root} ${index_file} "\(/usr\)/lib/" '*.so*' '*.a'
+   scan ${rpms_root} ${index_file} "\(/usr\)\?/lib/" '*\.so\.*' '*\.so' '*\.a'
 
 }
 
 scan_library /work/CDs/all/full-11.0-i386/suse $(pwd)/library-suse110.txt
-scan_library /work/CDs/all/full-10.3-i586/suse $(pwd)/library-suse103.txt
-scan_library /work/CDs/all/full-10.2-i586/suse $(pwd)/library-suse102.txt
-scan_library /work/CDs/all/full-10.1-i586/suse $(pwd)/library-suse101.txt
-scan_library /work/CDs/all/full-sles10-i586/suse $(pwd)/library-sle10.txt
+scan_library /work/CDs/all/full-10.3-i386/suse $(pwd)/library-suse103.txt
+scan_library /work/CDs/all/full-10.2-i386/suse $(pwd)/library-suse102.txt
+scan_library /work/CDs/all/full-10.1-i386/suse $(pwd)/library-suse101.txt
+scan_library /work/CDs/all/full-sles10-i386/suse $(pwd)/library-sle10.txt
