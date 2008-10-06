@@ -315,7 +315,7 @@ Package Scout Index Data - Headers from openSUSE 11.0
 %package -n scout-library-sle10
 Group:          System/Packages
 Summary:        Index Data for Package Scout
-Version:        2008.07.08
+Version:        2008.10.06
 Requires:       scout
 
 %description -n scout-library-sle10
@@ -324,7 +324,7 @@ Package Scout Index Data - Libraries from SUSE Linux Enterprise 10
 %package -n scout-library-suse101
 Group:          System/Packages
 Summary:        Index Data for Package Scout
-Version:        2008.07.08
+Version:        2008.10.06
 Requires:       scout
 
 %description -n scout-library-suse101
@@ -333,7 +333,7 @@ Package Scout Index Data - Libraries from SUSE Linux 10.1
 %package -n scout-library-suse102
 Group:          System/Packages
 Summary:        Index Data for Package Scout
-Version:        2008.07.08
+Version:        2008.10.06
 Requires:       scout
 
 %description -n scout-library-suse102
@@ -342,7 +342,7 @@ Package Scout Index Data - Libraries from openSUSE 10.2
 %package -n scout-library-suse103
 Group:          System/Packages
 Summary:        Index Data for Package Scout
-Version:        2008.07.08
+Version:        2008.10.06
 Requires:       scout
 
 %description -n scout-library-suse103
@@ -351,7 +351,7 @@ Package Scout Index Data - Libraries from openSUSE 10.3
 %package -n scout-library-suse110
 Group:          System/Packages
 Summary:        Index Data for Package Scout
-Version:        2008.07.08
+Version:        2008.10.06
 Requires:       scout
 
 %description -n scout-library-suse110
