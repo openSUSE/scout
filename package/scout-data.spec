@@ -31,6 +31,7 @@ Source23:       bin-suse101.txt.lzma
 Source24:       bin-suse102.txt.lzma
 Source25:       bin-suse103.txt.lzma
 Source26:       bin-suse110.txt.lzma
+Source27:       bin-suse111.txt.lzma
 
 Source30:       java-jpackage17.txt.lzma
 Source31:       java-sle10.txt.lzma
@@ -162,11 +163,20 @@ Package Scout Index Data - Binaries from openSUSE 10.3
 %package -n scout-bin-suse110
 Group:          System/Packages
 Summary:        Index Data for Package Scout
-Version:        2008.06.14
+Version:        2008.10.07
 Requires:       scout
 
 %description -n scout-bin-suse110
 Package Scout Index Data - Binaries from openSUSE 11.0
+
+%package -n scout-bin-suse111
+Group:          System/Packages
+Summary:        Index Data for Package Scout
+Version:        2008.10.07
+Requires:       scout
+
+%description -n scout-bin-suse111
+Package Scout Index Data - Binaries from openSUSE 11.1
 
 %package -n scout-java-jpackage17
 Group:          System/Packages
@@ -360,7 +370,7 @@ Package Scout Index Data - Libraries from openSUSE 11.0
 %prep
 %setup -q -c -n data-gen
 cp -a %{SOURCE10} %{SOURCE11} %{SOURCE12} %{SOURCE13} %{SOURCE14} .
-cp -a %{SOURCE20} %{SOURCE21} %{SOURCE22} %{SOURCE23} %{SOURCE24} %{SOURCE25} %{SOURCE26} .
+cp -a %{SOURCE20} %{SOURCE21} %{SOURCE22} %{SOURCE23} %{SOURCE24} %{SOURCE25} %{SOURCE26} %{SOURCE27} .
 cp -a %{SOURCE30} %{SOURCE31} %{SOURCE32} %{SOURCE33} %{SOURCE34} %{SOURCE35} .
 cp -a %{SOURCE40} %{SOURCE41} %{SOURCE42} %{SOURCE43} %{SOURCE44} .
 cp -a %{SOURCE50} %{SOURCE51} %{SOURCE52} %{SOURCE53} %{SOURCE54} .
@@ -429,6 +439,10 @@ rm -rf $RPM_BUILD_ROOT
 %files -n scout-bin-suse110
 %defattr(-,root,root)
 %{_datadir}/scout/bin-suse110*
+
+%files -n scout-bin-suse111
+%defattr(-,root,root)
+%{_datadir}/scout/bin-suse111*
 
 %files -n scout-java-jpackage17
 %defattr(-,root,root)
