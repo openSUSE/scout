@@ -683,21 +683,17 @@ class RepoConfigReader(object):
 
 class RepoList(object):
 
-    def __init__(self, modulename, repo_list = ()):
+    def __init__(self, modulename, repo_list = []):
         self._modulename = modulename
-        if len(repo_list) == 0:
-            self._repos = self._load_available_repos()
-        else:
-            self._repos = repo_list
+        self._repos = list(repo_list)
+        self._load_available_repos()
         self._repos_conf = RepoConfigReader().read()
 
     # set repositories according to data files /usr/share/scout/<modulename>-*.db
     def _load_available_repos(self):
-        ret = list()
         for filedb in os.listdir(Config.data_path):
             if fnmatch.fnmatch(filedb, self._modulename + '-*' + Config.data_suffix):
-                ret.append(filedb[len(self._modulename)+1:-len(Config.data_suffix)])
-        return ret
+                self._repos.append(filedb[len(self._modulename)+1:-len(Config.data_suffix)])
 
     def format_available_repos(self):
         ret = _("Available repositories:\n")
