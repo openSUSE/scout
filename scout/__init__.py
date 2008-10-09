@@ -870,7 +870,7 @@ class SimpleScoutModule(BaseScoutModule):
         if args.repo:
             repos = args.repo
 
-        return self.do_query(args.query, self._repo_list.repos)
+        return self.do_query(args.query, repos)
 
     # ---------- commands ----------
 

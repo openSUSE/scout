@@ -97,6 +97,8 @@ class ScoutModule(scout.BaseScoutModule):
         repos = self._repo_list.repos
         if repos == None:
             return None
+        if args.repo:
+            repos = (args.repo, )
         for repo in repos:
             if repo == 'zypp':
                 result.add_rows( self.query_zypp(term) )

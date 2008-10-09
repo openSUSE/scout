@@ -90,6 +90,8 @@ class ScoutModule(scout.BaseScoutModule):
         repos = self._repo_list.repos
         if repos == None:
             return None
+        if args.repo:
+            repos = (args.repo, )
         for repo in repos:
             dom = self.query(term, repo)
             root = dom.getElementsByTagNameNS('http://datastructures.pkgsearch.benjiweber.co.uk', 'packages').item(0)
