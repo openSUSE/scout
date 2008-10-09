@@ -68,6 +68,6 @@ try:
 
     print_found(rows)
 except:
-    print >> sys.stderr
+    pass
 
 sys.exit(EX_NOTFOUND)
