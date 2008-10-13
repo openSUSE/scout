@@ -20,7 +20,7 @@
 
 Name:           scout
 Version:        0.1.0
-Release:        21
+Release:        32
 Url:            http://en.opensuse.org/Scout
 License:        X11/MIT
 Group:          System/Packages
@@ -89,13 +89,15 @@ Package Scout for indexing various properties of packages.
 
 %package -n command-not-found
 Version:        0.1.0
-Release:        28
+Release:        32
 License:        X11/MIT
 Group:          System/Packages
 Summary:        Command Not Found extension for shell
 Requires:       python rpm-python
 Requires:       scout = %{version}
+%if 0%{?suse_version} && 0%{?suse_version} <= 1100
 Requires:       bash(CommandNotFound)
+%endif
 %if %{cnfrepo} != zypp
 Requires:       scout-bin-%{cnfrepo}
 %endif
