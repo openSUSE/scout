@@ -66,7 +66,7 @@ Package Scout for indexing various properties of packages.
 %endif
 %if 0%{?suse_version} <= 1100 && 0%{?suse_version} > 1030
 %define scoutrepo suse110
-%define cnfrepo zypp
+%define cnfrepo suse110
 %endif
 %if 0%{?suse_version} <= 1030 && 0%{?suse_version} > 1020
 %define scoutrepo suse103

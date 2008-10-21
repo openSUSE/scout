@@ -4,6 +4,7 @@
 import scout
 import sys
 import os
+import re
 from fnmatch import fnmatch
 from ConfigParser import SafeConfigParser
 
@@ -16,8 +17,8 @@ class SolvParser(object):
 
     etcpath  = '/etc/zypp/repos.d'
     solvfile = '/var/cache/zypp/solv/%s/solv'
-    # path regular expression for { /bin, /sbin, /usr/bin, /usr/sbin, /usr/games, /opt/kde3/bin, /opt/kde3/sbin, /opt/gnome/bin, /opt/gnome/sbin }
-    pathre   = '^/(s?bin|usr/(s?bin|games)|opt/(kde3|gnome)/s?bin)/%s$'
+    # path regular expression for binary paths
+    pathre   = '^/(bin|sbin|usr/bin|usr/sbin|usr/games|opt/kde3/bin|opt/kde3/sbin|opt/gnome/bin|opt/gnome/sbin)/%s$'
 
     def __init__(self):
         self.pool = satsolver.Pool()
@@ -35,12 +36,15 @@ class SolvParser(object):
 
     def search(self, term):
         pkgmatch = []
-        for repo in self.pool.repos():
-            for d in repo.search( self.pathre % term, satsolver.SEARCH_REGEX | satsolver.SEARCH_FILES, None, 'solvable:filelist' ):
-                path = d.value()
-                row = ( 'zypp (%s)' % repo.name(), term, path[:-len(term)-1] , d.solvable().name() )
-                if not row in pkgmatch:
-                    pkgmatch.append( row )
+        pathreprg = re.compile(self.pathre % term)
+        term = term
+        for d in self.pool.search( term, satsolver.SEARCH_STRING, None, 'solvable:filelist' ):
+            path = d.value()
+            # do matching for path
+            if not pathreprg.match(path): continue
+            row = ( 'zypp (%s)' % d.solvable().repo().name(), term, path[:-len(term)-1] , d.solvable().name() )
+            if not row in pkgmatch:
+                pkgmatch.append( row )
         return pkgmatch
 
 class ScoutModule(scout.BaseScoutModule):
