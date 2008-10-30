@@ -30,8 +30,8 @@ msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
 msgstr "  * %(prog)s [ cesta: %(path)s/%(binary)s, repozitár: %(repo)s ]"
 
 #: handlers/bin/command-not-found:21
-msgid "Try:"
-msgstr "Skúste:"
+msgid "Try installing with:"
+msgstr "Pre nainštalovanie skúste:"
 
 #: handlers/bin/command-not-found:23
 msgid "<selected_package>"
