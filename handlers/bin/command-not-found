@@ -3,13 +3,6 @@
 EX_NOTFOUND = 127
 INSTALL_CMD = "sudo zypper install"
 
-import sys
-import rpm
-import scout
-
-default_lang = scout.DefaultLang(textdomain="command-not-found")
-default_lang.install()
-
 def print_found(rows):
     print >> sys.stderr
     print >> sys.stderr, ngettext("The program '%(prog)s' can be found in the following package:", "The program '%(prog)s' can be found in following packages:", len(rows)) % \
@@ -18,7 +11,7 @@ def print_found(rows):
         print >> sys.stderr, _("  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]") % \
                 ({'prog' : row[3], 'path' : row[2], 'binary' : row[1], 'repo' : row[0]})
     print >> sys.stderr
-    print >> sys.stderr, _('Try:'), INSTALL_CMD,
+    print >> sys.stderr, _('Try installing with:'), INSTALL_CMD,
     if len(rows) > 1:
         print >> sys.stderr, _('<selected_package>')
     else:
@@ -44,13 +37,21 @@ def check_installed(term):
     mi = ts.dbMatch('name', term)
     return mi.count() > 0
 
-if len(sys.argv) < 3:
-    sys.exit(EX_NOTFOUND)
-
-sys.path.append(scout.Config.module_path)
-import bin
-
 try:
+    import sys
+
+    if len(sys.argv) < 3:
+        sys.exit(EX_NOTFOUND)
+
+    import rpm
+    import scout
+
+    default_lang = scout.DefaultLang(textdomain="command-not-found")
+    default_lang.install()
+
+    sys.path.append(scout.Config.module_path)
+    import bin
+
     term = sys.argv[1]
     repo = sys.argv[2]
     module = bin.ScoutModule()
@@ -67,6 +68,7 @@ try:
             print_installed(term, row[3], row[2])
 
     print_found(rows)
+
 except:
     pass
 
