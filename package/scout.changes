@@ -1,4 +1,9 @@
 -------------------------------------------------------------------
+Mon Nov  3 11:19:27 CET 2008 - prusnak@suse.cz
+
+- modify zypp search to work with new python-satsolver
+
+-------------------------------------------------------------------
 Fri Oct 10 16:21:25 CEST 2008 - prusnak@suse.cz
 
 - print output of c-n-f to stderr

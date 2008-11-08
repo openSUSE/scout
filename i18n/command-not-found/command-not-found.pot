@@ -30,7 +30,7 @@ msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
 msgstr ""
 
 #: handlers/bin/command-not-found:21
-msgid "Try:"
+msgid "Try installing with:"
 msgstr ""
 
 #: handlers/bin/command-not-found:23

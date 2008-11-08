@@ -1,22 +1,40 @@
-Installation:
+ABOUT
 
-== BASH ==
+The "command not found" message is not very helpful. If e.g. the unzip command
+is not found but it's available in a package, it would be very interesting
+if the system could tell that the command is currently not available,
+but installing a package would provide it.
 
-To use this feature you must have bash compiled with command-not-found patch
-and add the following 3 lines into your .bashrc file:
 
-if [ -f /etc/bash_command_not_found ]; then
-    . /etc/bash_command_not_found
-fi
 
-You can add these 3 lines to /etc/bash.bashrc to install for all users.
+USAGE
 
-== ZSH ==
+Just type command that is not installed on your system and handler should respond
+with output similar to this:
 
-To use this feature you, please add the following lines to your .zshrc file:
+The program 'blender' can be found in the following package:
+  * blender [ path: /usr/bin/blender, repository: zypp (factory) ]
 
-if [ -f /etc/zsh_command_not_found ]; then
-    . /etc/zsh_command_not_found
-fi
+Try: sudo zypper install blender
 
-You can add these 3 lines to /etc/zshrc to install for all users.
+bash: blender: command not found
+
+
+
+INSTALLATON
+
+This feature should be automatically enabled when using openSUSE 11.1 or newer.
+If it is not working you can follow these instructions to install it manually:
+
+bash - add the following 3 lines to your ~/.bashrc file (current user only)
+       or /etc/bash.bashrc.local (system-wide setting):
+
+  if test -f /etc/bash_command_not_found; then
+      . /etc/bash_command_not_found
+  fi
+
+zsh - add the following 3 lines to your ~/.zshrc file (current user only)
+
+  if [ -f /etc/zsh_command_not_found ]; then
+      . /etc/zsh_command_not_found
+  fi

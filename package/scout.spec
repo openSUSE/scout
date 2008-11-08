@@ -34,9 +34,9 @@ Requires:       python
 BuildRequires:  python-xml
 Requires:       python-xml
 %endif
-%if 0%{?suse_version} > 1030
-BuildRequires:  python-satsolver >= 0.11.0
-Requires:       python-satsolver >= 0.11.0
+%if 0%{?suse_version} > 1100
+BuildRequires:  python-satsolver >= 0.12.0
+Requires:       python-satsolver >= 0.12.0
 %endif
 
 %if 0%{?fedora_version} || 0%{?rhel_version} || 0%{?centos_version}
@@ -193,7 +193,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/%{name}*
 %{py_sitedir}/%{name}
 %{_datadir}/%{name}
-%{_sysconfdir}/bash_completion.d/*
+%config %{_sysconfdir}/bash_completion.d/*
 %{_mandir}/man1/*
 
 %if %{cnfrepo} != none
@@ -202,7 +202,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %doc handlers/bin/README
 %{_bindir}/command-not-found
-%{_sysconfdir}/*_command_not_found
+%config %{_sysconfdir}/*_command_not_found
 
 %endif
 
