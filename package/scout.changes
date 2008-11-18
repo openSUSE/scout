@@ -1,4 +1,14 @@
 -------------------------------------------------------------------
+Tue Nov 18 13:35:27 CET 2008 - prusnak@suse.cz
+
+- check number of unique packages in command-not-found
+
+-------------------------------------------------------------------
+Sat Nov  8 20:33:06 CET 2008 - prusnak@suse.cz
+
+- don't write stacktraces when Ctrl+C is pressed
+
+-------------------------------------------------------------------
 Mon Nov  3 11:19:27 CET 2008 - prusnak@suse.cz
 
 - modify zypp search to work with new python-satsolver

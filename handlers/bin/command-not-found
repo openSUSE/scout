@@ -12,7 +12,7 @@ def print_found(rows):
                 ({'prog' : row[3], 'path' : row[2], 'binary' : row[1], 'repo' : row[0]})
     print >> sys.stderr
     print >> sys.stderr, _('Try installing with:'), INSTALL_CMD,
-    if len(rows) > 1:
+    if len( set( [ i[1] for i in rows] ) ) > 1:
         print >> sys.stderr, _('<selected_package>')
     else:
         print >> sys.stderr, rows[0][3]

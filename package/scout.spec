@@ -20,7 +20,7 @@
 
 Name:           scout
 Version:        0.1.0
-Release:        32
+Release:        34
 Url:            http://en.opensuse.org/Scout
 License:        X11/MIT
 Group:          System/Packages
@@ -89,7 +89,7 @@ Package Scout for indexing various properties of packages.
 
 %package -n command-not-found
 Version:        0.1.0
-Release:        32
+Release:        34
 License:        X11/MIT
 Group:          System/Packages
 Summary:        Command Not Found extension for shell
@@ -112,25 +112,25 @@ available, but installing a package would provide it.
 
 %endif
 
-%if %{scoutrepo} != none
-
-%package -n python-import-error
-Version:        0.1.0
-Release:        1
-License:        X11/MIT
-Group:          System/Packages
-Summary:        Import Error extension for python interpretter
-Requires:       scout = %{version}
-Requires:       python(ImportError)
-Requires:       scout-python-%{scoutrepo}
-
-%description -n python-import-error
-The "Import Error exception" is not really helpfull (as a "command not found"
-in shell). This package contains an ImportError exception handler called by
-(patched) Python interpreter, which could tell to the user, where the missing
-Python module is.
-
-%endif
+# %if %{scoutrepo} != none
+# 
+# %package -n python-import-error
+# Version:        0.1.0
+# Release:        1
+# License:        X11/MIT
+# Group:          System/Packages
+# Summary:        Import Error extension for python interpretter
+# Requires:       scout = %{version}
+# Requires:       python(ImportError)
+# Requires:       scout-python-%{scoutrepo}
+# 
+# %description -n python-import-error
+# The "Import Error exception" is not really helpfull (as a "command not found"
+# in shell). This package contains an ImportError exception handler called by
+# (patched) Python interpreter, which could tell to the user, where the missing
+# Python module is.
+# 
+# %endif
 
 %prep
 %setup -q -n %{name}
@@ -179,10 +179,10 @@ done
 %find_lang command-not-found
 %endif
 
-%if %{scoutrepo} != none
-# --- python-import-error ---
-install -D -m 0755 handlers/python/python_import_error_handler $RPM_BUILD_ROOT/%{py_sitedir}
-%endif
+# %if %{scoutrepo} != none
+# # --- python-import-error ---
+# install -D -m 0755 handlers/python/python_import_error_handler $RPM_BUILD_ROOT/%{py_sitedir}
+# %endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -206,12 +206,12 @@ rm -rf $RPM_BUILD_ROOT
 
 %endif
 
-%if %{scoutrepo} != none
-
-%files -n python-import-error
-%defattr(-,root,root)
-%{py_sitedir}/python_import_error_handler
-
-%endif
+# %if %{scoutrepo} != none
+# 
+# %files -n python-import-error
+# %defattr(-,root,root)
+# %{py_sitedir}/python_import_error_handler
+# 
+# %endif
 
 %changelog
