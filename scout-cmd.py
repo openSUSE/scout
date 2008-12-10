@@ -5,6 +5,8 @@
 
 import scout
 
+scout.ScoutCore.load_all_modules()
+
 ret = scout.ScoutCore.run()
 if ret != None:
     print ret

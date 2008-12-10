@@ -915,7 +915,7 @@ class ScoutCore(object):
             }
 
     @classmethod
-    def load_modules(cls):
+    def load_all_modules(cls):
         cls.ml = ModuleLoader(Config.module_path)
         cls.modules = ((m.ScoutModule.name, m.ScoutModule.desc) for m in cls.ml.modules)
 
@@ -946,8 +946,6 @@ class ScoutCore(object):
                 return result.format(formatter = cls.out_formatters[args.format])
             except KeyError, kerr:
                 raise SystemExit(_("Cannot find a formatter for a %s") % args.format)
-
-ScoutCore.load_modules()
 
 # Copyright (c) 2008 Pavol Rusnak, Michal Vyskocil
 #
