@@ -1,0 +1,13 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>command-not-found</title><meta name="generator" content="DocBook XSL Stylesheets V1.74.0"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="refentry" lang="en"><a name="command-not-found"></a><div class="titlepage"></div><div class="refnamediv"><h2>Name</h2><p>command-not-found &#8212; A command-not-found handler</p></div><div class="refsynopsisdiv"><a name="cnf.synopsis"></a><h2>Synopsis</h2><div class="cmdsynopsis"><p><code class="command">command-not-found</code>  {binary_name} {repository}</p></div></div><div class="refsect1" lang="en"><a name="cnf.options"></a><h2>Arguments</h2><p>The following arguments are required:</p><div class="variablelist"><dl><dt><span class="term"><code class="option">binary_name</code></span></dt><dd><p>The name of binary you are looking for.</p></dd><dt><span class="term"><code class="option">repository</code></span></dt><dd><p>The name of repository for search. For most cases, type zypp</p></dd></dl></div></div><div class="refsect1" lang="en"><a name="cnf.description"></a><h2>Description</h2><p>command-not-found handler is designed to tell users which package
+          contains a missing command.</p><p>The handler is integrated to bash(1) and zsh(1) shells and is not
+          necessary call them directly. Just type a name of command in your
+          favourite shell and you'll get a result.</p><p>If you considered c-n-f handler useless, just add <code class="code">unset
+              command_not_found_handle</code> to your profile.</p></div><div class="refsect1" lang="en"><a name="cnf.example"></a><h2>Example: Normal usage</h2><p>For example you want to try <code class="filename">blender</code>, because
+          you have heard that is an amazing program. So just type blender in
+          shell:</p><pre class="screen"><code class="prompt">$ </code><span class="command"><strong>blender</strong></span></pre><p>You get the following output:</p><pre class="screen">
+The program 'blender' can be found in the following package:
+  * blender [ path: /usr/bin/blender, repository: zypp (openSUSE 11.1-0) ]
+
+Try installing with: sudo zypper install blender
+
+bash: blender: command not found</pre></div><div class="refsect1" lang="en"><a name="cnf.seealso"></a><h2>See also</h2><p>scout(1)</p></div></div></body></html>

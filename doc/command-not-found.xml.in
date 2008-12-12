@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refentry PUBLIC 
+   "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.docbook.org/xml/4.5/docbookx.dtd"
+[
+  <!ENTITY product "command-not-found">
+]>
+
+<refentry lang="en" id="command-not-found">
+   <refentryinfo>
+      <productname>&product;</productname>
+      <authorgroup>
+         <author>
+            <contrib>Developer</contrib>
+            <firstname>Pavol</firstname>
+            <surname>Rusnak</surname>
+            <email>stick@gk2.sk</email>
+         </author>
+      </authorgroup>
+   </refentryinfo>
+   <refmeta>
+      <refentrytitle>&product;</refentrytitle>
+      <manvolnum>1</manvolnum>
+      <refmiscinfo class="version">@VERSION@</refmiscinfo>
+      <refmiscinfo class="source">http://repo.or.cz/w/scout.git</refmiscinfo>
+      <refmiscinfo class="manual">http://en.opensuse.org/Scout</refmiscinfo>
+   </refmeta>
+
+   <refnamediv>
+      <refname>&product;</refname>
+      <refpurpose>A command-not-found handler</refpurpose>
+   </refnamediv>
+
+   <refsynopsisdiv id="cnf.synopsis">
+      <title>Synopsis</title>
+      <cmdsynopsis><command>command-not-found</command>
+         <arg choice="req">binary_name</arg>
+         <arg choice="req">repository</arg>
+      </cmdsynopsis>
+   </refsynopsisdiv>
+
+   <refsect1 id="cnf.options">
+      <title>Arguments</title>
+      <para>The following arguments are required:</para>
+      <variablelist>
+         <varlistentry>
+            <term><option>binary_name</option></term>
+            <listitem>
+               <para>The name of binary you are looking for.</para>
+            </listitem>
+         </varlistentry>
+         <varlistentry>
+            <term><option>repository</option></term>
+            <listitem>
+               <para>The name of repository for search. For most cases, type zypp</para>
+            </listitem>
+         </varlistentry>
+      </variablelist>
+   </refsect1>
+
+   <refsect1 id="cnf.description">
+      <title>Description</title>
+      <para>command-not-found handler is designed to tell users which package
+          contains a missing command.</para>
+      <para>The handler is integrated to bash(1) and zsh(1) shells and is not
+          necessary call them directly. Just type a name of command in your
+          favourite shell and you'll get a result.</para>
+      <para>If you considered c-n-f handler useless, just add <code>unset
+              command_not_found_handle</code> to your profile.</para>
+   </refsect1>
+
+   <refsect1 id="cnf.example">
+      <title>Example: Normal usage</title>
+      <para>For example you want to try <filename>blender</filename>, because
+          you have heard that is an amazing program. So just type blender in
+          shell:</para>
+      <screen><prompt>$ </prompt><command>blender</command></screen>
+      <para>You get the following output:</para>
+      <screen>
+The program 'blender' can be found in the following package:
+  * blender [ path: /usr/bin/blender, repository: zypp (openSUSE 11.1-0) ]
+
+Try installing with: sudo zypper install blender
+
+bash: blender: command not found</screen>
+   </refsect1>
+   
+   <refsect1 id="cnf.seealso">
+      <title>See also</title>
+      <para>scout(1)</para>
+   </refsect1>
+
+</refentry>
