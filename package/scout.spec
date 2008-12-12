@@ -1,5 +1,5 @@
 #
-# spec file for package scout (Version 0.1.0)
+# spec file for package scout
 #
 # Copyright (c) 2008 SUSE LINUX Products GmbH, Nuernberg, Germany.
 #
@@ -167,6 +167,7 @@ done
 install -D -m 0755 handlers/bin/command-not-found $RPM_BUILD_ROOT%{_bindir}/command-not-found
 # install manpage
 install -D -m 0644 doc/command-not-found.1 $RPM_BUILD_ROOT%{_mandir}/man1/command-not-found.1
+# install shell handlers
 for shell in bash zsh; do
     install -D -m 644 handlers/bin/command_not_found_${shell} $RPM_BUILD_ROOT%{_sysconfdir}/${shell}_command_not_found
     sed -i 's:__REPO__:%{cnfrepo}:' $RPM_BUILD_ROOT%{_sysconfdir}/${shell}_command_not_found

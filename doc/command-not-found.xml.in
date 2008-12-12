@@ -84,7 +84,7 @@ Try installing with: sudo zypper install blender
 
 bash: blender: command not found</screen>
    </refsect1>
-   
+
    <refsect1 id="cnf.seealso">
       <title>See also</title>
       <para>scout(1)</para>

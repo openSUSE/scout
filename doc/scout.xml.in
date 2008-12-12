@@ -256,4 +256,9 @@
 fi</screen>
    </refsect1>
 
+   <refsect1 id="scout.seealso">
+      <title>See also</title>
+      <para>command-not-found(1)</para>
+   </refsect1>
+
 </refentry>
