@@ -165,6 +165,8 @@ done
 %if %{cnfrepo} != none
 # --- command-not-found ---
 install -D -m 0755 handlers/bin/command-not-found $RPM_BUILD_ROOT%{_bindir}/command-not-found
+# install manpage
+install -D -m 0644 doc/command-not-found.1 $RPM_BUILD_ROOT%{_mandir}/man1/command-not-found.1
 for shell in bash zsh; do
     install -D -m 644 handlers/bin/command_not_found_${shell} $RPM_BUILD_ROOT%{_sysconfdir}/${shell}_command_not_found
     sed -i 's:__REPO__:%{cnfrepo}:' $RPM_BUILD_ROOT%{_sysconfdir}/${shell}_command_not_found
@@ -203,6 +205,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc handlers/bin/README
 %{_bindir}/command-not-found
 %config %{_sysconfdir}/*_command_not_found
+%{_mandir}/man1/*
 
 %endif
 
