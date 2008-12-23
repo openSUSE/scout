@@ -12,6 +12,7 @@ class ScoutModule(scout.BaseScoutModule):
     name = "webpin"
     desc = _("Search in packages using the webpin webservice.")
     distros = {
+        'suse111' : 'openSUSE_111',
         'suse110' : 'openSUSE_110',
         'suse103' : 'openSUSE_103',
         'suse102' : 'openSUSE_102',
@@ -73,8 +74,6 @@ class ScoutModule(scout.BaseScoutModule):
 
     def main(self, module_args=None):
 
-        #p = scout.Parser(self._name)
-        #p.add_repos(['factory', 'suse110', 'suse103', 'suse102'])
         args = None
         try:
             args = self._parser.parse_args(module_args)
