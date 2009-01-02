@@ -286,7 +286,7 @@ class CoreOptionParser(object):
         return self
 
     def error(self, msg):
-        self._parser.error(msg)
+        self._parser.error(msg.encode(sys.stderr.encoding, "replace"))
         return self
 
     def __opts2dict(self, opts):
