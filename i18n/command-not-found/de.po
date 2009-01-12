@@ -1,5 +1,5 @@
 # translation of command-not-found.pot to Deutsch
-# Copyright (C) 2008
+# Copyright (C) 2009
 # This file is distributed under the same license as the "command-not-found" package.
 # Thomas Schraitle <toms@suse.de>, 2008.
 #
@@ -16,41 +16,41 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: handlers/bin/command-not-found:15
+#: handlers/bin/command-not-found:8
 #, python-format
 msgid "The program '%(prog)s' can be found in the following package:"
 msgid_plural "The program '%(prog)s' can be found in following packages:"
 msgstr[0] "Das Programm '%(prog)s' kann im folgenden Paket gefunden werden:"
 msgstr[1] "Das Programm '%(prog)s' kann in den folgenden Paketen gefunden werden:"
 
-#: handlers/bin/command-not-found:18
+#: handlers/bin/command-not-found:11
 #, python-format
 msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
 msgstr "  * %(prog)s [ Pfad: %(path)s/%(binary)s, Repository: %(repo)s ]"
 
-#: handlers/bin/command-not-found:21
+#: handlers/bin/command-not-found:14
 msgid "Try installing with:"
 msgstr "Zum Installieren versuchen Sie:"
 
-#: handlers/bin/command-not-found:23
+#: handlers/bin/command-not-found:16
 msgid "<selected_package>"
 msgstr "<ausgewähltes_Paket>"
 
-#: handlers/bin/command-not-found:31
+#: handlers/bin/command-not-found:24
 #, python-format
 msgid ""
 "Program '%(prog)s' is present in package '%(pkg)s', which is installed on "
 "your system."
 msgstr "Das Programm '%(prog)s' ist verfügbar im Paket '%(pkg)s', das auf ihrem System installiert ist."
 
-#: handlers/bin/command-not-found:34
+#: handlers/bin/command-not-found:27
 #, python-format
 msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so it might be intended "
 "to be run only by user with superuser privileges (eg. root)."
 msgstr "Der absoluter Pfad für '%(prog)s' ist '%(path)s/%(prog)s', daher ist es wohl beabsichtigt, dass dieses nur von einem Benutzer mit Superuser Rechten gestartet werden kann (z.B. root)."
 
-#: handlers/bin/command-not-found:37
+#: handlers/bin/command-not-found:30
 #, python-format
 msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH "

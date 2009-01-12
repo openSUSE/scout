@@ -94,7 +94,7 @@ License:        X11/MIT
 Group:          System/Packages
 Summary:        Command Not Found extension for shell
 Requires:       python rpm-python
-Requires:       scout = %{version}
+Requires:       scout = %{version}-%{release}
 %if 0%{?suse_version} && 0%{?suse_version} <= 1100
 Requires:       bash(CommandNotFound)
 %endif
@@ -120,7 +120,7 @@ available, but installing a package would provide it.
 # License:        X11/MIT
 # Group:          System/Packages
 # Summary:        Import Error extension for python interpretter
-# Requires:       scout = %{version}
+# Requires:       scout = %{version}-%{release}
 # Requires:       python(ImportError)
 # Requires:       scout-python-%{scoutrepo}
 # 

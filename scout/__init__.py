@@ -731,6 +731,7 @@ class Parser(object):
         usage = _("Usage: %%prog %s [options] search_term") % modulename
         self.parser = ScoutOptionParser(usage = usage.replace("%%", "%"))
         self.parser.add_option('-l', '--listrepos', action = "store_true", help = _("list available repositories"), dest = "listrepo")
+        self.parser.add_option('-p', '--package', action = "store_true", help = _("inverse search by package name"), dest = "inversesearch")
         self.parser.add_option('-r', '--repo', type = 'choice', help = _("select repository to search"), default = None, choices = repos)
         self._repos = repos
 
@@ -818,7 +819,8 @@ class BaseScoutModule(object):
 
     name = "name"
     desc = "desc"
-    sql = "SQL"
+    sql  = "SQL"
+    sqli = "SQLi"
     null_lang.install()
     result_list  = [_("repo"), _("pkg"), _("module")]
     result_list2 = [_("repository"), _("package"), _("module")]
@@ -827,7 +829,7 @@ class BaseScoutModule(object):
     def __init__(self):
         cls = self.__class__
         self._cls = cls
-        for attr in ("name", "desc", "sql", "result_list", "result_list2"):
+        for attr in ("name", "desc", "sql", "sqli", "result_list", "result_list2"):
             setattr(self, "_%s" % (attr), getattr(cls, attr))
 
         self._repo_list = None
@@ -870,11 +872,11 @@ class SimpleScoutModule(BaseScoutModule):
         if args.repo:
             repos = args.repo
 
-        return self.do_query(args.query, repos)
+        return self.do_query(args.query, repos, args.inversesearch)
 
     # ---------- commands ----------
 
-    def do_query(self, query, repos):
+    def do_query(self, query, repos, inversesearch = False):
         """
         Do a query. Arguments:
         query - the searched term
@@ -887,12 +889,15 @@ class SimpleScoutModule(BaseScoutModule):
         if not hasattr(repos, '__iter__'):
             repos = (repos, )
         for repo in repos:
-            result.add_rows(self._query(repo, query))
+            result.add_rows(self._query(repo, query, inversesearch))
         return result
 
-    def _query(self, repo, term):
+    def _query(self, repo, term, inversesearch = False):
         db = self.getDatabase(repo)
-        r = db.query(self._sql, '%%%s%%' % term)
+        if not inversesearch:
+            r = db.query(self._sql, '%%%s%%' % term)
+        else:
+            r = db.query(self._sqli, '%%%s%%' % term)
         if isinstance(r, list):
             return [ [repo] + list(x) for x in r ]
         else:

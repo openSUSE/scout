@@ -7,4 +7,5 @@ class ScoutModule(scout.SimpleScoutModule):
 
     name = "python"
     desc = _("Search for python modules.")
-    sql = 'SELECT package, module FROM modules LEFT JOIN packages ON modules.id_pkg=packages.id_pkg WHERE module LIKE ?'
+    sql  = 'SELECT package, module FROM modules LEFT JOIN packages ON modules.id_pkg=packages.id_pkg WHERE module LIKE ?'
+    sqli = 'SELECT package, module FROM modules LEFT JOIN packages ON modules.id_pkg=packages.id_pkg WHERE package LIKE ?'

@@ -7,7 +7,8 @@ class ScoutModule(scout.SimpleScoutModule):
 
     name = "library"
     desc = _("Search for shared libraries.")
-    sql = 'SELECT package, library FROM libraries LEFT JOIN packages ON libraries.id_pkg=packages.id_pkg WHERE library LIKE ?'
+    sql  = 'SELECT package, library FROM libraries LEFT JOIN packages ON libraries.id_pkg=packages.id_pkg WHERE library LIKE ?'
+    sqli = 'SELECT package, library FROM libraries LEFT JOIN packages ON libraries.id_pkg=packages.id_pkg WHERE package LIKE ?'
     scout.null_lang.install()
     result_list  = [_("repo"), _("pkg"), _("library")]
     result_list2 = [_("repository"), _("package"), _("library")]

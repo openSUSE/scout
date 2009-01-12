@@ -1,5 +1,5 @@
 # translation of command-not-found.pot to Čeština
-# Copyright (C) 2008
+# Copyright (C) 2009
 # This file is distributed under the same license as the "command-not-found" package.
 # Michal Vyskocil <mvyskocil@suse.cz>, 2008.
 #
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: handlers/bin/command-not-found:15
+#: handlers/bin/command-not-found:8
 #, python-format
 msgid "The program '%(prog)s' can be found in the following package:"
 msgid_plural "The program '%(prog)s' can be found in following packages:"
@@ -24,20 +24,20 @@ msgstr[0] "Program '%(prog)s' je možné najít v tomto balíčku:"
 msgstr[1] "Program '%(prog)s' je možné najít v těchto balíčcích:"
 msgstr[2] "Program '%(prog)s' je možné najít v těchto balíčcích:"
 
-#: handlers/bin/command-not-found:18
+#: handlers/bin/command-not-found:11
 #, python-format
 msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
 msgstr "  * %(prog)s [ cesta: %(path)s/%(binary)s, repozitář: %(repo)s ]"
 
-#: handlers/bin/command-not-found:21
+#: handlers/bin/command-not-found:14
 msgid "Try installing with:"
 msgstr "K instalaci použijte:"
 
-#: handlers/bin/command-not-found:23
+#: handlers/bin/command-not-found:16
 msgid "<selected_package>"
 msgstr "<vybraný_balíček>"
 
-#: handlers/bin/command-not-found:31
+#: handlers/bin/command-not-found:24
 #, python-format
 msgid ""
 "Program '%(prog)s' is present in package '%(pkg)s', which is installed on "
@@ -46,7 +46,7 @@ msgstr ""
 "Program '%(prog)s' je přítomen v balíčku '%(pkg)s', který je na vašem systému již "
 "nainstalován."
 
-#: handlers/bin/command-not-found:34
+#: handlers/bin/command-not-found:27
 #, python-format
 msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so it might be intended "
@@ -55,7 +55,7 @@ msgstr ""
 "Absolutní cesta k programu '%(prog)s' je '%(path)s/%(prog)s', takže program je pravdepodobně určen pouze pro "
 "uživatele s administrátorskými právy (například root)."
 
-#: handlers/bin/command-not-found:37
+#: handlers/bin/command-not-found:30
 #, python-format
 msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH "

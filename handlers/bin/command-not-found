@@ -9,13 +9,13 @@ def print_found(rows):
             ({'prog' : term})
     for row in rows:
         print >> sys.stderr, _("  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]") % \
-                ({'prog' : row[3], 'path' : row[2], 'binary' : row[1], 'repo' : row[0]})
+                ({'prog' : row[1], 'path' : row[2], 'binary' : row[3], 'repo' : row[0]})
     print >> sys.stderr
     print >> sys.stderr, _('Try installing with:'), INSTALL_CMD,
     if len( set( [ i[1] for i in rows] ) ) > 1:
         print >> sys.stderr, _('<selected_package>')
     else:
-        print >> sys.stderr, rows[0][3]
+        print >> sys.stderr, rows[0][1]
     print >> sys.stderr
     sys.exit(EX_NOTFOUND)
 
@@ -64,8 +64,8 @@ try:
         sys.exit(EX_NOTFOUND)
 
     for row in rows:
-        if check_installed(row[3]):
-            print_installed(term, row[3], row[2])
+        if check_installed(row[1]):
+            print_installed(term, row[1], row[2])
 
     print_found(rows)
 
