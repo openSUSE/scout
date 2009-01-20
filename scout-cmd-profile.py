@@ -12,7 +12,7 @@ def runscout():
 
     ret = scout.ScoutCore.run()
     if ret != None:
-        print ret
+        print ret,
 
 prof = hotshot.Profile("scout.prof")
 prof.runcall(runscout)

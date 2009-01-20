@@ -645,6 +645,9 @@ class StringResult(Result):
         assert(isinstance(string, (str, unicode)))
         self._string = string
 
+    def is_empty(self):
+        return self._string == None or len(self._string) == 0
+
     def format(self, *args, **kwargs):
         return self._string
 
@@ -948,9 +951,11 @@ class ScoutCore(object):
 
         if result != None:
             try:
-                return result.format(formatter = cls.out_formatters[args.format])
+                return (result.is_empty(), result.format(formatter = cls.out_formatters[args.format]))
             except KeyError, kerr:
                 raise SystemExit(_("Cannot find a formatter for a %s") % args.format)
+        else:
+            return (True, None)
 
 # Copyright (c) 2008 Pavol Rusnak, Michal Vyskocil
 #
