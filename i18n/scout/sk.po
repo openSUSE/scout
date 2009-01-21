@@ -97,8 +97,8 @@ msgstr "Použitie: %prog [globálne_možnosti] modul [možnosti_modulu] výraz"
 
 #: scout/__init__.py:205
 #, python-format
-msgid "select the output format (default %s)"
-msgstr "zvolí formát výstupu (štandard je %s)"
+msgid "select the output format (%s, default is %s)"
+msgstr "zvolí formát výstupu (%s, štandard je %s)"
 
 #: scout/__init__.py:212
 msgid "list of available modules"

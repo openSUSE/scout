@@ -202,7 +202,7 @@ class CoreOptionParser(object):
 
         self._parser.add_option(
                 "-f", "--format",
-                help = _("select the output format (default %s)") % (self._format),
+                help = _("select the output format (%s, default is %s)") % (', '.join(formats), self._format),
                 default = self._format,
                 type = "choice",
                 choices = formats
@@ -545,7 +545,6 @@ class CSVFormatter(object):
         ret = ""
         if result.is_empty():
             return ret
-        ret += quote_mark + record_delimiter.join( [ s.replace(quote_mark, 2*quote_mark) for s in result.get_short_names() ] ) + quote_mark + '\n'
         ret += quote_mark + record_delimiter.join( [ s.replace(quote_mark, 2*quote_mark) for s in result.get_long_names() ] ) + quote_mark + '\n'
         for row in result.rows:
             ret += quote_mark + record_delimiter.join([ s.replace(quote_mark, 2*quote_mark) for s in row ] ) + quote_mark + '\n'
@@ -583,7 +582,7 @@ class XMLFormatter(object):
         ret = '<?xml version="1.0" encoding="UTF-8"?>\n'
         ret += '<%s>' % result_tag + '\n'
         ret += '  <%s>' % head_tag + '\n'
-        short_names = result.get_short_names(localised = False)
+        short_names = result.get_short_names()
         for i in range(0, len(short_names)):
             ret += '    <%s>%s</%s>' % (short_names[i], result.get_long_names()[i], short_names[i]) + '\n'
         ret += '  </%s>' % head_tag + '\n'
@@ -615,15 +614,11 @@ class Result(object):
             for row in rows:
                 self.rows.append(list(row))
 
-    def get_short_names(self, localised = True):
-        if localised:
-            return [ default_lang.gettext(x) for x in  self.cols1]
+    def get_short_names(self):
         return self.cols1
 
-    def get_long_names(self, localised = True):
-        if localised:
-            return [ default_lang.gettext(x) for x in  self.cols2]
-        return self.cols2
+    def get_long_names(self):
+        return [ default_lang.gettext(x) for x in self.cols2 ]
 
     def get_table(self):
         ret = [self.cols1, self.cols2]

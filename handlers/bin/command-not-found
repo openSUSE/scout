@@ -11,7 +11,7 @@ def print_found(rows):
         print >> sys.stderr, _("  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]") % \
                 ({'prog' : row[1], 'path' : row[2], 'binary' : row[3], 'repo' : row[0]})
     print >> sys.stderr
-    print >> sys.stderr, _('Try installing with:'), INSTALL_CMD,
+    print >> sys.stderr, _('Try installing with:\n   '), INSTALL_CMD,
     if len( set( [ i[1] for i in rows] ) ) > 1:
         print >> sys.stderr, _('<selected_package>')
     else:

@@ -96,8 +96,8 @@ msgstr "Benutzung: %prog [Globale_Optionen] Module [lokale_Optionen] Abfrage"
 
 #: scout/__init__.py:205
 #, python-format
-msgid "select the output format (default %s)"
-msgstr "Auswählen des Ausgabeformats (Standard %s)"
+msgid "select the output format (%s, default is %s)"
+msgstr "Auswählen des Ausgabeformats (%s, Standard %s)"
 
 #: scout/__init__.py:212
 msgid "list of available modules"
