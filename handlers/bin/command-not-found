@@ -37,6 +37,13 @@ def check_installed(term):
     mi = ts.dbMatch('name', term)
     return mi.count() > 0
 
+def find_package_by_file(term):
+    ts = rpm.TransactionSet()
+    mi = ts.dbMatch('basenames', term)
+    for i in mi:
+        return i['name']
+    return None
+
 try:
     import sys
 
@@ -49,10 +56,17 @@ try:
     default_lang = scout.DefaultLang(textdomain="command-not-found")
     default_lang.install()
 
+    term = sys.argv[1]
+
+    for path in ['/usr/sbin', '/sbin']:
+        pkg = find_package_by_file(path + '/' + term)
+        if pkg:
+            print_installed(term, pkg, path)
+            sys.exit(EX_NOTFOUND)
+
     sys.path.append(scout.Config.module_path)
     import bin
 
-    term = sys.argv[1]
     repo = sys.argv[2]
     module = bin.ScoutModule()
     if repo == 'zypp':
