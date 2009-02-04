@@ -16,3 +16,6 @@ Thomas Schraitle <toms@suse.de>
 
 Help with python-satsolver:
 Klaus Kaempf <kkaempf@suse.de>
+
+More tests in command-not-found handler for bash:
+Werner Fink <werner@suse.de>
