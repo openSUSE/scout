@@ -1,4 +1,19 @@
 -------------------------------------------------------------------
+Mon Feb  9 11:16:06 CET 2009 - prusnak@suse.cz
+
+- scout:
+  * fixed proper encoding of an error msg [bnc#460705]
+  * added -p option (inverse search by package name)
+  * don't exit successfully when nothing is found [bnc#466397]
+  * always return EX_NOTFOUND [bnc#466397]
+- command-not-found:
+  * don't load all scout modules
+  * more tests in bash handler (don't run in subshell or pipe)
+  * check /usr/sbin and /sbin for binaries before using satsolver
+  * require COMMAND_NOT_FOUND_AUTO to be set to run search directly
+  * add documentation
+
+-------------------------------------------------------------------
 Tue Nov 18 13:35:27 CET 2008 - prusnak@suse.cz
 
 - check number of unique packages in command-not-found
