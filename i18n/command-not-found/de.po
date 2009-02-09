@@ -46,8 +46,7 @@ msgstr "Das Programm '%(prog)s' ist verfügbar im Paket '%(pkg)s', das auf ihrem
 #: handlers/bin/command-not-found:27
 #, python-format
 msgid ""
-"Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so it might be intended "
-"to be run only by user with superuser privileges (eg. root)."
+"Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may require superuser privileges (eg. root)."
 msgstr "Der absoluter Pfad für '%(prog)s' ist '%(path)s/%(prog)s', daher ist es wohl beabsichtigt, dass dieses nur von einem Benutzer mit Superuser Rechten gestartet werden kann (z.B. root)."
 
 #: handlers/bin/command-not-found:30

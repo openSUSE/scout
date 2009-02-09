@@ -24,7 +24,7 @@ def print_installed(term, pkg, path):
     print >> sys.stderr, _("Program '%(prog)s' is present in package '%(pkg)s', which is installed on your system.") % ( {'prog' : term, 'pkg' : pkg } )
     print >> sys.stderr
     if '/sbin' in path:
-        print >> sys.stderr, _("Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so it might be intended to be run only by user with superuser privileges (eg. root).") % \
+        print >> sys.stderr, _("Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may require superuser privileges (eg. root).") % \
                 ( {'prog' : term , 'path' : path} )
     else:
         print >> sys.stderr, _("Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH variable to see whether it contains the mentioned path.") % \
