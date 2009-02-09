@@ -1,12 +1,12 @@
 .\"     Title: command-not-found
 .\"    Author: Pavol Rusnak <stick@gk2.sk>
 .\" Generator: DocBook XSL Stylesheets v1.74.0 <http://docbook.sf.net/>
-.\"      Date: 12/12/2008
+.\"      Date: 02/09/2009
 .\"    Manual: http://en.opensuse.org/Scout
 .\"    Source: http://repo.or.cz/w/scout.git 0.1.0
 .\"  Language: English
 .\"
-.TH "COMMAND\-NOT\-FOUND" "1" "12/12/2008" "http://repo\&.or\&.cz/w/scout\" "http://en\&.opensuse\&.org/Sco"
+.TH "COMMAND\-NOT\-FOUND" "1" "02/09/2009" "http://repo\&.or\&.cz/w/scout\" "http://en\&.opensuse\&.org/Sco"
 .\" -----------------------------------------------------------------
 .\" * (re)Define some macros
 .\" -----------------------------------------------------------------
@@ -195,6 +195,10 @@ The handler is integrated to bash(1) and zsh(1) shells and is not necessary call
 If you considered c\-n\-f handler useless, just add
 \FCunset command_not_found_handle\F[]
 to your profile\&.
+.PP
+Handler doesn\'t call the command\-not\-found binary directly, it only prints info about it\&. If you want to invoke it automatically, just add
+\FCexport COMMAND_NOT_FOUND_AUTO=1\F[]
+to your bash profile\&.
 .SH "Example: Normal usage"
 .PP
 For example you want to try

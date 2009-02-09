@@ -1,7 +1,7 @@
 command_not_found_handle() {
 
     local cmd state rest
-    local -i pid ppid pgrp session tty_nr tpgid 
+    local -i pid ppid pgrp session tty_nr tpgid
 
     # do not run when inside Midnight Commander or within a Pipe
     if test -n "$MC_SID" -o ! -t 1 ; then
@@ -10,11 +10,24 @@ command_not_found_handle() {
 
     # do not run when within a subshell
     read pid cmd state ppid pgrp session tty_nr tpgid rest  < /proc/self/stat
-    if test $$ -eq $tpgid; then
+    if test $$ -eq $tpgid ; then
         return 127
     fi
 
-    # run command-not-found program
-    test -x /usr/bin/python && test -x /usr/bin/command-not-found && /usr/bin/python /usr/bin/command-not-found "$@" __REPO__ || return 127
+    # test for /usr/sbin and /sbin
+    if test -x "/usr/sbin/$1" -o -x "/sbin/$1" ; then
+        if test -x "/usr/sbin/$1" ; then prefix='/usr' ; else prefix='' ; fi
+        echo "Absolute path to '$1' is '$prefix/sbin/$1', so it might be intended to be run only by user with superuser privileges (eg. root)."
+        return 127
+    fi
 
+    if test -n "$COMMAND_NOT_FOUND_AUTO" ; then
+        # call command-not-found directly
+        test -x /usr/bin/python && test -x /usr/bin/command-not-found && /usr/bin/python /usr/bin/command-not-found "$1" __REPO__
+    else
+        # print only info about command-not-found
+        echo -e "If '$1' is not a typo you can run following command to lookup the package that contains the binary:\n    command-not-found $1"
+    fi
+
+    return 127
 }

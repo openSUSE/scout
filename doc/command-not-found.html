@@ -2,7 +2,9 @@
           contains a missing command.</p><p>The handler is integrated to bash(1) and zsh(1) shells and is not
           necessary call them directly. Just type a name of command in your
           favourite shell and you'll get a result.</p><p>If you considered c-n-f handler useless, just add <code class="code">unset
-              command_not_found_handle</code> to your profile.</p></div><div class="refsect1" lang="en"><a name="cnf.example"></a><h2>Example: Normal usage</h2><p>For example you want to try <code class="filename">blender</code>, because
+              command_not_found_handle</code> to your profile.</p><p>Handler doesn't call the command-not-found binary directly, it only prints info about it.
+          If you want to invoke it automatically, just add <code class="code">export COMMAND_NOT_FOUND_AUTO=1</code>
+          to your bash profile.</p></div><div class="refsect1" lang="en"><a name="cnf.example"></a><h2>Example: Normal usage</h2><p>For example you want to try <code class="filename">blender</code>, because
           you have heard that is an amazing program. So just type blender in
           shell:</p><pre class="screen"><code class="prompt">$ </code><span class="command"><strong>blender</strong></span></pre><p>You get the following output:</p><pre class="screen">
 The program 'blender' can be found in the following package:
