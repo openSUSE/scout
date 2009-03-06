@@ -165,8 +165,10 @@ done
 %if %{cnfrepo} != none
 # --- command-not-found ---
 install -D -m 0755 handlers/bin/command-not-found $RPM_BUILD_ROOT%{_bindir}/command-not-found
+ln -sf command-not-found $RPM_BUILD_ROOT%{_bindir}/cnf
 # install manpage
 install -D -m 0644 doc/command-not-found.1 $RPM_BUILD_ROOT%{_mandir}/man1/command-not-found.1
+ln -sf command-not-found.1.gz $RPM_BUILD_ROOT%{_mandir}/man1/cnf.1.gz
 # install shell handlers
 for shell in bash zsh; do
     install -D -m 644 handlers/bin/command_not_found_${shell} $RPM_BUILD_ROOT%{_sysconfdir}/${shell}_command_not_found
@@ -204,6 +206,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -n command-not-found -f command-not-found.lang
 %defattr(-,root,root)
 %doc handlers/bin/README
+%{_bindir}/cnf
 %{_bindir}/command-not-found
 %config %{_sysconfdir}/*_command_not_found
 %{_mandir}/man1/*
