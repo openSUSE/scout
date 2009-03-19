@@ -27,14 +27,14 @@ class CoreOptionParserTestCase(unittest.TestCase):
         self.parser = scout.CoreOptionParser(self.formats, self.modules)
 
     def tearDown(self):
-        
+
         sys.argv = copy(self.argv_bak)
 
     def testInit(self):
 
         self.assertEqual(self.parser.prog, "scout")
         self.assertEqual(self.parser.format, "table")
-    
+
     def testNoArgs(self):
 
         try:
@@ -43,9 +43,9 @@ class CoreOptionParserTestCase(unittest.TestCase):
             pass
         else:
             self.fail("The HelpOptionFound have to be raised for no defined argument")
-    
+
     def testHelp(self):
-        
+
         sys.argv.append("--help")
         try:
             ret = self.parser.parse_args()
@@ -60,22 +60,22 @@ class CoreOptionParserTestCase(unittest.TestCase):
         self.assertTrue(len(help) != 0)
         self.assertTrue(help.find("Usage") == 0)
         self.assertTrue(help.find("python") > 1)
-    
+
     def testModule(self):
         for m in [m[0] for m in self.modules]:
             sys.argv = ['scout', m, 'foo']
 
             ret = self.parser.parse_args()
-        
+
             self.assertEqual(self.parser.format, "table")
             self.assertEqual(self.parser.module, m)
             self.assertEqual(len(self.parser.module_args), 1)
             self.assertEqual(self.parser.module_args[0], 'foo')
- 
+
     def testFormatOption(self):
         for format in self.formats:
             sys.argv = ['scout', '--format', format, 'python']
-        
+
             ret = self.parser.parse_args()
             self.assertEqual(self.parser.format, format)
 
@@ -85,7 +85,7 @@ class CoreOptionParserTestCase(unittest.TestCase):
 #        is not really interesting for normal use, only for testing
 #    def testUnknownFormatOption(self):
 #        sys.argv = ['scout', '--format', '__unknown_format__', 'python']
-# 
+#
 #        try:
 #            ret = self.parser.parse_args()
 #        except SystemExit:
@@ -100,7 +100,7 @@ class CoreOptionParserTestCase(unittest.TestCase):
             pass
         else:
             self.fail("The command line parsing have to fails on the non-existinig module.")
-        
+
 
 
 suite = unittest.makeSuite(CoreOptionParserTestCase, 'test')

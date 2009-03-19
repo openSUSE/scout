@@ -23,7 +23,7 @@ class SimpleDatabaseTestCase(unittest.TestCase):
 
     def setUp(self):
         self.database = scout.Database(':memory:')
-        
+
         c = self.database.conn.cursor()
 
         self.term = 'package3-module2'
@@ -71,7 +71,7 @@ CREATE INDEX modules_module_idx ON modules(module);"""
 
         self.assertEqual(self.term.split('-')[0], res[0])
         self.assertEqual(self.term, res[1])
-        
+
     def testExecutePlaceholders2(self):
         sql = self.sql_begin + " WHERE module LIKE :module"
 
@@ -80,7 +80,7 @@ CREATE INDEX modules_module_idx ON modules(module);"""
 
         self.assertEqual(self.term.split('-')[0], res[0])
         self.assertEqual(self.term, res[1])
-        
+
     def testCleverResults(self):
         # return of a [[, ], [, ], [, ]]
         sql = self.sql_begin
@@ -103,10 +103,10 @@ CREATE INDEX modules_module_idx ON modules(module);"""
         self.assertTrue(len(res) >= 0)
         for i in xrange(len(res)):
             self.assertEqual(type(res[i]), type(unicode()))
-        
+
 
         sql = "SELECT module FROM modules WHERE module='package1-module1'"
-        
+
         res = self.database.execute(sql)
         self.assertEqual(type(res), type(unicode()))
         self.assertEqual(res, 'package1-module1')
@@ -133,7 +133,7 @@ CREATE INDEX modules_module_idx ON modules(module);"""
             pass
         else:
             self.fail("The %s is not an SQL command" % sql)
- 
+
         sql = self.sql_begin + " WHERE module LIKE ? "
         try:
             res = self.database.execute(sql, module='module1')
@@ -141,7 +141,7 @@ CREATE INDEX modules_module_idx ON modules(module);"""
             pass
         else:
             self.fail("The ? is not working with keyword args")
-        
+
         sql = self.sql_begin + " WHERE module LIKE :module "
         # FIXME!!! The sqlite3 doesn't return an error
         #try:

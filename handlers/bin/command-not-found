@@ -50,14 +50,16 @@ try:
     if len(sys.argv) < 2:
         sys.exit(EX_NOTFOUND)
 
-    import rpm
     import scout
 
     default_lang = scout.DefaultLang(textdomain="command-not-found")
     default_lang.install()
 
     term = sys.argv[1]
+    print >> sys.stderr, '%s: command not found. searching ...' % term
 
+    import rpm
+    
     for path in ['/usr/sbin', '/sbin']:
         pkg = find_package_by_file(path + '/' + term)
         if pkg:
@@ -65,6 +67,7 @@ try:
             sys.exit(EX_NOTFOUND)
 
     sys.path.append(scout.Config.module_path)
+
     import bin
 
     if len(sys.argv) == 3:
