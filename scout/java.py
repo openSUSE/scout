@@ -13,3 +13,13 @@ class ScoutModule(scout.SimpleScoutModule):
     result_list  = [_("repo"), _("pkg"), _("jar"), _("class")]
     result_list2 = [_("repository"), _("package"), _("jar"), _("class")]
     scout.default_lang.install()
+
+    # make scout java be usable with some/package/Class.class arguments
+    def prepare_term(self, term):
+        if term.find('/') == -1:
+            return term
+
+        if term[-6:] == '.class':
+            term = term[:-6]
+
+        return term.replace('/', '.')

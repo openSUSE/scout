@@ -870,7 +870,7 @@ class SimpleScoutModule(BaseScoutModule):
         if args.repo:
             repos = args.repo
 
-        return self.do_query(args.query, repos, args.inversesearch)
+        return self.do_query(self.prepare_term(args.query), repos, args.inversesearch)
 
     # ---------- commands ----------
 
@@ -908,6 +908,10 @@ class SimpleScoutModule(BaseScoutModule):
             ret += "%s : %s" % (attr, getattr(self, attr))
         ret = ret +  "}"
         return ret
+
+    # some modules should reimplement it for prepare of the search term
+    def prepare_term(self, term):
+        return term
 
 class ScoutCore(object):
 
