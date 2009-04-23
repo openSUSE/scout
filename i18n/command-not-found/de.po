@@ -55,3 +55,13 @@ msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH "
 "variable to see whether it contains the mentioned path."
 msgstr "Der absolute Pfad für '%(prog)s' ist '%(path)s/%(prog)s'. Bitte überprüfen Sie Ihre $PATH Variable ob der genannte Pfad enthalten ist."
+
+#: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
+#, python-format
+msgid "searching ..."
+msgstr "suchen ..."
+
+#: handlers/bin/command-not-found:87
+#, python-format
+msgid "command not found"
+msgstr "Kommando nicht gefunden."

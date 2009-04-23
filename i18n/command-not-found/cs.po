@@ -62,3 +62,13 @@ msgid ""
 msgstr ""
 "Absolutní cesta k '%(prog)s' je '%(path)s/%(prog)s'. Prosím ověřte, zda proměnná $PATH "
 "obsahuje zmíněnou cestu."
+
+#: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
+#, python-format
+msgid "searching ..."
+msgstr "vyhledávám ..."
+
+#: handlers/bin/command-not-found:87
+#, python-format
+msgid "command not found"
+msgstr "příkaz nenalezen"
