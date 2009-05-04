@@ -9,7 +9,7 @@ import exceptions
 
 scout.ScoutCore.load_all_modules()
 
-def supress_keyborad_interrupt_message():
+def suppress_keyboard_interrupt_message():
     old_excepthook = sys.excepthook
 
     def new_hook(type, value, traceback):
@@ -20,7 +20,7 @@ def supress_keyborad_interrupt_message():
 
     sys.excepthook = new_hook
 
-supress_keyborad_interrupt_message()
+suppress_keyboard_interrupt_message()
 
 ret = scout.ScoutCore.run()
 if ret != None:
