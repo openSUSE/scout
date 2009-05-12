@@ -64,7 +64,7 @@ try:
     for path in ['/usr/sbin', '/sbin']:
         pkg = find_package_by_file(path + '/' + term)
         if pkg:
-            print >> sys.stderr, lendel*'\b' + lendel*' ',
+            print >> sys.stderr, '\r', lendel*' ',
             print_installed(term, pkg, path)
             sys.exit(EX_NOTFOUND)
 
@@ -84,10 +84,10 @@ try:
         rows = module.query_repo(repo, term)
 
     if rows == None or len(rows) == 0:
-        print >> sys.stderr, (lendel-len(term)-2)*'\b' + _('command not found')
+        print >> sys.stderr, '\r', '%s:' % term, _('command not found'), lendel*' '
         sys.exit(EX_NOTFOUND)
 
-    print >> sys.stderr, lendel*'\b' + lendel*' ',
+    print >> sys.stderr, '\r', lendel*' ',
 
     for row in rows:
         if check_installed(row[1]):
