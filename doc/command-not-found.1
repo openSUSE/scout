@@ -1,12 +1,12 @@
 .\"     Title: command-not-found
 .\"    Author: Pavol Rusnak <stick@gk2.sk>
 .\" Generator: DocBook XSL Stylesheets v1.74.0 <http://docbook.sf.net/>
-.\"      Date: 02/09/2009
+.\"      Date: 07/11/2009
 .\"    Manual: http://en.opensuse.org/Scout
 .\"    Source: http://repo.or.cz/w/scout.git 0.1.0
 .\"  Language: English
 .\"
-.TH "COMMAND\-NOT\-FOUND" "1" "02/09/2009" "http://repo\&.or\&.cz/w/scout\" "http://en\&.opensuse\&.org/Sco"
+.TH "COMMAND\-NOT\-FOUND" "1" "07/11/2009" "http://repo\&.or\&.cz/w/scout\" "http://en\&.opensuse\&.org/Sco"
 .\" -----------------------------------------------------------------
 .\" * (re)Define some macros
 .\" -----------------------------------------------------------------
@@ -184,17 +184,17 @@ The name of binary you are looking for\&.
 .PP
 \fBrepository\fR
 .RS 4
-The name of repository for search\&. For most cases, type zypp
+The name of repository for search\&. For most cases, use zypp
 .RE
 .SH "Description"
 .PP
 command\-not\-found handler is designed to tell users which package contains a missing command\&.
 .PP
-The handler is integrated to bash(1) and zsh(1) shells and is not necessary call them directly\&. Just type a name of command in your favourite shell and you\'ll get a result\&.
+The handler is integrated to bash(1) and zsh(1) shells and is not necessary to call it directly\&. Just type a name of the command in your favourite shell and you\'ll get a result\&.
 .PP
-If you considered c\-n\-f handler useless, just add
+If you consider c\-n\-f handler useless, just add
 \FCunset command_not_found_handle\F[]
-to your profile\&.
+to your profile or remove the command\-not\-found package\&.
 .PP
 Handler doesn\'t call the command\-not\-found binary directly, it only prints info about it\&. If you want to invoke it automatically, just add
 \FCexport COMMAND_NOT_FOUND_AUTO=1\F[]
@@ -237,7 +237,8 @@ You get the following output:
 The program \'blender\' can be found in the following package:
   * blender [ path: /usr/bin/blender, repository: zypp (openSUSE 11\&.1\-0) ]
 
-Try installing with: sudo zypper install blender
+Try installing with:
+    sudo zypper install blender
 
 bash: blender: command not found
 .EB lightgray adjust-for-leading-newline
