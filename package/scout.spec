@@ -199,7 +199,7 @@ rm -rf $RPM_BUILD_ROOT
 %{py_sitedir}/%{name}
 %{_datadir}/%{name}
 %config %{_sysconfdir}/bash_completion.d/*
-%{_mandir}/man1/*
+%{_mandir}/man1/scout*
 
 %if %{cnfrepo} != none
 
@@ -209,7 +209,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/cnf
 %{_bindir}/command-not-found
 %config %{_sysconfdir}/*_command_not_found
-%{_mandir}/man1/*
+%{_mandir}/man1/cnf*
+%{_mandir}/man1/command-not-found*
 
 %endif
 
