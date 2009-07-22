@@ -37,7 +37,7 @@ class SolvParser(object):
     def search(self, term, inversesearch = False):
         pkgmatch = []
         if not inversesearch:
-            pathreprg = re.compile(self.pathre + term + '$')
+            pathreprg = re.compile(self.pathre + re.escape(term) + '$')
             for d in self.pool.search( term, satsolver.SEARCH_STRING, None, 'solvable:filelist' ):
                 path = d.value()
                 # do matching for path

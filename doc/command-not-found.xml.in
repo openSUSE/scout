@@ -52,7 +52,7 @@
          <varlistentry>
             <term><option>repository</option></term>
             <listitem>
-               <para>The name of repository for search. For most cases, type zypp</para>
+               <para>The name of repository for search. For most cases, use zypp</para>
             </listitem>
          </varlistentry>
       </variablelist>
@@ -63,10 +63,10 @@
       <para>command-not-found handler is designed to tell users which package
           contains a missing command.</para>
       <para>The handler is integrated to bash(1) and zsh(1) shells and is not
-          necessary call them directly. Just type a name of command in your
+          necessary to call it directly. Just type a name of the command in your
           favourite shell and you&apos;ll get a result.</para>
-      <para>If you considered c-n-f handler useless, just add <code>unset
-              command_not_found_handle</code> to your profile.</para>
+      <para>If you consider c-n-f handler useless, just add <code>unset
+              command_not_found_handle</code> to your profile or remove the command-not-found package.</para>
       <para>Handler doesn&apos;t call the command-not-found binary directly, it only prints info about it.
           If you want to invoke it automatically, just add <code>export COMMAND_NOT_FOUND_AUTO=1</code>
           to your bash profile.</para>
@@ -83,7 +83,8 @@
 The program &apos;blender&apos; can be found in the following package:
   * blender [ path: /usr/bin/blender, repository: zypp (openSUSE 11.1-0) ]
 
-Try installing with: sudo zypper install blender
+Try installing with:
+    sudo zypper install blender
 
 bash: blender: command not found</screen>
    </refsect1>
