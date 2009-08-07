@@ -22,7 +22,7 @@
       <refentrytitle>&product;</refentrytitle>
       <manvolnum>1</manvolnum>
       <refmiscinfo class="version">@VERSION@</refmiscinfo>
-      <refmiscinfo class="source">http://repo.or.cz/w/scout.git</refmiscinfo>
+      <refmiscinfo class="source">http://gitorious.org/opensuse/scout</refmiscinfo>
       <refmiscinfo class="manual">http://en.opensuse.org/Scout</refmiscinfo>
    </refmeta>
 
