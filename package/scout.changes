@@ -1,4 +1,15 @@
 -------------------------------------------------------------------
+Tue Aug 18 14:44:04 CEST 2009 - prusnak@suse.cz
+
+- don't advise to use sudo when running as root
+- fix manpages in packages
+- fixed typos in cnf manpage
+- escape the term before creating regexp
+- suppress KeyboardInterrupt traceback after Ctrl+C
+- refine text messages
+- modify the search term before query
+
+-------------------------------------------------------------------
 Mon Mar 23 14:05:26 CET 2009 - prusnak@suse.cz
 
 - command-not-found:
