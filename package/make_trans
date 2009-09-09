@@ -2,7 +2,7 @@
 
 # Usage:
 # ${1} : name of the package
-# ${2} : pattern for scour codes
+# ${2} : pattern for scout codes
 function refresh_po_files() {
 
         local _lang _package _pattern

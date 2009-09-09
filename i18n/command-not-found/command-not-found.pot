@@ -17,6 +17,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
+#: handlers/bin/command_not_found_bash:9 handlers/bin/command_not_found_bash:17
+msgid "$1: command not found"
+msgstr ""
+
+#: handlers/bin/command_not_found_bash:24
+msgid "Absolute path to '$1' is '$prefix/sbin/$1', so running it may require superuser privileges (eg. root)."
+msgstr ""
+
+#: handlers/bin/command_not_found_bash:32
+msgid "If '$1' is not a typo you can use command-not-found to lookup the package that contains it, like this:\n    cnf $1"
+msgstr ""
+
 #: handlers/bin/command-not-found:8
 #, python-format
 msgid "The program '%(prog)s' can be found in the following package:"

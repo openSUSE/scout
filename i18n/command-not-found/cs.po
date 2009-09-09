@@ -16,6 +16,20 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
+#: handlers/bin/command_not_found_bash:9 handlers/bin/command_not_found_bash:17
+msgid "$1: command not found"
+msgstr "$1: příkaz nenalezen"
+
+#: handlers/bin/command_not_found_bash:24
+msgid "Absolute path to '$1' is '$prefix/sbin/$1', so running it may require superuser privileges (eg. root)."
+msgstr ""
+"Absolutní cesta k programu '$1' je '$prefix/sbin/$1', takže program je pravdepodobně určen pouze pro "
+"uživatele s administrátorskými právy (například root)."
+
+#: handlers/bin/command_not_found_bash:32
+msgid "If '$1' is not a typo you can use command-not-found to lookup the package that contains it, like this:\n    cnf $1"
+msgstr "Když '$1' není překlep, je môžno použít command-not-found, aby nalezl balíček, který ho obsahuje. Například takto:\n    cnf $1"
+
 #: handlers/bin/command-not-found:8
 #, python-format
 msgid "The program '%(prog)s' can be found in the following package:"
