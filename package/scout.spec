@@ -15,8 +15,8 @@
 # Please submit bugfixes or comments via http://bugs.opensuse.org/
 #
 
-# norootforbuild
 
+# norootforbuild
 
 Name:           scout
 Version:        0.1.0
@@ -39,18 +39,14 @@ BuildRequires:  python-satsolver >= 0.12.0
 Requires:       python-satsolver >= 0.12.0
 %endif
 
-%if 0%{?fedora_version} || 0%{?rhel_version} || 0%{?centos_version}
-%define py_sitedir %(python -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")
-%endif
-
-# workaround conflicting readline packages
-%if 0%{?suse_version} <= 1020
-BuildRequires:  readline
+%if 0%{?suse_version} >= 1120
+BuildArch:      noarch
+%else
+%define python_sitelib %{py_sitedir}
 %endif
 
 %description
 Package Scout for indexing various properties of packages.
-
 
 
 %define scoutrepo none
@@ -142,9 +138,9 @@ python -mcompileall .
 %install
 # --- scout ---
 # install python scripts
-mkdir -p $RPM_BUILD_ROOT%{py_sitedir}/%{name}
+mkdir -p $RPM_BUILD_ROOT%{python_sitelib}/%{name}
 shopt -s extglob
-cp -a scout/!(foo).py{,c} $RPM_BUILD_ROOT%{py_sitedir}/%{name}
+cp -a scout/!(foo).py{,c} $RPM_BUILD_ROOT%{python_sitelib}/%{name}
 # install data files
 install -D -m 0644 repos.conf $RPM_BUILD_ROOT%{_datadir}/%{name}/repos.conf
 # install scout binary
@@ -186,7 +182,7 @@ done
 
 # %if %{scoutrepo} != none
 # # --- python-import-error ---
-# install -D -m 0755 handlers/python/python_import_error_handler $RPM_BUILD_ROOT/%{py_sitedir}
+# install -D -m 0755 handlers/python/python_import_error_handler $RPM_BUILD_ROOT/%{python_sitelib}/python_import_error_handler
 # %endif
 
 %clean
@@ -196,7 +192,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %doc AUTHORS LICENSE README TODO doc/scout.html doc/scout.pdf
 %{_bindir}/%{name}*
-%{py_sitedir}/%{name}
+%{python_sitelib}/%{name}
 %{_datadir}/%{name}
 %config %{_sysconfdir}/bash_completion.d/*
 %{_mandir}/man1/scout*
@@ -218,7 +214,7 @@ rm -rf $RPM_BUILD_ROOT
 # 
 # %files -n python-import-error
 # %defattr(-,root,root)
-# %{py_sitedir}/python_import_error_handler
+# %{python_sitelib}/python_import_error_handler
 # 
 # %endif
 
