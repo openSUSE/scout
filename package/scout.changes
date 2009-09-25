@@ -1,4 +1,12 @@
 -------------------------------------------------------------------
+Fri Sep 25 16:21:42 CEST 2009 - prusnak@suse.cz
+
+- added translations to scout:
+    da es fi fr hu it ja km ko nl pl pt_BR ru uk zh_TW
+- added translations to c-n-f:
+    da es fi fr gl hu it ja km ko nl pl pt_BR ru uk wa zh_TW
+
+-------------------------------------------------------------------
 Wed Sep  9 17:01:40 CEST 2009 - prusnak@suse.cz
 
 - print message when inside midnight commander, don't just quit
