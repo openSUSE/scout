@@ -1,0 +1,82 @@
+# translation of command-not-found.po to Japanese
+# Yasuhiko Kamata <belphegor@belbel.or.jp>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: command-not-found\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-04-23 15:20+0200\n"
+"PO-Revision-Date: 2009-09-17 19:36+0900\n"
+"Last-Translator: Yasuhiko Kamata <belphegor@belbel.or.jp>\n"
+"Language-Team: Japanese <opensuse-ja@opensuse.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: handlers/bin/command_not_found_bash:9
+#: handlers/bin/command_not_found_bash:17
+#| msgid "The job was not found."
+msgid "$1: command not found"
+msgstr "$1: コマンドが見つかりません"
+
+#: handlers/bin/command_not_found_bash:24
+msgid "Absolute path to '$1' is '$prefix/sbin/$1', so running it may require superuser privileges (eg. root)."
+msgstr "絶対パス '$1' は '$prefix/sbin/$1' を指しています。そのため、このコマンドを実行するにはスーパーユーザ (root など) の権限が必要かもしれません。"
+
+#: handlers/bin/command_not_found_bash:32
+msgid ""
+"If '$1' is not a typo you can use command-not-found to lookup the package that contains it, like this:\n"
+"    cnf $1"
+msgstr ""
+"'$1' が入力間違いでなければ、下記のように入力することで command-not-found を利用してパッケージを検索することができます:\n"
+"    cnf $1"
+
+#: handlers/bin/command-not-found:8
+#, python-format
+msgid "The program '%(prog)s' can be found in the following package:"
+msgid_plural "The program '%(prog)s' can be found in following packages:"
+msgstr[0] "プログラム '%(prog)s' は下記のパッケージに存在しています:"
+
+#: handlers/bin/command-not-found:11
+#, python-format
+msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
+msgstr "  * %(prog)s [ パス: %(path)s/%(binary)s, リポジトリ: %(repo)s ]"
+
+#: handlers/bin/command-not-found:14
+#| msgid "Installing file"
+msgid "Try installing with:"
+msgstr "下記を利用してインストールしてみてください:"
+
+#: handlers/bin/command-not-found:16
+#| msgid "Remove selected package"
+msgid "<selected_package>"
+msgstr "<選択済みパッケージ>"
+
+#: handlers/bin/command-not-found:24
+#, python-format
+msgid "Program '%(prog)s' is present in package '%(pkg)s', which is installed on your system."
+msgstr "プログラム '%(prog)s' は、システムにインストール済みのパッケージ '%(pkg)s' 内に存在します。"
+
+#: handlers/bin/command-not-found:27
+#, python-format
+msgid "Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may require superuser privileges (eg. root)."
+msgstr "絶対パス '%(prog)s' は '%(path)s/%(prog)s' を指しています。そのため、このコマンドを実行するにはスーパーユーザ (root など) の権限が必要かもしれません。"
+
+#: handlers/bin/command-not-found:30
+#, python-format
+msgid "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH variable to see whether it contains the mentioned path."
+msgstr "絶対パス '%(prog)s' は '%(path)s/%(prog)s' を指しています。左記のパスがお使いの環境での $PATH 変数に含まれているかどうかご確認ください。"
+
+#: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
+#, python-format
+#| msgid "Searching groups"
+msgid "searching ..."
+msgstr "検索しています ..."
+
+#: handlers/bin/command-not-found:87
+#, python-format
+#| msgid "Entry not found."
+msgid "command not found"
+msgstr "コマンドが見つかりません"
+

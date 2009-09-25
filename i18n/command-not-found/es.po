@@ -1,0 +1,98 @@
+# translation of command-not-found.po to Spanish
+# Luis Martinez <lmartinez@sct.ictnet.es>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: command-not-found\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-04-23 15:20+0200\n"
+"PO-Revision-Date: 2009-09-19 10:14+0200\n"
+"Last-Translator: Luis Martinez <lmartinez@sct.ictnet.es>\n"
+"Language-Team: Spanish <opensuse-translation-es@opensuse.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: handlers/bin/command_not_found_bash:9
+#: handlers/bin/command_not_found_bash:17
+msgid "$1: command not found"
+msgstr "$1: orden no encontrada"
+
+#: handlers/bin/command_not_found_bash:24
+msgid ""
+"Absolute path to '$1' is '$prefix/sbin/$1', so running it may require "
+"superuser privileges (eg. root)."
+msgstr ""
+"La ruta absoluta a '$1' es '$prefix/sbin/$1', por lo que para su ejecución "
+"pueden ser necesarios privilegios de superusuario(p.e. root)."
+
+#: handlers/bin/command_not_found_bash:32
+msgid ""
+"If '$1' is not a typo you can use command-not-found to lookup the package "
+"that contains it, like this:\n"
+"    cnf $1"
+msgstr ""
+"Si '$1' no es un error tipográfico, puede usar la busqueda de orden no "
+"encontrada para saber a que paquete pertenece, como\n"
+"    cnf $1"
+
+#: handlers/bin/command-not-found:8
+#, python-format
+msgid "The program '%(prog)s' can be found in the following package:"
+msgid_plural "The program '%(prog)s' can be found in following packages:"
+msgstr[0] "La aplicación '%(prog)s' no se puede encontrar en los paquetes :"
+msgstr[1] "La aplicación '%(prog)s' no se puede encontrar en el paquete :"
+
+#: handlers/bin/command-not-found:11
+#, python-format
+msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
+msgstr "  * %(prog)s [ ruta: %(path)s/%(binary)s, repositorrio: %(repo)s ]"
+
+# include/partitioning/auto_part_ui.ycp:200 include/partitioning/auto_part_ui.ycp:249
+# include/partitioning/auto_part_ui.ycp:200 include/partitioning/auto_part_ui.ycp:249
+# include/partitioning/auto_part_ui.ycp:200 include/partitioning/auto_part_ui.ycp:249
+#: handlers/bin/command-not-found:14
+msgid "Try installing with:"
+msgstr "Intente instalar con :"
+
+#: handlers/bin/command-not-found:16
+msgid "<selected_package>"
+msgstr "<paquete_seleccionado>"
+
+#: handlers/bin/command-not-found:24
+#, python-format
+msgid ""
+"Program '%(prog)s' is present in package '%(pkg)s', which is installed on "
+"your system."
+msgstr ""
+"La aplicación '%(prog)s' pertenece al paquete '%(pkg)s', que esta instalado "
+"en su sistema."
+
+#: handlers/bin/command-not-found:27
+#, python-format
+msgid ""
+"Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may "
+"require superuser privileges (eg. root)."
+msgstr ""
+"La ruta absoluta a '%(prog)s' es '%(path)s/%(prog)s', por lo que para su "
+"ejecución pueden ser necesarios privilegios de superusuario(p.e. root)."
+
+#: handlers/bin/command-not-found:30
+#, python-format
+msgid ""
+"Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH "
+"variable to see whether it contains the mentioned path."
+msgstr ""
+"La ruta absoluta a '%(prog)s' es '%(path)s/%(prog)s'. Verifique su variable "
+"de entorno $PATH para asegurar que contiene dicha ruta."
+
+#: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
+#, python-format
+msgid "searching ..."
+msgstr "Buscando..."
+
+#: handlers/bin/command-not-found:87
+#, python-format
+msgid "command not found"
+msgstr "orden no encontrada"

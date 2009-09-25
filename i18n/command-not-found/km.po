@@ -1,0 +1,77 @@
+# translation of command-not-found.km.po to Khmer
+# Khoem Sokhem <khoemsokhem@khmeros.info>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: command-not-found.km\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-04-23 15:20+0200\n"
+"PO-Revision-Date: 2009-09-17 13:17+0700\n"
+"Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
+"Language-Team: Khmer <support@khmeros.info>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: handlers/bin/command_not_found_bash:9
+#: handlers/bin/command_not_found_bash:17
+#| msgid "The job was not found."
+msgid "$1: command not found"
+msgstr "$1 ៖ រក​មិនឃើញ​ពាក្យ​បញ្ជា"
+
+#: handlers/bin/command_not_found_bash:24
+msgid "Absolute path to '$1' is '$prefix/sbin/$1', so running it may require superuser privileges (eg. root)."
+msgstr "ផ្លូវ​ពេញលេញ​ទៅ​កាន់ '$1' is '$prefix/sbin/$1' ដូច្នេះ​ វា​រត់​ អាច​ត្រូវការ​សិទ្ធិ​អ្នក​ប្រើ​ពិសេស (ឧ. root) ។"
+
+#: handlers/bin/command_not_found_bash:32
+msgid ""
+"If '$1' is not a typo you can use command-not-found to lookup the package that contains it, like this:\n"
+"    cnf $1"
+msgstr ""
+"ប្រសិនបើ '$1' មិនមែនជា​ typo ដែល​អ្នក​អាច​ប្រើ​ command-not-found ដើម្បី​រកមើល​កញ្ចប់​ដែល​មាន​វា ដូច​នេះ ៖\n"
+"    cnf $1"
+
+
+#: handlers/bin/command-not-found:11
+#, python-format
+msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
+msgstr "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
+
+#: handlers/bin/command-not-found:14
+#| msgid "Installing file"
+msgid "Try installing with:"
+msgstr "ព្យាយាម​ដំឡើង​ជា​មួយ ៖"
+
+#: handlers/bin/command-not-found:16
+#| msgid "Remove selected package"
+msgid "<selected_package>"
+msgstr "<selected_package>"
+
+#: handlers/bin/command-not-found:24
+#, python-format
+msgid "Program '%(prog)s' is present in package '%(pkg)s', which is installed on your system."
+msgstr "កម្មវិធី '%(prog)s' បង្ហាញ​នៅ​ក្នុង​កញ្ចប់ '%(pkg)s' ដែល​ត្រូវ​បាន​ដំឡើង​នៅ​ក្នុង​ប្រព័ន្ធ​របស់​អ្នក ។"
+
+#: handlers/bin/command-not-found:27
+#, python-format
+msgid "Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may require superuser privileges (eg. root)."
+msgstr "ផ្លូវ​ពេញលេញទៅ​កាន់ '%(prog)s' is '%(path)s/%(prog)s' ដូច្នេះ​វា​រត់​ អាច​ត្រូវការ​សិទ្ធិ​អ្នក​ប្រើ​ជា​ពិសេស (ឧ. root) ។"
+
+#: handlers/bin/command-not-found:30
+#, python-format
+msgid "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH variable to see whether it contains the mentioned path."
+msgstr "ផ្លូវ​ពេញលេញ​ទៅកាន់ '%(prog)s' is '%(path)s/%(prog)s' ។ សូម​ពិនិត្យ​អថេរ $PATH របស់​អ្នក​ ដើម្បី​មើល​ថាតើ​វា​មាន​ផ្លូវ​ដែលបានអធិប្បាយ​ដែរឬទេ ។"
+
+#: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
+#, python-format
+#| msgid "Searching groups"
+msgid "searching ..."
+msgstr "កំពុង​ស្វែងរក..."
+
+#: handlers/bin/command-not-found:87
+#, python-format
+#| msgid "Entry not found."
+msgid "command not found"
+msgstr "រក​មិនឃើញ​ពាក្យ​បញ្ជា"
+
