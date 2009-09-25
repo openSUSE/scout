@@ -1,19 +1,22 @@
 # translation of scout.pot to Deutsch
 # Copyright (C) 2009
 # This file is distributed under the same license as the "scout" package.
-# Thomas Schraitle <toms@suse.de>, 2008.
 #
+# Thomas Schraitle <toms@suse.de>, 2008.
+# Michael Skiba <trans@michael-skiba.de>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: scout\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-28 11:42+0200\n"
-"PO-Revision-Date: 2008-08-29 14:34+0200\n"
-"Last-Translator: Thomas Schraitle <toms@suse.de>\n"
-"Language-Team: Deutsch\n"
+"PO-Revision-Date: 2009-09-17 21:20+0200\n"
+"Last-Translator: Michael Skiba <trans@michael-skiba.de>\n"
+"Language-Team: German <opensuse-translation-de@opensuse.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: scout/autoconf.py:9
 msgid "Search for autoconf macros inside the m4 files."
@@ -94,10 +97,10 @@ msgstr "Zeige die Versionsnummer des Programms und beende"
 msgid "Usage: %prog [global_opts] module [local_opts] search_term"
 msgstr "Benutzung: %prog [Globale_Optionen] Module [lokale_Optionen] Abfrage"
 
-#: scout/__init__.py:205
-#, python-format
-msgid "select the output format (%s, default is %s)"
-msgstr "Auswählen des Ausgabeformats (%s, Standard %s)"
+#: scout/__init__.py:205, python-format
+#| msgid "select the output format (%s, default is %s)"
+msgid "select the output format (default %s)"
+msgstr "Wählen Sie das Ausgabeformat (Standard %s)"
 
 #: scout/__init__.py:212
 msgid "list of available modules"
@@ -212,3 +215,4 @@ msgstr "Repository URL"
 #: scout/webpin.py:51
 msgid "matched files"
 msgstr "gefundene Dateien"
+

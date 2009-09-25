@@ -1,38 +1,35 @@
-# translation of scout.pot to Slovenčina
-# Copyright (C) 2009
-# This file is distributed under the same license as the "scout" package.
+# Copyright (C) 2006, SUSE Linux GmbH, Nuremberg
 #
-# Pavol Rusnak <stick@gk2.sk>, 2008.
-# Rastislav Krupanský <rastislav.krupansky@gmail.com>, 2009.
+# Alexander Melentiev <alex239@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: scout\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-28 11:42+0200\n"
-"PO-Revision-Date: 2009-09-23 16:31+0200\n"
-"Last-Translator: Rastislav Krupanský <rastislav.krupansky@gmail.com>\n"
-"Language-Team: Slovak <sk-i18n@lists.linux.sk>\n"
+"PO-Revision-Date: 2009-09-17 00:43+0400\n"
+"Last-Translator: Alexander Melentiev <alex239@gmail.com>\n"
+"Language-Team: Russian <opensuse-translation-ru@opensuse.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Lokalize 1.0\n"
 
 #: scout/autoconf.py:9
 msgid "Search for autoconf macros inside the m4 files."
-msgstr "Hľadá autoconf makrá v súboroch m4."
+msgstr "Поиск макроса autoconf в файлах m4."
 
 #: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
 #: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
 #: scout/webpin.py:50
 msgid "repo"
-msgstr "rep."
+msgstr "репозиторий"
 
 #: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
 #: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
 #: scout/webpin.py:50
 msgid "pkg"
-msgstr "bal."
+msgstr "пакет"
 
 #: scout/autoconf.py:13
 msgid "m4"
@@ -40,128 +37,125 @@ msgstr "m4"
 
 #: scout/autoconf.py:13 scout/autoconf.py:14
 msgid "macro"
-msgstr "makro"
+msgstr "макрос"
 
 #: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
 #: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
 msgid "repository"
-msgstr "repozitár"
+msgstr "репозиторий"
 
 #: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
 #: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
 #: scout/webpin.py:51
 msgid "package"
-msgstr "balík"
+msgstr "пакет"
 
 #: scout/autoconf.py:14
 msgid "m4 file"
-msgstr "súbor m4"
+msgstr "файл m4"
 
 #: scout/bin.py:62
 msgid "Search for binaries contained in the packages."
-msgstr "Hľadá binárne súbory obsiahnuté v balíkoch."
+msgstr "Поиск бинарных файлов внутри пакетов."
 
 #: scout/bin.py:107 scout/bin.py:108
 msgid "path"
-msgstr "cesta"
+msgstr "путь"
 
 #: scout/bin.py:107
 msgid "bin"
-msgstr "bin."
+msgstr "бинарный файл"
 
 #: scout/bin.py:108
 msgid "binary"
-msgstr "binárka"
+msgstr "бинарный файл"
 
 #: scout/foo.py:9
 msgid "- template module -"
-msgstr "- vzorový modul -"
+msgstr "- модуль шаблона -"
 
 #: scout/header.py:9
 msgid "Search for C/C++/Obj-C/Obj-C++ headers."
-msgstr "Hľadá hlavičkové súbory pre jazyky C/C++/Obj-C/Obj-C++."
+msgstr "Поиск заголовков C/C++/Obj-C/Obj-C++."
 
 #: scout/header.py:13 scout/header.py:14
 msgid "header"
-msgstr "hlavička"
+msgstr "заголовок"
 
 #: scout/__init__.py:148
 msgid "show this help message and exit"
-msgstr "ukáže tuto nápovedu a skončí"
+msgstr "показать это справочное сообщение и выйти"
 
 #: scout/__init__.py:155
 msgid "show program's version number and exit"
-msgstr "ukáže číslo verzie programu a skončí"
+msgstr "показать версию программы и выйти"
 
 #: scout/__init__.py:198
 msgid "Usage: %prog [global_opts] module [local_opts] search_term"
-msgstr "Použitie: %prog [globálne_možnosti] modul [možnosti_modulu] výraz"
+msgstr "Использование: %prog [глобальные_параметры] модуль [локальные_параметры] искомый_термин"
 
-#: scout/__init__.py:205, python-format
-#| msgid "select the output format (%s, default is %s)"
+#: scout/__init__.py:205
+#, python-format
 msgid "select the output format (default %s)"
-msgstr "zvolí formát výstupu (štandard je %s)"
+msgstr "выберите формат вывода (по умолчанию %s)"
 
 #: scout/__init__.py:212
 msgid "list of available modules"
-msgstr "zoznam dostupných modulov"
+msgstr "список доступных модулей"
 
 #: scout/__init__.py:228
 msgid "Available modules:\n"
-msgstr "Dostupné moduly:\n"
+msgstr "Доступные модули:\n"
 
 #: scout/__init__.py:279
 #, python-format
 msgid "The name of module is mandatory. Use %s --help"
-msgstr "Meno modulu je povinné. Viď %s --help"
+msgstr "Имя модуля — обязательный параметр. См. %s --help"
 
-#: scout/__init__.py:366
-#, python-format
+#: scout/__init__.py:366, python-format
 msgid "%s is not a directory"
-msgstr "%s nie je adresár"
+msgstr "%s не является каталогом"
 
-#: scout/__init__.py:425
-#, python-format
+#: scout/__init__.py:425, python-format
 msgid "Cannot not open database file '%s'"
-msgstr "Nepodarilo sa otvoriť súbor s databázou: '%s'"
+msgstr "Невозможно открыть файл базы данных '%s'"
 
 #: scout/__init__.py:699
 msgid "Available repositories:\n"
-msgstr "Dostupné repozitáre:\n"
+msgstr "Доступные репозитории:\n"
 
 #: scout/__init__.py:731
 #, python-format
 msgid "Usage: %%prog %s [options] search_term"
-msgstr "Použitie: %%prog %s [možnosti_modulu] výraz"
+msgstr "Использование: %%prog %s [параметры] искомый_термин"
 
 #: scout/__init__.py:733
 msgid "list available repositories"
-msgstr "zoznam dostupných repozitárov"
+msgstr "список доступных репозиториев"
 
 #: scout/__init__.py:734
 msgid "inverse search by package name"
-msgstr "obrátené vyhľadávanie podľa názvu balíka"
+msgstr "инверсный поиск по имени пакета"
 
 #: scout/__init__.py:735
 msgid "select repository to search"
-msgstr "zvolí repozitár k prehľadávaniu"
+msgstr "выбрать репозиторий для поиска"
 
 #: scout/__init__.py:781
 msgid "No repositories found ..."
-msgstr "Nepodarilo sa nájsť žiadne repozitáre ..."
+msgstr "Репозитории не найдены..."
 
 #: scout/__init__.py:825 scout/__init__.py:826
 msgid "module"
-msgstr "modul"
+msgstr "модуль"
 
-#: scout/__init__.py:953
-#, python-format
+#: scout/__init__.py:953, python-format
 msgid "Cannot find a formatter for a %s"
-msgstr "Nepodarilo sa nájsť formátovač pre %s"
+msgstr "Невозможно найти форматку для %s"
 
 #: scout/java.py:9
 msgid "Search for java classes inside the JAR files."
-msgstr "Hľadá triedy jazyka Java v JAR súboroch."
+msgstr "Поиск java-классов в файлах JAR."
 
 #: scout/java.py:13 scout/java.py:14
 msgid "jar"
@@ -169,50 +163,49 @@ msgstr "jar"
 
 #: scout/java.py:13 scout/java.py:14
 msgid "class"
-msgstr "trieda"
+msgstr "класс"
 
 #: scout/library.py:9
 msgid "Search for shared libraries."
-msgstr "Hľadá zdieľané knižnice."
+msgstr "Поиск разделяемых библиотек"
 
 #: scout/library.py:13 scout/library.py:14
 msgid "library"
-msgstr "knižnica"
+msgstr "библиотека"
 
 #: scout/python.py:9
 msgid "Search for python modules."
-msgstr "Hľadá moduly jazyka Python."
+msgstr "Поиск модулей python."
 
 #: scout/webpin.py:13
 msgid "Search in packages using the webpin webservice."
-msgstr "Hľadá v balíkoch pomocou webovej služby webpin."
+msgstr "Поиск по пакетам в веб-службе webpin."
 
 #: scout/webpin.py:45
 #, python-format
 msgid "Cannot retreive query results ... %s"
-msgstr "Nepodarilo sa nájsť výsledky ... %s"
+msgstr "Невозможно получить результаты запроса ... %s"
 
 #: scout/webpin.py:50
 msgid "ver"
-msgstr "ver."
+msgstr "версия"
 
 #: scout/webpin.py:50 scout/webpin.py:51
 msgid "arch"
-msgstr "arch."
+msgstr "архитектура"
 
 #: scout/webpin.py:50
 msgid "files"
-msgstr "súbory"
+msgstr "файлы"
 
 #: scout/webpin.py:51
 msgid "version"
-msgstr "verzia"
+msgstr "версия"
 
 #: scout/webpin.py:51
 msgid "repository URL"
-msgstr "URL repozitára"
+msgstr "URL репозитория"
 
 #: scout/webpin.py:51
 msgid "matched files"
-msgstr "nájdené súbory"
-
+msgstr "найденные файлы"

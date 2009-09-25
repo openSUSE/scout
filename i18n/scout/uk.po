@@ -1,0 +1,249 @@
+# Translation of scout.uk.po to Ukrainian
+# @TITLE@
+# Copyright (C) 2006, SUSE Linux GmbH, Nuremberg
+#
+# This file is distributed under the same license as @PACKAGE@ package. FIRST
+#
+# Ivan Petrouchtchak <fr.ivan@ukrainian-orthodox.org>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: scout.uk\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-08-28 11:42+0200\n"
+"PO-Revision-Date: 2009-09-17 23:13-0700\n"
+"Last-Translator: Ivan Petrouchtchak <fr.ivan@ukrainian-orthodox.org>\n"
+"Language-Team: Ukrainian <translation@linux.org.ua>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: scout/autoconf.py:9
+msgid "Search for autoconf macros inside the m4 files."
+msgstr "Пошук за макросами autoconf у файлах m4."
+
+#: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
+#: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
+#: scout/webpin.py:50
+msgid "repo"
+msgstr "repo"
+
+#: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
+#: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
+#: scout/webpin.py:50
+#| msgid "package"
+#| msgid_plural "packages"
+msgid "pkg"
+msgstr "pkg"
+
+#: scout/autoconf.py:13
+#| msgid "4"
+msgid "m4"
+msgstr "m4"
+
+#: scout/autoconf.py:13 scout/autoconf.py:14
+msgid "macro"
+msgstr "макрос"
+
+#: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
+#: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
+#| msgid "Enabled repository"
+msgid "repository"
+msgstr "сховище"
+
+#: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
+#: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
+#: scout/webpin.py:51
+#| msgid "package"
+#| msgid_plural "packages"
+msgid "package"
+msgstr "пакунок"
+
+#: scout/autoconf.py:14
+#| msgid "No files"
+msgid "m4 file"
+msgstr "файл m4"
+
+#: scout/bin.py:62
+msgid "Search for binaries contained in the packages."
+msgstr "Пошук за двійковими файлами в пакунках."
+
+#: scout/bin.py:107 scout/bin.py:108
+msgid "path"
+msgstr "шлях"
+
+#: scout/bin.py:107
+#| msgid "bit"
+msgid "bin"
+msgstr "дв."
+
+#: scout/bin.py:108
+msgid "binary"
+msgstr "двійковий"
+
+#: scout/foo.py:9
+msgid "- template module -"
+msgstr "- модуль шаблона -"
+
+#: scout/header.py:9
+msgid "Search for C/C++/Obj-C/Obj-C++ headers."
+msgstr "Пошук за заголовкамиr C/C++/Obj-C/Obj-C++."
+
+#: scout/header.py:13 scout/header.py:14
+msgid "header"
+msgstr "заголовок"
+
+#: scout/__init__.py:148
+#| msgid "Don't show this message again."
+msgid "show this help message and exit"
+msgstr "показати це повідомлення довідки і вийти"
+
+#: scout/__init__.py:155
+#| msgid "Show the program version and exit"
+msgid "show program's version number and exit"
+msgstr "показати версію програми і вийти"
+
+#: scout/__init__.py:198
+msgid "Usage: %prog [global_opts] module [local_opts] search_term"
+msgstr "Використання: %prog [глобальні_параметри] модуль [локальні_параметри] рядок_пошуку"
+
+#: scout/__init__.py:205
+#, python-format
+msgid "select the output format (default %s)"
+msgstr "виберіть формат виводу (типовий %s)"
+
+#: scout/__init__.py:212
+msgid "list of available modules"
+msgstr "список наявних модулів"
+
+#: scout/__init__.py:228
+#| msgid "Available profiles"
+msgid "Available modules:\n"
+msgstr "Наявні модулі:\n"
+
+#: scout/__init__.py:279
+#, python-format
+msgid "The name of module is mandatory. Use %s --help"
+msgstr "Потрібно вказати назву модуля. Скористайтесь %s --help"
+
+#: scout/__init__.py:366
+#, python-format
+#| msgid "%1 is not a directory."
+msgid "%s is not a directory"
+msgstr "%s - це не каталог"
+
+#: scout/__init__.py:425
+#, python-format
+#| msgid "Cannot open file '%1'."
+msgid "Cannot not open database file '%s'"
+msgstr "Неможливо відкрити файл бази даних «%s»"
+
+#: scout/__init__.py:699
+#| msgid "Specified repositories: "
+msgid "Available repositories:\n"
+msgstr "Наявні сховища:\n"
+
+#: scout/__init__.py:731
+#, python-format
+msgid "Usage: %%prog %s [options] search_term"
+msgstr "Використання: %%prog %s [параметри] рядок_пошуку"
+
+#: scout/__init__.py:733
+#| msgid "Got list of repositories"
+msgid "list available repositories"
+msgstr "список наявних сховищ"
+
+#: scout/__init__.py:734
+#| msgid "Searched for package name"
+msgid "inverse search by package name"
+msgstr "зворотній пошук за назвою пакунка"
+
+#: scout/__init__.py:735
+#| msgid "Set repository data"
+msgid "select repository to search"
+msgstr "виберіть сховище для пошуку"
+
+#: scout/__init__.py:781
+#| msgid "No repository found."
+msgid "No repositories found ..."
+msgstr "Не знайдено жодного сховища ..."
+
+#: scout/__init__.py:825 scout/__init__.py:826
+#| msgid "Modules"
+msgid "module"
+msgstr "модуль"
+
+#: scout/__init__.py:953
+#, python-format
+#| msgid "Cannot find the master ypserver: %s"
+msgid "Cannot find a formatter for a %s"
+msgstr "Не вдається знайти форматування для %s"
+
+#: scout/java.py:9
+msgid "Search for java classes inside the JAR files."
+msgstr "Пошук за класами java у файлах JAR."
+
+#: scout/java.py:13 scout/java.py:14
+#| msgid "Far"
+msgid "jar"
+msgstr "jar"
+
+#: scout/java.py:13 scout/java.py:14
+msgid "class"
+msgstr "class"
+
+#: scout/library.py:9
+#| msgid "Searched for package name"
+msgid "Search for shared libraries."
+msgstr "Шукати за спільними бібліотеками."
+
+#: scout/library.py:13 scout/library.py:14
+#| msgid "Gibraltar"
+msgid "library"
+msgstr "бібліотека"
+
+#: scout/python.py:9
+#| msgid "Searching for fonts"
+msgid "Search for python modules."
+msgstr "Пошук за модулями python."
+
+#: scout/webpin.py:13
+msgid "Search in packages using the webpin webservice."
+msgstr "Пошук в пакунках за допомогою веб-служби webpin."
+
+#: scout/webpin.py:45
+#, python-format
+msgid "Cannot retreive query results ... %s"
+msgstr "Не вдалося отримати результати запиту ... %s"
+
+#: scout/webpin.py:50
+#| msgid "Never"
+msgid "ver"
+msgstr "вер."
+
+#: scout/webpin.py:50 scout/webpin.py:51
+#| msgid "Search"
+msgid "arch"
+msgstr "арх."
+
+#: scout/webpin.py:50
+#| msgid "No files"
+msgid "files"
+msgstr "файли"
+
+#: scout/webpin.py:51
+#| msgid "Version"
+msgid "version"
+msgstr "версія"
+
+#: scout/webpin.py:51
+#| msgid "Set repository data"
+msgid "repository URL"
+msgstr "URL сховища"
+
+#: scout/webpin.py:51
+#| msgid "Searched for file"
+msgid "matched files"
+msgstr "збіг файлів"
+
