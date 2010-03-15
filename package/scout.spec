@@ -15,7 +15,6 @@
 # Please submit bugfixes or comments via http://bugs.opensuse.org/
 #
 
-
 # norootforbuild
 
 Name:           scout
@@ -53,7 +52,11 @@ Package Scout for indexing various properties of packages.
 %define scoutrepo none
 %define cnfrepo none
 
-%if 0%{?suse_version} > 1110
+%if 0%{?suse_version} > 1120
+%define scoutrepo suse113
+%define cnfrepo zypp
+%endif
+%if 0%{?suse_version} <= 1120 && 0%{?suse_version} > 1110
 %define scoutrepo suse112
 %define cnfrepo zypp
 %endif
@@ -68,14 +71,6 @@ Package Scout for indexing various properties of packages.
 %if 0%{?suse_version} <= 1030 && 0%{?suse_version} > 1020
 %define scoutrepo suse103
 %define cnfrepo suse103
-%endif
-%if 0%{?suse_version} <= 1020 && 0%{?suse_version} > 1010
-%define scoutrepo suse102
-%define cnfrepo suse102
-%endif
-%if 0%{?suse_version} <= 1010 && 0%{?suse_version} > 1000
-%define scoutrepo suse101
-%define cnfrepo suse101
 %endif
 %if 0%{?sles_version} == 10
 %define scoutrepo sle10

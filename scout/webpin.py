@@ -12,11 +12,10 @@ class ScoutModule(scout.BaseScoutModule):
     name = "webpin"
     desc = _("Search in packages using the webpin webservice.")
     distros = {
+        'suse113' : 'openSUSE_113',
+        'suse112' : 'openSUSE_112',
         'suse111' : 'openSUSE_111',
         'suse110' : 'openSUSE_110',
-        'suse103' : 'openSUSE_103',
-        'suse102' : 'openSUSE_102',
-        'factory' : 'SUSE_Factory',
     }
     service_host = 'api.opensuse-community.org'
     service_baseurl = '/searchservice/Search/Simple/'
