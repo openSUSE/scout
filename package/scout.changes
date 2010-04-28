@@ -1,4 +1,12 @@
 -------------------------------------------------------------------
+Wed Apr 28 16:37:58 CEST 2010 - prusnak@suse.cz
+
+- also check the file name, not only the package name while testing
+  whether the package is installed
+- add TEXTDOMAINDIR
+- fix localization of one msg
+
+-------------------------------------------------------------------
 Mon Mar 15 13:26:29 UTC 2010 - prusnak@suse.cz
 
 - update repositories list
