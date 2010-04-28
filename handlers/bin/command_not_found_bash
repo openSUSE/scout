@@ -1,5 +1,6 @@
 command_not_found_handle() {
 
+    export TEXTDOMAINDIR=/usr/share/locale
     export TEXTDOMAIN=command-not-found
 
     local cmd state rest
