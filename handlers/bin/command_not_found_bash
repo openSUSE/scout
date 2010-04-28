@@ -31,7 +31,8 @@ command_not_found_handle() {
         test -x /usr/bin/python && test -x /usr/bin/command-not-found && /usr/bin/python /usr/bin/command-not-found "$1" __REPO__
     else
         # print only info about command-not-found
-        echo -e $"If '$1' is not a typo you can use command-not-found to lookup the package that contains it, like this:\n    cnf $1"
+        echo -e $"If '$1' is not a typo you can use command-not-found to lookup the package that contains it, like this:
+    cnf $1"
     fi
 
     return 127

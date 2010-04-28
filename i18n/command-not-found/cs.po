@@ -28,7 +28,7 @@ msgstr ""
 
 #: handlers/bin/command_not_found_bash:32
 msgid "If '$1' is not a typo you can use command-not-found to lookup the package that contains it, like this:\n    cnf $1"
-msgstr "Když '$1' není překlep, je môžno použít command-not-found, aby nalezl balíček, který ho obsahuje. Například takto:\n    cnf $1"
+msgstr "Když '$1' není překlep, je možno použít command-not-found, aby nalezl balíček, který ho obsahuje. Například takto:\n    cnf $1"
 
 #: handlers/bin/command-not-found:8
 #, python-format
