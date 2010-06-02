@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2009-04-23 15:20+0200\n"
 "PO-Revision-Date: 2009-09-16 20:13+0200\n"
 "Last-Translator: Freek de Kruijf <freek@opensuse.org>\n"
-"Language-Team: Dutch <Yast-nl-l10n@lists.sf.kovoks.nl>\n"
+"Language-Team: Dutch <yast-nl-l10n@lists.sf.kovoks.nl>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,7 +21,6 @@ msgstr ""
 
 #: handlers/bin/command_not_found_bash:9
 #: handlers/bin/command_not_found_bash:17
-#| msgid "The job was not found."
 msgid "$1: command not found"
 msgstr "$1: commando niet gevonden"
 
@@ -50,12 +49,10 @@ msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
 msgstr "  * %(prog)s [ pad: %(path)s/%(binary)s, installatiebron: %(repo)s ]"
 
 #: handlers/bin/command-not-found:14
-#| msgid "Installing file"
 msgid "Try installing with:"
 msgstr "Probeer te installeren met:"
 
 #: handlers/bin/command-not-found:16
-#| msgid "Remove selected package"
 msgid "<selected_package>"
 msgstr "<selected_package>"
 
@@ -76,13 +73,10 @@ msgstr "Het absolute pad naar '%(prog)s' is '%(path)s/%(prog)s'. Controleer uw $
 
 #: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
 #, python-format
-#| msgid "Searching groups"
 msgid "searching ..."
 msgstr "bezig met zoeken ..."
 
 #: handlers/bin/command-not-found:87
 #, python-format
-#| msgid "Entry not found."
 msgid "command not found"
 msgstr "commando niet gevonden"
-

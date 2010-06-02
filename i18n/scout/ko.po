@@ -1,76 +1,55 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: entries\n"
+"Project-Id-Version: scout.ko\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-28 11:42+0200\n"
-"PO-Revision-Date: 2009-09-18 09:24+0900\n"
-"Last-Translator: YunSeok Choi <xein@naver.com>\n"
-"Language-Team:  <en@li.org>\n"
+"PO-Revision-Date: 2009-10-23 02:16+0900\n"
+"Last-Translator: Yunseok Choi <xein@naver.com>\n"
+"Language-Team: Korean <xein@naver.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Language: Korean\n"
+"X-Poedit-Country: KOREA, REPUBLIC OF\n"
+"X-Poedit-SourceCharset: utf-8\n"
 
 #: scout/autoconf.py:9
 msgid "Search for autoconf macros inside the m4 files."
 msgstr "m4 파일에 있는 autoconf 매크로를 검색합니다."
 
-#: scout/autoconf.py:13
-#: scout/bin.py:107
-#: scout/header.py:13
-#: scout/__init__.py:825
-#: scout/java.py:13
-#: scout/library.py:13
+#: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
+#: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
 #: scout/webpin.py:50
 msgid "repo"
 msgstr "repo"
 
-#: scout/autoconf.py:13
-#: scout/bin.py:107
-#: scout/header.py:13
-#: scout/__init__.py:825
-#: scout/java.py:13
-#: scout/library.py:13
+#: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
+#: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
 #: scout/webpin.py:50
-#| msgid "package"
-#| msgid_plural "packages"
 msgid "pkg"
 msgstr "pkg"
 
 #: scout/autoconf.py:13
-#| msgid "4"
 msgid "m4"
 msgstr "m4"
 
-#: scout/autoconf.py:13
-#: scout/autoconf.py:14
+#: scout/autoconf.py:13 scout/autoconf.py:14
 msgid "macro"
 msgstr "매크로"
 
-#: scout/autoconf.py:14
-#: scout/bin.py:108
-#: scout/header.py:14
-#: scout/__init__.py:826
-#: scout/java.py:14
-#: scout/library.py:14
-#| msgid "Enabled repository"
+#: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
+#: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
 msgid "repository"
 msgstr "저장소"
 
-#: scout/autoconf.py:14
-#: scout/bin.py:108
-#: scout/header.py:14
-#: scout/__init__.py:826
-#: scout/java.py:14
-#: scout/library.py:14
+#: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
+#: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
 #: scout/webpin.py:51
-#| msgid "package"
-#| msgid_plural "packages"
 msgid "package"
 msgstr "꾸러미"
 
 #: scout/autoconf.py:14
-#| msgid "No files"
 msgid "m4 file"
 msgstr "m4 파일"
 
@@ -78,13 +57,11 @@ msgstr "m4 파일"
 msgid "Search for binaries contained in the packages."
 msgstr "꾸러미에 들어있는 바이너리를 검색합니다."
 
-#: scout/bin.py:107
-#: scout/bin.py:108
+#: scout/bin.py:107 scout/bin.py:108
 msgid "path"
 msgstr "경로"
 
 #: scout/bin.py:107
-#| msgid "bit"
 msgid "bin"
 msgstr "bin"
 
@@ -100,18 +77,15 @@ msgstr "- 서식 모듈 -"
 msgid "Search for C/C++/Obj-C/Obj-C++ headers."
 msgstr "C/C++/Obj-C/Obj-C++ 헤더를 검색합니다."
 
-#: scout/header.py:13
-#: scout/header.py:14
+#: scout/header.py:13 scout/header.py:14
 msgid "header"
 msgstr "헤더"
 
 #: scout/__init__.py:148
-#| msgid "Don't show this message again."
 msgid "show this help message and exit"
 msgstr "이 도움말을 표시하고 종료"
 
 #: scout/__init__.py:155
-#| msgid "Show the program version and exit"
 msgid "show program's version number and exit"
 msgstr "프로그램 버전을 표시하고 종료"
 
@@ -125,12 +99,10 @@ msgid "select the output format (default %s)"
 msgstr "출력할 포맷을 선택 (기본 %s)"
 
 #: scout/__init__.py:212
-#| msgid "scdb not available"
 msgid "list of available modules"
 msgstr "사용 가능한 모듈의 목록"
 
 #: scout/__init__.py:228
-#| msgid "Available profiles"
 msgid "Available modules:\n"
 msgstr "사용 가능한 모듈:\n"
 
@@ -141,18 +113,15 @@ msgstr "모듈 이름은 필수입니다. %s --help 에서 도움말을 확인�
 
 #: scout/__init__.py:366
 #, python-format
-#| msgid "%1 is not a directory."
 msgid "%s is not a directory"
-msgstr "%s 은(는) 디렉토리가 아님"
+msgstr "%s 은(는) 디렉터리가 아님"
 
 #: scout/__init__.py:425
 #, python-format
-#| msgid "Cannot open file '%1'."
 msgid "Cannot not open database file '%s'"
 msgstr "'%s' 데이터베이스 파일을 열 수 없음"
 
 #: scout/__init__.py:699
-#| msgid "Specified repositories: "
 msgid "Available repositories:\n"
 msgstr "사용 가능한 저장소:\n"
 
@@ -162,34 +131,27 @@ msgid "Usage: %%prog %s [options] search_term"
 msgstr "사용법: %%prog %s [options] search_term"
 
 #: scout/__init__.py:733
-#| msgid "Got list of repositories"
 msgid "list available repositories"
 msgstr "사용 가능한 저장소 목록"
 
 #: scout/__init__.py:734
-#| msgid "Searched for package name"
 msgid "inverse search by package name"
 msgstr "꾸러미 이름으로 역검색"
 
 #: scout/__init__.py:735
-#| msgid "Set repository data"
 msgid "select repository to search"
 msgstr "검색할 저장소 선택"
 
 #: scout/__init__.py:781
-#| msgid "No repository found."
 msgid "No repositories found ..."
 msgstr "저장소가 없습니다..."
 
-#: scout/__init__.py:825
-#: scout/__init__.py:826
-#| msgid "Modules"
+#: scout/__init__.py:825 scout/__init__.py:826
 msgid "module"
 msgstr "모듈"
 
 #: scout/__init__.py:953
 #, python-format
-#| msgid "Cannot find the master ypserver: %s"
 msgid "Cannot find a formatter for a %s"
 msgstr "%s 포매터를 찾을 수 없음"
 
@@ -197,29 +159,23 @@ msgstr "%s 포매터를 찾을 수 없음"
 msgid "Search for java classes inside the JAR files."
 msgstr "JAR 파일에 있는 자바 클래스를 검색합니다."
 
-#: scout/java.py:13
-#: scout/java.py:14
+#: scout/java.py:13 scout/java.py:14
 msgid "jar"
 msgstr "jar"
 
-#: scout/java.py:13
-#: scout/java.py:14
+#: scout/java.py:13 scout/java.py:14
 msgid "class"
 msgstr "클래스"
 
 #: scout/library.py:9
-#| msgid "Searched for package name"
 msgid "Search for shared libraries."
 msgstr "공유 라이브러리를 검색합니다."
 
-#: scout/library.py:13
-#: scout/library.py:14
-#| msgid "Gibraltar"
+#: scout/library.py:13 scout/library.py:14
 msgid "library"
 msgstr "라이브러리"
 
 #: scout/python.py:9
-#| msgid "Searching for info file..."
 msgid "Search for python modules."
 msgstr "파이선 모듈을 검색합니다."
 
@@ -233,33 +189,25 @@ msgid "Cannot retreive query results ... %s"
 msgstr "쿼리 결과를 취득할 수 없음 ... %s"
 
 #: scout/webpin.py:50
-#| msgid "Never"
 msgid "ver"
 msgstr "ver"
 
-#: scout/webpin.py:50
-#: scout/webpin.py:51
-#| msgid "Search"
+#: scout/webpin.py:50 scout/webpin.py:51
 msgid "arch"
 msgstr "arch"
 
 #: scout/webpin.py:50
-#| msgid "No files"
 msgid "files"
 msgstr "파일"
 
 #: scout/webpin.py:51
-#| msgid "Version"
 msgid "version"
 msgstr "버전"
 
 #: scout/webpin.py:51
-#| msgid "Set repository data"
 msgid "repository URL"
 msgstr "저장소 URL"
 
 #: scout/webpin.py:51
-#| msgid "Searched for file"
 msgid "matched files"
 msgstr "일치하는 파일"
-

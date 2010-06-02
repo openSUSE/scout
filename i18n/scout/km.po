@@ -27,13 +27,10 @@ msgstr "ឃ្លាំង"
 #: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
 #: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
 #: scout/webpin.py:50
-#| msgid "package"
-#| msgid_plural "packages"
 msgid "pkg"
 msgstr "pkg"
 
 #: scout/autoconf.py:13
-#| msgid "4"
 msgid "m4"
 msgstr "m4"
 
@@ -43,20 +40,16 @@ msgstr "ម៉ាក្រូ"
 
 #: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
 #: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
-#| msgid "Enabled repository"
 msgid "repository"
 msgstr "​ឃ្លាំង"
 
 #: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
 #: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
 #: scout/webpin.py:51
-#| msgid "package"
-#| msgid_plural "packages"
 msgid "package"
 msgstr "កញ្ចប់"
 
 #: scout/autoconf.py:14
-#| msgid "No files"
 msgid "m4 file"
 msgstr "ឯកសារ m4"
 
@@ -69,7 +62,6 @@ msgid "path"
 msgstr "ផ្លូវ"
 
 #: scout/bin.py:107
-#| msgid "bit"
 msgid "bin"
 msgstr "bin"
 
@@ -90,12 +82,10 @@ msgid "header"
 msgstr "បឋមកថា"
 
 #: scout/__init__.py:148
-#| msgid "Don't show this message again."
 msgid "show this help message and exit"
 msgstr "បង្ហាញ​សារ​ជំនួយ​នេះ​ ហើយ​ចាកចេញ"
 
 #: scout/__init__.py:155
-#| msgid "Show the program version and exit"
 msgid "show program's version number and exit"
 msgstr "បង្ហាញ​លេខ​កំណែ​របស់​កម្មវិធី ហើយ​ចាកចេញ"
 
@@ -113,7 +103,6 @@ msgid "list of available modules"
 msgstr "បញ្ជី​ម៉ូឌុល​ដែល​អាច​ប្រើ​បាន"
 
 #: scout/__init__.py:228
-#| msgid "Available profiles"
 msgid "Available modules:\n"
 msgstr "ម៉ូឌុល​ដែលអាច​ប្រើ​បាន ៖\n"
 
@@ -124,18 +113,15 @@ msgstr "ឈ្មោះ​ម៉ូឌុល​មាន​ការ​កំណ
 
 #: scout/__init__.py:366
 #, python-format
-#| msgid "%1 is not a directory."
 msgid "%s is not a directory"
 msgstr "%s មិនមែន​ជា​ថត​ទេ"
 
 #: scout/__init__.py:425
 #, python-format
-#| msgid "Cannot open file '%1'."
 msgid "Cannot not open database file '%s'"
 msgstr "មិនអាច​បើក​ឯកសារ​មូលដ្ឋាន​ទិន្នន័យ​បានទេ '%s'"
 
 #: scout/__init__.py:699
-#| msgid "Specified repositories: "
 msgid "Available repositories:\n"
 msgstr "ឃ្លាំង​ដែលអាច​ប្រើ​បាន ៖\n"
 
@@ -145,33 +131,27 @@ msgid "Usage: %%prog %s [options] search_term"
 msgstr "ការ​ប្រើ ៖ %%prog %s [ជម្រើស] search_term"
 
 #: scout/__init__.py:733
-#| msgid "Got list of repositories"
 msgid "list available repositories"
 msgstr "រាយ​ឃ្លាំង​ដែល​អាច​ប្រើ​បាន"
 
 #: scout/__init__.py:734
-#| msgid "Searched for package name"
 msgid "inverse search by package name"
 msgstr "រក​បញ្ច្រាស​តាម​​ឈ្មោះ​កញ្ចប់"
 
 #: scout/__init__.py:735
-#| msgid "Set repository data"
 msgid "select repository to search"
 msgstr "ជ្រើស​ឃ្លាំង​ត្រូវ​ស្វែងរក"
 
 #: scout/__init__.py:781
-#| msgid "No repository found."
 msgid "No repositories found ..."
 msgstr "រក​មិនឃើញ​ឃ្លាំង..."
 
 #: scout/__init__.py:825 scout/__init__.py:826
-#| msgid "Modules"
 msgid "module"
 msgstr "ម៉ូ​ឌុល​"
 
 #: scout/__init__.py:953
 #, python-format
-#| msgid "Cannot find the master ypserver: %s"
 msgid "Cannot find a formatter for a %s"
 msgstr "រក​មិនឃើញ​កម្មវិធី​ធ្វើ​ទ្រង់ទ្រាយ​សម្រាប់ %s"
 
@@ -180,7 +160,6 @@ msgid "Search for java classes inside the JAR files."
 msgstr "ស្វែងរក​ថ្នាក់ java ខាង​ក្នុង​ឯកសារ JAR ។"
 
 #: scout/java.py:13 scout/java.py:14
-#| msgid "Far"
 msgid "jar"
 msgstr "jar"
 
@@ -189,17 +168,14 @@ msgid "class"
 msgstr "ថ្នាក់"
 
 #: scout/library.py:9
-#| msgid "Searching for file handlers"
 msgid "Search for shared libraries."
 msgstr "ស្វែងរក​បណ្ណាល័យ​រួម ។"
 
 #: scout/library.py:13 scout/library.py:14
-#| msgid "Gibraltar"
 msgid "library"
 msgstr "បណ្ណាល័យ"
 
 #: scout/python.py:9
-#| msgid "Searching for file handlers"
 msgid "Search for python modules."
 msgstr "ស្វែងរក​ម៉ូឌុល​របស់ python ។"
 
@@ -213,32 +189,25 @@ msgid "Cannot retreive query results ... %s"
 msgstr "មិនអាច​ទៅ​យក​លទ្ធផល​សំណួរ​... %s"
 
 #: scout/webpin.py:50
-#| msgid "Never"
 msgid "ver"
 msgstr "កំណែ"
 
 #: scout/webpin.py:50 scout/webpin.py:51
-#| msgid "Search"
 msgid "arch"
 msgstr "arch"
 
 #: scout/webpin.py:50
-#| msgid "No files"
 msgid "files"
 msgstr "​ឯកសារ"
 
 #: scout/webpin.py:51
-#| msgid "Version"
 msgid "version"
 msgstr "កំណែ"
 
 #: scout/webpin.py:51
-#| msgid "Set repository data"
 msgid "repository URL"
 msgstr "URL ឃ្លាំង"
 
 #: scout/webpin.py:51
-#| msgid "Searched for file"
 msgid "matched files"
 msgstr "ឯកសារ​ដែល​​ផ្គូផ្គង"
-

@@ -1,7 +1,7 @@
 #
 # spec file for package scout
 #
-# Copyright (c) 2009 SUSE LINUX Products GmbH, Nuernberg, Germany.
+# Copyright (c) 2010 SUSE LINUX Products GmbH, Nuernberg, Germany.
 #
 # All modifications and additions to the file contributed by third parties
 # remain the property of their copyright owners, unless otherwise agreed
@@ -19,9 +19,9 @@
 
 Name:           scout
 Version:        0.1.0
-Release:        34
+Release:        35
 Url:            http://en.opensuse.org/Scout
-License:        X11/MIT
+License:        MIT
 Group:          System/Packages
 Summary:        Package Scout
 Source:         %{name}.tar.bz2
@@ -81,8 +81,8 @@ Package Scout for indexing various properties of packages.
 
 %package -n command-not-found
 Version:        0.1.0
-Release:        34
-License:        X11/MIT
+Release:        42
+License:        MIT
 Group:          System/Packages
 Summary:        Command Not Found extension for shell
 Requires:       python rpm-python

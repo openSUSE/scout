@@ -17,7 +17,6 @@ msgstr ""
 # TLABEL linuxrc_2002_03_29_0036__117
 #: handlers/bin/command_not_found_bash:9
 #: handlers/bin/command_not_found_bash:17
-#| msgid "The job was not found."
 msgid "$1: command not found"
 msgstr "$1 : commande non trouvée"
 
@@ -47,12 +46,10 @@ msgstr "  * %(prog)s [ chemin : %(path)s/%(binary)s, dépôt : %(repo)s ]"
 
 # TLABEL partitioning_2002_01_04_0147__180
 #: handlers/bin/command-not-found:14
-#| msgid "Installing file"
 msgid "Try installing with:"
 msgstr "Essayer l'installation avec :"
 
 #: handlers/bin/command-not-found:16
-#| msgid "Remove selected package"
 msgid "<selected_package>"
 msgstr "<paquet_selectionné>"
 
@@ -71,16 +68,12 @@ msgstr "Le chemin absolu vers '%(prog)s' est '%(path)s/%(prog)s', donc son lance
 msgid "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH variable to see whether it contains the mentioned path."
 msgstr "Le chemin absolu vers '%(prog)s' est '%(path)s/%(prog)s'. Veuillez vérifier votre variable $PATH pour voir si il contient le chemin mentionné."
 
-#: handlers/bin/command-not-found:59
-#: handlers/bin/command-not-found:60
+#: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
 #, python-format
-#| msgid "Searching groups"
 msgid "searching ..."
 msgstr "Recherche..."
 
 #: handlers/bin/command-not-found:87
 #, python-format
-#| msgid "Entry not found."
 msgid "command not found"
 msgstr "commande non trouvée"
-

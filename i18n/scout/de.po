@@ -97,8 +97,8 @@ msgstr "Zeige die Versionsnummer des Programms und beende"
 msgid "Usage: %prog [global_opts] module [local_opts] search_term"
 msgstr "Benutzung: %prog [Globale_Optionen] Module [lokale_Optionen] Abfrage"
 
-#: scout/__init__.py:205, python-format
-#| msgid "select the output format (%s, default is %s)"
+#: scout/__init__.py:205
+#, python-format
 msgid "select the output format (default %s)"
 msgstr "Wählen Sie das Ausgabeformat (Standard %s)"
 
@@ -215,4 +215,3 @@ msgstr "Repository URL"
 #: scout/webpin.py:51
 msgid "matched files"
 msgstr "gefundene Dateien"
-

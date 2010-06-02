@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: command-not-found\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-28 11:42+0200\n"
+"POT-Creation-Date: 2009-04-23 15:20+0200\n"
 "PO-Revision-Date: 2008-08-29 14:47+0200\n"
 "Last-Translator: Thomas Schraitle <toms@suse.de>\n"
 "Language-Team: Deutsch\n"
@@ -16,24 +16,37 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: handlers/bin/command_not_found_bash:9 handlers/bin/command_not_found_bash:17
+#: handlers/bin/command_not_found_bash:9
+#: handlers/bin/command_not_found_bash:17
 msgid "$1: command not found"
 msgstr "$1: Kommando nicht gefunden."
 
 #: handlers/bin/command_not_found_bash:24
-msgid "Absolute path to '$1' is '$prefix/sbin/$1', so running it may require superuser privileges (eg. root)."
-msgstr "Der absoluter Pfad für '$1' ist '$prefix/sbin/$1', daher ist es wohl beabsichtigt, dass dieses nur von einem Benutzer mit Superuser Rechten gestartet werden kann (z.B. root)."
+msgid ""
+"Absolute path to '$1' is '$prefix/sbin/$1', so running it may require "
+"superuser privileges (eg. root)."
+msgstr ""
+"Der absoluter Pfad für '$1' ist '$prefix/sbin/$1', daher ist es wohl "
+"beabsichtigt, dass dieses nur von einem Benutzer mit Superuser Rechten "
+"gestartet werden kann (z.B. root)."
 
 #: handlers/bin/command_not_found_bash:32
-msgid "If '$1' is not a typo you can use command-not-found to lookup the package that contains it, like this:\n    cnf $1"
-msgstr "Wenn '$1' kein Tippfehler ist, können Sie command-not-found benutzen, um das Paket zu finden, das den Befehl enthält; z.B.:\n    cnf $1"
+msgid ""
+"If '$1' is not a typo you can use command-not-found to lookup the package "
+"that contains it, like this:\n"
+"    cnf $1"
+msgstr ""
+"Wenn '$1' kein Tippfehler ist, können Sie command-not-found benutzen, um das "
+"Paket zu finden, das den Befehl enthält; z.B.:\n"
+"    cnf $1"
 
 #: handlers/bin/command-not-found:8
 #, python-format
 msgid "The program '%(prog)s' can be found in the following package:"
 msgid_plural "The program '%(prog)s' can be found in following packages:"
 msgstr[0] "Das Programm '%(prog)s' kann im folgenden Paket gefunden werden:"
-msgstr[1] "Das Programm '%(prog)s' kann in den folgenden Paketen gefunden werden:"
+msgstr[1] ""
+"Das Programm '%(prog)s' kann in den folgenden Paketen gefunden werden:"
 
 #: handlers/bin/command-not-found:11
 #, python-format
@@ -53,20 +66,28 @@ msgstr "<ausgewähltes_Paket>"
 msgid ""
 "Program '%(prog)s' is present in package '%(pkg)s', which is installed on "
 "your system."
-msgstr "Das Programm '%(prog)s' ist verfügbar im Paket '%(pkg)s', das auf ihrem System installiert ist."
+msgstr ""
+"Das Programm '%(prog)s' ist verfügbar im Paket '%(pkg)s', das auf ihrem "
+"System installiert ist."
 
 #: handlers/bin/command-not-found:27
 #, python-format
 msgid ""
-"Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may require superuser privileges (eg. root)."
-msgstr "Der absoluter Pfad für '%(prog)s' ist '%(path)s/%(prog)s', daher ist es wohl beabsichtigt, dass dieses nur von einem Benutzer mit Superuser Rechten gestartet werden kann (z.B. root)."
+"Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may "
+"require superuser privileges (eg. root)."
+msgstr ""
+"Der absoluter Pfad für '%(prog)s' ist '%(path)s/%(prog)s', daher ist es wohl "
+"beabsichtigt, dass dieses nur von einem Benutzer mit Superuser Rechten "
+"gestartet werden kann (z.B. root)."
 
 #: handlers/bin/command-not-found:30
 #, python-format
 msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH "
 "variable to see whether it contains the mentioned path."
-msgstr "Der absolute Pfad für '%(prog)s' ist '%(path)s/%(prog)s'. Bitte überprüfen Sie Ihre $PATH Variable ob der genannte Pfad enthalten ist."
+msgstr ""
+"Der absolute Pfad für '%(prog)s' ist '%(path)s/%(prog)s'. Bitte überprüfen "
+"Sie Ihre $PATH Variable ob der genannte Pfad enthalten ist."
 
 #: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
 #, python-format

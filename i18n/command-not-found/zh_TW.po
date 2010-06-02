@@ -21,7 +21,6 @@ msgstr ""
 
 #: handlers/bin/command_not_found_bash:9
 #: handlers/bin/command_not_found_bash:17
-#| msgid "The job was not found."
 msgid "$1: command not found"
 msgstr "$1: 找不到此指令"
 
@@ -49,12 +48,10 @@ msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
 msgstr "  * %(prog)s [ 路徑: %(path)s/%(binary)s, 套件庫: %(repo)s ]"
 
 #: handlers/bin/command-not-found:14
-#| msgid "Installing file"
 msgid "Try installing with:"
 msgstr "試著使用下面指令安裝："
 
 #: handlers/bin/command-not-found:16
-#| msgid "Remove selected package"
 msgid "<selected_package>"
 msgstr "<selected_package>"
 
@@ -75,13 +72,10 @@ msgstr "指向 '%(prog)s' 的絕對路徑為 '%(path)s/%(prog)s'. 請檢查您�
 
 #: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
 #, python-format
-#| msgid "Searching groups"
 msgid "searching ..."
 msgstr "正在搜尋 ..."
 
 #: handlers/bin/command-not-found:87
 #, python-format
-#| msgid "Entry not found."
 msgid "command not found"
 msgstr "找不到指令"
-

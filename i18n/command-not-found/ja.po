@@ -16,7 +16,6 @@ msgstr ""
 
 #: handlers/bin/command_not_found_bash:9
 #: handlers/bin/command_not_found_bash:17
-#| msgid "The job was not found."
 msgid "$1: command not found"
 msgstr "$1: コマンドが見つかりません"
 
@@ -44,12 +43,10 @@ msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
 msgstr "  * %(prog)s [ パス: %(path)s/%(binary)s, リポジトリ: %(repo)s ]"
 
 #: handlers/bin/command-not-found:14
-#| msgid "Installing file"
 msgid "Try installing with:"
 msgstr "下記を利用してインストールしてみてください:"
 
 #: handlers/bin/command-not-found:16
-#| msgid "Remove selected package"
 msgid "<selected_package>"
 msgstr "<選択済みパッケージ>"
 
@@ -70,13 +67,10 @@ msgstr "絶対パス '%(prog)s' は '%(path)s/%(prog)s' を指しています。
 
 #: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
 #, python-format
-#| msgid "Searching groups"
 msgid "searching ..."
 msgstr "検索しています ..."
 
 #: handlers/bin/command-not-found:87
 #, python-format
-#| msgid "Entry not found."
 msgid "command not found"
 msgstr "コマンドが見つかりません"
-

@@ -1,0 +1,72 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: @PACKAGE@\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-04-23 15:20+0200\n"
+"PO-Revision-Date: 2005-05-18 10:33+0200\n"
+"Last-Translator: Aiet Kolkhi <aiet@qartuli.net>\n"
+"Language-Team: Georgian <i18n@suse.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: handlers/bin/command_not_found_bash:9
+#: handlers/bin/command_not_found_bash:17
+msgid "$1: command not found"
+msgstr ""
+
+#: handlers/bin/command_not_found_bash:24
+msgid "Absolute path to '$1' is '$prefix/sbin/$1', so running it may require superuser privileges (eg. root)."
+msgstr ""
+
+#: handlers/bin/command_not_found_bash:32
+msgid ""
+"If '$1' is not a typo you can use command-not-found to lookup the package that contains it, like this:\n"
+"    cnf $1"
+msgstr ""
+
+#: handlers/bin/command-not-found:8
+#, python-format
+msgid "The program '%(prog)s' can be found in the following package:"
+msgid_plural "The program '%(prog)s' can be found in following packages:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: handlers/bin/command-not-found:11
+#, python-format
+msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
+msgstr ""
+
+#: handlers/bin/command-not-found:14
+msgid "Try installing with:"
+msgstr ""
+
+#: handlers/bin/command-not-found:16
+msgid "<selected_package>"
+msgstr ""
+
+#: handlers/bin/command-not-found:24
+#, python-format
+msgid "Program '%(prog)s' is present in package '%(pkg)s', which is installed on your system."
+msgstr ""
+
+#: handlers/bin/command-not-found:27
+#, python-format
+msgid "Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may require superuser privileges (eg. root)."
+msgstr ""
+
+#: handlers/bin/command-not-found:30
+#, python-format
+msgid "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH variable to see whether it contains the mentioned path."
+msgstr ""
+
+#: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
+#, python-format
+msgid "searching ..."
+msgstr ""
+
+#: handlers/bin/command-not-found:87
+#, python-format
+msgid "command not found"
+msgstr ""

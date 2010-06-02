@@ -1,21 +1,21 @@
 # @TITLE@
 # Copyright (C) 2006, SUSE Linux GmbH, Nuremberg
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 # This file is distributed under the same license as @PACKAGE@ package. FIRST
 #
+# Mariusz Fik <fisiu@opensuse.org>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-28 11:42+0200\n"
-"PO-Revision-Date: 2009-09-20 15:27+0100\n"
-"Last-Translator: Przemysław Bojczuk <pbojczuk@gmail.com>\n"
-"Language-Team:  <pl@li.org>\n"
+"PO-Revision-Date: 2010-05-24 02:54+0200\n"
+"Last-Translator: Mariusz Fik <fisiu@opensuse.org>\n"
+"Language-Team: Polish <opensuse-pl@opensuse.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9.1\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #: scout/autoconf.py:9
@@ -59,7 +59,7 @@ msgstr "plik m4"
 
 #: scout/bin.py:62
 msgid "Search for binaries contained in the packages."
-msgstr "Wyszukiwanie bienarek zawartych w tym pakiecie."
+msgstr "Wyszukiwanie binarek zawartych w tym pakiecie."
 
 #: scout/bin.py:107 scout/bin.py:108
 msgid "path"
@@ -161,7 +161,7 @@ msgstr "Nie można znaleźć narzędzia formatującego %s"
 
 #: scout/java.py:9
 msgid "Search for java classes inside the JAR files."
-msgstr "Wyszukiwanie klas javy wewnątrz plików JAR."
+msgstr "Wyszukiwanie klas Javy wewnątrz plików JAR."
 
 #: scout/java.py:13 scout/java.py:14
 msgid "jar"
@@ -181,7 +181,7 @@ msgstr "biblioteka"
 
 #: scout/python.py:9
 msgid "Search for python modules."
-msgstr "Wyszukiwanie modułów pythona"
+msgstr "Wyszukiwanie modułów Pythona"
 
 #: scout/webpin.py:13
 msgid "Search in packages using the webpin webservice."

@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: command-not-found\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-04-23 15:20+0200\n"
-"PO-Revision-Date: 2009-09-16 16:27+0200\n"
+"PO-Revision-Date: 2010-03-31 18:35+0100\n"
 "Last-Translator: Andrea Florio <andrea@opensuse.org>\n"
 "Language-Team: italiano <translations@opensuse.org>\n"
 "MIME-Version: 1.0\n"
@@ -67,12 +67,14 @@ msgstr "Il percorso assoluto per '%(prog)s' è '%(path)s/%(prog)s', quindi per a
 msgid "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH variable to see whether it contains the mentioned path."
 msgstr "Il percorso assoluto per '%(prog)s' è '%(path)s/%(prog)s'. Per favore contralla la tua variabile $PATH per verificare che contenga il percorso menzionato."
 
-#: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
+#: handlers/bin/command-not-found:59
+#: handlers/bin/command-not-found:60
 #, python-format
 msgid "searching ..."
-msgstr "recerca in corso..."
+msgstr "ricerca in corso..."
 
 #: handlers/bin/command-not-found:87
 #, python-format
 msgid "command not found"
 msgstr "commando non trovato"
+

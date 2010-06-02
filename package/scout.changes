@@ -1,4 +1,9 @@
 -------------------------------------------------------------------
+Wed Jun  2 12:54:10 UTC 2010 - prusnak@opensuse.org
+
+- update translations
+
+-------------------------------------------------------------------
 Wed Apr 28 16:37:58 CEST 2010 - prusnak@suse.cz
 
 - also check the file name, not only the package name while testing

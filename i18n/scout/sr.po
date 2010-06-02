@@ -1,0 +1,237 @@
+# @TITLE@
+# Copyright (C) 2006, SUSE Linux GmbH, Nuremberg
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# This file is distributed under the same license as @PACKAGE@ package. FIRST
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: @PACKAGE@\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-08-28 11:42+0200\n"
+"PO-Revision-Date: 2005-08-03 21:03+0200\n"
+"Last-Translator: Данило Шеган <danilo@gnome.org>\n"
+"Language-Team: Serbian <novell@prevod.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : (n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: scout/autoconf.py:9
+msgid "Search for autoconf macros inside the m4 files."
+msgstr ""
+
+#: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
+#: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
+#: scout/webpin.py:50
+msgid "repo"
+msgstr ""
+
+#: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
+#: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
+#: scout/webpin.py:50
+msgid "pkg"
+msgstr ""
+
+#: scout/autoconf.py:13
+msgid "m4"
+msgstr ""
+
+#: scout/autoconf.py:13 scout/autoconf.py:14
+msgid "macro"
+msgstr ""
+
+#: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
+#: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
+#, fuzzy
+#| msgid "Directory\n"
+msgid "repository"
+msgstr "Директоријум\n"
+
+#: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
+#: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
+#: scout/webpin.py:51
+msgid "package"
+msgstr ""
+
+#: scout/autoconf.py:14
+msgid "m4 file"
+msgstr ""
+
+#: scout/bin.py:62
+msgid "Search for binaries contained in the packages."
+msgstr ""
+
+#: scout/bin.py:107 scout/bin.py:108
+msgid "path"
+msgstr ""
+
+#: scout/bin.py:107
+#, fuzzy
+#| msgid "Serbian"
+msgid "bin"
+msgstr "српски"
+
+#: scout/bin.py:108
+msgid "binary"
+msgstr ""
+
+#: scout/foo.py:9
+msgid "- template module -"
+msgstr ""
+
+#: scout/header.py:9
+msgid "Search for C/C++/Obj-C/Obj-C++ headers."
+msgstr ""
+
+#: scout/header.py:13 scout/header.py:14
+msgid "header"
+msgstr ""
+
+#: scout/__init__.py:148
+msgid "show this help message and exit"
+msgstr ""
+
+#: scout/__init__.py:155
+msgid "show program's version number and exit"
+msgstr ""
+
+#: scout/__init__.py:198
+msgid "Usage: %prog [global_opts] module [local_opts] search_term"
+msgstr ""
+
+#: scout/__init__.py:205
+#, python-format
+msgid "select the output format (default %s)"
+msgstr ""
+
+#: scout/__init__.py:212
+msgid "list of available modules"
+msgstr ""
+
+#: scout/__init__.py:228
+#, fuzzy
+#| msgid "Available Updates"
+msgid "Available modules:\n"
+msgstr "Ажурирања"
+
+#: scout/__init__.py:279
+#, python-format
+msgid "The name of module is mandatory. Use %s --help"
+msgstr ""
+
+#: scout/__init__.py:366
+#, fuzzy, python-format
+#| msgid "Set initial directory"
+msgid "%s is not a directory"
+msgstr "Подразумевана фасцикла"
+
+#: scout/__init__.py:425
+#, fuzzy, python-format
+#| msgid "Cannot open file '%1'."
+msgid "Cannot not open database file '%s'"
+msgstr "Не могу да отворим '%1'."
+
+#: scout/__init__.py:699
+#, fuzzy
+#| msgid "Available Updates"
+msgid "Available repositories:\n"
+msgstr "Ажурирања"
+
+#: scout/__init__.py:731
+#, python-format
+msgid "Usage: %%prog %s [options] search_term"
+msgstr ""
+
+#: scout/__init__.py:733
+msgid "list available repositories"
+msgstr ""
+
+#: scout/__init__.py:734
+msgid "inverse search by package name"
+msgstr ""
+
+#: scout/__init__.py:735
+msgid "select repository to search"
+msgstr ""
+
+#: scout/__init__.py:781
+msgid "No repositories found ..."
+msgstr ""
+
+#: scout/__init__.py:825 scout/__init__.py:826
+msgid "module"
+msgstr ""
+
+#: scout/__init__.py:953
+#, python-format
+msgid "Cannot find a formatter for a %s"
+msgstr ""
+
+#: scout/java.py:9
+msgid "Search for java classes inside the JAR files."
+msgstr ""
+
+#: scout/java.py:13 scout/java.py:14
+msgid "jar"
+msgstr ""
+
+#: scout/java.py:13 scout/java.py:14
+msgid "class"
+msgstr ""
+
+#: scout/library.py:9
+msgid "Search for shared libraries."
+msgstr ""
+
+#: scout/library.py:13 scout/library.py:14
+#, fuzzy
+#| msgid "Gibraltar"
+msgid "library"
+msgstr "Evropa/Gibraltar"
+
+#: scout/python.py:9
+msgid "Search for python modules."
+msgstr ""
+
+#: scout/webpin.py:13
+msgid "Search in packages using the webpin webservice."
+msgstr ""
+
+#: scout/webpin.py:45
+#, python-format
+msgid "Cannot retreive query results ... %s"
+msgstr ""
+
+# 'driver' as in '(hardware) driver update'
+#: scout/webpin.py:50
+#, fuzzy
+#| msgid "Driver"
+msgid "ver"
+msgstr "Драјвер"
+
+#: scout/webpin.py:50 scout/webpin.py:51
+#, fuzzy
+#| msgid "Search"
+msgid "arch"
+msgstr "Pretraži"
+
+#: scout/webpin.py:50
+msgid "files"
+msgstr ""
+
+#: scout/webpin.py:51
+#, fuzzy
+#| msgid "Version"
+msgid "version"
+msgstr "Verzija"
+
+#: scout/webpin.py:51
+msgid "repository URL"
+msgstr ""
+
+#: scout/webpin.py:51
+#, fuzzy
+#| msgid "Print selected files"
+msgid "matched files"
+msgstr "Штампај одабрано"

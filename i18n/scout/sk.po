@@ -97,8 +97,8 @@ msgstr "ukáže číslo verzie programu a skončí"
 msgid "Usage: %prog [global_opts] module [local_opts] search_term"
 msgstr "Použitie: %prog [globálne_možnosti] modul [možnosti_modulu] výraz"
 
-#: scout/__init__.py:205, python-format
-#| msgid "select the output format (%s, default is %s)"
+#: scout/__init__.py:205
+#, python-format
 msgid "select the output format (default %s)"
 msgstr "zvolí formát výstupu (štandard je %s)"
 
@@ -215,4 +215,3 @@ msgstr "URL repozitára"
 #: scout/webpin.py:51
 msgid "matched files"
 msgstr "nájdené súbory"
-

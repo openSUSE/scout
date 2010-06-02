@@ -1,11 +1,11 @@
 # translation of command-not-found.fi.po to suomi
-# Jyri Palokangas <jyri.palokangas@opensuse.org>, 2009.
+# Jyri Palokangas <jyri.palokangas@opensuse.org>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: command-not-found.fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-04-23 15:20+0200\n"
-"PO-Revision-Date: 2009-09-16 14:30+0300\n"
+"PO-Revision-Date: 2010-04-27 21:26+0300\n"
 "Last-Translator: Jyri Palokangas <jyri.palokangas@opensuse.org>\n"
 "Language-Team: suomi <fi@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,6 @@ msgstr ""
 
 #: handlers/bin/command_not_found_bash:9
 #: handlers/bin/command_not_found_bash:17
-#| msgid "The job was not found."
 msgid "$1: command not found"
 msgstr "$1: komentoa ei löytynyt"
 
@@ -45,7 +44,6 @@ msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
 msgstr "  * %(prog)s [ polku: %(path)s/%(binary)s, asennuslähde: %(repo)s ]"
 
 #: handlers/bin/command-not-found:14
-#| msgid "Installing file"
 msgid "Try installing with:"
 msgstr "Kokeile asentaa:"
 
@@ -70,13 +68,11 @@ msgstr "Absoluuttinen polku '%(prog)s' on '%(path)s/%(prog)s'. Tarkista $PATH mu
 
 #: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
 #, python-format
-#| msgid "Searching groups"
 msgid "searching ..."
 msgstr "etsitään ..."
 
 #: handlers/bin/command-not-found:87
 #, python-format
-#| msgid "Entry not found."
 msgid "command not found"
 msgstr "komentoa ei löytynyt"
 

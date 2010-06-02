@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2008-08-28 11:42+0200\n"
 "PO-Revision-Date: 2009-09-16 20:37+0200\n"
 "Last-Translator: Freek de Kruijf <freek@opensuse.org>\n"
-"Language-Team: Dutch <Yast-nl-l10n@lists.sf.kovoks.nl>\n"
+"Language-Team: Dutch <yast-nl-l10n@lists.sf.kovoks.nl>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -32,13 +32,10 @@ msgstr "repo"
 #: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
 #: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
 #: scout/webpin.py:50
-#| msgid "package"
-#| msgid_plural "packages"
 msgid "pkg"
 msgstr "pkkt"
 
 #: scout/autoconf.py:13
-#| msgid "4"
 msgid "m4"
 msgstr "m4"
 
@@ -48,20 +45,16 @@ msgstr "macro"
 
 #: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
 #: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
-#| msgid "Enabled repository"
 msgid "repository"
 msgstr "installatiebron"
 
 #: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
 #: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
 #: scout/webpin.py:51
-#| msgid "package"
-#| msgid_plural "packages"
 msgid "package"
 msgstr "pakket"
 
 #: scout/autoconf.py:14
-#| msgid "No files"
 msgid "m4 file"
 msgstr "m4-bestand"
 
@@ -74,7 +67,6 @@ msgid "path"
 msgstr "pad"
 
 #: scout/bin.py:107
-#| msgid "bit"
 msgid "bin"
 msgstr "bin"
 
@@ -95,12 +87,10 @@ msgid "header"
 msgstr "header"
 
 #: scout/__init__.py:148
-#| msgid "Don't show this message again."
 msgid "show this help message and exit"
 msgstr "dit bericht met hulp tonen en sluiten"
 
 #: scout/__init__.py:155
-#| msgid "Show the program version and exit"
 msgid "show program's version number and exit"
 msgstr "toon de programmaversie en sluiten"
 
@@ -118,7 +108,6 @@ msgid "list of available modules"
 msgstr "lijst met beschikbare modulen"
 
 #: scout/__init__.py:228
-#| msgid "Available profiles"
 msgid "Available modules:\n"
 msgstr "Beschikbare modulen:\n"
 
@@ -129,18 +118,15 @@ msgstr "De naam van de module is verplicht. Gebruik %s --help"
 
 #: scout/__init__.py:366
 #, python-format
-#| msgid "%1 is not a directory."
 msgid "%s is not a directory"
 msgstr "%s is geen map"
 
 #: scout/__init__.py:425
 #, python-format
-#| msgid "Cannot open file '%1'."
 msgid "Cannot not open database file '%s'"
 msgstr "Kan databasebestand '%s' niet openen"
 
 #: scout/__init__.py:699
-#| msgid "Specified repositories: "
 msgid "Available repositories:\n"
 msgstr "Beschikbare installatiebronnen:\n"
 
@@ -150,33 +136,27 @@ msgid "Usage: %%prog %s [options] search_term"
 msgstr "Gebruik: %%prog %s [opties] zoekterm"
 
 #: scout/__init__.py:733
-#| msgid "Got list of repositories"
 msgid "list available repositories"
 msgstr "lijst met beschikbare installatiebronnen"
 
 #: scout/__init__.py:734
-#| msgid "Searched for package name"
 msgid "inverse search by package name"
 msgstr "omgekeerd zoeken met pakketnaam"
 
 #: scout/__init__.py:735
-#| msgid "Set repository data"
 msgid "select repository to search"
 msgstr "te doorzoeken installatiebron selecteren"
 
 #: scout/__init__.py:781
-#| msgid "No repository found."
 msgid "No repositories found ..."
 msgstr "Geen installatiebronnen gevonden ..."
 
 #: scout/__init__.py:825 scout/__init__.py:826
-#| msgid "Modules"
 msgid "module"
 msgstr "module"
 
 #: scout/__init__.py:953
 #, python-format
-#| msgid "Cannot find the master ypserver: %s"
 msgid "Cannot find a formatter for a %s"
 msgstr "Kan het formatteerprogramma voor een %s niet vinden"
 
@@ -185,7 +165,6 @@ msgid "Search for java classes inside the JAR files."
 msgstr "Naar java-classes zoeken binnen de JAR-bestanden."
 
 #: scout/java.py:13 scout/java.py:14
-#| msgid "Far"
 msgid "jar"
 msgstr "jar"
 
@@ -194,17 +173,14 @@ msgid "class"
 msgstr "class"
 
 #: scout/library.py:9
-#| msgid "Searching for file handlers"
 msgid "Search for shared libraries."
 msgstr "Naar samen gebruikte bibliotheken zoeken."
 
 #: scout/library.py:13 scout/library.py:14
-#| msgid "Gibraltar"
 msgid "library"
 msgstr "bibliotheek"
 
 #: scout/python.py:9
-#| msgid "Searching for file handlers"
 msgid "Search for python modules."
 msgstr "Naar python-modulen zoeken."
 
@@ -218,32 +194,25 @@ msgid "Cannot retreive query results ... %s"
 msgstr "Kan de zoekresultaten niet ophalen ... %s"
 
 #: scout/webpin.py:50
-#| msgid "Never"
 msgid "ver"
 msgstr "ver"
 
 #: scout/webpin.py:50 scout/webpin.py:51
-#| msgid "Search"
 msgid "arch"
 msgstr "arch"
 
 #: scout/webpin.py:50
-#| msgid "No files"
 msgid "files"
 msgstr "bestanden"
 
 #: scout/webpin.py:51
-#| msgid "Version"
 msgid "version"
 msgstr "versie"
 
 #: scout/webpin.py:51
-#| msgid "Set repository data"
 msgid "repository URL"
 msgstr "URL van installatiebron"
 
 #: scout/webpin.py:51
-#| msgid "Searched for file"
 msgid "matched files"
 msgstr "overeenkomende bestanden"
-

@@ -1,0 +1,82 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: @PACKAGE@\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-04-23 15:20+0200\n"
+"PO-Revision-Date: 2005-07-29 15:37+0530\n"
+"Last-Translator: Prasanth Kurian <prasanth.kurian@agreeya.com>\n"
+"Language-Team: Hindi <i18n@suse.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"\n"
+"\n"
+"\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"\n"
+
+#: handlers/bin/command_not_found_bash:9
+#: handlers/bin/command_not_found_bash:17
+#, fuzzy
+#| msgid "Unknown command option"
+msgid "$1: command not found"
+msgstr "अज्ञात कमांड विकल्प"
+
+#: handlers/bin/command_not_found_bash:24
+msgid "Absolute path to '$1' is '$prefix/sbin/$1', so running it may require superuser privileges (eg. root)."
+msgstr ""
+
+#: handlers/bin/command_not_found_bash:32
+msgid ""
+"If '$1' is not a typo you can use command-not-found to lookup the package that contains it, like this:\n"
+"    cnf $1"
+msgstr ""
+
+#: handlers/bin/command-not-found:8
+#, python-format
+msgid "The program '%(prog)s' can be found in the following package:"
+msgid_plural "The program '%(prog)s' can be found in following packages:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: handlers/bin/command-not-found:11
+#, python-format
+msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
+msgstr ""
+
+#: handlers/bin/command-not-found:14
+#, fuzzy
+#| msgid "Installing %s"
+msgid "Try installing with:"
+msgstr "%s को संस्थापित कर रहा है"
+
+#: handlers/bin/command-not-found:16
+msgid "<selected_package>"
+msgstr ""
+
+#: handlers/bin/command-not-found:24
+#, python-format
+msgid "Program '%(prog)s' is present in package '%(pkg)s', which is installed on your system."
+msgstr ""
+
+#: handlers/bin/command-not-found:27
+#, python-format
+msgid "Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may require superuser privileges (eg. root)."
+msgstr ""
+
+#: handlers/bin/command-not-found:30
+#, python-format
+msgid "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH variable to see whether it contains the mentioned path."
+msgstr ""
+
+#: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
+#, fuzzy, python-format
+#| msgid "Searching for info file..."
+msgid "searching ..."
+msgstr "इंफो फाइल खोज रहा है..."
+
+#: handlers/bin/command-not-found:87
+#, fuzzy, python-format
+#| msgid "Entry not found."
+msgid "command not found"
+msgstr "प्रविष्टि प्राप्त नहीं हुई।"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-28 11:42+0200\n"
-"PO-Revision-Date: 2009-09-16 20:37+0100\n"
+"PO-Revision-Date: 2010-03-31 18:35+0100\n"
 "Last-Translator: Andrea Turrini <andrea.turrini@gmail.com>\n"
 "Language-Team: Novell Language <language@novell.com>\n"
 "MIME-Version: 1.0\n"
@@ -34,13 +34,10 @@ msgstr "repo"
 #: scout/java.py:13
 #: scout/library.py:13
 #: scout/webpin.py:50
-#| msgid "package"
-#| msgid_plural "packages"
 msgid "pkg"
 msgstr "pkg"
 
 #: scout/autoconf.py:13
-#| msgid "4"
 msgid "m4"
 msgstr "m4"
 
@@ -55,7 +52,6 @@ msgstr "macro"
 #: scout/__init__.py:826
 #: scout/java.py:14
 #: scout/library.py:14
-#| msgid "Enabled repository"
 msgid "repository"
 msgstr "repository"
 
@@ -66,13 +62,10 @@ msgstr "repository"
 #: scout/java.py:14
 #: scout/library.py:14
 #: scout/webpin.py:51
-#| msgid "package"
-#| msgid_plural "packages"
 msgid "package"
 msgstr "pacchetto"
 
 #: scout/autoconf.py:14
-#| msgid "No files"
 msgid "m4 file"
 msgstr "file m4"
 
@@ -86,7 +79,6 @@ msgid "path"
 msgstr "percorso"
 
 #: scout/bin.py:107
-#| msgid "bit"
 msgid "bin"
 msgstr "bin"
 
@@ -108,12 +100,10 @@ msgid "header"
 msgstr "header"
 
 #: scout/__init__.py:148
-#| msgid "Don't show this message again."
 msgid "show this help message and exit"
 msgstr "visualizza questo messaggio di aiuto ed esci"
 
 #: scout/__init__.py:155
-#| msgid "Show the program version and exit"
 msgid "show program's version number and exit"
 msgstr "mostra il numero di versione del programma ed esci"
 
@@ -131,7 +121,6 @@ msgid "list of available modules"
 msgstr "elenco dei moduli disponibili"
 
 #: scout/__init__.py:228
-#| msgid "Available profiles"
 msgid "Available modules:\n"
 msgstr "Moduli disponibili:\n"
 
@@ -142,18 +131,15 @@ msgstr "Il nome del modulo è obbligatorio. Utilizzare %s --help"
 
 #: scout/__init__.py:366
 #, python-format
-#| msgid "%1 is not a directory."
 msgid "%s is not a directory"
 msgstr "%s non è una directory"
 
 #: scout/__init__.py:425
 #, python-format
-#| msgid "Cannot open file '%1'."
 msgid "Cannot not open database file '%s'"
 msgstr "Impossibile non aprire il file database '%s'"
 
 #: scout/__init__.py:699
-#| msgid "Specified repositories: "
 msgid "Available repositories:\n"
 msgstr "Repository disponibili:\n"
 
@@ -163,34 +149,28 @@ msgid "Usage: %%prog %s [options] search_term"
 msgstr "Utilizzo: %%prog %s [opzioni] termine_di_ricerca"
 
 #: scout/__init__.py:733
-#| msgid "Got list of repositories"
 msgid "list available repositories"
 msgstr "elenca i repository disponibili"
 
 #: scout/__init__.py:734
-#| msgid "Searched for package name"
 msgid "inverse search by package name"
 msgstr "ricerca inversa per nome pacchetto"
 
 #: scout/__init__.py:735
-#| msgid "Set repository data"
 msgid "select repository to search"
 msgstr "seleziona il repository per la ricerca"
 
 #: scout/__init__.py:781
-#| msgid "No repository found."
 msgid "No repositories found ..."
 msgstr "Nessun repository trovato..."
 
 #: scout/__init__.py:825
 #: scout/__init__.py:826
-#| msgid "Modules"
 msgid "module"
 msgstr "modulo"
 
 #: scout/__init__.py:953
 #, python-format
-#| msgid "Cannot find the master ypserver: %s"
 msgid "Cannot find a formatter for a %s"
 msgstr "Impossibile trovare un formattatore per un %s"
 
@@ -200,7 +180,6 @@ msgstr "Ricerca classi java all'interno di file JAR."
 
 #: scout/java.py:13
 #: scout/java.py:14
-#| msgid "Far"
 msgid "jar"
 msgstr "jar"
 
@@ -210,18 +189,15 @@ msgid "class"
 msgstr "classe"
 
 #: scout/library.py:9
-#| msgid "Searched for package name"
 msgid "Search for shared libraries."
 msgstr "Cerca librerie condivise."
 
 #: scout/library.py:13
 #: scout/library.py:14
-#| msgid "Gibraltar"
 msgid "library"
 msgstr "libreria"
 
 #: scout/python.py:9
-#| msgid "Searching for info file..."
 msgid "Search for python modules."
 msgstr "Cerca moduli python."
 
@@ -235,34 +211,28 @@ msgid "Cannot retreive query results ... %s"
 msgstr "Impossibile recuperare i risultati della query... %s"
 
 #: scout/webpin.py:50
-#| msgid "Never"
 msgid "ver"
 msgstr "ver"
 
 # "c" as a keyboard accel is already taken.
 #: scout/webpin.py:50
 #: scout/webpin.py:51
-#| msgid "Search"
 msgid "arch"
 msgstr "arch"
 
 #: scout/webpin.py:50
-#| msgid "No files"
 msgid "files"
 msgstr "file"
 
 #: scout/webpin.py:51
-#| msgid "Version"
 msgid "version"
 msgstr "versione"
 
 #: scout/webpin.py:51
-#| msgid "Set repository data"
 msgid "repository URL"
 msgstr "URL del repository"
 
 #: scout/webpin.py:51
-#| msgid "Searched for file"
 msgid "matched files"
 msgstr "file corrispondenti"
 

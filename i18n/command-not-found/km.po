@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: command-not-found.km\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-04-23 15:20+0200\n"
-"PO-Revision-Date: 2009-09-17 13:17+0700\n"
+"PO-Revision-Date: 2009-10-28 08:07+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,6 @@ msgstr ""
 
 #: handlers/bin/command_not_found_bash:9
 #: handlers/bin/command_not_found_bash:17
-#| msgid "The job was not found."
 msgid "$1: command not found"
 msgstr "$1 ៖ រក​មិនឃើញ​ពាក្យ​បញ្ជា"
 
@@ -32,6 +31,11 @@ msgstr ""
 "ប្រសិនបើ '$1' មិនមែនជា​ typo ដែល​អ្នក​អាច​ប្រើ​ command-not-found ដើម្បី​រកមើល​កញ្ចប់​ដែល​មាន​វា ដូច​នេះ ៖\n"
 "    cnf $1"
 
+#: handlers/bin/command-not-found:8
+#, python-format
+msgid "The program '%(prog)s' can be found in the following package:"
+msgid_plural "The program '%(prog)s' can be found in following packages:"
+msgstr[0] "កម្មវិធី '%(prog)s' អាច​រកឃើញ​នៅ​ក្នុង​កញ្ចប់​ដូច​ខាងក្រោម ៖"
 
 #: handlers/bin/command-not-found:11
 #, python-format
@@ -39,12 +43,10 @@ msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
 msgstr "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
 
 #: handlers/bin/command-not-found:14
-#| msgid "Installing file"
 msgid "Try installing with:"
 msgstr "ព្យាយាម​ដំឡើង​ជា​មួយ ៖"
 
 #: handlers/bin/command-not-found:16
-#| msgid "Remove selected package"
 msgid "<selected_package>"
 msgstr "<selected_package>"
 
@@ -65,13 +67,11 @@ msgstr "ផ្លូវ​ពេញលេញ​ទៅកាន់ '%(prog)s' is 
 
 #: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
 #, python-format
-#| msgid "Searching groups"
 msgid "searching ..."
 msgstr "កំពុង​ស្វែងរក..."
 
 #: handlers/bin/command-not-found:87
 #, python-format
-#| msgid "Entry not found."
 msgid "command not found"
 msgstr "រក​មិនឃើញ​ពាក្យ​បញ្ជា"
 

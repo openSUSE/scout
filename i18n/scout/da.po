@@ -1,10 +1,10 @@
-# Martin Schlander <mschlander@opensuse.org>, 2009.
+# Martin Schlander <mschlander@opensuse.org>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-28 11:42+0200\n"
-"PO-Revision-Date: 2009-09-21 12:57+0200\n"
+"PO-Revision-Date: 2010-05-11 10:30+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <opensuse-translation@opensuse.org>\n"
 "MIME-Version: 1.0\n"
@@ -26,13 +26,10 @@ msgstr "sw.-kilde"
 #: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
 #: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
 #: scout/webpin.py:50
-#| msgid "package"
-#| msgid_plural "packages"
 msgid "pkg"
 msgstr "pak."
 
 #: scout/autoconf.py:13
-#| msgid "4"
 msgid "m4"
 msgstr "m4"
 
@@ -42,20 +39,16 @@ msgstr "makro"
 
 #: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
 #: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
-#| msgid "Enabled repository"
 msgid "repository"
 msgstr "softwarekilde"
 
 #: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
 #: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
 #: scout/webpin.py:51
-#| msgid "package"
-#| msgid_plural "packages"
 msgid "package"
 msgstr "pakke"
 
 #: scout/autoconf.py:14
-#| msgid "No files"
 msgid "m4 file"
 msgstr "m4-fil"
 
@@ -68,7 +61,6 @@ msgid "path"
 msgstr "sti"
 
 #: scout/bin.py:107
-#| msgid "bit"
 msgid "bin"
 msgstr "bin."
 
@@ -89,12 +81,10 @@ msgid "header"
 msgstr "header"
 
 #: scout/__init__.py:148
-#| msgid "Don't show this message again."
 msgid "show this help message and exit"
 msgstr "vis denne hjælpemeddelelse og afslut"
 
 #: scout/__init__.py:155
-#| msgid "Show the program version and exit"
 msgid "show program's version number and exit"
 msgstr "vis programmets versionnummer og afslut"
 
@@ -112,7 +102,6 @@ msgid "list of available modules"
 msgstr "liste over tilgængelige moduler"
 
 #: scout/__init__.py:228
-#| msgid "Available profiles"
 msgid "Available modules:\n"
 msgstr "Tilgængelige profiler:\n"
 
@@ -121,53 +110,47 @@ msgstr "Tilgængelige profiler:\n"
 msgid "The name of module is mandatory. Use %s --help"
 msgstr "Navnet på modulet er obligatorisk. Brug %s --help"
 
-#: scout/__init__.py:366, python-format
-#| msgid "%1 is not a directory."
+#: scout/__init__.py:366
+#, python-format
 msgid "%s is not a directory"
 msgstr "%s er ikke en mappe"
 
-#: scout/__init__.py:425, python-format
-#| msgid "Cannot open file '%1'."
+#: scout/__init__.py:425
+#, python-format
 msgid "Cannot not open database file '%s'"
 msgstr "Kan ikke åbne databasefilen \"%s\""
 
 #: scout/__init__.py:699
-#| msgid "Specified repositories: "
 msgid "Available repositories:\n"
 msgstr "Tilgængelige softwarekilder:\n"
 
 #: scout/__init__.py:731
 #, python-format
 msgid "Usage: %%prog %s [options] search_term"
-msgstr "Brug: %%prog %s [valgmuligheder] søgeudtryk"
+msgstr "Brug: %%prog %s [tilvalg] søgeudtryk"
 
 #: scout/__init__.py:733
-#| msgid "Got list of repositories"
 msgid "list available repositories"
 msgstr "oplist tilgængelige softwarekilder"
 
 #: scout/__init__.py:734
-#| msgid "Searched for package name"
 msgid "inverse search by package name"
 msgstr "omvendt søgning efter pakkenavn"
 
 #: scout/__init__.py:735
-#| msgid "Set repository data"
 msgid "select repository to search"
 msgstr "vælg softwarekilde der skal søges i"
 
 #: scout/__init__.py:781
-#| msgid "No repository found."
 msgid "No repositories found ..."
 msgstr "Ingen softwarekilder fundet..."
 
 #: scout/__init__.py:825 scout/__init__.py:826
-#| msgid "Modules"
 msgid "module"
 msgstr "modul"
 
-#: scout/__init__.py:953, python-format
-#| msgid "Cannot find the master ypserver: %s"
+#: scout/__init__.py:953
+#, python-format
 msgid "Cannot find a formatter for a %s"
 msgstr "Kan ikke finde formatering til %s"
 
@@ -176,7 +159,6 @@ msgid "Search for java classes inside the JAR files."
 msgstr "Søg efter java-klasser indeni JAR-filerne."
 
 #: scout/java.py:13 scout/java.py:14
-#| msgid "Far"
 msgid "jar"
 msgstr "jar"
 
@@ -185,17 +167,14 @@ msgid "class"
 msgstr "klasse"
 
 #: scout/library.py:9
-#| msgid "Searched for package name"
 msgid "Search for shared libraries."
 msgstr "Søg efter delte biblioteker."
 
 #: scout/library.py:13 scout/library.py:14
-#| msgid "Gibraltar"
 msgid "library"
 msgstr "bibliotek"
 
 #: scout/python.py:9
-#| msgid "Searching for info file..."
 msgid "Search for python modules."
 msgstr "Søg efter python-moduler."
 
@@ -209,33 +188,26 @@ msgid "Cannot retreive query results ... %s"
 msgstr "Kan ikke hente resultater af forespørgsel... %s"
 
 #: scout/webpin.py:50
-#| msgid "Never"
 msgid "ver"
 msgstr "ver."
 
 #: scout/webpin.py:50 scout/webpin.py:51
-#| msgid "Search"
 msgid "arch"
 msgstr "ark."
 
 #: scout/webpin.py:50
-#| msgid "No files"
 msgid "files"
 msgstr "filer"
 
 #: scout/webpin.py:51
-#| msgid "Version"
 msgid "version"
 msgstr "version"
 
 #: scout/webpin.py:51
-#| msgid "Set repository data"
 msgid "repository URL"
 msgstr "URL for softwarekilde"
 
 #: scout/webpin.py:51
-#| msgid "Searched for file"
 msgid "matched files"
 msgstr "matchede filer"
-
 

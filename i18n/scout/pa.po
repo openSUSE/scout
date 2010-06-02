@@ -1,0 +1,266 @@
+# @TITLE@
+# Copyright (C) 2006, SUSE Linux GmbH, Nuremberg
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+# This file is distributed under the same license as @PACKAGE@ package. FIRST
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: @PACKAGE@\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-08-28 11:42+0200\n"
+"PO-Revision-Date: 2005-08-15 12:20+0530\n"
+"Last-Translator: Amanpreet Singh Alam <amanpreetalam@yahoo.com>\n"
+"Language-Team: Punjabi <fedora-trans-pa@redhat.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.10.1\n"
+"Plural-Forms: Plural-Forms: Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: scout/autoconf.py:9
+msgid "Search for autoconf macros inside the m4 files."
+msgstr ""
+
+#: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
+#: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
+#: scout/webpin.py:50
+msgid "repo"
+msgstr ""
+
+#: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
+#: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
+#: scout/webpin.py:50
+#, fuzzy
+#| msgid "package"
+msgid "pkg"
+msgstr "ਪੈਕੇਜ"
+
+#: scout/autoconf.py:13
+msgid "m4"
+msgstr ""
+
+#: scout/autoconf.py:13 scout/autoconf.py:14
+msgid "macro"
+msgstr ""
+
+#: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
+#: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
+#, fuzzy
+#| msgid "Repository"
+msgid "repository"
+msgstr "ਰਿਪੋਜ਼ਟਰੀ"
+
+#: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
+#: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
+#: scout/webpin.py:51
+msgid "package"
+msgstr "ਪੈਕੇਜ"
+
+#: scout/autoconf.py:14
+#, fuzzy
+#| msgid "No files"
+msgid "m4 file"
+msgstr "ਫਾਇਲਾਂ ਨਹੀਂ"
+
+#: scout/bin.py:62
+msgid "Search for binaries contained in the packages."
+msgstr ""
+
+#: scout/bin.py:107 scout/bin.py:108
+msgid "path"
+msgstr ""
+
+#: scout/bin.py:107
+#, fuzzy
+#| msgid "bit"
+msgid "bin"
+msgstr "ਬਿੱਟ"
+
+#: scout/bin.py:108
+msgid "binary"
+msgstr ""
+
+#: scout/foo.py:9
+msgid "- template module -"
+msgstr ""
+
+#: scout/header.py:9
+msgid "Search for C/C++/Obj-C/Obj-C++ headers."
+msgstr ""
+
+#: scout/header.py:13 scout/header.py:14
+msgid "header"
+msgstr ""
+
+#: scout/__init__.py:148
+#, fuzzy
+#| msgid "Don't show this message again."
+msgid "show this help message and exit"
+msgstr "ਇਹ ਸੁਨੇਹਾ ਮੁੜ ਨਾ ਵੇਖਾਓ।"
+
+#: scout/__init__.py:155
+#, fuzzy
+#| msgid "Show the program version and exit"
+msgid "show program's version number and exit"
+msgstr "ਪਰੋਗਰਾਮ ਵਰਜਨ ਵੇਖੋ ਅਤੇ ਬੰਦ ਕਰੋ"
+
+#: scout/__init__.py:198
+msgid "Usage: %prog [global_opts] module [local_opts] search_term"
+msgstr ""
+
+#: scout/__init__.py:205
+#, python-format
+msgid "select the output format (default %s)"
+msgstr ""
+
+#: scout/__init__.py:212
+#, fuzzy
+#| msgid "scdb not available"
+msgid "list of available modules"
+msgstr "scdb ਹਾਲੇ ਉਪਲੱਬਧ ਨਹੀਂ"
+
+#: scout/__init__.py:228
+#, fuzzy
+#| msgid "Available profiles"
+msgid "Available modules:\n"
+msgstr "ਉਪਲੱਬਧ ਪਰੋਫਾਇਲ"
+
+#: scout/__init__.py:279
+#, python-format
+msgid "The name of module is mandatory. Use %s --help"
+msgstr ""
+
+#: scout/__init__.py:366
+#, fuzzy, python-format
+#| msgid "%1 is not a directory."
+msgid "%s is not a directory"
+msgstr "%1 ਡਾਇਰੈਕਟਰੀ ਨਹੀਂ ਹੈ।"
+
+#: scout/__init__.py:425
+#, fuzzy, python-format
+#| msgid "Cannot open file '%1'."
+msgid "Cannot not open database file '%s'"
+msgstr "ਫਾਇਲ '%1' ਖੋਲ੍ਹੀ ਨਹੀਂ ਜਾ ਸਕਦੀ"
+
+#: scout/__init__.py:699
+#, fuzzy
+#| msgid "Available Processors"
+msgid "Available repositories:\n"
+msgstr "ਉਪਲੱਬਧ ਪਰੋਸੈਂਸਰ"
+
+#: scout/__init__.py:731
+#, python-format
+msgid "Usage: %%prog %s [options] search_term"
+msgstr ""
+
+#: scout/__init__.py:733
+#, fuzzy
+#| msgid "Skipping disabled repository '%s'"
+msgid "list available repositories"
+msgstr "ਆਯੋਗ ਕੀਤੀ ਰਿਪੋਜ਼ਟਰੀ '%s' ਛੱਡੀ ਜਾ ਰਹੀ ਹੈ"
+
+#: scout/__init__.py:734
+#, fuzzy
+#| msgid "Searched for package name"
+msgid "inverse search by package name"
+msgstr "ਪੈਕੇਜ ਨਾਂ ਦੀ ਖੋਜ ਕੀਤੀ ਗਈ"
+
+#: scout/__init__.py:735
+#, fuzzy
+#| msgid "Cleaning repository '%s' cache"
+msgid "select repository to search"
+msgstr "ਰਿਪੋਜ਼ਟਰੀ '%s' ਕੈਚੇ ਸਾਫ਼ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ"
+
+#: scout/__init__.py:781
+#, fuzzy
+#| msgid "No repository found."
+msgid "No repositories found ..."
+msgstr "ਰਿਪੋਜ਼ਟਰੀ ਨਹੀਂ ਲੱਭੀ।"
+
+#: scout/__init__.py:825 scout/__init__.py:826
+#, fuzzy
+#| msgid "Modules"
+msgid "module"
+msgstr "ਮੋਡੀਊਲ"
+
+#: scout/__init__.py:953
+#, fuzzy, python-format
+#| msgid "Cannot find the master ypserver: %s"
+msgid "Cannot find a formatter for a %s"
+msgstr "ਮਾਸਟਰ ypserver ਖੋਜੀ ਨਹੀਂ ਜਾ ਸਕਦੀ: %s"
+
+#: scout/java.py:9
+msgid "Search for java classes inside the JAR files."
+msgstr ""
+
+#: scout/java.py:13 scout/java.py:14
+msgid "jar"
+msgstr ""
+
+#: scout/java.py:13 scout/java.py:14
+msgid "class"
+msgstr ""
+
+#: scout/library.py:9
+#, fuzzy
+#| msgid "Searched for package name"
+msgid "Search for shared libraries."
+msgstr "ਪੈਕੇਜ ਨਾਂ ਦੀ ਖੋਜ ਕੀਤੀ ਗਈ"
+
+#: scout/library.py:13 scout/library.py:14
+#, fuzzy
+#| msgid "Gibraltar"
+msgid "library"
+msgstr "ਗੀਬਰਾਲਟਰ"
+
+#: scout/python.py:9
+#, fuzzy
+#| msgid "Searching for info file..."
+msgid "Search for python modules."
+msgstr "ਫਾਇਲ info ਲਾਈ ਖੋਜ ਜਾਰੀ ਹੈ..."
+
+#: scout/webpin.py:13
+msgid "Search in packages using the webpin webservice."
+msgstr ""
+
+#: scout/webpin.py:45
+#, python-format
+msgid "Cannot retreive query results ... %s"
+msgstr ""
+
+#: scout/webpin.py:50
+#, fuzzy
+#| msgid "Never"
+msgid "ver"
+msgstr "ਕਦੇ ਨਹੀਂ"
+
+#: scout/webpin.py:50 scout/webpin.py:51
+#, fuzzy
+#| msgid "Search"
+msgid "arch"
+msgstr "ਖੋਜ"
+
+#: scout/webpin.py:50
+#, fuzzy
+#| msgid "No files"
+msgid "files"
+msgstr "ਫਾਇਲਾਂ ਨਹੀਂ"
+
+#: scout/webpin.py:51
+#, fuzzy
+#| msgid "Version"
+msgid "version"
+msgstr "ਵਰਜਨ"
+
+#: scout/webpin.py:51
+#, fuzzy
+#| msgid "Repository name:"
+msgid "repository URL"
+msgstr "ਰਿਪੋਜ਼ਟਰੀ ਨਾਂ:"
+
+#: scout/webpin.py:51
+#, fuzzy
+#| msgid "Patch all profiles"
+msgid "matched files"
+msgstr "ਸਭ ਪਰੋਫਾਇਲ ਪੈਂਚ"

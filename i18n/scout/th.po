@@ -1,0 +1,260 @@
+# Thai message file for YaST2 (@memory@).
+# Copyright (C) 2008 SUSE Linux Products GmbH.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: YaST (@memory@)\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-08-28 11:42+0200\n"
+"PO-Revision-Date: 2008-01-04 08:58+0100\n"
+"Last-Translator: i18n@suse.de\n"
+"Language-Team: Thai <i18n@suse.de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: scout/autoconf.py:9
+#, fuzzy
+#| msgid "Search for system files"
+msgid "Search for autoconf macros inside the m4 files."
+msgstr "ค้นหาแฟ้มของระบบ"
+
+#: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
+#: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
+#: scout/webpin.py:50
+msgid "repo"
+msgstr ""
+
+#: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
+#: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
+#: scout/webpin.py:50
+msgid "pkg"
+msgstr ""
+
+#: scout/autoconf.py:13
+msgid "m4"
+msgstr ""
+
+#: scout/autoconf.py:13 scout/autoconf.py:14
+msgid "macro"
+msgstr ""
+
+#: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
+#: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
+#, fuzzy
+#| msgid "Repository"
+msgid "repository"
+msgstr "คลังแพกเกจ"
+
+#: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
+#: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
+#: scout/webpin.py:51
+#, fuzzy
+#| msgid "Remove packages"
+msgid "package"
+msgstr "ลบแพกเกจ"
+
+#: scout/autoconf.py:14
+msgid "m4 file"
+msgstr ""
+
+#: scout/bin.py:62
+msgid "Search for binaries contained in the packages."
+msgstr ""
+
+#: scout/bin.py:107 scout/bin.py:108
+msgid "path"
+msgstr ""
+
+#: scout/bin.py:107
+msgid "bin"
+msgstr "bin"
+
+#: scout/bin.py:108
+msgid "binary"
+msgstr ""
+
+#: scout/foo.py:9
+#, fuzzy
+#| msgid "Online Update module"
+msgid "- template module -"
+msgstr "มอดูลออนไลน์อัปเดต"
+
+#: scout/header.py:9
+msgid "Search for C/C++/Obj-C/Obj-C++ headers."
+msgstr ""
+
+#: scout/header.py:13 scout/header.py:14
+msgid "header"
+msgstr ""
+
+#: scout/__init__.py:148
+#, fuzzy
+#| msgid "Don't show this message again."
+msgid "show this help message and exit"
+msgstr "ไม่ต้องแสดงข้อความนี้อีก"
+
+#: scout/__init__.py:155
+msgid "show program's version number and exit"
+msgstr ""
+
+#: scout/__init__.py:198
+msgid "Usage: %prog [global_opts] module [local_opts] search_term"
+msgstr ""
+
+#: scout/__init__.py:205
+#, python-format
+msgid "select the output format (default %s)"
+msgstr ""
+
+#: scout/__init__.py:212
+#, fuzzy
+#| msgid "List of available users"
+msgid "list of available modules"
+msgstr "รายการผู้ใช้ที่มีอยู่แล้ว"
+
+#: scout/__init__.py:228
+#, fuzzy
+#| msgid "Available Products"
+msgid "Available modules:\n"
+msgstr "ผลิตภัณฑ์การติดตั้งที่มีอยู่"
+
+#: scout/__init__.py:279
+#, python-format
+msgid "The name of module is mandatory. Use %s --help"
+msgstr ""
+
+#: scout/__init__.py:366
+#, fuzzy, python-format
+#| msgid "Set initial directory"
+msgid "%s is not a directory"
+msgstr "ตั้งค่าไดเรกทอรีเริ่มต้น"
+
+#: scout/__init__.py:425
+#, fuzzy, python-format
+#| msgid "Cannot open file '%1'"
+msgid "Cannot not open database file '%s'"
+msgstr "ไม่สามารถเปิดแฟ้ม %1 ได้"
+
+#: scout/__init__.py:699
+#, fuzzy
+#| msgid "Available Repositories"
+msgid "Available repositories:\n"
+msgstr "กำลังตรวจสอบคลังแพ็กใช้งานได้..."
+
+#: scout/__init__.py:731
+#, python-format
+msgid "Usage: %%prog %s [options] search_term"
+msgstr ""
+
+#: scout/__init__.py:733
+#, fuzzy
+#| msgid "Available Repositories"
+msgid "list available repositories"
+msgstr "กำลังตรวจสอบคลังแพ็กใช้งานได้..."
+
+#: scout/__init__.py:734
+msgid "inverse search by package name"
+msgstr ""
+
+#: scout/__init__.py:735
+#, fuzzy
+#| msgid "Select a repository."
+msgid "select repository to search"
+msgstr "เลือกคลังแพกเกจ"
+
+#: scout/__init__.py:781
+#, fuzzy
+#| msgid "No repository found at '%1'."
+msgid "No repositories found ..."
+msgstr "ไม่พบคลังแพกเกจที่ '%1'"
+
+#: scout/__init__.py:825 scout/__init__.py:826
+#, fuzzy
+#| msgid "Modules"
+msgid "module"
+msgstr "มอดูล"
+
+#: scout/__init__.py:953
+#, fuzzy, python-format
+#| msgid "Cannot find any schemes."
+msgid "Cannot find a formatter for a %s"
+msgstr "ไม่พบชุดรูปแบบใด ๆ"
+
+#: scout/java.py:9
+#, fuzzy
+#| msgid "Search for system files"
+msgid "Search for java classes inside the JAR files."
+msgstr "ค้นหาแฟ้มของระบบ"
+
+#: scout/java.py:13 scout/java.py:14
+msgid "jar"
+msgstr ""
+
+#: scout/java.py:13 scout/java.py:14
+#, fuzzy
+#| msgid "Class"
+msgid "class"
+msgstr "คลาส"
+
+#: scout/library.py:9
+#, fuzzy
+#| msgid "Searching for hard disks..."
+msgid "Search for shared libraries."
+msgstr "กำลังค้นหาฮาร์ดดิสก์..."
+
+#: scout/library.py:13 scout/library.py:14
+#, fuzzy
+#| msgid "Gibraltar"
+msgid "library"
+msgstr "ยิบรอลตา"
+
+#: scout/python.py:9
+#, fuzzy
+#| msgid "Search for system files"
+msgid "Search for python modules."
+msgstr "ค้นหาแฟ้มของระบบ"
+
+#: scout/webpin.py:13
+msgid "Search in packages using the webpin webservice."
+msgstr ""
+
+#: scout/webpin.py:45
+#, python-format
+msgid "Cannot retreive query results ... %s"
+msgstr ""
+
+#: scout/webpin.py:50
+#, fuzzy
+#| msgid "Never"
+msgid "ver"
+msgstr "ไม่ต้องเลย"
+
+#: scout/webpin.py:50 scout/webpin.py:51
+#, fuzzy
+#| msgid "Search"
+msgid "arch"
+msgstr "ค้นหา"
+
+#: scout/webpin.py:50
+msgid "files"
+msgstr ""
+
+#: scout/webpin.py:51
+#, fuzzy
+#| msgid "Version"
+msgid "version"
+msgstr "รุ่น"
+
+#: scout/webpin.py:51
+#, fuzzy
+#| msgid "Repository URL"
+msgid "repository URL"
+msgstr "ที่อยู่ URL ของคลังแพกเกจ"
+
+#: scout/webpin.py:51
+#, fuzzy
+#| msgid "Print selected files"
+msgid "matched files"
+msgstr "พิมพ์แฟ้มที่เลือกไว้"

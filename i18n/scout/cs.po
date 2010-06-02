@@ -21,22 +21,14 @@ msgstr ""
 msgid "Search for autoconf macros inside the m4 files."
 msgstr "Hledá autoconf makra uvnitř souborů m4."
 
-#: scout/autoconf.py:13
-#: scout/bin.py:107
-#: scout/header.py:13
-#: scout/__init__.py:825
-#: scout/java.py:13
-#: scout/library.py:13
+#: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
+#: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
 #: scout/webpin.py:50
 msgid "repo"
 msgstr "rep."
 
-#: scout/autoconf.py:13
-#: scout/bin.py:107
-#: scout/header.py:13
-#: scout/__init__.py:825
-#: scout/java.py:13
-#: scout/library.py:13
+#: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
+#: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
 #: scout/webpin.py:50
 msgid "pkg"
 msgstr "bal."
@@ -45,26 +37,17 @@ msgstr "bal."
 msgid "m4"
 msgstr "m4"
 
-#: scout/autoconf.py:13
-#: scout/autoconf.py:14
+#: scout/autoconf.py:13 scout/autoconf.py:14
 msgid "macro"
 msgstr "makro"
 
-#: scout/autoconf.py:14
-#: scout/bin.py:108
-#: scout/header.py:14
-#: scout/__init__.py:826
-#: scout/java.py:14
-#: scout/library.py:14
+#: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
+#: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
 msgid "repository"
 msgstr "repozitář"
 
-#: scout/autoconf.py:14
-#: scout/bin.py:108
-#: scout/header.py:14
-#: scout/__init__.py:826
-#: scout/java.py:14
-#: scout/library.py:14
+#: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
+#: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
 #: scout/webpin.py:51
 msgid "package"
 msgstr "balíček"
@@ -77,8 +60,7 @@ msgstr "soubor m4"
 msgid "Search for binaries contained in the packages."
 msgstr "Hledá binárky obsažené v balíčcích."
 
-#: scout/bin.py:107
-#: scout/bin.py:108
+#: scout/bin.py:107 scout/bin.py:108
 msgid "path"
 msgstr "cesta"
 
@@ -98,8 +80,7 @@ msgstr "- vzorový modul -"
 msgid "Search for C/C++/Obj-C/Obj-C++ headers."
 msgstr "Hledá hlavičkové soubory jazyků C/C++/Obj-C/Obj-C++."
 
-#: scout/header.py:13
-#: scout/header.py:14
+#: scout/header.py:13 scout/header.py:14
 msgid "header"
 msgstr "hlavička"
 
@@ -117,7 +98,6 @@ msgstr "Použití: %prog [globální_volby] modul [volby_modulu] dotaz"
 
 #: scout/__init__.py:205
 #, python-format
-#| msgid "select the output format (%s, default is %s)"
 msgid "select the output format (default %s)"
 msgstr "zvolí formát výstupu (výchozí je %s)"
 
@@ -169,8 +149,7 @@ msgstr "zvolí repozitář k prohledávání"
 msgid "No repositories found ..."
 msgstr "Žádné repozitáře nebyly nalezeny ..."
 
-#: scout/__init__.py:825
-#: scout/__init__.py:826
+#: scout/__init__.py:825 scout/__init__.py:826
 msgid "module"
 msgstr "modul"
 
@@ -183,13 +162,11 @@ msgstr "Nemohu najít formátovač pro %s"
 msgid "Search for java classes inside the JAR files."
 msgstr "Hledá třídy jazyka Java v JAR souborech."
 
-#: scout/java.py:13
-#: scout/java.py:14
+#: scout/java.py:13 scout/java.py:14
 msgid "jar"
 msgstr "jar"
 
-#: scout/java.py:13
-#: scout/java.py:14
+#: scout/java.py:13 scout/java.py:14
 msgid "class"
 msgstr "třída"
 
@@ -197,8 +174,7 @@ msgstr "třída"
 msgid "Search for shared libraries."
 msgstr "Hledá sdílené knihovny."
 
-#: scout/library.py:13
-#: scout/library.py:14
+#: scout/library.py:13 scout/library.py:14
 msgid "library"
 msgstr "knihovna"
 
@@ -219,8 +195,7 @@ msgstr "Nemohu získat výsledek dotazu ... %s"
 msgid "ver"
 msgstr "ver."
 
-#: scout/webpin.py:50
-#: scout/webpin.py:51
+#: scout/webpin.py:50 scout/webpin.py:51
 msgid "arch"
 msgstr "arch."
 
@@ -239,4 +214,3 @@ msgstr "URL repozitáře"
 #: scout/webpin.py:51
 msgid "matched files"
 msgstr "odpovídající soubory"
-

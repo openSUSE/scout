@@ -27,13 +27,10 @@ msgstr "repo"
 #: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
 #: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
 #: scout/webpin.py:50
-#| msgid "package"
-#| msgid_plural "packages"
 msgid "pkg"
 msgstr "csomag"
 
 #: scout/autoconf.py:13
-#| msgid "4"
 msgid "m4"
 msgstr "m4"
 
@@ -43,20 +40,16 @@ msgstr "makró"
 
 #: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
 #: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
-#| msgid "Enabled repository"
 msgid "repository"
 msgstr "telepítési forrás"
 
 #: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
 #: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
 #: scout/webpin.py:51
-#| msgid "package"
-#| msgid_plural "packages"
 msgid "package"
 msgstr "csomag"
 
 #: scout/autoconf.py:14
-#| msgid "No files"
 msgid "m4 file"
 msgstr "m4 fájl"
 
@@ -69,7 +62,6 @@ msgid "path"
 msgstr "elérési út"
 
 #: scout/bin.py:107
-#| msgid "bit"
 msgid "bin"
 msgstr "bin"
 
@@ -90,18 +82,18 @@ msgid "header"
 msgstr "fejléc"
 
 #: scout/__init__.py:148
-#| msgid "Don't show this message again."
 msgid "show this help message and exit"
 msgstr "a súgó megjelenítése és kilépés"
 
 #: scout/__init__.py:155
-#| msgid "Show the program version and exit"
 msgid "show program's version number and exit"
 msgstr "programverzió megjelenítése és kilépés"
 
 #: scout/__init__.py:198
 msgid "Usage: %prog [global_opts] module [local_opts] search_term"
-msgstr "Használat: %prog [globális kapcsolók] modul_neve [helyi kapcsolók] keresési_kifejezés"
+msgstr ""
+"Használat: %prog [globális kapcsolók] modul_neve [helyi kapcsolók] "
+"keresési_kifejezés"
 
 #: scout/__init__.py:205
 #, python-format
@@ -113,7 +105,6 @@ msgid "list of available modules"
 msgstr "elérhető modulok listája"
 
 #: scout/__init__.py:228
-#| msgid "Available profiles"
 msgid "Available modules:\n"
 msgstr "Elérhető modulok:\n"
 
@@ -124,18 +115,15 @@ msgstr "A modul nevének megadása kötelező. Használja a %s --help parancsot"
 
 #: scout/__init__.py:366
 #, python-format
-#| msgid "%1 is not a directory."
 msgid "%s is not a directory"
 msgstr "a(z) %s nem könyvtár"
 
 #: scout/__init__.py:425
 #, python-format
-#| msgid "Cannot open file '%1'."
 msgid "Cannot not open database file '%s'"
 msgstr "A(z) '%s' adatbázisfájl nem nyitható meg"
 
 #: scout/__init__.py:699
-#| msgid "Specified repositories: "
 msgid "Available repositories:\n"
 msgstr "Elérhető telepítési források:\n"
 
@@ -145,33 +133,27 @@ msgid "Usage: %%prog %s [options] search_term"
 msgstr "Használat: %%prog %s [kapcsolók] keresési_kifejezés"
 
 #: scout/__init__.py:733
-#| msgid "Got list of repositories"
 msgid "list available repositories"
 msgstr "elérhető telepítési források listája"
 
 #: scout/__init__.py:734
-#| msgid "Searched for package name"
 msgid "inverse search by package name"
 msgstr "fordított keresés csomagnév szerinte"
 
 #: scout/__init__.py:735
-#| msgid "Set repository data"
 msgid "select repository to search"
 msgstr "telepítési forrás kiválasztása a kereséshez"
 
 #: scout/__init__.py:781
-#| msgid "No repository found."
 msgid "No repositories found ..."
 msgstr "Nem található telepítési forrás ..."
 
 #: scout/__init__.py:825 scout/__init__.py:826
-#| msgid "Modules"
 msgid "module"
 msgstr "modul"
 
 #: scout/__init__.py:953
 #, python-format
-#| msgid "Cannot find the master ypserver: %s"
 msgid "Cannot find a formatter for a %s"
 msgstr "Nem található formázó ehhez: %s"
 
@@ -180,7 +162,6 @@ msgid "Search for java classes inside the JAR files."
 msgstr "Java osztályok keresése JAR fájlokban."
 
 #: scout/java.py:13 scout/java.py:14
-#| msgid "Far"
 msgid "jar"
 msgstr "jar"
 
@@ -189,17 +170,14 @@ msgid "class"
 msgstr "osztály"
 
 #: scout/library.py:9
-#| msgid "Search for files"
 msgid "Search for shared libraries."
 msgstr "Megosztott programkönyvtárak keresése."
 
 #: scout/library.py:13 scout/library.py:14
-#| msgid "Gibraltar"
 msgid "library"
 msgstr "programkönyvtár"
 
 #: scout/python.py:9
-#| msgid "Search for files"
 msgid "Search for python modules."
 msgstr "Python modulok keresése."
 
@@ -213,32 +191,25 @@ msgid "Cannot retreive query results ... %s"
 msgstr "A keresésre nem érkezett válasz ... %s"
 
 #: scout/webpin.py:50
-#| msgid "Never"
 msgid "ver"
 msgstr "ver"
 
 #: scout/webpin.py:50 scout/webpin.py:51
-#| msgid "Search"
 msgid "arch"
 msgstr "arch"
 
 #: scout/webpin.py:50
-#| msgid "No files"
 msgid "files"
 msgstr "fájl"
 
 #: scout/webpin.py:51
-#| msgid "Version"
 msgid "version"
 msgstr "verzió"
 
 #: scout/webpin.py:51
-#| msgid "Set repository data"
 msgid "repository URL"
 msgstr "telepítési forrás URL"
 
 #: scout/webpin.py:51
-#| msgid "Searched for file"
 msgid "matched files"
 msgstr "egyező fájlok"
-

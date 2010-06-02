@@ -13,7 +13,6 @@ msgstr ""
 
 #: handlers/bin/command_not_found_bash:9
 #: handlers/bin/command_not_found_bash:17
-#| msgid "The job was not found."
 msgid "$1: command not found"
 msgstr "$1: 명령을 찾을 수 없음"
 
@@ -41,12 +40,10 @@ msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
 msgstr "  * %(prog)s [ 경로: %(path)s/%(binary)s, 저장소: %(repo)s ]"
 
 #: handlers/bin/command-not-found:14
-#| msgid "Installing file"
 msgid "Try installing with:"
 msgstr "다음과 같이 설치:"
 
 #: handlers/bin/command-not-found:16
-#| msgid "Remove selected package"
 msgid "<selected_package>"
 msgstr "<선택한_꾸러미>"
 
@@ -65,16 +62,12 @@ msgstr "절대 경로 '%(prog)s' 은(는) '%(path)s/%(prog)s'를 지칭하기 �
 msgid "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH variable to see whether it contains the mentioned path."
 msgstr "절대 경로 '%(prog)s' 은(는) '%(path)s/%(prog)s'를 지칭합니다. 왼쪽에 쓴 경로가 사용자의 $PATH 변수에 포함되어 있는지 확인하세요."
 
-#: handlers/bin/command-not-found:59
-#: handlers/bin/command-not-found:60
+#: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
 #, python-format
-#| msgid "Searching groups"
 msgid "searching ..."
 msgstr "검색 중..."
 
 #: handlers/bin/command-not-found:87
 #, python-format
-#| msgid "Entry not found."
 msgid "command not found"
 msgstr "명령을 찾을 수 없음"
-

@@ -27,13 +27,10 @@ msgstr "repo"
 #: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
 #: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
 #: scout/webpin.py:50
-#| msgid "package"
-#| msgid_plural "packages"
 msgid "pkg"
 msgstr "pkg"
 
 #: scout/autoconf.py:13
-#| msgid "4"
 msgid "m4"
 msgstr "m4"
 
@@ -43,20 +40,16 @@ msgstr "マクロ"
 
 #: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
 #: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
-#| msgid "Enabled repository"
 msgid "repository"
 msgstr "リポジトリ"
 
 #: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
 #: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
 #: scout/webpin.py:51
-#| msgid "package"
-#| msgid_plural "packages"
 msgid "package"
 msgstr "パッケージ"
 
 #: scout/autoconf.py:14
-#| msgid "No files"
 msgid "m4 file"
 msgstr "m4 ファイル"
 
@@ -69,7 +62,6 @@ msgid "path"
 msgstr "パス"
 
 #: scout/bin.py:107
-#| msgid "bit"
 msgid "bin"
 msgstr "バイナリ"
 
@@ -90,12 +82,10 @@ msgid "header"
 msgstr "ヘッダ"
 
 #: scout/__init__.py:148
-#| msgid "Don't show this message again."
 msgid "show this help message and exit"
 msgstr "このヘルプメッセージを表示して終了する"
 
 #: scout/__init__.py:155
-#| msgid "Show the program version and exit"
 msgid "show program's version number and exit"
 msgstr "プログラムバージョンを表示して終了する"
 
@@ -113,7 +103,6 @@ msgid "list of available modules"
 msgstr "利用可能なモジュールの一覧"
 
 #: scout/__init__.py:228
-#| msgid "Available profiles"
 msgid "Available modules:\n"
 msgstr "利用可能なモジュール:\n"
 
@@ -124,18 +113,15 @@ msgstr "モジュール名を指定しなければなりません。 %s --help �
 
 #: scout/__init__.py:366
 #, python-format
-#| msgid "%1 is not a directory."
 msgid "%s is not a directory"
 msgstr "%s はディレクトリではありません。"
 
 #: scout/__init__.py:425
 #, python-format
-#| msgid "Cannot open file '%1'."
 msgid "Cannot not open database file '%s'"
 msgstr "データベースファイル '%s' を開くことができません。"
 
 #: scout/__init__.py:699
-#| msgid "Specified repositories: "
 msgid "Available repositories:\n"
 msgstr "利用可能なリポジトリ:\n"
 
@@ -145,33 +131,27 @@ msgid "Usage: %%prog %s [options] search_term"
 msgstr "使用方法: %%prog %s [オプション] 検索条件"
 
 #: scout/__init__.py:733
-#| msgid "Got list of repositories"
 msgid "list available repositories"
 msgstr "利用可能なリポジトリの一覧表示"
 
 #: scout/__init__.py:734
-#| msgid "Searched for package name"
 msgid "inverse search by package name"
 msgstr "パッケージ名から逆検索"
 
 #: scout/__init__.py:735
-#| msgid "Set repository data"
 msgid "select repository to search"
 msgstr "検索するリポジトリの選択"
 
 #: scout/__init__.py:781
-#| msgid "No repository found."
 msgid "No repositories found ..."
 msgstr "リポジトリが見つかりません ..."
 
 #: scout/__init__.py:825 scout/__init__.py:826
-#| msgid "Modules"
 msgid "module"
 msgstr "モジュール"
 
 #: scout/__init__.py:953
 #, python-format
-#| msgid "Cannot find the master ypserver: %s"
 msgid "Cannot find a formatter for a %s"
 msgstr "%s に対するフォーマッタが見つかりません"
 
@@ -180,7 +160,6 @@ msgid "Search for java classes inside the JAR files."
 msgstr "JAR ファイル内に含まれている java クラスを検索します。"
 
 #: scout/java.py:13 scout/java.py:14
-#| msgid "Far"
 msgid "jar"
 msgstr "jar"
 
@@ -189,17 +168,14 @@ msgid "class"
 msgstr "クラス"
 
 #: scout/library.py:9
-#| msgid "Searching for file handlers"
 msgid "Search for shared libraries."
 msgstr "共有ライブラリを検索します。"
 
 #: scout/library.py:13 scout/library.py:14
-#| msgid "Gibraltar"
 msgid "library"
 msgstr "ライブラリ"
 
 #: scout/python.py:9
-#| msgid "Searching for file handlers"
 msgid "Search for python modules."
 msgstr "Python モジュールを検索します。"
 
@@ -213,32 +189,25 @@ msgid "Cannot retreive query results ... %s"
 msgstr "問い合わせ結果を取得できません ... %s"
 
 #: scout/webpin.py:50
-#| msgid "Never"
 msgid "ver"
 msgstr "ver"
 
 #: scout/webpin.py:50 scout/webpin.py:51
-#| msgid "Search"
 msgid "arch"
 msgstr "arch"
 
 #: scout/webpin.py:50
-#| msgid "No files"
 msgid "files"
 msgstr "ファイル"
 
 #: scout/webpin.py:51
-#| msgid "Version"
 msgid "version"
 msgstr "バージョン"
 
 #: scout/webpin.py:51
-#| msgid "Set repository data"
 msgid "repository URL"
 msgstr "リポジトリ URL"
 
 #: scout/webpin.py:51
-#| msgid "Searched for file"
 msgid "matched files"
 msgstr "該当ファイル"
-
