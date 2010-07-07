@@ -46,13 +46,13 @@
          <varlistentry>
             <term><option>binary_name</option></term>
             <listitem>
-               <para>The name of binary you are looking for.</para>
+               <para>The name of the binary you are looking for.</para>
             </listitem>
          </varlistentry>
          <varlistentry>
             <term><option>repository</option></term>
             <listitem>
-               <para>The name of repository for search. For most cases, use zypp</para>
+               <para>The name of the repository to search. For most cases, use zypp</para>
             </listitem>
          </varlistentry>
       </variablelist>
@@ -60,14 +60,14 @@
 
    <refsect1 id="cnf.description">
       <title>Description</title>
-      <para>command-not-found handler is designed to tell users which package
-          contains a missing command.</para>
-      <para>The handler is integrated to bash(1) and zsh(1) shells and is not
-          necessary to call it directly. Just type a name of the command in your
+      <para>the command-not-found handler searches the package a missing
+          command belongs to.</para>
+      <para>The handler is integrated into the bash(1) and zsh(1) shells and doesn't
+          need to be called directly. Just type the name of a command in your
           favourite shell and you&apos;ll get a result.</para>
-      <para>If you consider c-n-f handler useless, just add <code>unset
+      <para>If you consider the c-n-f handler useless, just add <code>unset
               command_not_found_handle</code> to your profile or remove the command-not-found package.</para>
-      <para>Handler doesn&apos;t call the command-not-found binary directly, it only prints info about it.
+      <para>The handler doesn&apos;t call the command-not-found binary directly, it only prints info about it.
           If you want to invoke it automatically, just add <code>export COMMAND_NOT_FOUND_AUTO=1</code>
           to your bash profile.</para>
    </refsect1>
@@ -76,7 +76,7 @@
       <title>Example: Normal usage</title>
       <para>For example you want to try <filename>blender</filename>, because
           you have heard that is an amazing program. So just type blender in
-          shell:</para>
+          your shell:</para>
       <screen><prompt>$ </prompt><command>blender</command></screen>
       <para>You get the following output:</para>
       <screen>
