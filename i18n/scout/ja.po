@@ -185,7 +185,7 @@ msgstr "webpin Web サービスを利用してパッケージを検索します�
 
 #: scout/webpin.py:45
 #, python-format
-msgid "Cannot retreive query results ... %s"
+msgid "Cannot retrieve query results ... %s"
 msgstr "問い合わせ結果を取得できません ... %s"
 
 #: scout/webpin.py:50

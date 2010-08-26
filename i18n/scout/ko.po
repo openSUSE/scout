@@ -185,7 +185,7 @@ msgstr "웹서비스를 사용하여 꾸러미를 검색합니다."
 
 #: scout/webpin.py:45
 #, python-format
-msgid "Cannot retreive query results ... %s"
+msgid "Cannot retrieve query results ... %s"
 msgstr "쿼리 결과를 취득할 수 없음 ... %s"
 
 #: scout/webpin.py:50

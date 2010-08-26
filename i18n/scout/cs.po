@@ -188,7 +188,7 @@ msgstr "Hledá v balíčcích pomocí webové služby webpin."
 
 #: scout/webpin.py:45
 #, python-format
-msgid "Cannot retreive query results ... %s"
+msgid "Cannot retrieve query results ... %s"
 msgstr "Nemohu získat výsledek dotazu ... %s"
 
 #: scout/webpin.py:50

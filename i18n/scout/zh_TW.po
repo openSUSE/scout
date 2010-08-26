@@ -190,7 +190,7 @@ msgstr "在使用 webpin 網路服務的套件中搜尋。"
 
 #: scout/webpin.py:45
 #, python-format
-msgid "Cannot retreive query results ... %s"
+msgid "Cannot retrieve query results ... %s"
 msgstr "無法取得查詢結果 ... %s"
 
 #: scout/webpin.py:50

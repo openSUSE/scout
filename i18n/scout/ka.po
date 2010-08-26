@@ -184,7 +184,7 @@ msgstr ""
 
 #: scout/webpin.py:45
 #, python-format
-msgid "Cannot retreive query results ... %s"
+msgid "Cannot retrieve query results ... %s"
 msgstr ""
 
 # 'driver' as in '(hardware) driver update'

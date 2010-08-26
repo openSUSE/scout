@@ -41,7 +41,7 @@ class ScoutModule(scout.BaseScoutModule):
             r.close()
             return minidom.parseString(data)
         except Exception, e:
-            print _("Cannot retreive query results ... %s") % e
+            print _("Cannot retrieve query results ... %s") % e
             return None
 
     def fill_result(self, root):

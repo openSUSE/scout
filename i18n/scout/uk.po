@@ -190,7 +190,7 @@ msgstr "Пошук в пакунках за допомогою веб-служб
 
 #: scout/webpin.py:45
 #, python-format
-msgid "Cannot retreive query results ... %s"
+msgid "Cannot retrieve query results ... %s"
 msgstr "Не вдалося отримати результати запиту ... %s"
 
 #: scout/webpin.py:50

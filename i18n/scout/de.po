@@ -189,7 +189,7 @@ msgstr "Suche in Paketen mit Hilfe des Webpin Webservice"
 
 #: scout/webpin.py:45
 #, python-format
-msgid "Cannot retreive query results ... %s"
+msgid "Cannot retrieve query results ... %s"
 msgstr "Erhalte keine Ergebnisse der Abfrage %s..."
 
 #: scout/webpin.py:50

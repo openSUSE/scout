@@ -186,7 +186,7 @@ msgstr "Etsi paketeista käyttäen webpin verkkopalvelua"
 
 #: scout/webpin.py:45
 #, python-format
-msgid "Cannot retreive query results ... %s"
+msgid "Cannot retrieve query results ... %s"
 msgstr "Kyselyn tuloksien palauttaminen ei onnistu ... %s"
 
 #: scout/webpin.py:50

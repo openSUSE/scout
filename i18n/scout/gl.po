@@ -185,7 +185,7 @@ msgstr "Procurar en paquetes usando o servizo web webpin."
 
 #: scout/webpin.py:45
 #, python-format
-msgid "Cannot retreive query results ... %s"
+msgid "Cannot retrieve query results ... %s"
 msgstr "Non se puido recuperar os resultados da consulta ... %s"
 
 #: scout/webpin.py:50
