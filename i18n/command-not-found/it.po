@@ -76,5 +76,5 @@ msgstr "ricerca in corso..."
 #: handlers/bin/command-not-found:87
 #, python-format
 msgid "command not found"
-msgstr "commando non trovato"
+msgstr "comando non trovato"
 
