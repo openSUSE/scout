@@ -943,7 +943,7 @@ class ScoutCore(object):
             sys.exit(2)
 
         if args.listing:
-            return "\n".join(cls.ml.module_names)
+            return (False, "\n".join(cls.ml.module_names))
 
         module = cls.ml[args.module]
         result = module.ScoutModule().main(clp.module_args)
