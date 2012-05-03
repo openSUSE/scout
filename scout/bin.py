@@ -42,7 +42,7 @@ class SolvParser(object):
                 path = d.value()
                 # do matching for path
                 if not pathreprg.match(path): continue
-                row = ( 'zypp (%s)' % d.solvable().repo().name(), d.solvable().name(), path[:-len(term)-1], term )
+                row = ( 'zypp (%s)' % d.solvable().repo().name().decode('utf-8'), d.solvable().name().decode('utf-8'), path[:-len(term)-1], term )
                 if not row in pkgmatch:
                     pkgmatch.append( row )
         else:
@@ -51,7 +51,7 @@ class SolvParser(object):
                 for path in d.solvable().attr_values('solvable:filelist'):
                     if not pathreprg.match(path): continue
                     binary = os.path.basename(path)
-                    row = ( 'zypp (%s)' % d.solvable().repo().name(), d.solvable().name(), path[:-len(binary)-1], binary )
+                    row = ( 'zypp (%s)' % d.solvable().repo().name().decode('utf-8'), d.solvable().name().decode('utf-8'), path[:-len(binary)-1], binary )
                     if not row in pkgmatch:
                         pkgmatch.append( row )
         return pkgmatch
