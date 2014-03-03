@@ -1,4 +1,15 @@
 -------------------------------------------------------------------
+Mon Mar  3 14:56:01 CET 2014 - mls@suse.de
+
+- port from libsatsolver to libsolv [fate#316955]
+- fix bnc#714558: support utf-8 chars in solvable names
+
+-------------------------------------------------------------------
+Thu Apr  5 05:58:49 UTC 2012 - ke@suse.de
+
+- scout.spec: minor cleanup.
+
+-------------------------------------------------------------------
 Wed Jun  2 12:54:10 UTC 2010 - prusnak@opensuse.org
 
 - update translations
