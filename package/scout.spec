@@ -20,13 +20,15 @@
 Name:           scout
 Version:        0.1.0
 Release:        35
-Url:            http://en.opensuse.org/Scout
+Url:            http://old-en.opensuse.org/Scout
+Summary:        Indexing Package Properties
 License:        MIT
 Group:          System/Packages
-Summary:        Package Scout
 Source:         %{name}.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
-BuildRequires:  gettext python rpm-python
+BuildRequires:  gettext
+BuildRequires:  python
+BuildRequires:  rpm-python
 Requires:       python
 
 %if 0%{?suse_version}
@@ -46,7 +48,7 @@ BuildArch:      noarch
 %endif
 
 %description
-Package Scout for indexing various properties of packages.
+The scout tool helps with indexing of various package properties.
 
 
 %define scoutrepo none
@@ -82,9 +84,8 @@ Package Scout for indexing various properties of packages.
 %package -n command-not-found
 Version:        0.1.0
 Release:        42
-License:        MIT
-Group:          System/Packages
 Summary:        Command Not Found extension for shell
+Group:          System/Packages
 Requires:       python rpm-python
 Requires:       scout = %{version}-%{release}
 %if 0%{?suse_version} && 0%{?suse_version} <= 1100
