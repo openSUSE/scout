@@ -40,8 +40,8 @@ BuildArch:      noarch
 %define python_sitelib %{py_sitedir}
 %endif
 %if 0%{?suse_version} > 1100
-BuildRequires:  python-satsolver >= 0.12.0
-Requires:       python-satsolver >= 0.12.0
+BuildRequires:  python-solv
+Requires:       python-solv
 %endif
 %else
 BuildArch:      noarch

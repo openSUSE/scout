@@ -9,9 +9,9 @@ from fnmatch import fnmatch
 from ConfigParser import SafeConfigParser
 
 try:
-    satsolver = __import__('satsolver')
+    solv = __import__('solv')
 except:
-    satsolver = None
+    solv = None
 
 class SolvParser(object):
 
@@ -21,7 +21,7 @@ class SolvParser(object):
     pathre   = '^/(bin|sbin|usr/bin|usr/sbin|usr/games|opt/kde3/bin|opt/kde3/sbin|opt/gnome/bin|opt/gnome/sbin)/'
 
     def __init__(self):
-        self.pool = satsolver.Pool()
+        self.pool = solv.Pool()
         self.parser = SafeConfigParser()
 
         for repofile in [ f for f in os.listdir(self.etcpath) if fnmatch(f, '*.repo') ]:
@@ -29,8 +29,8 @@ class SolvParser(object):
                 name = os.path.splitext(repofile)[0]
                 self.parser.read( '%s/%s' % (self.etcpath, repofile) )
                 if self.parser.get(name, 'enabled') == '1':
-                    repo = self.pool.add_solv( self.solvfile % name )
-                    repo.set_name(name)
+                    repo = self.pool.add_repo(name)
+                    repo.add_solv(self.solvfile % name)
             except:
                 pass
 
@@ -38,20 +38,23 @@ class SolvParser(object):
         pkgmatch = []
         if not inversesearch:
             pathreprg = re.compile(self.pathre + re.escape(term) + '$')
-            for d in self.pool.search( term, satsolver.SEARCH_STRING, None, 'solvable:filelist' ):
-                path = d.value()
-                # do matching for path
-                if not pathreprg.match(path): continue
-                row = ( 'zypp (%s)' % d.solvable().repo().name().decode('utf-8'), d.solvable().name().decode('utf-8'), path[:-len(term)-1], term )
-                if not row in pkgmatch:
-                    pkgmatch.append( row )
+            # work around missing stringification code in libsolv bindings
+            for d in self.pool.Dataiterator(0, solv.SOLVABLE_FILELIST, "/" + term, solv.Dataiterator.SEARCH_STRINGEND | solv.Dataiterator.SEARCH_FILES):
+                for d2 in self.pool.Dataiterator(d.solvid, solv.SOLVABLE_FILELIST, None, solv.Dataiterator.SEARCH_FILES):
+                    path = str(d2)
+                    # do matching for path
+                    if not pathreprg.match(path): continue
+                    row = ( 'zypp (%s)' % d.solvable.repo.name.decode('utf-8'), d.solvable.name.decode('utf-8'), path[:-len(term)-1], term )
+                    if not row in pkgmatch:
+                        pkgmatch.append( row )
         else:
             pathreprg = re.compile(self.pathre + '[^/]+$')
-            for d in self.pool.search( term, satsolver.SEARCH_STRING, None, 'solvable:name' ):
-                for path in d.solvable().attr_values('solvable:filelist'):
+            for d in  self.pool.Dataiterator(0, solv.SOLVABLE_NAME, term, solv.Dataiterator.SEARCH_STRING):
+                for d2 in self.pool.Dataiterator(d.solvid, solv.SOLVABLE_FILELIST, None, solv.Dataiterator.SEARCH_FILES):
+                    path = str(d2)
                     if not pathreprg.match(path): continue
                     binary = os.path.basename(path)
-                    row = ( 'zypp (%s)' % d.solvable().repo().name().decode('utf-8'), d.solvable().name().decode('utf-8'), path[:-len(binary)-1], binary )
+                    row = ( 'zypp (%s)' % d.solvable.repo.name.decode('utf-8'), d.solvable.name.decode('utf-8'), path[:-len(binary)-1], binary )
                     if not row in pkgmatch:
                         pkgmatch.append( row )
         return pkgmatch
@@ -64,14 +67,14 @@ class ScoutModule(scout.BaseScoutModule):
     def __init__(self):
         super(self.__class__, self).__init__()
 
-        if satsolver == None:
+        if solv == None:
             self._repo_list = scout.RepoList(self._cls.name)
         else:
             self._repo_list = scout.RepoList(self._cls.name, ('zypp', ))
         self._parser    = scout.Parser(self._cls.name, self._repo_list.repos)
 
     def query_zypp(self, term, inversesearch = False):
-        if satsolver == None:
+        if solv == None:
             return None
         s = SolvParser()
         return s.search(term, inversesearch)
