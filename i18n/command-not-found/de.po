@@ -1,20 +1,23 @@
 # translation of command-not-found.pot to Deutsch
 # Copyright (C) 2009
 # This file is distributed under the same license as the "command-not-found" package.
-# Thomas Schraitle <toms@suse.de>, 2008.
 #
+# Thomas Schraitle <toms@suse.de>, 2008.
+# Hermann J. Beckers <hj.beckers@onlinehome.de>, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: command-not-found\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-04-23 15:20+0200\n"
-"PO-Revision-Date: 2008-08-29 14:47+0200\n"
-"Last-Translator: Thomas Schraitle <toms@suse.de>\n"
-"Language-Team: Deutsch\n"
+"PO-Revision-Date: 2013-02-06 20:40+0100\n"
+"Last-Translator: Hermann J. Beckers <hj.beckers@onlinehome.de>\n"
+"Language-Team: German <kde-i18n-de@kde.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.2\n"
 
 #: handlers/bin/command_not_found_bash:9
 #: handlers/bin/command_not_found_bash:17
@@ -27,8 +30,8 @@ msgid ""
 "superuser privileges (eg. root)."
 msgstr ""
 "Der absoluter Pfad für '$1' ist '$prefix/sbin/$1', daher ist es wohl "
-"beabsichtigt, dass dieses nur von einem Benutzer mit Superuser Rechten "
-"gestartet werden kann (z.B. root)."
+"beabsichtigt, das es nur von einem Benutzer mit Superuser-Rechten gestartet "
+"werden kann (z. B. root)."
 
 #: handlers/bin/command_not_found_bash:32
 msgid ""
@@ -73,12 +76,12 @@ msgstr ""
 #: handlers/bin/command-not-found:27
 #, python-format
 msgid ""
-"Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may "
-"require superuser privileges (eg. root)."
+"Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may require "
+"superuser privileges (eg. root)."
 msgstr ""
 "Der absoluter Pfad für '%(prog)s' ist '%(path)s/%(prog)s', daher ist es wohl "
-"beabsichtigt, dass dieses nur von einem Benutzer mit Superuser Rechten "
-"gestartet werden kann (z.B. root)."
+"beabsichtigt, das es nur von einem Benutzer mit Superuser-Rechten gestartet "
+"werden kann (z. B. root)."
 
 #: handlers/bin/command-not-found:30
 #, python-format
@@ -87,7 +90,7 @@ msgid ""
 "variable to see whether it contains the mentioned path."
 msgstr ""
 "Der absolute Pfad für '%(prog)s' ist '%(path)s/%(prog)s'. Bitte überprüfen "
-"Sie Ihre $PATH Variable ob der genannte Pfad enthalten ist."
+"Sie Ihre $PATH-Variable ob der genannte Pfad enthalten ist."
 
 #: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
 #, python-format
@@ -97,4 +100,5 @@ msgstr "suchen ..."
 #: handlers/bin/command-not-found:87
 #, python-format
 msgid "command not found"
-msgstr "Kommando nicht gefunden."
+msgstr "Kommando nicht gefunden"
+

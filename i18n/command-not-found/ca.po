@@ -3,76 +3,91 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-04-23 15:20+0200\n"
-"PO-Revision-Date: 2002-02-08 15:47+0100\n"
-"Last-Translator: Jaume Badiella <myotis@drac.com>\n"
+"PO-Revision-Date: 2014-07-31 19:08+0100\n"
+"Last-Translator: David Medina <opensusecatala@gmail.com>\n"
 "Language-Team: Catalan\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.5.7\n"
 
 #: handlers/bin/command_not_found_bash:9
 #: handlers/bin/command_not_found_bash:17
-#, fuzzy
-#| msgid "The job was not found."
 msgid "$1: command not found"
-msgstr "No s'ha trobat la tasca."
+msgstr "$1: no s'ha trobat l'ordre"
 
 #: handlers/bin/command_not_found_bash:24
-msgid "Absolute path to '$1' is '$prefix/sbin/$1', so running it may require superuser privileges (eg. root)."
+msgid ""
+"Absolute path to '$1' is '$prefix/sbin/$1', so running it may require "
+"superuser privileges (eg. root)."
 msgstr ""
+"El camí absolut a '$1' és '$prefix/sbin/$1', i executar-lo pot requerir "
+"privilegis de superusuari (per exemple: root)."
 
 #: handlers/bin/command_not_found_bash:32
 msgid ""
-"If '$1' is not a typo you can use command-not-found to lookup the package that contains it, like this:\n"
+"If '$1' is not a typo you can use command-not-found to lookup the package "
+"that contains it, like this:\n"
 "    cnf $1"
 msgstr ""
+"Si '$1' no és un error de picatge, podeu fer servir \"command-not-found\" "
+"per cercar el paquet que ho contingui, per exemple:\n"
+"    cnf $1"
 
 #: handlers/bin/command-not-found:8
 #, python-format
 msgid "The program '%(prog)s' can be found in the following package:"
 msgid_plural "The program '%(prog)s' can be found in following packages:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "El programa '%(prog)s' es pot trobar dins del paquet següent:"
+msgstr[1] "El programa '%(prog)s' es pot trobar dins dels paquets següents:"
 
 #: handlers/bin/command-not-found:11
 #, python-format
 msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
-msgstr ""
+msgstr "  * %(prog)s [ camí: %(path)s/%(binary)s, repositori: %(repo)s ]"
 
 #: handlers/bin/command-not-found:14
-#, fuzzy
-#| msgid "Installing %s"
 msgid "Try installing with:"
-msgstr "S'està instal·lant %s"
+msgstr "Proveu d'instal·lar-ho amb"
 
 #: handlers/bin/command-not-found:16
 msgid "<selected_package>"
-msgstr ""
+msgstr "<paquet_seleccionat>"
 
 #: handlers/bin/command-not-found:24
 #, python-format
-msgid "Program '%(prog)s' is present in package '%(pkg)s', which is installed on your system."
+msgid ""
+"Program '%(prog)s' is present in package '%(pkg)s', which is installed on "
+"your system."
 msgstr ""
+"El programa '%(prog)s' és present al paquet '%(pkg)s', que està instal·lat "
+"al sistema."
 
 #: handlers/bin/command-not-found:27
 #, python-format
-msgid "Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may require superuser privileges (eg. root)."
+msgid ""
+"Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may "
+"require superuser privileges (eg. root)."
 msgstr ""
+"El camí absolut a '%(prog)s' és '%(path)s/%(prog)s', i executar-lo pot "
+"requerir privilegis de superusuari (per exemple: root)."
 
 #: handlers/bin/command-not-found:30
 #, python-format
-msgid "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH variable to see whether it contains the mentioned path."
+msgid ""
+"Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH "
+"variable to see whether it contains the mentioned path."
 msgstr ""
+"El camí absolut a '%(prog)s' és '%(path)s/%(prog)s'. Si us plau, comproveu "
+"la variable $PATH per si conté el camí mencionat."
 
 #: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
-#, fuzzy, python-format
-#| msgid "Searching for info file..."
+#, python-format
 msgid "searching ..."
-msgstr "S'està cercant el fitxer d'informació..."
+msgstr "cercant..."
 
 #: handlers/bin/command-not-found:87
-#, fuzzy, python-format
-#| msgid "Entry not found."
+#, python-format
 msgid "command not found"
-msgstr "No s'ha trobat l'entrada."
+msgstr "No s'ha trobat l'ordre"

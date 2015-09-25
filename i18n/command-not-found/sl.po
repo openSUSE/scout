@@ -12,11 +12,13 @@ msgstr ""
 "PO-Revision-Date: 2005-08-24 17:37+0200\n"
 "Last-Translator: Janez Krek <janez.krek@euroteh.si>\n"
 "Language-Team: Slovenščina <sl@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.3.1\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
+"%100==4 ? 2 : 3);\n"
 
 #: handlers/bin/command_not_found_bash:9
 #: handlers/bin/command_not_found_bash:17
@@ -24,12 +26,15 @@ msgid "$1: command not found"
 msgstr ""
 
 #: handlers/bin/command_not_found_bash:24
-msgid "Absolute path to '$1' is '$prefix/sbin/$1', so running it may require superuser privileges (eg. root)."
+msgid ""
+"Absolute path to '$1' is '$prefix/sbin/$1', so running it may require "
+"superuser privileges (eg. root)."
 msgstr ""
 
 #: handlers/bin/command_not_found_bash:32
 msgid ""
-"If '$1' is not a typo you can use command-not-found to lookup the package that contains it, like this:\n"
+"If '$1' is not a typo you can use command-not-found to lookup the package "
+"that contains it, like this:\n"
 "    cnf $1"
 msgstr ""
 
@@ -55,27 +60,31 @@ msgstr ""
 
 #: handlers/bin/command-not-found:24
 #, python-format
-msgid "Program '%(prog)s' is present in package '%(pkg)s', which is installed on your system."
+msgid ""
+"Program '%(prog)s' is present in package '%(pkg)s', which is installed on "
+"your system."
 msgstr ""
 
 #: handlers/bin/command-not-found:27
 #, python-format
-msgid "Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may require superuser privileges (eg. root)."
+msgid ""
+"Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may "
+"require superuser privileges (eg. root)."
 msgstr ""
 
 #: handlers/bin/command-not-found:30
 #, python-format
-msgid "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH variable to see whether it contains the mentioned path."
+msgid ""
+"Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH "
+"variable to see whether it contains the mentioned path."
 msgstr ""
 
 #: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
 #, fuzzy, python-format
-#| msgid "Searching for info file..."
 msgid "searching ..."
 msgstr "Iskanje datoteke z informacijami..."
 
 #: handlers/bin/command-not-found:87
 #, fuzzy, python-format
-#| msgid "Host %s was not found."
 msgid "command not found"
 msgstr "Gostitelja %s ni."

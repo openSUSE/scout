@@ -11,6 +11,7 @@ msgstr ""
 "PO-Revision-Date: 2009-09-22 18:59+0200\n"
 "Last-Translator: Manuel A. Vázquez <xixirei@yahoo.es>\n"
 "Language-Team: Galician <proxecto@trasno.net>\n"
+"Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,21 +24,15 @@ msgid "$1: command not found"
 msgstr "$1: orde non atopada"
 
 #: handlers/bin/command_not_found_bash:24
-msgid ""
-"Absolute path to '$1' is '$prefix/sbin/$1', so running it may require "
-"superuser privileges (eg. root)."
-msgstr ""
-"A ruta absoluta a '$1' é '$prefix/sbin/$1', polo que para a súa execución "
-"poden ser necesarios privilexios de superusuario (p.ex. root)."
+msgid "Absolute path to '$1' is '$prefix/sbin/$1', so running it may require superuser privileges (eg. root)."
+msgstr "A ruta absoluta a '$1' é '$prefix/sbin/$1', polo que para a súa execución poden ser necesarios privilexios de superusuario (p.ex. root)."
 
 #: handlers/bin/command_not_found_bash:32
 msgid ""
-"If '$1' is not a typo you can use command-not-found to lookup the package "
-"that contains it, like this:\n"
+"If '$1' is not a typo you can use command-not-found to lookup the package that contains it, like this:\n"
 "    cnf $1"
 msgstr ""
-"Se '$1' non é un erro tipográfico, pode usar a procura da orde non atopada "
-"para saber a que paquete pertence, como:\n"
+"Se '$1' non é un erro tipográfico, pode usar a procura da orde non atopada para saber a que paquete pertence, como:\n"
 "    cnf $1"
 
 #: handlers/bin/command-not-found:8
@@ -62,30 +57,18 @@ msgstr "<paquete_seleccionado>"
 
 #: handlers/bin/command-not-found:24
 #, python-format
-msgid ""
-"Program '%(prog)s' is present in package '%(pkg)s', which is installed on "
-"your system."
-msgstr ""
-"O programa '%(prog)s' está presente no paquete '%(pkg)s', que está instalado "
-"no seu sistema."
+msgid "Program '%(prog)s' is present in package '%(pkg)s', which is installed on your system."
+msgstr "O programa '%(prog)s' está presente no paquete '%(pkg)s', que está instalado no seu sistema."
 
 #: handlers/bin/command-not-found:27
 #, python-format
-msgid ""
-"Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may "
-"require superuser privileges (eg. root)."
-msgstr ""
-"A ruta absoluta a '%(prog)s' é '%(path)s/%(prog)s', polo que para a súa "
-"execución poden ser necesarios privilexios de superusuario (p.ex. root)."
+msgid "Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may require superuser privileges (eg. root)."
+msgstr "A ruta absoluta a '%(prog)s' é '%(path)s/%(prog)s', polo que para a súa execución poden ser necesarios privilexios de superusuario (p.ex. root)."
 
 #: handlers/bin/command-not-found:30
 #, python-format
-msgid ""
-"Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH "
-"variable to see whether it contains the mentioned path."
-msgstr ""
-"A ruta absoluta a '%(prog)s' é '%(path)s/%(prog)s'. Verifique a súa variable "
-"de contorno $PATH para asegurar que contén esa ruta."
+msgid "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH variable to see whether it contains the mentioned path."
+msgstr "A ruta absoluta a '%(prog)s' é '%(path)s/%(prog)s'. Verifique a súa variable de contorno $PATH para asegurar que contén esa ruta."
 
 #: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
 #, python-format

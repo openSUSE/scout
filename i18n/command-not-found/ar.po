@@ -1,71 +1,100 @@
+# moh <malham1@gmail.com>, 2011.
+# Mohammad Alhargan <malham1@hotmail.com>, 2012.
+# محمد الحرقان <malham1@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-04-23 15:20+0200\n"
-"PO-Revision-Date: 2001-07-13 15:36+0200\n"
-"Last-Translator: Arabic <i18n@suse.de>\n"
-"Language-Team: Arabic <i18n@suse.de>\n"
+"PO-Revision-Date: 2012-09-28 19:15+0300\n"
+"Last-Translator: محمد الحرقان <malham1@gmail.com>\n"
+"Language-Team: http://www.vertaal.com.ar/files/factory/ar/list/\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
+"X-Generator: Virtaal 0.7.1\n"
 
 #: handlers/bin/command_not_found_bash:9
 #: handlers/bin/command_not_found_bash:17
 msgid "$1: command not found"
-msgstr ""
+msgstr "$1: لم يُعثَر على الأمر"
 
 #: handlers/bin/command_not_found_bash:24
-msgid "Absolute path to '$1' is '$prefix/sbin/$1', so running it may require superuser privileges (eg. root)."
+msgid ""
+"Absolute path to '$1' is '$prefix/sbin/$1', so running it may require "
+"superuser privileges (eg. root)."
 msgstr ""
+"المسار المطلق إلى '$1' هو '$prefix/sbin/$1', لذلك تشغيله قد يتطلب صلاحية "
+"مدير النظام (على سبيل المثال-الجذر)."
 
 #: handlers/bin/command_not_found_bash:32
 msgid ""
-"If '$1' is not a typo you can use command-not-found to lookup the package that contains it, like this:\n"
+"If '$1' is not a typo you can use command-not-found to lookup the package "
+"that contains it, like this:\n"
 "    cnf $1"
 msgstr ""
+"إذا لم يكن '$1' خطأ مطبعي يمكنك استخدام command-not-found للبحث عن حزمة التي "
+"تحتوي عليه، مثل هذا:\n"
+"    cnf $1"
 
 #: handlers/bin/command-not-found:8
 #, python-format
 msgid "The program '%(prog)s' can be found in the following package:"
 msgid_plural "The program '%(prog)s' can be found in following packages:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "لا يمكن العثور على البرنامج '%(prog)s' في الحزمة التالية:"
+msgstr[1] "لا يمكن العثور على البرنامج '%(prog)s' في الحزم التالية:"
+msgstr[2] "لا يمكن العثور على البرنامج '%(prog)s' في الحزم التالية:"
+msgstr[3] "لا يمكن العثور على البرنامج '%(prog)s' في الحزم التالية:"
+msgstr[4] "لا يمكن العثور على البرنامج '%(prog)s' في الحزم التالية:"
+msgstr[5] "لا يمكن العثور على البرنامج '%(prog)s' في الحزم التالية:"
 
 #: handlers/bin/command-not-found:11
 #, python-format
 msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
-msgstr ""
+msgstr "  * %(prog)s [ المسار: %(path)s/%(binary)s, المستودع: %(repo)s ]"
 
 #: handlers/bin/command-not-found:14
 msgid "Try installing with:"
-msgstr ""
+msgstr "حاول تثبيته مع:"
 
 #: handlers/bin/command-not-found:16
 msgid "<selected_package>"
-msgstr ""
+msgstr "<حدد_حزمة>"
 
 #: handlers/bin/command-not-found:24
 #, python-format
-msgid "Program '%(prog)s' is present in package '%(pkg)s', which is installed on your system."
-msgstr ""
+msgid ""
+"Program '%(prog)s' is present in package '%(pkg)s', which is installed on "
+"your system."
+msgstr "برنامج '%(prog)s' موجوداً في حزمة '%(pkg)s', المثبتة على النظام."
 
 #: handlers/bin/command-not-found:27
 #, python-format
-msgid "Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may require superuser privileges (eg. root)."
+msgid ""
+"Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may "
+"require superuser privileges (eg. root)."
 msgstr ""
+"القيمة المطلقة إلى '%(prog)s' هي '%(path)s/%(prog)s', تشغيلها قد يتطلب "
+"صلاحيات مدير النظام (على سبيل المثال-الجذر)."
 
 #: handlers/bin/command-not-found:30
 #, python-format
-msgid "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH variable to see whether it contains the mentioned path."
+msgid ""
+"Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH "
+"variable to see whether it contains the mentioned path."
 msgstr ""
+"القيمة المطلقة إلى '%(prog)s' هو '%(path)s/%(prog)s'. الرجاء التحقق من "
+"المتغير $PATH للتحقق إذا كان يحتوي على المسار المذكور."
 
 #: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
 #, python-format
 msgid "searching ..."
-msgstr ""
+msgstr "بحث ..."
 
 #: handlers/bin/command-not-found:87
 #, python-format
 msgid "command not found"
-msgstr ""
+msgstr "لم يُعثَر على الأمر"
