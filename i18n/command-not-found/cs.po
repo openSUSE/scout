@@ -1,34 +1,47 @@
 # translation of command-not-found.pot to Čeština
 # Copyright (C) 2009
 # This file is distributed under the same license as the "command-not-found" package.
-# Michal Vyskocil <mvyskocil@suse.cz>, 2008.
 #
+# Michal Vyskocil <mvyskocil@suse.cz>, 2008.
+# Jan Papez <honyczek@centrum.cz>, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: command-not-found\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-28 11:42+0200\n"
-"PO-Revision-Date: 2008-08-29 10:51+0200\n"
-"Last-Translator: Michal Vyskocil <mvyskocil@suse.cz>\n"
-"Language-Team: Čeština\n"
+"POT-Creation-Date: 2009-04-23 15:20+0200\n"
+"PO-Revision-Date: 2013-10-01 19:57+0200\n"
+"Last-Translator: Jan Papez <honyczek@centrum.cz>\n"
+"Language-Team: Czech <opensuse-translation@opensuse.org>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 1.5\n"
 
-#: handlers/bin/command_not_found_bash:9 handlers/bin/command_not_found_bash:17
+#: handlers/bin/command_not_found_bash:9
+#: handlers/bin/command_not_found_bash:17
 msgid "$1: command not found"
 msgstr "$1: příkaz nenalezen"
 
 #: handlers/bin/command_not_found_bash:24
-msgid "Absolute path to '$1' is '$prefix/sbin/$1', so running it may require superuser privileges (eg. root)."
+msgid ""
+"Absolute path to '$1' is '$prefix/sbin/$1', so running it may require "
+"superuser privileges (eg. root)."
 msgstr ""
-"Absolutní cesta k programu '$1' je '$prefix/sbin/$1', takže program je pravdepodobně určen pouze pro "
-"uživatele s administrátorskými právy (například root)."
+"Absolutní cesta k programu '$1' je '$prefix/sbin/$1', takže program je "
+"pravděpodobně určen pouze pro uživatele s administrátorskými právy (například "
+"root)."
 
 #: handlers/bin/command_not_found_bash:32
-msgid "If '$1' is not a typo you can use command-not-found to lookup the package that contains it, like this:\n    cnf $1"
-msgstr "Když '$1' není překlep, je možno použít command-not-found, aby nalezl balíček, který ho obsahuje. Například takto:\n    cnf $1"
+msgid ""
+"If '$1' is not a typo you can use command-not-found to lookup the package "
+"that contains it, like this:\n"
+"    cnf $1"
+msgstr ""
+"Když '$1' není překlep, je možno použít command-not-found, aby nalezl "
+"balíček, který ho obsahuje. Například takto:\n"
+"    cnf $1"
 
 #: handlers/bin/command-not-found:8
 #, python-format
@@ -57,16 +70,18 @@ msgid ""
 "Program '%(prog)s' is present in package '%(pkg)s', which is installed on "
 "your system."
 msgstr ""
-"Program '%(prog)s' je přítomen v balíčku '%(pkg)s', který je na vašem systému již "
-"nainstalován."
+"Program '%(prog)s' je přítomen v balíčku '%(pkg)s', který je na vašem systému "
+"již nainstalován."
 
 #: handlers/bin/command-not-found:27
 #, python-format
 msgid ""
-"Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may require superuser privileges (eg. root)."
+"Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may require "
+"superuser privileges (eg. root)."
 msgstr ""
-"Absolutní cesta k programu '%(prog)s' je '%(path)s/%(prog)s', takže program je pravdepodobně určen pouze pro "
-"uživatele s administrátorskými právy (například root)."
+"Absolutní cesta k programu '%(prog)s' je '%(path)s/%(prog)s', takže program "
+"je pravděpodobně určen pouze pro uživatele s administrátorskými právy "
+"(například root)."
 
 #: handlers/bin/command-not-found:30
 #, python-format
@@ -74,8 +89,8 @@ msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH "
 "variable to see whether it contains the mentioned path."
 msgstr ""
-"Absolutní cesta k '%(prog)s' je '%(path)s/%(prog)s'. Prosím ověřte, zda proměnná $PATH "
-"obsahuje zmíněnou cestu."
+"Absolutní cesta k '%(prog)s' je '%(path)s/%(prog)s'. Prosím ověřte, zda "
+"proměnná $PATH obsahuje zmíněnou cestu."
 
 #: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
 #, python-format
@@ -86,3 +101,4 @@ msgstr "vyhledávám ..."
 #, python-format
 msgid "command not found"
 msgstr "příkaz nenalezen"
+
