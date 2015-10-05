@@ -9,13 +9,16 @@ msgstr ""
 "Project-Id-Version: scout\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-28 11:42+0200\n"
-"PO-Revision-Date: 2009-09-17 14:45+0100\n"
-"Last-Translator: Jaromir Cervenka <cervajz@cervajz.com>\n"
-"Language-Team: Čeština\n"
+"PO-Revision-Date: 2015-10-05 13:47+0200\n"
+"Last-Translator: Tomáš Chvátal <tchvatal@suse.com>\n"
+"Language-Team: Czech <http://10n.opensuse.org/projects/scout/scout-"
+"master/cs/>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Weblate 2.3\n"
 
 #: scout/autoconf.py:9
 msgid "Search for autoconf macros inside the m4 files."
@@ -70,7 +73,7 @@ msgstr "bin."
 
 #: scout/bin.py:108
 msgid "binary"
-msgstr "binárka"
+msgstr "spustitelný soubor"
 
 #: scout/foo.py:9
 msgid "- template module -"
@@ -86,7 +89,7 @@ msgstr "hlavička"
 
 #: scout/__init__.py:148
 msgid "show this help message and exit"
-msgstr "ukáže tuto nápovědu a skončí"
+msgstr "ukáže nápovědu a skončí"
 
 #: scout/__init__.py:155
 msgid "show program's version number and exit"
@@ -122,7 +125,7 @@ msgstr "%s není adresářem"
 #: scout/__init__.py:425
 #, python-format
 msgid "Cannot not open database file '%s'"
-msgstr "Nemohu otevřít soubor s databází: '%s'"
+msgstr "Nemohu otevřít databázový soubor '%s'"
 
 #: scout/__init__.py:699
 msgid "Available repositories:\n"
@@ -160,7 +163,7 @@ msgstr "Nemohu najít formátovač pro %s"
 
 #: scout/java.py:9
 msgid "Search for java classes inside the JAR files."
-msgstr "Hledá třídy jazyka Java v JAR souborech."
+msgstr "Hledá třídy jazyka Java v souborech JAR."
 
 #: scout/java.py:13 scout/java.py:14
 msgid "jar"
@@ -189,7 +192,7 @@ msgstr "Hledá v balíčcích pomocí webové služby webpin."
 #: scout/webpin.py:45
 #, python-format
 msgid "Cannot retrieve query results ... %s"
-msgstr "Nemohu získat výsledek dotazu ... %s"
+msgstr "Nelze získat výsledek dotazu ... %s"
 
 #: scout/webpin.py:50
 msgid "ver"
