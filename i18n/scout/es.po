@@ -3,14 +3,16 @@ msgstr ""
 "Project-Id-Version: LCN - 11.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-28 11:42+0200\n"
-"PO-Revision-Date: 2009-09-17 10:27+0100\n"
-"Last-Translator: Carlos E. Robinson M. <carlos.e.r@opensuse.org>\n"
-"Language-Team: Equipo español de traducción de openSUSE <opensuse-translation-es@opensuse.org>\n"
+"PO-Revision-Date: 2015-10-05 16:11+0200\n"
+"Last-Translator: Shane Wims <shane.wims@microfocus.com>\n"
+"Language-Team: Spanish <http://10n.opensuse.org/projects/scout/scout-"
+"master/es/>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.3\n"
 "X-Poedit-Basepath: lcn\n"
 "X-Poedit-Language: Spanish\n"
 
@@ -70,7 +72,7 @@ msgstr "repositorio"
 #: scout/library.py:14
 #: scout/webpin.py:51
 msgid "package"
-msgstr "paquete "
+msgstr "paquete"
 
 # | msgid "No files"
 #: scout/autoconf.py:14
@@ -265,4 +267,3 @@ msgstr "URL del repositorio"
 #: scout/webpin.py:51
 msgid "matched files"
 msgstr "archivos que encajan"
-
