@@ -3,14 +3,16 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-28 11:42+0200\n"
-"PO-Revision-Date: 2009-09-16 21:40+0100\n"
-"Last-Translator: Guillaume GARDET <guillaume.gardet@free.fr>\n"
-"Language-Team: French Team <opensuse-fr@opensuse.org>\n"
+"PO-Revision-Date: 2015-10-13 19:57+0200\n"
+"Last-Translator: Sylvain TOSTAIN <locnar@gmx.com>\n"
+"Language-Team: French <http://10n.opensuse.org/projects/scout/scout-"
+"master/fr/>\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2.3\n"
 "X-Poedit-Language: French\n"
 "X-Poedit-Country: FRANCE\n"
 
@@ -27,6 +29,7 @@ msgstr "dépôt"
 #: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
 #: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
 #: scout/webpin.py:50
+#, fuzzy
 msgid "pkg"
 msgstr "pkg"
 
@@ -35,6 +38,7 @@ msgid "m4"
 msgstr "m4"
 
 #: scout/autoconf.py:13 scout/autoconf.py:14
+#, fuzzy
 msgid "macro"
 msgstr "macro"
 
@@ -62,6 +66,7 @@ msgid "path"
 msgstr "chemin"
 
 #: scout/bin.py:107
+#, fuzzy
 msgid "bin"
 msgstr "bin"
 
@@ -70,12 +75,14 @@ msgid "binary"
 msgstr "binaire"
 
 #: scout/foo.py:9
+#, fuzzy
 msgid "- template module -"
-msgstr ""
+msgstr "- module modèle -"
 
 #: scout/header.py:9
+#, fuzzy
 msgid "Search for C/C++/Obj-C/Obj-C++ headers."
-msgstr ""
+msgstr "Rechercher des entêtes C/C++/Obj-C/Obj-C++."
 
 #: scout/header.py:13 scout/header.py:14
 msgid "header"
@@ -94,9 +101,9 @@ msgid "Usage: %prog [global_opts] module [local_opts] search_term"
 msgstr "Usage : %prog [opts_globales] module [opts_locales] terme_recherché"
 
 #: scout/__init__.py:205
-#, python-format
+#, fuzzy, python-format
 msgid "select the output format (default %s)"
-msgstr ""
+msgstr "sélectionner le format de sortie (défaut %s)"
 
 #: scout/__init__.py:212
 msgid "list of available modules"
@@ -107,9 +114,9 @@ msgid "Available modules:\n"
 msgstr "Modules disponibles :\n"
 
 #: scout/__init__.py:279
-#, python-format
+#, fuzzy, python-format
 msgid "The name of module is mandatory. Use %s --help"
-msgstr ""
+msgstr "Le nom de module est obligatoire. Utilisez %s --help"
 
 #: scout/__init__.py:366
 #, python-format
@@ -157,10 +164,12 @@ msgid "Cannot find a formatter for a %s"
 msgstr "Impossible de trouver un formateur pour un(e) %s"
 
 #: scout/java.py:9
+#, fuzzy
 msgid "Search for java classes inside the JAR files."
-msgstr ""
+msgstr "Rechercher des classes java au sein des fichiers JAR."
 
 #: scout/java.py:13 scout/java.py:14
+#, fuzzy
 msgid "jar"
 msgstr "jar"
 
@@ -178,25 +187,28 @@ msgstr "Bibliothèque"
 
 # TLABEL linuxrc_2002_03_29_0036__114
 #: scout/python.py:9
+#, fuzzy
 msgid "Search for python modules."
-msgstr "Rechercher de modules python."
+msgstr "Rechercher des modules python."
 
 #: scout/webpin.py:13
 msgid "Search in packages using the webpin webservice."
 msgstr "Rechercher des paquets en utilisant le service web webpin."
 
 #: scout/webpin.py:45
-#, python-format
+#, fuzzy, python-format
 msgid "Cannot retrieve query results ... %s"
-msgstr ""
+msgstr "Impossible de récupérer les résultats de la recherche  ... %s"
 
 # TLABEL kinternet_2002_02_20_2255__70
 #: scout/webpin.py:50
+#, fuzzy
 msgid "ver"
 msgstr "ver"
 
 # TLABEL packages_2002_01_04_0147__110
 #: scout/webpin.py:50 scout/webpin.py:51
+#, fuzzy
 msgid "arch"
 msgstr "arch"
 
