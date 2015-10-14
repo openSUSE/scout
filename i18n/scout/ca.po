@@ -3,46 +3,47 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-28 11:42+0200\n"
-"PO-Revision-Date: 2002-02-08 15:47+0100\n"
-"Last-Translator: Jaume Badiella <myotis@drac.com>\n"
-"Language-Team: Catalan\n"
+"PO-Revision-Date: 2015-10-14 18:00+0200\n"
+"Last-Translator: David Medina <medipas@gmail.com>\n"
+"Language-Team: Catalan <http://10n.opensuse.org/projects/scout/scout-"
+"master/ca/>\n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.3\n"
 
 #: scout/autoconf.py:9
 msgid "Search for autoconf macros inside the m4 files."
-msgstr ""
+msgstr "Cerca macros d'autoconf dins de fitxers m4."
 
 #: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
 #: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
 #: scout/webpin.py:50
 msgid "repo"
-msgstr ""
+msgstr "repositori"
 
 #: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
 #: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
 #: scout/webpin.py:50
-#, fuzzy
 #| msgid "package"
 msgid "pkg"
 msgstr "paquet"
 
 #: scout/autoconf.py:13
 msgid "m4"
-msgstr ""
+msgstr "m4"
 
 #: scout/autoconf.py:13 scout/autoconf.py:14
 msgid "macro"
-msgstr ""
+msgstr "macro"
 
 #: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
 #: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
-#, fuzzy
 #| msgid "Directory\n"
 msgid "repository"
-msgstr "Directori\n"
+msgstr "repositori"
 
 #: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
 #: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
@@ -52,122 +53,114 @@ msgstr "paquet"
 
 #: scout/autoconf.py:14
 msgid "m4 file"
-msgstr ""
+msgstr "fitxer m4"
 
 #: scout/bin.py:62
 msgid "Search for binaries contained in the packages."
-msgstr ""
+msgstr "Cerca binaris continguts als paquets."
 
 #: scout/bin.py:107 scout/bin.py:108
 msgid "path"
-msgstr ""
+msgstr "camí"
 
 #: scout/bin.py:107
-#, fuzzy
 #| msgid "bit"
 msgid "bin"
-msgstr "bit"
+msgstr "bin"
 
 #: scout/bin.py:108
 msgid "binary"
-msgstr ""
+msgstr "binari"
 
 #: scout/foo.py:9
 msgid "- template module -"
-msgstr ""
+msgstr "- mòdul de plantilla -"
 
 #: scout/header.py:9
 msgid "Search for C/C++/Obj-C/Obj-C++ headers."
-msgstr ""
+msgstr "Cerca capçaleres C/C++/Obj-C/Obj-C++."
 
 #: scout/header.py:13 scout/header.py:14
 msgid "header"
-msgstr ""
+msgstr "capçalera"
 
 #: scout/__init__.py:148
-#, fuzzy
 #| msgid "Don't show this message again."
 msgid "show this help message and exit"
-msgstr "No tornis a mostrar aquest missatge."
+msgstr "mostra aquest missatge i surt"
 
 #: scout/__init__.py:155
 msgid "show program's version number and exit"
-msgstr ""
+msgstr "mostra la versió del programa i surt"
 
 #: scout/__init__.py:198
 msgid "Usage: %prog [global_opts] module [local_opts] search_term"
-msgstr ""
+msgstr "Ús: %prog [opcions_globals] mòdul [opcions_locals] terme_de_cerca"
 
 #: scout/__init__.py:205
 #, python-format
 msgid "select the output format (default %s)"
-msgstr ""
+msgstr "seleccioneu el format de sortida (per defecte: %s)"
 
 #: scout/__init__.py:212
-#, fuzzy
 #| msgid "scdb not available"
 msgid "list of available modules"
-msgstr "l'scdb no està disponible"
+msgstr "llista de mòduls disponibles"
 
 #: scout/__init__.py:228
-#, fuzzy
 #| msgid "Available profiles"
 msgid "Available modules:\n"
-msgstr "Perfils disponibles"
+msgstr "Mòduls disponibles:\n"
 
 #: scout/__init__.py:279
 #, python-format
 msgid "The name of module is mandatory. Use %s --help"
-msgstr ""
+msgstr "El nom del mòdul és obligatori. Useu %s --help"
 
 #: scout/__init__.py:366
-#, fuzzy, python-format
+#, python-format
 #| msgid "%1 is not a directory."
 msgid "%s is not a directory"
-msgstr "%1 no és un directori."
+msgstr "%s no és un directori"
 
 #: scout/__init__.py:425
-#, fuzzy, python-format
+#, python-format
 #| msgid "Cannot open file '%1'."
 msgid "Cannot not open database file '%s'"
-msgstr "No es pot obrir el fitxer '%1'."
+msgstr "No es pot obrir el fitxer de base de dades \"%s\"."
 
 #: scout/__init__.py:699
-#, fuzzy
 #| msgid "Available Processors"
 msgid "Available repositories:\n"
-msgstr "Processadors disponibles"
+msgstr "Repositoris disponibles:\n"
 
 #: scout/__init__.py:731
 #, python-format
 msgid "Usage: %%prog %s [options] search_term"
-msgstr ""
+msgstr "Ús: %%prog %s [opcions] terme_de_cerca"
 
 #: scout/__init__.py:733
-#, fuzzy
 #| msgid "Available Processors"
 msgid "list available repositories"
-msgstr "Processadors disponibles"
+msgstr "llista els repositoris disponibles"
 
 #: scout/__init__.py:734
 msgid "inverse search by package name"
-msgstr ""
+msgstr "cerca inversa per nom del paquet"
 
 #: scout/__init__.py:735
 msgid "select repository to search"
-msgstr ""
+msgstr "seleccioneu el repositori de cerca"
 
 #: scout/__init__.py:781
-#, fuzzy
 #| msgid "No errors found."
 msgid "No repositories found ..."
-msgstr "No s'ha trobat cap error."
+msgstr "No s'ha trobat cap repositori..."
 
 #: scout/__init__.py:825 scout/__init__.py:826
-#, fuzzy
 #| msgid "Modules"
 msgid "module"
-msgstr "Mòduls"
+msgstr "mòdul"
 
 #: scout/__init__.py:953
 #, fuzzy, python-format
