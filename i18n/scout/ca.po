@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-28 11:42+0200\n"
-"PO-Revision-Date: 2015-10-15 16:07+0200\n"
+"PO-Revision-Date: 2015-10-15 16:10+0200\n"
 "Last-Translator: David Medina <medipas@gmail.com>\n"
 "Language-Team: Catalan <http://10n.opensuse.org/projects/scout/scout-"
 "master/ca/>\n"
@@ -127,7 +127,7 @@ msgstr "%s no és un directori"
 #, python-format
 #| msgid "Cannot open file '%1'."
 msgid "Cannot not open database file '%s'"
-msgstr "No es pot obrir el fitxer de base de dades \"%s\"."
+msgstr "No es pot obrir el fitxer de base de dades \"%s\""
 
 #: scout/__init__.py:699
 #| msgid "Available Processors"
