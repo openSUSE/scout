@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-28 11:42+0200\n"
-"PO-Revision-Date: 2015-10-14 18:00+0200\n"
+"PO-Revision-Date: 2015-10-15 16:07+0200\n"
 "Last-Translator: David Medina <medipas@gmail.com>\n"
 "Language-Team: Catalan <http://10n.opensuse.org/projects/scout/scout-"
 "master/ca/>\n"
@@ -163,79 +163,72 @@ msgid "module"
 msgstr "mòdul"
 
 #: scout/__init__.py:953
-#, fuzzy, python-format
+#, python-format
 #| msgid "Cannot find the master ypserver: %s"
 msgid "Cannot find a formatter for a %s"
-msgstr "No es pot trobar l'ypserver mestre: %s"
+msgstr "No es pot trobar un formatador per a %s"
 
 #: scout/java.py:9
 msgid "Search for java classes inside the JAR files."
-msgstr ""
+msgstr "Cerca de classes de java dins de fitxers JAR."
 
 #: scout/java.py:13 scout/java.py:14
 msgid "jar"
-msgstr ""
+msgstr "jar"
 
 #: scout/java.py:13 scout/java.py:14
 msgid "class"
-msgstr ""
+msgstr "classe"
 
 #: scout/library.py:9
 msgid "Search for shared libraries."
-msgstr ""
+msgstr "Cerca biblioteques compartides."
 
 # GI
 #: scout/library.py:13 scout/library.py:14
-#, fuzzy
 #| msgid "Gibraltar"
 msgid "library"
-msgstr "Gibraltar"
+msgstr "biblioteca"
 
 #: scout/python.py:9
-#, fuzzy
 #| msgid "Searching for info file..."
 msgid "Search for python modules."
-msgstr "S'està cercant el fitxer d'informació..."
+msgstr "Cerca de mòduls de python."
 
 #: scout/webpin.py:13
 msgid "Search in packages using the webpin webservice."
-msgstr ""
+msgstr "Cerca en paquets amb el servei web webpin."
 
 #: scout/webpin.py:45
 #, python-format
 msgid "Cannot retrieve query results ... %s"
-msgstr ""
+msgstr "No es poden obtenir els resultats de la consulta... %s"
 
 #: scout/webpin.py:50
-#, fuzzy
 #| msgid "Never"
 msgid "ver"
-msgstr "Mai"
+msgstr "ver"
 
 #: scout/webpin.py:50 scout/webpin.py:51
-#, fuzzy
 #| msgid "Search:"
 msgid "arch"
-msgstr "Cerca:"
+msgstr "arquitectura"
 
 #: scout/webpin.py:50
-#, fuzzy
 #| msgid "&Profiles"
 msgid "files"
-msgstr "&Perfils"
+msgstr "fitxers"
 
 #: scout/webpin.py:51
-#, fuzzy
 #| msgid "Version"
 msgid "version"
-msgstr "Versió"
+msgstr "versió"
 
 #: scout/webpin.py:51
 msgid "repository URL"
-msgstr ""
+msgstr "URL del repositori"
 
 #: scout/webpin.py:51
-#, fuzzy
 #| msgid "Patch all profiles"
 msgid "matched files"
-msgstr "Apedaça tots els perfils"
+msgstr "fitxers coincidents"
