@@ -38,19 +38,18 @@ class SolvParser(object):
         pkgmatch = []
         if not inversesearch:
             pathreprg = re.compile(self.pathre + re.escape(term) + '$')
-            # work around missing stringification code in libsolv bindings
-            for d in self.pool.Dataiterator(0, solv.SOLVABLE_FILELIST, "/" + term, solv.Dataiterator.SEARCH_STRINGEND | solv.Dataiterator.SEARCH_FILES):
-                for d2 in self.pool.Dataiterator(d.solvid, solv.SOLVABLE_FILELIST, None, solv.Dataiterator.SEARCH_FILES):
-                    path = str(d2)
-                    # do matching for path
-                    if not pathreprg.match(path): continue
-                    row = ( 'zypp (%s)' % d.solvable.repo.name.decode('utf-8'), d.solvable.name.decode('utf-8'), path[:-len(term)-1], term )
-                    if not row in pkgmatch:
-                        pkgmatch.append( row )
+            # SEARCH_STRING without SEARCH_FILES matches basenames
+            for d in self.pool.Dataiterator(solv.SOLVABLE_FILELIST, term, solv.Dataiterator.SEARCH_STRING):
+                path = str(d)
+                # do matching for path
+                if not pathreprg.match(path): continue
+                row = ( 'zypp (%s)' % d.solvable.repo.name.decode('utf-8'), d.solvable.name.decode('utf-8'), path[:-len(term)-1], term )
+                if not row in pkgmatch:
+                    pkgmatch.append( row )
         else:
             pathreprg = re.compile(self.pathre + '[^/]+$')
-            for d in  self.pool.Dataiterator(0, solv.SOLVABLE_NAME, term, solv.Dataiterator.SEARCH_STRING):
-                for d2 in self.pool.Dataiterator(d.solvid, solv.SOLVABLE_FILELIST, None, solv.Dataiterator.SEARCH_FILES):
+            for d in  self.pool.Dataiterator(solv.SOLVABLE_NAME, term, solv.Dataiterator.SEARCH_STRING):
+                for d2 in self.pool.Dataiterator_solvid(d.solvid, solv.SOLVABLE_FILELIST):
                     path = str(d2)
                     if not pathreprg.match(path): continue
                     binary = os.path.basename(path)
