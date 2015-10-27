@@ -26,14 +26,17 @@ msgstr "$1: komanda nerasta"
 
 #: handlers/bin/command_not_found_bash:24
 msgid "Absolute path to '$1' is '$prefix/sbin/$1', so running it may require superuser privileges (eg. root)."
-msgstr "Pilnas kelias iki „$1“ yra „$prefix/sbin/$1“, taigi paleidimui gali reikėti super naudotojo teisių (pvz., root)."
+msgstr ""
+"Pilnas kelias iki „$1“ yra „$prefix/sbin/$1“, taigi paleidimui gali reikėti "
+"super naudotojo teisių (pvz., root)."
 
 #: handlers/bin/command_not_found_bash:32
 msgid ""
 "If '$1' is not a typo you can use command-not-found to lookup the package that contains it, like this:\n"
 "    cnf $1"
 msgstr ""
-"Jei „$1“ nėra vedimo klaida, naudodamiesi command-not-found galite peržiūrėti paketus, kurie šitai turi:\n"
+"Jei „$1“ nėra vedimo klaida, naudodamiesi command-not-found galite "
+"peržiūrėti paketus, kurie šitai turi:\n"
 "    cnf $1"
 
 #: handlers/bin/command-not-found:8
@@ -66,12 +69,16 @@ msgstr "Programa „%(prog)s“ yra pakete „%(pkg)s“, kuris jau įdiegtas į
 #: handlers/bin/command-not-found:27
 #, python-format
 msgid "Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may require superuser privileges (eg. root)."
-msgstr "Pilnas kelias iki „%(prog)s“ yra „%(path)s/%(prog)s“, taigi paleidimui gali reikėti super naudotojo teisių (pvz., root)."
+msgstr ""
+"Pilnas kelias iki „%(prog)s“ yra „%(path)s/%(prog)s“, taigi paleidimui gali "
+"reikėti super naudotojo teisių (pvz., root)."
 
 #: handlers/bin/command-not-found:30
 #, python-format
 msgid "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH variable to see whether it contains the mentioned path."
-msgstr "Pilnas kelias iki „%(prog)s“ yra „%(path)s/%(prog)s“. Patikrinkite $PATH kintamąjį, norėdami pamatyti, ar jis turi turi minimą kelią."
+msgstr ""
+"Pilnas kelias iki „%(prog)s“ yra „%(path)s/%(prog)s“. Patikrinkite $PATH "
+"kintamąjį, norėdami pamatyti, ar jis turi turi minimą kelią."
 
 #: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
 #, python-format
