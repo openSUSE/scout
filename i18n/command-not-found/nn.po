@@ -9,15 +9,16 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-04-23 15:20+0200\n"
-"PO-Revision-Date: 2015-10-02 19:25+0100\n"
+"PO-Revision-Date: 2015-12-01 21:42+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
-"Language-Team: NorwegianNynorsk <i18n-nn@lister.ping.uio.no>\n"
+"Language-Team: Norwegian Nynorsk <http://l10n.opensuse.org/projects/scout"
+"/command-not-found-master/nn/>\n"
 "Language: nn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 2.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.3\n"
 
 #: handlers/bin/command_not_found_bash:9 handlers/bin/command_not_found_bash:17
 msgid "$1: command not found"
@@ -37,8 +38,8 @@ msgstr ""
 #, python-format
 msgid "The program '%(prog)s' can be found in the following package:"
 msgid_plural "The program '%(prog)s' can be found in following packages:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Du finn programmet «%(prog)s» i denne pakken:"
+msgstr[1] "Du finn programmet «%(prog)s» i desse pakkane:"
 
 #: handlers/bin/command-not-found:11
 #, python-format
@@ -47,7 +48,7 @@ msgstr ""
 
 #: handlers/bin/command-not-found:14
 msgid "Try installing with:"
-msgstr ""
+msgstr "Prøv å installera med:"
 
 #: handlers/bin/command-not-found:16
 msgid "<selected_package>"
