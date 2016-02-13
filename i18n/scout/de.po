@@ -9,14 +9,16 @@ msgstr ""
 "Project-Id-Version: scout\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-28 11:42+0200\n"
-"PO-Revision-Date: 2009-09-17 21:20+0200\n"
-"Last-Translator: Michael Skiba <trans@michael-skiba.de>\n"
-"Language-Team: German <opensuse-translation-de@opensuse.org>\n"
+"PO-Revision-Date: 2016-02-13 09:10+0200\n"
+"Last-Translator: Ettore Atalan <atalanttore@googlemail.com>\n"
+"Language-Team: German <http://l10n.opensuse.org/projects/scout/scout-"
+"master/de/>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.3\n"
 
 #: scout/autoconf.py:9
 msgid "Search for autoconf macros inside the m4 files."
@@ -181,16 +183,16 @@ msgstr "Bibliothek"
 
 #: scout/python.py:9
 msgid "Search for python modules."
-msgstr "Suche nach Python-Modulen"
+msgstr "Suche nach Python-Modulen."
 
 #: scout/webpin.py:13
 msgid "Search in packages using the webpin webservice."
-msgstr "Suche in Paketen mit Hilfe des Webpin Webservice"
+msgstr "Suche in Paketen mit Hilfe des Webpin-Webdienstes."
 
 #: scout/webpin.py:45
 #, python-format
 msgid "Cannot retrieve query results ... %s"
-msgstr "Erhalte keine Ergebnisse der Abfrage %s..."
+msgstr "Suchergebnisse können nicht abgerufen werden ... %s"
 
 #: scout/webpin.py:50
 msgid "ver"
