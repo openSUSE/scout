@@ -9,9 +9,9 @@ msgstr ""
 "Project-Id-Version: command-not-found\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-04-23 15:20+0200\n"
-"PO-Revision-Date: 2015-10-23 15:24+0200\n"
-"Last-Translator: Dominique Leuenberger <dimstar@opensuse.org>\n"
-"Language-Team: German <http://10n.opensuse.org/projects/scout/command-not-"
+"PO-Revision-Date: 2016-02-23 11:48+0200\n"
+"Last-Translator: Stefan Knorr <sknorr@suse.com>\n"
+"Language-Team: German <http://l10n.opensuse.org/projects/scout/command-not-"
 "found-master/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -30,9 +30,9 @@ msgid ""
 "Absolute path to '$1' is '$prefix/sbin/$1', so running it may require "
 "superuser privileges (eg. root)."
 msgstr ""
-"Der absoluter Pfad für '$1' ist '$prefix/sbin/$1', daher ist es wohl "
-"beabsichtigt, das es nur von einem Benutzer mit Superuser-Rechten gestartet "
-"werden kann (z. B. root)."
+"Der absolute Pfad für '$1' ist '$prefix/sbin/$1', daher kann das Programm "
+"möglicherweise nur von Benutzern mit Superuser-Rechten gestartet werden (z. "
+"B. root)."
 
 #: handlers/bin/command_not_found_bash:32
 msgid ""
@@ -41,7 +41,7 @@ msgid ""
 "    cnf $1"
 msgstr ""
 "Wenn '$1' kein Tippfehler ist, können Sie command-not-found benutzen, um das "
-"Paket zu finden, das den Befehl enthält; z.B.:\n"
+"Paket zu finden, das den Befehl enthält, z. B.:\n"
 "    cnf $1"
 
 #: handlers/bin/command-not-found:8
@@ -80,9 +80,9 @@ msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may require "
 "superuser privileges (eg. root)."
 msgstr ""
-"Der absoluter Pfad für '%(prog)s' ist '%(path)s/%(prog)s', daher ist es wohl "
-"beabsichtigt, das es nur von einem Benutzer mit Superuser-Rechten gestartet "
-"werden kann (z. B. root)."
+"Der absolute Pfad für '%(prog)s' ist '%(path)s/%(prog)s', daher kann das "
+"Programm möglicherweise nur von Benutzern mit Superuser-Rechten gestartet "
+"werden (z. B. root)."
 
 #: handlers/bin/command-not-found:30
 #, python-format
@@ -91,14 +91,14 @@ msgid ""
 "variable to see whether it contains the mentioned path."
 msgstr ""
 "Der absolute Pfad für '%(prog)s' ist '%(path)s/%(prog)s'. Bitte überprüfen "
-"Sie Ihre $PATH-Variable ob der genannte Pfad enthalten ist."
+"Sie, ob Ihre $PATH-Variable den genannten Pfad enthält."
 
 #: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
 #, python-format
 msgid "searching ..."
-msgstr "suchen ..."
+msgstr "suche ..."
 
 #: handlers/bin/command-not-found:87
 #, python-format
 msgid "command not found"
-msgstr "Kommando nicht gefunden"
+msgstr "Befehl nicht gefunden"
