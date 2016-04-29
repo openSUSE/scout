@@ -9,47 +9,47 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-28 11:42+0200\n"
-"PO-Revision-Date: 2005-09-18 19:09+0200\n"
-"Last-Translator: Mattias Newzella <newzella@linux.se>\n"
-"Language-Team: Swedish <sv@li.org>\n"
+"PO-Revision-Date: 2016-04-29 15:56+0000\n"
+"Last-Translator: Jonas Svensson <jonas@ekhorva.se>\n"
+"Language-Team: Swedish <http://l10n.opensuse.org/projects/scout/scout-"
+"master/sv/>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10.1\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.5\n"
 
 #: scout/autoconf.py:9
 msgid "Search for autoconf macros inside the m4 files."
-msgstr ""
+msgstr "Sök efter autoconf makro inuti m4 filer."
 
 #: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
 #: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
 #: scout/webpin.py:50
 msgid "repo"
-msgstr ""
+msgstr "repo"
 
 #: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
 #: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
 #: scout/webpin.py:50
-#, fuzzy
 #| msgid "package"
 msgid "pkg"
-msgstr "paket"
+msgstr "pkg"
 
 #: scout/autoconf.py:13
 msgid "m4"
-msgstr ""
+msgstr "m4"
 
 #: scout/autoconf.py:13 scout/autoconf.py:14
 msgid "macro"
-msgstr ""
+msgstr "makro"
 
 #: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
 #: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
-#, fuzzy
 #| msgid "Repository"
 msgid "repository"
-msgstr "Arkiv"
+msgstr "förråd"
 
 #: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
 #: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
@@ -59,7 +59,7 @@ msgstr "paket"
 
 #: scout/autoconf.py:14
 msgid "m4 file"
-msgstr ""
+msgstr "m4 fil"
 
 #: scout/bin.py:62
 msgid "Search for binaries contained in the packages."
@@ -67,7 +67,7 @@ msgstr ""
 
 #: scout/bin.py:107 scout/bin.py:108
 msgid "path"
-msgstr ""
+msgstr "sökväg"
 
 #: scout/bin.py:107
 #, fuzzy
@@ -77,7 +77,7 @@ msgstr "bit"
 
 #: scout/bin.py:108
 msgid "binary"
-msgstr ""
+msgstr "binär"
 
 #: scout/foo.py:9
 msgid "- template module -"
@@ -85,11 +85,11 @@ msgstr ""
 
 #: scout/header.py:9
 msgid "Search for C/C++/Obj-C/Obj-C++ headers."
-msgstr ""
+msgstr "Sök efter C/C++/Obj-C/Obj-C++ headers."
 
 #: scout/header.py:13 scout/header.py:14
 msgid "header"
-msgstr ""
+msgstr "header"
 
 #: scout/__init__.py:148
 #, fuzzy
@@ -99,7 +99,7 @@ msgstr "Visa inte det här meddelandet igen."
 
 #: scout/__init__.py:155
 msgid "show program's version number and exit"
-msgstr ""
+msgstr "visa programmets versionsnummer och avsluta"
 
 #: scout/__init__.py:198
 msgid "Usage: %prog [global_opts] module [local_opts] search_term"
@@ -108,42 +108,39 @@ msgstr ""
 #: scout/__init__.py:205
 #, python-format
 msgid "select the output format (default %s)"
-msgstr ""
+msgstr "välj format på utmatningen (default %s)"
 
 #: scout/__init__.py:212
-#, fuzzy
 #| msgid "scdb not available"
 msgid "list of available modules"
-msgstr "scdb inte tillgänglig"
+msgstr "lista på tillgängliga moduler"
 
 #: scout/__init__.py:228
-#, fuzzy
 #| msgid "Available profiles"
 msgid "Available modules:\n"
-msgstr "Tillgängliga profiler"
+msgstr "Tillgängliga moduler:\n"
 
 #: scout/__init__.py:279
 #, python-format
 msgid "The name of module is mandatory. Use %s --help"
-msgstr ""
+msgstr "Namnet på modulen är obligatoriskt. Använd %s 1 --help"
 
 #: scout/__init__.py:366
-#, fuzzy, python-format
+#, python-format
 #| msgid "%1 is not a directory."
 msgid "%s is not a directory"
-msgstr "%1 är inte en katalog."
+msgstr "%1 är inte en katalog"
 
 #: scout/__init__.py:425
-#, fuzzy, python-format
+#, python-format
 #| msgid "Cannot open file '%1'."
 msgid "Cannot not open database file '%s'"
-msgstr "Det går inte att öppna filen %1."
+msgstr "Det går inte att öppna databasfilen %1"
 
 #: scout/__init__.py:699
-#, fuzzy
 #| msgid "Available Processors"
 msgid "Available repositories:\n"
-msgstr "Tillgängliga processorer"
+msgstr "Tillgängliga förråd (repos)\n"
 
 #: scout/__init__.py:731
 #, python-format
