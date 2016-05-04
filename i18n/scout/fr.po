@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-28 11:42+0200\n"
-"PO-Revision-Date: 2016-05-04 09:54+0000\n"
-"Last-Translator: Benoît Monin <benoit.monin@gmx.fr>\n"
-"Language-Team: French <http://l10n.opensuse.org/projects/scout/scout-"
+"PO-Revision-Date: 2016-06-22 19:03+0000\n"
+"Last-Translator: No Name <nthn@unseen.is>\n"
+"Language-Team: French <https://l10n.opensuse.org/projects/scout/scout-"
 "master/fr/>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.5\n"
+"X-Generator: Weblate 2.6\n"
 "X-Poedit-Language: French\n"
 "X-Poedit-Country: FRANCE\n"
 
@@ -72,7 +72,6 @@ msgid "binary"
 msgstr "binaire"
 
 #: scout/foo.py:9
-#, fuzzy
 msgid "- template module -"
 msgstr "- module modèle -"
 
