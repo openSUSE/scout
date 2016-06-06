@@ -9,264 +9,241 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-28 11:42+0200\n"
-"PO-Revision-Date: 2005-03-09 13:54+0100\n"
-"Last-Translator: Novell Language <language@novell.com>\n"
-"Language-Team: Novell Language <language@novell.com>\n"
+"PO-Revision-Date: 2016-06-06 11:05+0000\n"
+"Last-Translator: Marguerite Su <i@marguerite.su>\n"
+"Language-Team: Chinese (China) <https://l10n.opensuse.org/projects/scout"
+"/scout-master/zh_CN/>\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.9\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.6\n"
 
 #: scout/autoconf.py:9
 msgid "Search for autoconf macros inside the m4 files."
-msgstr ""
+msgstr "在 m4 文件中搜索 autoconf 宏。"
 
 #: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
 #: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
 #: scout/webpin.py:50
 msgid "repo"
-msgstr ""
+msgstr "repo"
 
 #: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
 #: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
 #: scout/webpin.py:50
-#, fuzzy
 #| msgid "package"
 #| msgid_plural "packages"
 msgid "pkg"
-msgstr "软件包"
+msgstr "pkg"
 
 #: scout/autoconf.py:13
 msgid "m4"
-msgstr ""
+msgstr "m4"
 
 #: scout/autoconf.py:13 scout/autoconf.py:14
 msgid "macro"
-msgstr ""
+msgstr "宏"
 
 #: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
 #: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
-#, fuzzy
 #| msgid "Enabled repository"
 msgid "repository"
-msgstr "已启用安装源"
+msgstr "软件源"
 
 #: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
 #: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
 #: scout/webpin.py:51
-#, fuzzy
 #| msgid "package"
 #| msgid_plural "packages"
 msgid "package"
 msgstr "软件包"
 
 #: scout/autoconf.py:14
-#, fuzzy
 #| msgid "No files"
 msgid "m4 file"
-msgstr "无文件"
+msgstr "m4 文件"
 
 #: scout/bin.py:62
 msgid "Search for binaries contained in the packages."
-msgstr ""
+msgstr "搜索软件包中收纳的可执行文件。"
 
 #: scout/bin.py:107 scout/bin.py:108
 msgid "path"
-msgstr ""
+msgstr "路径"
 
 #: scout/bin.py:107
-#, fuzzy
 #| msgid "bit"
 msgid "bin"
-msgstr "bit"
+msgstr "bin"
 
 #: scout/bin.py:108
 msgid "binary"
-msgstr ""
+msgstr "可执行文件"
 
 #: scout/foo.py:9
 msgid "- template module -"
-msgstr ""
+msgstr "- 模板模块 -"
 
 #: scout/header.py:9
 msgid "Search for C/C++/Obj-C/Obj-C++ headers."
-msgstr ""
+msgstr "搜索 C/C++/Obj-C/Obj-C++ 头文件。"
 
 #: scout/header.py:13 scout/header.py:14
 msgid "header"
-msgstr ""
+msgstr "头文件"
 
 #: scout/__init__.py:148
-#, fuzzy
 #| msgid "Don't show this message again."
 msgid "show this help message and exit"
-msgstr "不要再次显示此消息。"
+msgstr "显示此帮助并退出"
 
 #: scout/__init__.py:155
-#, fuzzy
 #| msgid "Show the program version and exit"
 msgid "show program's version number and exit"
 msgstr "显示程序版本并退出"
 
 #: scout/__init__.py:198
 msgid "Usage: %prog [global_opts] module [local_opts] search_term"
-msgstr ""
+msgstr "用法：%prog [全局选项] 模块 [局部选项] 搜索条件"
 
 #: scout/__init__.py:205
 #, python-format
 msgid "select the output format (default %s)"
-msgstr ""
+msgstr "选择输出格式 (默认 %s)"
 
 #: scout/__init__.py:212
-#, fuzzy
 #| msgid "scdb not available"
 msgid "list of available modules"
-msgstr "scdb 不可用"
+msgstr "可用模块列表"
 
 #: scout/__init__.py:228
-#, fuzzy
 #| msgid "Available profiles"
 msgid "Available modules:\n"
-msgstr "可用的简报"
+msgstr "可用模块：\n"
 
 #: scout/__init__.py:279
 #, python-format
 msgid "The name of module is mandatory. Use %s --help"
-msgstr ""
+msgstr "模块名称是必需的。请使用 %s --help"
 
 #: scout/__init__.py:366
-#, fuzzy, python-format
+#, python-format
 #| msgid "%1 is not a directory."
 msgid "%s is not a directory"
-msgstr "%1 不是目录。"
+msgstr "%s 不是一个文件夹"
 
 #: scout/__init__.py:425
-#, fuzzy, python-format
+#, python-format
 #| msgid "Cannot open file '%1'."
 msgid "Cannot not open database file '%s'"
-msgstr "无法打开文件“%1”。"
+msgstr "无法打开数据库文件 '%s'"
 
 #: scout/__init__.py:699
-#, fuzzy
 #| msgid "Specified repositories: "
 msgid "Available repositories:\n"
-msgstr "指定的软件源："
+msgstr "可用软件源：\n"
 
 #: scout/__init__.py:731
 #, python-format
 msgid "Usage: %%prog %s [options] search_term"
-msgstr ""
+msgstr "用法：%%prog %s [选项] 搜索条件"
 
 #: scout/__init__.py:733
-#, fuzzy
 #| msgid "Got list of repositories"
 msgid "list available repositories"
-msgstr "获取到安装源列表"
+msgstr "列出可用软件源"
 
 #: scout/__init__.py:734
-#, fuzzy
 #| msgid "Searched for package name"
 msgid "inverse search by package name"
-msgstr "搜索软件包名称"
+msgstr "通过软件包名称逆向搜索"
 
 #: scout/__init__.py:735
-#, fuzzy
 #| msgid "Set repository data"
 msgid "select repository to search"
-msgstr "设置安装源数据"
+msgstr "选择要搜索的软件源"
 
 #: scout/__init__.py:781
-#, fuzzy
 #| msgid "No repository found."
 msgid "No repositories found ..."
-msgstr "未发现安装源。"
+msgstr "未发现软件源 ..."
 
 #: scout/__init__.py:825 scout/__init__.py:826
-#, fuzzy
 #| msgid "Modules"
 msgid "module"
 msgstr "模块"
 
 #: scout/__init__.py:953
-#, fuzzy, python-format
+#, python-format
 #| msgid "Cannot find the master ypserver: %s"
 msgid "Cannot find a formatter for a %s"
-msgstr "找不到主 ypserver：%s"
+msgstr "无法找到针对 %s 的格式化程序"
 
 #: scout/java.py:9
 msgid "Search for java classes inside the JAR files."
-msgstr ""
+msgstr "搜索 JAR 文件中的 java 类。"
 
 #: scout/java.py:13 scout/java.py:14
-#, fuzzy
 #| msgid "Far"
 msgid "jar"
-msgstr "远"
+msgstr "jar"
 
 #: scout/java.py:13 scout/java.py:14
 msgid "class"
-msgstr ""
+msgstr "类"
 
 #: scout/library.py:9
-#, fuzzy
 #| msgid "Searched for package name"
 msgid "Search for shared libraries."
-msgstr "搜索软件包名称"
+msgstr "搜索共享库。"
 
 #: scout/library.py:13 scout/library.py:14
-#, fuzzy
 #| msgid "Gibraltar"
 msgid "library"
-msgstr "直布罗陀"
+msgstr "函数库"
 
 #: scout/python.py:9
-#, fuzzy
 #| msgid "Searching for info file..."
 msgid "Search for python modules."
-msgstr "正在搜索信息文件..."
+msgstr "搜索 python 模块。"
 
 #: scout/webpin.py:13
 msgid "Search in packages using the webpin webservice."
-msgstr ""
+msgstr "使用 webpin 网络服务搜索软件包。"
 
 #: scout/webpin.py:45
 #, python-format
 msgid "Cannot retrieve query results ... %s"
-msgstr ""
+msgstr "无法撷取查询结果 ... %s"
 
 #: scout/webpin.py:50
-#, fuzzy
 #| msgid "Never"
 msgid "ver"
-msgstr "从不"
+msgstr "ver"
 
 #: scout/webpin.py:50 scout/webpin.py:51
-#, fuzzy
 #| msgid "Search"
 msgid "arch"
-msgstr "搜索"
+msgstr "arch"
 
 #: scout/webpin.py:50
-#, fuzzy
 #| msgid "No files"
 msgid "files"
-msgstr "无文件"
+msgstr "files"
 
 #: scout/webpin.py:51
-#, fuzzy
 #| msgid "Version"
 msgid "version"
 msgstr "版本"
 
 #: scout/webpin.py:51
-#, fuzzy
 #| msgid "Set repository data"
 msgid "repository URL"
-msgstr "设置安装源数据"
+msgstr "软件源 URL"
 
 #: scout/webpin.py:51
-#, fuzzy
 #| msgid "Searched for file"
 msgid "matched files"
-msgstr "已搜索文件"
+msgstr "匹配文件"
