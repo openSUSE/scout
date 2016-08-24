@@ -3,14 +3,16 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-28 11:42+0200\n"
-"PO-Revision-Date: 2005-08-24 17:53+0300\n"
-"Last-Translator: Hellenic SuSE Translation Team <hstg@billg.gr>\n"
-"Language-Team: Hellenic-Ελληνικά-Greek <hstg@billg.gr>\n"
+"PO-Revision-Date: 2016-08-24 09:54+0000\n"
+"Last-Translator: Efstathios Iosifidis <eiosifidis@gmail.com>\n"
+"Language-Team: Greek <https://l10n.opensuse.org/projects/scout/scout-"
+"master/el/>\n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.10\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.6\n"
 
 #: scout/autoconf.py:9
 msgid "Search for autoconf macros inside the m4 files."
@@ -20,7 +22,7 @@ msgstr ""
 #: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
 #: scout/webpin.py:50
 msgid "repo"
-msgstr ""
+msgstr "αποθετήριο"
 
 #: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
 #: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
@@ -32,7 +34,7 @@ msgstr "πακέτο"
 
 #: scout/autoconf.py:13
 msgid "m4"
-msgstr ""
+msgstr "m4"
 
 #: scout/autoconf.py:13 scout/autoconf.py:14
 msgid "macro"
@@ -40,10 +42,9 @@ msgstr ""
 
 #: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
 #: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
-#, fuzzy
 #| msgid "Directory\n"
 msgid "repository"
-msgstr "Κατάλογος\n"
+msgstr "αποθετήριο"
 
 #: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
 #: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
@@ -53,7 +54,7 @@ msgstr "πακέτο"
 
 #: scout/autoconf.py:14
 msgid "m4 file"
-msgstr ""
+msgstr "αρχείο m4"
 
 #: scout/bin.py:62
 msgid "Search for binaries contained in the packages."
