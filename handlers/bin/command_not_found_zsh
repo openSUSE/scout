@@ -1,5 +1,7 @@
 function preexec() {
-    command="${1%% *}"
+    local -a commandarray
+    commandarray=("${(z)1}")
+    command="${(Q)commandarray[1]}"
 }
 
 function precmd() {
