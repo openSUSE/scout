@@ -1,14 +1,11 @@
-function cnf_handler() {
+# define this function with two names
+#  - one to be generic command_not_found_handler() and to be hooked
+#  - one to be available when command_not_found_handler() is redefined
+function command_not_found_handler cnf_handler {
     if [ -x /usr/bin/python ] && [ -x /usr/bin/command-not-found ]; then
         # take first parameter and remove quotes if there were any so
         # $ 'foo'
         # will search for foo
         /usr/bin/python /usr/bin/command-not-found "${(Q)1}" __REPO__
     fi
-}
-
-# by default set to cnf_handler(), but users can redefine their own
-# variant and call cnf_handler() where it suits them
-function command_not_found_handler() {
-    cnf_handler "$@"
 }
