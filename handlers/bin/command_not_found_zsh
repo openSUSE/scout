@@ -1,6 +1,9 @@
 function cnf_handler() {
     if [ -x /usr/bin/python ] && [ -x /usr/bin/command-not-found ]; then
-            /usr/bin/python /usr/bin/command-not-found "${1%% *}" __REPO__
+        # take first parameter and remove quotes if there were any so
+        # $ 'foo'
+        # will search for foo
+        /usr/bin/python /usr/bin/command-not-found "${(Q)1}" __REPO__
     fi
 }
 
