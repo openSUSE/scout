@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-28 11:42+0200\n"
-"PO-Revision-Date: 2016-11-01 15:08+0700\n"
+"PO-Revision-Date: 2016-11-01 15:34+0700\n"
 "Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
 "Language-Team: Indonesian <i18n@suse.de>\n"
 "Language: id\n"
@@ -19,44 +19,41 @@ msgid "$1: command not found"
 msgstr "$1: Perintah tidak ditemukan"
 
 #: handlers/bin/command_not_found_bash:24
-#, fuzzy
 msgid ""
 "Absolute path to '$1' is '$prefix/sbin/$1', so running it may require "
 "superuser privileges (eg. root)."
 msgstr ""
-"Jalan mutlak untuk '$1' adalah '$prefix/sbin/$1', jadi menjalankannya "
-"mungkin dibutuhkan hak superuser (root)"
+"Path mutlak untuk '$1' adalah '$prefix/sbin/$1', sehingga untuk "
+"menjalankannya mungkin memerlukan hak superuser (misalnya. root)."
 
 #: handlers/bin/command_not_found_bash:32
-#, fuzzy
 msgid ""
 "If '$1' is not a typo you can use command-not-found to lookup the package "
 "that contains it, like this:\n"
 "    cnf $1"
 msgstr ""
-"jika '$1' bukanlah kesalahan pengetikan anda dapat menggunakan command-not-"
-"found untuk mencari paket yang berisi perintah tersebut, seperti:\n"
+"Jika '$1' bukan kesalahan penulisan, Anda dapat menggunakan command-not-"
+"found untuk melihat paket yang berisi itu, seperti berikut:\n"
 "    cnf $1"
 
 #: handlers/bin/command-not-found:8
 #, python-format
 msgid "The program '%(prog)s' can be found in the following package:"
 msgid_plural "The program '%(prog)s' can be found in following packages:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Program '%(prog)s' dapat ditemukan in paket berikut:"
 
 #: handlers/bin/command-not-found:11
 #, python-format
 msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
-msgstr ""
+msgstr "  * %(prog)s [ path: %(path)s/%(binary)s, lumbung: %(repo)s ]"
 
 #: handlers/bin/command-not-found:14
 msgid "Try installing with:"
-msgstr "Mencoba menginstall dengan:"
+msgstr "Mencoba memasang dengan:"
 
 #: handlers/bin/command-not-found:16
 msgid "<selected_package>"
-msgstr ""
+msgstr "<paket_terpilih>"
 
 #: handlers/bin/command-not-found:24
 #, python-format
@@ -64,6 +61,8 @@ msgid ""
 "Program '%(prog)s' is present in package '%(pkg)s', which is installed on "
 "your system."
 msgstr ""
+"Program '%(prog)s' sudah ada di paket '%(pkg)s', yang sudah terpasang dalam "
+"sistem Anda."
 
 #: handlers/bin/command-not-found:27
 #, python-format
@@ -71,6 +70,8 @@ msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may "
 "require superuser privileges (eg. root)."
 msgstr ""
+"Path mutlak untuk '%(prog)s' adalah '%(path)s/%(prog)s', sehingga untuk "
+"menjalankannya mungkin memerlukan hak superuser (misalnya. root)."
 
 #: handlers/bin/command-not-found:30
 #, python-format
@@ -78,13 +79,15 @@ msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH "
 "variable to see whether it contains the mentioned path."
 msgstr ""
+"Path mutlak untuk '%(prog)s' adalah '%(path)s/%(prog)s'. Silakan periksa "
+"variabel $PATH Anda untuk melihat apakah mengandung path disebutkan."
 
 #: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
-#, fuzzy, python-format
+#, python-format, python-format
 msgid "searching ..."
-msgstr "Mencari image \"%s\"..."
+msgstr "mencari ..."
 
 #: handlers/bin/command-not-found:87
 #, python-format
 msgid "command not found"
-msgstr "perintah tidak di temukan"
+msgstr "perintah tidak ditemukan"
