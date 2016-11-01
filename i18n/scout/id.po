@@ -3,13 +3,15 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-28 11:42+0200\n"
-"PO-Revision-Date: 2016-11-01 15:08+0700\n"
+"PO-Revision-Date: 2016-11-01 15:34+0700\n"
 "Last-Translator: Kukuh Syafaat <syafaatkukuh@gmail.com>\n"
 "Language-Team: Indonesian <i18n@suse.de>\n"
+"Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 1.8.8\n"
 
 #: scout/autoconf.py:9
 msgid "Search for autoconf macros inside the m4 files."
@@ -66,11 +68,11 @@ msgstr "bin"
 
 #: scout/bin.py:108
 msgid "binary"
-msgstr "binary"
+msgstr "binari"
 
 #: scout/foo.py:9
 msgid "- template module -"
-msgstr "- modul templat - "
+msgstr "- modul templat -"
 
 #: scout/header.py:9
 msgid "Search for C/C++/Obj-C/Obj-C++ headers."
@@ -170,7 +172,7 @@ msgstr "jar"
 
 #: scout/java.py:13 scout/java.py:14
 msgid "class"
-msgstr "class"
+msgstr "kelas"
 
 #: scout/library.py:9
 msgid "Search for shared libraries."
