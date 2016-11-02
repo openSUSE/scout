@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-28 11:42+0200\n"
-"PO-Revision-Date: 2016-08-24 09:54+0000\n"
-"Last-Translator: Efstathios Iosifidis <eiosifidis@gmail.com>\n"
+"PO-Revision-Date: 2016-11-02 20:48+0000\n"
+"Last-Translator: alexandros Vennos <alexandros.venn@gmail.com>\n"
 "Language-Team: Greek <https://l10n.opensuse.org/projects/scout/scout-"
 "master/el/>\n"
 "Language: el\n"
@@ -62,7 +62,7 @@ msgstr ""
 
 #: scout/bin.py:107 scout/bin.py:108
 msgid "path"
-msgstr ""
+msgstr "μονοπάτι"
 
 #: scout/bin.py:107
 #, fuzzy
@@ -90,7 +90,7 @@ msgstr ""
 #, fuzzy
 #| msgid "Don't show this message again."
 msgid "show this help message and exit"
-msgstr "Να μη ξαναεμφανιστεί αυτό το μήνυμα πάλι."
+msgstr "εμφάνισε αυτό το μήνυμα βοήθειας και έξοδος"
 
 #: scout/__init__.py:155
 msgid "show program's version number and exit"
