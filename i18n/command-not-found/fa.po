@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: command-not-found\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-04-23 15:20+0200\n"
-"PO-Revision-Date: 2016-11-06 12:18+0000\n"
+"PO-Revision-Date: 2016-11-06 12:26+0000\n"
 "Last-Translator: hayyan rostami <hayyan71@yahoo.com>\n"
 "Language-Team: Persian <https://l10n.opensuse.org/projects/scout/command-not-"
 "found-master/fa/>\n"
@@ -54,7 +54,7 @@ msgstr "برای نصب به این صورت تلاش کنید:"
 
 #: handlers/bin/command-not-found:16
 msgid "<selected_package>"
-msgstr "<بسته‌ـ‌انتخابی>"
+msgstr "<بسته‌_انتخابی>"
 
 #: handlers/bin/command-not-found:24
 #, python-format
