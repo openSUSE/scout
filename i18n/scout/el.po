@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-28 11:42+0200\n"
-"PO-Revision-Date: 2016-11-03 14:48+0000\n"
+"PO-Revision-Date: 2016-11-09 17:01+0000\n"
 "Last-Translator: alexandros Vennos <alexandros.venn@gmail.com>\n"
 "Language-Team: Greek <https://l10n.opensuse.org/projects/scout/scout-"
 "master/el/>\n"
@@ -71,8 +71,9 @@ msgid "bin"
 msgstr "bit"
 
 #: scout/bin.py:108
+#, fuzzy
 msgid "binary"
-msgstr ""
+msgstr "δυαδικό"
 
 #: scout/foo.py:9
 msgid "- template module -"
@@ -135,10 +136,9 @@ msgid "Cannot not open database file '%s'"
 msgstr "Αδυναμία ανοίγματος αρχείου '%1'."
 
 #: scout/__init__.py:699
-#, fuzzy
 #| msgid "Available Processors"
 msgid "Available repositories:\n"
-msgstr "Διαθέσιμοι Επεξεργαστές"
+msgstr "Διαθέσιμα αποθετήρια:\n"
 
 #: scout/__init__.py:731
 #, python-format
@@ -146,10 +146,9 @@ msgid "Usage: %%prog %s [options] search_term"
 msgstr ""
 
 #: scout/__init__.py:733
-#, fuzzy
 #| msgid "Available Processors"
 msgid "list available repositories"
-msgstr "Διαθέσιμοι Επεξεργαστές"
+msgstr "λίστα διαθέσιμων αποθετηρίων"
 
 #: scout/__init__.py:734
 msgid "inverse search by package name"
@@ -160,7 +159,6 @@ msgid "select repository to search"
 msgstr ""
 
 #: scout/__init__.py:781
-#, fuzzy
 #| msgid "No errors found."
 msgid "No repositories found ..."
 msgstr "Δεν βρέθηκαν αποθετήρια..."
@@ -236,8 +234,9 @@ msgid "version"
 msgstr "Έκδοση"
 
 #: scout/webpin.py:51
+#, fuzzy
 msgid "repository URL"
-msgstr ""
+msgstr "Διεύθυνση αποθετηρίου"
 
 #: scout/webpin.py:51
 #, fuzzy
