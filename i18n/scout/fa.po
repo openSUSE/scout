@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: scout\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-28 11:42+0200\n"
-"PO-Revision-Date: 2016-12-11 14:21+0000\n"
+"PO-Revision-Date: 2016-12-15 09:23+0000\n"
 "Last-Translator: hayyan rostami <hayyan71@yahoo.com>\n"
 "Language-Team: Persian <https://l10n.opensuse.org/projects/scout/scout-"
 "master/fa/>\n"
@@ -96,64 +96,64 @@ msgstr "نمایش شماره ی نسخه ی نرم افزار و خروج"
 
 #: scout/__init__.py:198
 msgid "Usage: %prog [global_opts] module [local_opts] search_term"
-msgstr ""
+msgstr "استفاده: %prog [global_opts] module [local_opts] search_term"
 
 #: scout/__init__.py:205
 #, python-format
 msgid "select the output format (default %s)"
-msgstr ""
+msgstr "قالب خروجی را انتخاب کنید (پیشفرض %s)"
 
 #: scout/__init__.py:212
 msgid "list of available modules"
-msgstr ""
+msgstr "لیست ماژول های در دسترس"
 
 #: scout/__init__.py:228
 msgid "Available modules:\n"
-msgstr ""
+msgstr "ماژولهای در دسترس:\n"
 
 #: scout/__init__.py:279
 #, python-format
 msgid "The name of module is mandatory. Use %s --help"
-msgstr ""
+msgstr "نام ماژول الزامی است. از %s --help استفاده کنید"
 
 #: scout/__init__.py:366
 #, python-format
 msgid "%s is not a directory"
-msgstr ""
+msgstr "%s یک فهرست نیست"
 
 #: scout/__init__.py:425
 #, python-format
 msgid "Cannot not open database file '%s'"
-msgstr ""
+msgstr "نمیتوان پرونده ی پایگاه داده  '%s' را باز کرد"
 
 #: scout/__init__.py:699
 msgid "Available repositories:\n"
-msgstr ""
+msgstr "مخازن در دسترس:\n"
 
 #: scout/__init__.py:731
 #, python-format
 msgid "Usage: %%prog %s [options] search_term"
-msgstr ""
+msgstr "استفاده: %%prog %s [options] search_term"
 
 #: scout/__init__.py:733
 msgid "list available repositories"
-msgstr ""
+msgstr "لیست مخازن در دسترس"
 
 #: scout/__init__.py:734
 msgid "inverse search by package name"
-msgstr ""
+msgstr "جستجوی معکوس با نام بسته"
 
 #: scout/__init__.py:735
 msgid "select repository to search"
-msgstr ""
+msgstr "انتخاب مخزن برای جستجو"
 
 #: scout/__init__.py:781
 msgid "No repositories found ..."
-msgstr ""
+msgstr "هیچ مخازنی یافت نشد ..."
 
 #: scout/__init__.py:825 scout/__init__.py:826
 msgid "module"
-msgstr ""
+msgstr "ماژول"
 
 #: scout/__init__.py:953
 #, python-format
