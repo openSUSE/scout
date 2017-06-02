@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-28 11:42+0200\n"
-"PO-Revision-Date: 2017-02-20 09:08+0000\n"
+"PO-Revision-Date: 2017-02-26 21:37+0000\n"
 "Last-Translator: Shyukri Shyukriev <shshyukriev@suse.com>\n"
 "Language-Team: Bulgarian <https://l10n.opensuse.org/projects/scout/scout-"
 "master/bg/>\n"
@@ -34,11 +34,11 @@ msgstr "пакет"
 
 #: scout/autoconf.py:13
 msgid "m4"
-msgstr ""
+msgstr "m4"
 
 #: scout/autoconf.py:13 scout/autoconf.py:14
 msgid "macro"
-msgstr ""
+msgstr "макрос"
 
 #: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
 #: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
@@ -92,7 +92,7 @@ msgstr "Показване на това помощно съобщение и и
 
 #: scout/__init__.py:155
 msgid "show program's version number and exit"
-msgstr ""
+msgstr "покажи номер на версята на програмата и изход"
 
 #: scout/__init__.py:198
 msgid "Usage: %prog [global_opts] module [local_opts] search_term"
@@ -145,8 +145,9 @@ msgid "list available repositories"
 msgstr "покажи наличните хранилища"
 
 #: scout/__init__.py:734
+#, fuzzy
 msgid "inverse search by package name"
-msgstr ""
+msgstr "търси обратно по име на пакета"
 
 #: scout/__init__.py:735
 msgid "select repository to search"
@@ -171,8 +172,9 @@ msgid "Cannot find a formatter for a %s"
 msgstr "Не може да бъде открит главния ypserver: %s"
 
 #: scout/java.py:9
+#, fuzzy
 msgid "Search for java classes inside the JAR files."
-msgstr ""
+msgstr "търси java класове в JAR файлове"
 
 #: scout/java.py:13 scout/java.py:14
 msgid "jar"
@@ -184,7 +186,7 @@ msgstr "клас"
 
 #: scout/library.py:9
 msgid "Search for shared libraries."
-msgstr ""
+msgstr "Търси споделени библиотеки."
 
 #: scout/library.py:13 scout/library.py:14
 #| msgid "Gibraltar"
@@ -198,13 +200,14 @@ msgid "Search for python modules."
 msgstr "Търсене на инфо файл..."
 
 #: scout/webpin.py:13
+#, fuzzy
 msgid "Search in packages using the webpin webservice."
-msgstr ""
+msgstr "търси в пакети, използвайки уеб услугата webpin"
 
 #: scout/webpin.py:45
 #, python-format
 msgid "Cannot retrieve query results ... %s"
-msgstr ""
+msgstr "Не могат да се изтеглята резултати от заявка %s"
 
 #: scout/webpin.py:50
 #| msgid "Never"
