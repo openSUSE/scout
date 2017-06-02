@@ -9,17 +9,17 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-28 11:42+0200\n"
-"PO-Revision-Date: 2015-10-25 13:56+0200\n"
+"PO-Revision-Date: 2017-06-02 18:15+0000\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
-"Language-Team: Lithuanian <http://10n.opensuse.org/projects/scout/scout-"
+"Language-Team: Lithuanian <https://l10n.opensuse.org/projects/scout/scout-"
 "master/lt/>\n"
 "Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"(n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.3\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || "
+"n%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Weblate 2.6\n"
 
 #: scout/autoconf.py:9
 msgid "Search for autoconf macros inside the m4 files."
@@ -67,17 +67,16 @@ msgstr "m4 rinkmena"
 
 #: scout/bin.py:62
 msgid "Search for binaries contained in the packages."
-msgstr ""
+msgstr "Paketuose ieškoti dvejetainių rinkmenų."
 
 #: scout/bin.py:107 scout/bin.py:108
 msgid "path"
 msgstr "kelias"
 
 #: scout/bin.py:107
-#, fuzzy
 #| msgid "bit"
 msgid "bin"
-msgstr "bitas"
+msgstr "dvej."
 
 #: scout/bin.py:108
 msgid "binary"
@@ -176,10 +175,10 @@ msgid "module"
 msgstr "modulis"
 
 #: scout/__init__.py:953
-#, fuzzy, python-format
+#, python-format
 #| msgid "Cannot open %s for reading: %s"
 msgid "Cannot find a formatter for a %s"
-msgstr "Nepavyksta %s atverti skaitymui: %s"
+msgstr ""
 
 #: scout/java.py:9
 msgid "Search for java classes inside the JAR files."
