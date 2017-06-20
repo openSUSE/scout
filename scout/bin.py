@@ -33,6 +33,8 @@ class SolvParser(object):
                     repo.add_solv(self.solvfile % name)
             except:
                 pass
+        if not list(self.pool.repos_iter()):
+            print >> sys.stderr, _("\nWarning: no repos found - make sure your repositories are configured.")
 
     def search(self, term, inversesearch = False):
         pkgmatch = []
