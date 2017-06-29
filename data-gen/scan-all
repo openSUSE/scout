@@ -1,0 +1,4 @@
+#!/bin/sh
+for mode in bin header library perl python ; do
+    ./scan-$mode
+done
