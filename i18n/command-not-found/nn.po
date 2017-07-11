@@ -1,24 +1,21 @@
 # @TITLE@
 # Copyright (C) 2011, SUSE Linux GmbH, Nuremberg
 # This file is distributed under the same license as @PACKAGE@ package. FIRST
-# Karl Ove Hufthammer <karl@huftis.org>, 2015.
-#
-#
+# Karl Ove Hufthammer <karl@huftis.org>, 2015, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-04-23 15:20+0200\n"
-"PO-Revision-Date: 2016-03-10 23:09+0200\n"
+"PO-Revision-Date: 2017-07-11 22:00+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
-"Language-Team: Norwegian Nynorsk <http://l10n.opensuse.org/projects/scout"
-"/command-not-found-master/nn/>\n"
+"Language-Team: NorwegianNynorsk <i18n-nn@lister.ping.uio.no>\n"
 "Language: nn\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.3\n"
+"X-Generator: Lokalize 2.0\n"
 
 #: handlers/bin/command_not_found_bash:9 handlers/bin/command_not_found_bash:17
 msgid "$1: command not found"
@@ -27,12 +24,17 @@ msgstr "$1: fann ikkje kommando"
 #: handlers/bin/command_not_found_bash:24
 msgid "Absolute path to '$1' is '$prefix/sbin/$1', so running it may require superuser privileges (eg. root)."
 msgstr ""
+"Adressa til «$1» er «$prefix/sbin/$1», så det kan vera du treng "
+"superbrukarløyve (eks. som rotbrukar) for å køyra programmet."
 
 #: handlers/bin/command_not_found_bash:32
 msgid ""
 "If '$1' is not a typo you can use command-not-found to lookup the package that contains it, like this:\n"
 "    cnf $1"
 msgstr ""
+"Viss «%1» ikkje er ein skrivefeil, kan du finna ut kva pakke som inneheld "
+"programmet med denne kommandoen:\n"
+"    cnf $1"
 
 #: handlers/bin/command-not-found:8
 #, python-format
@@ -44,7 +46,7 @@ msgstr[1] "Du finn programmet «%(prog)s» i desse pakkane:"
 #: handlers/bin/command-not-found:11
 #, python-format
 msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
-msgstr ""
+msgstr "  * %(prog)s [ adresse: %(path)s/%(binary)s, pakkebrønn: %(repo)s ]"
 
 #: handlers/bin/command-not-found:14
 msgid "Try installing with:"
@@ -57,17 +59,21 @@ msgstr "<vald_pakke>"
 #: handlers/bin/command-not-found:24
 #, python-format
 msgid "Program '%(prog)s' is present in package '%(pkg)s', which is installed on your system."
-msgstr ""
+msgstr "Programmet «%(prog)s» finst i pakken «%(pkg)s», som alt er installert."
 
 #: handlers/bin/command-not-found:27
 #, python-format
 msgid "Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may require superuser privileges (eg. root)."
 msgstr ""
+"Adressa til «%(prog)s» er «%(path)s/%(prog)s», så det kan vera du treng "
+"superbrukarløyve (eks. som rotbrukar) for å køyra programmet."
 
 #: handlers/bin/command-not-found:30
 #, python-format
 msgid "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH variable to see whether it contains the mentioned path."
 msgstr ""
+"Adressa til «%(prog)s» er «%(path)s/%(prog)s». Kontroller at $PATH-"
+"variabelen inneheld mappa til programmet."
 
 #: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
 #, python-format
