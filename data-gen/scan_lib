@@ -90,3 +90,16 @@ function scan() {
     rm -f ${index_file}.lzma
     lzma ${index_file}
 }
+
+scan_one_mode() {
+    local mode=$1
+    local release=$2
+    local out=$3
+    scan_$mode /work/CDs/all/full-$release-x86_64/suse $(pwd)/$mode-$out.txt
+}
+
+scan_all_mode() {
+    local mode=$1
+    scan_one_mode $mode sle11-sp4 sle11sp4
+    scan_one_mode $mode sle12-sp1 sle12sp1
+}

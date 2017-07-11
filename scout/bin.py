@@ -29,10 +29,14 @@ class SolvParser(object):
                 name = os.path.splitext(repofile)[0]
                 self.parser.read( '%s/%s' % (self.etcpath, repofile) )
                 if self.parser.get(name, 'enabled') == '1':
+                    if not os.path.isfile(self.solvfile % name):
+                        os.system('zypper refresh')
                     repo = self.pool.add_repo(name)
                     repo.add_solv(self.solvfile % name)
             except:
                 pass
+        if not list(self.pool.repos_iter()):
+            print >> sys.stderr, _("\nWarning: no repos found - make sure your repositories are configured.")
 
     def search(self, term, inversesearch = False):
         pkgmatch = []

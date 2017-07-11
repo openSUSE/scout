@@ -8,7 +8,7 @@
 # /opt/gnome/bin /opt/gnome/sbin
 ACCEPT_PATH='^\(\|/usr\|/opt/gnome\|/opt/kde3\|/usr/lib/[^/]*\)/s\?bin\|/usr/games'
 
-RPMS_ROOT='/work/CDs/all/full-11.0-x86_64/suse'
+RPMS_ROOT='/work/CDs/all/full-sle12-sp1-x86_64/suse'
 INDEX_FILE='scan-bin.out'
 
 touch $INDEX_FILE

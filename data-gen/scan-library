@@ -35,8 +35,5 @@ function scan_library () {
 
 }
 
-scan_library /work/CDs/all/full-11.0-i386/suse $(pwd)/library-suse110.txt
-scan_library /work/CDs/all/full-10.3-i386/suse $(pwd)/library-suse103.txt
-scan_library /work/CDs/all/full-10.2-i386/suse $(pwd)/library-suse102.txt
-scan_library /work/CDs/all/full-10.1-i386/suse $(pwd)/library-suse101.txt
-scan_library /work/CDs/all/full-sles10-i386/suse $(pwd)/library-sle10.txt
+mode=${0/.*scan-/}
+scan_all_mode $mode
