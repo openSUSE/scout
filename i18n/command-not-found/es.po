@@ -7,15 +7,16 @@ msgstr ""
 "Project-Id-Version: command-not-found\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-04-23 15:20+0200\n"
-"PO-Revision-Date: 2014-08-12 12:44+0200\n"
-"Last-Translator: Ricardo Varas Santana <ricardoivaras@gmail.com>\n"
-"Language-Team: Spanish <opensuse-translation-es@opensuse.org>\n"
+"PO-Revision-Date: 2017-08-03 20:55+0000\n"
+"Last-Translator: jc sl <trcs@gmx.com>\n"
+"Language-Team: Spanish <https://l10n.opensuse.org/projects/scout/command-not-"
+"found-master/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.5\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.13.1\n"
 
 #: handlers/bin/command_not_found_bash:9
 #: handlers/bin/command_not_found_bash:17
@@ -28,7 +29,7 @@ msgid ""
 "superuser privileges (eg. root)."
 msgstr ""
 "La ruta absoluta a '$1' es '$prefix/sbin/$1', por lo que para su ejecución "
-"pueden ser necesarios privilegios de superusuario (p.e. root)."
+"pueden ser necesarios privilegios de superusuario (p. ej. root)."
 
 #: handlers/bin/command_not_found_bash:32
 msgid ""
@@ -36,8 +37,8 @@ msgid ""
 "that contains it, like this:\n"
 "    cnf $1"
 msgstr ""
-"Si '$1' no es un error tipográfico, puede usar la búsqueda de orden no\n"
-"encontrada (command-not-found) para saber a que paquete pertenece, como\n"
+"Si '$1' no es un error tipográfico, puede usar la búsqueda de orden no "
+"encontrada, para saber a qué paquete pertenece, así:\n"
 "    cnf $1"
 
 #: handlers/bin/command-not-found:8
@@ -57,7 +58,7 @@ msgstr "  * %(prog)s [ ruta: %(path)s/%(binary)s, repositorio: %(repo)s ]"
 # include/partitioning/auto_part_ui.ycp:200 include/partitioning/auto_part_ui.ycp:249
 #: handlers/bin/command-not-found:14
 msgid "Try installing with:"
-msgstr "Intente instalar con:"
+msgstr "Intente su instalación con:"
 
 #: handlers/bin/command-not-found:16
 msgid "<selected_package>"
@@ -79,7 +80,7 @@ msgid ""
 "superuser privileges (eg. root)."
 msgstr ""
 "La ruta absoluta a '%(prog)s' es '%(path)s/%(prog)s', por lo que para su "
-"ejecución pueden ser necesarios privilegios de superusuario (p.e. root)."
+"ejecución pueden ser necesarios privilegios de superusuario (p. ej. root)."
 
 #: handlers/bin/command-not-found:30
 #, python-format
@@ -87,8 +88,8 @@ msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH "
 "variable to see whether it contains the mentioned path."
 msgstr ""
-"La ruta absoluta a '%(prog)s' es '%(path)s/%(prog)s'. Verifique su variable "
-"de entorno $PATH para asegurar que contiene dicha ruta."
+"La ruta absoluta a '%(prog)s' es '%(path)s/%(prog)s'. Verifique la variable "
+"de entorno $PATH para asegurarse de que contiene dicha ruta."
 
 #: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
 #, python-format
@@ -99,5 +100,3 @@ msgstr "buscando..."
 #, python-format
 msgid "command not found"
 msgstr "orden no encontrada"
-
-
