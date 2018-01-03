@@ -27,12 +27,12 @@ class SolvParser(object):
             try:
                 parser = SafeConfigParser()
                 parser.read( '%s/%s' % (self.etcpath, repofile) )
-                name = parser.sections()[0]
-                if parser.get(name, 'enabled') == '1':
-                    if not os.path.isfile(self.solvfile % name):
-                        os.system('zypper refresh')
-                    repo = self.pool.add_repo(name)
-                    repo.add_solv(self.solvfile % name)
+                for name in parser.sections():
+                    if parser.get(name, 'enabled') == '1':
+                        if not os.path.isfile(self.solvfile % name):
+                            os.system('zypper refresh')
+                        repo = self.pool.add_repo(name)
+                        repo.add_solv(self.solvfile % name)
             except:
                 pass
         if not list(self.pool.repos_iter()):
