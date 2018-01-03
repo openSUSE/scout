@@ -22,17 +22,17 @@ class SolvParser(object):
 
     def __init__(self):
         self.pool = solv.Pool()
-        self.parser = SafeConfigParser()
 
         for repofile in [ f for f in os.listdir(self.etcpath) if fnmatch(f, '*.repo') ]:
             try:
-                name = os.path.splitext(repofile)[0]
-                self.parser.read( '%s/%s' % (self.etcpath, repofile) )
-                if self.parser.get(name, 'enabled') == '1':
-                    if not os.path.isfile(self.solvfile % name):
-                        os.system('zypper refresh')
-                    repo = self.pool.add_repo(name)
-                    repo.add_solv(self.solvfile % name)
+                parser = SafeConfigParser()
+                parser.read( '%s/%s' % (self.etcpath, repofile) )
+                for name in parser.sections():
+                    if parser.get(name, 'enabled') == '1':
+                        if not os.path.isfile(self.solvfile % name):
+                            os.system('zypper refresh')
+                        repo = self.pool.add_repo(name)
+                        repo.add_solv(self.solvfile % name)
             except:
                 pass
         if not list(self.pool.repos_iter()):
