@@ -9,9 +9,9 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-04-23 15:20+0200\n"
-"PO-Revision-Date: 2015-10-28 20:54+0200\n"
-"Last-Translator: Mariusz Fik <fisiu@opensuse.org>\n"
-"Language-Team: Polish <http://10n.opensuse.org/projects/scout/command-not-"
+"PO-Revision-Date: 2018-01-25 14:05+0000\n"
+"Last-Translator: Ewelina Michalowska <ewelina.michalowska@stgambit.com>\n"
+"Language-Team: Polish <https://l10n.opensuse.org/projects/scout/command-not-"
 "found-master/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
@@ -19,30 +19,33 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.3\n"
+"X-Generator: Weblate 2.18\n"
 
 #: handlers/bin/command_not_found_bash:9
 #: handlers/bin/command_not_found_bash:17
 msgid "$1: command not found"
-msgstr "$1: nie znaleziono polecenia"
+msgstr "$1: polecenie nieznalezione"
 
 #: handlers/bin/command_not_found_bash:24
 msgid "Absolute path to '$1' is '$prefix/sbin/$1', so running it may require superuser privileges (eg. root)."
-msgstr "Bezwzględna ścieżka do '$1' to '$prefix/sbin/$1', więc uruchomienie aplikacji może wymagać uprawień super użytkownika (np. root)."
+msgstr ""
+"Ścieżką bezwzględna $1 jest $prefix/sbin/$1, więc uruchomienie może wymagać "
+"uprawień super użytkownika (np. root)."
 
 #: handlers/bin/command_not_found_bash:32
 msgid ""
 "If '$1' is not a typo you can use command-not-found to lookup the package that contains it, like this:\n"
 "    cnf $1"
 msgstr ""
-"Jeżeli w '$1' nie ma literówki, możesz użyć command-not-found, aby poszukać pakietu, który go zawiera, w ten sposób:\n"
+"Jeśli w $1 nie ma literówki, można użyć polecenia command-not-found, aby "
+"poszukać pakietu, który go zawiera, w ten sposób:\n"
 "    cnf $1"
 
 #: handlers/bin/command-not-found:8
 #, python-format
 msgid "The program '%(prog)s' can be found in the following package:"
 msgid_plural "The program '%(prog)s' can be found in following packages:"
-msgstr[0] "Program '%(prog)s' został znaleziony w poniższym pakiecie:"
+msgstr[0] "Program %(prog)s znaleziono w następujących pakietach:"
 msgstr[1] "Program '%(prog)s' został znaleziony w poniższych pakietach:"
 msgstr[2] "Program '%(prog)s' został znaleziony w poniższych pakietach:"
 
@@ -53,7 +56,7 @@ msgstr "  * %(prog)s [ ścieżka: %(path)s/%(binary)s, repozytorium: %(repo)s ]"
 
 #: handlers/bin/command-not-found:14
 msgid "Try installing with:"
-msgstr "Spróbuj zainstalować z:"
+msgstr "Zainstaluj razem z:"
 
 #: handlers/bin/command-not-found:16
 msgid "<selected_package>"
@@ -62,17 +65,23 @@ msgstr "<wybrany_pakiet>"
 #: handlers/bin/command-not-found:24
 #, python-format
 msgid "Program '%(prog)s' is present in package '%(pkg)s', which is installed on your system."
-msgstr "Program '%(prog)s' jest obecny w pakiecie '%(pkg)s', który jest zainstalowany w twoim systemie."
+msgstr ""
+"Program %(prog)s występuje w pakiecie %(pkg)s, który jest zainstalowany w "
+"systemie."
 
 #: handlers/bin/command-not-found:27
 #, python-format
 msgid "Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may require superuser privileges (eg. root)."
-msgstr "Bezwzględna ścieżka do '%(prog)s' to '%(path)s/%(prog)s', więc uruchomienie aplikacji może wymagać uprawień super użytkownika (np. root)."
+msgstr ""
+"Ścieżką bezwzględną programu %(prog)s jest %(path)s/%(prog)s, więc "
+"uruchomienie może wymagać uprawień super użytkownika (np. root)."
 
 #: handlers/bin/command-not-found:30
 #, python-format
 msgid "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH variable to see whether it contains the mentioned path."
-msgstr "Bezwzględna ścieżka do '%(prog)s' to '%(path)s/%(prog)s'. Sprawdź czy zmienna $PATH zawiera podaną ścieżkę."
+msgstr ""
+"Ścieżką bezwzględną programu %(prog)s jest %(path)s/%(prog)s. Sprawdź czy "
+"zmienna $PATH zawiera podaną ścieżkę."
 
 #: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
 #, python-format
@@ -82,4 +91,4 @@ msgstr "wyszukiwanie..."
 #: handlers/bin/command-not-found:87
 #, python-format
 msgid "command not found"
-msgstr "polecenia nie znaleziono"
+msgstr "polecenie nieznalezione"
