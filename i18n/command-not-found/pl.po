@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-04-23 15:20+0200\n"
-"PO-Revision-Date: 2018-01-25 14:05+0000\n"
+"PO-Revision-Date: 2018-01-27 14:04+0000\n"
 "Last-Translator: Ewelina Michalowska <ewelina.michalowska@stgambit.com>\n"
 "Language-Team: Polish <https://l10n.opensuse.org/projects/scout/command-not-"
 "found-master/pl/>\n"
@@ -45,9 +45,9 @@ msgstr ""
 #, python-format
 msgid "The program '%(prog)s' can be found in the following package:"
 msgid_plural "The program '%(prog)s' can be found in following packages:"
-msgstr[0] "Program %(prog)s znaleziono w następujących pakietach:"
-msgstr[1] "Program '%(prog)s' został znaleziony w poniższych pakietach:"
-msgstr[2] "Program '%(prog)s' został znaleziony w poniższych pakietach:"
+msgstr[0] "Program %(prog)s znaleziono w następującym pakiecie:"
+msgstr[1] "Program '%(prog)s' znaleziono w następujących pakietach:"
+msgstr[2] "Program '%(prog)s' znaleziono w następujących pakietach:"
 
 #: handlers/bin/command-not-found:11
 #, python-format
