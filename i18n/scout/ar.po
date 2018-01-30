@@ -3,9 +3,9 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-28 11:42+0200\n"
-"PO-Revision-Date: 2016-04-28 04:43+0000\n"
-"Last-Translator: mohammad alhargan <malham1@gmail.com>\n"
-"Language-Team: Arabic <http://l10n.opensuse.org/projects/scout/scout-"
+"PO-Revision-Date: 2018-01-30 22:00+0000\n"
+"Last-Translator: George Yacoub <george.yacoub@arabize.com>\n"
+"Language-Team: Arabic <https://l10n.opensuse.org/projects/scout/scout-"
 "master/ar/>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 2.5\n"
+"X-Generator: Weblate 2.18\n"
 
 #: scout/autoconf.py:9
 msgid "Search for autoconf macros inside the m4 files."
@@ -29,7 +29,7 @@ msgstr "مستودع"
 #: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
 #: scout/webpin.py:50
 msgid "pkg"
-msgstr "pkg"
+msgstr "حزمة"
 
 #: scout/autoconf.py:13
 msgid "m4"
@@ -64,7 +64,7 @@ msgstr "مسار"
 
 #: scout/bin.py:107
 msgid "bin"
-msgstr "bin"
+msgstr "حاوية"
 
 #: scout/bin.py:108
 msgid "binary"
@@ -80,7 +80,7 @@ msgstr "بحث عن عناوين C/C++/Obj-C/Obj-C++."
 
 #: scout/header.py:13 scout/header.py:14
 msgid "header"
-msgstr "عناوين"
+msgstr "عنوان"
 
 #: scout/__init__.py:148
 msgid "show this help message and exit"
@@ -92,16 +92,16 @@ msgstr "عرض رقم إصدار البرامج والخروج"
 
 #: scout/__init__.py:198
 msgid "Usage: %prog [global_opts] module [local_opts] search_term"
-msgstr "استخدام: %prog [global_opts] module [local_opts] search_term"
+msgstr "الاستخدام: %prog [global_opts] module [local_opts] search_term"
 
 #: scout/__init__.py:205
 #, python-format
 msgid "select the output format (default %s)"
-msgstr "اختر صيخة المخرجات (الافتراضي%s)"
+msgstr "اختر صيغة المخرجات (الافتراضي%s)"
 
 #: scout/__init__.py:212
 msgid "list of available modules"
-msgstr "عرض القوالب المتاحة"
+msgstr "قائمة القوالب المتاحة"
 
 #: scout/__init__.py:228
 msgid "Available modules:\n"
@@ -110,12 +110,12 @@ msgstr "القوالب المتاحة:\n"
 #: scout/__init__.py:279
 #, python-format
 msgid "The name of module is mandatory. Use %s --help"
-msgstr "اسم القالب إلزامي. Use %s --مساعدة"
+msgstr "اسم القالب إلزامي. استخدم %s --مساعدة"
 
 #: scout/__init__.py:366
 #, python-format
 msgid "%s is not a directory"
-msgstr "%s ليس مجلد"
+msgstr "%s ليس دليلاً"
 
 #: scout/__init__.py:425
 #, python-format
@@ -129,7 +129,7 @@ msgstr "المستودعات المتاحة:\n"
 #: scout/__init__.py:731
 #, python-format
 msgid "Usage: %%prog %s [options] search_term"
-msgstr "استخدام: %%prog %s [options] search_term"
+msgstr "الاستخدام: %%prog %s [options] search_term"
 
 #: scout/__init__.py:733
 msgid "list available repositories"
@@ -145,16 +145,16 @@ msgstr "حدد مستودع للبحث"
 
 #: scout/__init__.py:781
 msgid "No repositories found ..."
-msgstr "لم يُعثر على مستودعلات ..."
+msgstr "لم يتم العثور على مستودعات ..."
 
 #: scout/__init__.py:825 scout/__init__.py:826
 msgid "module"
-msgstr "قالب"
+msgstr "وحدة نمطية"
 
 #: scout/__init__.py:953
 #, python-format
 msgid "Cannot find a formatter for a %s"
-msgstr "لم يُعثر على منسق ل %s"
+msgstr "لم يتم العثورعلى منسق لـ %s"
 
 #: scout/java.py:9
 msgid "Search for java classes inside the JAR files."
@@ -178,7 +178,7 @@ msgstr "مكتبة"
 
 #: scout/python.py:9
 msgid "Search for python modules."
-msgstr "بحث عن قوالب بايثون."
+msgstr "بحث عن وحدات بايثون نمطية."
 
 #: scout/webpin.py:13
 msgid "Search in packages using the webpin webservice."
@@ -191,7 +191,7 @@ msgstr "لا يمكن استعادة نتائج الاستعلام ... %s"
 
 #: scout/webpin.py:50
 msgid "ver"
-msgstr "ver"
+msgstr "الإصدار"
 
 #: scout/webpin.py:50 scout/webpin.py:51
 msgid "arch"
@@ -207,8 +207,8 @@ msgstr "إصدار"
 
 #: scout/webpin.py:51
 msgid "repository URL"
-msgstr "مسار المستودع"
+msgstr "URL المستودع"
 
 #: scout/webpin.py:51
 msgid "matched files"
-msgstr "الملفات المشابهة"
+msgstr "الملفات المطابقة"
