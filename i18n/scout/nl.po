@@ -10,26 +10,26 @@ msgstr ""
 "Project-Id-Version: scout.nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-28 11:42+0200\n"
-"PO-Revision-Date: 2016-03-30 12:18+0000\n"
-"Last-Translator: Nathan Follens <nthn@unseen.is>\n"
-"Language-Team: Dutch <http://l10n.opensuse.org/projects/scout/scout-"
+"PO-Revision-Date: 2018-02-08 16:01+0000\n"
+"Last-Translator: Eva van Rein <vistatec@globaltextware.nl>\n"
+"Language-Team: Dutch <https://l10n.opensuse.org/projects/scout/scout-"
 "master/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.5\n"
+"X-Generator: Weblate 2.18\n"
 
 #: scout/autoconf.py:9
 msgid "Search for autoconf macros inside the m4 files."
-msgstr "Zoeken naar autoconf-macros binnen de m4-bestanden."
+msgstr "Zoeken naar autoconf-macro's binnen de m4-bestanden."
 
 #: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
 #: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
 #: scout/webpin.py:50
 msgid "repo"
-msgstr "bron"
+msgstr "opslagruimte"
 
 #: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
 #: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
@@ -48,7 +48,7 @@ msgstr "macro"
 #: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
 #: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
 msgid "repository"
-msgstr "installatiebron"
+msgstr "opslagruimte"
 
 #: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
 #: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
@@ -107,11 +107,11 @@ msgstr "het uitvoerformaat (standaard %s) selecteren"
 
 #: scout/__init__.py:212
 msgid "list of available modules"
-msgstr "lijst met beschikbare modulen"
+msgstr "lijst met beschikbare modules"
 
 #: scout/__init__.py:228
 msgid "Available modules:\n"
-msgstr "Beschikbare modulen:\n"
+msgstr "Beschikbare modules:\n"
 
 #: scout/__init__.py:279
 #, python-format
@@ -130,7 +130,7 @@ msgstr "Kan databasebestand '%s' niet openen"
 
 #: scout/__init__.py:699
 msgid "Available repositories:\n"
-msgstr "Beschikbare installatiebronnen:\n"
+msgstr "Beschikbare opslagruimtes:\n"
 
 #: scout/__init__.py:731
 #, python-format
@@ -139,7 +139,7 @@ msgstr "Gebruik: %%prog %s [opties] zoekterm"
 
 #: scout/__init__.py:733
 msgid "list available repositories"
-msgstr "lijst met beschikbare installatiebronnen"
+msgstr "lijst met beschikbare opslagruimtes"
 
 #: scout/__init__.py:734
 msgid "inverse search by package name"
@@ -147,11 +147,11 @@ msgstr "omgekeerd zoeken met pakketnaam"
 
 #: scout/__init__.py:735
 msgid "select repository to search"
-msgstr "te doorzoeken installatiebron selecteren"
+msgstr "te doorzoeken opslagruimte selecteren"
 
 #: scout/__init__.py:781
 msgid "No repositories found ..."
-msgstr "Geen installatiebronnen gevonden ..."
+msgstr "Geen opslagruimtes gevonden ..."
 
 #: scout/__init__.py:825 scout/__init__.py:826
 msgid "module"
@@ -184,7 +184,7 @@ msgstr "bibliotheek"
 
 #: scout/python.py:9
 msgid "Search for python modules."
-msgstr "Naar python-modulen zoeken."
+msgstr "Naar python-modules zoeken."
 
 #: scout/webpin.py:13
 msgid "Search in packages using the webpin webservice."
@@ -213,7 +213,7 @@ msgstr "versie"
 
 #: scout/webpin.py:51
 msgid "repository URL"
-msgstr "URL van installatiebron"
+msgstr "URL van opslagruimte"
 
 #: scout/webpin.py:51
 msgid "matched files"
