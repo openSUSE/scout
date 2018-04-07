@@ -3,30 +3,29 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-04-23 15:20+0200\n"
-"PO-Revision-Date: 2005-07-29 15:37+0530\n"
-"Last-Translator: Prasanth Kurian <prasanth.kurian@agreeya.com>\n"
-"Language-Team: Hindi <i18n@suse.de>\n"
+"PO-Revision-Date: 2018-04-07 14:03+0000\n"
+"Last-Translator: Anshul Panwar <caspian7pena@gmail.com>\n"
+"Language-Team: Hindi <https://l10n.opensuse.org/projects/scout/command-not-"
+"found-master/hi/>\n"
 "Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"\n"
-"\n"
-"\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.18\n"
 
 #: handlers/bin/command_not_found_bash:9
 #: handlers/bin/command_not_found_bash:17
-#, fuzzy
 msgid "$1: command not found"
-msgstr "अज्ञात कमांड विकल्प"
+msgstr "$1: कमांड नहीं मिल पाई"
 
 #: handlers/bin/command_not_found_bash:24
 msgid ""
 "Absolute path to '$1' is '$prefix/sbin/$1', so running it may require "
 "superuser privileges (eg. root)."
 msgstr ""
+"'$1' के लिए पूर्ण पथ '$prefix/sbin/$1' है, इसलिए इसे run करने के लिए "
+"विशिष्ट-उपयोक्ता विशेषाधिकारों की आवश्यकता पड़ सकती है (जैसे रूट)।"
 
 #: handlers/bin/command_not_found_bash:32
 msgid ""
