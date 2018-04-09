@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-08-28 11:42+0200\n"
-"PO-Revision-Date: 2018-04-08 11:03+0000\n"
+"PO-Revision-Date: 2018-04-09 20:04+0000\n"
 "Last-Translator: Anshul Panwar <caspian7pena@gmail.com>\n"
 "Language-Team: Hindi <https://l10n.opensuse.org/projects/scout/scout-"
 "master/hi/>\n"
@@ -27,25 +27,21 @@ msgstr "पैकेज-संग्रह"
 #: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
 #: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
 #: scout/webpin.py:50
-#, fuzzy
-#| msgid "package"
 msgid "pkg"
 msgstr "पैकेज"
 
 #: scout/autoconf.py:13
 msgid "m4"
-msgstr ""
+msgstr "m4"
 
 #: scout/autoconf.py:13 scout/autoconf.py:14
 msgid "macro"
-msgstr ""
+msgstr "macro"
 
 #: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
 #: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
-#, fuzzy
-#| msgid "Repository"
 msgid "repository"
-msgstr "भंडार"
+msgstr "पैकेज-संग्रह"
 
 #: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
 #: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
@@ -55,25 +51,23 @@ msgstr "पैकेज"
 
 #: scout/autoconf.py:14
 msgid "m4 file"
-msgstr ""
+msgstr "m4 फ़ाइल"
 
 #: scout/bin.py:62
 msgid "Search for binaries contained in the packages."
-msgstr ""
+msgstr "पैकेज में शामिल binary फ़ाइल ढूँढें।"
 
 #: scout/bin.py:107 scout/bin.py:108
 msgid "path"
-msgstr ""
+msgstr "पथ"
 
 #: scout/bin.py:107
-#, fuzzy
-#| msgid "bit"
 msgid "bin"
-msgstr "bit"
+msgstr "bin"
 
 #: scout/bin.py:108
 msgid "binary"
-msgstr ""
+msgstr "binary"
 
 #: scout/foo.py:9
 msgid "- template module -"
