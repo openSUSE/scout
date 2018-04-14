@@ -7,6 +7,7 @@ import os
 import re
 from fnmatch import fnmatch
 from ConfigParser import SafeConfigParser
+from subprocess import call
 
 try:
     solv = __import__('solv')
@@ -23,20 +24,27 @@ class SolvParser(object):
     def __init__(self):
         self.pool = solv.Pool()
 
+        zypper_refresh_failed = False
         for repofile in [ f for f in os.listdir(self.etcpath) if fnmatch(f, '*.repo') ]:
             try:
                 parser = SafeConfigParser()
                 parser.read( '%s/%s' % (self.etcpath, repofile) )
                 for name in parser.sections():
                     if parser.get(name, 'enabled') == '1':
-                        if not os.path.isfile(self.solvfile % name.replace('/', '_')):
-                            os.system('zypper refresh')
+                        if not os.path.isfile(self.solvfile % name.replace('/', '_')) and not zypper_refresh_failed:
+                            ret = call('zypper refresh')
+                            assert ret, "zypper refresh failed with exit code: %s" % ret
                         repo = self.pool.add_repo(name)
                         repo.add_solv(self.solvfile % name)
+            except OSError as e:
+                zypper_refresh_failed = True
             except:
                 pass
         if not list(self.pool.repos_iter()):
             print >> sys.stderr, _("\nWarning: no repos found - make sure your repositories are configured.")
+        if zypper_refresh_failed:
+            print >> sys.stderr, _("\nWarning: incomplete repos found but could not refresh - try to refresh manually, e.g. with 'zypper refresh'.")
+
 
     def search(self, term, inversesearch = False):
         pkgmatch = []
