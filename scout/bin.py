@@ -29,7 +29,7 @@ class SolvParser(object):
                 parser.read( '%s/%s' % (self.etcpath, repofile) )
                 for name in parser.sections():
                     if parser.get(name, 'enabled') == '1':
-                        if not os.path.isfile(self.solvfile % name):
+                        if not os.path.isfile(self.solvfile % name.replace('/', '_')):
                             os.system('zypper refresh')
                         repo = self.pool.add_repo(name)
                         repo.add_solv(self.solvfile % name)
