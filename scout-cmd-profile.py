@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 
 # Copyright (c) 2008 Pavol Rusnak, Michal Vyskocil
 # see __init__.py for license details
