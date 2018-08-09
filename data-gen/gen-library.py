@@ -21,12 +21,12 @@ def process(s):
         if line[0] not in pkgs:
             pkgs[line[0]] = len(pkgs)
             g.write('INSERT INTO packages(id_pkg, package) '
-                    "VALUES(%s, '%s');\n" % (pkgs[line[0]], line[0]))
+                    "VALUES(?, '?');\n", pkgs[line[0]], line[0])
         if (line[0]+line[1]) not in libs:
             libs[line[0]+line[1]] = len(libs)
             g.write('INSERT INTO libraries(id_lib, library, id_pkg) '
-                    "VALUES(%s, '%s', %s);\n" % (
-                        libs[line[0]+line[1]], line[1], pkgs[line[0]]))
+                    "VALUES(?, '?', ?);\n",
+                    libs[line[0]+line[1]], line[1], pkgs[line[0]])
     g.write('CREATE INDEX libraries_library_idx ON libraries(library);\n')
 
     g.write('COMMIT;\n')

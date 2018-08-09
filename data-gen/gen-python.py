@@ -21,12 +21,12 @@ def process(s):
         if line[0] not in pkgs:
             pkgs[line[0]] = len(pkgs)
             g.write('INSERT INTO packages(id_pkg, package) '
-                    "VALUES(%s, '%s');\n" % (pkgs[line[0]], line[0]))
+                    "VALUES(?, '?');\n", pkgs[line[0]], line[0])
         if (line[0]+line[1]) not in jars:
             jars[line[0]+line[1]] = len(jars)
             g.write('INSERT INTO modules(id_modules, module, id_pkg) '
-                    "VALUES(%s, '%s', %s);\n" % (
-                        jars[line[0]+line[1]], line[1], pkgs[line[0]]))
+                    "VALUES(?, '?', ?);\n",
+                    jars[line[0]+line[1]], line[1], pkgs[line[0]])
     g.write('CREATE INDEX modules_module_idx ON modules(module);\n')
 
     g.write('COMMIT;\n')

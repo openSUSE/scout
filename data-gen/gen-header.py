@@ -21,12 +21,12 @@ def process(s):
         if line[0] not in pkgs:
             pkgs[line[0]] = len(pkgs)
             g.write('INSERT INTO packages(id_pkg, package) '
-                    "VALUES(%s, '%s');\n" % (pkgs[line[0]], line[0]))
+                    "VALUES(?, '?');\n", pkgs[line[0]], line[0])
         if (line[0]+line[1]) not in hdrs:
             hdrs[line[0]+line[1]] = len(hdrs)
             g.write('INSERT INTO headers(id_hdr, header, id_pkg) '
-                    "VALUES(%s, '%s', %s);\n" % (
-                        hdrs[line[0]+line[1]], line[1], pkgs[line[0]]))
+                    "VALUES(?, '?', ?);\n",
+                    hdrs[line[0]+line[1]], line[1], pkgs[line[0]])
     g.write('CREATE INDEX headers_header_idx ON headers(header);\n')
 
     g.write('COMMIT;\n')
