@@ -5,7 +5,6 @@
 
 import scout
 import sys
-import exceptions
 
 scout.ScoutCore.load_all_modules()
 
@@ -14,7 +13,7 @@ def suppress_keyboard_interrupt_message():
     old_excepthook = sys.excepthook
 
     def new_hook(type, value, traceback):
-        if type != exceptions.KeyboardInterrupt:
+        if type != KeyboardInterrupt:
             old_excepthook(type, value, traceback)
         else:
             pass
