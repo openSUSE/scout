@@ -226,7 +226,7 @@ class CoreOptionParser(object):
                 ', '.join(formats), self._format),
             default=self._format,
             type='choice',
-            choices=formats
+            choices=list(formats)
         )
 
         self._parser.add_option(
