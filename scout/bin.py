@@ -169,6 +169,7 @@ class ScoutModule(scout.BaseScoutModule):
             if repo == 'zypp':
                 result.add_rows(self.query_zypp(term, args.inversesearch))
             else:
-                result.add_rows(self.query_repo(repo, term, args.inversesearch))
+                result.add_rows(self.query_repo(repo, term,
+                                                args.inversesearch))
 
         return result
