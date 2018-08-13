@@ -393,7 +393,7 @@ class ModuleLoader(object):
 
     def import_from(self, dirs):
         # make an non-iter item as iter
-        if not hasattr(dirs, '__iter__'):
+        if isinstance(dirs, str):
             dirs = (dirs, )
         for directory in dirs:
             self._import(directory)
