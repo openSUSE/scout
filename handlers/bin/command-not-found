@@ -1,40 +1,58 @@
-#!/usr/bin/python
+#!/usr/bin/python3
+
+import gettext
+import os
+import sys
+
+_ = gettext.gettext
 
 EX_NOTFOUND = 127
-SUDO_CMD = "sudo"
-INSTALL_CMD = "zypper install"
+SUDO_CMD = 'sudo'
+INSTALL_CMD = 'zypper install'
+
 
 def print_found(rows):
-    print >> sys.stderr
-    print >> sys.stderr, ngettext("The program '%(prog)s' can be found in the following package:", "The program '%(prog)s' can be found in following packages:", len(rows)) % \
-            ({'prog' : term})
+    print(file=sys.stderr)
+    print(gettext.ngettext(
+        "The program '%(prog)s' can be found in the following package:",
+        "The program '%(prog)s' can be found in following packages:",
+        len(rows)) % ({'prog': term}), file=sys.stderr)
+
     for row in rows:
-        print >> sys.stderr, _("  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]") % \
-                ({'prog' : row[1], 'path' : row[2], 'binary' : row[3], 'repo' : row[0]})
-    print >> sys.stderr
-    print >> sys.stderr, _('Try installing with:\n   '),
+        print(_('  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]') % \
+              ({'prog': row[1], 'path': row[2], 'binary': row[3], 'repo': row[0]}),
+              file=sys.stderr)
+    print(file=sys.stderr)
+    print(_('Try installing with:\n   '), end=' ', file=sys.stderr)
     if os.getuid() != 0:
-        print >> sys.stderr, SUDO_CMD,
-    print >> sys.stderr, INSTALL_CMD,
-    if len( set( [ i[1] for i in rows] ) ) > 1:
-        print >> sys.stderr, _('<selected_package>')
+        print(SUDO_CMD, end=' ', file=sys.stderr)
+    print(INSTALL_CMD, end=' ', file=sys.stderr)
+    if len(set([i[1] for i in rows])) > 1:
+        print(_('<selected_package>'), file=sys.stderr)
     else:
-        print >> sys.stderr, rows[0][1]
-    print >> sys.stderr
+        print(rows[0][1], file=sys.stderr)
+    print(file=sys.stderr)
     sys.exit(EX_NOTFOUND)
 
+
 def print_installed(term, pkg, path):
-    print >> sys.stderr
-    print >> sys.stderr, _("Program '%(prog)s' is present in package '%(pkg)s', which is installed on your system.") % ( {'prog' : term, 'pkg' : pkg } )
-    print >> sys.stderr
+    print(file=sys.stderr)
+    print(_("Program '%(prog)s' is present in package '%(pkg)s', "
+            'which is installed on your system.') % \
+          ({'prog': term, 'pkg': pkg}), file=sys.stderr)
+    print(file=sys.stderr)
     if '/sbin' in path:
-        print >> sys.stderr, _("Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may require superuser privileges (eg. root).") % \
-                ( {'prog' : term , 'path' : path} )
+        print(_("Absolute path to '%(prog)s' is '%(path)s/%(prog)s', "
+                'so running it may require superuser privileges (eg. root).') % \
+                ({'prog': term, 'path': path}), file=sys.stderr)
     else:
-        print >> sys.stderr, _("Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH variable to see whether it contains the mentioned path.") % \
-                ( {'prog' : term , 'path' : path} )
-    print >> sys.stderr
+        print(_("Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. "
+                'Please check your $PATH variable to see whether it '
+                'contains the mentioned path.') % \
+                ({'prog': term, 'path': path}), file=sys.stderr)
+    print(file=sys.stderr)
     sys.exit(EX_NOTFOUND)
+
 
 def check_installed(term, pkg, path):
     if not os.path.isfile('%s/%s' % (path, term)):
@@ -43,6 +61,7 @@ def check_installed(term, pkg, path):
     mi = ts.dbMatch('name', pkg)
     return mi.count() > 0
 
+
 def find_package_by_file(term):
     ts = rpm.TransactionSet()
     mi = ts.dbMatch('basenames', term)
@@ -50,28 +69,26 @@ def find_package_by_file(term):
         return i['name']
     return None
 
-try:
-    import os
-    import sys
 
+try:
     if len(sys.argv) < 2:
         sys.exit(EX_NOTFOUND)
 
     import scout
 
-    default_lang = scout.DefaultLang(textdomain="command-not-found")
+    default_lang = scout.DefaultLang(textdomain='command-not-found')
     default_lang.install()
 
     term = sys.argv[1]
-    print >> sys.stderr, '%s:' % term, _('searching ...'),
+    print('%s:' % term, _('searching ...'), end=' ', file=sys.stderr)
     lendel = len(term) + 3 + len(_('searching ...'))
 
     import rpm
 
-    for path in ['/usr/sbin', '/sbin']:
+    for path in ('/usr/sbin', '/sbin'):
         pkg = find_package_by_file(path + '/' + term)
         if pkg:
-            print >> sys.stderr, '\r', lendel*' ',
+            print('\r', lendel * ' ', end=' ', file=sys.stderr)
             print_installed(term, pkg, path)
             sys.exit(EX_NOTFOUND)
 
@@ -91,10 +108,11 @@ try:
         rows = module.query_repo(repo, term)
 
     if rows == None or len(rows) == 0:
-        print >> sys.stderr, '\r', '%s:' % term, _('command not found'), lendel*' '
+        print('\r', '%s:' % term, _('command not found'),
+              lendel * ' ', file=sys.stderr)
         sys.exit(EX_NOTFOUND)
 
-    print >> sys.stderr, '\r', lendel*' ',
+    print('\r', lendel * ' ', end=' ', file=sys.stderr)
 
     for row in rows:
         if check_installed(term, row[1], row[2]):
@@ -102,7 +120,7 @@ try:
 
     print_found(rows)
 
-except:
+except Exception:
     pass
 
 sys.exit(EX_NOTFOUND)
