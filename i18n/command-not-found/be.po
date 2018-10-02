@@ -34,8 +34,6 @@ msgid ""
 "Try installing with:\n"
 "   "
 msgstr ""
-"\n"
-"   "
 
 #: handlers/bin/command-not-found:31
 msgid "<selected_package>"
