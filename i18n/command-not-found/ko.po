@@ -2,73 +2,112 @@ msgid ""
 msgstr ""
 "Project-Id-Version: entries\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-23 15:20+0200\n"
+"POT-Creation-Date: 2018-10-02 16:11+0200\n"
 "PO-Revision-Date: 2009-09-18 09:35+0900\n"
 "Last-Translator: YunSeok Choi <xein@naver.com>\n"
 "Language-Team:  <en@li.org>\n"
-"Language: \n"
+"Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: handlers/bin/command_not_found_bash:9
-#: handlers/bin/command_not_found_bash:17
-msgid "$1: command not found"
-msgstr "$1: 명령을 찾을 수 없음"
-
-#: handlers/bin/command_not_found_bash:24
-msgid "Absolute path to '$1' is '$prefix/sbin/$1', so running it may require superuser privileges (eg. root)."
-msgstr "절대 경로 '$1' 은(는) '$prefix/sbin/$1'를 지칭하기 때문에 실행하려면 슈퍼유저(root 등) 권한이 필요할 수 있습니다."
-
-#: handlers/bin/command_not_found_bash:32
-msgid ""
-"If '$1' is not a typo you can use command-not-found to lookup the package that contains it, like this:\n"
-"    cnf $1"
-msgstr ""
-"'$1'이 입력 실수가 아니라면 다음과 같이 command-not-found를 이용하여 꾸러미를 검색할 수 있습니다:\n"
-"    cnf $1"
-
-#: handlers/bin/command-not-found:8
+#: handlers/bin/command-not-found:17
 #, python-format
 msgid "The program '%(prog)s' can be found in the following package:"
 msgid_plural "The program '%(prog)s' can be found in following packages:"
 msgstr[0] "'%(prog)s' 프로그램은 다음의 꾸러미에 있습니다:"
 
-#: handlers/bin/command-not-found:11
+#: handlers/bin/command-not-found:22
 #, python-format
 msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
 msgstr "  * %(prog)s [ 경로: %(path)s/%(binary)s, 저장소: %(repo)s ]"
 
-#: handlers/bin/command-not-found:14
-msgid "Try installing with:"
-msgstr "다음과 같이 설치:"
+#: handlers/bin/command-not-found:26
+msgid ""
+"Try installing with:\n"
+"   "
+msgstr ""
+"다음과 같이 설치:\n"
+"   "
 
-#: handlers/bin/command-not-found:16
+#: handlers/bin/command-not-found:31
 msgid "<selected_package>"
 msgstr "<선택한_꾸러미>"
 
-#: handlers/bin/command-not-found:24
+#: handlers/bin/command-not-found:40
 #, python-format
-msgid "Program '%(prog)s' is present in package '%(pkg)s', which is installed on your system."
+msgid ""
+"Program '%(prog)s' is present in package '%(pkg)s', which is installed on "
+"your system."
 msgstr "'%(prog)s' 프로그램은 시스템에 설치한 '%(pkg)s' 꾸러미 안에 있습니다."
 
-#: handlers/bin/command-not-found:27
+#: handlers/bin/command-not-found:45
 #, python-format
-msgid "Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may require superuser privileges (eg. root)."
-msgstr "절대 경로 '%(prog)s' 은(는) '%(path)s/%(prog)s'를 지칭하기 때문에 실행하려면 슈퍼유저(root 등) 권한이 필요할 수 있습니다."
+msgid ""
+"Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may "
+"require superuser privileges (eg. root)."
+msgstr ""
+"절대 경로 '%(prog)s' 은(는) '%(path)s/%(prog)s'를 지칭하기 때문에 실행하려면 "
+"슈퍼유저(root 등) 권한이 필요할 수 있습니다."
 
-#: handlers/bin/command-not-found:30
+#: handlers/bin/command-not-found:49
 #, python-format
-msgid "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH variable to see whether it contains the mentioned path."
-msgstr "절대 경로 '%(prog)s' 은(는) '%(path)s/%(prog)s'를 지칭합니다. 왼쪽에 쓴 경로가 사용자의 $PATH 변수에 포함되어 있는지 확인하세요."
+msgid ""
+"Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH "
+"variable to see whether it contains the mentioned path."
+msgstr ""
+"절대 경로 '%(prog)s' 은(는) '%(path)s/%(prog)s'를 지칭합니다. 왼쪽에 쓴 경로"
+"가 사용자의 $PATH 변수에 포함되어 있는지 확인하세요."
 
-#: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
-#, python-format
+#: handlers/bin/command-not-found:83 handlers/bin/command-not-found:84
 msgid "searching ..."
 msgstr "검색 중..."
 
-#: handlers/bin/command-not-found:87
-#, python-format
+#: handlers/bin/command-not-found:111
 msgid "command not found"
 msgstr "명령을 찾을 수 없음"
+
+#: handlers/bin/command_not_found_bash:11
+#: handlers/bin/command_not_found_bash:18
+msgid "$1: command not found"
+msgstr "$1: 명령을 찾을 수 없음"
+
+#: handlers/bin/command_not_found_bash:25
+msgid ""
+"Absolute path to '$1' is '$prefix/sbin/$1', so running it may require "
+"superuser privileges (eg. root)."
+msgstr ""
+"절대 경로 '$1' 은(는) '$prefix/sbin/$1'를 지칭하기 때문에 실행하려면 슈퍼유저"
+"(root 등) 권한이 필요할 수 있습니다."
+
+#: handlers/bin/command_not_found_bash:34
+msgid ""
+"If '$1' is not a typo you can use command-not-found to lookup the package "
+"that contains it, like this:\n"
+"    cnf $1"
+msgstr ""
+"'$1'이 입력 실수가 아니라면 다음과 같이 command-not-found를 이용하여 꾸러미"
+"를 검색할 수 있습니다:\n"
+"    cnf $1"
+
+#: handlers/python/python_import_error_handler:7
+msgid "Usage ${0} python_module"
+msgstr ""
+
+#: handlers/python/python_import_error_handler:24
+msgid "No package was found by scout"
+msgstr ""
+
+#: handlers/python/python_import_error_handler:27
+#, sh-format
+msgid "The ${module_name} is in the package ${modules}. You can install it by:"
+msgstr ""
+
+#: handlers/python/python_import_error_handler:31
+msgid "The selected module was found in one of several packages:"
+msgstr ""
+
+#: handlers/python/python_import_error_handler:33
+msgid "one_of_the_packages"
+msgstr ""

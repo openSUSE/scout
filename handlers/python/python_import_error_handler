@@ -1,7 +1,10 @@
 #!/bin/bash
 
+export TEXTDOMAINDIR=/usr/share/locale
+export TEXTDOMAIN=command-not-found
+
 if [[ ${1} == "" ]]; then
-    echo "Usage ${0} python_module"
+    echo $"Usage ${0} python_module"
     exit 1
 fi
 
@@ -18,15 +21,16 @@ modules_cnt=$(echo ${modules} | wc -w)
 echo -e "\n"
 case ${modules_cnt} in
     0)
-    echo "No package was found by scout"
+    echo $"No package was found by scout"
     ;;
     1)
-    echo "The ${module_name} is in the package ${modules}. You can install it by:"
+    echo $"The ${module_name} is in the package ${modules}. You can install it by:"
     echo "sudo zypper install ${modules}"
     ;;
     *)
-    echo "The selected module was found in one of several packages:"
+    echo $"The selected module was found in one of several packages:"
     echo "${modules}"
-    echo "sudo zypper install <one_of_the_packages>"
+    tr=$"one_of_the_packages"
+    echo "sudo zypper install <$tr>"
     ;;
 esac

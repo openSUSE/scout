@@ -1,35 +1,28 @@
-#!/bin/sh
+#!/bin/bash
 
 # Usage:
 # ${1} : name of the package
-# ${2} : pattern for scout codes
 function refresh_po_files() {
+        local _lang _package
+        _package=${1}
+	shift
 
-        local _lang _package _pattern
-        _package = ${1}
-        _pattern = ${2}
-
-        # generate the scout.pot
-        xgettext --language=Python --keyword=_ --output=i18n/${_package}.pot ${_pattern}
-        # generate the scout.po
-        msgen i18n/${_package}.pot > i18n/${_package}.po
         # generate a new scout.po for all of langs
         #for dir in $(find i18n/ -maxdepth 1 -type 'd'); do
-        for dif in 'i18n/cs'; do
-            _lang=${dir##*/}
+        for _po in i18n/${_package}/*.po; do
+            _lang=${_po##*/}
+	    _lang=${_lang%.po}
             [[ -z ${_lang} ]] && continue;
-            msgmerge  i18n/${_lang}/LC_MESSAGES/${_package}.po i18n/${_package}.pot > ${_package}.${lang}.po
-            mv ${_package}.${lang}.po i18n/${lang}/LC_MESSAGES/${_package}.po
+            msgmerge --previous --lang=${_lang} ${_po} i18n/${_package}/${_package}.pot -o ${_package}.${_lang}.po
+            mv ${_package}.${_lang}.po ${_po}
         done
 }
 
-function refresh_mo_files() {
-        #for dir in $(find i18n/ -maxdepth 1 -type 'd'); do
-        for dif in 'i18n/cs'; do
-            lang=${dir##*/}
-            [[ -z ${lang} ]] && continue;
-            msgfmt -cv i18n/${lang}/LC_MESSAGES/${_package}.po -o i18n/${lang}/LC_MESSAGES/${_package}.mo
-        done
-}
-
-refresh_po_files
+xgettext --output=i18n/command-not-found/1.pot --language=Python handlers/bin/command-not-found 
+xgettext --output=i18n/command-not-found/2.pot --language=Shell handlers/bin/command_not_found_bash handlers/bin/command_not_found_zsh handlers/java/java-wrapper handlers/python/python_import_error_handler
+msgcat --use-first i18n/command-not-found/1.pot i18n/command-not-found/2.pot -o i18n/command-not-found/command-not-found.pot 
+refresh_po_files command-not-found
+rm i18n/command-not-found/1.pot
+rm i18n/command-not-found/2.pot
+xgettext --output=i18n/scout/scout.pot --language=Python scout/*.py
+refresh_po_files scout

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: command-not-found\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-23 15:20+0200\n"
+"POT-Creation-Date: 2018-10-02 16:11+0200\n"
 "PO-Revision-Date: 2010-04-09 23:20+0200\n"
 "Last-Translator: kalman <kkemenczy@gmail.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -17,12 +17,72 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Pootle 2.0.2\n"
 
-#: handlers/bin/command_not_found_bash:9
-#: handlers/bin/command_not_found_bash:17
+#: handlers/bin/command-not-found:17
+#, python-format
+msgid "The program '%(prog)s' can be found in the following package:"
+msgid_plural "The program '%(prog)s' can be found in following packages:"
+msgstr[0] "A(z) '%(prog)s' a következő csomagban található:"
+msgstr[1] "A(z) '%(prog)s' a következő csomagokban találhatók:"
+
+#: handlers/bin/command-not-found:22
+#, python-format
+msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
+msgstr ""
+"  * %(prog)s [ elérési út: %(path)s/%(binary)s, telepítési forrás: %(repo)s ]"
+
+#: handlers/bin/command-not-found:26
+msgid ""
+"Try installing with:\n"
+"   "
+msgstr ""
+"Telepítése ezzel:\n"
+"   "
+
+#: handlers/bin/command-not-found:31
+msgid "<selected_package>"
+msgstr "<kiválasztott_csomag>"
+
+#: handlers/bin/command-not-found:40
+#, python-format
+msgid ""
+"Program '%(prog)s' is present in package '%(pkg)s', which is installed on "
+"your system."
+msgstr ""
+"A(z) '%(prog)s' program a(z) '%(pkg)s' csomagban található, amely telepítve "
+"van a számítógépre."
+
+#: handlers/bin/command-not-found:45
+#, python-format
+msgid ""
+"Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may "
+"require superuser privileges (eg. root)."
+msgstr ""
+"A(z) '%(prog)s' parancs teljes elérési útja '%(path)s/%(prog)s', ezért a "
+"futtatáshoz adminisztrátori jogok szükségesek."
+
+#: handlers/bin/command-not-found:49
+#, python-format
+msgid ""
+"Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH "
+"variable to see whether it contains the mentioned path."
+msgstr ""
+"A(z) '%(prog)s' parancs teljes elérési útja '%(path)s/%(prog)s'. Ellenőrizze "
+"a $PATH változót, hogy megtalálható-e benne a megadott elérési útvonal."
+
+#: handlers/bin/command-not-found:83 handlers/bin/command-not-found:84
+msgid "searching ..."
+msgstr "keresés …"
+
+#: handlers/bin/command-not-found:111
+msgid "command not found"
+msgstr "a parancs nem található"
+
+#: handlers/bin/command_not_found_bash:11
+#: handlers/bin/command_not_found_bash:18
 msgid "$1: command not found"
 msgstr "$1: a parancs nem található"
 
-#: handlers/bin/command_not_found_bash:24
+#: handlers/bin/command_not_found_bash:25
 msgid ""
 "Absolute path to '$1' is '$prefix/sbin/$1', so running it may require "
 "superuser privileges (eg. root)."
@@ -30,7 +90,7 @@ msgstr ""
 "A(z) '$1' parancs teljes elérési útja '$prefix/sbin/$1', ezért a futtatáshoz "
 "adminisztrátori jogok szükségesek."
 
-#: handlers/bin/command_not_found_bash:32
+#: handlers/bin/command_not_found_bash:34
 msgid ""
 "If '$1' is not a typo you can use command-not-found to lookup the package "
 "that contains it, like this:\n"
@@ -41,60 +101,23 @@ msgstr ""
 "módon:\n"
 "    cnf $1"
 
-#: handlers/bin/command-not-found:8
-#, python-format
-msgid "The program '%(prog)s' can be found in the following package:"
-msgid_plural "The program '%(prog)s' can be found in following packages:"
-msgstr[0] "A(z) '%(prog)s' a következő csomagban található:"
-msgstr[1] "A(z) '%(prog)s' a következő csomagokban találhatók:"
-
-#: handlers/bin/command-not-found:11
-#, python-format
-msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
+#: handlers/python/python_import_error_handler:7
+msgid "Usage ${0} python_module"
 msgstr ""
-"  * %(prog)s [ elérési út: %(path)s/%(binary)s, telepítési forrás: %(repo)s ]"
 
-#: handlers/bin/command-not-found:14
-msgid "Try installing with:"
-msgstr "Telepítése ezzel:"
-
-#: handlers/bin/command-not-found:16
-msgid "<selected_package>"
-msgstr "<kiválasztott_csomag>"
-
-#: handlers/bin/command-not-found:24
-#, python-format
-msgid ""
-"Program '%(prog)s' is present in package '%(pkg)s', which is installed on "
-"your system."
+#: handlers/python/python_import_error_handler:24
+msgid "No package was found by scout"
 msgstr ""
-"A(z) '%(prog)s' program a(z) '%(pkg)s' csomagban található, amely telepítve "
-"van a számítógépre."
 
-#: handlers/bin/command-not-found:27
-#, python-format
-msgid ""
-"Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may "
-"require superuser privileges (eg. root)."
+#: handlers/python/python_import_error_handler:27
+#, sh-format
+msgid "The ${module_name} is in the package ${modules}. You can install it by:"
 msgstr ""
-"A(z) '%(prog)s' parancs teljes elérési útja '%(path)s/%(prog)s', ezért a "
-"futtatáshoz adminisztrátori jogok szükségesek."
 
-#: handlers/bin/command-not-found:30
-#, python-format
-msgid ""
-"Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH "
-"variable to see whether it contains the mentioned path."
+#: handlers/python/python_import_error_handler:31
+msgid "The selected module was found in one of several packages:"
 msgstr ""
-"A(z) '%(prog)s' parancs teljes elérési útja '%(path)s/%(prog)s'. Ellenőrizze "
-"a $PATH változót, hogy megtalálható-e benne a megadott elérési útvonal."
 
-#: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
-#, python-format
-msgid "searching ..."
-msgstr "keresés …"
-
-#: handlers/bin/command-not-found:87
-#, python-format
-msgid "command not found"
-msgstr "a parancs nem található"
+#: handlers/python/python_import_error_handler:33
+msgid "one_of_the_packages"
+msgstr ""

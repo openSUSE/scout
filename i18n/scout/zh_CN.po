@@ -8,11 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-28 11:42+0200\n"
+"POT-Creation-Date: 2018-10-02 16:11+0200\n"
 "PO-Revision-Date: 2016-06-06 11:05+0000\n"
 "Last-Translator: Marguerite Su <i@marguerite.su>\n"
-"Language-Team: Chinese (China) <https://l10n.opensuse.org/projects/scout"
-"/scout-master/zh_CN/>\n"
+"Language-Team: Chinese (China) <https://l10n.opensuse.org/projects/scout/"
+"scout-master/zh_CN/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,230 +20,214 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.6\n"
 
-#: scout/autoconf.py:9
+#: scout/autoconf.py:14
 msgid "Search for autoconf macros inside the m4 files."
 msgstr "在 m4 文件中搜索 autoconf 宏。"
 
-#: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
-#: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
-#: scout/webpin.py:50
+#: scout/autoconf.py:24 scout/bin.py:156 scout/header.py:22
+#: scout/__init__.py:933 scout/java.py:24 scout/library.py:22
+#: scout/webpin.py:56
 msgid "repo"
 msgstr "repo"
 
-#: scout/autoconf.py:13 scout/bin.py:107 scout/header.py:13
-#: scout/__init__.py:825 scout/java.py:13 scout/library.py:13
-#: scout/webpin.py:50
-#| msgid "package"
-#| msgid_plural "packages"
+#: scout/autoconf.py:24 scout/bin.py:156 scout/header.py:22
+#: scout/__init__.py:933 scout/java.py:24 scout/library.py:22
+#: scout/webpin.py:56
 msgid "pkg"
 msgstr "pkg"
 
-#: scout/autoconf.py:13
+#: scout/autoconf.py:24
 msgid "m4"
 msgstr "m4"
 
-#: scout/autoconf.py:13 scout/autoconf.py:14
+#: scout/autoconf.py:24 scout/autoconf.py:25
 msgid "macro"
 msgstr "宏"
 
-#: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
-#: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
-#| msgid "Enabled repository"
+#: scout/autoconf.py:25 scout/bin.py:157 scout/header.py:23
+#: scout/__init__.py:934 scout/java.py:25 scout/library.py:23
 msgid "repository"
 msgstr "软件源"
 
-#: scout/autoconf.py:14 scout/bin.py:108 scout/header.py:14
-#: scout/__init__.py:826 scout/java.py:14 scout/library.py:14
-#: scout/webpin.py:51
-#| msgid "package"
-#| msgid_plural "packages"
+#: scout/autoconf.py:25 scout/bin.py:157 scout/header.py:23
+#: scout/__init__.py:934 scout/java.py:25 scout/library.py:23
+#: scout/webpin.py:57
 msgid "package"
 msgstr "软件包"
 
-#: scout/autoconf.py:14
-#| msgid "No files"
+#: scout/autoconf.py:25
 msgid "m4 file"
 msgstr "m4 文件"
 
-#: scout/bin.py:62
+#: scout/bin.py:56
+msgid ""
+"\n"
+"Warning: no repos found - make sure your repositories are configured."
+msgstr ""
+
+#: scout/bin.py:59
+msgid ""
+"\n"
+"Warning: incomplete repos found but could not refresh - try to refresh "
+"manually, e.g. with 'zypper refresh'."
+msgstr ""
+
+#: scout/bin.py:102
 msgid "Search for binaries contained in the packages."
 msgstr "搜索软件包中收纳的可执行文件。"
 
-#: scout/bin.py:107 scout/bin.py:108
+#: scout/bin.py:156 scout/bin.py:157
 msgid "path"
 msgstr "路径"
 
-#: scout/bin.py:107
-#| msgid "bit"
+#: scout/bin.py:156
 msgid "bin"
 msgstr "bin"
 
-#: scout/bin.py:108
+#: scout/bin.py:158
 msgid "binary"
 msgstr "可执行文件"
 
-#: scout/foo.py:9
+#: scout/foo.py:14
 msgid "- template module -"
 msgstr "- 模板模块 -"
 
-#: scout/header.py:9
+#: scout/header.py:14
 msgid "Search for C/C++/Obj-C/Obj-C++ headers."
 msgstr "搜索 C/C++/Obj-C/Obj-C++ 头文件。"
 
-#: scout/header.py:13 scout/header.py:14
+#: scout/header.py:22 scout/header.py:23
 msgid "header"
 msgstr "头文件"
 
-#: scout/__init__.py:148
-#| msgid "Don't show this message again."
+#: scout/__init__.py:166
 msgid "show this help message and exit"
 msgstr "显示此帮助并退出"
 
-#: scout/__init__.py:155
-#| msgid "Show the program version and exit"
+#: scout/__init__.py:173
 msgid "show program's version number and exit"
 msgstr "显示程序版本并退出"
 
-#: scout/__init__.py:198
+#: scout/__init__.py:217
 msgid "Usage: %prog [global_opts] module [local_opts] search_term"
 msgstr "用法：%prog [全局选项] 模块 [局部选项] 搜索条件"
 
-#: scout/__init__.py:205
-#, python-format
-msgid "select the output format (default %s)"
+#: scout/__init__.py:225
+#, fuzzy, python-format
+#| msgid "select the output format (default %s)"
+msgid "select the output format (%s, default is %s)"
 msgstr "选择输出格式 (默认 %s)"
 
-#: scout/__init__.py:212
-#| msgid "scdb not available"
+#: scout/__init__.py:234
 msgid "list of available modules"
 msgstr "可用模块列表"
 
-#: scout/__init__.py:228
-#| msgid "Available profiles"
+#: scout/__init__.py:250
 msgid "Available modules:\n"
 msgstr "可用模块：\n"
 
-#: scout/__init__.py:279
+#: scout/__init__.py:309
 #, python-format
 msgid "The name of module is mandatory. Use %s --help"
 msgstr "模块名称是必需的。请使用 %s --help"
 
-#: scout/__init__.py:366
+#: scout/__init__.py:403
 #, python-format
-#| msgid "%1 is not a directory."
 msgid "%s is not a directory"
 msgstr "%s 不是一个文件夹"
 
-#: scout/__init__.py:425
+#: scout/__init__.py:462
 #, python-format
-#| msgid "Cannot open file '%1'."
 msgid "Cannot not open database file '%s'"
 msgstr "无法打开数据库文件 '%s'"
 
-#: scout/__init__.py:699
-#| msgid "Specified repositories: "
+#: scout/__init__.py:785
 msgid "Available repositories:\n"
 msgstr "可用软件源：\n"
 
-#: scout/__init__.py:731
+#: scout/__init__.py:821
 #, python-format
 msgid "Usage: %%prog %s [options] search_term"
 msgstr "用法：%%prog %s [选项] 搜索条件"
 
-#: scout/__init__.py:733
-#| msgid "Got list of repositories"
+#: scout/__init__.py:826
 msgid "list available repositories"
 msgstr "列出可用软件源"
 
-#: scout/__init__.py:734
-#| msgid "Searched for package name"
+#: scout/__init__.py:831
 msgid "inverse search by package name"
 msgstr "通过软件包名称逆向搜索"
 
-#: scout/__init__.py:735
-#| msgid "Set repository data"
+#: scout/__init__.py:836
 msgid "select repository to search"
 msgstr "选择要搜索的软件源"
 
-#: scout/__init__.py:781
-#| msgid "No repository found."
+#: scout/__init__.py:887
 msgid "No repositories found ..."
 msgstr "未发现软件源 ..."
 
-#: scout/__init__.py:825 scout/__init__.py:826
-#| msgid "Modules"
+#: scout/__init__.py:933 scout/__init__.py:934
 msgid "module"
 msgstr "模块"
 
-#: scout/__init__.py:953
+#: scout/__init__.py:1078
 #, python-format
-#| msgid "Cannot find the master ypserver: %s"
 msgid "Cannot find a formatter for a %s"
 msgstr "无法找到针对 %s 的格式化程序"
 
-#: scout/java.py:9
+#: scout/java.py:14
 msgid "Search for java classes inside the JAR files."
 msgstr "搜索 JAR 文件中的 java 类。"
 
-#: scout/java.py:13 scout/java.py:14
-#| msgid "Far"
+#: scout/java.py:24 scout/java.py:25
 msgid "jar"
 msgstr "jar"
 
-#: scout/java.py:13 scout/java.py:14
+#: scout/java.py:24 scout/java.py:25
 msgid "class"
 msgstr "类"
 
-#: scout/library.py:9
-#| msgid "Searched for package name"
+#: scout/library.py:14
 msgid "Search for shared libraries."
 msgstr "搜索共享库。"
 
-#: scout/library.py:13 scout/library.py:14
-#| msgid "Gibraltar"
+#: scout/library.py:22 scout/library.py:23
 msgid "library"
 msgstr "函数库"
 
-#: scout/python.py:9
-#| msgid "Searching for info file..."
+#: scout/python.py:14
 msgid "Search for python modules."
 msgstr "搜索 python 模块。"
 
-#: scout/webpin.py:13
+#: scout/webpin.py:18
 msgid "Search in packages using the webpin webservice."
 msgstr "使用 webpin 网络服务搜索软件包。"
 
-#: scout/webpin.py:45
+#: scout/webpin.py:51
 #, python-format
 msgid "Cannot retrieve query results ... %s"
 msgstr "无法撷取查询结果 ... %s"
 
-#: scout/webpin.py:50
-#| msgid "Never"
+#: scout/webpin.py:56
 msgid "ver"
 msgstr "ver"
 
-#: scout/webpin.py:50 scout/webpin.py:51
-#| msgid "Search"
+#: scout/webpin.py:56 scout/webpin.py:57
 msgid "arch"
 msgstr "arch"
 
-#: scout/webpin.py:50
-#| msgid "No files"
+#: scout/webpin.py:56
 msgid "files"
 msgstr "files"
 
-#: scout/webpin.py:51
-#| msgid "Version"
+#: scout/webpin.py:57
 msgid "version"
 msgstr "版本"
 
-#: scout/webpin.py:51
-#| msgid "Set repository data"
+#: scout/webpin.py:58
 msgid "repository URL"
 msgstr "软件源 URL"
 
-#: scout/webpin.py:51
-#| msgid "Searched for file"
+#: scout/webpin.py:58
 msgid "matched files"
 msgstr "匹配文件"
