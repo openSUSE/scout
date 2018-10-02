@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: autoinst.fi\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-23 15:20+0200\n"
+"POT-Creation-Date: 2018-10-02 16:11+0200\n"
 "PO-Revision-Date: 2003-09-22 13:26+0200\n"
 "Last-Translator: Ain Vagula <avagula@gmail.com>\n"
 "Language-Team: Estonian <et@li.org>\n"
@@ -12,72 +12,97 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: handlers/bin/command_not_found_bash:9
-#: handlers/bin/command_not_found_bash:17
-#, fuzzy
-msgid "$1: command not found"
-msgstr "Tundmatu käsu säte"
-
-#: handlers/bin/command_not_found_bash:24
-msgid ""
-"Absolute path to '$1' is '$prefix/sbin/$1', so running it may require "
-"superuser privileges (eg. root)."
-msgstr ""
-
-#: handlers/bin/command_not_found_bash:32
-msgid ""
-"If '$1' is not a typo you can use command-not-found to lookup the package "
-"that contains it, like this:\n"
-"    cnf $1"
-msgstr ""
-
-#: handlers/bin/command-not-found:8
+#: handlers/bin/command-not-found:17
 #, python-format
 msgid "The program '%(prog)s' can be found in the following package:"
 msgid_plural "The program '%(prog)s' can be found in following packages:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: handlers/bin/command-not-found:11
+#: handlers/bin/command-not-found:22
 #, python-format
 msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
 msgstr ""
 
-#: handlers/bin/command-not-found:14
-msgid "Try installing with:"
+#: handlers/bin/command-not-found:26
+msgid ""
+"Try installing with:\n"
+"   "
 msgstr ""
+"\n"
+"   "
 
-#: handlers/bin/command-not-found:16
+#: handlers/bin/command-not-found:31
 msgid "<selected_package>"
 msgstr ""
 
-#: handlers/bin/command-not-found:24
+#: handlers/bin/command-not-found:40
 #, python-format
 msgid ""
 "Program '%(prog)s' is present in package '%(pkg)s', which is installed on "
 "your system."
 msgstr ""
 
-#: handlers/bin/command-not-found:27
+#: handlers/bin/command-not-found:45
 #, python-format
 msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may "
 "require superuser privileges (eg. root)."
 msgstr ""
 
-#: handlers/bin/command-not-found:30
+#: handlers/bin/command-not-found:49
 #, python-format
 msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH "
 "variable to see whether it contains the mentioned path."
 msgstr ""
 
-#: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
-#, fuzzy, python-format
+#: handlers/bin/command-not-found:83 handlers/bin/command-not-found:84
+#, fuzzy
 msgid "searching ..."
 msgstr "Tõmmise \"%s\" otsimine..."
 
-#: handlers/bin/command-not-found:87
-#, fuzzy, python-format
+#: handlers/bin/command-not-found:111
+#, fuzzy
 msgid "command not found"
 msgstr "Masinat %s ei leitud."
+
+#: handlers/bin/command_not_found_bash:11
+#: handlers/bin/command_not_found_bash:18
+#, fuzzy
+msgid "$1: command not found"
+msgstr "Tundmatu käsu säte"
+
+#: handlers/bin/command_not_found_bash:25
+msgid ""
+"Absolute path to '$1' is '$prefix/sbin/$1', so running it may require "
+"superuser privileges (eg. root)."
+msgstr ""
+
+#: handlers/bin/command_not_found_bash:34
+msgid ""
+"If '$1' is not a typo you can use command-not-found to lookup the package "
+"that contains it, like this:\n"
+"    cnf $1"
+msgstr ""
+
+#: handlers/python/python_import_error_handler:7
+msgid "Usage ${0} python_module"
+msgstr ""
+
+#: handlers/python/python_import_error_handler:24
+msgid "No package was found by scout"
+msgstr ""
+
+#: handlers/python/python_import_error_handler:27
+#, sh-format
+msgid "The ${module_name} is in the package ${modules}. You can install it by:"
+msgstr ""
+
+#: handlers/python/python_import_error_handler:31
+msgid "The selected module was found in one of several packages:"
+msgstr ""
+
+#: handlers/python/python_import_error_handler:33
+msgid "one_of_the_packages"
+msgstr ""

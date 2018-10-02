@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: command-not-found\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-23 15:20+0200\n"
+"POT-Creation-Date: 2018-10-02 16:11+0200\n"
 "PO-Revision-Date: 2011-06-22 19:50-0300\n"
 "Last-Translator: Isis Binder <isis.binder@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <opensuse-pt@opensuse.org>\n"
@@ -22,64 +22,107 @@ msgstr ""
 "X-Poedit-Country: BRAZIL\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: handlers/bin/command_not_found_bash:9
-#: handlers/bin/command_not_found_bash:17
-msgid "$1: command not found"
-msgstr "$1: comando não encontrado"
-
-#: handlers/bin/command_not_found_bash:24
-msgid "Absolute path to '$1' is '$prefix/sbin/$1', so running it may require superuser privileges (eg. root)."
-msgstr "O caminho absoluto para '$1' é '$prefix/sbin/$1', então, para executá-lo pode ser necessário possuir privilégios de superusuário (ex.: root)."
-
-#: handlers/bin/command_not_found_bash:32
-msgid ""
-"If '$1' is not a typo you can use command-not-found to lookup the package that contains it, like this:\n"
-"    cnf $1"
-msgstr ""
-"Se '$1' não for um erro de digitação, você pode usar o command-not-found para pesquisar o pacote que o contém, deste modo:\n"
-"    cnf $1"
-
-#: handlers/bin/command-not-found:8
+#: handlers/bin/command-not-found:17
 #, python-format
 msgid "The program '%(prog)s' can be found in the following package:"
 msgid_plural "The program '%(prog)s' can be found in following packages:"
 msgstr[0] "O programa '%(prog)s' pode ser encontrado no seguinte pacote:"
 msgstr[1] "O programa '%(prog)s' pode ser encontrado nos seguintes pacotes:"
 
-#: handlers/bin/command-not-found:11
+#: handlers/bin/command-not-found:22
 #, python-format
 msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
 msgstr "  * %(prog)s [ caminho: %(path)s/%(binary)s, repositório: %(repo)s ]"
 
-#: handlers/bin/command-not-found:14
-msgid "Try installing with:"
-msgstr "Tente instalar com:"
+#: handlers/bin/command-not-found:26
+msgid ""
+"Try installing with:\n"
+"   "
+msgstr ""
+"Tente instalar com:\n"
+"   "
 
-#: handlers/bin/command-not-found:16
+#: handlers/bin/command-not-found:31
 msgid "<selected_package>"
 msgstr "<pacote_selecionado>"
 
-#: handlers/bin/command-not-found:24
+#: handlers/bin/command-not-found:40
 #, python-format
-msgid "Program '%(prog)s' is present in package '%(pkg)s', which is installed on your system."
-msgstr "O programa '%(prog)s' está presente no pacote '%(pkg)s', que está instalado em seu sistema."
+msgid ""
+"Program '%(prog)s' is present in package '%(pkg)s', which is installed on "
+"your system."
+msgstr ""
+"O programa '%(prog)s' está presente no pacote '%(pkg)s', que está instalado "
+"em seu sistema."
 
-#: handlers/bin/command-not-found:27
+#: handlers/bin/command-not-found:45
 #, python-format
-msgid "Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may require superuser privileges (eg. root)."
-msgstr "O caminho absoluto para '%(prog)s' é '%(path)s/%(prog)s', então, para executá-lo pode ser necessário possuir privilégios de superusuário (ex.: root)."
+msgid ""
+"Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may "
+"require superuser privileges (eg. root)."
+msgstr ""
+"O caminho absoluto para '%(prog)s' é '%(path)s/%(prog)s', então, para "
+"executá-lo pode ser necessário possuir privilégios de superusuário (ex.: "
+"root)."
 
-#: handlers/bin/command-not-found:30
+#: handlers/bin/command-not-found:49
 #, python-format
-msgid "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH variable to see whether it contains the mentioned path."
-msgstr "O caminho absoluto para '%(prog)s' é '%(path)s/%(prog)s'. Por favor, verifique sua variável de ambiente $PATH para ver se ela contém o caminho mencionado."
+msgid ""
+"Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH "
+"variable to see whether it contains the mentioned path."
+msgstr ""
+"O caminho absoluto para '%(prog)s' é '%(path)s/%(prog)s'. Por favor, "
+"verifique sua variável de ambiente $PATH para ver se ela contém o caminho "
+"mencionado."
 
-#: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
-#, python-format
+#: handlers/bin/command-not-found:83 handlers/bin/command-not-found:84
 msgid "searching ..."
 msgstr "pesquisando..."
 
-#: handlers/bin/command-not-found:87
-#, python-format
+#: handlers/bin/command-not-found:111
 msgid "command not found"
 msgstr "comando não encontrado"
+
+#: handlers/bin/command_not_found_bash:11
+#: handlers/bin/command_not_found_bash:18
+msgid "$1: command not found"
+msgstr "$1: comando não encontrado"
+
+#: handlers/bin/command_not_found_bash:25
+msgid ""
+"Absolute path to '$1' is '$prefix/sbin/$1', so running it may require "
+"superuser privileges (eg. root)."
+msgstr ""
+"O caminho absoluto para '$1' é '$prefix/sbin/$1', então, para executá-lo "
+"pode ser necessário possuir privilégios de superusuário (ex.: root)."
+
+#: handlers/bin/command_not_found_bash:34
+msgid ""
+"If '$1' is not a typo you can use command-not-found to lookup the package "
+"that contains it, like this:\n"
+"    cnf $1"
+msgstr ""
+"Se '$1' não for um erro de digitação, você pode usar o command-not-found "
+"para pesquisar o pacote que o contém, deste modo:\n"
+"    cnf $1"
+
+#: handlers/python/python_import_error_handler:7
+msgid "Usage ${0} python_module"
+msgstr ""
+
+#: handlers/python/python_import_error_handler:24
+msgid "No package was found by scout"
+msgstr ""
+
+#: handlers/python/python_import_error_handler:27
+#, sh-format
+msgid "The ${module_name} is in the package ${modules}. You can install it by:"
+msgstr ""
+
+#: handlers/python/python_import_error_handler:31
+msgid "The selected module was found in one of several packages:"
+msgstr ""
+
+#: handlers/python/python_import_error_handler:33
+msgid "one_of_the_packages"
+msgstr ""

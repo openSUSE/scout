@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: command-not-found.uk\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-23 15:20+0200\n"
+"POT-Creation-Date: 2018-10-02 16:11+0200\n"
 "PO-Revision-Date: 2009-09-17 22:46-0700\n"
 "Last-Translator: Ivan Petrouchtchak <fr.ivan@ukrainian-orthodox.org>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -18,26 +18,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: handlers/bin/command_not_found_bash:9
-#: handlers/bin/command_not_found_bash:17
-msgid "$1: command not found"
-msgstr "$1: команди не знайдено"
-
-#: handlers/bin/command_not_found_bash:24
-msgid "Absolute path to '$1' is '$prefix/sbin/$1', so running it may require superuser privileges (eg. root)."
-msgstr "Абсолютний шлях до '$1' — '$prefix/sbin/$1', це може вимагати привілеїв суперкористувача (напр., root)."
-
-#: handlers/bin/command_not_found_bash:32
-msgid ""
-"If '$1' is not a typo you can use command-not-found to lookup the package that contains it, like this:\n"
-"    cnf $1"
-msgstr ""
-"Якщо '$1' не має помилок у назві, то можете скористатись пошуком не-знайдених команд, щоб знайти пакунок, який її містить:\n"
-"    cnf $1"
-
-#: handlers/bin/command-not-found:8
+#: handlers/bin/command-not-found:17
 #, python-format
 msgid "The program '%(prog)s' can be found in the following package:"
 msgid_plural "The program '%(prog)s' can be found in following packages:"
@@ -45,40 +29,98 @@ msgstr[0] "Програму '%(prog)s' можна знайти в наступн
 msgstr[1] "Програму '%(prog)s' можна знайти в наступних пакунках:"
 msgstr[2] "Програму '%(prog)s' можна знайти в наступних пакунках:"
 
-#: handlers/bin/command-not-found:11
+#: handlers/bin/command-not-found:22
 #, python-format
 msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
 msgstr "  * %(prog)s [ шлях: %(path)s/%(binary)s, сховище: %(repo)s ]"
 
-#: handlers/bin/command-not-found:14
-msgid "Try installing with:"
-msgstr "Спробуйте встановити з:"
+#: handlers/bin/command-not-found:26
+msgid ""
+"Try installing with:\n"
+"   "
+msgstr ""
+"Спробуйте встановити з:\n"
+"   "
 
-#: handlers/bin/command-not-found:16
+#: handlers/bin/command-not-found:31
 msgid "<selected_package>"
 msgstr "<вибраний_пакунок>"
 
-#: handlers/bin/command-not-found:24
+#: handlers/bin/command-not-found:40
 #, python-format
-msgid "Program '%(prog)s' is present in package '%(pkg)s', which is installed on your system."
-msgstr "Програма '%(prog)s' міститься в пакунку '%(pkg)s', який вже встановлено у вашій системі."
+msgid ""
+"Program '%(prog)s' is present in package '%(pkg)s', which is installed on "
+"your system."
+msgstr ""
+"Програма '%(prog)s' міститься в пакунку '%(pkg)s', який вже встановлено у "
+"вашій системі."
 
-#: handlers/bin/command-not-found:27
+#: handlers/bin/command-not-found:45
 #, python-format
-msgid "Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may require superuser privileges (eg. root)."
-msgstr "Абсолютний шлях до '%(prog)s' — '%(path)s/%(prog)s', тому може вимагати привілеїв суперкористувача (напр., root)."
+msgid ""
+"Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may "
+"require superuser privileges (eg. root)."
+msgstr ""
+"Абсолютний шлях до '%(prog)s' — '%(path)s/%(prog)s', тому може вимагати "
+"привілеїв суперкористувача (напр., root)."
 
-#: handlers/bin/command-not-found:30
+#: handlers/bin/command-not-found:49
 #, python-format
-msgid "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH variable to see whether it contains the mentioned path."
-msgstr "Абсолютний шлях до '%(prog)s' — '%(path)s/%(prog)s'. Перевірте вашу змінну $PATH чи вона містить цей шлях."
+msgid ""
+"Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH "
+"variable to see whether it contains the mentioned path."
+msgstr ""
+"Абсолютний шлях до '%(prog)s' — '%(path)s/%(prog)s'. Перевірте вашу змінну "
+"$PATH чи вона містить цей шлях."
 
-#: handlers/bin/command-not-found:59 handlers/bin/command-not-found:60
-#, python-format
+#: handlers/bin/command-not-found:83 handlers/bin/command-not-found:84
 msgid "searching ..."
 msgstr "пошук..."
 
-#: handlers/bin/command-not-found:87
-#, python-format
+#: handlers/bin/command-not-found:111
 msgid "command not found"
 msgstr "команди не знайдено"
+
+#: handlers/bin/command_not_found_bash:11
+#: handlers/bin/command_not_found_bash:18
+msgid "$1: command not found"
+msgstr "$1: команди не знайдено"
+
+#: handlers/bin/command_not_found_bash:25
+msgid ""
+"Absolute path to '$1' is '$prefix/sbin/$1', so running it may require "
+"superuser privileges (eg. root)."
+msgstr ""
+"Абсолютний шлях до '$1' — '$prefix/sbin/$1', це може вимагати привілеїв "
+"суперкористувача (напр., root)."
+
+#: handlers/bin/command_not_found_bash:34
+msgid ""
+"If '$1' is not a typo you can use command-not-found to lookup the package "
+"that contains it, like this:\n"
+"    cnf $1"
+msgstr ""
+"Якщо '$1' не має помилок у назві, то можете скористатись пошуком не-"
+"знайдених команд, щоб знайти пакунок, який її містить:\n"
+"    cnf $1"
+
+#: handlers/python/python_import_error_handler:7
+msgid "Usage ${0} python_module"
+msgstr ""
+
+#: handlers/python/python_import_error_handler:24
+msgid "No package was found by scout"
+msgstr ""
+
+#: handlers/python/python_import_error_handler:27
+#, sh-format
+msgid "The ${module_name} is in the package ${modules}. You can install it by:"
+msgstr ""
+
+#: handlers/python/python_import_error_handler:31
+msgid "The selected module was found in one of several packages:"
+msgstr ""
+
+#: handlers/python/python_import_error_handler:33
+msgid "one_of_the_packages"
+msgstr ""
