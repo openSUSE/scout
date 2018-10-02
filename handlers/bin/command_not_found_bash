@@ -15,7 +15,7 @@ command_not_found_handle() {
     # do not run when within a subshell
     read pid cmd state ppid pgrp session tty_nr tpgid rest  < /proc/self/stat
     if test $$ -eq $tpgid ; then
-        echo "$1: command not found" >&2
+        echo $"$1: command not found" >&2
         return 127
     fi
 
