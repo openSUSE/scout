@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: command-not-found.nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-02 16:11+0200\n"
-"PO-Revision-Date: 2018-02-08 16:01+0000\n"
-"Last-Translator: Eva van Rein <vistatec@globaltextware.nl>\n"
+"PO-Revision-Date: 2018-10-02 22:39+0000\n"
+"Last-Translator: Freek de Kruijf <freek@opensuse.org>\n"
 "Language-Team: Dutch <https://l10n.opensuse.org/projects/scout/command-not-"
 "found-master/nl/>\n"
 "Language: nl\n"
@@ -107,21 +107,22 @@ msgstr ""
 
 #: handlers/python/python_import_error_handler:7
 msgid "Usage ${0} python_module"
-msgstr ""
+msgstr "Gebruik ${0} python_module"
 
 #: handlers/python/python_import_error_handler:24
 msgid "No package was found by scout"
-msgstr ""
+msgstr "Geen pakket gevonden door scout"
 
 #: handlers/python/python_import_error_handler:27
 #, sh-format
 msgid "The ${module_name} is in the package ${modules}. You can install it by:"
 msgstr ""
+"De ${module_name} is in het pakket ${modules}. U kunt het installeren met:"
 
 #: handlers/python/python_import_error_handler:31
 msgid "The selected module was found in one of several packages:"
-msgstr ""
+msgstr "De geselecteerde module is gevonden in een van verscheidene pakketten:"
 
 #: handlers/python/python_import_error_handler:33
 msgid "one_of_the_packages"
-msgstr ""
+msgstr "een_van_de_pakketten"
