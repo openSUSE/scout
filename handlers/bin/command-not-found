@@ -10,6 +10,9 @@ EX_NOTFOUND = 127
 SUDO_CMD = 'sudo'
 INSTALL_CMD = 'zypper install'
 
+gettext.bindtextdomain('command-not-found', localedir='/usr/share/locale')
+gettext.textdomain(domain='command-not-found')
+
 
 def print_found(rows):
     print(file=sys.stderr)
