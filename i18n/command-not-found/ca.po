@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-02 16:11+0200\n"
-"PO-Revision-Date: 2018-10-03 15:01+0000\n"
+"PO-Revision-Date: 2018-10-03 18:00+0000\n"
 "Last-Translator: David Medina <medipas@gmail.com>\n"
 "Language-Team: Catalan <https://l10n.opensuse.org/projects/scout/command-not-"
 "found-master/ca/>\n"
@@ -98,7 +98,7 @@ msgstr ""
 
 #: handlers/python/python_import_error_handler:7
 msgid "Usage ${0} python_module"
-msgstr "Ús ${0} mòdul_python"
+msgstr "Ús ${0} python_module"
 
 #: handlers/python/python_import_error_handler:24
 msgid "No package was found by scout"
