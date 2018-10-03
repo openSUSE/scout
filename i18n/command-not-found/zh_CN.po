@@ -9,21 +9,22 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-02 16:11+0200\n"
-"PO-Revision-Date: 2012-09-14 08:00+0800\n"
-"Last-Translator: Marguerite Su\n"
-"Language-Team: Chinese Traditional <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2018-10-03 07:01+0000\n"
+"Last-Translator: Marguerite Su <i@marguerite.su>\n"
+"Language-Team: Chinese (China) <https://l10n.opensuse.org/projects/scout"
+"/command-not-found-master/zh_CN/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.5\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.18\n"
 
 #: handlers/bin/command-not-found:17
 #, python-format
 msgid "The program '%(prog)s' can be found in the following package:"
 msgid_plural "The program '%(prog)s' can be found in following packages:"
-msgstr[0] "程序 '%(prog)s' 在如下软件包中被找到："
+msgstr[0] "程序 '%(prog)s' 可在以下软件包中找到："
 
 #: handlers/bin/command-not-found:22
 #, python-format
@@ -35,19 +36,19 @@ msgid ""
 "Try installing with:\n"
 "   "
 msgstr ""
-"尝试通过下面程序安装：\n"
+"试着使用下面命令安装：\n"
 "   "
 
 #: handlers/bin/command-not-found:31
 msgid "<selected_package>"
-msgstr "<选取的软件包>"
+msgstr "<所选软件包>"
 
 #: handlers/bin/command-not-found:40
 #, python-format
 msgid ""
 "Program '%(prog)s' is present in package '%(pkg)s', which is installed on "
 "your system."
-msgstr "程序 '%(prog)s' 由软件包 '%(pkg)s' 提供，该软件包已安装在您的系统上。"
+msgstr "程序 '%(prog)s' 在软件包 '%(pkg)s' 中，该包在您的系统上已安装。"
 
 #: handlers/bin/command-not-found:45
 #, python-format
@@ -94,27 +95,26 @@ msgid ""
 "that contains it, like this:\n"
 "    cnf $1"
 msgstr ""
-"如果 '$1' 不是输入错误的话，你可以使用 command-not-found 命令来查找提供它的软"
-"件包，就像这样：\n"
+"如果 '$1' 不是输入错误的话，你可以使用 command-not-found 命令来查找它在哪个软件包中，就像这样：\n"
 "    cnf $1"
 
 #: handlers/python/python_import_error_handler:7
 msgid "Usage ${0} python_module"
-msgstr ""
+msgstr "用法 ${0} python_module"
 
 #: handlers/python/python_import_error_handler:24
 msgid "No package was found by scout"
-msgstr ""
+msgstr "scout 未找到软件包"
 
 #: handlers/python/python_import_error_handler:27
 #, sh-format
 msgid "The ${module_name} is in the package ${modules}. You can install it by:"
-msgstr ""
+msgstr "${module_name} 在软件包 ${modules} 中。您可以这样安装它："
 
 #: handlers/python/python_import_error_handler:31
 msgid "The selected module was found in one of several packages:"
-msgstr ""
+msgstr "所选模块在这些软件包中找到了："
 
 #: handlers/python/python_import_error_handler:33
 msgid "one_of_the_packages"
-msgstr ""
+msgstr "软件包之一"
