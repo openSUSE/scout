@@ -3,15 +3,16 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-02 16:11+0200\n"
-"PO-Revision-Date: 2014-07-31 19:08+0100\n"
-"Last-Translator: David Medina <opensusecatala@gmail.com>\n"
-"Language-Team: Catalan\n"
+"PO-Revision-Date: 2018-10-03 15:01+0000\n"
+"Last-Translator: David Medina <medipas@gmail.com>\n"
+"Language-Team: Catalan <https://l10n.opensuse.org/projects/scout/command-not-"
+"found-master/ca/>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.5.7\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.18\n"
 
 #: handlers/bin/command-not-found:17
 #, python-format
@@ -97,21 +98,23 @@ msgstr ""
 
 #: handlers/python/python_import_error_handler:7
 msgid "Usage ${0} python_module"
-msgstr ""
+msgstr "Ús ${0} mòdul_python"
 
 #: handlers/python/python_import_error_handler:24
 msgid "No package was found by scout"
-msgstr ""
+msgstr "L'Scout no ha trobat cap paquet."
 
 #: handlers/python/python_import_error_handler:27
 #, sh-format
 msgid "The ${module_name} is in the package ${modules}. You can install it by:"
 msgstr ""
+"El mòdul ${module_name} és al paquet ${modules}. El podeu instal·lar amb el "
+"següent:"
 
 #: handlers/python/python_import_error_handler:31
 msgid "The selected module was found in one of several packages:"
-msgstr ""
+msgstr "El mòdul seleccionat s'ha trobat en un dels diversos paquets:"
 
 #: handlers/python/python_import_error_handler:33
 msgid "one_of_the_packages"
-msgstr ""
+msgstr "un_dels_paquets"
