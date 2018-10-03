@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-02 16:11+0200\n"
-"PO-Revision-Date: 2016-06-06 11:05+0000\n"
+"PO-Revision-Date: 2018-10-03 03:04+0000\n"
 "Last-Translator: Marguerite Su <i@marguerite.su>\n"
-"Language-Team: Chinese (China) <https://l10n.opensuse.org/projects/scout/"
-"scout-master/zh_CN/>\n"
+"Language-Team: Chinese (China) <https://l10n.opensuse.org/projects/scout"
+"/scout-master/zh_CN/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.6\n"
+"X-Generator: Weblate 2.18\n"
 
 #: scout/autoconf.py:14
 msgid "Search for autoconf macros inside the m4 files."
@@ -64,6 +64,8 @@ msgid ""
 "\n"
 "Warning: no repos found - make sure your repositories are configured."
 msgstr ""
+"\n"
+"警告：未发现源 - 请确保您配置了源。"
 
 #: scout/bin.py:59
 msgid ""
@@ -71,6 +73,8 @@ msgid ""
 "Warning: incomplete repos found but could not refresh - try to refresh "
 "manually, e.g. with 'zypper refresh'."
 msgstr ""
+"\n"
+"警告：找到了不完整的源但无法刷新之 - 请尝试手动刷新，例如使用 'zypper refresh'。"
 
 #: scout/bin.py:102
 msgid "Search for binaries contained in the packages."
@@ -113,10 +117,9 @@ msgid "Usage: %prog [global_opts] module [local_opts] search_term"
 msgstr "用法：%prog [全局选项] 模块 [局部选项] 搜索条件"
 
 #: scout/__init__.py:225
-#, fuzzy, python-format
-#| msgid "select the output format (default %s)"
+#, python-format
 msgid "select the output format (%s, default is %s)"
-msgstr "选择输出格式 (默认 %s)"
+msgstr "选择输出格式 (%s，默认 %s)"
 
 #: scout/__init__.py:234
 msgid "list of available modules"
