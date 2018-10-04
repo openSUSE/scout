@@ -92,10 +92,10 @@ class DefaultLang(object):
         return self
 
     def gettext(self, msg):
-        return self._trans.ugettext(msg)
+        return self._trans.gettext(msg)
 
     def ngettext(self, singluar, plural, n):
-        return self._trans.ungettext(singluar, plural, n)
+        return self._trans.ngettext(singluar, plural, n)
 
     def __str__(self):
         return '%s {textdomain: %s}' % (self.__class__,
