@@ -9,16 +9,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: command-not-found\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2009-09-18 17:16+0800\n"
-"Last-Translator: swyear <swyear@gmail.com>\n"
-"Language-Team: Chinese Traditional <zh@li.org>\n"
+"POT-Creation-Date: 2018-10-05 16:11+0200\n"
+"PO-Revision-Date: 2018-10-05 13:11+0000\n"
+"Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
+"Language-Team: Chinese (Taiwan) <https://l10n.opensuse.org/projects/scout/"
+"command-not-found-master/zh_TW/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.18\n"
 
 #: handlers/bin/command-not-found:20
 #, python-format
@@ -101,21 +102,21 @@ msgstr ""
 
 #: handlers/python/python_import_error_handler:7
 msgid "Usage ${0} python_module"
-msgstr ""
+msgstr "用法 ${0} python_module"
 
 #: handlers/python/python_import_error_handler:24
 msgid "No package was found by scout"
-msgstr ""
+msgstr "scout 未找到軟體包"
 
 #: handlers/python/python_import_error_handler:27
 #, sh-format
 msgid "The ${module_name} is in the package ${modules}. You can install it by:"
-msgstr ""
+msgstr "${module_name} 在 ${modules} 軟體包中，您可以透過這個方式安裝它："
 
 #: handlers/python/python_import_error_handler:31
 msgid "The selected module was found in one of several packages:"
-msgstr ""
+msgstr "選擇的模組在其中一個軟體包中找到了："
 
 #: handlers/python/python_import_error_handler:33
 msgid "one_of_the_packages"
-msgstr ""
+msgstr "軟體包之一"

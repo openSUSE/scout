@@ -9,17 +9,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: scout\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2015-10-15 21:33+0200\n"
-"Last-Translator: Ramax Lo <ramaxlo@gmail.com>\n"
-"Language-Team: Chinese (Taiwan) <http://10n.opensuse.org/projects/scout/"
+"POT-Creation-Date: 2018-10-05 16:11+0200\n"
+"PO-Revision-Date: 2018-10-05 13:08+0000\n"
+"Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
+"Language-Team: Chinese (Taiwan) <https://l10n.opensuse.org/projects/scout/"
 "scout-master/zh_TW/>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.3\n"
+"X-Generator: Weblate 2.18\n"
 
 #: scout/autoconf.py:14
 msgid "Search for autoconf macros inside the m4 files."
@@ -65,6 +65,8 @@ msgid ""
 "\n"
 "Warning: no repos found - make sure your repositories are configured."
 msgstr ""
+"\n"
+"警告：未找到任何軟體庫 - 請確保您設定了軟體庫。"
 
 #: scout/bin.py:59
 msgid ""
@@ -72,6 +74,9 @@ msgid ""
 "Warning: incomplete repos found but could not refresh - try to refresh "
 "manually, e.g. with 'zypper refresh'."
 msgstr ""
+"\n"
+"警告：找到不完整的軟體庫卻無法重新整理 - 嘗試手動重新整理，例如使用「zypper "
+"refresh」。"
 
 #: scout/bin.py:102
 msgid "Search for binaries contained in the packages."
@@ -114,10 +119,9 @@ msgid "Usage: %prog [global_opts] module [local_opts] search_term"
 msgstr "用法： %prog [global_opts] module [local_opts] search_term"
 
 #: scout/__init__.py:225
-#, fuzzy, python-format
-#| msgid "select the output format (default %s)"
+#, python-format
 msgid "select the output format (%s, default is %s)"
-msgstr "選擇輸出格式 (預設 %s)"
+msgstr "選擇輸出格式 (%s，預設值：%s)"
 
 #: scout/__init__.py:234
 msgid "list of available modules"
