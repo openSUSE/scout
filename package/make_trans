@@ -18,8 +18,13 @@ function refresh_po_files() {
         done
 }
 
+sed "s/eval '\(.*\)'$/\1/g;s/'\\\\''/'/g" handlers/bin/command_not_found_bash >handlers/bin/command_not_found_bash-x 
+sed -i "s/eval '//g;n;s/'$//" handlers/bin/command_not_found_bash-x
+
 xgettext --output=i18n/command-not-found/1.pot --language=Python handlers/bin/command-not-found 
-xgettext --output=i18n/command-not-found/2.pot --language=Shell handlers/bin/command_not_found_bash handlers/bin/command_not_found_zsh handlers/java/java-wrapper handlers/python/python_import_error_handler
+xgettext --output=i18n/command-not-found/2.pot --language=Shell handlers/bin/command_not_found_bash-x handlers/bin/command_not_found_zsh handlers/java/java-wrapper handlers/python/python_import_error_handler
+sed -i 's/command_not_found_bash-x/command_not_found_bash/g' i18n/command-not-found/2.pot
+rm handlers/bin/command_not_found_bash-x
 msgcat --use-first i18n/command-not-found/1.pot i18n/command-not-found/2.pot -o i18n/command-not-found/command-not-found.pot 
 refresh_po_files command-not-found
 rm i18n/command-not-found/1.pot
