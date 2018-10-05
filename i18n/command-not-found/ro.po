@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OpenSUSE\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-02 16:11+0200\n"
+"POT-Creation-Date: 2018-10-05 12:05+0200\n"
 "PO-Revision-Date: 2012-11-19 15:00+0200\n"
 "Last-Translator: Lucian Oprea <oprea.luci@gmail.com>\n"
 "Language-Team: Romanian <LL@li.org>\n"
@@ -27,7 +27,7 @@ msgstr ""
 "20)) ? 1 : 2;\n"
 "X-Generator: Narro 2.0 on http://tradu.softwareliber.ro\n"
 
-#: handlers/bin/command-not-found:17
+#: handlers/bin/command-not-found:20
 #, python-format
 msgid "The program '%(prog)s' can be found in the following package:"
 msgid_plural "The program '%(prog)s' can be found in following packages:"
@@ -35,12 +35,12 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: handlers/bin/command-not-found:22
+#: handlers/bin/command-not-found:25
 #, python-format
 msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
 msgstr "  * %(prog)s [ calea: %(path)s/%(binary)s, sursa: %(repo)s ]"
 
-#: handlers/bin/command-not-found:26
+#: handlers/bin/command-not-found:29
 msgid ""
 "Try installing with:\n"
 "   "
@@ -48,11 +48,11 @@ msgstr ""
 "Încercați să instalați cu:\n"
 "   "
 
-#: handlers/bin/command-not-found:31
+#: handlers/bin/command-not-found:34
 msgid "<selected_package>"
 msgstr "<selectare_pachete>"
 
-#: handlers/bin/command-not-found:40
+#: handlers/bin/command-not-found:43
 #, python-format
 msgid ""
 "Program '%(prog)s' is present in package '%(pkg)s', which is installed on "
@@ -61,7 +61,7 @@ msgstr ""
 "Programul '%(prog)s' este prezent în pachetul '%(pkg)s', care este instalat "
 "pe sistemul dumneavoastră."
 
-#: handlers/bin/command-not-found:45
+#: handlers/bin/command-not-found:48
 #, python-format
 msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may "
@@ -70,7 +70,7 @@ msgstr ""
 "Calea absolută la '%(prog)s' este '%(path)s/%(prog)s', astfel încât rularea "
 "acestuia poate solicita privilegii de super-utilizator (de exemplu: root)."
 
-#: handlers/bin/command-not-found:49
+#: handlers/bin/command-not-found:52
 #, python-format
 msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH "
@@ -80,20 +80,20 @@ msgstr ""
 "verificați variabila  $PATH pentru a vedea dacă acesta conține calea "
 "menționată."
 
-#: handlers/bin/command-not-found:83 handlers/bin/command-not-found:84
+#: handlers/bin/command-not-found:86 handlers/bin/command-not-found:87
 msgid "searching ..."
 msgstr "se caută ..."
 
-#: handlers/bin/command-not-found:111
+#: handlers/bin/command-not-found:114
 msgid "command not found"
 msgstr "comanda nu a fost găsită"
 
-#: handlers/bin/command_not_found_bash:11
-#: handlers/bin/command_not_found_bash:18
+#: handlers/bin/command_not_found_bash:10
+#: handlers/bin/command_not_found_bash:17
 msgid "$1: command not found"
 msgstr "$1: comanda nu a fost găsită"
 
-#: handlers/bin/command_not_found_bash:25
+#: handlers/bin/command_not_found_bash:24
 msgid ""
 "Absolute path to '$1' is '$prefix/sbin/$1', so running it may require "
 "superuser privileges (eg. root)."
@@ -101,7 +101,7 @@ msgstr ""
 "Calea absolută către '$1' este '$prefix/sbin/$1' și rularea acesteia poate "
 "solicita dreptul de super-utilizator (e.g. root)."
 
-#: handlers/bin/command_not_found_bash:34
+#: handlers/bin/command_not_found_bash:33
 msgid ""
 "If '$1' is not a typo you can use command-not-found to lookup the package "
 "that contains it, like this:\n"

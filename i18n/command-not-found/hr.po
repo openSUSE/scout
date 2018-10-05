@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-02 16:11+0200\n"
+"POT-Creation-Date: 2018-10-05 12:05+0200\n"
 "PO-Revision-Date: 2010-07-21 14:37+0200\n"
 "Last-Translator: Krešimir Jozić <kjozic@gmail.com>\n"
 "Language-Team: Croatian <kde-i18n-doc@kde.org>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 1.0\n"
 
-#: handlers/bin/command-not-found:17
+#: handlers/bin/command-not-found:20
 #, python-format
 msgid "The program '%(prog)s' can be found in the following package:"
 msgid_plural "The program '%(prog)s' can be found in following packages:"
@@ -23,12 +23,12 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: handlers/bin/command-not-found:22
+#: handlers/bin/command-not-found:25
 #, python-format
 msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
 msgstr ""
 
-#: handlers/bin/command-not-found:26
+#: handlers/bin/command-not-found:29
 msgid ""
 "Try installing with:\n"
 "   "
@@ -36,51 +36,51 @@ msgstr ""
 "Pokušajte instalirati s:\n"
 "   "
 
-#: handlers/bin/command-not-found:31
+#: handlers/bin/command-not-found:34
 msgid "<selected_package>"
 msgstr "<odabrani_paket>"
 
-#: handlers/bin/command-not-found:40
+#: handlers/bin/command-not-found:43
 #, python-format
 msgid ""
 "Program '%(prog)s' is present in package '%(pkg)s', which is installed on "
 "your system."
 msgstr ""
 
-#: handlers/bin/command-not-found:45
+#: handlers/bin/command-not-found:48
 #, python-format
 msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may "
 "require superuser privileges (eg. root)."
 msgstr ""
 
-#: handlers/bin/command-not-found:49
+#: handlers/bin/command-not-found:52
 #, python-format
 msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH "
 "variable to see whether it contains the mentioned path."
 msgstr ""
 
-#: handlers/bin/command-not-found:83 handlers/bin/command-not-found:84
+#: handlers/bin/command-not-found:86 handlers/bin/command-not-found:87
 msgid "searching ..."
 msgstr "tražim..."
 
-#: handlers/bin/command-not-found:111
+#: handlers/bin/command-not-found:114
 msgid "command not found"
 msgstr "naredba nije pronađena"
 
-#: handlers/bin/command_not_found_bash:11
-#: handlers/bin/command_not_found_bash:18
+#: handlers/bin/command_not_found_bash:10
+#: handlers/bin/command_not_found_bash:17
 msgid "$1: command not found"
 msgstr "$1: naredba nije pronađena"
 
-#: handlers/bin/command_not_found_bash:25
+#: handlers/bin/command_not_found_bash:24
 msgid ""
 "Absolute path to '$1' is '$prefix/sbin/$1', so running it may require "
 "superuser privileges (eg. root)."
 msgstr ""
 
-#: handlers/bin/command_not_found_bash:34
+#: handlers/bin/command_not_found_bash:33
 msgid ""
 "If '$1' is not a typo you can use command-not-found to lookup the package "
 "that contains it, like this:\n"

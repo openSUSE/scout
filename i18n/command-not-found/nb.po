@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-02 16:11+0200\n"
+"POT-Creation-Date: 2018-10-05 12:05+0200\n"
 "PO-Revision-Date: 2009-10-01 13:13+0200\n"
 "Last-Translator: Olav Pettershagen <olav.pet@gmail.com>\n"
 "Language-Team: Norwegian Bokmål <opensuse-translation@opensuse.org>\n"
@@ -17,19 +17,19 @@ msgstr ""
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: handlers/bin/command-not-found:17
+#: handlers/bin/command-not-found:20
 #, python-format
 msgid "The program '%(prog)s' can be found in the following package:"
 msgid_plural "The program '%(prog)s' can be found in following packages:"
 msgstr[0] "Programmet '%(prog)s' finnes i denne pakken:"
 msgstr[1] "Programmet '%(prog)s' finnes i disse pakkene:"
 
-#: handlers/bin/command-not-found:22
+#: handlers/bin/command-not-found:25
 #, python-format
 msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
 msgstr "  * %(prog)s [ filsti: %(path)s/%(binary)s, pakkebrønn: %(repo)s ]"
 
-#: handlers/bin/command-not-found:26
+#: handlers/bin/command-not-found:29
 msgid ""
 "Try installing with:\n"
 "   "
@@ -37,18 +37,18 @@ msgstr ""
 "Forsøk å installere med:\n"
 "   "
 
-#: handlers/bin/command-not-found:31
+#: handlers/bin/command-not-found:34
 msgid "<selected_package>"
 msgstr "<valgt_pakke>"
 
-#: handlers/bin/command-not-found:40
+#: handlers/bin/command-not-found:43
 #, python-format
 msgid ""
 "Program '%(prog)s' is present in package '%(pkg)s', which is installed on "
 "your system."
 msgstr "Programmet '%(prog)s' finnes i pakken '%(pkg)s', som er installert."
 
-#: handlers/bin/command-not-found:45
+#: handlers/bin/command-not-found:48
 #, python-format
 msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may "
@@ -57,7 +57,7 @@ msgstr ""
 "Absolutt filsti til '%(prog)s' er '%(path)s/%(prog)s', så du må kanskje være "
 "administrator (f.eks. root) for å kjøre den."
 
-#: handlers/bin/command-not-found:49
+#: handlers/bin/command-not-found:52
 #, python-format
 msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH "
@@ -66,20 +66,20 @@ msgstr ""
 "Absolutt filsti til '%(prog)s' er '%(path)s/%(prog)s'. Kontroller $PATH-"
 "variabelen for å se om den inneholder denne filstien."
 
-#: handlers/bin/command-not-found:83 handlers/bin/command-not-found:84
+#: handlers/bin/command-not-found:86 handlers/bin/command-not-found:87
 msgid "searching ..."
 msgstr "søker..."
 
-#: handlers/bin/command-not-found:111
+#: handlers/bin/command-not-found:114
 msgid "command not found"
 msgstr "kommando ikke funnet"
 
-#: handlers/bin/command_not_found_bash:11
-#: handlers/bin/command_not_found_bash:18
+#: handlers/bin/command_not_found_bash:10
+#: handlers/bin/command_not_found_bash:17
 msgid "$1: command not found"
 msgstr "$1: kommando ikke funnet"
 
-#: handlers/bin/command_not_found_bash:25
+#: handlers/bin/command_not_found_bash:24
 msgid ""
 "Absolute path to '$1' is '$prefix/sbin/$1', so running it may require "
 "superuser privileges (eg. root)."
@@ -87,7 +87,7 @@ msgstr ""
 "Absolutt filsti til '$1' er '$prefix/sbin/$1', så det kan hende at du må "
 "være administrator (f.eks root) for å kjøre den."
 
-#: handlers/bin/command_not_found_bash:34
+#: handlers/bin/command_not_found_bash:33
 msgid ""
 "If '$1' is not a typo you can use command-not-found to lookup the package "
 "that contains it, like this:\n"
