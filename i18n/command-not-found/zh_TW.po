@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: command-not-found\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-02 16:11+0200\n"
-"PO-Revision-Date: 2018-10-05 13:09+0000\n"
+"PO-Revision-Date: 2018-10-05 13:11+0000\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese (Taiwan) <https://l10n.opensuse.org/projects/scout"
 "/command-not-found-master/zh_TW/>\n"
@@ -106,17 +106,17 @@ msgstr "用法 ${0} python_module"
 
 #: handlers/python/python_import_error_handler:24
 msgid "No package was found by scout"
-msgstr ""
+msgstr "scout 未找到軟體包"
 
 #: handlers/python/python_import_error_handler:27
 #, sh-format
 msgid "The ${module_name} is in the package ${modules}. You can install it by:"
-msgstr ""
+msgstr "${module_name} 在 ${modules} 軟體包中，您可以透過這個方式安裝它："
 
 #: handlers/python/python_import_error_handler:31
 msgid "The selected module was found in one of several packages:"
-msgstr ""
+msgstr "選擇的模組在其中一個軟體包中找到了："
 
 #: handlers/python/python_import_error_handler:33
 msgid "one_of_the_packages"
-msgstr ""
+msgstr "軟體包之一"
