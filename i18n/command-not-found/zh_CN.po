@@ -8,11 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-02 16:11+0200\n"
+"POT-Creation-Date: 2018-10-05 12:05+0200\n"
 "PO-Revision-Date: 2018-10-03 07:01+0000\n"
 "Last-Translator: Marguerite Su <i@marguerite.su>\n"
-"Language-Team: Chinese (China) <https://l10n.opensuse.org/projects/scout"
-"/command-not-found-master/zh_CN/>\n"
+"Language-Team: Chinese (China) <https://l10n.opensuse.org/projects/scout/"
+"command-not-found-master/zh_CN/>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,18 +20,18 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.18\n"
 
-#: handlers/bin/command-not-found:17
+#: handlers/bin/command-not-found:20
 #, python-format
 msgid "The program '%(prog)s' can be found in the following package:"
 msgid_plural "The program '%(prog)s' can be found in following packages:"
 msgstr[0] "程序 '%(prog)s' 可在以下软件包中找到："
 
-#: handlers/bin/command-not-found:22
+#: handlers/bin/command-not-found:25
 #, python-format
 msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
 msgstr "  * %(prog)s [ 路径：%(path)s/%(binary)s, 软件源：%(repo)s ]"
 
-#: handlers/bin/command-not-found:26
+#: handlers/bin/command-not-found:29
 msgid ""
 "Try installing with:\n"
 "   "
@@ -39,18 +39,18 @@ msgstr ""
 "试着使用下面命令安装：\n"
 "   "
 
-#: handlers/bin/command-not-found:31
+#: handlers/bin/command-not-found:34
 msgid "<selected_package>"
 msgstr "<所选软件包>"
 
-#: handlers/bin/command-not-found:40
+#: handlers/bin/command-not-found:43
 #, python-format
 msgid ""
 "Program '%(prog)s' is present in package '%(pkg)s', which is installed on "
 "your system."
 msgstr "程序 '%(prog)s' 在软件包 '%(pkg)s' 中，该包在您的系统上已安装。"
 
-#: handlers/bin/command-not-found:45
+#: handlers/bin/command-not-found:48
 #, python-format
 msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may "
@@ -59,7 +59,7 @@ msgstr ""
 "'%(prog)s' 的绝对路径是 '%(path)s/%(prog)s'，所以需要超级用户权限（例如根用"
 "户 root）才能运行它。"
 
-#: handlers/bin/command-not-found:49
+#: handlers/bin/command-not-found:52
 #, python-format
 msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH "
@@ -68,20 +68,20 @@ msgstr ""
 "'%(prog)s' 的绝对路径是 '%(path)s/%(prog)s'。请检查您的 $PATH 环境变量，看看"
 "它是否包含这个路径。"
 
-#: handlers/bin/command-not-found:83 handlers/bin/command-not-found:84
+#: handlers/bin/command-not-found:86 handlers/bin/command-not-found:87
 msgid "searching ..."
 msgstr "搜索中 ..."
 
-#: handlers/bin/command-not-found:111
+#: handlers/bin/command-not-found:114
 msgid "command not found"
 msgstr "命令未找到"
 
-#: handlers/bin/command_not_found_bash:11
-#: handlers/bin/command_not_found_bash:18
+#: handlers/bin/command_not_found_bash:10
+#: handlers/bin/command_not_found_bash:17
 msgid "$1: command not found"
 msgstr "$1: 命令未找到"
 
-#: handlers/bin/command_not_found_bash:25
+#: handlers/bin/command_not_found_bash:24
 msgid ""
 "Absolute path to '$1' is '$prefix/sbin/$1', so running it may require "
 "superuser privileges (eg. root)."
@@ -89,13 +89,14 @@ msgstr ""
 "'$1' 命令的绝对路径是 '$prefix/sbin/$1'，因此需要超级用户权限（例如根用户 "
 "root）才能运行它。"
 
-#: handlers/bin/command_not_found_bash:34
+#: handlers/bin/command_not_found_bash:33
 msgid ""
 "If '$1' is not a typo you can use command-not-found to lookup the package "
 "that contains it, like this:\n"
 "    cnf $1"
 msgstr ""
-"如果 '$1' 不是输入错误的话，你可以使用 command-not-found 命令来查找它在哪个软件包中，就像这样：\n"
+"如果 '$1' 不是输入错误的话，你可以使用 command-not-found 命令来查找它在哪个软"
+"件包中，就像这样：\n"
 "    cnf $1"
 
 #: handlers/python/python_import_error_handler:7

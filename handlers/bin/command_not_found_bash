@@ -1,5 +1,4 @@
 command_not_found_handle() {
-
     export TEXTDOMAINDIR=/usr/share/locale
     export TEXTDOMAIN=command-not-found
 
@@ -8,21 +7,21 @@ command_not_found_handle() {
 
     # do not run when inside Midnight Commander or within a Pipe
     if test -n "$MC_SID" -o ! -t 1 ; then
-        echo $"$1: command not found" >&2
+        eval 'echo $"$1: command not found" >&2'
         return 127
     fi
 
     # do not run when within a subshell
     read pid cmd state ppid pgrp session tty_nr tpgid rest  < /proc/self/stat
     if test $$ -eq $tpgid ; then
-        echo $"$1: command not found" >&2
+        eval 'echo $"$1: command not found" >&2'
         return 127
     fi
 
     # test for /usr/sbin and /sbin
     if test -x "/usr/sbin/$1" -o -x "/sbin/$1" ; then
         if test -x "/usr/sbin/$1" ; then prefix='/usr' ; else prefix='' ; fi
-        echo $"Absolute path to '$1' is '$prefix/sbin/$1', so running it may require superuser privileges (eg. root)." >&2
+        eval 'echo $"Absolute path to '\''$1'\'' is '\''$prefix/sbin/$1'\'', so running it may require superuser privileges (eg. root)." >&2'
         return 127
     fi
 
@@ -31,8 +30,8 @@ command_not_found_handle() {
         test -x /usr/bin/python3 && test -x /usr/bin/command-not-found && /usr/bin/command-not-found "$1" __REPO__
     else
         # print only info about command-not-found
-        echo -e $"If '$1' is not a typo you can use command-not-found to lookup the package that contains it, like this:
-    cnf $1" >&2
+        eval 'echo -e $"If '\''$1'\'' is not a typo you can use command-not-found to lookup the package that contains it, like this:
+    cnf $1" >&2'
     fi
 
     return 127

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: webyast-users-ui.km\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-02 16:11+0200\n"
+"POT-Creation-Date: 2018-10-05 12:05+0200\n"
 "PO-Revision-Date: 2010-06-07 09:36+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -17,18 +17,18 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "X-Language: km-KH\n"
 
-#: handlers/bin/command-not-found:17
+#: handlers/bin/command-not-found:20
 #, python-format
 msgid "The program '%(prog)s' can be found in the following package:"
 msgid_plural "The program '%(prog)s' can be found in following packages:"
 msgstr[0] "កម្មវិធី '%(prog)s' អាច​រកឃើញ​នៅ​ក្នុង​កញ្ចប់​ដូច​ខាងក្រោម ៖"
 
-#: handlers/bin/command-not-found:22
+#: handlers/bin/command-not-found:25
 #, python-format
 msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
 msgstr "  * %(prog)s [ path: %(path)s/%(binary)s ឃ្លាំង ៖ %(repo)s ]"
 
-#: handlers/bin/command-not-found:26
+#: handlers/bin/command-not-found:29
 msgid ""
 "Try installing with:\n"
 "   "
@@ -36,11 +36,11 @@ msgstr ""
 "ព្យាយាម​ដំឡើង​ជា​មួយ ៖\n"
 "   "
 
-#: handlers/bin/command-not-found:31
+#: handlers/bin/command-not-found:34
 msgid "<selected_package>"
 msgstr "<selected_package>"
 
-#: handlers/bin/command-not-found:40
+#: handlers/bin/command-not-found:43
 #, python-format
 msgid ""
 "Program '%(prog)s' is present in package '%(pkg)s', which is installed on "
@@ -48,7 +48,7 @@ msgid ""
 msgstr ""
 "កម្មវិធី '%(prog)s' បង្ហាញ​នៅ​ក្នុង​កញ្ចប់ '%(pkg)s' ដែល​ត្រូវ​បាន​ដំឡើង​នៅ​ក្នុង​ប្រព័ន្ធ​របស់​អ្នក ។"
 
-#: handlers/bin/command-not-found:45
+#: handlers/bin/command-not-found:48
 #, python-format
 msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may "
@@ -57,7 +57,7 @@ msgstr ""
 "ផ្លូវ​ពេញលេញ​ទៅកាន់​ '%(prog)s' គឺជា '%(path)s/%(prog)s' ដូច្នេះ ការ​ដំណើរការ​វា​ អាច​នឹង​"
 "ទាមទារ​សិទ្ធិ​ជា​អ្នកប្រើ​ជាន់ខ្ពស់ (ឧ root) ។"
 
-#: handlers/bin/command-not-found:49
+#: handlers/bin/command-not-found:52
 #, python-format
 msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH "
@@ -66,20 +66,20 @@ msgstr ""
 "ផ្លូវ​ពេញលេញ​ទៅកាន់ '%(prog)s' គឺជា '%(path)s/%(prog)s' ។ សូម​ពិនិត្យមើល​អថេរ​ $PATH របស់​"
 "អ្នក ដើម្បី​មើល​ថា​ តើ​វា​មាន​ផ្លូវ​ដូច​ដែល​បាន​និយាយ​ដែរឬទេ ។"
 
-#: handlers/bin/command-not-found:83 handlers/bin/command-not-found:84
+#: handlers/bin/command-not-found:86 handlers/bin/command-not-found:87
 msgid "searching ..."
 msgstr "កំពុង​ស្វែងរក..."
 
-#: handlers/bin/command-not-found:111
+#: handlers/bin/command-not-found:114
 msgid "command not found"
 msgstr "រក​មិន​ឃើញ​ពាក្យ​បញ្ជា"
 
-#: handlers/bin/command_not_found_bash:11
-#: handlers/bin/command_not_found_bash:18
+#: handlers/bin/command_not_found_bash:10
+#: handlers/bin/command_not_found_bash:17
 msgid "$1: command not found"
 msgstr "$1 ៖ រក​មិន​ឃើញ​ពាក្យ​បញ្ជា"
 
-#: handlers/bin/command_not_found_bash:25
+#: handlers/bin/command_not_found_bash:24
 msgid ""
 "Absolute path to '$1' is '$prefix/sbin/$1', so running it may require "
 "superuser privileges (eg. root)."
@@ -87,7 +87,7 @@ msgstr ""
 "ផ្លូវ​ពេញលេញ​ទៅកាន់​ '$1' គឺជា '$prefix/sbin/$1' ដូច្នេះ ការ​ដំណើរការ​វា​ អាច​នឹង​ទាមទារ​សិទ្ធ​ជា​"
 "អ្នកប្រើ​ជាន់ខ្ពស់ (ឧ. root) ។"
 
-#: handlers/bin/command_not_found_bash:34
+#: handlers/bin/command_not_found_bash:33
 msgid ""
 "If '$1' is not a typo you can use command-not-found to lookup the package "
 "that contains it, like this:\n"
