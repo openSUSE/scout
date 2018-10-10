@@ -1,15 +1,15 @@
 # translation of scout.pot to Slovenčina
 # Copyright (C) 2009
 # This file is distributed under the same license as the "scout" package.
-#
 # Pavol Rusnak <stick@gk2.sk>, 2008.
 # Rastislav Krupanský <rastislav.krupansky@gmail.com>, 2009.
+# Ferdinand Galko <galko.ferdinand@gmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: scout\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2018-10-09 13:06+0000\n"
+"PO-Revision-Date: 2018-10-10 11:23+0000\n"
 "Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
 "Language-Team: Slovak <https://l10n.opensuse.org/projects/scout/scout-"
 "master/sk/>\n"
@@ -64,6 +64,9 @@ msgid ""
 "\n"
 "Warning: no repos found - make sure your repositories are configured."
 msgstr ""
+"\n"
+"Varovanie: nenájdené žiadne repozitáre - uistite sa, že vaše repozitáre sú "
+"nakonfigurované."
 
 #: scout/bin.py:59
 msgid ""
@@ -71,6 +74,9 @@ msgid ""
 "Warning: incomplete repos found but could not refresh - try to refresh "
 "manually, e.g. with 'zypper refresh'."
 msgstr ""
+"\n"
+"Varovanie: nájdené neúplné repozitáre, ale nemohli sa obnoviť - pokúste sa "
+"obnoviť ručne, napr. s 'zypper refresh'."
 
 #: scout/bin.py:102
 msgid "Search for binaries contained in the packages."
