@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2018-02-07 12:03+0000\n"
-"Last-Translator: Davide Aiello <davidea@novilinguists.com>\n"
+"PO-Revision-Date: 2018-10-15 10:55+0000\n"
+"Last-Translator: Alessio Adamo <alessio.adamo@gmail.com>\n"
 "Language-Team: Italian <https://l10n.opensuse.org/projects/scout/scout-"
 "master/it/>\n"
 "Language: it\n"
@@ -59,6 +59,9 @@ msgid ""
 "\n"
 "Warning: no repos found - make sure your repositories are configured."
 msgstr ""
+"\n"
+"Attenzione: nessun repository trovato - assicurarsi che i repository siano "
+"configurati."
 
 #: scout/bin.py:59
 msgid ""
@@ -66,6 +69,10 @@ msgid ""
 "Warning: incomplete repos found but could not refresh - try to refresh "
 "manually, e.g. with 'zypper refresh'."
 msgstr ""
+"\n"
+"Attenzione: trovati repository incompleti ma non è stato possibile "
+"aggiornarli - provare ad aggiornarli manualmente, ad esempio con 'zypper "
+"refresh'."
 
 #: scout/bin.py:102
 msgid "Search for binaries contained in the packages."
@@ -109,10 +116,9 @@ msgstr ""
 "Utilizzo: %prog [opzioni_globali] module [opzioni_locali] termine_di_ricerca"
 
 #: scout/__init__.py:225
-#, fuzzy, python-format
-#| msgid "select the output format (default %s)"
+#, python-format
 msgid "select the output format (%s, default is %s)"
-msgstr "seleziona il formato di output (default %s)"
+msgstr "seleziona il formato di output (%s, predefinito è %s)"
 
 #: scout/__init__.py:234
 msgid "list of available modules"
