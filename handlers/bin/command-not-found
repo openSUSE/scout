@@ -68,9 +68,10 @@ def check_installed(term, pkg, path):
 def find_package_by_file(term):
     ts = rpm.TransactionSet()
     mi = ts.dbMatch('basenames', term)
-    for i in mi:
-        return i['name']
-    return None
+    try:
+        return next(mi)['name'].decode()
+    except StopIteration:
+        return None
 
 
 try:
