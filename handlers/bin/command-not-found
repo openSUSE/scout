@@ -4,6 +4,10 @@ import gettext
 import os
 import subprocess
 import sys
+import rpm
+import scout
+sys.path.append(scout.Config.module_path)
+import bin
 
 _ = gettext.gettext
 
@@ -83,8 +87,6 @@ try:
     if len(sys.argv) < 2:
         sys.exit(EX_NOTFOUND)
 
-    import scout
-
     default_lang = scout.DefaultLang(textdomain='command-not-found')
     default_lang.install()
 
@@ -92,18 +94,12 @@ try:
     print('%s:' % term, _('searching ...'), end=' ', file=sys.stderr)
     lendel = len(term) + 3 + len(_('searching ...'))
 
-    import rpm
-
     for path in ('/usr/sbin', '/sbin'):
         pkg = find_package_by_file(path + '/' + term)
         if pkg:
             print('\r', lendel * ' ', end=' ', file=sys.stderr)
             print_installed(term, pkg, path)
             sys.exit(EX_NOTFOUND)
-
-    sys.path.append(scout.Config.module_path)
-
-    import bin
 
     if len(sys.argv) == 3:
         repo = sys.argv[2]
