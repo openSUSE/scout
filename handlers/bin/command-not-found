@@ -4,6 +4,7 @@ import gettext
 import os
 import subprocess
 import sys
+import traceback
 import rpm
 import scout
 sys.path.append(scout.Config.module_path)
@@ -130,6 +131,5 @@ if __name__ == "__main__":
     try:
         main()
     except Exception:
-        pass
-
-    sys.exit(EX_NOTFOUND)
+        traceback.print_exc()
+        sys.exit(EX_NOTFOUND)
