@@ -19,7 +19,7 @@ gettext.bindtextdomain('command-not-found', localedir='/usr/share/locale')
 gettext.textdomain(domain='command-not-found')
 
 
-def print_found(rows):
+def print_found(rows, term):
     print(file=sys.stderr)
     print(gettext.ngettext(
         "The program '%(prog)s' can be found in the following package:",
@@ -83,7 +83,7 @@ def find_package_by_file(term):
         return None
 
 
-try:
+def main():
     if len(sys.argv) < 2:
         sys.exit(EX_NOTFOUND)
 
@@ -123,9 +123,13 @@ try:
         if check_installed(term, row[1], row[2]):
             print_installed(term, row[1], row[2])
 
-    print_found(rows)
+    print_found(rows, term)
 
-except Exception:
-    pass
 
-sys.exit(EX_NOTFOUND)
+if __name__ == "__main__":
+    try:
+        main()
+    except Exception:
+        pass
+
+    sys.exit(EX_NOTFOUND)
