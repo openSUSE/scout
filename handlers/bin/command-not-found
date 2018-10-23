@@ -23,13 +23,13 @@ gettext.textdomain(domain='command-not-found')
 def print_found(rows, term):
     print(file=sys.stderr)
     print(gettext.ngettext(
-        "The program '%(prog)s' can be found in the following package:",
-        "The program '%(prog)s' can be found in following packages:",
-        len(rows)) % ({'prog': term}), file=sys.stderr)
+        "The program '{prog}' can be found in the following package:",
+        "The program '{prog}' can be found in following packages:",
+        len(rows)).format(prog=term), file=sys.stderr)
 
     for row in rows:
-        print(_('  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]') % \
-              ({'prog': row[1], 'path': row[2], 'binary': row[3], 'repo': row[0]}),
+        print(_('  * {prog} [ path: {path}/{binary}, repository: {repo} ]')
+              .format(repo=row[0], prog=row[1], path=row[2], binary=row[3]),
               file=sys.stderr)
     print(file=sys.stderr)
     print(_('Try installing with:\n   '), end=' ', file=sys.stderr)
@@ -50,25 +50,25 @@ def print_found(rows, term):
 
 def print_installed(term, pkg, path):
     print(file=sys.stderr)
-    print(_("Program '%(prog)s' is present in package '%(pkg)s', "
-            'which is installed on your system.') % \
-          ({'prog': term, 'pkg': pkg}), file=sys.stderr)
+    print(_("Program '{prog}' is present in package '{pkg}', "
+            'which is installed on your system.')
+          .format(prog=term, pkg=pkg), file=sys.stderr)
     print(file=sys.stderr)
     if '/sbin' in path:
-        print(_("Absolute path to '%(prog)s' is '%(path)s/%(prog)s', "
-                'so running it may require superuser privileges (eg. root).') % \
-                ({'prog': term, 'path': path}), file=sys.stderr)
+        print(_("Absolute path to '{prog}' is '{path}/{prog}', "
+                'so running it may require superuser privileges (eg. root).')
+              .format(prog=term, path=path), file=sys.stderr)
     else:
-        print(_("Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. "
+        print(_("Absolute path to '{prog}' is '{path}/{prog}'. "
                 'Please check your $PATH variable to see whether it '
-                'contains the mentioned path.') % \
-                ({'prog': term, 'path': path}), file=sys.stderr)
+                'contains the mentioned path.')
+              .format(prog=term, path=path), file=sys.stderr)
     print(file=sys.stderr)
     sys.exit(0)
 
 
 def check_installed(term, pkg, path):
-    if not os.path.isfile('%s/%s' % (path, term)):
+    if not os.path.isfile('{path}/{term}'.format(path=path, term=term)):
         return False
     ts = rpm.TransactionSet()
     mi = ts.dbMatch('name', pkg)
@@ -92,7 +92,7 @@ def main():
     default_lang.install()
 
     term = sys.argv[1]
-    print('%s:' % term, _('searching ...'), end=' ', file=sys.stderr)
+    print('{term}:'.format(term=term), _('searching ...'), end=' ', file=sys.stderr)
     lendel = len(term) + 3 + len(_('searching ...'))
 
     for path in ('/usr/sbin', '/sbin'):
@@ -114,7 +114,7 @@ def main():
         rows = module.query_repo(repo, term)
 
     if not rows:
-        print('\r', '%s:' % term, _('command not found'),
+        print('\r', '{term}:'.format(term=term), _('command not found'),
               lendel * ' ', file=sys.stderr)
         sys.exit(EX_NOTFOUND)
 
