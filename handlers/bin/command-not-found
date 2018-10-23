@@ -112,7 +112,7 @@ def main():
     else:
         rows = module.query_repo(repo, term)
 
-    if rows == None or len(rows) == 0:
+    if not rows:
         print('\r', '%s:' % term, _('command not found'),
               lendel * ' ', file=sys.stderr)
         sys.exit(EX_NOTFOUND)
