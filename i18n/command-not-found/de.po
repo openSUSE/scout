@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: command-not-found\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2018-11-20 18:52+0000\n"
-"Last-Translator: anonymous <>\n"
+"PO-Revision-Date: 2018-11-20 21:02+0000\n"
+"Last-Translator: Sarah Kriesch <ada.lovelace@gmx.de>\n"
 "Language-Team: German <https://l10n.opensuse.org/projects/scout/command-not-"
 "found-master/de/>\n"
 "Language: de\n"
@@ -120,7 +120,7 @@ msgstr ""
 
 #: handlers/python/python_import_error_handler:31
 msgid "The selected module was found in one of several packages:"
-msgstr "Das gewählte Modul wurden in einer der folgenden Pakete gefunden:"
+msgstr "Das gewählte Modul wurde in einer der folgenden Pakete gefunden:"
 
 #: handlers/python/python_import_error_handler:33
 msgid "one_of_the_packages"
