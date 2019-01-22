@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: scout\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2018-10-15 10:49+0000\n"
+"PO-Revision-Date: 2019-01-22 20:49+0000\n"
 "Last-Translator: Sarah Kriesch <ada.lovelace@gmx.de>\n"
-"Language-Team: German <https://l10n.opensuse.org/projects/scout/scout-"
-"master/de/>\n"
+"Language-Team: German <https://l10n.opensuse.org/projects/scout/scout-master/"
+"de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.3\n"
 
 #: scout/autoconf.py:14
 msgid "Search for autoconf macros inside the m4 files."
@@ -74,6 +74,10 @@ msgid ""
 "Warning: incomplete repos found but could not refresh - try to refresh "
 "manually, e.g. with 'zypper refresh'."
 msgstr ""
+"\n"
+"Warnung: unvollständige  Repos gefunden, konnten aber nicht aktualisiert "
+"werden - versuchen Sie diese manuell yu aktualisieren, z.B. mit 'zypper "
+"refresh'."
 
 #: scout/bin.py:102
 msgid "Search for binaries contained in the packages."
@@ -116,10 +120,9 @@ msgid "Usage: %prog [global_opts] module [local_opts] search_term"
 msgstr "Benutzung: %prog [Globale_Optionen] Module [lokale_Optionen] Abfrage"
 
 #: scout/__init__.py:225
-#, fuzzy, python-format
-#| msgid "select the output format (default %s)"
+#, python-format
 msgid "select the output format (%s, default is %s)"
-msgstr "Wählen Sie das Ausgabeformat (Standard %s)"
+msgstr "Wählen Sie das Ausgabeformat (%s, Standard ist %s)"
 
 #: scout/__init__.py:234
 msgid "list of available modules"

@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: LCN - 11.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2017-06-14 13:38+0000\n"
-"Last-Translator: Javier Llorente <javier@opensuse.org>\n"
-"Language-Team: Spanish <https://l10n.opensuse.org/projects/scout/scout-"
-"master/es/>\n"
+"PO-Revision-Date: 2019-01-22 20:49+0000\n"
+"Last-Translator: jcsl <trcs@gmx.com>\n"
+"Language-Team: Spanish <https://l10n.opensuse.org/projects/scout/"
+"scout-master/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.6\n"
+"X-Generator: Weblate 3.3\n"
 "X-Poedit-Basepath: lcn\n"
 "X-Poedit-Language: Spanish\n"
 
@@ -67,6 +67,9 @@ msgid ""
 "\n"
 "Warning: no repos found - make sure your repositories are configured."
 msgstr ""
+"\n"
+"Aviso: no se han encontrado repositorios - asegúrese de que los repositorios "
+"están configurados."
 
 #: scout/bin.py:59
 msgid ""
@@ -74,6 +77,9 @@ msgid ""
 "Warning: incomplete repos found but could not refresh - try to refresh "
 "manually, e.g. with 'zypper refresh'."
 msgstr ""
+"\n"
+"Avido: se han encontrado repositorios incompletos pero no se han podido "
+"actualizar - intente actualizarlos manualmente, p. ej. con 'zypper refresh'."
 
 #: scout/bin.py:102
 msgid "Search for binaries contained in the packages."
@@ -120,10 +126,9 @@ msgstr ""
 "Uso: %prog [opciones_globales] módulo [opciones_locales] término_de_busqueda"
 
 #: scout/__init__.py:225
-#, fuzzy, python-format
-#| msgid "select the output format (default %s)"
+#, python-format
 msgid "select the output format (%s, default is %s)"
-msgstr "seleccionar el formato de salida (por defecto %s)"
+msgstr "seleccione el formato de salida (%s, por defecto es %s)"
 
 #: scout/__init__.py:234
 msgid "list of available modules"
