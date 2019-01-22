@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: command-not-found\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2018-11-20 21:02+0000\n"
+"PO-Revision-Date: 2019-01-22 16:33+0000\n"
 "Last-Translator: Sarah Kriesch <ada.lovelace@gmx.de>\n"
-"Language-Team: German <https://l10n.opensuse.org/projects/scout/command-not-"
-"found-master/de/>\n"
+"Language-Team: German <https://l10n.opensuse.org/projects/scout/"
+"command-not-found-master/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.3\n"
 
 #: handlers/bin/command-not-found:20
 #, python-format
@@ -107,16 +107,16 @@ msgstr ""
 
 #: handlers/python/python_import_error_handler:7
 msgid "Usage ${0} python_module"
-msgstr ""
+msgstr "Verwendung von  ${0} Python_Modul"
 
 #: handlers/python/python_import_error_handler:24
 msgid "No package was found by scout"
-msgstr ""
+msgstr "Kein Paket wurde von Scout gefunden"
 
 #: handlers/python/python_import_error_handler:27
 #, sh-format
 msgid "The ${module_name} is in the package ${modules}. You can install it by:"
-msgstr ""
+msgstr "${module_name} ist im Paket ${modules}. Es ist installierbar mit:"
 
 #: handlers/python/python_import_error_handler:31
 msgid "The selected module was found in one of several packages:"
@@ -124,4 +124,4 @@ msgstr "Das gewählte Modul wurde in einer der folgenden Pakete gefunden:"
 
 #: handlers/python/python_import_error_handler:33
 msgid "one_of_the_packages"
-msgstr ""
+msgstr "eins_der_Pakete"
