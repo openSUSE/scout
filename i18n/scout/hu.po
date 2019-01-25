@@ -5,15 +5,16 @@ msgstr ""
 "Project-Id-Version: scout.hu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2009-09-17 14:50+0200\n"
-"Last-Translator: Kéménczy Kálmán <kkemenczy@novell.com>\n"
-"Language-Team:  <hu@li.org>\n"
+"PO-Revision-Date: 2019-02-02 12:52+0000\n"
+"Last-Translator: Robert Taisz <robert.taisz@emerald.hu>\n"
+"Language-Team: Hungarian <https://l10n.opensuse.org/projects/scout/"
+"scout-master/hu/>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.3\n"
 
 #: scout/autoconf.py:14
 msgid "Search for autoconf macros inside the m4 files."
@@ -59,6 +60,9 @@ msgid ""
 "\n"
 "Warning: no repos found - make sure your repositories are configured."
 msgstr ""
+"\n"
+"Figyelem: Nem találhatók telepítési források. Ellenőrizze, hogy be vannak-e "
+"állítva a telepítési források."
 
 #: scout/bin.py:59
 msgid ""
@@ -66,6 +70,10 @@ msgid ""
 "Warning: incomplete repos found but could not refresh - try to refresh "
 "manually, e.g. with 'zypper refresh'."
 msgstr ""
+"\n"
+"Figyelem: A talált telepítési források nem teljesek, nem sikerült a "
+"frissítésük. Próbálja meg a kézi frissítést, például a 'zypper refresh' "
+"parancs használatával."
 
 #: scout/bin.py:102
 msgid "Search for binaries contained in the packages."
@@ -110,10 +118,9 @@ msgstr ""
 "keresési_kifejezés"
 
 #: scout/__init__.py:225
-#, fuzzy, python-format
-#| msgid "select the output format (default %s)"
+#, python-format
 msgid "select the output format (%s, default is %s)"
-msgstr "kimeneti formátum kiválasztása (alapértelmezés %s)"
+msgstr "kimeneti formátum kiválasztása (%s, alapértelmezett: %s)"
 
 #: scout/__init__.py:234
 msgid "list of available modules"
