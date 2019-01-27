@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2018-01-30 22:00+0000\n"
+"PO-Revision-Date: 2019-02-02 12:52+0000\n"
 "Last-Translator: George Yacoub <george.yacoub@arabize.com>\n"
 "Language-Team: Arabic <https://l10n.opensuse.org/projects/scout/scout-master/"
 "ar/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.3\n"
 
 #: scout/autoconf.py:14
 msgid "Search for autoconf macros inside the m4 files."
@@ -59,6 +59,8 @@ msgid ""
 "\n"
 "Warning: no repos found - make sure your repositories are configured."
 msgstr ""
+"\n"
+"تحذير: لم يتم العثور على مخازن - تأكد أنه لم يتم تكوين أية مستودعات."
 
 #: scout/bin.py:59
 msgid ""
@@ -66,6 +68,9 @@ msgid ""
 "Warning: incomplete repos found but could not refresh - try to refresh "
 "manually, e.g. with 'zypper refresh'."
 msgstr ""
+"\n"
+"تحذير: تم العثور على مخازن غير مكتملة ولكن لا يمكن تحديثها - حاول تحديثها "
+"يدويًا، مثل \"تحديث zypper\"."
 
 #: scout/bin.py:102
 msgid "Search for binaries contained in the packages."
@@ -108,10 +113,9 @@ msgid "Usage: %prog [global_opts] module [local_opts] search_term"
 msgstr "الاستخدام: %prog [global_opts] module [local_opts] search_term"
 
 #: scout/__init__.py:225
-#, fuzzy, python-format
-#| msgid "select the output format (default %s)"
+#, python-format
 msgid "select the output format (%s, default is %s)"
-msgstr "اختر صيغة المخرجات (الافتراضي%s)"
+msgstr "اختر تنسيق المخرجات (%s، الافتراضي %s)"
 
 #: scout/__init__.py:234
 msgid "list of available modules"
