@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: LCN - 11.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2019-01-22 20:49+0000\n"
+"PO-Revision-Date: 2019-02-02 12:52+0000\n"
 "Last-Translator: jcsl <trcs@gmx.com>\n"
 "Language-Team: Spanish <https://l10n.opensuse.org/projects/scout/"
 "scout-master/es/>\n"
@@ -78,7 +78,7 @@ msgid ""
 "manually, e.g. with 'zypper refresh'."
 msgstr ""
 "\n"
-"Avido: se han encontrado repositorios incompletos pero no se han podido "
+"Aviso: se han encontrado repositorios incompletos pero no se han podido "
 "actualizar - intente actualizarlos manualmente, p. ej. con 'zypper refresh'."
 
 #: scout/bin.py:102
@@ -123,7 +123,7 @@ msgstr "mostrar la versión del programa y salir"
 #: scout/__init__.py:217
 msgid "Usage: %prog [global_opts] module [local_opts] search_term"
 msgstr ""
-"Uso: %prog [opciones_globales] módulo [opciones_locales] término_de_busqueda"
+"Uso: %prog [opciones_globales] módulo [opciones_locales] término_de_búsqueda"
 
 #: scout/__init__.py:225
 #, python-format
@@ -164,7 +164,7 @@ msgstr "Repositorios disponibles:\n"
 #: scout/__init__.py:821
 #, python-format
 msgid "Usage: %%prog %s [options] search_term"
-msgstr "Uso: %%prog %s [opciones] término_de_busqueda"
+msgstr "Uso: %%prog %s [opciones] término_de_búsqueda"
 
 # | msgid "Got list of repositories"
 #: scout/__init__.py:826
@@ -179,7 +179,7 @@ msgstr "búsqueda inversa por nombre de paquete"
 # | msgid "Set repository data"
 #: scout/__init__.py:836
 msgid "select repository to search"
-msgstr "selecionar repositorio a buscar"
+msgstr "seleccionar el repositorio a buscar"
 
 # | msgid "No repository found."
 #: scout/__init__.py:887
@@ -213,17 +213,17 @@ msgstr "clase"
 # | msgid "Searching for file handlers"
 #: scout/library.py:14
 msgid "Search for shared libraries."
-msgstr "Buscar librerías compartidas."
+msgstr "Buscar bibliotecas compartidas."
 
 # | msgid "Gibraltar"
 #: scout/library.py:22 scout/library.py:23
 msgid "library"
-msgstr "librería"
+msgstr "biblioteca"
 
 # | msgid "Searching for file handlers"
 #: scout/python.py:14
 msgid "Search for python modules."
-msgstr "Buscar módulos python."
+msgstr "Buscar módulos de python."
 
 #: scout/webpin.py:18
 msgid "Search in packages using the webpin webservice."
@@ -262,4 +262,4 @@ msgstr "URL del repositorio"
 # | msgid "Searched for file"
 #: scout/webpin.py:58
 msgid "matched files"
-msgstr "archivos que encajan"
+msgstr "archivos coincidentes"
