@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2016-06-09 21:12+0000\n"
-"Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
-"Language-Team: Swedish <https://l10n.opensuse.org/projects/scout/scout-"
-"master/sv/>\n"
+"PO-Revision-Date: 2019-02-02 12:52+0000\n"
+"Last-Translator: Sven Åhr <anders.ahr@gmail.com>\n"
+"Language-Team: Swedish <https://l10n.opensuse.org/projects/scout/"
+"scout-master/sv/>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.6\n"
+"X-Generator: Weblate 3.3\n"
 
 #: scout/autoconf.py:14
 msgid "Search for autoconf macros inside the m4 files."
@@ -64,6 +64,9 @@ msgid ""
 "\n"
 "Warning: no repos found - make sure your repositories are configured."
 msgstr ""
+"\n"
+"Varning: inga lagringsplatser hittade - se till att dina lagringsplatser är "
+"konfigurerade."
 
 #: scout/bin.py:59
 msgid ""
@@ -71,6 +74,9 @@ msgid ""
 "Warning: incomplete repos found but could not refresh - try to refresh "
 "manually, e.g. with 'zypper refresh'."
 msgstr ""
+"\n"
+"Varning: ofullständiga lagringsplatser hittades men kunde inte uppdateras - "
+"försök uppdatera manuellt, t.ex. med 'zypper refresh'."
 
 #: scout/bin.py:102
 msgid "Search for binaries contained in the packages."
@@ -113,10 +119,9 @@ msgid "Usage: %prog [global_opts] module [local_opts] search_term"
 msgstr "Användning: %prog [globala_opts] modul [lokala_opts] sökterm"
 
 #: scout/__init__.py:225
-#, fuzzy, python-format
-#| msgid "select the output format (default %s)"
+#, python-format
 msgid "select the output format (%s, default is %s)"
-msgstr "välj format på utmatningen (default %s)"
+msgstr "välj utdataformat (%s, standard är %s)"
 
 #: scout/__init__.py:234
 msgid "list of available modules"
