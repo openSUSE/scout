@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: scout.ko\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2018-01-29 05:04+0000\n"
+"PO-Revision-Date: 2019-02-02 12:52+0000\n"
 "Last-Translator: Hwajin Kim <hwajin.kim@e4net.net>\n"
 "Language-Team: Korean <https://l10n.opensuse.org/projects/scout/scout-master/"
 "ko/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.3\n"
 "X-Poedit-Language: Korean\n"
 "X-Poedit-Country: KOREA, REPUBLIC OF\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -61,6 +61,8 @@ msgid ""
 "\n"
 "Warning: no repos found - make sure your repositories are configured."
 msgstr ""
+"\n"
+"경고: 리포지토리를 찾을 수 없음 - 리포지토리가 구성되었는지 확인하십시오."
 
 #: scout/bin.py:59
 msgid ""
@@ -68,6 +70,8 @@ msgid ""
 "Warning: incomplete repos found but could not refresh - try to refresh "
 "manually, e.g. with 'zypper refresh'."
 msgstr ""
+"\n"
+"경고: 불완전한 리포지토리를 찾았지만 새로 고칠 수 없음 - 예를 들어 'zypper refresh'를 사용하여 수동으로 새로 고치십시오."
 
 #: scout/bin.py:102
 msgid "Search for binaries contained in the packages."
@@ -110,10 +114,9 @@ msgid "Usage: %prog [global_opts] module [local_opts] search_term"
 msgstr "사용법: %prog [global_opts] module [local_opts] search_term"
 
 #: scout/__init__.py:225
-#, fuzzy, python-format
-#| msgid "select the output format (default %s)"
+#, python-format
 msgid "select the output format (%s, default is %s)"
-msgstr "출력할 포맷을 선택 (기본 %s)"
+msgstr "출력 형식 선택(%s, 기본값은 %s임)"
 
 #: scout/__init__.py:234
 msgid "list of available modules"
