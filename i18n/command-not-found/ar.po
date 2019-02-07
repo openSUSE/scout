@@ -6,17 +6,17 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2018-01-30 22:00+0000\n"
+"PO-Revision-Date: 2019-02-07 12:02+0000\n"
 "Last-Translator: George Yacoub <george.yacoub@arabize.com>\n"
-"Language-Team: Arabic <https://l10n.opensuse.org/projects/scout/command-not-"
-"found-master/ar/>\n"
+"Language-Team: Arabic <https://l10n.opensuse.org/projects/scout/"
+"command-not-found-master/ar/>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.3\n"
 
 #: handlers/bin/command-not-found:20
 #, python-format
@@ -104,21 +104,23 @@ msgstr ""
 
 #: handlers/python/python_import_error_handler:7
 msgid "Usage ${0} python_module"
-msgstr ""
+msgstr "استخدام ${0} python_module"
 
 #: handlers/python/python_import_error_handler:24
 msgid "No package was found by scout"
-msgstr ""
+msgstr "لم يتم العثور على أية حزمة من الاستكشاف"
 
 #: handlers/python/python_import_error_handler:27
 #, sh-format
 msgid "The ${module_name} is in the package ${modules}. You can install it by:"
 msgstr ""
+"الوحدة النمطية ${module_name} موجودة في الحزمة ${modules}. يمكنك تثبيتها "
+"بواسطة:"
 
 #: handlers/python/python_import_error_handler:31
 msgid "The selected module was found in one of several packages:"
-msgstr ""
+msgstr "لم يتم العثور على الوحدة النمطية المحددة في إحدى الحزم العديدة:"
 
 #: handlers/python/python_import_error_handler:33
 msgid "one_of_the_packages"
-msgstr ""
+msgstr "one_of_the_packages"

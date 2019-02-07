@@ -9,17 +9,17 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2018-01-27 14:04+0000\n"
+"PO-Revision-Date: 2019-02-07 12:02+0000\n"
 "Last-Translator: Ewelina Michalowska <ewelina.michalowska@stgambit.com>\n"
-"Language-Team: Polish <https://l10n.opensuse.org/projects/scout/command-not-"
-"found-master/pl/>\n"
+"Language-Team: Polish <https://l10n.opensuse.org/projects/scout/"
+"command-not-found-master/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.3\n"
 
 #: handlers/bin/command-not-found:20
 #, python-format
@@ -106,21 +106,23 @@ msgstr ""
 
 #: handlers/python/python_import_error_handler:7
 msgid "Usage ${0} python_module"
-msgstr ""
+msgstr "Użycie ${0} moduł_python"
 
 #: handlers/python/python_import_error_handler:24
 msgid "No package was found by scout"
-msgstr ""
+msgstr "Żaden pakiet nie został znaleziony przez scout"
 
 #: handlers/python/python_import_error_handler:27
 #, sh-format
 msgid "The ${module_name} is in the package ${modules}. You can install it by:"
 msgstr ""
+"Moduł o nazwie ${module_name} znajduje się w pakiecie ${modules}. Można go "
+"zainstalować za pośrednictwem:"
 
 #: handlers/python/python_import_error_handler:31
 msgid "The selected module was found in one of several packages:"
-msgstr ""
+msgstr "Wybrany moduł został znaleziony w jednym z kilku pakietów:"
 
 #: handlers/python/python_import_error_handler:33
 msgid "one_of_the_packages"
-msgstr ""
+msgstr "jeden_z_pakietów"

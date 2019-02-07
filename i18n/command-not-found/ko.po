@@ -3,14 +3,16 @@ msgstr ""
 "Project-Id-Version: entries\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2009-09-18 09:35+0900\n"
-"Last-Translator: YunSeok Choi <xein@naver.com>\n"
-"Language-Team:  <en@li.org>\n"
+"PO-Revision-Date: 2019-02-07 12:02+0000\n"
+"Last-Translator: Hwajin Kim <hwajin.kim@e4net.net>\n"
+"Language-Team: Korean <https://l10n.opensuse.org/projects/scout/"
+"command-not-found-master/ko/>\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 3.3\n"
 
 #: handlers/bin/command-not-found:20
 #, python-format
@@ -93,21 +95,21 @@ msgstr ""
 
 #: handlers/python/python_import_error_handler:7
 msgid "Usage ${0} python_module"
-msgstr ""
+msgstr "사용 ${0} python_module"
 
 #: handlers/python/python_import_error_handler:24
 msgid "No package was found by scout"
-msgstr ""
+msgstr "찾기를 통해 패키지를 찾지 못함"
 
 #: handlers/python/python_import_error_handler:27
 #, sh-format
 msgid "The ${module_name} is in the package ${modules}. You can install it by:"
-msgstr ""
+msgstr "${module_name}이(가) ${modules} 패키지에 있습니다. 다음을 수행하여 설치할 수 있습니다."
 
 #: handlers/python/python_import_error_handler:31
 msgid "The selected module was found in one of several packages:"
-msgstr ""
+msgstr "선택한 모듈이 여러 패키지 중 하나에 있습니다."
 
 #: handlers/python/python_import_error_handler:33
 msgid "one_of_the_packages"
-msgstr ""
+msgstr "one_of_the_packages"
