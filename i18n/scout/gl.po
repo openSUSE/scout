@@ -4,16 +4,16 @@ msgstr ""
 "Project-Id-Version: scout\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2018-03-08 20:02+0000\n"
+"PO-Revision-Date: 2019-03-14 19:07+0000\n"
 "Last-Translator: Manuel Vazquez <xixirei@yahoo.es>\n"
-"Language-Team: Galician <https://l10n.opensuse.org/projects/scout/scout-"
-"master/gl/>\n"
+"Language-Team: Galician <https://l10n.opensuse.org/projects/scout/"
+"scout-master/gl/>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 3.3\n"
 
 #: scout/autoconf.py:14
 msgid "Search for autoconf macros inside the m4 files."
@@ -59,6 +59,9 @@ msgid ""
 "\n"
 "Warning: no repos found - make sure your repositories are configured."
 msgstr ""
+"\n"
+"Aviso: non se atoparon repositorios - asegúrese de que os repositorios están "
+"configurados."
 
 #: scout/bin.py:59
 msgid ""
@@ -66,10 +69,13 @@ msgid ""
 "Warning: incomplete repos found but could not refresh - try to refresh "
 "manually, e.g. with 'zypper refresh'."
 msgstr ""
+"\n"
+"Aviso: atopáronse repositorios incompletos mais non se puideron actualizar - "
+"ténteo facer de xeito manual, por exemplo, com 'zypper refresh'."
 
 #: scout/bin.py:102
 msgid "Search for binaries contained in the packages."
-msgstr "procurar binarios contidos nos paquetes."
+msgstr "buscar binarios contidos nos paquetes."
 
 #: scout/bin.py:156 scout/bin.py:157
 msgid "path"
@@ -105,8 +111,7 @@ msgstr "mostrar a versión do programa e saír"
 
 #: scout/__init__.py:217
 msgid "Usage: %prog [global_opts] module [local_opts] search_term"
-msgstr ""
-"Uso: %prog [opcións_globais] módulo [opcións_locais] término_de_procura"
+msgstr "Uso: %prog [opcións_globais] módulo [opcións_locais] término_de_busca"
 
 #: scout/__init__.py:225
 #, fuzzy, python-format
@@ -116,11 +121,11 @@ msgstr "seleccionar o formato de saída (predeterminado %s)"
 
 #: scout/__init__.py:234
 msgid "list of available modules"
-msgstr "lista de módulos dispoñibles"
+msgstr "lista de módulos dispoñíbeis"
 
 #: scout/__init__.py:250
 msgid "Available modules:\n"
-msgstr "Módulos dispoñibles:\n"
+msgstr "Módulos dispoñíbeis:\n"
 
 #: scout/__init__.py:309
 #, python-format
@@ -139,24 +144,24 @@ msgstr "Non se puido abrir o ficheiro da base de datos '%s'"
 
 #: scout/__init__.py:785
 msgid "Available repositories:\n"
-msgstr "Repositorios dispoñibles:\n"
+msgstr "Repositorios dispoñíbeis:\n"
 
 #: scout/__init__.py:821
 #, python-format
 msgid "Usage: %%prog %s [options] search_term"
-msgstr "Uso: %%prog %s [opcións] termo_de_procura"
+msgstr "Uso: %%prog %s [opcións] termo_de_busca"
 
 #: scout/__init__.py:826
 msgid "list available repositories"
-msgstr "lista de repositorios dispoñibles"
+msgstr "lista de repositorios dispoñíbeis"
 
 #: scout/__init__.py:831
 msgid "inverse search by package name"
-msgstr "procura inversa por nome de paquete"
+msgstr "busca inversa por nome de paquete"
 
 #: scout/__init__.py:836
 msgid "select repository to search"
-msgstr "selecionar repositorio para procurar"
+msgstr "seleccionar repositorio para buscar"
 
 #: scout/__init__.py:887
 msgid "No repositories found ..."
@@ -173,7 +178,7 @@ msgstr "Non se pode atopar un formatador para un %s"
 
 #: scout/java.py:14
 msgid "Search for java classes inside the JAR files."
-msgstr "Procurar clases java dentro dos ficheiros JAR."
+msgstr "Buscar clases java dentro dos ficheiros JAR."
 
 #: scout/java.py:24 scout/java.py:25
 msgid "jar"
@@ -185,7 +190,7 @@ msgstr "clase"
 
 #: scout/library.py:14
 msgid "Search for shared libraries."
-msgstr "Procurar librerías compartidas."
+msgstr "Buscar librerías compartidas."
 
 #: scout/library.py:22 scout/library.py:23
 msgid "library"
@@ -193,11 +198,11 @@ msgstr "librería"
 
 #: scout/python.py:14
 msgid "Search for python modules."
-msgstr "Procurar módulos python."
+msgstr "Buscar módulos de python."
 
 #: scout/webpin.py:18
 msgid "Search in packages using the webpin webservice."
-msgstr "Procurar en paquetes usando o servizo web webpin."
+msgstr "Buscar en paquetes usando o servizo web webpin."
 
 #: scout/webpin.py:51
 #, python-format
@@ -226,4 +231,4 @@ msgstr "URL do repositorio"
 
 #: scout/webpin.py:58
 msgid "matched files"
-msgstr "ficheiros que encaixan"
+msgstr "ficheiros coincidentes"
