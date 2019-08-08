@@ -52,14 +52,20 @@
             <surname>Kaempf</surname>
             <email>kkaempf@suse.de</email>
          </othercredit>
+         <othercredit>
+            <contrib>Software maintenance</contrib>
+            <firstname>Bernhard M.</firstname>
+            <surname>Wiedemann</surname>
+            <email>bwiedemann+scout@suse.de</email>
+         </othercredit>
       </authorgroup>
    </refentryinfo>
    <refmeta>
       <refentrytitle>&product;</refentrytitle>
       <manvolnum>1</manvolnum>
       <refmiscinfo class="version">@VERSION@</refmiscinfo>
-      <refmiscinfo class="source">http://gitorious.org/opensuse/scout</refmiscinfo>
-      <refmiscinfo class="manual">http://en.opensuse.org/Scout</refmiscinfo>
+      <refmiscinfo class="source">https://github.com/openSUSE/scout</refmiscinfo>
+      <refmiscinfo class="manual">https://en.opensuse.org/Scout</refmiscinfo>
    </refmeta>
 
    <refnamediv>
@@ -195,7 +201,7 @@
          the <ulink
             url="http://download.opensuse.org/repositories/home:/prusnak:/scout/data"
             >Scout OBS data repository</ulink> to get additional index
-         files. See the <ulink url="http://en.opensuse.org/Scout">Wiki
+         files. See the <ulink url="https://en.opensuse.org/Scout">Wiki
             page about Scout</ulink> for more information.</para>
    </refsect1>
 
@@ -233,7 +239,7 @@
    <refsect1 id="scout.search.webpin">
       <title>Example 3: Search through Webpin</title>
       <para>If you want to use the <ulink
-            url="http://software.opensuse.org/search">openSUSE Search
+            url="https://software.opensuse.org/search">openSUSE Search
             Webservice</ulink>&mdash;also known as
          <quote>Webpin</quote>&mdash;use the following line:</para>
       <screen><prompt>$ </prompt><command>scout</command> webpin docbook_5.xml</screen>
