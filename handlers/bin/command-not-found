@@ -40,7 +40,7 @@ def print_found(rows):
             print(_("Running the command now"), file=sys.stderr)
             subprocess.call(installcmd, shell=False)
     print(file=sys.stderr)
-    sys.exit(EX_NOTFOUND)
+    sys.exit(0)
 
 
 def print_installed(term, pkg, path):
@@ -59,7 +59,7 @@ def print_installed(term, pkg, path):
                 'contains the mentioned path.') % \
                 ({'prog': term, 'path': path}), file=sys.stderr)
     print(file=sys.stderr)
-    sys.exit(EX_NOTFOUND)
+    sys.exit(0)
 
 
 def check_installed(term, pkg, path):
