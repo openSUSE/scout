@@ -1,161 +1,22 @@
+'\" t
 .\"     Title: command-not-found
 .\"    Author: Pavol Rusnak <stick@gk2.sk>
-.\" Generator: DocBook XSL Stylesheets v1.74.0 <http://docbook.sf.net/>
-.\"      Date: 08/07/2009
-.\"    Manual: http://en.opensuse.org/Scout
-.\"    Source: http://gitorious.org/opensuse/scout 0.1.0
+.\" Generator: DocBook XSL Stylesheets vsnapshot <http://docbook.sf.net/>
+.\"      Date: 08/08/2019
+.\"    Manual: https://en.opensuse.org/Scout
+.\"    Source: https://github.com/openSUSE/scout 0.2.2
 .\"  Language: English
 .\"
-.TH "COMMAND\-NOT\-FOUND" "1" "08/07/2009" "http://gitorious\&.org/opensus" "http://en\&.opensuse\&.org/Sco"
+.TH "COMMAND\-NOT\-FOUND" "1" "08/08/2019" "https://github\&.com/openSUSE/" "https://en\&.opensuse\&.org/Sc"
 .\" -----------------------------------------------------------------
-.\" * (re)Define some macros
+.\" * Define some portability stuff
 .\" -----------------------------------------------------------------
 .\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.\" toupper - uppercase a string (locale-aware)
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
 .\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.de toupper
-.tr aAbBcCdDeEfFgGhHiIjJkKlLmMnNoOpPqQrRsStTuUvVwWxXyYzZ
-\\$*
-.tr aabbccddeeffgghhiijjkkllmmnnooppqqrrssttuuvvwwxxyyzz
-..
-.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.\" SH-xref - format a cross-reference to an SH section
-.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.de SH-xref
-.ie n \{\
-.\}
-.toupper \\$*
-.el \{\
-\\$*
-.\}
-..
-.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.\" SH - level-one heading that works better for non-TTY output
-.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.de1 SH
-.\" put an extra blank line of space above the head in non-TTY output
-.if t \{\
-.sp 1
-.\}
-.sp \\n[PD]u
-.nr an-level 1
-.set-an-margin
-.nr an-prevailing-indent \\n[IN]
-.fi
-.in \\n[an-margin]u
-.ti 0
-.HTML-TAG ".NH \\n[an-level]"
-.it 1 an-trap
-.nr an-no-space-flag 1
-.nr an-break-flag 1
-\." make the size of the head bigger
-.ps +3
-.ft B
-.ne (2v + 1u)
-.ie n \{\
-.\" if n (TTY output), use uppercase
-.toupper \\$*
-.\}
-.el \{\
-.nr an-break-flag 0
-.\" if not n (not TTY), use normal case (not uppercase)
-\\$1
-.in \\n[an-margin]u
-.ti 0
-.\" if not n (not TTY), put a border/line under subheading
-.sp -.6
-\l'\n(.lu'
-.\}
-..
-.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.\" SS - level-two heading that works better for non-TTY output
-.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.de1 SS
-.sp \\n[PD]u
-.nr an-level 1
-.set-an-margin
-.nr an-prevailing-indent \\n[IN]
-.fi
-.in \\n[IN]u
-.ti \\n[SN]u
-.it 1 an-trap
-.nr an-no-space-flag 1
-.nr an-break-flag 1
-.ps \\n[PS-SS]u
-\." make the size of the head bigger
-.ps +2
-.ft B
-.ne (2v + 1u)
-.if \\n[.$] \&\\$*
-..
-.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.\" BB/BE - put background/screen (filled box) around block of text
-.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.de BB
-.if t \{\
-.sp -.5
-.br
-.in +2n
-.ll -2n
-.gcolor red
-.di BX
-.\}
-..
-.de EB
-.if t \{\
-.if "\\$2"adjust-for-leading-newline" \{\
-.sp -1
-.\}
-.br
-.di
-.in
-.ll
-.gcolor
-.nr BW \\n(.lu-\\n(.i
-.nr BH \\n(dn+.5v
-.ne \\n(BHu+.5v
-.ie "\\$2"adjust-for-leading-newline" \{\
-\M[\\$1]\h'1n'\v'+.5v'\D'P \\n(BWu 0 0 \\n(BHu -\\n(BWu 0 0 -\\n(BHu'\M[]
-.\}
-.el \{\
-\M[\\$1]\h'1n'\v'-.5v'\D'P \\n(BWu 0 0 \\n(BHu -\\n(BWu 0 0 -\\n(BHu'\M[]
-.\}
-.in 0
-.sp -.5v
-.nf
-.BX
-.in
-.sp .5v
-.fi
-.\}
-..
-.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.\" BM/EM - put colored marker in margin next to block of text
-.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.de BM
-.if t \{\
-.br
-.ll -2n
-.gcolor red
-.di BX
-.\}
-..
-.de EM
-.if t \{\
-.br
-.di
-.ll
-.gcolor
-.nr BH \\n(dn
-.ne \\n(BHu
-\M[\\$1]\D'P -.75n 0 0 \\n(BHu -(\\n[.i]u - \\n(INu - .75n) 0 0 -\\n(BHu'\M[]
-.in 0
-.nf
-.BX
-.in
-.fi
-.\}
-..
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
 .\" -----------------------------------------------------------------
 .\" * set default formatting
 .\" -----------------------------------------------------------------
@@ -166,56 +27,52 @@
 .\" -----------------------------------------------------------------
 .\" * MAIN CONTENT STARTS HERE *
 .\" -----------------------------------------------------------------
-.SH "Name"
+.SH "NAME"
 command-not-found \- A command\-not\-found handler
-.SH "Synopsis"
-.fam C
+.SH "SYNOPSIS"
 .HP \w'\fBcommand\-not\-found\fR\ 'u
 \fBcommand\-not\-found\fR {binary_name} {repository}
-.fam
-.SH "Arguments"
+.SH "ARGUMENTS"
 .PP
 The following arguments are required:
 .PP
 \fBbinary_name\fR
 .RS 4
-The name of binary you are looking for\&.
+The name of the binary you are looking for\&.
 .RE
 .PP
 \fBrepository\fR
 .RS 4
-The name of repository for search\&. For most cases, use zypp
+The name of the repository to search\&. For most cases, use zypp
 .RE
-.SH "Description"
+.SH "DESCRIPTION"
 .PP
-command\-not\-found handler is designed to tell users which package contains a missing command\&.
+the command\-not\-found handler searches the package a missing command belongs to\&.
 .PP
-The handler is integrated to bash(1) and zsh(1) shells and is not necessary to call it directly\&. Just type a name of the command in your favourite shell and you\'ll get a result\&.
+The handler is integrated into the bash(1) and zsh(1) shells and doesn\*(Aqt need to be called directly\&. Just type the name of a command in your favourite shell and you\*(Aqll get a result\&.
 .PP
-If you consider c\-n\-f handler useless, just add
-\FCunset command_not_found_handle\F[]
+If you consider the c\-n\-f handler useless, just add
+unset command_not_found_handle
 to your profile or remove the command\-not\-found package\&.
 .PP
-Handler doesn\'t call the command\-not\-found binary directly, it only prints info about it\&. If you want to invoke it automatically, just add
-\FCexport COMMAND_NOT_FOUND_AUTO=1\F[]
+The handler doesn\*(Aqt call the command\-not\-found binary directly, it only prints info about it\&. If you want to invoke it automatically, just add
+export COMMAND_NOT_FOUND_AUTO=1
 to your bash profile\&.
-.SH "Example: Normal usage"
+.PP
+If you want to install found packages, add
+export COMMAND_NOT_FOUND_INSTALL=1
+to your bash profile\&.
+.SH "EXAMPLE: NORMAL USAGE"
 .PP
 For example you want to try
-\FCblender\F[], because you have heard that is an amazing program\&. So just type blender in shell:
+blender, because you have heard that is an amazing program\&. So just type blender in your shell:
 .sp
 .if n \{\
 .RS 4
 .\}
-.fam C
-.ps -1
 .nf
-.BB lightgray
-\FC$ \F[]\fBblender\fR
-.EB lightgray
+$ \fBblender\fR
 .fi
-.fam
-.ps +1
 .if n \{\
 .RE
 .\}
@@ -225,36 +82,22 @@ You get the following output:
 .if n \{\
 .RS 4
 .\}
-.fam C
-.ps -1
 .nf
-.if t \{\
-.sp -1
-.\}
-.BB lightgray adjust-for-leading-newline
-.sp -1
-
-The program \'blender\' can be found in the following package:
+The program \*(Aqblender\*(Aq can be found in the following package:
   * blender [ path: /usr/bin/blender, repository: zypp (openSUSE 11\&.1\-0) ]
 
 Try installing with:
     sudo zypper install blender
 
 bash: blender: command not found
-.EB lightgray adjust-for-leading-newline
-.if t \{\
-.sp 1
-.\}
 .fi
-.fam
-.ps +1
 .if n \{\
 .RE
 .\}
-.SH "See also"
+.SH "SEE ALSO"
 .PP
 scout(1)
-.SH "Author"
+.SH "AUTHOR"
 .PP
 \fBPavol Rusnak\fR <\&stick@gk2\&.sk\&>
 .RS 4

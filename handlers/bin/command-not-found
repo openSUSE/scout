@@ -2,13 +2,14 @@
 
 import gettext
 import os
+import subprocess
 import sys
 
 _ = gettext.gettext
 
 EX_NOTFOUND = 127
-SUDO_CMD = 'sudo'
-INSTALL_CMD = 'zypper install'
+SUDO_CMD = ['sudo']
+INSTALL_CMD = ['zypper', 'install']
 
 gettext.bindtextdomain('command-not-found', localedir='/usr/share/locale')
 gettext.textdomain(domain='command-not-found')
@@ -27,13 +28,17 @@ def print_found(rows):
               file=sys.stderr)
     print(file=sys.stderr)
     print(_('Try installing with:\n   '), end=' ', file=sys.stderr)
+    installcmd = INSTALL_CMD
     if os.getuid() != 0:
-        print(SUDO_CMD, end=' ', file=sys.stderr)
-    print(INSTALL_CMD, end=' ', file=sys.stderr)
+        installcmd = SUDO_CMD + installcmd
     if len(set([i[1] for i in rows])) > 1:
-        print(_('<selected_package>'), file=sys.stderr)
+        print(installcmd + _('<selected_package>'), file=sys.stderr)
     else:
-        print(rows[0][1], file=sys.stderr)
+        installcmd.append(rows[0][1])
+        print(" ".join(installcmd), file=sys.stderr)
+        if os.getenv("COMMAND_NOT_FOUND_INSTALL"):
+            print(_("Running the command now"), file=sys.stderr)
+            subprocess.call(installcmd, shell=False)
     print(file=sys.stderr)
     sys.exit(EX_NOTFOUND)
 

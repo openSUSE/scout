@@ -22,8 +22,8 @@
       <refentrytitle>&product;</refentrytitle>
       <manvolnum>1</manvolnum>
       <refmiscinfo class="version">@VERSION@</refmiscinfo>
-      <refmiscinfo class="source">http://gitorious.org/opensuse/scout</refmiscinfo>
-      <refmiscinfo class="manual">http://en.opensuse.org/Scout</refmiscinfo>
+      <refmiscinfo class="source">https://github.com/openSUSE/scout</refmiscinfo>
+      <refmiscinfo class="manual">https://en.opensuse.org/Scout</refmiscinfo>
    </refmeta>
 
    <refnamediv>
@@ -69,6 +69,8 @@
               command_not_found_handle</code> to your profile or remove the command-not-found package.</para>
       <para>The handler doesn&apos;t call the command-not-found binary directly, it only prints info about it.
           If you want to invoke it automatically, just add <code>export COMMAND_NOT_FOUND_AUTO=1</code>
+          to your bash profile.</para>
+      <para>If you want to install found packages, add <code>export COMMAND_NOT_FOUND_INSTALL=1</code>
           to your bash profile.</para>
    </refsect1>
 
