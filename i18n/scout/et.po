@@ -3,40 +3,40 @@ msgstr ""
 "Project-Id-Version: autoinst.fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2003-09-22 13:26+0200\n"
-"Last-Translator: Ain Vagula <avagula@gmail.com>\n"
-"Language-Team: Estonian <et@li.org>\n"
+"PO-Revision-Date: 2019-10-23 07:53+0000\n"
+"Last-Translator: Jaanus Ojangu <jaanus.ojangu@gmail.com>\n"
+"Language-Team: Estonian <https://l10n.opensuse.org/projects/scout/"
+"scout-master/et/>\n"
 "Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.6.1\n"
 
 #: scout/autoconf.py:14
 msgid "Search for autoconf macros inside the m4 files."
-msgstr ""
+msgstr "Otsige autokonf makrosid m4-failidest."
 
 #: scout/autoconf.py:24 scout/bin.py:156 scout/header.py:22
 #: scout/__init__.py:933 scout/java.py:24 scout/library.py:22
 #: scout/webpin.py:56
 msgid "repo"
-msgstr ""
+msgstr "repositoorium"
 
 #: scout/autoconf.py:24 scout/bin.py:156 scout/header.py:22
 #: scout/__init__.py:933 scout/java.py:24 scout/library.py:22
 #: scout/webpin.py:56
-#, fuzzy
-#| msgid "package"
 msgid "pkg"
 msgstr "pakett"
 
 #: scout/autoconf.py:24
 msgid "m4"
-msgstr ""
+msgstr "m4"
 
 #: scout/autoconf.py:24 scout/autoconf.py:25
 msgid "macro"
-msgstr ""
+msgstr "makro"
 
 #: scout/autoconf.py:25 scout/bin.py:157 scout/header.py:23
 #: scout/__init__.py:934 scout/java.py:25 scout/library.py:23
@@ -53,13 +53,15 @@ msgstr "pakett"
 
 #: scout/autoconf.py:25
 msgid "m4 file"
-msgstr ""
+msgstr "m4 file"
 
 #: scout/bin.py:56
 msgid ""
 "\n"
 "Warning: no repos found - make sure your repositories are configured."
 msgstr ""
+"\n"
+"Hoiatus: reposid ei leitud - veenduge, et hoidlad on seadistatud."
 
 #: scout/bin.py:59
 msgid ""
@@ -67,28 +69,31 @@ msgid ""
 "Warning: incomplete repos found but could not refresh - try to refresh "
 "manually, e.g. with 'zypper refresh'."
 msgstr ""
+"\n"
+"Hoiatus: mittetäielikke reposid leiti, kuid ei saadud uuendada - proovige "
+"käsitsi uuendamist, nt. 'zypper refresh' abil."
 
 #: scout/bin.py:102
 msgid "Search for binaries contained in the packages."
-msgstr ""
+msgstr "Otsige pakendites sisalduvaid binaarpakke."
 
 #: scout/bin.py:156 scout/bin.py:157
 msgid "path"
-msgstr ""
+msgstr "teekond"
 
 #: scout/bin.py:156
 #, fuzzy
 #| msgid "bit"
 msgid "bin"
-msgstr "bitt"
+msgstr "bin"
 
 #: scout/bin.py:158
 msgid "binary"
-msgstr ""
+msgstr "binaarne"
 
 #: scout/foo.py:14
 msgid "- template module -"
-msgstr ""
+msgstr "- mallimoodul -"
 
 #: scout/header.py:14
 msgid "Search for C/C++/Obj-C/Obj-C++ headers."
