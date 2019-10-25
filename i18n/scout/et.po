@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: autoinst.fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2019-10-23 07:53+0000\n"
+"PO-Revision-Date: 2019-10-25 11:53+0000\n"
 "Last-Translator: Jaanus Ojangu <jaanus.ojangu@gmail.com>\n"
 "Language-Team: Estonian <https://l10n.opensuse.org/projects/scout/"
 "scout-master/et/>\n"
@@ -97,53 +97,46 @@ msgstr "- mallimoodul -"
 
 #: scout/header.py:14
 msgid "Search for C/C++/Obj-C/Obj-C++ headers."
-msgstr ""
+msgstr "Otsige  C/C++/Obj-C/Obj-C++ päiseid."
 
 #: scout/header.py:22 scout/header.py:23
 msgid "header"
-msgstr ""
+msgstr "päis"
 
 #: scout/__init__.py:166
-#, fuzzy
-#| msgid "Don't show this message again."
 msgid "show this help message and exit"
-msgstr "Ära näita seda teadet enam."
+msgstr "näita seda teadet väljumisel"
 
 #: scout/__init__.py:173
 msgid "show program's version number and exit"
-msgstr ""
+msgstr "näita programmi versiooni numbrit ja välju"
 
 #: scout/__init__.py:217
 msgid "Usage: %prog [global_opts] module [local_opts] search_term"
-msgstr ""
+msgstr "Kasuta: %prog [global_opts] module [local_opts] search_term"
 
 #: scout/__init__.py:225
 #, python-format
 msgid "select the output format (%s, default is %s)"
-msgstr ""
+msgstr "vali väljundformaat (%s, vaikimisi %s)"
 
 #: scout/__init__.py:234
-#, fuzzy
-#| msgid "Available profiles"
 msgid "list of available modules"
-msgstr "Saadaolevad profiilid"
+msgstr "Saadaolevad moodulite loetelu"
 
 #: scout/__init__.py:250
-#, fuzzy
-#| msgid "Available profiles"
 msgid "Available modules:\n"
-msgstr "Saadaolevad profiilid"
+msgstr "Saadaolevad moodulid:\n"
 
 #: scout/__init__.py:309
 #, python-format
 msgid "The name of module is mandatory. Use %s --help"
-msgstr ""
+msgstr "Mooduli nimi on kohustuslik. Kasuta %s --help"
 
 #: scout/__init__.py:403
-#, fuzzy, python-format
-#| msgid "%1 is not a directory."
+#, python-format
 msgid "%s is not a directory"
-msgstr "%1 pole kataloog."
+msgstr "%s pole kataloog"
 
 #: scout/__init__.py:462
 #, fuzzy, python-format
