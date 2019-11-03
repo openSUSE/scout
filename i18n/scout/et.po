@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: autoinst.fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2019-10-25 11:53+0000\n"
+"PO-Revision-Date: 2019-11-03 19:53+0000\n"
 "Last-Translator: Jaanus Ojangu <jaanus.ojangu@gmail.com>\n"
 "Language-Team: Estonian <https://l10n.opensuse.org/projects/scout/"
 "scout-master/et/>\n"
@@ -40,10 +40,8 @@ msgstr "makro"
 
 #: scout/autoconf.py:25 scout/bin.py:157 scout/header.py:23
 #: scout/__init__.py:934 scout/java.py:25 scout/library.py:23
-#, fuzzy
-#| msgid "Repository"
 msgid "repository"
-msgstr "Hoidla"
+msgstr "hoidla"
 
 #: scout/autoconf.py:25 scout/bin.py:157 scout/header.py:23
 #: scout/__init__.py:934 scout/java.py:25 scout/library.py:23
@@ -82,10 +80,8 @@ msgid "path"
 msgstr "teekond"
 
 #: scout/bin.py:156
-#, fuzzy
-#| msgid "bit"
 msgid "bin"
-msgstr "bin"
+msgstr "binaar"
 
 #: scout/bin.py:158
 msgid "binary"
@@ -139,120 +135,97 @@ msgid "%s is not a directory"
 msgstr "%s pole kataloog"
 
 #: scout/__init__.py:462
-#, fuzzy, python-format
-#| msgid "Cannot open file '%1'."
+#, python-format
 msgid "Cannot not open database file '%s'"
-msgstr "Ei saa avada faili '%1'."
+msgstr "Ei saa avada andmebaasi '%s'"
 
 #: scout/__init__.py:785
-#, fuzzy
-#| msgid "Available profiles"
 msgid "Available repositories:\n"
-msgstr "Saadaolevad profiilid"
+msgstr "Saadaolevad hoidlad:\n"
 
 #: scout/__init__.py:821
 #, python-format
 msgid "Usage: %%prog %s [options] search_term"
-msgstr ""
+msgstr "Kasutamine: %%prog %s [suvandid] otsitav_termin"
 
 #: scout/__init__.py:826
-#, fuzzy
-#| msgid "Available profiles"
 msgid "list available repositories"
-msgstr "Saadaolevad profiilid"
+msgstr "saadaolevate hoidlate nimekiri"
 
 #: scout/__init__.py:831
 msgid "inverse search by package name"
-msgstr ""
+msgstr "pöördotsing paketi nime järgi"
 
 #: scout/__init__.py:836
 msgid "select repository to search"
-msgstr ""
+msgstr "vali otsimiseks rakenduste hoidla"
 
 #: scout/__init__.py:887
-#, fuzzy
-#| msgid "No resolvables found."
 msgid "No repositories found ..."
-msgstr "Ühtki lahendajat ei leitud."
+msgstr "Ühtki hoidlat ei leitud..."
 
 #: scout/__init__.py:933 scout/__init__.py:934
-#, fuzzy
-#| msgid "Modules"
 msgid "module"
-msgstr "Moodulid"
+msgstr "moodul"
 
 #: scout/__init__.py:1078
 #, python-format
 msgid "Cannot find a formatter for a %s"
-msgstr ""
+msgstr "%s -le  ei leita vormindajat"
 
 #: scout/java.py:14
 msgid "Search for java classes inside the JAR files."
-msgstr ""
+msgstr "Otsige Java-klasse JAR-failidest."
 
 #: scout/java.py:24 scout/java.py:25
 msgid "jar"
-msgstr ""
+msgstr "jar fail"
 
 #: scout/java.py:24 scout/java.py:25
 msgid "class"
-msgstr ""
+msgstr "klass"
 
 #: scout/library.py:14
 msgid "Search for shared libraries."
-msgstr ""
+msgstr "Otsige jagatud moodulite kogusid."
 
 #: scout/library.py:22 scout/library.py:23
-#, fuzzy
-#| msgid "Gibraltar"
 msgid "library"
-msgstr "Gibraltar"
+msgstr "kogu"
 
 #: scout/python.py:14
 msgid "Search for python modules."
-msgstr ""
+msgstr "Otsi for pythoni mooduleid."
 
 #: scout/webpin.py:18
 msgid "Search in packages using the webpin webservice."
-msgstr ""
+msgstr "Otsige pakkidest webpin veebiteenuse abil."
 
 #: scout/webpin.py:51
 #, python-format
 msgid "Cannot retrieve query results ... %s"
-msgstr ""
+msgstr "Päringu tulemusi ei saa kätte ...%s"
 
 #: scout/webpin.py:56
-#, fuzzy
-#| msgid "Never"
 msgid "ver"
-msgstr "Mitte kunagi"
+msgstr "versioon"
 
 #: scout/webpin.py:56 scout/webpin.py:57
-#, fuzzy
-#| msgid "Search:"
 msgid "arch"
-msgstr "Otsimine:"
+msgstr "arhitektuur"
 
 #: scout/webpin.py:56
-#, fuzzy
-#| msgid "&Profiles"
 msgid "files"
-msgstr "&Profiilid"
+msgstr "failid"
 
 #: scout/webpin.py:57
-#, fuzzy
-#| msgid "Version"
 msgid "version"
-msgstr "Versioon"
+msgstr "versioon"
 
 #: scout/webpin.py:58
-#, fuzzy
-#| msgid "Repository: "
 msgid "repository URL"
-msgstr "Hoidla: "
+msgstr "hoidla URL"
 
 #: scout/webpin.py:58
-#, fuzzy
-#| msgid "Patch all profiles"
 msgid "matched files"
-msgstr "Paika kõiki profiile"
+msgstr "sobivad failid"
