@@ -3,36 +3,41 @@ msgstr ""
 "Project-Id-Version: autoinst.fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2003-09-22 13:26+0200\n"
-"Last-Translator: Ain Vagula <avagula@gmail.com>\n"
-"Language-Team: Estonian <et@li.org>\n"
+"PO-Revision-Date: 2019-11-16 12:54+0000\n"
+"Last-Translator: Jaanus Ojangu <jaanus.ojangu@gmail.com>\n"
+"Language-Team: Estonian <https://l10n.opensuse.org/projects/scout/"
+"command-not-found-master/et/>\n"
 "Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.6.1\n"
 
 #: handlers/bin/command-not-found:20
 #, python-format
 msgid "The program '%(prog)s' can be found in the following package:"
 msgid_plural "The program '%(prog)s' can be found in following packages:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Programmi '%(prog)s' võib leida järgmistest paketist:"
+msgstr[1] "Programmi '%(prog)s' võib leida järgmistest pakettidest:"
 
 #: handlers/bin/command-not-found:25
 #, python-format
 msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
-msgstr ""
+msgstr "  * %(prog)s [ teekond: %(path)s/%(binary)s, repositoorium: %(repo)s ]"
 
 #: handlers/bin/command-not-found:29
 msgid ""
 "Try installing with:\n"
 "   "
 msgstr ""
+"Proovi paigaldada järgnevalt:\n"
+"...\n"
+"   "
 
 #: handlers/bin/command-not-found:34
 msgid "<selected_package>"
-msgstr ""
+msgstr "<valitud_paketid>"
 
 #: handlers/bin/command-not-found:43
 #, python-format
@@ -40,6 +45,8 @@ msgid ""
 "Program '%(prog)s' is present in package '%(pkg)s', which is installed on "
 "your system."
 msgstr ""
+"Programm '%(prog)s' on olemas pakis '%(pkg)s', mis on teie süsteemi "
+"paigaldatud."
 
 #: handlers/bin/command-not-found:48
 #, python-format
@@ -47,6 +54,8 @@ msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may "
 "require superuser privileges (eg. root)."
 msgstr ""
+"Täpne teekond programmini '%(prog)s' on '%(path)s/%(prog)s', kuid "
+"käivitamine võib vajada superkastuaja õiguseid (nt. root)."
 
 #: handlers/bin/command-not-found:52
 #, python-format
@@ -54,28 +63,30 @@ msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH "
 "variable to see whether it contains the mentioned path."
 msgstr ""
+"Täpne teekond programmini '%(prog)s' on '%(path)s/%(prog)s'. Palun "
+"kontrollige teie $PATH muutujaid, et näha kas see sisaldab nimetatud "
+"teekonda."
 
 #: handlers/bin/command-not-found:86 handlers/bin/command-not-found:87
-#, fuzzy
 msgid "searching ..."
-msgstr "Tõmmise \"%s\" otsimine..."
+msgstr "otsing..."
 
 #: handlers/bin/command-not-found:114
-#, fuzzy
 msgid "command not found"
-msgstr "Masinat %s ei leitud."
+msgstr "Käsku ei leitud"
 
 #: handlers/bin/command_not_found_bash:10
 #: handlers/bin/command_not_found_bash:17
-#, fuzzy
 msgid "$1: command not found"
-msgstr "Tundmatu käsu säte"
+msgstr "$1: käsku ei leitud"
 
 #: handlers/bin/command_not_found_bash:24
 msgid ""
 "Absolute path to '$1' is '$prefix/sbin/$1', so running it may require "
 "superuser privileges (eg. root)."
 msgstr ""
+"Täpne teekond '$1' on '$prefix/sbin/$1', kuid selle käivitamine võib nõuda "
+"superkasutaja õiguseid (nt. root)."
 
 #: handlers/bin/command_not_found_bash:33
 msgid ""
@@ -83,24 +94,27 @@ msgid ""
 "that contains it, like this:\n"
 "    cnf $1"
 msgstr ""
+"Kui '$1' ei ole trükiviga, võite kasutada command-not-found seda sisaldava "
+"paketi otsimiseks:\n"
+"     cnf $1"
 
 #: handlers/python/python_import_error_handler:7
 msgid "Usage ${0} python_module"
-msgstr ""
+msgstr "Kasutage ${0} python_module"
 
 #: handlers/python/python_import_error_handler:24
 msgid "No package was found by scout"
-msgstr ""
+msgstr "Scout ei leidnud ühtegi paketti"
 
 #: handlers/python/python_import_error_handler:27
 #, sh-format
 msgid "The ${module_name} is in the package ${modules}. You can install it by:"
-msgstr ""
+msgstr "${module_name} on pakis ${modules}. Te saate paigaldada seda:"
 
 #: handlers/python/python_import_error_handler:31
 msgid "The selected module was found in one of several packages:"
-msgstr ""
+msgstr "Valitud moodul leiti mitmest paketist:"
 
 #: handlers/python/python_import_error_handler:33
 msgid "one_of_the_packages"
-msgstr ""
+msgstr "üks_pakettidest"
