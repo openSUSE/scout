@@ -6,15 +6,16 @@ msgstr ""
 "Project-Id-Version: command-not-found.fi\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2010-09-22 20:32+0300\n"
-"Last-Translator: Katariina Kemppainen <katariina07@yahoo.se>\n"
-"Language-Team: Finnish <opensuse-fi@opensuse.fi>\n"
+"PO-Revision-Date: 2019-12-05 01:54+0000\n"
+"Last-Translator: Kimmo Kujansuu <mrkujansuu@gmail.com>\n"
+"Language-Team: Finnish <https://l10n.opensuse.org/projects/scout/"
+"command-not-found-master/fi/>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 3.6.1\n"
 
 #: handlers/bin/command-not-found:20
 #, python-format
@@ -100,21 +101,21 @@ msgstr ""
 
 #: handlers/python/python_import_error_handler:7
 msgid "Usage ${0} python_module"
-msgstr ""
+msgstr "Käyttö ${0} python_module"
 
 #: handlers/python/python_import_error_handler:24
 msgid "No package was found by scout"
-msgstr ""
+msgstr "Etsiä ei löytänyt pakettia"
 
 #: handlers/python/python_import_error_handler:27
 #, sh-format
 msgid "The ${module_name} is in the package ${modules}. You can install it by:"
-msgstr ""
+msgstr "${module_name} on paketissa ${modules}. Voit asentaa sen:"
 
 #: handlers/python/python_import_error_handler:31
 msgid "The selected module was found in one of several packages:"
-msgstr ""
+msgstr "Valittu moduuli löytyi useista paketeista:"
 
 #: handlers/python/python_import_error_handler:33
 msgid "one_of_the_packages"
-msgstr ""
+msgstr "yksi_paketeista"
