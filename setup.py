@@ -4,7 +4,7 @@ import glob
 
 setup(
     name='scout',
-    version='0.2.2',
+    version='0.2.3',
     author='various from openSUSE',
     author_email='bernhard+scout-cnf@zq1.de, opensuse-packaging@opensuse.org',
     description=('Indexing openSUSE Linux Packages'),
