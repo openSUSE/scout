@@ -1,11 +1,15 @@
-openSUSE wiki:
-http://en.opensuse.org/Scout
+Scout is a command line utility which allows users to search in
+packages using indexes of various attributes. Many of its data
+sources have been discontinued, so currently its most important
+use is to print useful messages about packages when a command is
+not found in the shell.
+This only considers currently active repos.
 
-BuildService project:
-https://build.opensuse.org/project/show?project=home:prusnak:scout
+openSUSE wiki:
+https://en.opensuse.org/Scout
+
+Open Build Service devel project:
+https://build.opensuse.org/package/show/shells/scout
 
 GIT development:
-http://gitorious.org/opensuse/scout
-
-Ohloh project:
-http://www.ohloh.net/projects/scout
+https://github.com/openSUSE/scout
