@@ -37,7 +37,7 @@ def print_found(rows, term):
     if os.getuid() != 0:
         installcmd = SUDO_CMD + installcmd
     if len(set([i[1] for i in rows])) > 1:
-        print(installcmd + _('<selected_package>'), file=sys.stderr)
+        print(" ".join(installcmd), _('<selected_package>'), file=sys.stderr)
     else:
         installcmd.append(rows[0][1])
         print(" ".join(installcmd), file=sys.stderr)
