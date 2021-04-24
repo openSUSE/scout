@@ -79,7 +79,11 @@ def find_package_by_file(term):
     ts = rpm.TransactionSet()
     mi = ts.dbMatch('basenames', term)
     try:
-        return next(mi)['name'].decode()
+        ret = next(mi)['name']
+        if isinstance(ret, str):
+            return ret
+        else:
+            return ret.decode()
     except StopIteration:
         return None
 
