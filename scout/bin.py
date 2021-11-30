@@ -23,7 +23,7 @@ except Exception:
 class SolvParser(object):
 
     etcpath = '/etc/zypp/repos.d'
-    solvfile = '/var/cache/zypp/solv/%s/solv'
+    solvfile_pattern = '/var/cache/zypp/solv/%s/solv'
     # path regular expression for binary paths
     pathre = r'^/(bin|sbin|usr/bin|usr/sbin|usr/games|opt/kde3/bin' \
         r'|opt/kde3/sbin|opt/gnome/bin|opt/gnome/sbin)/'
@@ -39,14 +39,15 @@ class SolvParser(object):
                 parser.read('%s/%s' % (self.etcpath, repofile))
                 for name in parser.sections():
                     if parser.get(name, 'enabled') == '1':
-                        if not os.path.isfile(
-                                self.solvfile % name.replace('/', '_')) \
+                        solvfile = self.solvfile_pattern % \
+                                   name.replace('/', '_')
+                        if not os.path.isfile(solvfile) \
                            and not zypper_refresh_failed:
                             ret = call('zypper refresh')
                             assert ret, 'zypper refresh failed ' \
                                 'with exit code: %s' % ret
                         repo = self.pool.add_repo(name)
-                        repo.add_solv(self.solvfile % name)
+                        repo.add_solv(solvfile)
             except OSError:
                 zypper_refresh_failed = True
             except Exception:
