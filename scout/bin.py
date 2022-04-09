@@ -35,7 +35,7 @@ class SolvParser(object):
         for repofile in [f for f in os.listdir(self.etcpath)
                          if fnmatch(f, '*.repo')]:
             try:
-                parser = ConfigParser()
+                parser = ConfigParser(strict=False)
                 parser.read('%s/%s' % (self.etcpath, repofile))
                 for name in parser.sections():
                     if parser.get(name, 'enabled') == '1':
