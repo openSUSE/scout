@@ -1,7 +1,7 @@
 # Copyright (c) 2008 Pavol Rusnak
 # see __init__.py for license details
 
-from configparser import SafeConfigParser
+from configparser import ConfigParser
 from fnmatch import fnmatch
 from subprocess import call
 import gettext
@@ -35,7 +35,7 @@ class SolvParser(object):
         for repofile in [f for f in os.listdir(self.etcpath)
                          if fnmatch(f, '*.repo')]:
             try:
-                parser = SafeConfigParser()
+                parser = ConfigParser()
                 parser.read('%s/%s' % (self.etcpath, repofile))
                 for name in parser.sections():
                     if parser.get(name, 'enabled') == '1':
