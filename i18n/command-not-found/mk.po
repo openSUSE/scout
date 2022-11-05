@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: YaST (@memory@)\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2022-05-26 05:13+0000\n"
+"PO-Revision-Date: 2022-11-05 07:13+0000\n"
 "Last-Translator: Kristijan Fremen Velkovski <me@krisfremen.com>\n"
 "Language-Team: Macedonian <https://l10n.opensuse.org/projects/scout/"
 "command-not-found-master/mk/>\n"
@@ -35,10 +35,12 @@ msgid ""
 "Try installing with:\n"
 "   "
 msgstr ""
+"Пробај да инсталираш со:\n"
+"   "
 
 #: handlers/bin/command-not-found:34
 msgid "<selected_package>"
-msgstr ""
+msgstr "<избран_пакет>"
 
 #: handlers/bin/command-not-found:43
 #, python-format
@@ -46,6 +48,8 @@ msgid ""
 "Program '%(prog)s' is present in package '%(pkg)s', which is installed on "
 "your system."
 msgstr ""
+"Програмот '%(prog)s' постои во пакетот '%(pkg)s', кој е инсталиран на вашиот "
+"систем."
 
 #: handlers/bin/command-not-found:48
 #, python-format
@@ -53,6 +57,8 @@ msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may "
 "require superuser privileges (eg. root)."
 msgstr ""
+"Абсолутната патека до '%(prog)s' е '%(path)s/%(prog)s', коешто извршување "
+"може да бара суперкориснички привилегии (на пр. root)."
 
 #: handlers/bin/command-not-found:52
 #, python-format
