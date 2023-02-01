@@ -3,14 +3,16 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2005-05-18 10:33+0200\n"
-"Last-Translator: Aiet Kolkhi <aiet@qartuli.net>\n"
-"Language-Team: Georgian <i18n@suse.de>\n"
+"PO-Revision-Date: 2023-02-01 22:14+0000\n"
+"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
+"Language-Team: Georgian <https://l10n.opensuse.org/projects/scout/"
+"command-not-found-master/ka/>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.9.1\n"
 
 #: handlers/bin/command-not-found:20
 #, python-format
@@ -29,6 +31,8 @@ msgid ""
 "Try installing with:\n"
 "   "
 msgstr ""
+"სცადეთ დააყენოთ პროგრამით:\n"
+"   "
 
 #: handlers/bin/command-not-found:34
 msgid "<selected_package>"
@@ -57,16 +61,16 @@ msgstr ""
 
 #: handlers/bin/command-not-found:86 handlers/bin/command-not-found:87
 msgid "searching ..."
-msgstr ""
+msgstr "ძებნა..."
 
 #: handlers/bin/command-not-found:114
 msgid "command not found"
-msgstr ""
+msgstr "ბრძანება ვერ ვიპოვე"
 
 #: handlers/bin/command_not_found_bash:10
 #: handlers/bin/command_not_found_bash:17
 msgid "$1: command not found"
-msgstr ""
+msgstr "$1: ბრძანება ვერ ვიპოვე"
 
 #: handlers/bin/command_not_found_bash:24
 msgid ""
@@ -87,7 +91,7 @@ msgstr ""
 
 #: handlers/python/python_import_error_handler:24
 msgid "No package was found by scout"
-msgstr ""
+msgstr "Scout-მა პაკეტი ვერ იპოვა"
 
 #: handlers/python/python_import_error_handler:27
 #, sh-format
@@ -100,4 +104,4 @@ msgstr ""
 
 #: handlers/python/python_import_error_handler:33
 msgid "one_of_the_packages"
-msgstr ""
+msgstr "ერთ_ერთი_პაკეტი"
