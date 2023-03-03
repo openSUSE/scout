@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: scout\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2016-12-15 09:23+0000\n"
-"Last-Translator: hayyan rostami <hayyan71@yahoo.com>\n"
-"Language-Team: Persian <https://l10n.opensuse.org/projects/scout/scout-"
-"master/fa/>\n"
+"PO-Revision-Date: 2023-03-03 12:14+0000\n"
+"Last-Translator: Mohammad Rezaei Seresht <m.networking@gmail.com>\n"
+"Language-Team: Persian <https://l10n.opensuse.org/projects/scout/"
+"scout-master/fa/>\n"
 "Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.6\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.9.1\n"
 
 #: scout/autoconf.py:14
 msgid "Search for autoconf macros inside the m4 files."
@@ -63,6 +63,8 @@ msgid ""
 "\n"
 "Warning: no repos found - make sure your repositories are configured."
 msgstr ""
+"\n"
+"هشدار: هیچ مخزنی یافت نشد - مطمئن شوید که مخازن شما پیکربندی شده اند."
 
 #: scout/bin.py:59
 msgid ""
@@ -70,6 +72,9 @@ msgid ""
 "Warning: incomplete repos found but could not refresh - try to refresh "
 "manually, e.g. with 'zypper refresh'."
 msgstr ""
+"\n"
+"اخطار: مخازن ناقصی پیدا شد اما نمی‌توان آن را بازخوانی کرد - سعی کنید به "
+"صورت دستی بازخوانی کنید، به عنوان مثال. با \"zypper refresh\"."
 
 #: scout/bin.py:102
 msgid "Search for binaries contained in the packages."
@@ -112,10 +117,9 @@ msgid "Usage: %prog [global_opts] module [local_opts] search_term"
 msgstr "استفاده: %prog [global_opts] module [local_opts] search_term"
 
 #: scout/__init__.py:225
-#, fuzzy, python-format
-#| msgid "select the output format (default %s)"
+#, python-format
 msgid "select the output format (%s, default is %s)"
-msgstr "قالب خروجی را انتخاب کنید (پیشفرض %s)"
+msgstr "فرمت خروجی را انتخاب کنید (%s، پیش فرض %s است)"
 
 #: scout/__init__.py:234
 msgid "list of available modules"
@@ -138,7 +142,7 @@ msgstr "%s یک فهرست نیست"
 #: scout/__init__.py:462
 #, python-format
 msgid "Cannot not open database file '%s'"
-msgstr "نمیتوان پرونده ی پایگاه داده  '%s' را باز کرد"
+msgstr "نمی توان فایل پایگاه داده '%s' را باز کرد"
 
 #: scout/__init__.py:785
 msgid "Available repositories:\n"
@@ -172,61 +176,61 @@ msgstr "ماژول"
 #: scout/__init__.py:1078
 #, python-format
 msgid "Cannot find a formatter for a %s"
-msgstr ""
+msgstr "نمی‌توان فرمت‌کننده‌ای برای %s پیدا کرد"
 
 #: scout/java.py:14
 msgid "Search for java classes inside the JAR files."
-msgstr ""
+msgstr "کلاس های جاوا را در فایل های JAR جستجو کنید."
 
 #: scout/java.py:24 scout/java.py:25
 msgid "jar"
-msgstr ""
+msgstr "jar"
 
 #: scout/java.py:24 scout/java.py:25
 msgid "class"
-msgstr ""
+msgstr "کلاس"
 
 #: scout/library.py:14
 msgid "Search for shared libraries."
-msgstr ""
+msgstr "جستجوی برای کتابخانه های مشترک."
 
 #: scout/library.py:22 scout/library.py:23
 msgid "library"
-msgstr ""
+msgstr "کتابخانه"
 
 #: scout/python.py:14
 msgid "Search for python modules."
-msgstr ""
+msgstr "جستجو برای ماژول‌های پایتون."
 
 #: scout/webpin.py:18
 msgid "Search in packages using the webpin webservice."
-msgstr ""
+msgstr "در بسته ها با استفاده از وب سرویس وب پین جستجو کنید."
 
 #: scout/webpin.py:51
 #, python-format
 msgid "Cannot retrieve query results ... %s"
-msgstr ""
+msgstr "نمی توان نتایج پرس و جو را بازیابی کرد ...%s"
 
 #: scout/webpin.py:56
 msgid "ver"
-msgstr ""
+msgstr "نسخه"
 
 #: scout/webpin.py:56 scout/webpin.py:57
 msgid "arch"
-msgstr ""
+msgstr "معماری"
 
 #: scout/webpin.py:56
 msgid "files"
-msgstr ""
+msgstr "فایل‌ها"
 
 #: scout/webpin.py:57
 msgid "version"
-msgstr ""
+msgstr "نسخه"
 
 #: scout/webpin.py:58
 msgid "repository URL"
-msgstr ""
+msgstr "URL مخزن"
 
 #: scout/webpin.py:58
 msgid "matched files"
-msgstr ""
+msgstr "فایل های منطبق"
