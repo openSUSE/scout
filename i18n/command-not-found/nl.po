@@ -10,42 +10,41 @@ msgstr ""
 "Project-Id-Version: command-not-found.nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2018-10-02 22:39+0000\n"
-"Last-Translator: Freek de Kruijf <freek@opensuse.org>\n"
-"Language-Team: Dutch <https://l10n.opensuse.org/projects/scout/command-not-"
-"found-master/nl/>\n"
+"PO-Revision-Date: 2023-03-10 19:14+0000\n"
+"Last-Translator: Heimen Stoffels <vistausss@fastmail.com>\n"
+"Language-Team: Dutch <https://l10n.opensuse.org/projects/scout/"
+"command-not-found-master/nl/>\n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 4.9.1\n"
 
 #: handlers/bin/command-not-found:20
 #, python-format
 msgid "The program '%(prog)s' can be found in the following package:"
 msgid_plural "The program '%(prog)s' can be found in following packages:"
-msgstr[0] ""
-"Het programma '%(prog)s' kan gevonden worden in het volgende pakket:"
-msgstr[1] ""
-"Het programma '%(prog)s' kan gevonden worden in de volgende pakketten:"
+msgstr[0] "‘%(prog)s’ is beschikbaar in het volgende pakket:"
+msgstr[1] "‘%(prog)s’ is beschikbaar in de volgende pakketten:"
 
 #: handlers/bin/command-not-found:25
 #, python-format
 msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
-msgstr "  * %(prog)s [ pad: %(path)s/%(binary)s, opslagruimte: %(repo)s ]"
+msgstr ""
+"  * %(prog)s [ locatie: %(path)s/%(binary)s - installatiebron: %(repo)s ]"
 
 #: handlers/bin/command-not-found:29
 msgid ""
 "Try installing with:\n"
 "   "
 msgstr ""
-"Probeer te installeren met:\n"
+"Probeer het te installeren met:\n"
 "   "
 
 #: handlers/bin/command-not-found:34
 msgid "<selected_package>"
-msgstr "<geselecteerd_pakket>"
+msgstr "<gekozen_pakket>"
 
 #: handlers/bin/command-not-found:43
 #, python-format
@@ -53,7 +52,7 @@ msgid ""
 "Program '%(prog)s' is present in package '%(pkg)s', which is installed on "
 "your system."
 msgstr ""
-"Programma '%(prog)s' is aanwezig in pakket '%(pkg)s', dat op uw systeem is "
+"‘%(prog)s’ is beschikbaar in het pakket ‘%(pkg)s’, dat reeds is "
 "geïnstalleerd."
 
 #: handlers/bin/command-not-found:48
@@ -62,8 +61,8 @@ msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may "
 "require superuser privileges (eg. root)."
 msgstr ""
-"Het absolute pad naar '%(prog)s' is '%(path)s/%(prog)s', zodat uitvoeren "
-"systeembeheerderprivileges kan vereisen (bijv. root)."
+"De directe locatie van ‘%(prog)s’ is ‘%(path)s/%(prog)s’. Hierdoor dient u "
+"mogelijk gebruik te maken van beheerdersrechten (bijv. root)."
 
 #: handlers/bin/command-not-found:52
 #, python-format
@@ -71,12 +70,12 @@ msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH "
 "variable to see whether it contains the mentioned path."
 msgstr ""
-"Het absolute pad naar '%(prog)s' is '%(path)s/%(prog)s'. Controleer uw $PATH "
-"variabele om te zien of het het genoemde pad bevat."
+"De directe locatie van ‘%(prog)s’ is ‘%(path)s/%(prog)s’. Controleer uw "
+"$PATH-variabele om te zien of de genoemde locatie is opgenomen."
 
 #: handlers/bin/command-not-found:86 handlers/bin/command-not-found:87
 msgid "searching ..."
-msgstr "bezig met zoeken ..."
+msgstr "bezig met zoeken…"
 
 #: handlers/bin/command-not-found:114
 msgid "command not found"
@@ -92,8 +91,8 @@ msgid ""
 "Absolute path to '$1' is '$prefix/sbin/$1', so running it may require "
 "superuser privileges (eg. root)."
 msgstr ""
-"Het absolute pad naar '$1' is '$prefix/sbin/$1'. Als u het uit wilt voeren, "
-"kan dit systeembeheerderprivileges vereisen (bijv. root)."
+"De directe locatie van ‘$1’ is ‘$prefix/sbin/$1’. Hierdoor dient u mogelijk "
+"gebruik te maken van beheerdersrechten (bijv. root)."
 
 #: handlers/bin/command_not_found_bash:33
 msgid ""
@@ -101,8 +100,8 @@ msgid ""
 "that contains it, like this:\n"
 "    cnf $1"
 msgstr ""
-"Als '$1' geen typefout is dan kunt u command-not-found gebruiken om het "
-"pakket op te sporen dat het bevat, zoals deze:\n"
+"Als ‘$1’ geen typfout is, dan kunt u command-not-found gebruiken om het "
+"bijbehorende pakket te zoeken. Voorbeeld:\n"
 "    cnf $1"
 
 #: handlers/python/python_import_error_handler:7
@@ -111,17 +110,18 @@ msgstr "Gebruik ${0} python_module"
 
 #: handlers/python/python_import_error_handler:24
 msgid "No package was found by scout"
-msgstr "Geen pakket gevonden door scout"
+msgstr "Er is geen pakket gevonden door scout"
 
 #: handlers/python/python_import_error_handler:27
 #, sh-format
 msgid "The ${module_name} is in the package ${modules}. You can install it by:"
 msgstr ""
-"De ${module_name} is in het pakket ${modules}. U kunt het installeren met:"
+"De ‘${module_name}’ is beschikbaar in het pakket ‘${modules}’. U kunt het "
+"installeren met:"
 
 #: handlers/python/python_import_error_handler:31
 msgid "The selected module was found in one of several packages:"
-msgstr "De geselecteerde module is gevonden in een van verscheidene pakketten:"
+msgstr "De gekozen module is aangetroffen in diverse pakketten, waaronder:"
 
 #: handlers/python/python_import_error_handler:33
 msgid "one_of_the_packages"
