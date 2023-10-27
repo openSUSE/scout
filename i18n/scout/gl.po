@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: scout\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2019-03-14 19:07+0000\n"
+"PO-Revision-Date: 2023-10-27 16:15+0000\n"
 "Last-Translator: Manuel Vazquez <xixirei@yahoo.es>\n"
 "Language-Team: Galician <https://l10n.opensuse.org/projects/scout/"
 "scout-master/gl/>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.3\n"
+"X-Generator: Weblate 4.9.1\n"
 
 #: scout/autoconf.py:14
 msgid "Search for autoconf macros inside the m4 files."
@@ -114,10 +114,9 @@ msgid "Usage: %prog [global_opts] module [local_opts] search_term"
 msgstr "Uso: %prog [opcións_globais] módulo [opcións_locais] término_de_busca"
 
 #: scout/__init__.py:225
-#, fuzzy, python-format
-#| msgid "select the output format (default %s)"
+#, python-format
 msgid "select the output format (%s, default is %s)"
-msgstr "seleccionar o formato de saída (predeterminado %s)"
+msgstr "seleccionar o formato de saída (%s,predeterminado é %s)"
 
 #: scout/__init__.py:234
 msgid "list of available modules"
