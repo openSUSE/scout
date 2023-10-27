@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: command-not-found\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2019-03-14 19:07+0000\n"
+"PO-Revision-Date: 2023-10-27 16:15+0000\n"
 "Last-Translator: Manuel Vazquez <xixirei@yahoo.es>\n"
 "Language-Team: Galician <https://l10n.opensuse.org/projects/scout/"
 "command-not-found-master/gl/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.3\n"
+"X-Generator: Weblate 4.9.1\n"
 
 #: handlers/bin/command-not-found:20
 #, python-format
@@ -97,7 +97,7 @@ msgid ""
 "that contains it, like this:\n"
 "    cnf $1"
 msgstr ""
-"Se '$1' non é un erro tipográfico, pode usar a procura da orde non atopada "
+"Se '$1' non é un erro tipográfico, pode usar a busca da orde non atopada "
 "para saber a que paquete pertence, como:\n"
 "    cnf $1"
 
@@ -107,7 +107,7 @@ msgstr "Uso ${0} python_module"
 
 #: handlers/python/python_import_error_handler:24
 msgid "No package was found by scout"
-msgstr "Scout non encontrou ningún paquete"
+msgstr "scout non encontrou ningún paquete"
 
 #: handlers/python/python_import_error_handler:27
 #, sh-format
@@ -116,9 +116,8 @@ msgstr "O ${module_name} no paquete ${modules}. Pode instalalo con:"
 
 #: handlers/python/python_import_error_handler:31
 msgid "The selected module was found in one of several packages:"
-msgstr "O módulo seleccionado foi encontrado nun de varios paquetes:"
+msgstr "O módulo seleccionado foi encontrado nun dos paquetes:"
 
 #: handlers/python/python_import_error_handler:33
-#, fuzzy
 msgid "one_of_the_packages"
 msgstr "one_of_the_packages"
