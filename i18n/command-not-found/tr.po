@@ -9,36 +9,40 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2001-10-18 10:13+0200\n"
-"Last-Translator: Görkem Çetin <gorkem@gelecek.com.tr>\n"
-"Language-Team: turkish <i18n@suse.de>\n"
+"PO-Revision-Date: 2023-11-05 14:15+0000\n"
+"Last-Translator: Özgür Arslan <ozgurarslln@gmail.com>\n"
+"Language-Team: Turkish <https://l10n.opensuse.org/projects/scout/"
+"command-not-found-master/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.9.1\n"
 
 #: handlers/bin/command-not-found:20
 #, python-format
 msgid "The program '%(prog)s' can be found in the following package:"
 msgid_plural "The program '%(prog)s' can be found in following packages:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "'%(prog)s' programı aşağıdaki pakette bulunabilir:"
+msgstr[1] "'%(prog)s' programı aşağıdaki paketlerde bulunabilir:"
 
 #: handlers/bin/command-not-found:25
 #, python-format
 msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
-msgstr ""
+msgstr "  * %(prog)s [ path: %(path)s/%(binary)s, depo: %(repo)s ]"
 
 #: handlers/bin/command-not-found:29
 msgid ""
 "Try installing with:\n"
 "   "
 msgstr ""
+"Şununla yüklemeyi deneyin:\n"
+"   "
 
 #: handlers/bin/command-not-found:34
 msgid "<selected_package>"
-msgstr ""
+msgstr "<secilen_paket>"
 
 #: handlers/bin/command-not-found:43
 #, python-format
@@ -46,6 +50,7 @@ msgid ""
 "Program '%(prog)s' is present in package '%(pkg)s', which is installed on "
 "your system."
 msgstr ""
+"'%(prog)s' programı, sisteminizde yüklü olan '%(pkg)s' paketinde mevcut."
 
 #: handlers/bin/command-not-found:48
 #, python-format
@@ -53,6 +58,8 @@ msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may "
 "require superuser privileges (eg. root)."
 msgstr ""
+"'%(prog)s'in kesin path '%(path)s/%(prog)s' şeklindedir, dolayısıyla onu "
+"çalıştırmak süper kullanıcı ayrıcalıkları gerektirebilir (örn. root)."
 
 #: handlers/bin/command-not-found:52
 #, python-format
@@ -60,25 +67,29 @@ msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH "
 "variable to see whether it contains the mentioned path."
 msgstr ""
+"'%(prog)s'e giden kesin yol: '%(path)s/%(prog)s'. Lütfen belirtilen yolu "
+"içerip içermediğini görmek için $PATH değişkeninizi kontrol edin."
 
 #: handlers/bin/command-not-found:86 handlers/bin/command-not-found:87
 msgid "searching ..."
-msgstr ""
+msgstr "Aranıyor ..."
 
 #: handlers/bin/command-not-found:114
 msgid "command not found"
-msgstr ""
+msgstr "komut bulunamadı"
 
 #: handlers/bin/command_not_found_bash:10
 #: handlers/bin/command_not_found_bash:17
 msgid "$1: command not found"
-msgstr ""
+msgstr "$1: komut bulunamadı"
 
 #: handlers/bin/command_not_found_bash:24
 msgid ""
 "Absolute path to '$1' is '$prefix/sbin/$1', so running it may require "
 "superuser privileges (eg. root)."
 msgstr ""
+"'$1'e giden kesin path '$prefix/sbin/$1'dir, dolayısıyla onu çalıştırmak "
+"süper kullanıcı ayrıcalıkları gerektirebilir (örn. root)."
 
 #: handlers/bin/command_not_found_bash:33
 msgid ""
@@ -86,24 +97,27 @@ msgid ""
 "that contains it, like this:\n"
 "    cnf $1"
 msgstr ""
+"'$1' bir yazım hatası değilse, onu içeren paketi aramak için command-not-"
+"found'u şu şekilde kullanabilirsiniz:\n"
+"    cnf $1"
 
 #: handlers/python/python_import_error_handler:7
 msgid "Usage ${0} python_module"
-msgstr ""
+msgstr "${0} python_module kullanımı"
 
 #: handlers/python/python_import_error_handler:24
 msgid "No package was found by scout"
-msgstr ""
+msgstr "scout tarafından hiçbir paket bulunamadı"
 
 #: handlers/python/python_import_error_handler:27
 #, sh-format
 msgid "The ${module_name} is in the package ${modules}. You can install it by:"
-msgstr ""
+msgstr "${module_name}, ${modules} paketindedir. Şu şekilde yükleyebilirsiniz:"
 
 #: handlers/python/python_import_error_handler:31
 msgid "The selected module was found in one of several packages:"
-msgstr ""
+msgstr "Seçilen modül birkaç pakette bulundu:"
 
 #: handlers/python/python_import_error_handler:33
 msgid "one_of_the_packages"
-msgstr ""
+msgstr "one_of_the_packages"
