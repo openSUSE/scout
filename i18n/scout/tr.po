@@ -9,61 +9,63 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2001-10-18 10:13+0200\n"
-"Last-Translator: Görkem Çetin <gorkem@gelecek.com.tr>\n"
-"Language-Team: turkish <i18n@suse.de>\n"
+"PO-Revision-Date: 2023-11-05 14:15+0000\n"
+"Last-Translator: Özgür Arslan <ozgurarslln@gmail.com>\n"
+"Language-Team: Turkish <https://l10n.opensuse.org/projects/scout/"
+"scout-master/tr/>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.9.1\n"
 
 #: scout/autoconf.py:14
 msgid "Search for autoconf macros inside the m4 files."
-msgstr ""
+msgstr "M4 dosyalarının içindeki autoconf makrolarını arayın."
 
 #: scout/autoconf.py:24 scout/bin.py:156 scout/header.py:22
 #: scout/__init__.py:933 scout/java.py:24 scout/library.py:22
 #: scout/webpin.py:56
 msgid "repo"
-msgstr ""
+msgstr "depo"
 
 #: scout/autoconf.py:24 scout/bin.py:156 scout/header.py:22
 #: scout/__init__.py:933 scout/java.py:24 scout/library.py:22
 #: scout/webpin.py:56
 msgid "pkg"
-msgstr ""
+msgstr "pkg"
 
 #: scout/autoconf.py:24
 msgid "m4"
-msgstr ""
+msgstr "m4"
 
 #: scout/autoconf.py:24 scout/autoconf.py:25
 msgid "macro"
-msgstr ""
+msgstr "makro"
 
 #: scout/autoconf.py:25 scout/bin.py:157 scout/header.py:23
 #: scout/__init__.py:934 scout/java.py:25 scout/library.py:23
-#, fuzzy
-#| msgid "Directory\n"
 msgid "repository"
-msgstr "Dizin\n"
+msgstr "depo"
 
 #: scout/autoconf.py:25 scout/bin.py:157 scout/header.py:23
 #: scout/__init__.py:934 scout/java.py:25 scout/library.py:23
 #: scout/webpin.py:57
 msgid "package"
-msgstr ""
+msgstr "paket"
 
 #: scout/autoconf.py:25
 msgid "m4 file"
-msgstr ""
+msgstr "m4 dosyası"
 
 #: scout/bin.py:56
 msgid ""
 "\n"
 "Warning: no repos found - make sure your repositories are configured."
 msgstr ""
+"\n"
+"Uyarı: depo bulunamadı - depolarınızın yapılandırıldığından emin olun."
 
 #: scout/bin.py:59
 msgid ""
@@ -71,183 +73,169 @@ msgid ""
 "Warning: incomplete repos found but could not refresh - try to refresh "
 "manually, e.g. with 'zypper refresh'."
 msgstr ""
+"\n"
+"Uyarı: eksik depolar bulundu ancak yenilenemedi - manuel olarak yenilemeyi "
+"deneyin, ör. 'zypper refresh' ile."
 
 #: scout/bin.py:102
 msgid "Search for binaries contained in the packages."
-msgstr ""
+msgstr "Paketlerde bulunan ikili dosyaları arayın."
 
 #: scout/bin.py:156 scout/bin.py:157
 msgid "path"
-msgstr ""
+msgstr "path"
 
 #: scout/bin.py:156
-#, fuzzy
-#| msgid "Serbian"
 msgid "bin"
-msgstr "Sırpça"
+msgstr "bin"
 
 #: scout/bin.py:158
 msgid "binary"
-msgstr ""
+msgstr "ikili"
 
 #: scout/foo.py:14
 msgid "- template module -"
-msgstr ""
+msgstr "- şablon modülü -"
 
 #: scout/header.py:14
 msgid "Search for C/C++/Obj-C/Obj-C++ headers."
-msgstr ""
+msgstr "C/C++/Obj-C/Obj-C++ başlıklarını arayın."
 
 #: scout/header.py:22 scout/header.py:23
 msgid "header"
-msgstr ""
+msgstr "header"
 
 #: scout/__init__.py:166
 msgid "show this help message and exit"
-msgstr ""
+msgstr "bu yardım mesajını göster ve çık"
 
 #: scout/__init__.py:173
 msgid "show program's version number and exit"
-msgstr ""
+msgstr "programın sürüm numarasını göster ve çık"
 
 #: scout/__init__.py:217
 msgid "Usage: %prog [global_opts] module [local_opts] search_term"
-msgstr ""
+msgstr "Kullanım: %prog [global_opts] modül [local_opts] search_term"
 
 #: scout/__init__.py:225
 #, python-format
 msgid "select the output format (%s, default is %s)"
-msgstr ""
+msgstr "çıktı formatını seçin (%s, varsayılan: %s)"
 
 #: scout/__init__.py:234
 msgid "list of available modules"
-msgstr ""
+msgstr "mevcut modüllerin listesi"
 
 # include/ui/wizard_hw.ycp:48
 #: scout/__init__.py:250
-#, fuzzy
-#| msgid "Available space"
 msgid "Available modules:\n"
-msgstr "Kullanılabilir alan:"
+msgstr "Mevcut modüller:\n"
 
 #: scout/__init__.py:309
 #, python-format
 msgid "The name of module is mandatory. Use %s --help"
-msgstr ""
+msgstr "Modül adı zorunludur. %s --help'i kullanın"
 
 #: scout/__init__.py:403
-#, fuzzy, python-format
-#| msgid "Set initial directory"
+#, python-format
 msgid "%s is not a directory"
-msgstr "Başlangıç dizinini ayarla"
+msgstr "%s bir dizin değil"
 
 #: scout/__init__.py:462
 #, python-format
 msgid "Cannot not open database file '%s'"
-msgstr ""
+msgstr "'%s' veritabanı dosyası açılamıyor"
 
 # include/ui/wizard_hw.ycp:48
 #: scout/__init__.py:785
-#, fuzzy
-#| msgid "Available space"
 msgid "Available repositories:\n"
-msgstr "Kullanılabilir alan:"
+msgstr "Mevcut depolar:\n"
 
 #: scout/__init__.py:821
 #, python-format
 msgid "Usage: %%prog %s [options] search_term"
-msgstr ""
+msgstr "Kullanım: %%prog %s [seçenekler] search_term"
 
 #: scout/__init__.py:826
 msgid "list available repositories"
-msgstr ""
+msgstr "mevcut depoları listele"
 
 #: scout/__init__.py:831
 msgid "inverse search by package name"
-msgstr ""
+msgstr "Paket adına göre ters arama"
 
 #: scout/__init__.py:836
 msgid "select repository to search"
-msgstr ""
+msgstr "aranacak depoyu seçin"
 
 #: scout/__init__.py:887
 msgid "No repositories found ..."
-msgstr ""
+msgstr "Depo bulunamadı..."
 
 #: scout/__init__.py:933 scout/__init__.py:934
 msgid "module"
-msgstr ""
+msgstr "modül"
 
 #: scout/__init__.py:1078
 #, python-format
 msgid "Cannot find a formatter for a %s"
-msgstr ""
+msgstr "%s için format bulunamıyor"
 
 #: scout/java.py:14
 msgid "Search for java classes inside the JAR files."
-msgstr ""
+msgstr "JAR dosyalarının içindeki Java sınıflarını arayın."
 
 #: scout/java.py:24 scout/java.py:25
 msgid "jar"
-msgstr ""
+msgstr "jar"
 
 #: scout/java.py:24 scout/java.py:25
 msgid "class"
-msgstr ""
+msgstr "sınıf"
 
 #: scout/library.py:14
 msgid "Search for shared libraries."
-msgstr ""
+msgstr "Paylaşılan kitaplıkları arayın."
 
 # /usr/lib/YaST2/timezone_raw.ycp:384
 #: scout/library.py:22 scout/library.py:23
-#, fuzzy
-#| msgid "Gibraltar"
 msgid "library"
-msgstr "Cebelitarık"
+msgstr "kütüphane"
 
 #: scout/python.py:14
 msgid "Search for python modules."
-msgstr ""
+msgstr "Python modüllerini arayın."
 
 #: scout/webpin.py:18
 msgid "Search in packages using the webpin webservice."
-msgstr ""
+msgstr "Webpin web hizmetini kullanarak paketlerde arama yapın."
 
 #: scout/webpin.py:51
 #, python-format
 msgid "Cannot retrieve query results ... %s"
-msgstr ""
+msgstr "Sorgu sonuçları alınamıyor... %s"
 
 #: scout/webpin.py:56
-#, fuzzy
-#| msgid "Never"
 msgid "ver"
-msgstr "Hiç bir zaman"
+msgstr "ver"
 
 #: scout/webpin.py:56 scout/webpin.py:57
-#, fuzzy
-#| msgid "Search"
 msgid "arch"
-msgstr "Ara"
+msgstr "Mimari"
 
 #: scout/webpin.py:56
 msgid "files"
-msgstr ""
+msgstr "dosyalar"
 
 # clients/inst_sw_single.ycp:1461
 #: scout/webpin.py:57
-#, fuzzy
-#| msgid "Version"
 msgid "version"
-msgstr "Sürüm"
+msgstr "versiyon"
 
 #: scout/webpin.py:58
 msgid "repository URL"
-msgstr ""
+msgstr "depo URL'si"
 
 #: scout/webpin.py:58
-#, fuzzy
-#| msgid "Print selected files"
 msgid "matched files"
-msgstr "Seçili dosyaları yazdır"
+msgstr "eşleşen dosyalar"
