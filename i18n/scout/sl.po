@@ -9,63 +9,64 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2005-08-24 17:37+0200\n"
-"Last-Translator: Janez Krek <janez.krek@euroteh.si>\n"
-"Language-Team: Slovenščina <sl@li.org>\n"
+"PO-Revision-Date: 2024-05-17 22:46+0000\n"
+"Last-Translator: Jure Repinc <jlp@holodeck1.com>\n"
+"Language-Team: Slovenian <https://l10n.opensuse.org/projects/scout/"
+"scout-master/sl/>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.3.1\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
-"%100==4 ? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || "
+"n%100==4 ? 2 : 3;\n"
+"X-Generator: Weblate 5.5.5\n"
 
 #: scout/autoconf.py:14
 msgid "Search for autoconf macros inside the m4 files."
-msgstr ""
+msgstr "Iskanje makrojev v datotekah m4."
 
 #: scout/autoconf.py:24 scout/bin.py:156 scout/header.py:22
 #: scout/__init__.py:933 scout/java.py:24 scout/library.py:22
 #: scout/webpin.py:56
 msgid "repo"
-msgstr ""
+msgstr "vir"
 
 #: scout/autoconf.py:24 scout/bin.py:156 scout/header.py:22
 #: scout/__init__.py:933 scout/java.py:24 scout/library.py:22
 #: scout/webpin.py:56
 msgid "pkg"
-msgstr ""
+msgstr "paket"
 
 #: scout/autoconf.py:24
 msgid "m4"
-msgstr ""
+msgstr "m4"
 
 #: scout/autoconf.py:24 scout/autoconf.py:25
 msgid "macro"
-msgstr ""
+msgstr "makro"
 
 #: scout/autoconf.py:25 scout/bin.py:157 scout/header.py:23
 #: scout/__init__.py:934 scout/java.py:25 scout/library.py:23
-#, fuzzy
-#| msgid "Directory\n"
 msgid "repository"
-msgstr "Imenik\n"
+msgstr "vir"
 
 #: scout/autoconf.py:25 scout/bin.py:157 scout/header.py:23
 #: scout/__init__.py:934 scout/java.py:25 scout/library.py:23
 #: scout/webpin.py:57
 msgid "package"
-msgstr ""
+msgstr "paket"
 
 #: scout/autoconf.py:25
 msgid "m4 file"
-msgstr ""
+msgstr "datoteka m4"
 
 #: scout/bin.py:56
 msgid ""
 "\n"
 "Warning: no repos found - make sure your repositories are configured."
 msgstr ""
+"\n"
+"Opozorilo: najden ni bil noben vir – prepričajte se, da so viri nastavljeni."
 
 #: scout/bin.py:59
 msgid ""
@@ -73,190 +74,165 @@ msgid ""
 "Warning: incomplete repos found but could not refresh - try to refresh "
 "manually, e.g. with 'zypper refresh'."
 msgstr ""
+"\n"
+"Opozorilo: najdeni nepopolni viri, a jih ni bilo mogoče osvežiti – poskusite "
+"ročno, npr. z »zypper refresh«."
 
 #: scout/bin.py:102
 msgid "Search for binaries contained in the packages."
-msgstr ""
+msgstr "Iskanje izvedljivih datotek v paketih."
 
 #: scout/bin.py:156 scout/bin.py:157
 msgid "path"
-msgstr ""
+msgstr "pot"
 
 #: scout/bin.py:156
-#, fuzzy
-#| msgid "Serbian"
 msgid "bin"
-msgstr "Srbščina"
+msgstr "izv"
 
 #: scout/bin.py:158
 msgid "binary"
-msgstr ""
+msgstr "izvedljiva"
 
 #: scout/foo.py:14
 msgid "- template module -"
-msgstr ""
+msgstr "– predloga modula –"
 
 #: scout/header.py:14
 msgid "Search for C/C++/Obj-C/Obj-C++ headers."
-msgstr ""
+msgstr "Iskanje glav C/C++/Obj-C/Obj-C++."
 
 #: scout/header.py:22 scout/header.py:23
 msgid "header"
-msgstr ""
+msgstr "glava"
 
 #: scout/__init__.py:166
 msgid "show this help message and exit"
-msgstr ""
+msgstr "prikaži to sporočilo s pomočjo in končaj"
 
 #: scout/__init__.py:173
 msgid "show program's version number and exit"
-msgstr ""
+msgstr "prikaži različico programa in končaj"
 
 #: scout/__init__.py:217
 msgid "Usage: %prog [global_opts] module [local_opts] search_term"
-msgstr ""
+msgstr "Uporaba: %prog [globalne_možnosti] modul [krajevne_možnosti] iskano"
 
 #: scout/__init__.py:225
 #, python-format
 msgid "select the output format (%s, default is %s)"
-msgstr ""
+msgstr "izberite obliko izpisa (%s, privzeto je %s)"
 
 #: scout/__init__.py:234
-#, fuzzy
-#| msgid "Available profiles"
 msgid "list of available modules"
-msgstr "Profili na voljo"
+msgstr "seznam razpoložljivih modulov"
 
 #: scout/__init__.py:250
-#, fuzzy
-#| msgid "Available profiles"
 msgid "Available modules:\n"
-msgstr "Profili na voljo"
+msgstr "Razpoložljivi moduli:\n"
 
 #: scout/__init__.py:309
 #, python-format
 msgid "The name of module is mandatory. Use %s --help"
-msgstr ""
+msgstr "Ime modula je obvezno. Uporabite %s --help"
 
 #: scout/__init__.py:403
 #, python-format
 msgid "%s is not a directory"
-msgstr ""
+msgstr "%s ni mapa"
 
 #: scout/__init__.py:462
 #, python-format
 msgid "Cannot not open database file '%s'"
-msgstr ""
+msgstr "Ni moč odpreti podatkovne zbirke v datoteki »%s«"
 
 #: scout/__init__.py:785
-#, fuzzy
-#| msgid "Available profiles"
 msgid "Available repositories:\n"
-msgstr "Profili na voljo"
+msgstr "Razpoložljivi viri:\n"
 
 #: scout/__init__.py:821
 #, python-format
 msgid "Usage: %%prog %s [options] search_term"
-msgstr ""
+msgstr "Uporaba: %%prog %s [možnosti] iskano"
 
 #: scout/__init__.py:826
-#, fuzzy
-#| msgid "Available profiles"
 msgid "list available repositories"
-msgstr "Profili na voljo"
+msgstr "seznam razpoložljivih virov"
 
 #: scout/__init__.py:831
 msgid "inverse search by package name"
-msgstr ""
+msgstr "obrnjeno iskanje po imenu paketa"
 
 #: scout/__init__.py:836
 msgid "select repository to search"
-msgstr ""
+msgstr "izbor vira za iskanje"
 
 #: scout/__init__.py:887
-#, fuzzy
-#| msgid "No errors found."
 msgid "No repositories found ..."
-msgstr "Ni napak."
+msgstr "Najden ni bil noben vir."
 
 #: scout/__init__.py:933 scout/__init__.py:934
-#, fuzzy
-#| msgid "Modules"
 msgid "module"
-msgstr "Moduli"
+msgstr "modul"
 
 #: scout/__init__.py:1078
 #, python-format
 msgid "Cannot find a formatter for a %s"
-msgstr ""
+msgstr "Ni moč najti oblikovalnika za %s"
 
 #: scout/java.py:14
 msgid "Search for java classes inside the JAR files."
-msgstr ""
+msgstr "Iskanje razredov Java v datotekah JAR."
 
 #: scout/java.py:24 scout/java.py:25
 msgid "jar"
-msgstr ""
+msgstr "jar"
 
 #: scout/java.py:24 scout/java.py:25
 msgid "class"
-msgstr ""
+msgstr "razred"
 
 #: scout/library.py:14
 msgid "Search for shared libraries."
-msgstr ""
+msgstr "Iskanje deljenih knjižnic."
 
 #: scout/library.py:22 scout/library.py:23
-#, fuzzy
-#| msgid "Gibraltar"
 msgid "library"
-msgstr "Gibraltar"
+msgstr "knjižnica"
 
 #: scout/python.py:14
-#, fuzzy
-#| msgid "Searching for info file..."
 msgid "Search for python modules."
-msgstr "Iskanje datoteke z informacijami..."
+msgstr "Iskanje modulov Python."
 
 #: scout/webpin.py:18
 msgid "Search in packages using the webpin webservice."
-msgstr ""
+msgstr "Iskanje v paketih z uporabo spletne storitve webpin."
 
 #: scout/webpin.py:51
 #, python-format
 msgid "Cannot retrieve query results ... %s"
-msgstr ""
+msgstr "Ni moč pridobiti rezultatov poizvedbe. %s"
 
 #: scout/webpin.py:56
-#, fuzzy
-#| msgid "Never"
 msgid "ver"
-msgstr "Nikoli"
+msgstr "raz."
 
 #: scout/webpin.py:56 scout/webpin.py:57
-#, fuzzy
-#| msgid "Search"
 msgid "arch"
-msgstr "Išči"
+msgstr "arh."
 
 #: scout/webpin.py:56
-#, fuzzy
-#| msgid "&Profiles"
 msgid "files"
-msgstr "&Profili"
+msgstr "dat."
 
 #: scout/webpin.py:57
-#, fuzzy
-#| msgid "Version"
 msgid "version"
-msgstr "Verzija"
+msgstr "različica"
 
 #: scout/webpin.py:58
 msgid "repository URL"
-msgstr ""
+msgstr "URL vira"
 
 #: scout/webpin.py:58
-#, fuzzy
-#| msgid "Patch all profiles"
 msgid "matched files"
-msgstr "Popravi vse profile"
+msgstr "ustrezne datoteke"
