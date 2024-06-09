@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2024-06-08 16:46+0000\n"
+"PO-Revision-Date: 2024-06-09 22:46+0000\n"
 "Last-Translator: koralski <koralsky11@gmail.com>\n"
 "Language-Team: Bulgarian <https://l10n.opensuse.org/projects/scout/"
 "scout-master/bg/>\n"
@@ -171,15 +171,13 @@ msgid "module"
 msgstr "модул"
 
 #: scout/__init__.py:1078
-#, fuzzy, python-format
-#| msgid "Cannot find the master ypserver: %s"
+#, python-format
 msgid "Cannot find a formatter for a %s"
-msgstr "Не може да бъде открит главния ypserver: %s"
+msgstr "Не може да бъде открит форматер за %s"
 
 #: scout/java.py:14
-#, fuzzy
 msgid "Search for java classes inside the JAR files."
-msgstr "търси java класове в JAR файлове"
+msgstr "Tърси java класове в JAR файлове."
 
 #: scout/java.py:24 scout/java.py:25
 msgid "jar"
