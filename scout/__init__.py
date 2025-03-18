@@ -10,7 +10,7 @@ import sys
 import sqlite3
 from optparse import (OptionParser, Option, IndentedHelpFormatter,
                       OptionValueError)
-from configparser import SafeConfigParser
+from configparser import ConfigParser
 import gettext
 import locale
 
@@ -726,12 +726,11 @@ class StringResult(Result):
 class RepoConfigReader(object):
     """
     Class to read of an configuration of the repositories. This class
-    internally uses SafeConfigParser for ConfigParser, but doesn't
-    provide the same API
+    internally uses ConfigParser, but doesn't provide the same API
     """
 
     def __init__(self):
-        self.parser = SafeConfigParser()
+        self.parser = ConfigParser()
 
     def read(self, file_name=None):
         """
