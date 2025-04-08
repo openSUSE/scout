@@ -9,16 +9,16 @@ msgstr ""
 "Project-Id-Version: scout\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2018-10-09 14:51+0000\n"
-"Last-Translator: Luiz Fernando Ranghetti <elchevive68@gmail.com>\n"
-"Language-Team: Portuguese (Brazil) <https://l10n.opensuse.org/projects/scout"
-"/scout-master/pt_BR/>\n"
+"PO-Revision-Date: 2025-04-08 21:56+0000\n"
+"Last-Translator: Samanta Magalhaes <samanta_texttrans@outlook.com>\n"
+"Language-Team: Portuguese (Brazil) <https://l10n.opensuse.org/projects/scout/"
+"scout-master/pt_BR/>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2.18\n"
+"X-Generator: Weblate 5.10.3\n"
 "X-Poedit-Language: Portuguese\n"
 "X-Poedit-Country: BRAZIL\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -31,7 +31,7 @@ msgstr "Pesquisar por macros autoconf dentro de arquivos m4."
 #: scout/__init__.py:933 scout/java.py:24 scout/library.py:22
 #: scout/webpin.py:56
 msgid "repo"
-msgstr "repositório"
+msgstr "repo"
 
 #: scout/autoconf.py:24 scout/bin.py:156 scout/header.py:22
 #: scout/__init__.py:933 scout/java.py:24 scout/library.py:22
@@ -91,11 +91,11 @@ msgstr "caminho"
 
 #: scout/bin.py:156
 msgid "bin"
-msgstr "executável"
+msgstr "bin"
 
 #: scout/bin.py:158
 msgid "binary"
-msgstr "executável"
+msgstr "binário"
 
 #: scout/foo.py:14
 msgid "- template module -"
