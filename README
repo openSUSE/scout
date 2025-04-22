@@ -1,3 +1,5 @@
+The command not found utility was replaced by https://github.com/openSUSE/cnf
+
 Scout is a command line utility which allows users to search in
 packages using indexes of various attributes. Many of its data
 sources have been discontinued, so currently its most important
