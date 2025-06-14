@@ -3,59 +3,64 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2004-08-09 10:24+0200\n"
-"Last-Translator: xxx <yyy@example.org>\n"
-"Language-Team: Hebrew <i18n@suse.de>\n"
+"PO-Revision-Date: 2025-06-14 21:59+0000\n"
+"Last-Translator: a Rubes <aRubes@pm.me>\n"
+"Language-Team: Hebrew <https://l10n.opensuse.org/projects/scout/scout-master/"
+"he/>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
+"X-Generator: Weblate 5.11.4\n"
 
 #: scout/autoconf.py:14
 msgid "Search for autoconf macros inside the m4 files."
-msgstr ""
+msgstr "חיפושהגדרות אוטמטיות של מקרואים בתוך קבציה m4."
 
 #: scout/autoconf.py:24 scout/bin.py:156 scout/header.py:22
 #: scout/__init__.py:933 scout/java.py:24 scout/library.py:22
 #: scout/webpin.py:56
 msgid "repo"
-msgstr ""
+msgstr "מאגר תכנה"
 
 #: scout/autoconf.py:24 scout/bin.py:156 scout/header.py:22
 #: scout/__init__.py:933 scout/java.py:24 scout/library.py:22
 #: scout/webpin.py:56
 msgid "pkg"
-msgstr ""
+msgstr "pkg"
 
 #: scout/autoconf.py:24
 msgid "m4"
-msgstr ""
+msgstr "m4"
 
 #: scout/autoconf.py:24 scout/autoconf.py:25
 msgid "macro"
-msgstr ""
+msgstr "מקרו"
 
 #: scout/autoconf.py:25 scout/bin.py:157 scout/header.py:23
 #: scout/__init__.py:934 scout/java.py:25 scout/library.py:23
 msgid "repository"
-msgstr ""
+msgstr "מאגר תכנה"
 
 #: scout/autoconf.py:25 scout/bin.py:157 scout/header.py:23
 #: scout/__init__.py:934 scout/java.py:25 scout/library.py:23
 #: scout/webpin.py:57
 msgid "package"
-msgstr ""
+msgstr "חבילה"
 
 #: scout/autoconf.py:25
 msgid "m4 file"
-msgstr ""
+msgstr "קובץ m4"
 
 #: scout/bin.py:56
 msgid ""
 "\n"
 "Warning: no repos found - make sure your repositories are configured."
 msgstr ""
+"\n"
+"אזהרה: לא נמצאו מאגרי תכנה - ודאו שכל המאגרים הוגדרו."
 
 #: scout/bin.py:59
 msgid ""
@@ -63,168 +68,165 @@ msgid ""
 "Warning: incomplete repos found but could not refresh - try to refresh "
 "manually, e.g. with 'zypper refresh'."
 msgstr ""
+"\n"
+"אזהרה: מאגרים לא שלמים נמצאו אך הרענון נכשל - נסו לרענן ידנית, לדוגמא על ידי "
+"שימוש ב 'zypper refresh'."
 
 #: scout/bin.py:102
 msgid "Search for binaries contained in the packages."
-msgstr ""
+msgstr "חיפוש קבצים בינריים בתוך החבילות."
 
 #: scout/bin.py:156 scout/bin.py:157
 msgid "path"
-msgstr ""
+msgstr "נתיב"
 
 #: scout/bin.py:156
-#, fuzzy
-#| msgid "Serbian"
 msgid "bin"
-msgstr "סרבית"
+msgstr "bin"
 
 #: scout/bin.py:158
 msgid "binary"
-msgstr ""
+msgstr "בינרי"
 
 #: scout/foo.py:14
 msgid "- template module -"
-msgstr ""
+msgstr "- מודול תבנית -"
 
 #: scout/header.py:14
 msgid "Search for C/C++/Obj-C/Obj-C++ headers."
-msgstr ""
+msgstr "חיפוש הדרים ל C או C++ או obj-C או obj-C++."
 
 #: scout/header.py:22 scout/header.py:23
 msgid "header"
-msgstr ""
+msgstr "הדר"
 
 #: scout/__init__.py:166
 msgid "show this help message and exit"
-msgstr ""
+msgstr "צפו בעזרה זו וצאו"
 
 #: scout/__init__.py:173
 msgid "show program's version number and exit"
-msgstr ""
+msgstr "הראה גרסת תכנה וצא"
 
 #: scout/__init__.py:217
 msgid "Usage: %prog [global_opts] module [local_opts] search_term"
-msgstr ""
+msgstr "שימוש: %prog [global_opts] module [local_opts] search_term"
 
 #: scout/__init__.py:225
 #, python-format
 msgid "select the output format (%s, default is %s)"
-msgstr ""
+msgstr "בחירה בפורמט הפלט (%s, ברירת המחדל היא %s)"
 
 #: scout/__init__.py:234
 msgid "list of available modules"
-msgstr ""
+msgstr "רשימה של מודולים זמינים"
 
 #: scout/__init__.py:250
 msgid "Available modules:\n"
-msgstr ""
+msgstr "מודולים זמינים:\n"
 
 #: scout/__init__.py:309
 #, python-format
 msgid "The name of module is mandatory. Use %s --help"
-msgstr ""
+msgstr "חובה להגדיר את שם המודול הזה. השתמשו ב %s --help"
 
 #: scout/__init__.py:403
 #, python-format
 msgid "%s is not a directory"
-msgstr ""
+msgstr "%s אינו תיקיה"
 
 #: scout/__init__.py:462
 #, python-format
 msgid "Cannot not open database file '%s'"
-msgstr ""
+msgstr "לא התאפשרה פתיחת קוסץ מסד הנתונים '%s'"
 
 #: scout/__init__.py:785
 msgid "Available repositories:\n"
-msgstr ""
+msgstr "מאגרי תכנה זמינים:\n"
 
 #: scout/__init__.py:821
 #, python-format
 msgid "Usage: %%prog %s [options] search_term"
-msgstr ""
+msgstr "שימוש: %%prog %s [options] search_term"
 
 #: scout/__init__.py:826
 msgid "list available repositories"
-msgstr ""
+msgstr "הצגת מאגרי תכנה זמינים"
 
 #: scout/__init__.py:831
 msgid "inverse search by package name"
-msgstr ""
+msgstr "חיפוש הופכי לפי שם חבילה"
 
 #: scout/__init__.py:836
 msgid "select repository to search"
-msgstr ""
+msgstr "בחרו במאגר תכנה לחיפוש"
 
 #: scout/__init__.py:887
 msgid "No repositories found ..."
-msgstr ""
+msgstr "לא נמצאו מאגרים..."
 
 #: scout/__init__.py:933 scout/__init__.py:934
 msgid "module"
-msgstr ""
+msgstr "מודול"
 
 #: scout/__init__.py:1078
 #, python-format
 msgid "Cannot find a formatter for a %s"
-msgstr ""
+msgstr "לא נמצא פורמטר עבור %s"
 
 #: scout/java.py:14
 msgid "Search for java classes inside the JAR files."
-msgstr ""
+msgstr "חיפוש קלאסים של ג'אווה בתוך קבצי JAR."
 
 #: scout/java.py:24 scout/java.py:25
 msgid "jar"
-msgstr ""
+msgstr "jar"
 
 #: scout/java.py:24 scout/java.py:25
 msgid "class"
-msgstr ""
+msgstr "קלאס"
 
 #: scout/library.py:14
 msgid "Search for shared libraries."
-msgstr ""
+msgstr "חיפוש חבילות משותפות."
 
 #: scout/library.py:22 scout/library.py:23
 msgid "library"
-msgstr ""
+msgstr "חבילה"
 
 #: scout/python.py:14
 msgid "Search for python modules."
-msgstr ""
+msgstr "חיפוש מודולים של פייתון."
 
 #: scout/webpin.py:18
 msgid "Search in packages using the webpin webservice."
-msgstr ""
+msgstr "חיפוש בתוך חבילות תוך שימוש בשרות ווב webpin."
 
 #: scout/webpin.py:51
 #, python-format
 msgid "Cannot retrieve query results ... %s"
-msgstr ""
+msgstr "לא ניתן לאחזר תוצאות שאילתא ... %s"
 
 #: scout/webpin.py:56
-#, fuzzy
-#| msgid "Server"
 msgid "ver"
-msgstr "שרת"
+msgstr "גרסה"
 
 #: scout/webpin.py:56 scout/webpin.py:57
 msgid "arch"
-msgstr ""
+msgstr "ארכיטקטורה"
 
 #: scout/webpin.py:56
 msgid "files"
-msgstr ""
+msgstr "קבצים"
 
 #: scout/webpin.py:57
-#, fuzzy
-#| msgid "Version"
 msgid "version"
 msgstr "גרסה"
 
 #: scout/webpin.py:58
 msgid "repository URL"
-msgstr ""
+msgstr "כתובת מאגר תכנה"
 
 #: scout/webpin.py:58
 msgid "matched files"
-msgstr ""
+msgstr "קבצים מתאימים"
