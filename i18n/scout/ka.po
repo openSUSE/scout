@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2023-01-28 13:14+0000\n"
+"PO-Revision-Date: 2025-07-21 04:59+0000\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <https://l10n.opensuse.org/projects/scout/"
 "scout-master/ka/>\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.9.1\n"
+"X-Generator: Weblate 5.12.2\n"
 
 #: scout/autoconf.py:14
 msgid "Search for autoconf macros inside the m4 files."
@@ -28,7 +28,7 @@ msgstr "რეპო"
 #: scout/__init__.py:933 scout/java.py:24 scout/library.py:22
 #: scout/webpin.py:56
 msgid "pkg"
-msgstr "პაკეტი"
+msgstr "პკტ"
 
 #: scout/autoconf.py:24
 msgid "m4"
