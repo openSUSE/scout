@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: command-not-found\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2021-08-21 02:11+0000\n"
+"PO-Revision-Date: 2025-10-16 20:59+0000\n"
 "Last-Translator: Javier Llorente <javier@opensuse.org>\n"
 "Language-Team: Spanish <https://l10n.opensuse.org/projects/scout/"
 "command-not-found-master/es/>\n"
@@ -16,14 +16,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.7.1\n"
+"X-Generator: Weblate 5.13.3\n"
 
 #: handlers/bin/command-not-found:20
 #, python-format
 msgid "The program '%(prog)s' can be found in the following package:"
 msgid_plural "The program '%(prog)s' can be found in following packages:"
-msgstr[0] "La aplicación '%(prog)s' se puede encontrar en el paquete:"
-msgstr[1] "La aplicación '%(prog)s' se puede encontrar en los paquetes:"
+msgstr[0] "La aplicación '%(prog)s' está disponible en el siguiente paquete:"
+msgstr[1] "La aplicación '%(prog)s' está disponible en los siguientes paquetes:"
 
 #: handlers/bin/command-not-found:25
 #, python-format
