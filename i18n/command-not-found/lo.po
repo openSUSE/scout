@@ -3,36 +3,39 @@ msgstr ""
 "Project-Id-Version: @PACKAGE@\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-05 12:05+0200\n"
-"PO-Revision-Date: 2006-01-04 08:58+0100\n"
-"Last-Translator: i18n@suse.de\n"
-"Language-Team: Lao <i18n@suse.de>\n"
+"PO-Revision-Date: 2026-08-21 02:13+0000\n"
+"Last-Translator: Bone NI <bounkirdni@gmail.com>\n"
+"Language-Team: Lao <https://l10n.opensuse.org/projects/scout/command-not-"
+"found-master/lo/>\n"
 "Language: lo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2026.8.1\n"
 
 #: handlers/bin/command-not-found:20
 #, python-format
 msgid "The program '%(prog)s' can be found in the following package:"
 msgid_plural "The program '%(prog)s' can be found in following packages:"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "ໂປຣແກຣມ '%(prog)s' ສາມາດພົບໄດ້ໃນແພັກເກດຕໍ່ໄປນີ້:"
 
 #: handlers/bin/command-not-found:25
 #, python-format
 msgid "  * %(prog)s [ path: %(path)s/%(binary)s, repository: %(repo)s ]"
-msgstr ""
+msgstr "  * %(prog)s [ ເສັ້ນທາງ: %(path)s/%(binary)s, ຄັງເກັບ: %(repo)s ]"
 
 #: handlers/bin/command-not-found:29
 msgid ""
 "Try installing with:\n"
 "   "
 msgstr ""
+"ລອງຕິດຕັ້ງດ້ວຍ:\n"
+"   "
 
 #: handlers/bin/command-not-found:34
 msgid "<selected_package>"
-msgstr ""
+msgstr "<ແພັກເກດທີ່ເລືອກ>"
 
 #: handlers/bin/command-not-found:43
 #, python-format
@@ -40,6 +43,7 @@ msgid ""
 "Program '%(prog)s' is present in package '%(pkg)s', which is installed on "
 "your system."
 msgstr ""
+"ໂປຣແກຣມ '%(prog)s' ມີຢູ່ໃນແພັກເກດ '%(pkg)s', ເຊິ່ງໄດ້ຖືກຕິດຕັ້ງໄວ້ໃນລະບົບຂອງທ່ານແລ້ວ."
 
 #: handlers/bin/command-not-found:48
 #, python-format
@@ -47,6 +51,8 @@ msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s', so running it may "
 "require superuser privileges (eg. root)."
 msgstr ""
+"ເສັ້ນທາງເຕັມຂອງ '%(prog)s' ແມ່ນ '%(path)s/%(prog)s', ດັ່ງນັ້ນການເປີດໃຊ້ງານອາດຈະຕ້ອງໃຊ້ສິດທິ"
+"ຜູ້ດູແລລະບົບ (ຕົວຢ່າງ: root)."
 
 #: handlers/bin/command-not-found:52
 #, python-format
@@ -54,25 +60,29 @@ msgid ""
 "Absolute path to '%(prog)s' is '%(path)s/%(prog)s'. Please check your $PATH "
 "variable to see whether it contains the mentioned path."
 msgstr ""
+"ເສັ້ນທາງເຕັມຂອງ '%(prog)s' ແມ່ນ '%(path)s/%(prog)s'. ກະລຸນາກວດສອບຕົວປ່ຽນ $PATH ຂອງທ່າ"
+"ນວ່າໄດ້ລວມເອົາເສັ້ນທາງດັ່ງກ່າວໄວ້ຫຼືບໍ່."
 
 #: handlers/bin/command-not-found:86 handlers/bin/command-not-found:87
 msgid "searching ..."
-msgstr ""
+msgstr "ກຳລັງຄົ້ນຫາ ..."
 
 #: handlers/bin/command-not-found:114
 msgid "command not found"
-msgstr ""
+msgstr "ບໍ່ພົບຄຳສັ່ງ"
 
 #: handlers/bin/command_not_found_bash:10
 #: handlers/bin/command_not_found_bash:17
 msgid "$1: command not found"
-msgstr ""
+msgstr "$1: ບໍ່ພົບຄຳສັ່ງ"
 
 #: handlers/bin/command_not_found_bash:24
 msgid ""
 "Absolute path to '$1' is '$prefix/sbin/$1', so running it may require "
 "superuser privileges (eg. root)."
 msgstr ""
+"ເສັ້ນທາງເຕັມຂອງ '$1' ແມ່ນ '$prefix/sbin/$1', ດັ່ງນັ້ນການເປີດໃຊ້ງານອາດຈະຕ້ອງໃຊ້ສິດທິຜູ້ດູແລລະບົ"
+"ບ (ຕົວຢ່າງ: root)."
 
 #: handlers/bin/command_not_found_bash:33
 msgid ""
@@ -80,24 +90,27 @@ msgid ""
 "that contains it, like this:\n"
 "    cnf $1"
 msgstr ""
+"ຖ້າ '$1' ບໍ່ແມ່ນການພິມຜິດ ທ່ານສາມາດໃຊ້ຄຳສັ່ງ command-not-found ເພື່ອຄົ້ນຫາແພັກເກດທີ່ມີມັນໄດ້, ຕົວຢ່"
+"າງ:\n"
+"    cnf $1"
 
 #: handlers/python/python_import_error_handler:7
 msgid "Usage ${0} python_module"
-msgstr ""
+msgstr "ວິທີໃຊ້ ${0} python_module"
 
 #: handlers/python/python_import_error_handler:24
 msgid "No package was found by scout"
-msgstr ""
+msgstr "ບໍ່ພົບແພັກເກດໂດຍ scout"
 
 #: handlers/python/python_import_error_handler:27
 #, sh-format
 msgid "The ${module_name} is in the package ${modules}. You can install it by:"
-msgstr ""
+msgstr "${module_name} ຢູ່ໃນແພັກເກດ ${modules}. ທ່ານສາມາດຕິດຕັ້ງມັນໄດ້ໂດຍ:"
 
 #: handlers/python/python_import_error_handler:31
 msgid "The selected module was found in one of several packages:"
-msgstr ""
+msgstr "ໂມດູນທີ່ເລືອກຖືກພົບໃນໜຶ່ງໃນຫຼາຍໆແພັກເກດ:"
 
 #: handlers/python/python_import_error_handler:33
 msgid "one_of_the_packages"
-msgstr ""
+msgstr "ໜຶ່ງໃນບັນດາແພັກເກດ"
